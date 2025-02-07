@@ -3,6 +3,7 @@
 
 # **Concept and Feasibility Analysis for the SpaceSphere Project**
 
+(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 ---
 
 ## **Abstract**
