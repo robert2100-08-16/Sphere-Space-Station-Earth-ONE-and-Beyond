@@ -1,6 +1,6 @@
 
 ### **Sphere Station Documentation: Technical and Operational Overview**
-
+(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 #### **Document 1: Technical Design and System Specifications**
 
 **Title**: *Technical Design and System Specifications for the 127-Meter Sphere Station (e.g., Earth ONE)*
