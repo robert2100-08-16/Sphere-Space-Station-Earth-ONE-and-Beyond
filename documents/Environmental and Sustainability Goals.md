@@ -1,6 +1,6 @@
 
 #### **Document 7: Environmental and Sustainability Goals**
-
+##### (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 ---
 
 ## **Environmental and Sustainability Goals for the Sphere Station and Space Operations**
