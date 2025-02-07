@@ -1,6 +1,6 @@
 
-# **Document 6: Economic Feasibility and Market Analysis**
-(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
+#### **Document 6: Economic Feasibility and Market Analysis**
+##### (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 ---
 
 ## **Economic Feasibility and Market Analysis for the Earth ONE Sphere Station Project**
