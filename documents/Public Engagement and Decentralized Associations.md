@@ -1,6 +1,6 @@
 
 #### **Document 5: Public Engagement and Decentralized Associations**
-
+##### (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 ---
 
 ### **Public Engagement and Decentralized Associations for the Sphere Station Project**
