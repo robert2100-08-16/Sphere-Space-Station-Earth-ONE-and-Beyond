@@ -1,5 +1,5 @@
 #### **Document 3: Energy and Thermal Management Systems**
-
+##### (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 ---
 
 ## **Energy and Thermal Management Systems for the Sphere Station**
