@@ -1,5 +1,5 @@
 #### **Document 4: Organizational Structure and Consortium Model**
-
+##### (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 ---
 
 ### **Organizational Structure and Consortium Model for the Sphere Station Project**
