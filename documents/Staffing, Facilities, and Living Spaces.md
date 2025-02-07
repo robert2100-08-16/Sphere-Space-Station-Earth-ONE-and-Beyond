@@ -1,5 +1,5 @@
 #### **Document 2: Staffing, Facilities, and Living Spaces**
-
+##### (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 ---
 
 ### **Operational Infrastructure and Living Facilities on the Sphere Station**
