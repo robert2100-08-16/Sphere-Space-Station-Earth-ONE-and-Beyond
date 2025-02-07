@@ -1,5 +1,5 @@
 #### **Document 1: Technical Design and System Specifications**
-
+##### (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 ---
 
 ### **Technical Design and System Specifications for the 127-Meter Sphere Station (e.g., Earth ONE)**
