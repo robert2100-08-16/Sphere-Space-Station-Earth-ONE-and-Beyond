@@ -8,7 +8,7 @@
             "affiliation": "Munich, Bavaria, Germany"
         }
     ],
-    "license": "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.",
+    "license": "proprietary",
     "keywords": [
         "Sphere Station",
         "Space Architecture",
@@ -28,7 +28,7 @@
     ],
     "version": "1.0.0",
     "language": "en",
-    "publication_date": "{{YYYY-MM-DD}}",
+    "publication_date": "2025-07-08",
     "communities": [
         {
             "identifier": "interplanetarylab"
