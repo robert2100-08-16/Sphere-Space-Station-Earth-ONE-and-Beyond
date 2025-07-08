@@ -1,26 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it using the following metadata."
-title: "Sphere Space Station Earth ONE and Beyond – Technical Documentation and Visionary Framework"
 authors:
   - family-names: Massinger
     given-names: Robert Alexander
     affiliation: Munich, Bavaria, Germany
-    orcid: https://orcid.org/0000-0000-0000-0000 # Optional: bitte anpassen oder entfernen
+title: "Sphere Space Station Earth ONE and Beyond – Technical Documentation and Visionary Framework"
+orcid: https://orcid.org/0000-0000-0000-0000 # Optional: bitte anpassen oder entfernen
+version: The_initial_zenodo_release_on_2025-07-08
 date-released: 2025-07-08
-version: "2025-07-08"
-repository-code: https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond
-keywords:
-  - Sphere Station
-  - Space Architecture
-  - Artificial Gravity
-  - Sustainability
-  - Orbital Infrastructure
-  - Deep Space
-  - Governance in Space
-  - Zenodo
-abstract: >
-  The Sphere Space Station Earth ONE and Beyond project provides a comprehensive and technically feasible
-  vision for sustainable human habitats in space. It combines rotating artificial gravity architecture,
-  advanced energy and recycling systems, modular construction, and decentralized governance models to
-  enable long-term operations in Low Earth Orbit and beyond. The documentation addresses structural design,
-  environmental systems, economic models, and future expansion into the inner and outer Solar System.
