@@ -96,3 +96,7 @@ The Sphere Station project stands as a transformative venture that not only push
 ### Document 10: Self-Sustainability Models for Space Stations and Spacecraft
 
 **Title**: *Self-Sustainability Models for Space Stations and Spacecraft*
+
+## Licensing
+
+The majority of simulation scripts under `simulations/` are provided under the MIT license for STEM education (see `LICENSE-MIT`). Documentation may be distributed under the Creative Commons Attribution 4.0 International license (see `LICENSE-CC-BY-4.0`). Core project files remain proprietary and fall under the "ALL RIGHTS RESERVED" notice above.
