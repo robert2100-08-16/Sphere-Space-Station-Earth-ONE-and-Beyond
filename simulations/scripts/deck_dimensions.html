@@ -1,0 +1,329 @@
+<h1>Deck Dimensions of a Sphere</h1><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Deck</th>
+      <th>Inner Radius (m)</th>
+      <th>Outer Radius (m)</th>
+      <th>Outer Radius netto (m)</th>
+      <th>Ceiling Thickness (m)</th>
+      <th>Deck Height (m)</th>
+      <th>Deck Height netto (m)</th>
+      <th>Length at Inner Radius (m)</th>
+      <th>Length at Outer Radius (m)</th>
+      <th>Length at Outer Radius netto (m)</th>
+      <th>Base Area at Inner Radius (m²)</th>
+      <th>Base Area at Outer Radius (m²)</th>
+      <th>Effective Volume (m³)</th>
+      <th>Net Room Volume (m³)</th>
+      <th>Rotation Velocity @ radius netto (m/s)</th>
+      <th>Centrifugal Acceleration @ radius netto (m/s²)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Deck 000</td>
+      <td>0.0</td>
+      <td>10.5</td>
+      <td>10.0</td>
+      <td>0.5</td>
+      <td>10.5</td>
+      <td>10.0</td>
+      <td>126.000000</td>
+      <td>124.237675</td>
+      <td>124.402572</td>
+      <td>0.000000</td>
+      <td>8196.387538</td>
+      <td>43336.234461</td>
+      <td>39332.961785</td>
+      <td>5.00</td>
+      <td>2.500</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Deck 001</td>
+      <td>10.5</td>
+      <td>14.0</td>
+      <td>13.5</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>124.237675</td>
+      <td>122.849501</td>
+      <td>123.073149</td>
+      <td>8196.387538</td>
+      <td>10806.406553</td>
+      <td>33281.601257</td>
+      <td>27970.053313</td>
+      <td>6.75</td>
+      <td>3.375</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Deck 002</td>
+      <td>14.0</td>
+      <td>17.5</td>
+      <td>17.0</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>122.849501</td>
+      <td>121.041315</td>
+      <td>121.326007</td>
+      <td>10806.406553</td>
+      <td>13309.187738</td>
+      <td>42237.083588</td>
+      <td>35669.841268</td>
+      <td>8.50</td>
+      <td>4.250</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Deck 003</td>
+      <td>17.5</td>
+      <td>21.0</td>
+      <td>20.5</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>121.041315</td>
+      <td>118.793939</td>
+      <td>119.142771</td>
+      <td>13309.187738</td>
+      <td>15674.491006</td>
+      <td>50764.682384</td>
+      <td>43009.367576</td>
+      <td>10.25</td>
+      <td>5.125</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Deck 004</td>
+      <td>21.0</td>
+      <td>24.5</td>
+      <td>24.0</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>118.793939</td>
+      <td>116.081868</td>
+      <td>116.498927</td>
+      <td>15674.491006</td>
+      <td>17869.415191</td>
+      <td>58754.022216</td>
+      <td>49894.598560</td>
+      <td>12.00</td>
+      <td>6.000</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Deck 005</td>
+      <td>24.5</td>
+      <td>28.0</td>
+      <td>27.5</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>116.081868</td>
+      <td>112.871608</td>
+      <td>113.362251</td>
+      <td>17869.415191</td>
+      <td>19857.410495</td>
+      <td>66083.717576</td>
+      <td>56222.274563</td>
+      <td>13.75</td>
+      <td>6.875</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Deck 006</td>
+      <td>28.0</td>
+      <td>31.5</td>
+      <td>31.0</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>112.871608</td>
+      <td>109.119201</td>
+      <td>109.690474</td>
+      <td>19857.410495</td>
+      <td>21596.909030</td>
+      <td>72617.263953</td>
+      <td>61876.469174</td>
+      <td>15.50</td>
+      <td>7.750</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Deck 007</td>
+      <td>31.5</td>
+      <td>35.0</td>
+      <td>34.5</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>109.119201</td>
+      <td>104.766407</td>
+      <td>105.427700</td>
+      <td>21596.909030</td>
+      <td>23039.336183</td>
+      <td>78197.186695</td>
+      <td>66723.705127</td>
+      <td>17.25</td>
+      <td>8.625</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Deck 008</td>
+      <td>35.0</td>
+      <td>38.5</td>
+      <td>38.0</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>104.766407</td>
+      <td>99.734648</td>
+      <td>100.498756</td>
+      <td>23039.336183</td>
+      <td>24126.074071</td>
+      <td>82636.290331</td>
+      <td>70605.674819</td>
+      <td>19.00</td>
+      <td>9.500</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Deck 009</td>
+      <td>38.5</td>
+      <td>42.0</td>
+      <td>41.5</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>99.734648</td>
+      <td>93.914855</td>
+      <td>94.799789</td>
+      <td>24126.074071</td>
+      <td>24783.546371</td>
+      <td>85703.821712</td>
+      <td>73327.774450</td>
+      <td>20.75</td>
+      <td>10.375</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Deck 010</td>
+      <td>42.0</td>
+      <td>45.5</td>
+      <td>45.0</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>93.914855</td>
+      <td>87.149297</td>
+      <td>88.181631</td>
+      <td>24783.546371</td>
+      <td>24914.670854</td>
+      <td>87102.064734</td>
+      <td>74639.799450</td>
+      <td>22.50</td>
+      <td>11.250</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Deck 011</td>
+      <td>45.5</td>
+      <td>49.0</td>
+      <td>48.5</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>87.149297</td>
+      <td>79.195959</td>
+      <td>80.417660</td>
+      <td>24914.670854</td>
+      <td>24382.541565</td>
+      <td>86423.161885</td>
+      <td>74200.538153</td>
+      <td>24.25</td>
+      <td>12.125</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Deck 012</td>
+      <td>49.0</td>
+      <td>52.5</td>
+      <td>52.0</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>79.195959</td>
+      <td>69.649121</td>
+      <td>71.133677</td>
+      <td>24382.541565</td>
+      <td>22974.962388</td>
+      <td>83059.334625</td>
+      <td>71504.712082</td>
+      <td>26.00</td>
+      <td>13.000</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Deck 013</td>
+      <td>52.5</td>
+      <td>56.0</td>
+      <td>55.5</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>69.649121</td>
+      <td>57.723479</td>
+      <td>59.623821</td>
+      <td>22974.962388</td>
+      <td>20310.489562</td>
+      <td>75979.017154</td>
+      <td>65702.691738</td>
+      <td>27.75</td>
+      <td>13.875</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Deck 014</td>
+      <td>56.0</td>
+      <td>59.5</td>
+      <td>59.0</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>57.723479</td>
+      <td>41.412558</td>
+      <td>44.181444</td>
+      <td>20310.489562</td>
+      <td>15482.065350</td>
+      <td>62950.829983</td>
+      <td>54984.623354</td>
+      <td>29.50</td>
+      <td>14.750</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Deck 015</td>
+      <td>59.5</td>
+      <td>63.0</td>
+      <td>62.5</td>
+      <td>0.5</td>
+      <td>3.5</td>
+      <td>3.0</td>
+      <td>41.412558</td>
+      <td>0.000000</td>
+      <td>15.842980</td>
+      <td>15482.065350</td>
+      <td>0.000000</td>
+      <td>27890.485372</td>
+      <td>26328.882972</td>
+      <td>31.25</td>
+      <td>15.625</td>
+    </tr>
+  </tbody>
+</table><h2>Total Volume: 852661.0065985196 m³</h2>
