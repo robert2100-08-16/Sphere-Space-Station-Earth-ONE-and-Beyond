@@ -1,13 +1,11 @@
 import pandas as pd
 import numpy as np
-from pandas import DataFrame
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.animation import FuncAnimation
 from tqdm import tqdm
 from typing import Union, List
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-import matplotlib.cm as cm
 
 
 class SphereDeckCalculator:
@@ -529,6 +527,7 @@ class SphereDeckCalculator:
         progress_bar.close()
         return ani
 
+    @staticmethod
     def _rotation_matrix(axis, theta):
         """Return the rotation matrix associated with counterclockwise rotation about
         the given axis by theta radians."""
@@ -546,6 +545,7 @@ class SphereDeckCalculator:
             ]
         )
 
+    @staticmethod
     def _apply_rotation(matrix, x, y, z):
         """Apply rotation matrix to x, y, z coordinates."""
         xyz = np.vstack([x.flatten(), y.flatten(), z.flatten()])
@@ -556,8 +556,9 @@ class SphereDeckCalculator:
             rotated_xyz[2].reshape(z.shape),
         )
 
+    @staticmethod
     def _parse_rotation_axis(rotation_axis: Union[str, List[float]]):
-        """Parse rotation axis from string or list."""
+        """Parse rotation axis from a string like 'x' or a list of floats."""
         # Determine rotation axis
         axis = np.zeros(3)
         if isinstance(rotation_axis, str):
