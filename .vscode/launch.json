@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Simulation",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/start_simulation/run_simulation.py",
+            "console": "integratedTerminal"
+        }
+    ]
+}
