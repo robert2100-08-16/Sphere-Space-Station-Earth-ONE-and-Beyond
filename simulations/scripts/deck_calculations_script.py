@@ -6,6 +6,25 @@ from tqdm import tqdm
 from typing import Union, List
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+from pathlib import Path
+
+RESULTS_DIR = Path(__file__).resolve().parents[1] / "results"
+DATA_DIR = RESULTS_DIR / "data"
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def _resolve_output_path(file_path: str | None) -> str | None:
+    if file_path is None:
+        return None
+    path = Path(file_path)
+    if not path.is_absolute():
+        if path.suffix.lower() == ".png":
+            path = DATA_DIR / path.name
+        else:
+            path = RESULTS_DIR / path.name
+    path.parent.mkdir(parents=True, exist_ok=True)
+    return str(path)
 
 
 class SphereDeckCalculator:
@@ -299,11 +318,12 @@ class SphereDeckCalculator:
             f"Total Volume: {self.calculate_total_volume_pressured()} m³\n"
         )
         string_doc = string_title + "\n" + string_table + "\n" + string_total_volume
-        if file_path is not None:
-            with open(file_path, "w") as f:
+        resolved = _resolve_output_path(file_path)
+        if resolved is not None:
+            with open(resolved, "w") as f:
                 f.write(string_doc)
             print(
-                f"Deck dimensions have been successfully calculated and saved as text in {file_path}."
+                f"Deck dimensions have been successfully calculated and saved as text in {resolved}."
             )
         return string_doc
 
@@ -314,11 +334,12 @@ class SphereDeckCalculator:
             f"<h2>Total Volume: {self.calculate_total_volume_pressured()} m³</h2>"
         )
         html_doc = html_title + html_table + html_total_volume
-        if file_path is not None:
-            with open(file_path, "w") as f:
+        resolved = _resolve_output_path(file_path)
+        if resolved is not None:
+            with open(resolved, "w") as f:
                 f.write(html_doc)
             print(
-                f"Deck dimensions have been successfully calculated and saved as HTML in {file_path}."
+                f"Deck dimensions have been successfully calculated and saved as HTML in {resolved}."
             )
         return html_doc
 
@@ -329,11 +350,12 @@ class SphereDeckCalculator:
             f"Total Volume: {self.calculate_total_volume_pressured()} m³\n"
         )
         csv_doc = csv_title + csv_table + csv_total_volume
-        if file_path is not None:
-            with open(file_path, "w") as f:
+        resolved = _resolve_output_path(file_path)
+        if resolved is not None:
+            with open(resolved, "w") as f:
                 f.write(csv_doc)
             print(
-                f"Deck dimensions have been successfully calculated and saved as CSV in {file_path}."
+                f"Deck dimensions have been successfully calculated and saved as CSV in {resolved}."
             )
         return csv_doc
 
@@ -373,10 +395,11 @@ class SphereDeckCalculator:
             print(f"Error: event_source is None for {file_path}")
         else:
             ani.event_source.add_callback(ani._step)
-        if file_path is not None:
+        resolved = _resolve_output_path(file_path)
+        if resolved is not None:
             # get the best fit writer (gif, mp4, etc. --> pillow, ffmpeg, etc.) (html5, jshtml, etc. --> html) (default --> first available)
             # get the file extension from the file path
-            file_extension = file_path.split(".")[-1]
+            file_extension = resolved.split(".")[-1]
             # get the best fit writer for the file extension
             self.selected_animation_writer = (
                 file_extension
@@ -384,9 +407,9 @@ class SphereDeckCalculator:
                 else self.animation_writers[0]
             )
             ani.save(
-                file_path, writer=self.selected_animation_writer, fps=frames_per_second
+                resolved, writer=self.selected_animation_writer, fps=frames_per_second
             )
-            print(f"\r3D animation has been successfully saved as {file_path}.")
+            print(f"\r3D animation has been successfully saved as {resolved}.")
         else:
             print("\r3D animation has been successfully rendered and not be saved.")
         return ani
@@ -912,17 +935,8 @@ if __name__ == "__main__":
 
     df_decks = calculator.calculate_dynamics_of_a_sphere(angular_velocity=0.5)
     print(calculator.to_string())
-    # calculator.to_csv("deck_dimensions.csv")
-    # calculator.to_html("deck_dimensions.html")
-    # calculator.to_3D_animation_show_all_decks("deck_animation.html")
-    # calculator.to_3D_animation_rotate_all_decks("deck_animation_rotate.html")
-    # calculator.to_3D_animation_rotate_hull_with_windows(
-    #   "hull_with_windows_animation.html",
-    #  frames=25,
-    # frames_per_second=5,
-    # rotation_axis="Z",
-    # )
-    # calculator.to_3D_animation_rotate_hull("hull_animation.html")
+    calculator.to_csv("deck_dimensions.csv")
+    calculator.to_html("deck_dimensions.html")
     calculator.to_3D_animation_rotate_hull_with_gravity_zones(
         "hull_with_gravity_zones_animation.html",
         frames=25,
