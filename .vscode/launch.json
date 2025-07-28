@@ -5,7 +5,7 @@
             "name": "Run Simulation",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/start_simulation/run_simulation.py",
+            "program": "${workspaceFolder}/simulations/start_simulation/run_simulation.py",
             "console": "integratedTerminal"
         }
     ]
