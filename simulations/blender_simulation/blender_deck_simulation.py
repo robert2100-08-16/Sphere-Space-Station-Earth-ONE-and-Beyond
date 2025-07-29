@@ -4,9 +4,11 @@ blender_deck_simulation.py
 
 This script generates a simplified 3D representation of the Sphere Station's deck
 geometry using Blender's Python API.  It reads a comma‑separated file that
-contains radial and vertical dimensions for each deck as well as high level
-metadata (usage, material selection, etc.) and constructs concentric ring
-segments stacked along the Z‑axis.  The resulting scene consists of:
+contains radial dimensions for each deck together with some additional
+metadata (usage, material selection, etc.) and constructs hollow cylindrical
+shells around a central ``wormhole``.  The resulting scene consists of
+coaxial cylinders sharing the same centre rather than being stacked along the
+Z‑axis.  The scene contains:
 
 * A central ``wormhole`` cylinder that runs through the entire station.
 * Deck shells modelled as the difference between two concentric cylinders.
@@ -136,9 +138,13 @@ def create_ring_deck(
 
 
 def create_wormhole(radius: float, total_height: float) -> bpy.types.Object:
-    """Create the central wormhole cylinder running through all decks."""
+    """Create the central wormhole cylinder running through all decks.
+
+    The cylinder is centred at the origin so that all surrounding decks share
+    the same vertical extent.
+    """
     bpy.ops.mesh.primitive_cylinder_add(
-        radius=radius, depth=total_height, location=(0.0, 0.0, total_height / 2.0)
+        radius=radius, depth=total_height, location=(0.0, 0.0, 0.0)
     )
     wormhole = bpy.context.active_object
     wormhole.name = "Wormhole"
@@ -153,15 +159,16 @@ def create_base_rings(
     Args:
         wormhole_radius: Radius of the wormhole.
         base_thickness: Thickness of each base ring in metres.
-        total_height: Total height of the stacked decks.
+        total_height: Total height of the station (inner diameter).
 
     Returns:
         List of ring objects created (top and bottom).
     """
     base_radius = wormhole_radius * 1.2
     rings = []
+    half = total_height / 2.0
     for i, z_pos in enumerate(
-        [total_height + base_thickness / 2.0, -base_thickness / 2.0]
+        [half + base_thickness / 2.0, -(half + base_thickness / 2.0)]
     ):
         bpy.ops.mesh.primitive_cylinder_add(
             radius=base_radius, depth=base_thickness, location=(0.0, 0.0, z_pos)
@@ -215,22 +222,23 @@ def main():
     collection = bpy.data.collections.new("SphereDeckCollection")
     bpy.context.scene.collection.children.link(collection)
 
-    # Compute stacking positions along Z axis
-    z_offset = 0.0
+    # Determine the sphere's inner radius from the outermost deck.  Each deck
+    # cylinder should end where it intersects the inner hull.  Compute the
+    # appropriate height individually so that the cylinders do not extend
+    # beyond the hull.
+    sphere_radius = decks[-1]["outer_radius"]
+    total_height = 2 * sphere_radius
     created_decks = []
     for deck in decks:
-        height = deck["height"]
-        z_center = z_offset + height / 2.0
+        deck_height = 2 * max(sphere_radius**2 - deck["outer_radius"]**2, 0.0) ** 0.5
         obj = create_ring_deck(
             outer_radius=deck["outer_radius"],
             inner_radius=deck["inner_radius"],
-            height=height,
-            z_center=z_center,
+            height=deck_height,
+            z_center=0.0,
             name=deck["deck_name"],
         )
         created_decks.append(obj)
-        z_offset += height
-        # Move to collection
         move_to_collection(obj, collection)
 
     # Create wormhole cylinder through all decks
@@ -238,7 +246,6 @@ def main():
         decks[0]["outer_radius"]
         - (decks[0]["outer_radius"] - decks[0]["inner_radius"]) * 0.5
     )
-    total_height = z_offset
     wormhole = create_wormhole(wormhole_radius, total_height)
     move_to_collection(wormhole, collection)
 
