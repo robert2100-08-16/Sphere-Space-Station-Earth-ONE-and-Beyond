@@ -75,12 +75,21 @@ import bpy
 
 def clear_scene():
     """Remove all objects from the current Blender scene."""
-    bpy.ops.object.select_all(action='SELECT')
+    bpy.ops.object.select_all(action="SELECT")
     bpy.ops.object.delete(use_global=False)
 
 
-def create_ring_deck(outer_radius: float, inner_radius: float, height: float,
-                     z_center: float, name: str) -> bpy.types.Object:
+def move_to_collection(obj: bpy.types.Object, collection: bpy.types.Collection) -> None:
+    """Link an object to a collection and unlink it from all others."""
+    collection.objects.link(obj)
+    for coll in list(obj.users_collection):
+        if coll != collection:
+            coll.objects.unlink(obj)
+
+
+def create_ring_deck(
+    outer_radius: float, inner_radius: float, height: float, z_center: float, name: str
+) -> bpy.types.Object:
     """Construct a hollow cylindrical shell using boolean difference.
 
     Args:
@@ -94,24 +103,24 @@ def create_ring_deck(outer_radius: float, inner_radius: float, height: float,
         The resulting Blender object representing the deck shell.
     """
     # Create outer cylinder
-    bpy.ops.mesh.primitive_cylinder_add(radius=outer_radius,
-                                        depth=height,
-                                        location=(0.0, 0.0, z_center))
+    bpy.ops.mesh.primitive_cylinder_add(
+        radius=outer_radius, depth=height, location=(0.0, 0.0, z_center)
+    )
     outer = bpy.context.active_object
     outer.name = f"{name}_outer"
 
     # Create slightly taller inner cylinder for boolean subtraction
     # Extra height ensures the boolean operation fully cuts through
-    bpy.ops.mesh.primitive_cylinder_add(radius=inner_radius,
-                                        depth=height + 0.05,
-                                        location=(0.0, 0.0, z_center))
+    bpy.ops.mesh.primitive_cylinder_add(
+        radius=inner_radius, depth=height + 0.05, location=(0.0, 0.0, z_center)
+    )
     inner = bpy.context.active_object
     inner.name = f"{name}_inner"
 
     # Add boolean modifier to outer cylinder
-    boolean_mod = outer.modifiers.new(name="Boolean", type='BOOLEAN')
+    boolean_mod = outer.modifiers.new(name="Boolean", type="BOOLEAN")
     boolean_mod.object = inner
-    boolean_mod.operation = 'DIFFERENCE'
+    boolean_mod.operation = "DIFFERENCE"
 
     # Apply modifier
     bpy.context.view_layer.objects.active = outer
@@ -128,16 +137,17 @@ def create_ring_deck(outer_radius: float, inner_radius: float, height: float,
 
 def create_wormhole(radius: float, total_height: float) -> bpy.types.Object:
     """Create the central wormhole cylinder running through all decks."""
-    bpy.ops.mesh.primitive_cylinder_add(radius=radius,
-                                        depth=total_height,
-                                        location=(0.0, 0.0, total_height / 2.0))
+    bpy.ops.mesh.primitive_cylinder_add(
+        radius=radius, depth=total_height, location=(0.0, 0.0, total_height / 2.0)
+    )
     wormhole = bpy.context.active_object
     wormhole.name = "Wormhole"
     return wormhole
 
 
-def create_base_rings(wormhole_radius: float, base_thickness: float,
-                      total_height: float) -> list:
+def create_base_rings(
+    wormhole_radius: float, base_thickness: float, total_height: float
+) -> list:
     """Create upper and lower base rings at the ends of the wormhole.
 
     Args:
@@ -150,11 +160,12 @@ def create_base_rings(wormhole_radius: float, base_thickness: float,
     """
     base_radius = wormhole_radius * 1.2
     rings = []
-    for i, z_pos in enumerate([total_height + base_thickness / 2.0,
-                               -base_thickness / 2.0]):
-        bpy.ops.mesh.primitive_cylinder_add(radius=base_radius,
-                                            depth=base_thickness,
-                                            location=(0.0, 0.0, z_pos))
+    for i, z_pos in enumerate(
+        [total_height + base_thickness / 2.0, -base_thickness / 2.0]
+    ):
+        bpy.ops.mesh.primitive_cylinder_add(
+            radius=base_radius, depth=base_thickness, location=(0.0, 0.0, z_pos)
+        )
         ring = bpy.context.active_object
         ring.name = f"BaseRing_{'Top' if i == 0 else 'Bottom'}"
         rings.append(ring)
@@ -168,14 +179,14 @@ def load_deck_data(csv_path: str) -> list:
     outer_radius, deck_height.
     """
     decks = []
-    with open(csv_path, newline='', encoding='utf-8') as f:
+    with open(csv_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             deck_info = {
-                'deck_name': row['Deck'],
-                'inner_radius': float(row['Inner Radius (m)']),
-                'outer_radius': float(row['Outer Radius (m)']),
-                'height': float(row['Deck Height (m)']),
+                "deck_name": row["Deck"],
+                "inner_radius": float(row["Inner Radius (m)"]),
+                "outer_radius": float(row["Outer Radius (m)"]),
+                "height": float(row["Deck Height (m)"]),
             }
             decks.append(deck_info)
     return decks
@@ -183,8 +194,12 @@ def load_deck_data(csv_path: str) -> list:
 
 def main():
     # Determine the path to the CSV relative to this script
-    script_dir = os.path.dirname(bpy.data.filepath) if bpy.data.is_saved else os.path.dirname(__file__)
-    csv_path = os.path.join(script_dir, 'deck_3d_construction_data.csv')
+    script_dir = (
+        os.path.dirname(bpy.data.filepath)
+        if bpy.data.is_saved
+        else os.path.dirname(__file__)
+    )
+    csv_path = os.path.join(script_dir, "deck_3d_construction_data.csv")
 
     # If the CSV does not exist, abort
     if not os.path.exists(csv_path):
@@ -197,41 +212,43 @@ def main():
     clear_scene()
 
     # Create a new collection for organisation
-    collection = bpy.data.collections.new('SphereDeckCollection')
+    collection = bpy.data.collections.new("SphereDeckCollection")
     bpy.context.scene.collection.children.link(collection)
 
     # Compute stacking positions along Z axis
     z_offset = 0.0
     created_decks = []
     for deck in decks:
-        height = deck['height']
+        height = deck["height"]
         z_center = z_offset + height / 2.0
-        obj = create_ring_deck(outer_radius=deck['outer_radius'],
-                               inner_radius=deck['inner_radius'],
-                               height=height,
-                               z_center=z_center,
-                               name=deck['deck_name'])
+        obj = create_ring_deck(
+            outer_radius=deck["outer_radius"],
+            inner_radius=deck["inner_radius"],
+            height=height,
+            z_center=z_center,
+            name=deck["deck_name"],
+        )
         created_decks.append(obj)
         z_offset += height
         # Move to collection
-        collection.objects.link(obj)
-        bpy.context.scene.collection.objects.unlink(obj)
+        move_to_collection(obj, collection)
 
     # Create wormhole cylinder through all decks
-    wormhole_radius = decks[0]['outer_radius'] - (decks[0]['outer_radius'] - decks[0]['inner_radius']) * 0.5
+    wormhole_radius = (
+        decks[0]["outer_radius"]
+        - (decks[0]["outer_radius"] - decks[0]["inner_radius"]) * 0.5
+    )
     total_height = z_offset
     wormhole = create_wormhole(wormhole_radius, total_height)
-    collection.objects.link(wormhole)
-    bpy.context.scene.collection.objects.unlink(wormhole)
+    move_to_collection(wormhole, collection)
 
     # Create base rings
     base_thickness = 2.0  # metres
     rings = create_base_rings(wormhole_radius, base_thickness, total_height)
     for ring in rings:
-        collection.objects.link(ring)
-        bpy.context.scene.collection.objects.unlink(ring)
+        move_to_collection(ring, collection)
 
 
 # Only execute when run inside Blender (not on import)
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
