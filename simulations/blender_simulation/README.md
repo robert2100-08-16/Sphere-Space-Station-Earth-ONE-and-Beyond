@@ -1,22 +1,43 @@
-# Blender Simulation
+# Blender-Simulation
 
-This folder contains the proof-of-concept Blender files for visualizing the Sphere Station decks.
+Dieser Ordner enthält die Proof-of-Concept-Dateien für Blender, mit denen die Decks der Sphere Station visualisiert werden.
 
-* **blender_deck_simulation.py** – Blender Python script that builds ring segments from `deck_3d_construction_data.csv`.
-* **deck_3d_construction_data.csv** – Geometry values derived from the deck calculations.
-* **Blender Simulation Projektplan.docx** (in `../project`) – high-level plan describing data structure and further work.
-* **Blender Simulation Sprintplan.docx** – sprint tasks for setting up this folder.
+* **blender_deck_simulation.py** – Blender-Python-Skript, das Ringsegmente aus `deck_3d_construction_data.csv` erzeugt.
+* **deck_3d_construction_data.csv** – Geometriewerte aus den Deck-Berechnungen.
+* **Blender Simulation Projektplan.docx** (in `../project`) – Grobplan mit weiteren Arbeitsschritten.
+* **Blender Simulation Sprintplan.docx** – Aufgabenübersicht zum Aufsetzen dieses Verzeichnisses.
 
-To run the script in Blender:
+## CSV-Spalten
 
-1. Open Blender (version ≥ 2.9) and switch to the *Scripting* workspace.
-2. Load `blender_deck_simulation.py`, adjust the CSV path if necessary and press `Alt+P`.
-3. The generated objects appear under `SphereDeckCollection`.
+`deck_3d_construction_data.csv` enthält folgende Spalten:
 
-The script can also be executed from the command line:
+| Spalte | Bedeutung |
+|-------|-----------|
+| `Deck` | Name bzw. Nummer des Decks |
+| `usage` | vorgesehene Nutzung |
+| `Inner Radius (m)` | Abstand vom Mittelpunkt bis zur inneren Deckwand |
+| `Outer Radius (m)` | Abstand bis zur äußeren Deckwand |
+| `Outer Radius netto (m)` | nutzbarer Außenradius nach Abzug des Hüllmaterials |
+| `radial_thickness_m` | Dicke des Ringsegments zwischen Innen- und Außenradius |
+| `Deck Height (m)` | Gesamthöhe des Decks (brutto) |
+| `Deck Height netto (m)` | nutzbare Innenhöhe |
+| `windows_count` | Anzahl der Fenster |
+| `window_material` | verwendetes Fenstermaterial |
+| `window_total_thickness_cm` | Gesamtdicke der Fenster in Zentimetern |
+| `structure_material` | Baumaterial des Decks |
+| `Rotation Velocity @ radius netto (m/s)` | Umfangsgeschwindigkeit am nutzbaren Außenradius |
+| `Centrifugal Acceleration @ radius netto (m/s²)` | Zentrifugalbeschleunigung am nutzbaren Außenradius |
 
-```
+## Ausführen in Blender
+
+1. Blender (Version ≥ 2.9) starten und in den Arbeitsbereich **Scripting** wechseln.
+2. `blender_deck_simulation.py` laden, den Pfad zur CSV-Datei bei Bedarf anpassen und mit `Alt+P` ausführen.
+3. Die erzeugten Objekte erscheinen in der Sammlung `SphereDeckCollection`.
+
+## Ausführen über die Kommandozeile
+
+```bash
 blender --python simulations/blender_simulation/blender_deck_simulation.py --background
 ```
 
-This will create a `.blend` file in background mode for further processing.
+Der Befehl erzeugt eine `.blend`‑Datei im Hintergrundmodus zur Weiterverarbeitung.
