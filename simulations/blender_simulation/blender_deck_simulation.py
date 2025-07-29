@@ -222,16 +222,19 @@ def main():
     collection = bpy.data.collections.new("SphereDeckCollection")
     bpy.context.scene.collection.children.link(collection)
 
-    # All decks share the same height which corresponds to the station's
-    # inner diameter.  They are placed coaxially around the wormhole rather
-    # than stacked along the Z‑axis.
-    total_height = 2 * decks[-1]["outer_radius"]
+    # Determine the sphere's inner radius from the outermost deck.  Each deck
+    # cylinder should end where it intersects the inner hull.  Compute the
+    # appropriate height individually so that the cylinders do not extend
+    # beyond the hull.
+    sphere_radius = decks[-1]["outer_radius"]
+    total_height = 2 * sphere_radius
     created_decks = []
     for deck in decks:
+        deck_height = 2 * max(sphere_radius**2 - deck["outer_radius"]**2, 0.0) ** 0.5
         obj = create_ring_deck(
             outer_radius=deck["outer_radius"],
             inner_radius=deck["inner_radius"],
-            height=total_height,
+            height=deck_height,
             z_center=0.0,
             name=deck["deck_name"],
         )
