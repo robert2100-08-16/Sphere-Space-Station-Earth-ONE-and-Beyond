@@ -72,6 +72,7 @@ add modifiers within Blender.
 
 import csv
 import os
+import math
 import bpy
 
 
@@ -87,6 +88,120 @@ def move_to_collection(obj: bpy.types.Object, collection: bpy.types.Collection) 
     for coll in list(obj.users_collection):
         if coll != collection:
             coll.objects.unlink(obj)
+
+
+def get_or_create_material(
+    name: str, color: tuple[float, float, float, float]
+) -> bpy.types.Material:
+    """Return existing material or create a new one with the given RGBA color."""
+    if name in bpy.data.materials:
+        return bpy.data.materials[name]
+    mat = bpy.data.materials.new(name=name)
+    mat.use_nodes = True
+    principled = mat.node_tree.nodes.get("Principled BSDF")
+    if principled:
+        principled.inputs[0].default_value = color
+    return mat
+
+
+def assign_material(
+    obj: bpy.types.Object,
+    material_name: str,
+    color: tuple[float, float, float, float],
+) -> None:
+    """Assign material to the given object."""
+    mat = get_or_create_material(material_name, color)
+    if obj.data.materials:
+        obj.data.materials[0] = mat
+    else:
+        obj.data.materials.append(mat)
+
+
+def create_window_strip(
+    deck_radius_m: float,
+    window_thickness_cm: float,
+    deck_height_m: float,
+    num_windows: int,
+    angle_offset_deg: float,
+    name_prefix: str,
+    collection: bpy.types.Collection,
+) -> None:
+    """Create rectangular window openings along the deck wall."""
+    if num_windows <= 0:
+        return
+    width_m = window_thickness_cm / 100.0
+    height_m = deck_height_m * 0.5
+    for i in range(num_windows):
+        angle = math.radians(angle_offset_deg + i * 360.0 / num_windows)
+        x = deck_radius_m * math.cos(angle)
+        y = deck_radius_m * math.sin(angle)
+        bpy.ops.mesh.primitive_cube_add(size=1.0, location=(x, y, 0.0))
+        win = bpy.context.active_object
+        win.scale = (width_m / 2.0, width_m / 2.0, height_m / 2.0)
+        win.rotation_euler[2] = angle
+        win.name = f"{name_prefix}_window_{i:03d}"
+        move_to_collection(win, collection)
+
+
+def create_radiator(
+    radius_m: float,
+    length_m: float,
+    width_m: float,
+    angle_deg: float,
+    name: str,
+) -> bpy.types.Object:
+    """Create a simple radiator panel."""
+    bpy.ops.mesh.primitive_plane_add(size=1.0, location=(radius_m, 0.0, 0.0))
+    panel = bpy.context.active_object
+    panel.scale = (length_m / 2.0, width_m / 2.0, 1.0)
+    panel.rotation_euler[2] = math.radians(angle_deg)
+    panel.name = name
+    return panel
+
+
+def create_solar_array(
+    radius_m: float,
+    length_m: float,
+    width_m: float,
+    angle_deg: float,
+    name: str,
+) -> bpy.types.Object:
+    """Create a simple solar array panel."""
+    bpy.ops.mesh.primitive_plane_add(size=1.0, location=(radius_m, 0.0, 0.0))
+    panel = bpy.context.active_object
+    panel.scale = (length_m / 2.0, width_m / 2.0, 1.0)
+    panel.rotation_euler[2] = math.radians(angle_deg)
+    panel.name = name
+    return panel
+
+
+def create_smr(height_m: float, radius_m: float) -> bpy.types.Object:
+    """Create a simplified small modular reactor cylinder."""
+    bpy.ops.mesh.primitive_cylinder_add(
+        radius=radius_m, depth=height_m, location=(0.0, 0.0, -height_m / 2.0)
+    )
+    smr = bpy.context.active_object
+    smr.name = "SMR"
+    return smr
+
+
+def create_rotation_controller() -> bpy.types.Object:
+    """Create an empty object that controls station rotation."""
+    bpy.ops.object.empty_add(type="PLAIN_AXES")
+    ctrl = bpy.context.active_object
+    ctrl.name = "RotationController"
+    return ctrl
+
+
+def add_light(
+    name: str, location: tuple[float, float, float], energy: float = 1000.0
+) -> bpy.types.Object:
+    """Add a point light to the scene."""
+    bpy.ops.object.light_add(type="POINT", location=location)
+    light = bpy.context.active_object
+    light.data.energy = energy
+    light.name = name
+    return light
 
 
 def create_ring_deck(
@@ -110,7 +225,9 @@ def create_ring_deck(
     """
     # Create outer cylinder
     bpy.ops.mesh.primitive_cylinder_add(
-        radius=outer_radius_m, depth=deck_height_m, location=(0.0, 0.0, z_center_m)
+        radius=outer_radius_m,
+        depth=deck_height_m,
+        location=(0.0, 0.0, z_center_m),
     )
     outer = bpy.context.active_object
     outer.name = f"{name}_outer"
@@ -177,7 +294,9 @@ def create_base_rings(
         [half + base_thickness_m / 2.0, -(half + base_thickness_m / 2.0)]
     ):
         bpy.ops.mesh.primitive_cylinder_add(
-            radius=base_radius, depth=base_thickness_m, location=(0.0, 0.0, z_pos)
+            radius=base_radius,
+            depth=base_thickness_m,
+            location=(0.0, 0.0, z_pos),
         )
         ring = bpy.context.active_object
         ring.name = f"BaseRing_{'Top' if i == 0 else 'Bottom'}"
@@ -188,8 +307,7 @@ def create_base_rings(
 def load_deck_data(csv_path: str) -> list:
     """Load deck information from a CSV file.
 
-    Returns a list of dictionaries with keys ``deck_id``, ``inner_radius_m``,
-    ``outer_radius_m`` and ``deck_height_m``.
+    Returns a list of dictionaries with geometry and material information.
     """
     decks = []
     with open(csv_path, newline="", encoding="utf-8") as f:
@@ -199,7 +317,12 @@ def load_deck_data(csv_path: str) -> list:
                 "deck_id": row["deck_id"],
                 "inner_radius_m": float(row["inner_radius_m"]),
                 "outer_radius_m": float(row["outer_radius_m"]),
+                "outer_radius_netto_m": float(row["outer_radius_netto_m"]),
                 "deck_height_m": float(row["deck_height_m"]),
+                "num_windows": int(row.get("num_windows", 0)),
+                "window_thickness_cm": float(row.get("window_thickness_cm", 0)),
+                "structure_material": row.get("structure_material", ""),
+                "rotation_velocity_mps": float(row.get("rotation_velocity_mps", 0)),
             }
             decks.append(deck_info)
     return decks
@@ -235,6 +358,7 @@ def main():
     sphere_radius = decks[-1]["outer_radius_m"]
     total_height_m = 2 * sphere_radius
     created_decks = []
+    rotation_ctrl = create_rotation_controller()
     for deck in decks:
         calc_height_m = (
             2 * max(sphere_radius**2 - deck["outer_radius_m"] ** 2, 0.0) ** 0.5
@@ -248,6 +372,23 @@ def main():
         )
         created_decks.append(obj)
         move_to_collection(obj, collection)
+        obj.parent = rotation_ctrl
+
+        # Assign structure material
+        color = (0.2, 0.2, 0.2, 1.0)
+        assign_material(obj, deck["structure_material"], color)
+
+        # Create windows up to Deck 012
+        if int(deck["deck_id"].split()[1]) <= 12:
+            create_window_strip(
+                deck_radius_m=deck["outer_radius_netto_m"],
+                window_thickness_cm=deck["window_thickness_cm"],
+                deck_height_m=deck["deck_height_m"],
+                num_windows=deck["num_windows"],
+                angle_offset_deg=0.0,
+                name_prefix=deck["deck_id"],
+                collection=collection,
+            )
 
     # Create wormhole cylinder through all decks
     wormhole_radius_m = (
@@ -256,12 +397,47 @@ def main():
     )
     wormhole = create_wormhole(wormhole_radius_m, total_height_m)
     move_to_collection(wormhole, collection)
+    wormhole.parent = rotation_ctrl
 
     # Create base rings
     base_thickness_m = 2.0  # metres
     rings = create_base_rings(wormhole_radius_m, base_thickness_m, total_height_m)
     for ring in rings:
         move_to_collection(ring, collection)
+        ring.parent = rotation_ctrl
+
+    # Add simple energy and thermal systems
+    rad1 = create_radiator(sphere_radius * 1.1, 10.0, 4.0, 0.0, "Radiator_1")
+    rad2 = create_radiator(sphere_radius * 1.1, 10.0, 4.0, 180.0, "Radiator_2")
+    move_to_collection(rad1, collection)
+    move_to_collection(rad2, collection)
+    rad1.parent = rotation_ctrl
+    rad2.parent = rotation_ctrl
+
+    solar1 = create_solar_array(sphere_radius * 1.2, 12.0, 5.0, 90.0, "SolarArray_1")
+    solar2 = create_solar_array(sphere_radius * 1.2, 12.0, 5.0, -90.0, "SolarArray_2")
+    move_to_collection(solar1, collection)
+    move_to_collection(solar2, collection)
+    solar1.parent = rotation_ctrl
+    solar2.parent = rotation_ctrl
+
+    smr = create_smr(height_m=4.0, radius_m=2.0)
+    move_to_collection(smr, collection)
+    smr.parent = rotation_ctrl
+
+    # Lights for basic illumination
+    add_light("TopLight", (0.0, 0.0, total_height_m / 2.0 + 2.0), 2000.0)
+    add_light("BottomLight", (0.0, 0.0, -(total_height_m / 2.0 + 2.0)), 2000.0)
+
+    # Animate rotation using outermost deck velocity
+    outer_velocity = decks[-1]["rotation_velocity_mps"]
+    period_seconds = (2 * math.pi * sphere_radius) / max(outer_velocity, 0.1)
+    fps = bpy.context.scene.render.fps
+    frame_end = int(period_seconds * fps)
+    rotation_ctrl.rotation_euler[2] = 0.0
+    rotation_ctrl.keyframe_insert(data_path="rotation_euler", frame=1)
+    rotation_ctrl.rotation_euler[2] = 2 * math.pi
+    rotation_ctrl.keyframe_insert(data_path="rotation_euler", frame=frame_end)
 
 
 # Only execute when run inside Blender (not on import)
