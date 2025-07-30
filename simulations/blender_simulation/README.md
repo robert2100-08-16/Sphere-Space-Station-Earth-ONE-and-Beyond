@@ -24,20 +24,19 @@ Bays in seiner Hülle.
 
 | Spalte | Bedeutung |
 |-------|-----------|
-| `Deck` | Kennung des Decks (`Deck 000` bis `Deck 015`) |
-| `usage` | vorgesehene Nutzung |
-| `Inner Radius (m)` | Deckbeginn Radius |
-| `Outer Radius (m)` | Deckende Radius, inkl. Röhrenwand |
-| `Outer Radius netto (m)` | Deckende Radius ohne Röhrenwand |
-| `radial_thickness_m` | Deckhöhe inkl. Röhrenwand |
-| `Deck Height (m)` | Bruttohöhe des Decks inklusive Röhrenwand (identisch mit `radial_thickness_m`) |
-| `Deck Height netto (m)` | nutzbare Deck Innenhöhe |
-| `windows_count` | Anzahl der eingeplanten Außenfenster |
+| `deck_id` | Kennung des Decks (`Deck_000` bis `Deck_015`) |
+| `deck_usage` | vorgesehene Nutzung |
+| `inner_radius_m` | Deckbeginn Radius |
+| `outer_radius_m` | Deckende Radius, inkl. Röhrenwand |
+| `outer_radius_netto_m` | Deckende Radius ohne Röhrenwand |
+| `deck_height_m` | Bruttohöhe des Decks inklusive Röhrenwand |
+| `deck_inner_height_m` | nutzbare Deck Innenhöhe |
+| `num_windows` | Anzahl der eingeplanten Außenfenster |
 | `window_material` | Aufbau des transparenten Materials |
-| `window_total_thickness_cm` | Gesamtdicke des Fensterpakets in Zentimetern |
+| `window_thickness_cm` | Gesamtdicke des Fensterpakets in Zentimetern |
 | `structure_material` | vorgesehenes Konstruktionsmaterial der Deckstruktur |
-| `Rotation Velocity @ radius netto (m/s)` | Umfangsgeschwindigkeit am Boden der Röhre |
-| `Centrifugal Acceleration @ radius netto (m/s²)` | Zentrifugalbeschleunigung am Boden der Röhre |
+| `rotation_velocity_mps` | Umfangsgeschwindigkeit am Boden der Röhre |
+| `centrifugal_acceleration_mps2` | Zentrifugalbeschleunigung am Boden der Röhre |
 
 ## Generierung der CSV-Datei
 
