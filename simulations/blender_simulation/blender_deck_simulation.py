@@ -90,15 +90,19 @@ def move_to_collection(obj: bpy.types.Object, collection: bpy.types.Collection) 
 
 
 def create_ring_deck(
-    outer_radius: float, inner_radius: float, height: float, z_center: float, name: str
+    outer_radius_m: float,
+    inner_radius_m: float,
+    deck_height_m: float,
+    z_center_m: float,
+    name: str,
 ) -> bpy.types.Object:
     """Construct a hollow cylindrical shell using boolean difference.
 
     Args:
-        outer_radius: Radius of the outer cylinder in metres.
-        inner_radius: Radius of the inner cylinder to subtract.
-        height: Height of the deck (cylinder depth) in metres.
-        z_center: Z‑axis position of the deck's centre in metres.
+        outer_radius_m: Radius of the outer cylinder in metres.
+        inner_radius_m: Radius of the inner cylinder to subtract.
+        deck_height_m: Height of the deck (cylinder depth) in metres.
+        z_center_m: Z‑axis position of the deck's centre in metres.
         name: Name assigned to the resulting mesh object.
 
     Returns:
@@ -106,7 +110,7 @@ def create_ring_deck(
     """
     # Create outer cylinder
     bpy.ops.mesh.primitive_cylinder_add(
-        radius=outer_radius, depth=height, location=(0.0, 0.0, z_center)
+        radius=outer_radius_m, depth=deck_height_m, location=(0.0, 0.0, z_center_m)
     )
     outer = bpy.context.active_object
     outer.name = f"{name}_outer"
@@ -114,7 +118,9 @@ def create_ring_deck(
     # Create slightly taller inner cylinder for boolean subtraction
     # Extra height ensures the boolean operation fully cuts through
     bpy.ops.mesh.primitive_cylinder_add(
-        radius=inner_radius, depth=height + 0.05, location=(0.0, 0.0, z_center)
+        radius=inner_radius_m,
+        depth=deck_height_m + 0.05,
+        location=(0.0, 0.0, z_center_m),
     )
     inner = bpy.context.active_object
     inner.name = f"{name}_inner"
@@ -137,14 +143,14 @@ def create_ring_deck(
     return outer
 
 
-def create_wormhole(radius: float, total_height: float) -> bpy.types.Object:
+def create_wormhole(radius_m: float, total_height_m: float) -> bpy.types.Object:
     """Create the central wormhole cylinder running through all decks.
 
     The cylinder is centred at the origin so that all surrounding decks share
     the same vertical extent.
     """
     bpy.ops.mesh.primitive_cylinder_add(
-        radius=radius, depth=total_height, location=(0.0, 0.0, 0.0)
+        radius=radius_m, depth=total_height_m, location=(0.0, 0.0, 0.0)
     )
     wormhole = bpy.context.active_object
     wormhole.name = "Wormhole"
@@ -152,26 +158,26 @@ def create_wormhole(radius: float, total_height: float) -> bpy.types.Object:
 
 
 def create_base_rings(
-    wormhole_radius: float, base_thickness: float, total_height: float
+    wormhole_radius_m: float, base_thickness_m: float, total_height_m: float
 ) -> list:
     """Create upper and lower base rings at the ends of the wormhole.
 
     Args:
-        wormhole_radius: Radius of the wormhole.
-        base_thickness: Thickness of each base ring in metres.
-        total_height: Total height of the station (inner diameter).
+        wormhole_radius_m: Radius of the wormhole.
+        base_thickness_m: Thickness of each base ring in metres.
+        total_height_m: Total height of the station (inner diameter).
 
     Returns:
         List of ring objects created (top and bottom).
     """
-    base_radius = wormhole_radius * 1.2
+    base_radius = wormhole_radius_m * 1.2
     rings = []
-    half = total_height / 2.0
+    half = total_height_m / 2.0
     for i, z_pos in enumerate(
-        [half + base_thickness / 2.0, -(half + base_thickness / 2.0)]
+        [half + base_thickness_m / 2.0, -(half + base_thickness_m / 2.0)]
     ):
         bpy.ops.mesh.primitive_cylinder_add(
-            radius=base_radius, depth=base_thickness, location=(0.0, 0.0, z_pos)
+            radius=base_radius, depth=base_thickness_m, location=(0.0, 0.0, z_pos)
         )
         ring = bpy.context.active_object
         ring.name = f"BaseRing_{'Top' if i == 0 else 'Bottom'}"
@@ -182,18 +188,18 @@ def create_base_rings(
 def load_deck_data(csv_path: str) -> list:
     """Load deck information from a CSV file.
 
-    Returns a list of dictionaries with keys: deck_name, inner_radius,
-    outer_radius, deck_height.
+    Returns a list of dictionaries with keys ``deck_id``, ``inner_radius_m``,
+    ``outer_radius_m`` and ``deck_height_m``.
     """
     decks = []
     with open(csv_path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             deck_info = {
-                "deck_name": row["deck_id"],
-                "inner_radius": float(row["inner_radius_m"]),
-                "outer_radius": float(row["outer_radius_m"]),
-                "height": float(row["deck_height_m"]),
+                "deck_id": row["deck_id"],
+                "inner_radius_m": float(row["inner_radius_m"]),
+                "outer_radius_m": float(row["outer_radius_m"]),
+                "deck_height_m": float(row["deck_height_m"]),
             }
             decks.append(deck_info)
     return decks
@@ -226,32 +232,34 @@ def main():
     # cylinder should end where it intersects the inner hull.  Compute the
     # appropriate height individually so that the cylinders do not extend
     # beyond the hull.
-    sphere_radius = decks[-1]["outer_radius"]
-    total_height = 2 * sphere_radius
+    sphere_radius = decks[-1]["outer_radius_m"]
+    total_height_m = 2 * sphere_radius
     created_decks = []
     for deck in decks:
-        deck_height = 2 * max(sphere_radius**2 - deck["outer_radius"]**2, 0.0) ** 0.5
+        calc_height_m = (
+            2 * max(sphere_radius**2 - deck["outer_radius_m"] ** 2, 0.0) ** 0.5
+        )
         obj = create_ring_deck(
-            outer_radius=deck["outer_radius"],
-            inner_radius=deck["inner_radius"],
-            height=deck_height,
-            z_center=0.0,
-            name=deck["deck_name"],
+            outer_radius_m=deck["outer_radius_m"],
+            inner_radius_m=deck["inner_radius_m"],
+            deck_height_m=calc_height_m,
+            z_center_m=0.0,
+            name=deck["deck_id"],
         )
         created_decks.append(obj)
         move_to_collection(obj, collection)
 
     # Create wormhole cylinder through all decks
-    wormhole_radius = (
-        decks[0]["outer_radius"]
-        - (decks[0]["outer_radius"] - decks[0]["inner_radius"]) * 0.5
+    wormhole_radius_m = (
+        decks[0]["outer_radius_m"]
+        - (decks[0]["outer_radius_m"] - decks[0]["inner_radius_m"]) * 0.5
     )
-    wormhole = create_wormhole(wormhole_radius, total_height)
+    wormhole = create_wormhole(wormhole_radius_m, total_height_m)
     move_to_collection(wormhole, collection)
 
     # Create base rings
-    base_thickness = 2.0  # metres
-    rings = create_base_rings(wormhole_radius, base_thickness, total_height)
+    base_thickness_m = 2.0  # metres
+    rings = create_base_rings(wormhole_radius_m, base_thickness_m, total_height_m)
     for ring in rings:
         move_to_collection(ring, collection)
 
