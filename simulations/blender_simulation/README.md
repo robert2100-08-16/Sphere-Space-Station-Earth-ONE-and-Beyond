@@ -14,20 +14,19 @@ Dieser Ordner enthält die Proof-of-Concept-Dateien für Blender, mit denen die 
 
 | Spalte | Bedeutung |
 |-------|-----------|
-| `Deck` | Name bzw. Nummer des Decks |
-| `usage` | vorgesehene Nutzung |
-| `Inner Radius (m)` | Abstand vom Mittelpunkt bis zur inneren Deckwand |
-| `Outer Radius (m)` | Abstand bis zur äußeren Deckwand |
-| `Outer Radius netto (m)` | nutzbarer Außenradius nach Abzug des Hüllmaterials |
-| `radial_thickness_m` | Dicke des Ringsegments zwischen Innen- und Außenradius |
-| `Deck Height (m)` | Gesamthöhe des Decks (brutto) |
-| `Deck Height netto (m)` | nutzbare Innenhöhe |
-| `windows_count` | Anzahl der Fenster |
+| `deck_id` | Name bzw. Nummer des Decks |
+| `deck_usage` | vorgesehene Nutzung |
+| `inner_radius_m` | Abstand vom Mittelpunkt bis zur inneren Deckwand |
+| `outer_radius_m` | Abstand bis zur äußeren Deckwand |
+| `outer_radius_netto_m` | nutzbarer Außenradius nach Abzug des Hüllmaterials |
+| `deck_height_m` | Gesamthöhe des Decks (brutto) |
+| `deck_inner_height_m` | nutzbare Innenhöhe |
+| `num_windows` | Anzahl der Fenster |
 | `window_material` | verwendetes Fenstermaterial |
-| `window_total_thickness_cm` | Gesamtdicke der Fenster in Zentimetern |
+| `window_thickness_cm` | Gesamtdicke der Fenster in Zentimetern |
 | `structure_material` | Baumaterial des Decks |
-| `Rotation Velocity @ radius netto (m/s)` | Umfangsgeschwindigkeit am nutzbaren Außenradius |
-| `Centrifugal Acceleration @ radius netto (m/s²)` | Zentrifugalbeschleunigung am nutzbaren Außenradius |
+| `rotation_velocity_mps` | Umfangsgeschwindigkeit am nutzbaren Außenradius |
+| `centrifugal_acceleration_mps2` | Zentrifugalbeschleunigung am nutzbaren Außenradius |
 
 ## Generierung der CSV-Datei
 

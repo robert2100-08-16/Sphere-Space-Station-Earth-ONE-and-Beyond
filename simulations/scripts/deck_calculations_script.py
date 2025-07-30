@@ -28,23 +28,23 @@ def _resolve_output_path(file_path: str | None) -> str | None:
 
 
 class SphereDeckCalculator:
-    DECK_LABEL = "Deck"
+    DECK_ID_LABEL = "deck_id"
     DECK_NAME = "Deck_"  # Deck name prefix
-    INNER_RADIUS_LABEL = "Inner Radius (m)"
-    OUTER_RADIUS_LABEL = "Outer Radius (m)"
-    OUTER_RADIUS_NETTO_LABEL = "Outer Radius netto (m)"
-    CEILING_THICKNESS_LABEL = "Ceiling Thickness (m)"
-    DECK_HEIGHT_LABEL = "Deck Height (m)"
-    DECK_HEIGHT_NETTO_LABEL = "Deck Height netto (m)"
-    LENGTH_INNER_RADIUS_LABEL = "Length at Inner Radius (m)"
-    LENGTH_OUTER_RADIUS_LABEL = "Length at Outer Radius (m)"
-    LENGTH_OUTER_RADIUS_NETTO_LABEL = "Length at Outer Radius netto (m)"
-    BASE_AREA_INNER_RADIUS_LABEL = "Base Area at Inner Radius (m²)"
-    BASE_AREA_OUTER_RADIUS_LABEL = "Base Area at Outer Radius (m²)"
-    EFFECTIVE_VOLUME_LABEL = "Effective Volume (m³)"
-    NET_ROOM_VOLUME_LABEL = "Net Room Volume (m³)"
-    ROTATION_VELOCITY_LABEL = "Rotation Velocity @ radius netto (m/s)"
-    CENTRIFUGAL_ACCELERATION_LABEL = "Centrifugal Acceleration @ radius netto (m/s²)"
+    INNER_RADIUS_LABEL = "inner_radius_m"
+    OUTER_RADIUS_LABEL = "outer_radius_m"
+    OUTER_RADIUS_NETTO_LABEL = "outer_radius_netto_m"
+    CEILING_THICKNESS_LABEL = "ceiling_thickness_m"
+    DECK_HEIGHT_LABEL = "deck_height_m"
+    DECK_HEIGHT_NETTO_LABEL = "deck_inner_height_m"
+    LENGTH_INNER_RADIUS_LABEL = "length_inner_radius_m"
+    LENGTH_OUTER_RADIUS_LABEL = "length_outer_radius_m"
+    LENGTH_OUTER_RADIUS_NETTO_LABEL = "length_outer_radius_netto_m"
+    BASE_AREA_INNER_RADIUS_LABEL = "base_area_inner_radius_m2"
+    BASE_AREA_OUTER_RADIUS_LABEL = "base_area_outer_radius_m2"
+    EFFECTIVE_VOLUME_LABEL = "effective_volume_m3"
+    NET_ROOM_VOLUME_LABEL = "net_room_volume_m3"
+    ROTATION_VELOCITY_LABEL = "rotation_velocity_mps"
+    CENTRIFUGAL_ACCELERATION_LABEL = "centrifugal_acceleration_mps2"
 
     def __init__(
         self,
@@ -194,7 +194,7 @@ class SphereDeckCalculator:
 
     def _calculate_cylindric_decks_of_a_sphere(self):
         sphere_radius = self.inner_sphere_diameter / 2
-        deck_labels = [f"{self.DECK_LABEL} {i:03}" for i in range(self.num_decks)]
+        deck_labels = [f"{self.DECK_NAME}{i:03}" for i in range(self.num_decks)]
         inner_radius = []
         outer_radius = []
         outer_radius_netto = []
@@ -271,7 +271,7 @@ class SphereDeckCalculator:
 
         df_decks = pd.DataFrame(
             {
-                self.DECK_LABEL: deck_labels,
+                self.DECK_ID_LABEL: deck_labels,
                 self.INNER_RADIUS_LABEL: inner_radius,
                 self.OUTER_RADIUS_LABEL: outer_radius,
                 self.OUTER_RADIUS_NETTO_LABEL: outer_radius_netto,
@@ -423,7 +423,7 @@ class SphereDeckCalculator:
         progress_bar = tqdm(total=frames, desc="Rendering Animation")
 
         def update(num, data, line):
-            self._setup_3D_plot(ax, f"{SphereDeckCalculator.DECK_LABEL} {num:03}")
+            self._setup_3D_plot(ax, f"{SphereDeckCalculator.DECK_NAME}{num:03}")
             for i in range(num + 1):
                 r = self.df_decks[self.OUTER_RADIUS_LABEL].iloc[i]
                 z = np.linspace(

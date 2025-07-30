@@ -36,30 +36,29 @@ def main() -> None:
     if df.columns[0].startswith("Unnamed"):
         df = df.drop(df.columns[0], axis=1)
 
-    df = df[df["Deck"].notna()].reset_index(drop=True)  # drop footer rows
+    df = df[df["deck_id"].notna()].reset_index(drop=True)  # drop footer rows
 
-    df["usage"] = [USAGE_MAP.get(i, "") for i in range(len(df))]
-    df["radial_thickness_m"] = df["Outer Radius (m)"] - df["Inner Radius (m)"]
-    df["windows_count"] = [math.floor(r / 1.6) for r in df["Outer Radius netto (m)"]]
+    df["deck_usage"] = [USAGE_MAP.get(i, "") for i in range(len(df))]
+    df["deck_height_m"] = df["outer_radius_m"] - df["inner_radius_m"]
+    df["num_windows"] = [math.floor(r / 1.6) for r in df["outer_radius_netto_m"]]
     df["window_material"] = WINDOW_MATERIAL
-    df["window_total_thickness_cm"] = WINDOW_THICKNESS_CM
+    df["window_thickness_cm"] = WINDOW_THICKNESS_CM
     df["structure_material"] = STRUCTURE_MATERIAL
 
     cols = [
-        "Deck",
-        "usage",
-        "Inner Radius (m)",
-        "Outer Radius (m)",
-        "Outer Radius netto (m)",
-        "radial_thickness_m",
-        "Deck Height (m)",
-        "Deck Height netto (m)",
-        "windows_count",
+        "deck_id",
+        "deck_usage",
+        "inner_radius_m",
+        "outer_radius_m",
+        "outer_radius_netto_m",
+        "deck_height_m",
+        "deck_inner_height_m",
+        "num_windows",
         "window_material",
-        "window_total_thickness_cm",
+        "window_thickness_cm",
         "structure_material",
-        "Rotation Velocity @ radius netto (m/s)",
-        "Centrifugal Acceleration @ radius netto (m/s²)",
+        "rotation_velocity_mps",
+        "centrifugal_acceleration_mps2",
     ]
 
     df[cols].to_csv(OUTPUT_CSV, index=False)

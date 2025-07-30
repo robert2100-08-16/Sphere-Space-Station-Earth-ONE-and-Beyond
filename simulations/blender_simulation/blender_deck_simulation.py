@@ -33,10 +33,10 @@ Input CSV
 
 The CSV used by this script should contain, at minimum, the following columns:
 
-* ``Deck`` – unique name (e.g. ``Deck 001``)
-* ``Inner Radius (m)`` – radial distance from the centre to the inner wall of the deck
-* ``Outer Radius (m)`` – radial distance to the outer wall of the deck
-* ``Deck Height (m)`` – overall vertical deck height (brutto)
+* ``deck_id`` – unique name (e.g. ``Deck_001``)
+* ``inner_radius_m`` – radial distance from the centre to the inner wall of the deck
+* ``outer_radius_m`` – radial distance to the outer wall of the deck
+* ``deck_height_m`` – overall vertical deck height (brutto)
 
 Additional columns (usage, materials, etc.) are ignored by the script but
 present in the example input for completeness.
@@ -190,10 +190,10 @@ def load_deck_data(csv_path: str) -> list:
         reader = csv.DictReader(f)
         for row in reader:
             deck_info = {
-                "deck_name": row["Deck"],
-                "inner_radius": float(row["Inner Radius (m)"]),
-                "outer_radius": float(row["Outer Radius (m)"]),
-                "height": float(row["Deck Height (m)"]),
+                "deck_name": row["deck_id"],
+                "inner_radius": float(row["inner_radius_m"]),
+                "outer_radius": float(row["outer_radius_m"]),
+                "height": float(row["deck_height_m"]),
             }
             decks.append(deck_info)
     return decks
