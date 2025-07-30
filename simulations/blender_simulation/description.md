@@ -11,19 +11,18 @@ Merke DECK 000 (Wurmloch, vgl. ein gerades zentrisch durchgängiges Wurmloch dur
 ## Spaltenübersicht
 
 - **Deck** – Kennung des Decks (`Deck 000` bis `Deck 015`).
-- **usage** – vorgesehene Nutzung (z. B. "Residential/Operational").
-- **Inner Radius (m)** – Deckbeginn Radius.
-- **Outer Radius (m)** – Deckende Radius, inkl. Röhrenwand (vgl. ein Rohr).
-- **Outer Radius netto (m)** – Deckende Radius ohne Röhrenwand (vgl. der Inhalt eines Rohrs).
-- **radial_thickness_m** – Deckhöhe inkl. Röhrenwand (vgl. ein Rohr).
-- **Deck Height (m)** – Bruttohöhe des Decks inklusive Röhrenwand (Deckdecke), identisch mit **radial_thickness_m** (Duplette).
-- **Deck Height netto (m)** – nutzbare Deck Innenhöhe (vgl. Raumhöhe eines Zimmers, eines mehrstockigen Gebäudes).
-- **windows_count** – Anzahl der eingeplanten Außenfenster am DECK.
+- **deck_usage** – vorgesehene Nutzung (z. B. "Residential/Operational").
+- **inner_radius_m** – Deckbeginn Radius.
+- **outer_radius_m** – Deckende Radius, inkl. Röhrenwand (vgl. ein Rohr).
+- **outer_radius_netto_m** – Deckende Radius ohne Röhrenwand (vgl. der Inhalt eines Rohrs).
+- **deck_height_m** – Bruttohöhe des Decks inklusive Röhrenwand.
+- **deck_inner_height_m** – nutzbare Deck Innenhöhe (vgl. Raumhöhe eines Zimmers, eines mehrstockigen Gebäudes).
+- **num_windows** – Anzahl der eingeplanten Außenfenster am DECK.
 - **window_material** – Aufbau des transparenten Materials.
-- **window_total_thickness_cm** – Gesamtdicke des Fensterpakets in Zentimetern.
+- **window_thickness_cm** – Gesamtdicke des Fensterpakets in Zentimetern.
 - **structure_material** – vorgesehenes Konstruktionsmaterial der Deckstruktur.
-- **Rotation Velocity @ radius netto (m/s)** – Umfangsgeschwindigkeit am Boden der sich drehenden Röhre (also am Deckboden) bei gegebener Winkelgeschwindigkeit.
-- **Centrifugal Acceleration @ radius netto (m/s²)** – resultierende Zentrifugalbeschleunigung am Boden der sich drehenden Röhre (also am Deckboden).
+- **rotation_velocity_mps** – Umfangsgeschwindigkeit am Boden der sich drehenden Röhre (also am Deckboden) bei gegebener Winkelgeschwindigkeit.
+- **centrifugal_acceleration_mps2** – resultierende Zentrifugalbeschleunigung am Boden der sich drehenden Röhre (also am Deckboden).
 
 ## Hintergrund
 
