@@ -9,5 +9,6 @@ Dieses Handbuch sammelt wichtige Entscheidungen zur Modellierung der Sphere Spac
 - **Blender-Skripte** erzeugen realistisch proportionierte Decks und ein zentrales Wurmloch. Materialien und Fenster werden anhand der CSV‑Daten gesetzt.
 - **Realistische Simulation**: Das Blender-Skript weist nun Materialien zu, platziert Fenster automatisch und fügt Energie- sowie Thermalsysteme wie Radiatoren, SMR und Solararrays hinzu. Lichtquellen orientieren sich an Deckfunktionen.
 - **Beschleunigungsvisualisierung**: Beim Erzeugen der Decks wird die Farbe nun aus der Zentrifugalbeschleunigung berechnet (0 m/s² → Weiß, 9.81 m/s² → Grün, höhere Werte verlaufen Richtung Rot).
+- **Bequemer Start**: `blender_starter.py` startet Blender über die Umgebungsvariable `BLENDER_PATH`. Eine VS-Code-Launch-Konfiguration vereinfacht den Aufruf.
 
 Weitere Anpassungen und Releases werden in diesem Dokument ergänzt.

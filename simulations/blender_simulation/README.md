@@ -5,6 +5,7 @@ Dieser Ordner enthält die Proof-of-Concept-Dateien für Blender, mit denen die 
 * **blender_deck_simulation.py** – Blender-Python-Skript, das Ringsegmente aus `deck_3d_construction_data.csv` erzeugt.
 * **generate_3d_construction_csv.py** – erzeugt `deck_3d_construction_data.csv` aus `../results/deck_dimensions.csv`.
 * **deck_3d_construction_data.csv** – Geometriewerte aus den Deck-Berechnungen.
+* **blender_starter.py** – Komfortskript zum Starten von Blender über die Umgebungsvariable `BLENDER_PATH`.
 * **Blender Simulation Projektplan.docx** (in `../project`) – Grobplan mit weiteren Arbeitsschritten.
 
 * **Blender Simulation Sprintplan.docx** – Aufgabenübersicht zum Aufsetzen dieses Verzeichnisses.
@@ -61,3 +62,14 @@ blender --python simulations/blender_simulation/blender_deck_simulation.py --bac
 ```
 
 Der Befehl erzeugt eine `.blend`‑Datei im Hintergrundmodus zur Weiterverarbeitung.
+
+## Ausführen mit `blender_starter.py`
+
+Setze die Umgebungsvariable `BLENDER_PATH` auf dein Blender-Executable und
+starte anschließend:
+
+```bash
+python blender_starter.py --background
+```
+
+Weitere Argumente werden direkt an Blender weitergereicht.

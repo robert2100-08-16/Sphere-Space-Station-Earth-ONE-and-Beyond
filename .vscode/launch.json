@@ -7,6 +7,13 @@
             "request": "launch",
             "program": "${workspaceFolder}/simulations/start_simulation/run_simulation.py",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Blender Deck Simulation",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/simulations/blender_simulation/blender_starter.py",
+            "console": "integratedTerminal"
         }
     ]
 }
