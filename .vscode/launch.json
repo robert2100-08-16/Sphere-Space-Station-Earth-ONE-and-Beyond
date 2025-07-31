@@ -9,6 +9,13 @@
             "console": "integratedTerminal"
         },
         {
+            "name": "Deck Calculator Starter",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/simulations/scripts/dec_calculator_starter.py",
+            "console": "integratedTerminal"
+        },
+        {
             "name": "Blender Deck Simulation",
             "type": "debugpy",
             "request": "launch",
