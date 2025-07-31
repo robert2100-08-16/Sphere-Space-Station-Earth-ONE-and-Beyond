@@ -3,6 +3,7 @@
 Dieser Ordner enthält die Proof-of-Concept-Dateien für Blender, mit denen die Decks der Sphere Station visualisiert werden.
 
 * **blender_deck_simulation.py** – Blender-Python-Skript, das Ringsegmente aus `deck_3d_construction_data.csv` erzeugt.
+* **blender_hull_simulation.py** – erzeugt eine vereinfachte Stationshülle. Eine Anleitung findet sich in [blender_hull_simulation.md](blender_hull_simulation.md).
 * **generate_3d_construction_csv.py** – erzeugt `deck_3d_construction_data.csv` aus `../results/deck_dimensions.csv`.
 * **deck_3d_construction_data.csv** – Geometriewerte aus den Deck-Berechnungen.
 * **blender_starter.py** – Komfortskript zum Starten von Blender über die Umgebungsvariable `BLENDER_PATH`.
@@ -73,3 +74,7 @@ python blender_starter.py --background
 ```
 
 Weitere Argumente werden direkt an Blender weitergereicht.
+
+## Hull-Simulation
+
+Das Skript `blender_hull_simulation.py` visualisiert die äußere Kugelhülle der Station. Fenster, Radiatoren und Solarpanels können über Kommandozeilenoptionen zugeschaltet werden. Details zur Verwendung stehen in [blender_hull_simulation.md](blender_hull_simulation.md).
