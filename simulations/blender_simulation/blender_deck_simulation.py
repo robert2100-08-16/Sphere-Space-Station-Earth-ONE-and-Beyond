@@ -76,6 +76,25 @@ import math
 import bpy
 
 
+def acceleration_to_color(acceleration: float) -> tuple[float, float, float, float]:
+    """Return an RGBA color based on centrifugal acceleration.
+
+    Values map 0 m/s^2 to white, 9.81 m/s^2 to green and higher values
+    gradually towards red (white → yellow → green → red).
+    """
+    ratio = max(acceleration / 9.81, 0.0)
+    if ratio < 0.5:
+        t = ratio / 0.5
+        r, g, b = 1.0, 1.0, 1.0 - t
+    elif ratio < 1.0:
+        t = (ratio - 0.5) / 0.5
+        r, g, b = 1.0 - t, 1.0, 0.0
+    else:
+        t = min((ratio - 1.0) / 1.0, 1.0)
+        r, g, b = t, 1.0 - t, 0.0
+    return (r, g, b, 1.0)
+
+
 def clear_scene():
     """Remove all objects from the current Blender scene."""
     bpy.ops.object.select_all(action="SELECT")
@@ -323,6 +342,9 @@ def load_deck_data(csv_path: str) -> list:
                 "window_thickness_cm": float(row.get("window_thickness_cm", 0)),
                 "structure_material": row.get("structure_material", ""),
                 "rotation_velocity_mps": float(row.get("rotation_velocity_mps", 0)),
+                "centrifugal_acceleration_mps2": float(
+                    row.get("centrifugal_acceleration_mps2", 0)
+                ),
             }
             decks.append(deck_info)
     return decks
@@ -374,8 +396,8 @@ def main():
         move_to_collection(obj, collection)
         obj.parent = rotation_ctrl
 
-        # Assign structure material
-        color = (0.2, 0.2, 0.2, 1.0)
+        # Assign structure material using colour mapped from acceleration
+        color = acceleration_to_color(deck["centrifugal_acceleration_mps2"])
         assign_material(obj, deck["structure_material"], color)
 
         # Create windows up to Deck 012
