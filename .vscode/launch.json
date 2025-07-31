@@ -3,17 +3,21 @@
     "configurations": [
         {
             "name": "Run Simulation",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/simulations/start_simulation/run_simulation.py",
             "console": "integratedTerminal"
         },
         {
             "name": "Blender Deck Simulation",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/simulations/blender_simulation/blender_starter.py",
-            "console": "integratedTerminal"
+            "console": "integratedTerminal",
+            "args": [
+                "--blender",
+                "C:/Program Files/Blender Foundation/Blender 4.5/blender.exe",
+            ],
         }
     ]
 }
