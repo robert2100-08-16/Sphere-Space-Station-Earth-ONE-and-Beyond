@@ -1,0 +1,17 @@
+deck_id,deck_usage,inner_radius_m,outer_radius_m,outer_radius_netto_m,deck_height_m,deck_inner_height_m,num_windows,window_material,window_thickness_cm,structure_material,rotation_velocity_mps,centrifugal_acceleration_mps2
+Deck 000,Docking & Command Center,0.0,10.5,10.0,10.5,10.0,6,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,5.0,2.5
+Deck 001,Residential/Operational,10.5,14.0,13.5,3.5,3.0,8,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,6.75,3.375
+Deck 002,Residential/Operational,14.0,17.5,17.0,3.5,3.0,10,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,8.5,4.25
+Deck 003,Residential/Operational,17.5,21.0,20.5,3.5,3.0,12,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,10.25,5.125
+Deck 004,Residential/Operational,21.0,24.5,24.0,3.5,3.0,15,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,12.0,6.0
+Deck 005,Residential/Operational,24.5,28.0,27.5,3.5,3.0,17,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,13.75,6.875
+Deck 006,Residential/Operational,28.0,31.5,31.0,3.5,3.0,19,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,15.5,7.75
+Deck 007,Residential/Operational,31.5,35.0,34.5,3.5,3.0,21,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,17.25,8.625
+Deck 008,Industrial/Recreational,35.0,38.5,38.0,3.5,3.0,23,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,19.0,9.5
+Deck 009,Industrial/Recreational,38.5,42.0,41.5,3.5,3.0,26,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,20.75,10.375
+Deck 010,Industrial/Recreational,42.0,45.5,45.0,3.5,3.0,28,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,22.5,11.25
+Deck 011,Industrial/Recreational,45.5,49.0,48.5,3.5,3.0,30,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,24.25,12.125
+Deck 012,Industrial/Recreational,49.0,52.5,52.0,3.5,3.0,32,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,26.0,13.0
+Deck 013,Storage/Propulsion,52.5,56.0,55.5,3.5,3.0,34,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,27.75,13.875
+Deck 014,Storage/Propulsion,56.0,59.5,59.0,3.5,3.0,37,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,29.5,14.75
+Deck 015,Storage/Propulsion,59.5,63.0,62.5,3.5,3.0,39,ALON + Fused Silica + Polycarbonate + Borosilicate,20,Silicon Carbide Composite + Silicon Elastomer,31.25,15.625

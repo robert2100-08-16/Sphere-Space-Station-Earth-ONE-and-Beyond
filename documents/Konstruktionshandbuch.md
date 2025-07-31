@@ -10,5 +10,6 @@ Dieses Handbuch sammelt wichtige Entscheidungen zur Modellierung der Sphere Spac
 - **Realistische Simulation**: Das Blender-Skript weist nun Materialien zu, platziert Fenster automatisch und fügt Energie- sowie Thermalsysteme wie Radiatoren, SMR und Solararrays hinzu. Lichtquellen orientieren sich an Deckfunktionen.
 - **Beschleunigungsvisualisierung**: Beim Erzeugen der Decks wird die Farbe nun aus der Zentrifugalbeschleunigung berechnet (0 m/s² → Weiß, 9.81 m/s² → Grün, höhere Werte verlaufen Richtung Rot).
 - **Bequemer Start**: `blender_starter.py` startet Blender über die Umgebungsvariable `BLENDER_PATH`. Eine VS-Code-Launch-Konfiguration vereinfacht den Aufruf.
+- **Hüllensimulation**: Ein weiteres Skript `blender_hull_simulator.py` erzeugt eine vereinfachte Außenhülle. Über einen eigenen VS‑Code-Starteintrag kann das Skript bequem getestet werden.
 
 Weitere Anpassungen und Releases werden in diesem Dokument ergänzt.
