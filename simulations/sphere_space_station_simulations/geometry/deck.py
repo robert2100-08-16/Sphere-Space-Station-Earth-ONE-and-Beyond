@@ -11,6 +11,7 @@ from typing import Union, List
 
 from .. import animation as animation_mod
 from .. import reporting as reporting_mod
+from .hull import calculate_hull_geometry
 
 RESULTS_DIR = Path(__file__).resolve().parents[1] / "results"
 DATA_DIR = RESULTS_DIR / "data"
@@ -83,80 +84,16 @@ class SphereDeckCalculator:
         self.deck_height_brutto = deck_height_brutto
         self.deck_ceiling_thickness = deck_ceiling_thickness
         self.df_decks = self._calculate_cylindric_decks_of_a_sphere()
-        self.hull_geometry = self._calculate_hull_geometry()
+        self.hull_geometry = calculate_hull_geometry(
+            self.inner_sphere_diameter,
+            self.df_decks,
+            self.OUTER_RADIUS_NETTO_LABEL,
+            self.LENGTH_OUTER_RADIUS_NETTO_LABEL,
+        )
         self.window_geometry = self._calculate_window_geometry()
         self.animation_writers = animation.writers.list()
         self.selected_animation_writer = None
 
-    def _calculate_hull_geometry(self, num_points: int = 100):
-        # Basis-Kugelgeometrie
-        sphere_radius = self.inner_sphere_diameter / 2
-        theta = np.linspace(0, 2 * np.pi, num_points)
-        phi = np.linspace(0, np.pi, num_points)
-        theta_grid, phi_grid = np.meshgrid(theta, phi)
-        x_grid = sphere_radius * np.sin(phi_grid) * np.cos(theta_grid)
-        y_grid = sphere_radius * np.sin(phi_grid) * np.sin(theta_grid)
-        z_grid = sphere_radius * np.cos(phi_grid)
-
-        # Durchgangszylinder (Wurmloch) in der Mitte
-        wormhole_radius = self.df_decks[self.OUTER_RADIUS_NETTO_LABEL].iloc[0]
-        wormhole_height = (
-            self.df_decks[self.LENGTH_OUTER_RADIUS_NETTO_LABEL].iloc[0] / 2
-        )
-
-        z_cylinder = np.linspace(-wormhole_height, wormhole_height, num_points)
-        theta_cylinder, z_cylinder_grid = np.meshgrid(theta, z_cylinder)
-        x_cylinder_grid = wormhole_radius * np.cos(theta_cylinder)
-        y_cylinder_grid = wormhole_radius * np.sin(theta_cylinder)
-
-        # Sockelringkonstruktion (oben und unten)
-        base_radius = (
-            wormhole_radius * 1.2
-        )  # Sockelradius etwas größer als der Zylinderradius
-        base_thickness = 2.0  # Dicke des Sockelrings
-
-        # Oberer Sockelring
-        z_base_ring_top = np.linspace(
-            wormhole_height, wormhole_height + base_thickness, num_points
-        )
-        theta_base_ring, z_base_ring_top_grid = np.meshgrid(theta, z_base_ring_top)
-        x_base_ring_top = base_radius * np.cos(theta_base_ring)
-        y_base_ring_top = base_radius * np.sin(theta_base_ring)
-
-        # Unterer Sockelring
-        z_base_ring_bottom = np.linspace(
-            -wormhole_height - base_thickness, -wormhole_height, num_points
-        )
-        theta_base_ring, z_base_ring_bottom_grid = np.meshgrid(
-            theta, z_base_ring_bottom
-        )
-        x_base_ring_bottom = base_radius * np.cos(theta_base_ring)
-        y_base_ring_bottom = base_radius * np.sin(theta_base_ring)
-
-        # Filter for excluding the wormhole openings in the hull
-        mask_opening = (np.abs(z_grid) >= wormhole_height) & (
-            np.sqrt(x_grid**2 + y_grid**2) <= wormhole_radius
-        )
-
-        # Apply the mask to hide the hull at the wormhole openings
-        x_grid = np.where(mask_opening, np.nan, x_grid)
-        y_grid = np.where(mask_opening, np.nan, y_grid)
-        z_grid = np.where(mask_opening, np.nan, z_grid)
-
-        return (
-            x_grid,
-            y_grid,
-            z_grid,
-            x_cylinder_grid,
-            y_cylinder_grid,
-            z_cylinder_grid,
-            x_base_ring_top,
-            y_base_ring_top,
-            z_base_ring_top_grid,
-            x_base_ring_bottom,
-            y_base_ring_bottom,
-            z_base_ring_bottom_grid,
-        )
 
     def _calculate_window_geometry(self):
         """Calculate the geometry of windows for each deck and store in a dictionary."""

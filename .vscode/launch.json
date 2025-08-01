@@ -5,7 +5,7 @@
             "name": "Run Simulation",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/simulations/blender_station_simulator/run_simulation.py",
+            "program": "${workspaceFolder}/simulations/blender_station_simulator/starter.py",
             "console": "integratedTerminal"
         },
         {
