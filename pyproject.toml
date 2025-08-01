@@ -1,6 +1,12 @@
 [project]
 name = "sphere-station-simulations"
 version = "0.1.0"
+description = "Simulation tools for the Sphere Space Station project"
+authors = [
+  {name = "Robert Alexander Massinger", email = "robert@robert-alexander-massinger-space-technologies.com"}
+]
+readme = "README.md"
+license = {file = "LICENSE-MIT"}
 requires-python = ">=3.8"
 
 [project.dependencies]
@@ -8,6 +14,9 @@ pandas = "*"
 numpy = "*"
 matplotlib = "*"
 tqdm = "*"
+
+[project.urls]
+Homepage = "https://example.com"
 
 [build-system]
 requires = ["setuptools"]
