@@ -1,4 +1,6 @@
 import argparse
+from pathlib import Path
+from simulations.sphere_space_station_simulations.data_preparation import generate_deck_construction_csv
 import os
 import subprocess
 import sys
@@ -28,6 +30,10 @@ def main() -> None:
     )
 
     args = parser.parse_args()
+    input_csv = Path(__file__).resolve().parents[1] / "results" / "deck_dimensions.csv"
+    output_csv = Path(__file__).resolve().parent / "deck_3d_construction_data.csv"
+    generate_deck_construction_csv(input_csv, output_csv)
+
 
     blender = args.blender
     if not blender:
