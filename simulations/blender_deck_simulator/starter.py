@@ -15,7 +15,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--script",
-        default=os.path.join(os.path.dirname(__file__), "blender_deck_simulation.py"),
+        default=os.path.join(os.path.dirname(__file__), "adapter.py"),
         help="Blender Python file to execute",
     )
     parser.add_argument(

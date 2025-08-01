@@ -3,7 +3,7 @@ import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
-from simulations.scripts.station_simulation import StationSimulation
+from simulations.deck_calculator.station_simulation import StationSimulation
 
 
 def test_models_load():

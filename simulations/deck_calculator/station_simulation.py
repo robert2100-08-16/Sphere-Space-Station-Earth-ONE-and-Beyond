@@ -1,6 +1,6 @@
 import argparse
 from typing import Any
-from simulations.scripts.deck_calculations_script import SphereDeckCalculator
+from simulations.sphere_space_station_simulations import SphereDeckCalculator
 
 
 class StationSimulation:

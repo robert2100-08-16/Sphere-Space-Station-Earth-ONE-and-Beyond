@@ -4,8 +4,8 @@ This directory contains simulation code and auxiliary documentation.
 
 ## Required checks
 
-- Run `python -m py_compile simulations/scripts/deck_calculations_script.py` to verify the code compiles.
-- Run `black --check simulations/scripts/deck_calculations_script.py` to ensure formatting.
+- Run `python -m py_compile simulations/deck_calculator/deck_calculations_script.py` to verify the code compiles.
+- Run `black --check simulations/deck_calculator/deck_calculations_script.py` to ensure formatting.
 - Ensure any integration tests produce the expected output before committing code changes.
 
 ## Licensing

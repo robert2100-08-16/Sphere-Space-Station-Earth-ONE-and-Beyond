@@ -5,21 +5,21 @@
             "name": "Run Simulation",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/simulations/start_simulation/run_simulation.py",
+            "program": "${workspaceFolder}/simulations/blender_station_simulator/run_simulation.py",
             "console": "integratedTerminal"
         },
         {
             "name": "Deck Calculator Starter",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/simulations/scripts/dec_calculator_starter.py",
+            "program": "${workspaceFolder}/simulations/deck_calculator/starter.py",
             "console": "integratedTerminal"
         },
         {
             "name": "Blender Deck Simulation",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/simulations/blender_simulation/blender_starter.py",
+            "program": "${workspaceFolder}/simulations/blender_deck_simulator/starter.py",
             "console": "integratedTerminal",
             "args": [
                 "--blender",
@@ -30,7 +30,7 @@
             "name": "Blender Hull Simulation",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/simulations/blender_hull_simulation/blender_starter.py",
+            "program": "${workspaceFolder}/simulations/blender_hull_simulation/starter.py",
             "console": "integratedTerminal",
             "args": [
                 "--blender",

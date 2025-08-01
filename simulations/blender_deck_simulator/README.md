@@ -1,11 +1,11 @@
-# Blender-Simulation
+# Blender Deck Simulator
 
 Dieser Ordner enthält die Proof-of-Concept-Dateien für Blender, mit denen die Decks der Sphere Station visualisiert werden.
 
-* **blender_deck_simulation.py** – Blender-Python-Skript, das Ringsegmente aus `deck_3d_construction_data.csv` erzeugt.
+* **adapter.py** – Blender-Python-Skript, das Ringsegmente aus `deck_3d_construction_data.csv` erzeugt.
 * **generate_3d_construction_csv.py** – erzeugt `deck_3d_construction_data.csv` aus `../results/deck_dimensions.csv`.
 * **deck_3d_construction_data.csv** – Geometriewerte aus den Deck-Berechnungen.
-* **blender_starter.py** – Komfortskript zum Starten von Blender über die Umgebungsvariable `BLENDER_PATH`.
+* **starter.py** – Komfortskript zum Starten von Blender über die Umgebungsvariable `BLENDER_PATH`.
 * **Blender Simulation Projektplan.docx** (in `../project`) – Grobplan mit weiteren Arbeitsschritten.
 
 * **Blender Simulation Sprintplan.docx** – Aufgabenübersicht zum Aufsetzen dieses Verzeichnisses.
@@ -44,7 +44,7 @@ Bays in seiner Hülle.
 Vor dem Start der Blender-Simulation muss `deck_3d_construction_data.csv` erzeugt werden. Das Skript liest die Ergebnisse der Deckberechnung und ergänzt weitere Spalten.
 
 ```bash
-python simulations/blender_simulation/generate_3d_construction_csv.py
+python simulations/blender_deck_simulator/generate_3d_construction_csv.py
 ```
 
 Die Datei `deck_3d_construction_data.csv` wird anschließend in diesem Verzeichnis abgelegt.
@@ -52,24 +52,24 @@ Die Datei `deck_3d_construction_data.csv` wird anschließend in diesem Verzeichn
 ## Ausführen in Blender
 
 1. Blender (Version ≥ 2.9) starten und in den Arbeitsbereich **Scripting** wechseln.
-2. `blender_deck_simulation.py` laden, den Pfad zur CSV-Datei bei Bedarf anpassen und mit `Alt+P` ausführen.
+2. `adapter.py` laden, den Pfad zur CSV-Datei bei Bedarf anpassen und mit `Alt+P` ausführen.
 3. Die erzeugten Objekte erscheinen in der Sammlung `SphereDeckCollection`.
 
 ## Ausführen über die Kommandozeile
 
 ```bash
-blender --python simulations/blender_simulation/blender_deck_simulation.py --background
+blender --python simulations/blender_deck_simulator/adapter.py --background
 ```
 
 Der Befehl erzeugt eine `.blend`‑Datei im Hintergrundmodus zur Weiterverarbeitung.
 
-## Ausführen mit `blender_starter.py`
+## Ausführen mit `starter.py`
 
 Setze die Umgebungsvariable `BLENDER_PATH` auf dein Blender-Executable und
 starte anschließend:
 
 ```bash
-python blender_starter.py --background
+python starter.py --background
 ```
 
 Weitere Argumente werden direkt an Blender weitergereicht.
