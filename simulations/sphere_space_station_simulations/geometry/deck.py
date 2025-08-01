@@ -94,7 +94,6 @@ class SphereDeckCalculator:
         self.animation_writers = animation.writers.list()
         self.selected_animation_writer = None
 
-
     def _calculate_window_geometry(self):
         """Calculate the geometry of windows for each deck and store in a dictionary."""
         window_geometry = {}  # Dictionary to store window coordinates for each deck

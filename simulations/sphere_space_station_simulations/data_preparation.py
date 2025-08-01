@@ -30,7 +30,9 @@ STRUCTURE_MATERIAL = "Silicon Carbide Composite + Silicon Elastomer"
 WINDOW_THICKNESS_CM = 20
 
 
-def generate_deck_construction_csv(input_csv: str | Path, output_csv: str | Path) -> Path:
+def generate_deck_construction_csv(
+    input_csv: str | Path, output_csv: str | Path
+) -> Path:
     """Generate a CSV with additional deck metadata for Blender.
 
     Parameters
@@ -80,4 +82,3 @@ def generate_deck_construction_csv(input_csv: str | Path, output_csv: str | Path
     output_csv.parent.mkdir(parents=True, exist_ok=True)
     df[cols].to_csv(output_csv, index=False)
     return output_csv
-
