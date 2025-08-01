@@ -13,6 +13,10 @@ Dieses Handbuch sammelt wichtige Entscheidungen zur Modellierung der Sphere Spac
 - **Hüllensimulation**: Ein weiteres Skript `adapter.py` erzeugt eine vereinfachte Außenhülle. Über einen eigenen VS‑Code-Starteintrag kann das Skript bequem getestet werden.
 - **CSV-Generator** `generate_deck_construction_csv` ist nun Teil der Bibliothek `data_preparation.py` und wird von `generate_3d_construction_csv.py` verwendet.
 - **Blender-Hilfsfunktionen** befinden sich im neuen Unterpaket `blender_helpers` und werden vom Adapter importiert.
+- **Hüllengeometrie** wird jetzt durch `geometry/hull.py` berechnet und von der
+  Deck-Logik importiert.
+- **Stationssimulation** ist in `simulation.py` umgezogen und kann direkt aus der
+  Bibliothek gestartet werden. `run_simulation.py` heißt nun `starter.py`.
 
 
 Weitere Anpassungen und Releases werden in diesem Dokument ergänzt.

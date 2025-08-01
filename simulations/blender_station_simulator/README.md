@@ -1,2 +1,3 @@
 # Blender Station Simulator
-Run this script to start the full station simulation.
+Run `starter.py` to start the full station simulation which delegates to the
+library's `StationSimulation` class.

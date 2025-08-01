@@ -3,7 +3,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
-from simulations.deck_calculator.station_simulation import main as station_main
+from simulations.sphere_space_station_simulations.simulation import main as station_main
 
 
 def main() -> None:
