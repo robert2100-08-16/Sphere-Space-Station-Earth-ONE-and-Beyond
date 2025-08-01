@@ -1,3 +1,3 @@
 __pycache__/
-simulations/scripts/*_frames/
+simulations/deck_calculator/*_frames/
 *.pyc

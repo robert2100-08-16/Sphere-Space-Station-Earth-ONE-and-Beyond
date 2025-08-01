@@ -7,7 +7,7 @@ matplotlib.use('Agg')
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from simulations.scripts.deck_calculations_script import SphereDeckCalculator
+from simulations.sphere_space_station_simulations import SphereDeckCalculator
 
 
 def create_calculator():

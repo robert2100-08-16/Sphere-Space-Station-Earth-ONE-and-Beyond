@@ -3,7 +3,7 @@
 This document summarizes an analysis of how Blender or similar 3D rendering engines can enhance simulations and visualizations for the Sphere Space Station Earth ONE and Beyond project.
 
 ## Analysis
-- The repository currently includes a Python script (`simulations/scripts/deck_calculations_script.py`) that generates deck geometry and simple animations with Matplotlib.
+- The repository currently includes a Python script (`simulations/deck_calculator/deck_calculations_script.py`) that generates deck geometry and simple animations with Matplotlib.
 - The provided PDF "Bewertung der Dokumentation" advises creating an integrated roadmap and building strategic partnerships.
 - No Blender files or advanced rendering assets are present in the repository.
 

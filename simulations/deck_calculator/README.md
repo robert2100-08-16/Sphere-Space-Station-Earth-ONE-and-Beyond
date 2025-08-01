@@ -1,6 +1,6 @@
-# Simulation Scripts
+# Deck Calculator
 
-This directory contains the `deck_calculations_script.py` module along with generated animations and data.
+This directory contains the `deck_calculations_script.py` compatibility module together with a simple adapter and starter used to run the calculations.
 
 The script calculates deck geometry, window placement, and hull properties of the Sphere Station. Animations can be generated to visualize deck rotation and gravity zones.
 

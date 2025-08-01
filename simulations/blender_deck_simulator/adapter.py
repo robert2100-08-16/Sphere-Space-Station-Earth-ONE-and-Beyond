@@ -1,6 +1,6 @@
 """
-blender_deck_simulation.py
-==========================
+adapter.py
+==========
 
 This script generates a simplified 3D representation of the Sphere Station's deck
 geometry using Blender's Python API.  It reads a comma‑separated file that
@@ -16,7 +16,7 @@ Z‑axis.  The scene contains:
 
 The script is designed to be executed inside Blender.  Launch Blender, open
 ``Scripting`` workspace and run this script (or execute with
-``blender --python blender_deck_simulation.py`` from the command line).  The
+``blender --python adapter.py`` from the command line).  The
 script assumes the unit system in Blender is set to metric and uses metres
 throughout.
 
@@ -44,13 +44,13 @@ present in the example input for completeness.
 Folder Structure
 ----------------
 
-Place this file inside ``simulations/blender_simulation`` together with
+Place this file inside ``simulations/blender_deck_simulator`` together with
 ``deck_3d_construction_data.csv``.  The typical structure is:
 
 ```
 simulations/
-└── blender_simulation/
-    ├── blender_deck_simulation.py
+└── blender_deck_simulator/
+    ├── adapter.py
     ├── deck_3d_construction_data.csv
     └── README.md
 ```
@@ -62,7 +62,7 @@ In Blender's Python console or as a command line invocation:
 
 .. code:: bash
 
-   blender --python blender_deck_simulation.py
+   blender --python adapter.py
 
 Alternatively, run this script from inside Blender's Scripting workspace.  A
 collection named ``SphereDeckCollection`` will be created containing all
