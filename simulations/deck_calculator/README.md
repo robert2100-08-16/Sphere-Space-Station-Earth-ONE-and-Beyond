@@ -2,9 +2,15 @@
 
 This directory contains the `deck_calculations_script.py` compatibility module together with a simple adapter and starter used to run the calculations.
 
-The script calculates deck geometry, window placement, and hull properties of the Sphere Station. Animations can be generated to visualize deck rotation and gravity zones.
+The script calculates deck geometry, window placement, and hull properties of the Sphere Station.
 
-Generated frame images are excluded from version control via `.gitignore`.
+The `starter.py` exposes a small CLI. In addition to the default CSV report it can export the geometry model:
+
+```bash
+python starter.py --export-step station.step --export-gltf station.gltf --export-json station.json
+```
+
+CSV output is intended for reporting only.
 
 ## License
 

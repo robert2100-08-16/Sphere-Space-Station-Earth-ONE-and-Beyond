@@ -34,4 +34,6 @@ Dieses Handbuch sammelt wichtige Entscheidungen zur Modellierung der Sphere Spac
 - **Datenmodell**: Dataclasses für Decks und Hülle ermöglichen den Export.
 - **Prototyp-Exporter**: Erste STEP- und glTF-Dateien werden aus den Datenobjekten generiert.
 
+- **CLI-Exporter**: Starter-Skripte unterstützen nun `--export-step`, `--export-gltf` und `--export-json` zum Ablegen von Geometrie-Dateien; CSV bleibt als Reporting-Ausgabe.
+
 Weitere Anpassungen und Releases werden in diesem Dokument ergänzt.
