@@ -4,7 +4,8 @@ import subprocess
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
-import pandas as pd
+# Use the standard library only for CSV handling
+import csv
 
 from simulations.sphere_space_station_simulations.data_preparation import (
     generate_deck_construction_csv,
@@ -13,25 +14,26 @@ from simulations.sphere_space_station_simulations.data_preparation import (
 
 def test_generate_deck_construction_csv(tmp_path):
     input_csv = tmp_path / "deck_dimensions.csv"
-    df = pd.DataFrame(
-        {
-            "deck_id": ["Deck_000", "Deck_001"],
-            "inner_radius_m": [1.0, 2.0],
-            "outer_radius_m": [1.5, 2.5],
-            "outer_radius_netto_m": [1.4, 2.4],
-            "deck_inner_height_m": [3.0, 3.0],
-            "rotation_velocity_mps": [0.1, 0.2],
-            "centrifugal_acceleration_mps2": [0.0, 0.1],
-        }
+    header = (
+        ",deck_id,inner_radius_m,outer_radius_m,outer_radius_netto_m,ceiling_thickness_m,"
+        "deck_height_m,deck_inner_height_m,length_inner_radius_m,length_outer_radius_m,"
+        "length_outer_radius_netto_m,base_area_inner_radius_m2,base_area_outer_radius_m2,"
+        "effective_volume_m3,net_room_volume_m3,rotation_velocity_mps,centrifugal_acceleration_mps2"
     )
-    csv_text = "header\n" + df.to_csv(index=False)
+    rows = [
+        "0,Deck_000,1.0,1.5,1.4,0.5,0.0,3.0,0,0,0,0,0,0,0,0.1,0.0",
+        "1,Deck_001,2.0,2.5,2.4,0.5,0.0,3.0,0,0,0,0,0,0,0,0.2,0.1",
+    ]
+    csv_text = "Deck Dimensions of a Sphere\n" + header + "\n" + "\n".join(rows) + "\n"
     input_csv.write_text(csv_text, encoding="ISO-8859-1")
 
     output_csv = tmp_path / "out.csv"
     path = generate_deck_construction_csv(input_csv, output_csv)
-    out_df = pd.read_csv(path)
-    assert len(out_df) == 2
-    assert "deck_usage" in out_df.columns
+    with open(path, newline="") as f:
+        reader = csv.DictReader(f)
+        rows_out = list(reader)
+    assert len(rows_out) == 2
+    assert "deck_usage" in rows_out[0]
 
 
 def test_starter_builds_command(monkeypatch, tmp_path):

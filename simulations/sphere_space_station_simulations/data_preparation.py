@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
+import csv
 import math
 from pathlib import Path
-import pandas as pd
 
 USAGE_MAP = {
     0: "Docking & Command Center",
@@ -50,18 +50,49 @@ def generate_deck_construction_csv(
     input_csv = Path(input_csv)
     output_csv = Path(output_csv)
 
-    df = pd.read_csv(input_csv, skiprows=1, encoding="ISO-8859-1")
-    if df.columns[0].startswith("Unnamed"):
-        df = df.drop(df.columns[0], axis=1)
+    with open(input_csv, encoding="ISO-8859-1", newline="") as f:
+        reader = csv.reader(f)
+        next(reader, None)  # drop descriptive header line
+        header = next(reader)
+        if header and header[0] == "":
+            header = header[1:]
+        rows = []
+        for row in reader:
+            if not row:
+                continue
+            if row[0] == "" or row[0].isdigit():
+                row = row[1:]
+            if not row or not row[0]:
+                continue
+            rows.append(dict(zip(header, row)))
 
-    df = df[df["deck_id"].notna()].reset_index(drop=True)
-
-    df["deck_usage"] = [USAGE_MAP.get(i, "") for i in range(len(df))]
-    df["deck_height_m"] = df["outer_radius_m"] - df["inner_radius_m"]
-    df["num_windows"] = [math.floor(r / 1.6) for r in df["outer_radius_netto_m"]]
-    df["window_material"] = WINDOW_MATERIAL
-    df["window_thickness_cm"] = WINDOW_THICKNESS_CM
-    df["structure_material"] = STRUCTURE_MATERIAL
+    processed = []
+    for i, row in enumerate(rows):
+        if "inner_radius_m" not in row:
+            continue
+        inner = float(row["inner_radius_m"])
+        outer = float(row["outer_radius_m"])
+        outer_net = float(row["outer_radius_netto_m"])
+        deck_inner_height = float(row["deck_inner_height_m"])
+        rotation_velocity = float(row.get("rotation_velocity_mps", 0.0))
+        accel = float(row.get("centrifugal_acceleration_mps2", 0.0))
+        processed.append(
+            {
+                "deck_id": row["deck_id"],
+                "deck_usage": USAGE_MAP.get(i, ""),
+                "inner_radius_m": inner,
+                "outer_radius_m": outer,
+                "outer_radius_netto_m": outer_net,
+                "deck_height_m": outer - inner,
+                "deck_inner_height_m": deck_inner_height,
+                "num_windows": math.floor(outer_net / 1.6),
+                "window_material": WINDOW_MATERIAL,
+                "window_thickness_cm": WINDOW_THICKNESS_CM,
+                "structure_material": STRUCTURE_MATERIAL,
+                "rotation_velocity_mps": rotation_velocity,
+                "centrifugal_acceleration_mps2": accel,
+            }
+        )
 
     cols = [
         "deck_id",
@@ -80,5 +111,9 @@ def generate_deck_construction_csv(
     ]
 
     output_csv.parent.mkdir(parents=True, exist_ok=True)
-    df[cols].to_csv(output_csv, index=False)
+    with open(output_csv, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=cols)
+        writer.writeheader()
+        for row in processed:
+            writer.writerow(row)
     return output_csv

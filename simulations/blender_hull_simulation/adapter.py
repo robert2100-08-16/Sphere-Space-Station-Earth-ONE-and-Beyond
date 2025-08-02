@@ -1,9 +1,9 @@
-"""blender_hull_simulator.py
+"""adapter.py
 A minimal Blender script that creates a simplified hull based on the
 `deck_3d_construction_data.csv` file.
 
 Run this script inside Blender or from the command line with
-``blender --python blender_hull_simulator.py``.
+``blender --python adapter.py``.
 """
 
 import csv
