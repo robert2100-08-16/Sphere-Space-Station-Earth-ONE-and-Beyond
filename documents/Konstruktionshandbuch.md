@@ -30,4 +30,8 @@ Dieses Handbuch sammelt wichtige Entscheidungen zur Modellierung der Sphere Spac
   zwölf Decks erzeugt werden.
 
 
+- **Schichtmodell**: KERNEL, ADAPTER und GUI wurden als klare Ebenen definiert.
+- **Datenmodell**: Dataclasses für Decks und Hülle ermöglichen den Export.
+- **Prototyp-Exporter**: Erste STEP- und glTF-Dateien werden aus den Datenobjekten generiert.
+
 Weitere Anpassungen und Releases werden in diesem Dokument ergänzt.
