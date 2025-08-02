@@ -73,7 +73,11 @@ add modifiers within Blender.
 import csv
 import os
 import math
+import sys
 import bpy
+
+# Allow running without installing the package
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 from simulations.sphere_space_station_simulations.blender_helpers import (
     acceleration_to_color,

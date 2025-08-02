@@ -18,5 +18,8 @@ Dieses Handbuch sammelt wichtige Entscheidungen zur Modellierung der Sphere Spac
 - **Stationssimulation** ist in `simulation.py` umgezogen und kann direkt aus der
   Bibliothek gestartet werden. `run_simulation.py` heißt nun `starter.py`.
 
+- **Importpfad**: `adapter.py` fügt das Repository-Root dem `sys.path` hinzu,
+  wodurch Blender die Hilfsfunktionen korrekt findet.
+
 
 Weitere Anpassungen und Releases werden in diesem Dokument ergänzt.
