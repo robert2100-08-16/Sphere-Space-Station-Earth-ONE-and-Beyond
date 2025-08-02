@@ -164,8 +164,7 @@ def create_ring_deck(
     boolean_mod.operation = "DIFFERENCE"
     bpy.context.view_layer.objects.active = outer
     bpy.ops.object.modifier_apply(modifier=boolean_mod.name)
-    inner.select_set(True)
-    bpy.ops.object.delete()
+    bpy.data.objects.remove(inner, do_unlink=True)
     outer.name = name
     return outer
 

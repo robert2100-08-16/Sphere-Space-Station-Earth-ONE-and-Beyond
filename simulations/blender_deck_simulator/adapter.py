@@ -97,8 +97,6 @@ from simulations.sphere_space_station_simulations.blender_helpers import (
 )
 
 
-
-
 def load_deck_data(csv_path: str) -> list:
     """Load deck information from a CSV file.
 
@@ -177,7 +175,7 @@ def main():
         assign_material(obj, deck["structure_material"], color)
 
         # Create windows up to Deck 012
-        if int(deck["deck_id"].split()[1]) <= 12:
+        if int(deck["deck_id"].split("_")[1]) <= 12:
             create_window_strip(
                 deck_radius_m=deck["outer_radius_netto_m"],
                 window_thickness_cm=deck["window_thickness_cm"],

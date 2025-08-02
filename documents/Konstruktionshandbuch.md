@@ -24,5 +24,10 @@ Dieses Handbuch sammelt wichtige Entscheidungen zur Modellierung der Sphere Spac
 - **Abhängigkeiten reduziert**: `generate_deck_construction_csv` kommt ohne Pandas aus und das Paket nutzt Lazy‑Imports, sodass die Blender‑Adapter ohne zusätzliche Bibliotheken laufen.
 - **Hull-Starter**: `starter.py` der Hüllensimulation verweist nun standardmäßig auf `adapter.py`.
 
+- **Deck-Rendering**: `create_ring_deck` entfernt nur noch die innere Hilfsgeometrie,
+  sodass alle Decks statt nur des Wurmlochs erscheinen. Die Deck-ID wird
+  nun anhand des Unterstrichs korrekt ausgewertet, damit Fenster für die ersten
+  zwölf Decks erzeugt werden.
+
 
 Weitere Anpassungen und Releases werden in diesem Dokument ergänzt.
