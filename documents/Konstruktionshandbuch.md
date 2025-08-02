@@ -36,4 +36,8 @@ Dieses Handbuch sammelt wichtige Entscheidungen zur Modellierung der Sphere Spac
 
 - **CLI-Exporter**: Starter-Skripte unterstützen nun `--export-step`, `--export-gltf` und `--export-json` zum Ablegen von Geometrie-Dateien; CSV bleibt als Reporting-Ausgabe.
 
+- **Detailreiches Datenmodell**: `Deck` und `Hull` enthalten Netto-Radien,
+  Zylinderlängen, Basisflächen sowie Volumina und unterstützen verschachtelte
+  Fensterangaben (Position, Größe, Anzahl).
+
 Weitere Anpassungen und Releases werden in diesem Dokument ergänzt.
