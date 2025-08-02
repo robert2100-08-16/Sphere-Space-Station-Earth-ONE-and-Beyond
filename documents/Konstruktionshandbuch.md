@@ -21,5 +21,8 @@ Dieses Handbuch sammelt wichtige Entscheidungen zur Modellierung der Sphere Spac
 - **Importpfad**: `adapter.py` fügt das Repository-Root dem `sys.path` hinzu,
   wodurch Blender die Hilfsfunktionen korrekt findet.
 
+- **Abhängigkeiten reduziert**: `generate_deck_construction_csv` kommt ohne Pandas aus und das Paket nutzt Lazy‑Imports, sodass die Blender‑Adapter ohne zusätzliche Bibliotheken laufen.
+- **Hull-Starter**: `starter.py` der Hüllensimulation verweist nun standardmäßig auf `adapter.py`.
+
 
 Weitere Anpassungen und Releases werden in diesem Dokument ergänzt.
