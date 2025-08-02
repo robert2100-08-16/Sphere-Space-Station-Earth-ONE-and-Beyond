@@ -1,3 +1,9 @@
+import os
+import sys
+
+# Allow execution without installing the package by adding the repository root
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
 from simulations.sphere_space_station_simulations import SphereDeckCalculator
 
 
