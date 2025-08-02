@@ -1,27 +1,256 @@
-"""Prototype glTF exporter.
+"""glTF exporter generating meshes, materials and a simple animation.
 
-Creates a trivial glTF 2.0 file containing metadata about decks and hull.
+The exporter builds CadQuery solids for decks and the hull, cuts window
+openings, converts the geometry to triangle meshes and finally assembles a
+glTF 2.0 document with PBR materials.  A basic rotation animation of the
+entire station is appended so that viewers can inspect the model easily.
 """
 
 from __future__ import annotations
 
-import json
 from pathlib import Path
+from typing import List, Tuple
 
-from ..data_model import StationModel
+import cadquery as cq
+import numpy as np
+from pygltflib import (
+    Accessor,
+    Animation,
+    AnimationChannel,
+    AnimationChannelTarget,
+    AnimationSampler,
+    Buffer,
+    BufferView,
+    GLTF2,
+    Material,
+    Mesh,
+    Node,
+    PbrMetallicRoughness,
+    Primitive,
+    Scene,
+)
+
+from ..data_model import Deck, Hull, StationModel
+
+
+def _tessellate(obj: cq.Workplane) -> Tuple[np.ndarray, np.ndarray]:
+    vertices, faces = obj.val().tessellate(0.5)
+    verts = [v.toTuple() if hasattr(v, "toTuple") else v for v in vertices]
+    return np.array(verts, dtype=np.float32), np.array(faces, dtype=np.uint32)
+
+
+def _build_deck_mesh(
+    deck: Deck,
+) -> Tuple[Tuple[np.ndarray, np.ndarray], List[Tuple[np.ndarray, np.ndarray]]]:
+    solid = (
+        cq.Workplane("XY")
+        .circle(deck.net_outer_radius_m)
+        .circle(deck.net_inner_radius_m)
+        .extrude(deck.net_height_m)
+    )
+    windows: List[Tuple[np.ndarray, np.ndarray]] = []
+    for w in deck.windows:
+        hole = (
+            cq.Workplane("XY")
+            .center(w.position[0], w.position[1])
+            .box(w.size_m, w.size_m, deck.net_height_m * 1.2)
+        )
+        solid = solid.cut(hole)
+        glass = (
+            cq.Workplane("XY")
+            .center(w.position[0], w.position[1])
+            .box(w.size_m, w.size_m, 0.01)
+            .translate((0, 0, deck.net_height_m / 2))
+        )
+        windows.append(_tessellate(glass))
+    return _tessellate(solid), windows
+
+
+def _build_hull_mesh(
+    hull: Hull,
+) -> Tuple[Tuple[np.ndarray, np.ndarray], List[Tuple[np.ndarray, np.ndarray]]]:
+    solid = cq.Workplane("XY").sphere(hull.net_radius_m)
+    windows: List[Tuple[np.ndarray, np.ndarray]] = []
+    for w in hull.windows:
+        hole = (
+            cq.Workplane("XY")
+            .center(w.position[0], w.position[1])
+            .circle(w.size_m / 2)
+            .extrude(hull.net_radius_m * 2)
+            .translate((0, 0, w.position[2]))
+        )
+        solid = solid.cut(hole)
+        glass = (
+            cq.Workplane("XY")
+            .center(w.position[0], w.position[1])
+            .circle(w.size_m / 2)
+            .extrude(0.01)
+            .translate((0, 0, w.position[2]))
+        )
+        windows.append(_tessellate(glass))
+    return _tessellate(solid), windows
+
+
+def _add_mesh(
+    binary: bytearray,
+    buffer_views: List[BufferView],
+    accessors: List[Accessor],
+    meshes: List[Mesh],
+    nodes: List[Node],
+    verts: np.ndarray,
+    faces: np.ndarray,
+    material_index: int,
+) -> None:
+    v_bytes = verts.tobytes()
+    v_offset = len(binary)
+    binary.extend(v_bytes)
+    buffer_views.append(
+        BufferView(buffer=0, byteOffset=v_offset, byteLength=len(v_bytes), target=34962)
+    )
+    min_v = verts.min(axis=0).tolist()
+    max_v = verts.max(axis=0).tolist()
+    accessors.append(
+        Accessor(
+            bufferView=len(buffer_views) - 1,
+            componentType=5126,
+            count=len(verts),
+            type="VEC3",
+            min=min_v,
+            max=max_v,
+        )
+    )
+
+    f_bytes = faces.astype(np.uint32).reshape(-1).tobytes()
+    f_offset = len(binary)
+    binary.extend(f_bytes)
+    buffer_views.append(
+        BufferView(buffer=0, byteOffset=f_offset, byteLength=len(f_bytes), target=34963)
+    )
+    accessors.append(
+        Accessor(
+            bufferView=len(buffer_views) - 1,
+            componentType=5125,
+            count=faces.size,
+            type="SCALAR",
+        )
+    )
+
+    mesh = Mesh(
+        primitives=[
+            Primitive(
+                attributes={"POSITION": len(accessors) - 2},
+                indices=len(accessors) - 1,
+                material=material_index,
+            )
+        ]
+    )
+    meshes.append(mesh)
+    nodes.append(Node(mesh=len(meshes) - 1))
 
 
 def export_gltf(model: StationModel, filepath: str | Path) -> Path:
-    """Write a minimal glTF file with station metadata."""
+    """Export the station model to a glTF 2.0 file."""
 
     path = Path(filepath)
-    data = {
-        "asset": {"version": "2.0"},
-        "extras": {
-            "deck_count": len(model.decks),
-            "has_hull": model.hull is not None,
-        },
-    }
-    with path.open("w", encoding="utf-8") as fh:
-        json.dump(data, fh)
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    binary = bytearray()
+    buffer_views: List[BufferView] = []
+    accessors: List[Accessor] = []
+    meshes: List[Mesh] = []
+    nodes: List[Node] = []
+
+    materials = [
+        Material(
+            name="Stahl",
+            pbrMetallicRoughness=PbrMetallicRoughness(
+                baseColorFactor=[0.8, 0.8, 0.8, 1.0],
+                metallicFactor=0.8,
+                roughnessFactor=0.4,
+            ),
+        ),
+        Material(
+            name="Glas",
+            pbrMetallicRoughness=PbrMetallicRoughness(
+                baseColorFactor=[0.5, 0.7, 1.0, 0.3],
+                metallicFactor=0.0,
+                roughnessFactor=0.1,
+            ),
+        ),
+    ]
+
+    child_nodes: List[int] = []
+    for deck in model.decks:
+        (verts, faces), windows = _build_deck_mesh(deck)
+        _add_mesh(binary, buffer_views, accessors, meshes, nodes, verts, faces, 0)
+        child_nodes.append(len(nodes) - 1)
+        for wv, wf in windows:
+            _add_mesh(binary, buffer_views, accessors, meshes, nodes, wv, wf, 1)
+            child_nodes.append(len(nodes) - 1)
+
+    if model.hull:
+        (verts, faces), windows = _build_hull_mesh(model.hull)
+        _add_mesh(binary, buffer_views, accessors, meshes, nodes, verts, faces, 0)
+        child_nodes.append(len(nodes) - 1)
+        for wv, wf in windows:
+            _add_mesh(binary, buffer_views, accessors, meshes, nodes, wv, wf, 1)
+            child_nodes.append(len(nodes) - 1)
+
+    root = Node(children=child_nodes)
+    nodes.insert(0, root)
+
+    # Animation data (rotation around Z axis)
+    time_data = np.array([0.0, 1.0], dtype=np.float32)
+    rot_data = np.array([[0, 0, 0, 1], [0, 0, 1, 0]], dtype=np.float32)
+
+    t_offset = len(binary)
+    binary.extend(time_data.tobytes())
+    buffer_views.append(
+        BufferView(buffer=0, byteOffset=t_offset, byteLength=time_data.nbytes)
+    )
+    accessors.append(
+        Accessor(
+            bufferView=len(buffer_views) - 1,
+            componentType=5126,
+            count=2,
+            type="SCALAR",
+            min=[0.0],
+            max=[1.0],
+        )
+    )
+
+    r_offset = len(binary)
+    binary.extend(rot_data.tobytes())
+    buffer_views.append(
+        BufferView(buffer=0, byteOffset=r_offset, byteLength=rot_data.nbytes)
+    )
+    accessors.append(
+        Accessor(
+            bufferView=len(buffer_views) - 1,
+            componentType=5126,
+            count=2,
+            type="VEC4",
+        )
+    )
+
+    sampler = AnimationSampler(input=len(accessors) - 2, output=len(accessors) - 1)
+    channel = AnimationChannel(
+        sampler=0, target=AnimationChannelTarget(node=0, path="rotation")
+    )
+    animations = [Animation(samplers=[sampler], channels=[channel])]
+
+    buffer = Buffer(byteLength=len(binary))
+    scene = Scene(nodes=[0])
+    gltf = GLTF2(
+        scenes=[scene],
+        nodes=nodes,
+        meshes=meshes,
+        materials=materials,
+        accessors=accessors,
+        bufferViews=buffer_views,
+        buffers=[buffer],
+        animations=animations,
+    )
+    gltf.set_binary_blob(bytes(binary))
+    gltf.save(str(path))
     return path

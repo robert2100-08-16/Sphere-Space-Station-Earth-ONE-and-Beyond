@@ -40,4 +40,11 @@ Dieses Handbuch sammelt wichtige Entscheidungen zur Modellierung der Sphere Spac
   Zylinderlängen, Basisflächen sowie Volumina und unterstützen verschachtelte
   Fensterangaben (Position, Größe, Anzahl).
 
+- **CAD- und glTF-Exporter**: STEP-Dateien enthalten nun B-Rep-Volumenkörper
+  mit Material-Platzhaltern (Stahl/Glas); der glTF-Export erzeugt Netze mit
+  PBR-Materialien und einer einfachen Rotationsanimation.
+
+- **STEP-Archivierung**: Die generierte `station.step` wird als Base64-Datei
+  `station.step.base64` abgelegt, um Binärdiffs zu vermeiden.
+
 Weitere Anpassungen und Releases werden in diesem Dokument ergänzt.

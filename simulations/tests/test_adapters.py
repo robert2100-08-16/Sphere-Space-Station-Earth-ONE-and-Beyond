@@ -18,16 +18,21 @@ from simulations.sphere_space_station_simulations.data_model import (
     Deck,
     Hull,
     StationModel,
+    Window,
 )
+from pygltflib import GLTF2
 
 
 def test_exporters_create_files(tmp_path: Path) -> None:
-    model = StationModel(decks=[Deck(1, 1.0, 2.0, 3.0)], hull=Hull(10.0))
+    model = StationModel(
+        decks=[Deck(1, 1.0, 2.0, 0.5, windows=[Window((0.0, 0.0, 0.0), 0.2)])],
+        hull=Hull(3.0, windows=[Window((0.0, 0.0, 3.0), 0.5)]),
+    )
 
     step_file = export_step(model, tmp_path / "station.step")
-    gltf_file = export_gltf(model, tmp_path / "station.gltf")
+    gltf_file = export_gltf(model, tmp_path / "station.glb")
 
-    assert step_file.exists()
+    assert step_file.exists() and step_file.stat().st_size > 0
     assert gltf_file.exists()
-    assert "deck 1" in step_file.read_text()
-    assert '"deck_count": 1' in gltf_file.read_text()
+    gltf = GLTF2().load(str(gltf_file))
+    assert gltf.meshes and gltf.animations
