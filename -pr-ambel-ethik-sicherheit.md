@@ -1,4 +1,4 @@
-## 📜 Präambel — Ethik & Sicherheit
+# 1. 📜 Präambel — Ethik & Sicherheit
 
 Wir, alle natürlichen Personen, juristischen Personen und KI‑Systeme, die am Projekt **Sphere Space Station Earth ONE & Beyond** mitwirken, erkennen verbindlich folgende Grundsätze an und verpflichten uns zu deren jederzeitiger Einhaltung:
 

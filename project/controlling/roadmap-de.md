@@ -1,11 +1,11 @@
 
-# 📍 Roadmap – Sphere Space Station Earth ONE & Beyond
+# 1. 📍 Roadmap – Sphere Space Station Earth ONE & Beyond
 
 Diese Roadmap dient als strategische Übersicht zur Strukturierung der langfristigen Projektentwicklung in aufeinander aufbauende Phasen mit definierten Zielen, Meilensteinen und vorbereitenden Epics. Persönliche Angaben wurden entfernt.
 
 ---
 
-## 🚀 Phase 1: Frühphase – Validierung & Netzwerkaufbau (0–2 Jahre)
+## 1.1 🚀 Phase 1: Frühphase – Validierung & Netzwerkaufbau (0–2 Jahre)
 
 **Ziele:**
 - Validierung des Gesamtkonzepts
@@ -25,7 +25,7 @@ Diese Roadmap dient als strategische Übersicht zur Strukturierung der langfrist
 
 ---
 
-## 🧪 Phase 2: Seed-Phase – Proof of Concept & Teamaufbau (2–5 Jahre)
+## 1.2 🧪 Phase 2: Seed-Phase – Proof of Concept & Teamaufbau (2–5 Jahre)
 
 **Ziele:**
 - Erste technologische Demonstratoren
@@ -45,7 +45,7 @@ Diese Roadmap dient als strategische Übersicht zur Strukturierung der langfrist
 
 ---
 
-## 🏗️ Phase 3: Serie-A – Großplanung & Industrialisierung (5–10 Jahre)
+## 1.3 🏗️ Phase 3: Serie-A – Großplanung & Industrialisierung (5–10 Jahre)
 
 **Ziele:**
 - Großinvestoren gewinnen
@@ -65,7 +65,7 @@ Diese Roadmap dient als strategische Übersicht zur Strukturierung der langfrist
 
 ---
 
-## 🛰️ Phase 4: Bauphase Earth ONE (10–15 Jahre)
+## 1.4 🛰️ Phase 4: Bauphase Earth ONE (10–15 Jahre)
 
 **Ziele:**
 - Modulproduktion & orbitaler Aufbau
@@ -83,7 +83,7 @@ Diese Roadmap dient als strategische Übersicht zur Strukturierung der langfrist
 
 ---
 
-## 🌌 Phase 5: Expansion – Luna, Belt & Governance (ab Jahr 15)
+## 1.5 🌌 Phase 5: Expansion – Luna, Belt & Governance (ab Jahr 15)
 
 **Ziele:**
 - Aufbau Lunar ONE & Belt Living ONE
@@ -101,7 +101,7 @@ Diese Roadmap dient als strategische Übersicht zur Strukturierung der langfrist
 
 ---
 
-## ⚙️ Querschnittsepics (technologisch/phasenübergreifend)
+## 1.6 ⚙️ Querschnittsepics (technologisch/phasenübergreifend)
 
 - `EPIC-Q1`: Energie- & Thermalsystem-Optimierung (Solar/Nuklear/Redundanz)
 - `EPIC-Q2`: Materialintegration & SiC-Verbundwerkstoffe (Hülle, Träger etc.)

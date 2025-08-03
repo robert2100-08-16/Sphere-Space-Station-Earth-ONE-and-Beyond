@@ -1,27 +1,27 @@
-# Bibliotheks-Research: STEP- und glTF-Erzeugung
+# 1. Bibliotheks-Research: STEP- und glTF-Erzeugung
 
-## STEP-Bibliotheken
+## 1.1 STEP-Bibliotheken
 
-### pythonocc-core
+### 1.1.1 pythonocc-core
 - Lizenz: LGPL/GPL
 - Stärken: mächtige CAD-Kernel-Funktionen, weit verbreitet
 - Schwächen: große Abhängigkeiten, steile Lernkurve
 
-### CadQuery
+### 1.1.2 CadQuery
 - Lizenz: Apache-2.0
 - Stärken: Pythonic API, integrierte Exportfunktionen (STEP, STL)
 - Schwächen: weniger direkte Kontrolle über B-Rep-Details
 
 **Entscheidung:** Für Prototypen wird `CadQuery` bevorzugt, da es eine leichtere API bietet und STEP-Export out-of-the-box unterstützt.
 
-## glTF-Bibliotheken
+## 1.2 glTF-Bibliotheken
 
-### pygltflib
+### 1.2.1 pygltflib
 - Lizenz: MIT
 - Stärken: schlanke Bibliothek, direkte Kontrolle über glTF-Strukturen
 - Schwächen: wenig Komfortfunktionen für Mesh-Generierung
 
-### trimesh
+### 1.2.2 trimesh
 - Lizenz: MIT
 - Stärken: hohe Abdeckung an 3D-Formaten, einfache Mesh-Erstellung
 - Schwächen: größere Abhängigkeiten

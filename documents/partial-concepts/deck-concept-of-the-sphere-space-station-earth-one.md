@@ -9,11 +9,11 @@ history:
     change: "Initial"
     reference: documents/change-management/0001-initial-english-translation.md
 ---
-# Deck Concept of the Sphere Space Station Earth ONE
+# 1. Deck Concept of the Sphere Space Station Earth ONE
 
-## 1. Realistic Volume Calculation and Deck Allocation
+## 1.1 Realistic Volume Calculation and Deck Allocation
 
-### 1.1 Volume Breakdown per Deck
+### 1.1.1 1.1 Volume Breakdown per Deck
 
 Updated breakdown of deck functions, with consideration for energy generation and cooling needs:
 
@@ -37,7 +37,7 @@ Updated breakdown of deck functions, with consideration for energy generation an
 16. **Hazard Management Rooms**: Deck 015 for emergency response systems.
 17. **Escape Pod Areas**: Strategically located across multiple decks.
 
-### 1.2 Volume Calculations and Net Space by Function
+### 1.1.2 1.2 Volume Calculations and Net Space by Function
 
 Detailed allocation of net usable volume for each type of room based on overall station volume and safety priorities:
 
@@ -57,6 +57,6 @@ Detailed allocation of net usable volume for each type of room based on overall 
 | **Hazard Management**          | Deck 015            | 10,000          | Emergency systems and hazard control                |
 | **Escape Pods**                | Multiple decks      | 15,000          | Strategically positioned for accessibility          |
 
-## Sources
+## 1.2 Sources
 
 No external sources used.

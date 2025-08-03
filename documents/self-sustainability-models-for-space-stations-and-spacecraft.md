@@ -9,14 +9,14 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
-#### **Document 10: Self-Sustainability Models for Space Stations and Spacecraft**
-##### (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
+# 1. **Document 10: Self-Sustainability Models for Space Stations and Spacecraft**
+##### 1.0.0.0.1 (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 
 ---
 
 **Date: 2024-11-02**
 
-## **Self-Sustainability Models for Space Stations and Spacecraft**
+## 1.1 **Self-Sustainability Models for Space Stations and Spacecraft**
 
 **Contents**:
 1. **Models**
@@ -28,7 +28,7 @@ history:
 
 ---
 
-### **1. Models**
+### 1.1.1 **Models**
 
 1. **Full Autonomous Sustainability**  
    - **Definition**: This model is designed for missions and stations that require complete independence from external support due to the extended mission duration and remoteness from supply chains. Resources must be renewable aboard, and robust nuclear energy backup systems are essential. Limited mining of non-renewable resources may be permitted for critical needs.
@@ -71,7 +71,7 @@ history:
 
 ---
 
-### **2. Summary of Self-Sustainability Models**
+### 1.1.2 **Summary of Self-Sustainability Models**
 
 | Model                       | Resource Renewal | Energy Backup              | Mining Allowed          | Typical Duration & Location                                  |
 |-----------------------------|------------------|----------------------------|--------------------------|--------------------------------------------------------------|
@@ -81,7 +81,7 @@ history:
 
 ---
 
-### **3. Discussion of Model Suitability and Practical Applications**
+### 1.1.3 **Discussion of Model Suitability and Practical Applications**
 
 - **Full Autonomous Sustainability** is critical for the deepest space missions and stations, where distances and extended durations make regular resupply impossible. This model provides complete independence, suitable for ambitious exploration missions and habitats in regions like the Kuiper Belt, Oort Cloud, and beyond.
 
@@ -91,7 +91,7 @@ history:
 
 ---
 
-### **4. Technological Requirements**
+### 1.1.4 **Technological Requirements**
 
 - **Full Autonomous Sustainability**:
   - **Life Support**: Closed-loop life support systems capable of full recycling for air, water, and waste.
@@ -113,7 +113,7 @@ history:
 
 ---
 
-### **5. Environmental and Safety Considerations**
+### 1.1.5 **Environmental and Safety Considerations**
 
 Each sustainability model must incorporate safety protocols and environmental standards to minimize impact on space environments:
 
@@ -124,7 +124,7 @@ Each sustainability model must incorporate safety protocols and environmental st
 
 ---
 
-### **6. Phased Development Timeline**
+### 1.1.6 **Phased Development Timeline**
 
 Each model will be phased in according to current technological readiness and the mission requirements:
 
@@ -142,10 +142,10 @@ Each model will be phased in according to current technological readiness and th
 
 ---
 
-### **Conclusion**
+### 1.1.7 **Conclusion**
 
 These self-sustainability models provide a structured, scalable approach to resource and energy management, tailored to mission duration, station location, and logistical feasibility. This framework enables the planning and execution of sustainable, efficient operations across diverse environments in the Solar System. By following these models, space missions can achieve greater autonomy, resilience, and safety, supporting humanity’s expansion into deeper space.
 
-## Sources
+## 1.2 Sources
 
 No external sources used.

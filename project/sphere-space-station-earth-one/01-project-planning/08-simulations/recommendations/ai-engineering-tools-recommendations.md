@@ -1,14 +1,14 @@
-# AI-gestützte Engineering-Tools
+# 1. AI-gestützte Engineering-Tools
 
 Diese Ausarbeitung beantwortet die Frage, welche KI-unterstützten Engineering-Tools in einer ersten Anlaufphase für das Projekt geeignet sein könnten. Sie berücksichtigt die bereits vorhandenen Python-Skripte und die Hinweise aus dem Geschäftsplan.
 
-## Open-Source-Werkzeuge für Simulation und Optimierung
+## 1.1 Open-Source-Werkzeuge für Simulation und Optimierung
 
 - **poliastro** oder **GMAT** für Bahnmechanik und Missionsplanung. Beide bieten Python-Schnittstellen, sodass sie mit Optimierungsbibliotheken oder KI-Frameworks kombiniert werden können.
 - **OpenMDAO** für multidisziplinäre Designoptimierung. Dieses Framework lässt sich mit maschinellen Lernverfahren koppeln, um Entwurfsparameter effizient zu erforschen.
 - **FreeCAD** oder **Onshape** als kostengünstige CAD-Lösung mit Python-Scripting. Später könnten Generative-Design-Methoden ergänzt werden.
 
-## Visualisierung und Datenanalyse
+## 1.2 Visualisierung und Datenanalyse
 
 - **Blender** wird bereits in den Empfehlungen genannt und eignet sich dank der Python-API für prozedurale Modellierung und KI-gestützte Animationspipelines.
 - **TensorFlow** oder **PyTorch** können genutzt werden, um aus Simulationsdaten Vorhersagemodelle abzuleiten, zum Beispiel für Lebensunterstützungssysteme.

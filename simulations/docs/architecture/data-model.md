@@ -1,4 +1,4 @@
-# Datenmodell
+# 1. Datenmodell
 
 Dieses Dokument beschreibt die Dataclasses, die das interne Stationsmodell repräsentieren.
 

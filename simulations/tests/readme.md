@@ -1,8 +1,8 @@
-# Integration Tests
+# 1. Integration Tests
 
 Contains tests validating simulation outputs.
 
-## Running the tests
+## 1.1 Running the tests
 
 Install dependencies and execute:
 

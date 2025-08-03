@@ -9,11 +9,11 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
-# Construction Handbook
+# 1. Construction Handbook
 
 This handbook collects key decisions for modeling the Sphere Space Station and serves as ongoing documentation.
 
-## Current Status
+## 1.1 Current Status
 
 - **Deck data** are based on calculations from `deck_calculations_script.py` and are prepared for Blender in `deck_3d_construction_data.csv`.
 - **Variable names** were converted to a consistent, PEP8-compliant schema (e.g., `deck_id`, `inner_radius_m`).
@@ -51,6 +51,6 @@ This handbook collects key decisions for modeling the Sphere Space Station and s
 
 Further adjustments and releases will be added to this document.
 
-## Sources
+## 1.2 Sources
 
 No external sources used.

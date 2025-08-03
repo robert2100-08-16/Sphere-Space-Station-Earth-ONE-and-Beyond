@@ -9,7 +9,7 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
-# Sphere Station Documentation: Technical and Operational Overview
+# 1. Sphere Station Documentation: Technical and Operational Overview
 (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 
 **Date: 2024-10-30**
@@ -27,6 +27,6 @@ This overview links to the detailed documentation for the Sphere Station project
 9. [Establishing a Solar Alliance for Governance and Security in Space](establishing-a-solar-alliance-for-governance-and-security-in-space.md)
 10. [Self-Sustainability Models for Space Stations and Spacecraft](self-sustainability-models-for-space-stations-and-spacecraft.md)
 
-## Sources
+## 1.1 Sources
 
 No external sources used.

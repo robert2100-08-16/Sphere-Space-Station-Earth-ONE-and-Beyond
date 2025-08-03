@@ -2,13 +2,13 @@
 
 ---
 
-### Overview of Documentation Contents
+# 1. Overview of Documentation Contents
 
 The Sphere Space Station Earth ONE and Beyond project is supported by comprehensive documentation covering all relevant thematic areas. The existing ten main documents address the station’s technical specifications, infrastructure and personnel, energy supply and thermal management, governance structures, public engagement, economic feasibility analyses, environmental and sustainability concepts, plans for future expansion of the station network, global space governance, and self-sustainability models. Thus, the core “subject areas”—from technical through organizational and financial to sustainability and public participation—are fundamentally addressed. Below, the completeness, depth, and maturity of these areas as well as their mutual alignment are assessed. A summary table (Table 1) provides an overview of each area’s maturity level and interoperability.
 
 ---
 
-### Maturity Level and Interoperability of Subject Areas
+### 1.0.1 Maturity Level and Interoperability of Subject Areas
 
 The documentation is extremely comprehensive in most areas. Table 1 summarizes the assessment of each field with regard to **Content Maturity** (completeness/depth) and **Interoperability** (consistency/linkage to other areas).
 
@@ -29,7 +29,7 @@ The documentation is extremely comprehensive in most areas. Table 1 summarizes t
 
 ---
 
-### Particularly Mature Areas
+### 1.0.2 Particularly Mature Areas
 
 The station’s technical design (structure, systems, safety) is exceptionally thorough. Document 1 describes every central system—from rotational gravity to energy supply and emergency systems—with detailed specifications. The energy and thermal management plan combines two 60 MW small modular reactors (or alternatively 20 micro-reactors) with large solar arrays for redundancy, and outlines energy storage (liquid heat storage), deployable radiators, and insulation strategies. The economic planning is similarly advanced: a sophisticated business plan details development costs (~~€1 bn), transport (~~€8.5 bn), annual operating expenses (\~€25 M/yr), revenue streams (rental of living quarters, laboratories, tourism), pricing, and forecasts a 12–15-year return on investment. These analyses provide a solid economic foundation. The environmental and sustainability concept (Document 7) sets clear principles—resource efficiency, closed-loop life support, recycling—and concrete measures such as CO₂ reclamation, water recycling, waste composting for hydroponics, and strict hazardous materials protocols. This demonstrates high technical maturity in self-sufficiency planning and minimizing external resupply needs.
 
@@ -37,7 +37,7 @@ Likewise, the infrastructure, staffing, and living-space planning is very detail
 
 ---
 
-### Moderately Developed Areas
+### 1.0.3 Moderately Developed Areas
 
 The organizational and governance documentation is solid but more conceptual than the technical sections. Document 4’s consortium model outlines involvement of space agencies, companies, research institutions, investors, and governance bodies (consortium council, executive board, expert panels), addressing decision-making, conflict resolution, and funding phases. While well-designed for transparent international collaboration, concrete partners and legal structures remain to be specified. Public engagement (Document 5) proposes transparency campaigns, educational curricula, live broadcasts, citizen-science initiatives, and decentralized “Sphere” clubs for global participation. These measures are ambitious but still generic; resource allocation and structural alignment (e.g., between a PR department and local clubs) require further elaboration.
 
@@ -45,7 +45,7 @@ Two elements are more visionary than concrete: the Solar Alliance governance con
 
 ---
 
-### Consistency, Interoperability, and Harmonization
+### 1.0.4 Consistency, Interoperability, and Harmonization
 
 Overall consistency between areas is high. Documents reference shared parameters and complement each other. For example, Earth ONE is consistently described as a 127 m spherical habitat for \~700 people; this assumption underpins the technical concept (Doc. 1), operational planning (Doc. 2), and financial models. The energy and sustainability documents (Docs. 3 and 7) both specify a mix of solar arrays and two primary reactors plus reserves. Technical details (60 MW SMRs) appear nearly verbatim across Docs. 1 and 3. Closed-loop life-support systems (air, water, waste) mentioned in Doc. 1 are elaborated in Doc. 7 (CO₂ scrubbers, water purification, composting). Deck layouts—general in Doc. 1 (living/work areas mid-decks, industry/storage outer decks)—are refined in Doc. 8 with specific functions per deck (decks 6–10 residential, deck 15 reactors, decks 2–3 life support).
 
@@ -53,7 +53,7 @@ Interdependencies are clearly signposted: the sustainability document’s lunar 
 
 ---
 
-### Potentials, Risks, Objectives, and Feasibility (Overall Assessment)
+### 1.0.5 Potentials, Risks, Objectives, and Feasibility (Overall Assessment)
 
 The documentation conveys a visionary yet well-considered project. Objectives are clear: Earth ONE as a sustainable, permanent LEO outpost fostering science, commerce, and international exchange—evident from the mission statement in Doc. 1 to public engagement in Doc. 5. Long-term expansion to the Moon, Mars, asteroids, etc., is firmly anchored. The project could enable scientific breakthroughs (microgravity labs, space-based astronomy), spur new industries (materials research, pharmaceuticals, space mining), and invigorate space tourism. Economically, early positioning in an orbital market—accommodation, research services, satellite servicing, media offerings—promises significant returns. Socially, the station offers STEM inspiration and international cooperation. The closed-habitat ecology could model efficient terrestrial resource use, and Earth ONE may serve as a springboard for multi-planetary expansion.
 
@@ -63,11 +63,11 @@ Despite these challenges, the documentation outlines realization paths: Earth ON
 
 ---
 
-### Recommendations and Next Steps
+### 1.0.6 Recommendations and Next Steps
 
 Below are the most sensible next steps from both a technical/content perspective (“logical next step”) and a strategic/project perspective (“smartest next step”). Both aim to advance the documented concepts toward implementation and close remaining gaps.
 
-#### Next Logical Development Step (Technical/Content)
+#### 1.0.6.1 Next Logical Development Step (Technical/Content)
 
 **Recommendation:** Develop an integrated development and implementation roadmap to link all concepts. This master plan should define phases, milestones, and responsibilities—from R\&D through prototype construction to station assembly—and concretely align technical, organizational, and financial subplans. Key stages should include:
 
@@ -78,7 +78,7 @@ Below are the most sensible next steps from both a technical/content perspective
 
 This roadmap will unite parallel concept documents, reveal bottlenecks (launch capacity, personnel training, regulatory approvals), and incorporate risk analyses and fallback strategies (alternative technologies, modular capacity adjustments). Translating building blocks into a detailed action plan will provide internal clarity and external credibility.
 
-#### Strategically Smartest Next Step (Project Strategy)
+#### 1.0.6.2 Strategically Smartest Next Step (Project Strategy)
 
 **Recommendation:** Forge a powerful real-world alliance/consortium and secure political backing, e.g., by launching an international flagship project under EU leadership. Early stakeholder engagement and binding commitments will generate momentum. Concrete measures include:
 

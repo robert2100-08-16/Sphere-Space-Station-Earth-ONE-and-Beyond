@@ -1,4 +1,4 @@
-# Sphere Space Station Simulations Library
+# 1. Sphere Space Station Simulations Library
 
 This package bundles the core calculations, animation helpers and data export functionality used by the example simulations.  It is organised into subpackages:
 

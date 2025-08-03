@@ -1,6 +1,6 @@
-# Sprintplan für Simulationen
+# 1. Sprintplan für Simulationen
 
-## Sprintplan L3: STEP-/glTF-Integration & CAD-Detailierung
+## 1.1 Sprintplan L3: STEP-/glTF-Integration & CAD-Detailierung
 
 Dieser Sprintplan beschreibt, wie die beiden großen Themen
 (1) Umstellung der Simulationen und Animationen auf STEP und glTF sowie
@@ -10,7 +10,7 @@ sphere\_space\_station\_simulations auf und führt sie zu einer zukunftsfähigen
 Architektur (KERNEL → ADAPTER → GUI) weiter. Die vorgeschlagenen Sprints orientieren sich an
 zweiwöchigen Iterationen mit klaren Aufgaben, Terminen und Deliverables.
 
-### Gesamtziele
+### 1.1.1 Gesamtziele
 
 * **CAD-Austauschformat vereinheitlichen:**
   Die gesamte Geometrie (Decks, Hülle, Fenster, etc.) wird mithilfe eines einzigen präzisen CAD-Formats generiert. Aufgrund seiner Herstellerunabhängigkeit und Präzision wird STEP (ISO 10303) als Kernformat gewählt. Mathematische Geometrien (Volumenkörper) lassen sich damit genau und verlustfrei austauschen.
@@ -27,15 +27,15 @@ Die Sprints starten nach Abschluss des bestehenden Bibliotheksaufbaus (Sprintpla
 
 ---
 
-## Sprint 1 (29.09.2025 – 10.10.2025): Architekturentwurf & Technologieauswahl
+## 1.2 Sprint 1 (29.09.2025 – 10.10.2025): Architekturentwurf & Technologieauswahl
 
-### Ziele
+### 1.2.1 Ziele
 
 1. Tragfähige Architektur für STEP-/glTF-Integration entwerfen.
 2. Bibliotheken für STEP- und glTF-Erzeugung evaluieren und auswählen.
 3. Erste Prototypen zur Ausgabe von STEP- und glTF-Dateien aus vorhandenen Geometriedaten erstellen.
 
-### Aufgaben
+### 1.2.2 Aufgaben
 
 | Aufgabe                                                                                                                                                                                                                                                                                 | Zielordner/Modul                                                         | Fälligkeit |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------- |
@@ -46,7 +46,7 @@ Die Sprints starten nach Abschluss des bestehenden Bibliotheksaufbaus (Sprintpla
 | Prototyp glTF-Exporter: Analog zum STEP-Exporter eine erste glTF-Ausgabe (Meshes) entwickeln, die Deck- und Hüllendaten in ein glTF-File transformiert. Verwendung z. B. von pygltflib oder trimesh.                                                                                    | `simulations/sphere_space_station_simulations/adapters/gltf_exporter.py` | 10.10.2025 |
 | Unit-Tests: Für Datenmodell und Prototyp-Exporter einfache Tests anlegen (Datei wird geschrieben, Dateien lassen sich öffnen).                                                                                                                                                          | `tests/test_adapters.py`                                                 | 10.10.2025 |
 
-### Deliverables
+### 1.2.3 Deliverables
 
 * Dokumentierte Architektur mit Schichten-Diagramm.
 * Evaluationsbericht zu STEP-/glTF-Bibliotheken.
@@ -56,15 +56,15 @@ Die Sprints starten nach Abschluss des bestehenden Bibliotheksaufbaus (Sprintpla
 
 ---
 
-## Sprint 2 (13.10.2025 – 24.10.2025): Adapter ausbauen & CSV ablösen
+## 1.3 Sprint 2 (13.10.2025 – 24.10.2025): Adapter ausbauen & CSV ablösen
 
-### Ziele
+### 1.3.1 Ziele
 
 1. Vollständige STEP- und glTF-Exporter entwickeln, die alle Geometrien aus dem KERNEL unterstützen (Deck-Zylinder, Hülle inklusive Wurmloch und Basisringe, Fenstergeometrie, Rotationsinformationen).
 2. CSV als Transportformat ablösen und nur noch für Berichte nutzen.
 3. Bestehende Blender-Adapter auf glTF-Import umstellen.
 
-### Aufgaben
+### 1.3.2 Aufgaben
 
 | Aufgabe                                                                                                                                                                                                                                                  | Zielordner/Modul                                                                           | Fälligkeit |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ---------- |
@@ -76,7 +76,7 @@ Die Sprints starten nach Abschluss des bestehenden Bibliotheksaufbaus (Sprintpla
 | CLI-Starter anpassen: Starter-Skripte (Deck-, Hull- und Station-Simulation) erhalten zusätzliche CLI-Optionen: `--export-step`, `--export-gltf` und `--export-json`, die die jeweiligen Dateien erzeugen. CSV-Option bleibt für Berichte.                | `simulations/deck_calculator/starter.py`, `simulations/blender_hull_simulation/starter.py` | 22.10.2025 |
 | Tests erweitern: Prüfen, dass STEP- und glTF-Dateien alle Geometrien enthalten (z. B. Anzahl der Deck-Meshes entspricht Anzahl Decks, Hülle vorhanden). Überprüfen, dass Blender-Import das glTF korrekt lädt.                                           | `tests/test_exporters.py`                                                                  | 24.10.2025 |
 
-### Deliverables
+### 1.3.3 Deliverables
 
 * Voll funktionsfähige STEP- und glTF-Exporter.
 * JSON-Datenformat und Exporter.
@@ -86,15 +86,15 @@ Die Sprints starten nach Abschluss des bestehenden Bibliotheksaufbaus (Sprintpla
 
 ---
 
-## Sprint 3 (27.10.2025 – 07.11.2025): CAD-Detailtiefe erhöhen
+## 1.4 Sprint 3 (27.10.2025 – 07.11.2025): CAD-Detailtiefe erhöhen
 
-### Ziele
+### 1.4.1 Ziele
 
 1. Die CAD-Modelle sollen reichhaltiger und detailgetreuer werden: Decks mit Deckenelementen, Stützen, Korridoren; Hülle mit strukturellen Versteifungen, Wartungsschleusen und Docking-Ports; Fenster mit Rahmen und eventueller Glasstärke.
 2. Simulationen sollen optionale Parameter für diese Details aufnehmen können (z. B. Anzahl der Stützen pro Deck, Durchmesser der Docking-Ports).
 3. Die Exporter müssen diese feinen Geometrien in STEP und glTF korrekt abbilden.
 
-### Aufgaben
+### 1.4.2 Aufgaben
 
 | Aufgabe                                                                                                                                                                                                                                               | Zielordner/Modul                                                          | Fälligkeit |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ---------- |
@@ -104,7 +104,7 @@ Die Sprints starten nach Abschluss des bestehenden Bibliotheksaufbaus (Sprintpla
 | Prototyp-Visualisierung in Blender: Beispielszene erstellen, die das feindetaillierte Modell mit Materialien importiert und rendert. Dokumentation, wie die glTF-Datei in Blender geladen und weiterverarbeitet wird.                                 | `recommendations/blender_example_scene.blend` (oder Markdown-Dok)         | 07.11.2025 |
 | Tests für Details: Unit-Tests hinzufügen, die prüfen, dass z. B. die Zahl der Docking-Ports in STEP der in der Simulation gesetzten entspricht, und dass glTF entsprechende Mesh-Gruppen enthält.                                                     | `tests/test_geometry_details.py`                                          | 07.11.2025 |
 
-### Deliverables
+### 1.4.3 Deliverables
 
 * Erweiterte Geometrieklassen mit zusätzlichen Parametern.
 * STEP- und glTF-Exporter mit Material- und Detailunterstützung.
@@ -114,15 +114,15 @@ Die Sprints starten nach Abschluss des bestehenden Bibliotheksaufbaus (Sprintpla
 
 ---
 
-## Sprint 4 (10.11.2025 – 21.11.2025): Integration, Dokumentation & Qualitätssicherung
+## 1.5 Sprint 4 (10.11.2025 – 21.11.2025): Integration, Dokumentation & Qualitätssicherung
 
-### Ziele
+### 1.5.1 Ziele
 
 1. Alle neuen Komponenten zusammenführen und stabilisieren.
 2. Umfassende Dokumentation in Deutsch und Englisch erstellen.
 3. Automatisierte Qualitätskontrollen und CI einrichten.
 
-### Aufgaben
+### 1.5.2 Aufgaben
 
 | Aufgabe                                                                                                                                                                                                                | Zielordner/Modul            | Fälligkeit |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------- | ---------- |
@@ -132,7 +132,7 @@ Die Sprints starten nach Abschluss des bestehenden Bibliotheksaufbaus (Sprintpla
 | Continuous Integration (CI): Einen CI-Workflow definieren (GitHub Actions), der Tests für Python, STEP/glTF-Exports und Blender-Skripte ausführt. Optional: automatischer Upload von Artefakten (glTF/STEP-Beispiele). | `.github/workflows/ci.yml`  | 21.11.2025 |
 | Stakeholder-Review & Feedback: Ergebnisse (STEP-Datei, glTF-Szene, Rendering) präsentieren. Feedback sammeln (z. B. zu Detailgenauigkeit, Dateigrößen) und Backlog für weitere Iterationen anlegen.                    | `project/backlog.md`        | 21.11.2025 |
 
-### Deliverables
+### 1.5.3 Deliverables
 
 * Vollständiger STEP-/glTF-Export-Pipeline inkl. automatischer Tests.
 * Zweisprachige Dokumentation und Migrationsleitfaden.
@@ -142,7 +142,7 @@ Die Sprints starten nach Abschluss des bestehenden Bibliotheksaufbaus (Sprintpla
 
 ---
 
-## Hinweise & Argumentation zur Toolwahl
+## 1.6 Hinweise & Argumentation zur Toolwahl
 
 * **STEP als CAD-Format:**
   Der Kernvorteil von STEP liegt in seiner Präzision und der softwareunabhängigen Beschreibung komplexer Volumenkörper. Während OBJ oder STL einfacher zu erzeugen sind, verlieren sie B-Rep-Informationen; daher wird STEP für die Kerngeometrie verwendet.
@@ -157,7 +157,7 @@ Die Sprints starten nach Abschluss des bestehenden Bibliotheksaufbaus (Sprintpla
 
 ---
 
-## Fußnoten
+## 1.7 Fußnoten
 
 1. [https://chatgpt.com/?utm\_src=deep-research-pdf](https://chatgpt.com/?utm_src=deep-research-pdf)
 2. [https://chatgpt.com/?utm\_src=deep-research-pdf](https://chatgpt.com/?utm_src=deep-research-pdf)
