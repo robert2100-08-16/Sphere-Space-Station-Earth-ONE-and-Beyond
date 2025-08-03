@@ -1,0 +1,7 @@
+pandas
+numpy
+matplotlib
+tqdm
+pygltflib
+black
+pytest
