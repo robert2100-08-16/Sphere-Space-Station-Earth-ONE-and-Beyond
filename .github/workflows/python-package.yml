@@ -19,6 +19,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install pandas numpy matplotlib tqdm black pytest
       - name: Lint
-        run: black --check simulations/deck-calculator/deck-calculations-script.py
+        run: black --check simulations/deck_calculator/deck_calculations_script.py
       - name: Test
         run: pytest -q
