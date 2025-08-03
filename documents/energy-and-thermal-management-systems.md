@@ -1,3 +1,14 @@
+---
+title: "Document 3: Energy and Thermal Management Systems"
+version: 1.0.0
+owner: "Robert Alexander Massinger"
+license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
+history:
+  - version: 1.0.0
+    date: 2024-11-01
+    change: "Initial"
+    reference: Project_SpaceBall_20230318.pdf
+---
 #### **Document 3: Energy and Thermal Management Systems**
 ##### (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 

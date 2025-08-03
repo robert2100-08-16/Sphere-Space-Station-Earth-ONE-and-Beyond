@@ -1,3 +1,14 @@
+---
+title: "Document 10: Self-Sustainability Models for Space Stations and Spacecraft"
+version: 1.0.0
+owner: "Robert Alexander Massinger"
+license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
+history:
+  - version: 1.0.0
+    date: 2024-11-02
+    change: "Initial"
+    reference: Project_SpaceBall_20230318.pdf
+---
 #### **Document 10: Self-Sustainability Models for Space Stations and Spacecraft**
 ##### (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 

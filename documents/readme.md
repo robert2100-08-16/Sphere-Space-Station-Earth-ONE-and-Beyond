@@ -1,14 +1,14 @@
 ---
 title: "Documents"
-version: 0.1.0
+version: 1.0.0
 owner: "Robert Alexander Massinger"
+license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
-  - version: 0.1.0
+  - version: 1.0.0
     date: 2024-06-01
-    change: "Initial English translation"
-    reference: documents/change-management/0001-initial-english-translation.md
+    change: "Initial"
+    reference: Project_SpaceBall_20230318.pdf
 ---
-
 # Documents
 
 This directory houses the project documentation and serves as the single source of truth. All data, CAD models, engineering plans, simulations, and procurement records must be traceable to documents in this folder.

@@ -1,14 +1,14 @@
 ---
 title: "Window Specification for Earth ONE Station"
-version: 0.1.0
+version: 1.0.0
 owner: "Robert Alexander Massinger"
+license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
-  - version: 0.1.0
+  - version: 1.0.0
     date: 2024-06-01
-    change: "Initial extraction"
+    change: "Initial"
     reference: documents/change-management/0001-initial-english-translation.md
 ---
-
 # Window Specification for Earth ONE Station
 
 The Earth ONE station requires windows that withstand extreme thermal cycling, rapid decompression, micrometeorite impacts, and intense UV and cosmic radiation. A multi-layered composite structure is proposed:
