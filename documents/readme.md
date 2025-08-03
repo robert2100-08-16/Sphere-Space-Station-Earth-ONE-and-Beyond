@@ -15,6 +15,6 @@ This directory houses the project documentation and serves as the single source 
 
 When critical design changes are made, the related documents must be versioned and updated, or new documents must be created and stored here. The `change-management` subfolder records change requests and approvals affecting these documents.
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

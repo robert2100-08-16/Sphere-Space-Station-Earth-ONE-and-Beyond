@@ -155,6 +155,6 @@ Advanced life support and utility systems maintain a stable and habitable enviro
 
 ---
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

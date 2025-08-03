@@ -125,6 +125,6 @@ The Solar Alliance envisions a peaceful, equitable, and sustainable Solar System
 
 The Solar Alliance represents a comprehensive, democratic approach to governing human expansion across the Solar System. By establishing a centralized, accountable, and inclusive authority, the Alliance ensures that space remains accessible, safe, and equitable. While the Solar Alliance’s authority would initially exclude Earth, its democratic structure and inclusive vision create a pathway for global cooperation and sustainable growth. The Alliance’s presence on all major celestial bodies would bring stability, foster innovation, and protect the Solar System’s resources for all humanity.
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

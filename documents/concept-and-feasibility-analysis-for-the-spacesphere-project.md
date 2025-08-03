@@ -132,6 +132,6 @@ Below is the full list of geometric and dynamic properties for each deck:
 | **014** | 56.0               | 59.0                 | 3.0                 | 29.50                      | 14.75                            | 54,984.62              |
 | **015** | 59.5               | 62.5                 | 3.0                 | 31.25                      | 15.63                            | 26,328.88              |
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

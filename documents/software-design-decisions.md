@@ -1,21 +1,21 @@
 # Software Design Decisions
 
-Dieses Dokument fasst wichtige Architekturentscheidungen der Python-Software zusammen. Ziel ist eine langfristig wartbare Bibliothek für Berechnungen und 3D-Simulationen der Sphere Space Station.
+This document summarizes important architectural decisions of the Python software. The goal is a long-term maintainable library for calculations and 3D simulations of the Sphere Space Station.
 
-## Abwägung der Ansätze
+## Evaluation of Approaches
 
-**Ansatz 1 – Modulare Python-Library**
-- Funktionen werden in klar abgegrenzten Modulen gekapselt und können von verschiedenen Adaptern (z. B. Blender, MATLAB) genutzt werden.
-- Gemeinsame Tests und eine einheitliche API erleichtern Wartung und Wiederverwendung.
+**Approach 1 – Modular Python Library**
+- Functions are encapsulated in clearly separated modules and can be used by various adapters (e.g., Blender, MATLAB).
+- Shared tests and a uniform API facilitate maintenance and reuse.
 
-**Ansatz 2 – Weiterführen des Skripts**
-- Schnelle Erweiterungen sind möglich, jedoch würde das Skript mit der Zeit zu einem schwer wartbaren Monolithen anwachsen.
-- Zusätzliche Adapter müssten jedes Mal individuell entwickelt werden.
+**Approach 2 – Continuing the Script**
+- Rapid extensions are possible, but the script would grow into a hard-to-maintain monolith over time.
+- Additional adapters would have to be developed individually each time.
 
-## Entscheidung
+## Decision
 
-Um die Simulation vielseitig nutzbar und besser testbar zu machen, wird Ansatz&nbsp;1 umgesetzt. Unter `simulations/library` entsteht eine eigenständige Python-Library. Das bestehende Skript bleibt vorerst erhalten; ein neues `deck_calculations_adapter.py` dient als Brücke zwischen Library und bisherigen Workflows.
+To make the simulation versatile and easier to test, Approach 1 is being implemented. A standalone Python library is being created under `simulations/library`. The existing script will remain for now; a new `deck_calculations_adapter.py` serves as a bridge between the library and current workflows.
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

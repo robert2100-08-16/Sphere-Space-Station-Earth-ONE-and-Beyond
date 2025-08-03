@@ -268,6 +268,6 @@ Unmanned freight transporters provide a cost-effective and technically simpler s
 
 ---
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

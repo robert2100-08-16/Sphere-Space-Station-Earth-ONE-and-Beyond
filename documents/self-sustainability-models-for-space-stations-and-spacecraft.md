@@ -132,6 +132,6 @@ Each model will be phased in according to current technological readiness and th
 
 These self-sustainability models provide a structured, scalable approach to resource and energy management, tailored to mission duration, station location, and logistical feasibility. This framework enables the planning and execution of sustainable, efficient operations across diverse environments in the Solar System. By following these models, space missions can achieve greater autonomy, resilience, and safety, supporting humanity’s expansion into deeper space.
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

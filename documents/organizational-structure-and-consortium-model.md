@@ -156,7 +156,7 @@ To encourage participation and investment from various sectors, the consortium o
 - **STEM Education and Outreach**: The Sphere Station project acts as a catalyst for STEM engagement, inspiring future generations and promoting public support for space exploration.
 - **Environmental Initiatives**: The project’s commitment to sustainable space operations aligns with global environmental goals, promoting a responsible approach to space development.
 
-## Quellen
+## Sources
 
 - NASA – https://www.nasa.gov
 - ESA – https://www.esa.int

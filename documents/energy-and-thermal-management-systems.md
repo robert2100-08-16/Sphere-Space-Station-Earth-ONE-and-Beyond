@@ -144,6 +144,6 @@ Safety measures and environmental controls are implemented to ensure that energy
   - Areas surrounding reactors and other high-energy systems are equipped with fire suppression, including gas-based extinguishers and fire-resistant materials to manage potential hazards.
 
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

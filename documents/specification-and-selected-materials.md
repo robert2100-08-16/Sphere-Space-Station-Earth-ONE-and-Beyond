@@ -2,94 +2,94 @@
 
 ## Overview
 
-Die Sphere Space Station (Earth ONE) ist eine innovative Raumstation, die speziell für den Einsatz im erdnahen Orbit (LEO) entwickelt wurde. Dieses Dokument beschreibt die Materialauswahl und Spezifikationen für verschiedene strukturelle Komponenten und Funktionseinheiten der Station. Basierend auf den einzigartigen Anforderungen des Weltraumeinsatzes wurden spezielle Materialien und Verbundwerkstoffe ausgewählt, um den extremen Umweltbedingungen und den betrieblichen Erfordernissen gerecht zu werden.
+The Sphere Space Station (Earth ONE) is an innovative space station designed specifically for operation in Low Earth Orbit (LEO). This document describes the material selection and specifications for various structural components and functional units of the station. Based on the unique requirements of space deployment, special materials and composites have been chosen to withstand extreme environmental conditions and operational demands.
 
-**Inhalt:**
-- Einleitung
-- Materialanforderungen und -spezifikationen
-- Strukturkomponenten und Materialauswahl
+**Contents:**
+- Introduction
+- Material Requirements and Specifications
+- Structural Components and Material Selection
 - Appendix A: Window Specification and Material Selection of LEO-based Earth ONE Station
 
 ---
 
-## **Einleitung**
+## Introduction
 
-In der anspruchsvollen Umgebung des erdnahen Orbits muss jedes Material gegen intensive Belastungen beständig sein. Dazu zählen:
-- **Feuerfestigkeit** für den Fall hoher thermischer Einwirkung.
-- **Säure- und Chemikalienbeständigkeit**, um eine lange Haltbarkeit auch in chemisch belasteten Bereichen sicherzustellen.
-- **Biofestigkeit**, um gegen Schimmel, Mikroben und biologische Verunreinigungen zu schützen.
-- **Rasche Dekompressions- und Temperaturschwankungsbeständigkeit**, da die Temperaturschwankungen im LEO zwischen -150°C und 120°C variieren können.
-
----
-
-## **Materialanforderungen und -spezifikationen**
-
-Um den Anforderungen der Raumstation gerecht zu werden, wurden folgende Silizium-basierte und weitere Materialien als Hauptkomponenten gewählt:
-
-### 1. **Siliziumkarbid (SiC)**
-   - **Eigenschaften**: Extrem hohe Härte, chemikalienbeständig und feuerfest, widersteht Temperaturen über 1000°C.
-   - **Vorteile im Weltraum**: Widerstandsfähig gegen thermische Schocks und Strahlungseinwirkungen, ideal für hochbelastete strukturelle Komponenten.
-   - **Nachteile**: Spröde, erfordert Verbundtechniken für Elastizität.
-
-### 2. **Silan-basierte Polyimid-Verbindungen**
-   - **Eigenschaften**: Chemisch stabil, elastisch und hitzebeständig.
-   - **Vorteile im Weltraum**: Hält extrem niedrigen Temperaturen stand, zeigt geringe Ausgasungswerte und ist widerstandsfähig gegen biologische Einflüsse.
-
-### 3. **Siliziumbasierte Elastomere**
-   - **Eigenschaften**: Hohe Elastizität und Temperaturbeständigkeit, gute Beständigkeit gegen chemische und biologische Einflüsse.
-   - **Vorteile im Weltraum**: Hervorragend geeignet für Stoßdämpfung und Vibrationsfestigkeit in der Vakuumumgebung.
-
-### 4. **Silica-Aerogele**
-   - **Eigenschaften**: Leicht, hitzebeständig und extrem isolierend.
-   - **Vorteile im Weltraum**: Bietet hohe thermische Isolierung und Strahlungsresistenz; jedoch spröde, daher primär als Zusatzbeschichtung geeignet.
+In the demanding environment of low Earth orbit, every material must endure intense stresses, including:
+- **Fire resistance** for exposure to high thermal loads.
+- **Acid and chemical resistance** to ensure long-term durability even in chemically stressed areas.
+- **Biological resistance** to protect against mold, microbes, and biological contamination.
+- **Rapid decompression and temperature fluctuation resistance**, as temperatures in LEO can range from -150°C to 120°C.
 
 ---
 
-## **Strukturkomponenten und Materialauswahl**
+## Material Requirements and Specifications
 
-Die Materialwahl erfolgt gezielt je nach Anwendungsbereich und mechanischer Belastung. Dies ermöglicht eine optimale Balance zwischen Belastbarkeit und Gewicht.
+To meet the needs of the space station, the following silicon-based and additional materials have been selected as primary components:
 
-### **1. Tragende Strukturen**
-   - **Empfohlene Materialien**: Siliziumkarbid (SiC) als Hauptstrukturmaterial, ergänzt durch Silizium-Elastomere für Schwingungsdämpfung.
-   - **Vorteile**: Hohe strukturelle Stabilität, widerstandsfähig gegen Rotationsdynamik und Vibrationen.
+### 1. **Silicon Carbide (SiC)**
+   - **Properties**: Extremely hard, chemically resistant, and fireproof; withstands temperatures above 1000°C.
+   - **Advantages in space**: Resistant to thermal shocks and radiation exposure, ideal for highly stressed structural components.
+   - **Disadvantages**: Brittle; requires composite techniques for elasticity.
 
-### **2. Hüllenteile und Wärmetauscher**
-   - **Empfohlene Materialien**: Silan-modifizierte Polyimide und hitzebeständige Keramiken für äußere Hüllenteile, Stahl für Druckwasserleitungen.
-   - **Vorteile**: Chemische Stabilität, hohe Hitzebeständigkeit und Druckfestigkeit, ideal für Wärmetauscheranwendungen.
+### 2. **Silane-based Polyimide Compounds**
+   - **Properties**: Chemically stable, elastic, and heat resistant.
+   - **Advantages in space**: Withstands extremely low temperatures, exhibits low outgassing, and is resistant to biological influences.
 
-### **3. Radialschotts entlang der Rotationsachse**
-   - **Empfohlene Materialien**: Kombination aus SiC und kohlenstofffaserverstärkten Polymeren.
-   - **Vorteile**: Bietet Schutz gegen mechanische Belastungen und Feuergefahren; geringes Gewicht und hohe Festigkeit.
+### 3. **Silicon-based Elastomers**
+   - **Properties**: High elasticity and temperature resistance; good resistance to chemical and biological effects.
+   - **Advantages in space**: Excellent for shock absorption and vibration resistance in a vacuum environment.
 
-### **4. Tangentialkonstruktionen**
-   - **Empfohlene Materialien**: Siliziumbasierte Elastomere und leichte Kohlenstoffpolymere.
-   - **Vorteile**: Flexibilität und Schwingungsdämpfung, um rotierende Belastungen abzufedern.
-
-### **5. Kabinen- und Laborkonstruktionen**
-   - **Empfohlene Materialien**: Silan-basierte Polyimide, beschichtete Silica-Aerogele für thermische Isolierung, Stahl und Kohlenstoffpolymere für strukturelle Komponenten.
-   - **Vorteile**: Schutz vor Temperaturschwankungen und hohe biologische Beständigkeit.
-
-### **6. Räumliche Konstruktionen (Läden, Werkstätten)**
-   - **Empfohlene Materialien**: Silizium-Elastomere und Kohlenstoffpolymere als Basisstruktur.
-   - **Vorteile**: Anpassungsfähig, leicht und dennoch stabil genug für diverse räumliche Nutzungen.
+### 4. **Silica Aerogels**
+   - **Properties**: Lightweight, heat resistant, and extremely insulating.
+   - **Advantages in space**: Provides strong thermal insulation and radiation resistance; however, brittle, so best used as a coating.
 
 ---
 
-## **Spezifische Materialien für Sonderanwendungen**
+## Structural Components and Material Selection
 
-### Stahl, Kohlenstoffpolymere und Keramiken
-- **Einsatzbereiche**: Stahl für hochbelastete interne Strukturen (z. B. Leitungen im Wärmetauscher), Kohlenstoffpolymere für leichte Strukturanwendungen und Keramiken als thermische Barrieren in Hitzebereichen.
-- **Funktion**: Durch gezielte Platzierung dieser Materialien wird das Gewicht optimiert und zugleich die notwendige Widerstandsfähigkeit und Stabilität sichergestellt.
+Materials are chosen specifically according to the application area and mechanical load to achieve an optimal balance between strength and weight.
+
+### **1. Load-Bearing Structures**
+   - **Recommended materials**: Silicon carbide (SiC) as the main structural material, supplemented by silicon elastomers for vibration damping.
+   - **Advantages**: High structural stability, resistant to rotational dynamics and vibrations.
+
+### **2. Hull Components and Heat Exchangers**
+   - **Recommended materials**: Silane-modified polyimides and heat-resistant ceramics for outer hull sections; steel for pressurized water pipes.
+   - **Advantages**: Chemical stability, high heat resistance, and pressure tolerance, ideal for heat exchanger applications.
+
+### **3. Radial Bulkheads Along the Axis of Rotation**
+   - **Recommended materials**: Combination of SiC and carbon-fiber-reinforced polymers.
+   - **Advantages**: Provides protection against mechanical loads and fire hazards; low weight and high strength.
+
+### **4. Tangential Constructions**
+   - **Recommended materials**: Silicon-based elastomers and lightweight carbon polymers.
+   - **Advantages**: Flexibility and vibration damping to absorb rotational loads.
+
+### **5. Cabin and Laboratory Constructions**
+   - **Recommended materials**: Silane-based polyimides, coated silica aerogels for thermal insulation, steel and carbon polymers for structural components.
+   - **Advantages**: Protection against temperature fluctuations and high biological resistance.
+
+### **6. Spatial Constructions (Shops, Workshops)**
+   - **Recommended materials**: Silicon elastomers and carbon polymers as base structure.
+   - **Advantages**: Adaptable, lightweight, yet sturdy enough for various spatial uses.
 
 ---
 
-## **Appendix A: Window Specification and Material Selection of LEO-based Earth ONE Station**
+## Specific Materials for Special Applications
+
+### Steel, Carbon Polymers, and Ceramics
+- **Areas of use**: Steel for highly stressed internal structures (e.g., pipes in the heat exchanger), carbon polymers for lightweight structural applications, and ceramics as thermal barriers in high-temperature areas.
+- **Function**: Targeted placement of these materials optimizes weight while ensuring the necessary resistance and stability.
+
+---
+
+## Appendix A: Window Specification and Material Selection of LEO-based Earth ONE Station
 
 **High-Performance Composite Window for Space Applications: Material and Specification Overview**
 
 ### Introduction
 
-The selection of materials for the windows of the Earth ONE station demands an extraordinary level of durability. These windows are subject to extreme temperature fluctuations, rapid decompression, impact from micrometeorites, and high levels of UV and cosmic radiation. The proposed composite window uses a multi-layered construction designed to withstand these conditions, ensuring optical clarity and maximum protection.
+The selection of materials for the windows of the Earth ONE station demands an extraordinary level of durability. These windows are subject to extreme temperature fluctuations, rapid decompression, impacts from micrometeorites, and high levels of UV and cosmic radiation. The proposed composite window uses a multi-layered construction designed to withstand these conditions, ensuring optical clarity and maximum protection.
 
 ### 1. Window Requirements in Low Earth Orbit (LEO)
 
@@ -122,11 +122,12 @@ The selection of materials for the windows of the Earth ONE station demands an e
 
 In contrast to high-end bulletproof glass, which is optimized for low-velocity impacts and ambient temperatures, this space-grade composite window structure withstands high-energy impacts, thermal extremes, and radiation exposure, ensuring robust and reliable performance for the Earth ONE station.
 
---- 
+---
 
 **Conclusion**
 
 The specified materials and configurations of the Earth ONE station enable unparalleled resilience against the harshest conditions of the low Earth orbit environment. By tailoring each component's material properties to its functional demands, the Earth ONE station is engineered for optimal performance, durability, and safety.
-## Quellen
 
-Keine externen Quellen verwendet.
+## Sources
+
+No external sources used.

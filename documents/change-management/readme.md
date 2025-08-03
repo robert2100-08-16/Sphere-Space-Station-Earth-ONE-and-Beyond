@@ -1,6 +1,6 @@
 # Change Management
 This directory collects change requests and records affecting documents in this repository.
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

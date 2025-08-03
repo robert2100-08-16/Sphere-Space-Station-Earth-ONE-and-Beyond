@@ -12,6 +12,6 @@ history:
 # Partial Concepts
 This folder contains extracted partial concepts related to Sphere Space Station Earth ONE.
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

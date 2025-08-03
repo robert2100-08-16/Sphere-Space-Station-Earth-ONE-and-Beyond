@@ -19,6 +19,6 @@ The Earth ONE station requires windows that withstand extreme thermal cycling, r
 
 Total thickness is approximately 20–30 cm with a weight of 530–550 kg/m², offering superior resilience for the LEO environment.
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.
