@@ -10,3 +10,7 @@ history:
 ---
 
 This change document tracks the initial translation of documentation to English and the adoption of GitBook-style file naming conventions.
+
+## Quellen
+
+Keine externen Quellen verwendet.

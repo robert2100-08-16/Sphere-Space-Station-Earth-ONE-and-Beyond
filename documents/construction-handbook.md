@@ -48,3 +48,7 @@ Dieses Handbuch sammelt wichtige Entscheidungen zur Modellierung der Sphere Spac
   `station.step.base64` abgelegt, um Binärdiffs zu vermeiden.
 
 Weitere Anpassungen und Releases werden in diesem Dokument ergänzt.
+
+## Quellen
+
+Keine externen Quellen verwendet.

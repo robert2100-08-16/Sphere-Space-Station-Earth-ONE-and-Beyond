@@ -127,3 +127,6 @@ In contrast to high-end bulletproof glass, which is optimized for low-velocity i
 **Conclusion**
 
 The specified materials and configurations of the Earth ONE station enable unparalleled resilience against the harshest conditions of the low Earth orbit environment. By tailoring each component's material properties to its functional demands, the Earth ONE station is engineered for optimal performance, durability, and safety.
+## Quellen
+
+Keine externen Quellen verwendet.

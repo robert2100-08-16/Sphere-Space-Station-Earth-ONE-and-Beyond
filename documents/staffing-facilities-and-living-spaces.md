@@ -129,3 +129,7 @@ The Sphere Station will operate on a leasing model to encourage commercial activ
 - **Incentives for Research Institutions**: Subsidized leasing rates for research institutions conducting studies aligned with the Sphere Station’s goals.
 - **Tourism Packages**: Special offers for space tourists, including observation deck access, zero-gravity experiences, and guided tours.
 - **Revenue Sharing with Private Partners**: Partnerships with private companies for shared revenue from research and manufacturing outputs.
+
+## Quellen
+
+Keine externen Quellen verwendet.

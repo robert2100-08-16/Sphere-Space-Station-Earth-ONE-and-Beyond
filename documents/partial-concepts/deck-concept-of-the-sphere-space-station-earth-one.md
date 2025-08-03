@@ -56,3 +56,7 @@ Detailed allocation of net usable volume for each type of room based on overall 
 | **Medical Facilities**         | Deck 012            | 10,000          | Medical center                                      |
 | **Hazard Management**          | Deck 015            | 10,000          | Emergency systems and hazard control                |
 | **Escape Pods**                | Multiple decks      | 15,000          | Strategically positioned for accessibility          |
+
+## Quellen
+
+Keine externen Quellen verwendet.

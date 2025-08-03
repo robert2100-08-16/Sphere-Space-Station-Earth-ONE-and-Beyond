@@ -18,3 +18,7 @@ The Earth ONE station requires windows that withstand extreme thermal cycling, r
 - **Inner Layer**: 3 cm borosilicate or cerium-doped glass for radiation protection and optical clarity.
 
 Total thickness is approximately 20–30 cm with a weight of 530–550 kg/m², offering superior resilience for the LEO environment.
+
+## Quellen
+
+Keine externen Quellen verwendet.
