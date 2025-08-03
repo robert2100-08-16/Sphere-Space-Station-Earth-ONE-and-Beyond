@@ -1,3 +1,14 @@
+---
+title: "Specification and Selected Materials"
+version: 1.0.0
+owner: "Robert Alexander Massinger"
+license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
+history:
+  - version: 1.0.0
+    date: 2024-11-05
+    change: "Initial"
+    reference: Project_SpaceBall_20230318.pdf
+---
 # **Specification and Selected Materials**
 
 **Date: 2024-11-05**

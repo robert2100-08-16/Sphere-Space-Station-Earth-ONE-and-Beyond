@@ -1,3 +1,14 @@
+---
+title: "Visionary Proposal for the Sphere Space Station Network"
+version: 1.0.0
+owner: "Robert Alexander Massinger"
+license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
+history:
+  - version: 1.0.0
+    date: 2024-12-05
+    change: "Initial"
+    reference: Project_SpaceBall_20230318.pdf
+---
 ### **Visionary Proposal for the Sphere Space Station Network**
 
 **Date: 2024-12-05**

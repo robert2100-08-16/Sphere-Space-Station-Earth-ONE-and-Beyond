@@ -1,3 +1,14 @@
+---
+title: "Construction Handbook"
+version: 1.0.0
+owner: "Robert Alexander Massinger"
+license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
+history:
+  - version: 1.0.0
+    date: 2024-10-30
+    change: "Initial"
+    reference: Project_SpaceBall_20230318.pdf
+---
 # Construction Handbook
 
 This handbook collects key decisions for modeling the Sphere Space Station and serves as ongoing documentation.

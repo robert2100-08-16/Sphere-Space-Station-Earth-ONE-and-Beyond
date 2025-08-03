@@ -1,14 +1,14 @@
 ---
 title: "Deck Concept of the Sphere Space Station Earth ONE"
-version: 0.1.0
+version: 1.0.0
 owner: "Robert Alexander Massinger"
+license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
-  - version: 0.1.0
+  - version: 1.0.0
     date: 2024-06-01
-    change: "Initial extraction"
+    change: "Initial"
     reference: documents/change-management/0001-initial-english-translation.md
 ---
-
 # Deck Concept of the Sphere Space Station Earth ONE
 
 ## 1. Realistic Volume Calculation and Deck Allocation
