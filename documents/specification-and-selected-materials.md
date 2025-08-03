@@ -11,7 +11,10 @@ history:
 ---
 # 1. **Specification and Selected Materials**
 
+**License: (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.**
 **Date: 2024-11-05**
+
+---
 
 ## 1.1 Overview
 

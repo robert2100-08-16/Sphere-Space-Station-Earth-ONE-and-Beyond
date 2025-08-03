@@ -9,12 +9,12 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
-# 1. **Document 2: Staffing, Facilities, and Living Spaces**
-##### 1.0.0.0.1 (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
+# 1. **Staffing, Facilities, and Living Spaces**
+
+**License: (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.**
+**Date: 2024-10-31**
 
 ---
-
-**Date: 2024-10-31**
 
 ### 1.0.1 **Operational Infrastructure and Living Facilities on the Sphere Station**
 

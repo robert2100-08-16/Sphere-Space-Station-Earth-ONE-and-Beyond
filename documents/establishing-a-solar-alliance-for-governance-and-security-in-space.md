@@ -9,12 +9,12 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
-# 1. **Document 9: Establishing a Solar Alliance for Governance and Security in Space**
-##### 1.0.0.0.1 (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
+# 1. **Establishing a Solar Alliance for Governance and Security in Space**
+
+**License: (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.**
+**Date: 2024-11-02**
 
 ---
-
-**Date: 2024-11-02**
 
 ### 1.0.1 **Establishing a Solar Alliance for Governance and Security in Space**
 

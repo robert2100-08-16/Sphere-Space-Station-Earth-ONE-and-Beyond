@@ -9,12 +9,13 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
-# 1. **Document 7: Environmental and Sustainability Goals**
-##### 1.0.0.0.1 (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
+# 1. **Environmental and Sustainability Goals**
+
+**License: (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.**
+**Date: 2024-10-30**
 
 ---
 
-**Date: 2024-10-30**
 
 ## 1.1 **Environmental and Sustainability Goals for the Sphere Station and Space Operations**
 

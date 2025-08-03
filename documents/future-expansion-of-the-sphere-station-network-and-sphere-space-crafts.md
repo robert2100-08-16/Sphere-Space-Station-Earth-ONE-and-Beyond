@@ -9,12 +9,13 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
-# 1. **Document 8: Future Expansion of the Sphere Station Network and Sphere Space Crafts**
-##### 1.0.0.0.1 (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
+# 1. **Future Expansion of the Sphere Station Network and Sphere Space Crafts**
+
+**License: (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.**
+**Date: 2024-10-30**
 
 ---
 
-**Date: 2024-10-30**
 
 ## 1.1 **Future Expansion of the Sphere Station Network and Sphere Space Crafts**
 

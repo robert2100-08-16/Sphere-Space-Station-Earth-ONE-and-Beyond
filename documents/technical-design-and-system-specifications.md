@@ -10,12 +10,13 @@ history:
     reference: Project_SpaceBall_20230318.pdf
 ---
 # 1. **Document 1: Technical Design and System Specifications**
-##### 1.0.0.0.1 (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
----
 
+**License: (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.**
 **Date: 2024-10-30**
 
-### 1.0.1 **Technical Design and System Specifications for the 127-Meter Sphere Station (e.g., Earth ONE)**
+---
+
+## 1.1 **Technical Design and System Specifications for the 127-Meter Sphere Station (e.g., Earth ONE)**
 
 ---
 
@@ -33,7 +34,7 @@ history:
 
 ---
 
-### 1.0.2 **Geometry, Dynamics, and Structural Layout**
+## 1.2 **Geometry, Dynamics, and Structural Layout**
 
 The 127-meter Sphere Station is a spherical, rotating structure designed to provide artificial gravity through centrifugal force. The station has a diameter of 127 meters and rotates along a central axis to simulate gravity on its decks.
 
@@ -41,22 +42,22 @@ The 127-meter Sphere Station is a spherical, rotating structure designed to prov
 - **Structural Design**: The sphere is composed of high-strength, multi-layered composite materials capable of withstanding micro-meteoroid impacts and radiation exposure in Low Earth Orbit (LEO).
 - **Deck Configuration**: Fifteen main decks (Deck 000 to Deck 015) are arranged as concentric shells. Decks closer to the center have lower gravity and are dedicated to storage, command centers, and docking areas. Outer decks provide residential, recreational, and operational spaces for the crew.
 
-### 1.0.3 **Deck Layout and Access Systems**
+## 1.3 **Deck Layout and Access Systems**
 
 The Sphere Station’s decks are designed with specific functions and provide varied gravity levels to accommodate different uses.
 
-#### 1.0.3.1 **Deck Layout Overview**:
+### 1.3.1 **Deck Layout Overview**:
 - **Deck 000**: Central docking port and command center, located along the station’s rotational axis.
 - **Decks 001-007**: Mid-gravity decks allocated for residential and operational spaces.
 - **Decks 008-012**: Higher gravity decks for recreational and industrial activities.
 - **Decks 013-015**: Storage, waste processing, and propulsion system housing.
 
-#### 1.0.3.2 **Access Systems**:
+### 1.3.2 **Access Systems**:
 - **Radial Elevators and Heavy-Lift Elevators**: Connect all decks from the core (Deck 000) to the outermost layers.
 - **Tangential Walkways and Conveyors**: Located on each deck for horizontal movement, with conveyor belts and rail vehicles for efficient transport.
 - **Hover and Climbing Channels**: Special access channels designed for personnel to move across decks in low-gravity zones, equipped with magnetic boots and handrails.
 
-### 1.0.4 **Primary Energy Source and Redundancy**
+## 1.4 **Primary Energy Source and Redundancy**
 
 The Sphere Station’s energy system combines nuclear and solar power to ensure a reliable, long-term power supply.
 
@@ -66,7 +67,7 @@ The Sphere Station’s energy system combines nuclear and solar power to ensure 
 
 - **Energy Regulation and Control**: Advanced digital control algorithms manage the power distribution and load adjustments, allowing the station to efficiently handle power fluctuations and maintain critical systems.
 
-### 1.0.5 **Thermal Management and Heat Dissipation**
+## 1.5 **Thermal Management and Heat Dissipation**
 
 The thermal management system ensures the Sphere Station maintains stable temperatures, preventing overheating from solar radiation or energy systems.
 
@@ -74,7 +75,7 @@ The thermal management system ensures the Sphere Station maintains stable temper
 - **Deployable Radiators**: Embedded within the outer shell, these radiators can be deployed as required to dissipate excess heat into space.
 - **Supplemental Solar Panel Arrays**: Solar panels on the outer decks generate additional power and act as protective layers against solar heating, enhancing thermal insulation.
 
-### 1.0.6 **Safety and Hazard Management Systems**
+## 1.6 **Safety and Hazard Management Systems**
 
 Comprehensive safety systems protect the station and its inhabitants from common space hazards, including fire, radiation, and structural damage.
 
@@ -83,7 +84,7 @@ Comprehensive safety systems protect the station and its inhabitants from common
 - **Micrometeoroid Protection**: Multi-layered outer shell made from high-strength materials to absorb and deflect micrometeoroid impacts.
 - **Biohazard Controls**: Specialized containment systems and air filtration to handle potential biological hazards in laboratories and medical facilities.
 
-### 1.0.7 **Evacuation and Rescue Systems**
+## 1.7 **Evacuation and Rescue Systems**
 
 Evacuation systems are designed to facilitate safe escape in emergencies, enabling self-contained evacuation pods to return to Earth if required.
 
@@ -91,7 +92,7 @@ Evacuation systems are designed to facilitate safe escape in emergencies, enabli
 - **Centralized Assembly Points**: Designated locations for gathering in emergencies, with access to escape routes and supplies.
 - **Regular Drills and Emergency Protocols**: Routine training exercises and clear protocols ensure readiness for various emergency scenarios.
 
-### 1.0.8 **Freight and Personnel Transport**
+## 1.8 **Freight and Personnel Transport**
 
 Transport systems connect the Sphere Station with Earth, the Moon, and other orbital destinations.
 
@@ -99,14 +100,14 @@ Transport systems connect the Sphere Station with Earth, the Moon, and other orb
 - **Cargo and Waste Management**: Dedicated bays for loading and unloading cargo, with automated waste processing units to compact and store waste for safe disposal or recycling.
 - **Shuttle Systems**: Standardized shuttles for frequent Earth-LEO trips and long-haul journeys to lunar and Martian orbits.
 
-### 1.0.9 **Attitude Control and Thruster Systems**
+## 1.9 **Attitude Control and Thruster Systems**
 
 The station’s attitude control system stabilizes its orientation and performs minor orbital adjustments.
 
 - **Gyroscopes and Reaction Wheels**: Stabilize the station’s orientation without expending propellant, using controlled spinning to counteract forces.
 - **Thruster Systems**: Equipped with electric thrusters for minor orbital corrections and to counteract the forces generated by the station's rotation and any external disturbances.
 
-### 1.0.10 **Life Support and Utility Systems**
+## 1.10 **Life Support and Utility Systems**
 
 Advanced life support and utility systems maintain a stable and habitable environment for long-term crew safety.
 
@@ -168,6 +169,6 @@ Advanced life support and utility systems maintain a stable and habitable enviro
 
 ---
 
-# A. Sources
+# 1.11 Sources
 
 No external sources used.
