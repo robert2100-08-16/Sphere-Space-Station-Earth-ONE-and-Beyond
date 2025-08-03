@@ -6,6 +6,7 @@ Sphere Space Station Earth ONE and Beyond
 ## Table of Content
 - Management Summary
 - Sphere Station Documentation: Technical and Operational Overview
+- [Architecture Overview](simulations/docs/architecture/readme.md)
 
 All documents in the `documents` directory must be written in English, except for proper names.
 
