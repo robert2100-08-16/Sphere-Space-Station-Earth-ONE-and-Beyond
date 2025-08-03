@@ -28,3 +28,7 @@ The Sphere Space Station concept is a rotating 127 Meter Diameter Sphere with 16
 #### **Conclusion**
 
 The Sphere Space Station Network is poised to revolutionize human presence in space, fostering scientific innovation, economic development, and international collaboration. By investing in this visionary project, the EU can lead the way in sustainable space exploration and secure its position at the forefront of the space economy.
+
+## Quellen
+
+Keine externen Quellen verwendet.

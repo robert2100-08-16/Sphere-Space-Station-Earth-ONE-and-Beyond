@@ -143,3 +143,10 @@ Involving the public in the Sphere Station Project provides numerous benefits fo
 - **Inspiration and Unity**: The Sphere Station Project inspires people worldwide, creating a shared vision for humanity’s future in space.
 - **Environmental Awareness**: Public initiatives related to the project, such as recycling, sustainable resource management, and environmental education, reinforce positive environmental behaviors.
 - **Cross-Cultural Exchange**: Decentralized associations allow for cross-cultural collaboration, bringing people together from diverse backgrounds to work toward common goals.
+
+## Quellen
+
+- Twitter – https://twitter.com
+- Instagram – https://www.instagram.com
+- Facebook – https://www.facebook.com
+- YouTube – https://www.youtube.com

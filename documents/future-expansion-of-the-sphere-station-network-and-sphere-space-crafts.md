@@ -267,3 +267,7 @@ Unmanned freight transporters provide a cost-effective and technically simpler s
 | **Sustainability for Deep Space** | Establishes a sustainable system for long-term space exploration.                         |
 
 ---
+
+## Quellen
+
+Keine externen Quellen verwendet.

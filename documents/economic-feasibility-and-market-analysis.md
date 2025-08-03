@@ -194,3 +194,7 @@ The main risks include market demand fluctuations, technological failures, and c
 | Other Decks      | €100               | 5,000           | €6 million     |
 
 
+
+## Quellen
+
+Keine externen Quellen verwendet.

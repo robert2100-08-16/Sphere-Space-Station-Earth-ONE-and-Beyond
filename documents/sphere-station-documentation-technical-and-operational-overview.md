@@ -1,42 +1,19 @@
-
-### **Sphere Station Documentation: Technical and Operational Overview**
+# Sphere Station Documentation: Technical and Operational Overview
 (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
-#### **Document 1: Technical Design and System Specifications**
 
-**Title**: *Technical Design and System Specifications for the 127-Meter Sphere Station (e.g., Earth ONE)*
+This overview links to the detailed documentation for the Sphere Station project.
 
-#### **Document 2: Staffing, Facilities, and Living Spaces**
+1. [Technical Design and System Specifications](technical-design-and-system-specifications.md)
+2. [Staffing, Facilities, and Living Spaces](staffing-facilities-and-living-spaces.md)
+3. [Energy and Thermal Management Systems](energy-and-thermal-management-systems.md)
+4. [Organizational Structure and Consortium Model](organizational-structure-and-consortium-model.md)
+5. [Public Engagement and Decentralized Associations](public-engagement-and-decentralized-associations.md)
+6. [Economic Feasibility and Market Analysis](economic-feasibility-and-market-analysis.md)
+7. [Environmental and Sustainability Goals](environmental-and-sustainability-goals.md)
+8. [Future Expansion of the Sphere Station Network and Sphere Space Crafts](future-expansion-of-the-sphere-station-network-and-sphere-space-crafts.md)
+9. [Establishing a Solar Alliance for Governance and Security in Space](establishing-a-solar-alliance-for-governance-and-security-in-space.md)
+10. [Self-Sustainability Models for Space Stations and Spacecraft](self-sustainability-models-for-space-stations-and-spacecraft.md)
 
-**Title**: *Operational Infrastructure and Living Facilities on the Sphere Station*
+## Quellen
 
-#### **Document 3: Energy and Thermal Management Systems**
-
-**Title**: *Energy Supply, Power Regulation, and Thermal Control of the Sphere Station*
-
-#### **Document 4: Organizational Structure and Consortium Model**
-
-**Title**: *Governance and Partnership Model for the Sphere Station Initiative*
-
-#### **Document 5: Public Engagement and Decentralized Associations**
-
-**Title**: *Public Engagement and Decentralized Associations for the Sphere Station Initiative*
-
-#### **Document 6: Economic Feasibility and Market Analysis**
-
-**Title**: *Economic Feasibility and Market Potential for the Sphere Station*
-
-#### **Document 7: Environmental and Sustainability Goals**
-
-**Title**: *Environmental and Sustainability Goals for the Sphere Station and Space Operations*
-
-#### **Document 8: Future Expansion of the Sphere Station Network and Sphere Space Crafts**
-
-**Title**: *Future Expansion and Vision for the Sphere Station Network and Sphere Space Crafts*
-
-#### **Document 9: Establishing a Solar Alliance for Governance and Security in Space**
-
-**Title**: *Establishing a Solar Alliance for Governance and Security in Space*
-
-#### **Document 10: Self-Sustainability Models for Space Stations and Spacecraft**
-
-**Title**: *Self-Sustainability Models for Space Stations and Spacecraft*
+Keine externen Quellen verwendet.

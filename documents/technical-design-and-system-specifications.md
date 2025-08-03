@@ -154,3 +154,7 @@ Advanced life support and utility systems maintain a stable and habitable enviro
 | **Biohazard**    | Air Filtration and Containment       | Specialized HEPA filtration and containment systems for laboratories and medical facilities.     |
 
 ---
+
+## Quellen
+
+Keine externen Quellen verwendet.

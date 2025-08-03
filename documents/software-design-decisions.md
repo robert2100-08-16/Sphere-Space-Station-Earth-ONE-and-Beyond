@@ -15,3 +15,7 @@ Dieses Dokument fasst wichtige Architekturentscheidungen der Python-Software zus
 ## Entscheidung
 
 Um die Simulation vielseitig nutzbar und besser testbar zu machen, wird Ansatz&nbsp;1 umgesetzt. Unter `simulations/library` entsteht eine eigenständige Python-Library. Das bestehende Skript bleibt vorerst erhalten; ein neues `deck_calculations_adapter.py` dient als Brücke zwischen Library und bisherigen Workflows.
+
+## Quellen
+
+Keine externen Quellen verwendet.

@@ -128,3 +128,7 @@ This appendix lists specific sustainability goals and performance metrics for mo
 | **Resource Recovery Efficiency**    | 80% for inorganic materials      | Year 5         |
 | **Lunar Resource Utilization**      | 30% of materials from Moon       | Year 10        |
 
+
+## Quellen
+
+Keine externen Quellen verwendet.
