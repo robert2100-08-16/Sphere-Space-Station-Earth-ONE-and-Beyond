@@ -1,10 +1,10 @@
-"""Tests for STEP and glTF prototype exporters."""
+"""Tests for prototype geometry exporters."""
 
 import os
 import sys
+import json
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-
 
 from pathlib import Path
 
@@ -13,6 +13,9 @@ from simulations.sphere_space_station_simulations.adapters.gltf_exporter import 
 )
 from simulations.sphere_space_station_simulations.adapters.step_exporter import (
     export_step,
+)
+from simulations.sphere_space_station_simulations.adapters.json_exporter import (
+    export_json,
 )
 from simulations.sphere_space_station_simulations.data_model import (
     Deck,
@@ -31,8 +34,16 @@ def test_exporters_create_files(tmp_path: Path) -> None:
 
     step_file = export_step(model, tmp_path / "station.step")
     gltf_file = export_gltf(model, tmp_path / "station.glb")
+    json_file = export_json(model, tmp_path / "station.json")
 
     assert step_file.exists() and step_file.stat().st_size > 0
     assert gltf_file.exists()
+    assert json_file.exists()
+
     gltf = GLTF2().load(str(gltf_file))
     assert gltf.meshes and gltf.animations
+
+    with json_file.open("r", encoding="utf-8") as handle:
+        data = json.load(handle)
+    assert data["decks"][0]["windows"][0]["size_m"] == 0.2
+    assert data["hull"]["windows"][0]["position"][2] == 3.0
