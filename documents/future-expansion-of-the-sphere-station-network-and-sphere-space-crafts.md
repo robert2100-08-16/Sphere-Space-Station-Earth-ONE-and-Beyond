@@ -159,7 +159,7 @@ Unmanned freight transporters provide a cost-effective and technically simpler s
 ### **7. Appendices**
 
 #### **Appendix A: Deck Concept of the Sphere Space Station Earth ONE**
-[Deck Concept of the Sphere Space Station Earth ONE](./Partial%20Concepts/Deck%20Concept%20of%20the%20Sphere%20Space%20Station%20Earth%20ONE.md)
+[Deck Concept of the Sphere Space Station Earth ONE](./partial-concepts/deck-concept-of-the-sphere-space-station-earth-one.md)
 
 #### **Appendix B: Calculations and Technical Estimates**
 
