@@ -1,6 +1,9 @@
 #### **Document 9: Establishing a Solar Alliance for Governance and Security in Space**
 ##### (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
+
 ---
+
+**Date: 2024-11-02**
 
 ### **Establishing a Solar Alliance for Governance and Security in Space**
 

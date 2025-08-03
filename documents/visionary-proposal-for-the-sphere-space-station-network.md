@@ -1,5 +1,7 @@
 ### **Visionary Proposal for the Sphere Space Station Network**
 
+**Date: 2024-12-05**
+
 #### **Introduction**
 
 The Sphere Space Station Network represents a groundbreaking initiative to establish sustainable human presence in space. This visionary project includes the development of Earth ONE in Low Earth Orbit (LEO) and Lunar ONE in lunar orbit, with plans for further expansion into deep space. The network aims to advance scientific research, promote international cooperation, and drive economic growth through space-based industries.

@@ -1,5 +1,7 @@
 # **Specification and Selected Materials**
 
+**Date: 2024-11-05**
+
 ## Overview
 
 The Sphere Space Station (Earth ONE) is an innovative space station designed specifically for operation in Low Earth Orbit (LEO). This document describes the material selection and specifications for various structural components and functional units of the station. Based on the unique requirements of space deployment, special materials and composites have been chosen to withstand extreme environmental conditions and operational demands.
