@@ -7,6 +7,8 @@ Sphere Space Station Earth ONE and Beyond
 - Management Summary
 - Sphere Station Documentation: Technical and Operational Overview
 
+All documents in the `documents` directory must be written in English, except for proper names.
+
 ---
 
 ## Management Summary

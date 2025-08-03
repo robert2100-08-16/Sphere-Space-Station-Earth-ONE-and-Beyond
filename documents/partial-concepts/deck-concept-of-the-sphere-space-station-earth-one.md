@@ -57,6 +57,6 @@ Detailed allocation of net usable volume for each type of room based on overall 
 | **Hazard Management**          | Deck 015            | 10,000          | Emergency systems and hazard control                |
 | **Escape Pods**                | Multiple decks      | 15,000          | Strategically positioned for accessibility          |
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

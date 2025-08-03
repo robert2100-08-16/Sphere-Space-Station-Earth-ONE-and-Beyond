@@ -195,6 +195,6 @@ The main risks include market demand fluctuations, technological failures, and c
 
 
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

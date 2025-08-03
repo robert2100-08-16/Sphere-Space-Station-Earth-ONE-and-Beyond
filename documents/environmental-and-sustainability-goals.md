@@ -129,6 +129,6 @@ This appendix lists specific sustainability goals and performance metrics for mo
 | **Lunar Resource Utilization**      | 30% of materials from Moon       | Year 10        |
 
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.

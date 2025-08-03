@@ -14,6 +14,6 @@ This overview links to the detailed documentation for the Sphere Station project
 9. [Establishing a Solar Alliance for Governance and Security in Space](establishing-a-solar-alliance-for-governance-and-security-in-space.md)
 10. [Self-Sustainability Models for Space Stations and Spacecraft](self-sustainability-models-for-space-stations-and-spacecraft.md)
 
-## Quellen
+## Sources
 
-Keine externen Quellen verwendet.
+No external sources used.
