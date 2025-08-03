@@ -20,6 +20,9 @@ This handbook collects key decisions for modeling the Sphere Space Station and s
 
 - **Reduced dependencies**: `generate_deck_construction_csv` no longer requires Pandas and the package uses lazy imports so the Blender adapters run without extra libraries.
 - **Hull starter**: The hull simulation's `starter.py` now points to `adapter.py` by default.
+- **glTF-based hull import**: `blender_hull_simulation/adapter.py` loads the
+  geometry from a glTF file exported by `gltf_exporter.py` and assigns a simple
+  material, removing the previous CSV dependency.
 
 - **Deck rendering**: `create_ring_deck` now only removes the inner helper geometry so all decks, not just the wormhole, appear. The deck ID is now parsed correctly based on the underscore so windows are created for the first twelve decks.
 
