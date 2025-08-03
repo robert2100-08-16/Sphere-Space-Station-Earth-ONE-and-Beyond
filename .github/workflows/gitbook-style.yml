@@ -17,10 +17,10 @@ jobs:
           python <<'PYTHON'
           import os, re, subprocess
           for root, dirs, files in os.walk('.', topdown=False):
-              if root.startswith('./.git'):
+              if root.startswith('./.git') or root.startswith('./simulations'):
                   continue
               for name in dirs + files:
-                  if name.startswith('.git'):
+                  if name.startswith('.git') or name.endswith('.py'):
                       continue
                   new = re.sub(r'[^a-z0-9.-]+', '-', name.lower())
                   if new != name:
