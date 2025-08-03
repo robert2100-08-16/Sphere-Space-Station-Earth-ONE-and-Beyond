@@ -1,4 +1,4 @@
-# Sprintplan: sphere-space-station-simulations
+# 1. Sprintplan: sphere-space-station-simulations
 
 
 Dieser Plan beschreibt die nächsten Sprints, um die `sphere-space-station-simulations` zu einer vollwertigen Python-Bibliothek auszubauen. Die Ziele sind:
@@ -19,16 +19,16 @@ simulations/
 
 ---
 
-## Sprint 1 (04.08.2025 – 15.08.2025): Bibliothek aufbauen und Kalkulationen migrieren
+## 1.1 Sprint 1 (04.08.2025 – 15.08.2025): Bibliothek aufbauen und Kalkulationen migrieren
 
-### Aufgaben
+### 1.1.1 Aufgaben
 - `sphere_space_station_simulations`-Paketstruktur anlegen mit `geometry/`, `reporting/`, `animation/`.
 - `SphereDeckCalculator` nach `geometry/deck.py` verschieben.
 - Reporting- und Animationsfunktionen in eigene Module (`reporting/`, `animation/`) auslagern.
 - Unit-Tests aufbauen (z. B. Anzahl Decks, Radien, Volumina).
 - Starter/Adapter so anpassen, dass nur noch die Bibliothek importiert wird.
 
-### Aufgabenübersicht
+### 1.1.2 Aufgabenübersicht
 
 | Aufgabe                                        | Zielordner/Modul                  | Fälligkeit     |
 |-----------------------------------------------|-----------------------------------|----------------|
@@ -40,15 +40,15 @@ simulations/
 
 ---
 
-## Sprint 2 (18.08.2025 – 29.08.2025): Blender-Deck-Simulation integrieren
+## 1.2 Sprint 2 (18.08.2025 – 29.08.2025): Blender-Deck-Simulation integrieren
 
-### Aufgaben
+### 1.2.1 Aufgaben
 - Funktion `generate_deck_construction_csv()` in `data_preparation.py` integrieren.
 - Blender-spezifische Adapterfunktionen in `blender_helpers/` auslagern.
 - Starter-Skript `blender_deck_simulator/starter.py` anpassen.
 - Tests zur CSV-Generierung und Adapterlaufzeit ergänzen.
 
-### Aufgabenübersicht
+### 1.2.2 Aufgabenübersicht
 
 | Aufgabe                                         | Zielordner/Modul                  | Fälligkeit     |
 |------------------------------------------------|-----------------------------------|----------------|
@@ -59,15 +59,15 @@ simulations/
 
 ---
 
-## Sprint 3 (01.09.2025 – 12.09.2025): Hull- und Stations-Simulation konsolidieren
+## 1.3 Sprint 3 (01.09.2025 – 12.09.2025): Hull- und Stations-Simulation konsolidieren
 
-### Aufgaben
+### 1.3.1 Aufgaben
 - Hüllengeometrie in `geometry/hull.py` migrieren.
 - `StationSimulation`-Klasse in `simulation.py` überführen.
 - CLI-Starter (`blender_hull_simulation`, `blender_station_simulator`) vereinheitlichen.
 - Automatisierte Tests für Hull-/Stationslogik schreiben.
 
-### Aufgabenübersicht
+### 1.3.2 Aufgabenübersicht
 
 | Aufgabe                                  | Zielordner/Modul                         | Fälligkeit     |
 |------------------------------------------|------------------------------------------|----------------|
@@ -78,14 +78,14 @@ simulations/
 
 ---
 
-## Sprint 4 (15.09.2025 – 26.09.2025): Dokumentation und Packaging
+## 1.4 Sprint 4 (15.09.2025 – 26.09.2025): Dokumentation und Packaging
 
-### Aufgaben
+### 1.4.1 Aufgaben
 - README zweisprachig (DE/EN) erstellen.
 - `pyproject.toml` bzw. `setup.py` schreiben, CI optional hinzufügen.
 - Veraltete Skripte entfernen oder durch Importe ersetzen.
 
-### Aufgabenübersicht
+### 1.4.2 Aufgabenübersicht
 
 | Aufgabe                        | Zielordner/Modul             | Fälligkeit     |
 |--------------------------------|------------------------------|----------------|
@@ -96,7 +96,7 @@ simulations/
 
 ---
 
-## Hinweise
+## 1.5 Hinweise
 
 - **Bibliotheksprinzip**: Starter enthalten keine Berechnungslogik mehr.
 - **Testpflicht**: Jede Funktion ist mit Unit-Tests abzusichern.
@@ -104,7 +104,7 @@ simulations/
 
 ---
 
-## GitHub-Verweise
+## 1.6 GitHub-Verweise
 
 - [`deck_calculator.py`](https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond/blob/main/simulations/sphere_space_station_simulations/deck_calculator.py)
 - [`starter.py`](https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond/blob/main/simulations/deck_calculator/starter.py)

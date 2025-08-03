@@ -1,4 +1,4 @@
-# Abnahmebericht Sprint 1
+# 1. Abnahmebericht Sprint 1
 
 Als Product Owner habe ich den Commit `4276cd0` für Sprint 1 geprüft. Die wesentlichen Aufgaben aus Sprint 1 laut Sprintplan waren:
 
@@ -8,7 +8,7 @@ Als Product Owner habe ich den Commit `4276cd0` für Sprint 1 geprüft. Die we
 4. **Prototyp‑Exporter für STEP und glTF** – Minimal lauffähige Exporter, die Dateien erzeugen.
 5. **Unit‑Tests anlegen** – Zumindest testen, dass die Prototyp‑Exporter Dateien erzeugen.
 
-### Erfüllte Punkte
+### 1.0.1 Erfüllte Punkte
 
 * **Research und Dokumentation:** In `docs/architecture/library_evaluation.md` wurde ein Vergleich verschiedener STEP‑ und glTF‑Bibliotheken erstellt, inklusive Lizenz‑ und Funktionsbewertung. Das entspricht dem geforderten Research.
 * **Schichtmodell:** Ein klarer Entwurf des Schichtenmodells wurde in `docs/architecture/layered_architecture.md` festgehalten – das KERNEL berechnet, die Adapter exportieren und die GUI konsumiert. Außerdem wurde das Konstruktionshandbuch um Hinweise zum Schichtmodell und den Prototyp‑Exportern ergänzt.
@@ -16,7 +16,7 @@ Als Product Owner habe ich den Commit `4276cd0` für Sprint 1 geprüft. Die we
 * **Prototyp‑Exporter:** Es gibt je einen ersten Exporter für glTF und STEP. Beide schreiben minimale Dateien mit Metadaten oder Kommentaren. Das ist als Proof‑of‑Concept in Ordnung.
 * **Tests:** Ein Testmodul prüft, dass die Exporter Dateien erzeugen und bestimmte Inhalte enthalten. Damit sind rudimentäre Unit‑Tests vorhanden.
 
-### Offene Punkte / Deltas
+### 1.0.2 Offene Punkte / Deltas
 
 1. **Umfang des Datenmodells:** Die DTOs enthalten bislang nur wenige Attribute (id, Radien, Höhe). Es fehlen viele Werte aus dem vorhandenen KERNEL wie Netto‑Radien, Zylinderlängen, Basisflächen, Volumina oder Fenstergeometrie. Für die spätere CAD‑Detailierung müssen diese Felder ergänzt werden. Aufgabe: Datenmodell um die in `SphereDeckCalculator` genutzten Labels erweitern und gegebenenfalls verschachtelte Strukturen (z. B. Fensterpositionen) einführen.
 
@@ -33,6 +33,6 @@ Als Product Owner habe ich den Commit `4276cd0` für Sprint 1 geprüft. Die we
 
 6. **Dokumentationsstruktur:** Es wurden neue Dokumente angelegt, aber es fehlt eine zentrale Navigation (z. B. im Haupt‑README) mit Verweisen auf das Schichtmodell, die Bibliotheks‑Evaluation und die Datenmodellbeschreibung.
 
-### Fazit
+### 1.0.3 Fazit
 
 Die wesentlichen Ziele von Sprint 1 wurden erreicht: Das Schichtenmodell ist definiert, Bibliotheken wurden evaluiert, ein einfaches Datenmodell und erste Exporter‑Prototypen existieren, und grundlegende Tests wurden geschrieben. Für die nächsten Iterationen sollten die offenen Punkte adressiert werden: Erweiterung des Datenmodells, echte Geometrie‑Exportfunktionen, bessere Integration in die KERNEL‑API, weiterführende Tests und eine konsistente Dokumentationsnavigation.

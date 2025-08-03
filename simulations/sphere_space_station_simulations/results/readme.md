@@ -1,4 +1,4 @@
-# Simulation Results
+# 1. Simulation Results
 
 This directory stores generated artefacts from the sphere station
 simulations.  Besides HTML animations it now also contains geometry

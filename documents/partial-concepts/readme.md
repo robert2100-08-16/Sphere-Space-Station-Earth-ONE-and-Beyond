@@ -9,9 +9,9 @@ history:
     change: "Initial"
     reference: documents/change-management/0001-initial-english-translation.md
 ---
-# Partial Concepts
+# 1. Partial Concepts
 This folder contains extracted partial concepts related to Sphere Space Station Earth ONE.
 
-## Sources
+## 1.1 Sources
 
 No external sources used.

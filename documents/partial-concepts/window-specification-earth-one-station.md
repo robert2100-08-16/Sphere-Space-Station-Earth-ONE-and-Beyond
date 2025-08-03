@@ -9,7 +9,7 @@ history:
     change: "Initial"
     reference: documents/change-management/0001-initial-english-translation.md
 ---
-# Window Specification for Earth ONE Station
+# 1. Window Specification for Earth ONE Station
 
 The Earth ONE station requires windows that withstand extreme thermal cycling, rapid decompression, micrometeorite impacts, and intense UV and cosmic radiation. A multi-layered composite structure is proposed:
 
@@ -19,6 +19,6 @@ The Earth ONE station requires windows that withstand extreme thermal cycling, r
 
 Total thickness is approximately 20–30 cm with a weight of 530–550 kg/m², offering superior resilience for the LEO environment.
 
-## Sources
+## 1.1 Sources
 
 No external sources used.

@@ -1,4 +1,4 @@
-# Blender Hull Simulation
+# 1. Blender Hull Simulation
 
 This folder contains a minimal Blender Python script that imports a hull model
 for the Sphere Station.  The geometry is exported beforehand by
@@ -14,9 +14,9 @@ Blender.
 Example workflow:
 
 ```bash
-# 1) Create glTF geometry
+# 2. 1) Create glTF geometry
 python starter.py --export-gltf station.glb
 
-# 2) Open the glTF file in Blender and assign materials
+# 3. 2) Open the glTF file in Blender and assign materials
 blender --python adapter.py
 ```

@@ -9,12 +9,12 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
-# Documents
+# 1. Documents
 
 This directory houses the project documentation and serves as the single source of truth. All data, CAD models, engineering plans, simulations, and procurement records must be traceable to documents in this folder.
 
 When critical design changes are made, the related documents must be versioned and updated, or new documents must be created and stored here. The `change-management` subfolder records change requests and approvals affecting these documents.
 
-## Sources
+## 1.1 Sources
 
 No external sources used.

@@ -1,8 +1,8 @@
-# Architecture Documentation
+# 1. Architecture Documentation
 
 Dieses Verzeichnis bündelt Unterlagen zum Schichtenmodell des Projekts. Das Modell trennt eine **KERNEL**-Schicht für Berechnungen, **ADAPTER** zur Formatumwandlung und **GUI**-Schichten für die Visualisierung.
 
-## Übersicht
+## 1.1 Übersicht
 
 | Dokument | Zweck | Speicherort |
 | --- | --- | --- |

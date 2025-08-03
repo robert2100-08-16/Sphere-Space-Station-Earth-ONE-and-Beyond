@@ -9,9 +9,9 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
-# Change Management
+# 1. Change Management
 This directory collects change requests and records affecting documents in this repository.
 
-## Sources
+## 1.1 Sources
 
 No external sources used.
