@@ -14,6 +14,7 @@ pandas = "*"
 numpy = "*"
 matplotlib = "*"
 tqdm = "*"
+pygltflib = "*"
 
 [project.urls]
 Homepage = "https://example.com"
