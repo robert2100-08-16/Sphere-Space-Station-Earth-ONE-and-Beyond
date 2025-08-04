@@ -6,7 +6,7 @@ Sphere Space Station Earth ONE and Beyond
 ## 1.1 Table of Content
 - Management Summary
 - Sphere Station Documentation: Technical and Operational Overview
-- [Architecture Overview](simulations/docs/architecture/readme.md)
+- [Architecture Overview](docs/architecture/readme.md)
 
 All documents in the `documents` directory must be written in English, except for proper names.
 
@@ -103,3 +103,12 @@ The Sphere Station project stands as a transformative venture that not only push
 ## 1.4 Licensing
 
 The majority of simulation scripts under `simulations/` are provided under the MIT license for STEM education (see `LICENSE-MIT`). Documentation may be distributed under the Creative Commons Attribution 4.0 International license (see `LICENSE-CC-BY-4.0`). Core project files remain proprietary and fall under the "ALL RIGHTS RESERVED" notice above.
+
+## 1.5 Dokumentation
+
+- [Architekturdokumentation](docs/architecture/readme.md)
+- [Konstruktionshandbuch](documents/Konstruktionshandbuch.md)
+- Sprint-Dokumente:
+  - [Sprint L1](project/sphere-space-station-earth-one/01-project-planning/08-simulations/sprint-l1/readme.md)
+  - [Sprint L2](project/sphere-space-station-earth-one/01-project-planning/08-simulations/sprint-l2/readme.md)
+  - [Sprint L3](project/sphere-space-station-earth-one/01-project-planning/08-simulations/sprint-l3/readme.md)
