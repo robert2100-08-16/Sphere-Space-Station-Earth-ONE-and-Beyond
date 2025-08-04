@@ -17,9 +17,13 @@ from simulations.sphere_space_station_simulations.adapters.gltf_exporter import 
 from simulations.sphere_space_station_simulations.adapters.json_exporter import (
     export_json,
 )
-from simulations.sphere_space_station_simulations.data_model import Deck, Hull, StationModel
+from simulations.sphere_space_station_simulations.data_model import (
+    Deck,
+    Hull,
+    StationModel,
+    Wormhole,
+)
 from simulations.blender_hull_simulation import adapter
-
 
 
 def _make_model() -> StationModel:
@@ -27,6 +31,7 @@ def _make_model() -> StationModel:
     return StationModel(
         decks=[Deck(1, 0.0, 1.0, 0.2), Deck(2, 1.0, 2.0, 0.2)],
         hull=Hull(3.0),
+        wormhole=Wormhole(0.5, 1.0),
     )
 
 
@@ -35,9 +40,11 @@ def test_gltf_contains_all_components(tmp_path: Path) -> None:
     gltf_path = export_gltf(model, tmp_path / "station.glb")
     gltf = GLTF2().load(str(gltf_path))
 
-    # Deck meshes should match the number of decks in the model
-    deck_meshes = len(model.decks)
-    assert len(gltf.meshes) == deck_meshes + 1  # +1 for hull
+    # Mesh count should equal decks + hull + optional wormhole
+    expected_meshes = (
+        len(model.decks) + (1 if model.hull else 0) + (1 if model.wormhole else 0)
+    )
+    assert len(gltf.meshes) == expected_meshes
 
 
 def test_json_export_has_all_fields(tmp_path: Path) -> None:
@@ -68,6 +75,8 @@ def test_json_export_has_all_fields(tmp_path: Path) -> None:
     }
     assert expected_deck_fields <= set(data["decks"][0].keys())
     assert expected_hull_fields <= set(data["hull"].keys())
+    expected_wormhole_fields = {"radius_m", "height_m", "base_thickness_m"}
+    assert expected_wormhole_fields <= set(data["wormhole"].keys())
 
 
 def test_blender_import_mesh_count(monkeypatch, tmp_path: Path) -> None:

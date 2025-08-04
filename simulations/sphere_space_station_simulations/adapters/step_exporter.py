@@ -21,10 +21,11 @@ try:  # pragma: no cover - best effort for optional dependency
 except Exception:  # pragma: no cover - cadquery is optional
     cq = None  # type: ignore[assignment]
 
-from ..data_model import Deck, Hull, StationModel
+from ..data_model import Deck, Hull, StationModel, Wormhole
 
 
 if cq is not None:  # pragma: no cover - exercised when cadquery is installed
+
     def _build_deck(deck: Deck) -> Tuple[cq.Workplane, List[cq.Workplane]]:
         """Create a CadQuery solid for a deck and optional window solids."""
 
@@ -44,7 +45,6 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
             windows.append(win)
         return solid, windows
 
-
     def _build_hull(hull: Hull) -> Tuple[cq.Workplane, List[cq.Workplane]]:
         """Create a CadQuery solid for the hull and optional windows."""
 
@@ -61,6 +61,8 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
             windows.append(win)
         return solid, windows
 
+    def _build_wormhole(wormhole: Wormhole) -> cq.Workplane:
+        return cq.Workplane("XY").circle(wormhole.radius_m).extrude(wormhole.height_m)
 
     def export_step(model: StationModel, filepath: str | Path) -> Path:
         """Export the given ``StationModel`` as a STEP file."""
@@ -75,17 +77,26 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
             assembly.add(solid, name=f"deck_{deck.id}", metadata={"material": "Stahl"})
             for i, win in enumerate(windows):
                 assembly.add(
-                    win, name=f"deck_{deck.id}_window_{i}", metadata={"material": "Glas"}
+                    win,
+                    name=f"deck_{deck.id}_window_{i}",
+                    metadata={"material": "Glas"},
                 )
 
         if model.hull:
             solid, windows = _build_hull(model.hull)
             assembly.add(solid, name="hull", metadata={"material": "Stahl"})
             for i, win in enumerate(windows):
-                assembly.add(win, name=f"hull_window_{i}", metadata={"material": "Glas"})
+                assembly.add(
+                    win, name=f"hull_window_{i}", metadata={"material": "Glas"}
+                )
+
+        if model.wormhole:
+            solid = _build_wormhole(model.wormhole)
+            assembly.add(solid, name="wormhole", metadata={"material": "Stahl"})
 
         assembly.save(str(path), "STEP")
         return path
+
 else:
     # Fallback implementation that creates a tiny text based STEP-like file.
     # It is **not** a valid CAD representation but allows the unit tests to
@@ -95,11 +106,12 @@ else:
         path = Path(filepath)
         path.parent.mkdir(parents=True, exist_ok=True)
 
-        lines = ["STEP PLACEHOLDER\n", f"decks={len(model.decks)}\n"]
-        if model.hull:
-            lines.append("hull=1\n")
-        else:
-            lines.append("hull=0\n")
+        lines = [
+            "STEP PLACEHOLDER\n",
+            f"decks={len(model.decks)}\n",
+            f"hull={1 if model.hull else 0}\n",
+            f"wormhole={1 if model.wormhole else 0}\n",
+        ]
         with open(path, "w", encoding="utf8") as handle:
             handle.writelines(lines)
         return path

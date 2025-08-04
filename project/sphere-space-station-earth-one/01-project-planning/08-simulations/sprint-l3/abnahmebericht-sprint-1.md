@@ -35,3 +35,8 @@ Gern – ich habe mir den aktuellen Stand von Sprint 1 anhand der eingereichten 
 ### Empfehlung
 
 Sprint 1 ist in Grundzügen erfüllt, vor allem hinsichtlich der Analyse und Vorbereitung. Die weiteren Schritte bestehen darin, das Datenmodell zu vervollständigen, die Exporter funktional auszubauen und sie in den vorhandenen Workflow zu integrieren. Bitte plane diese Punkte konkret für Sprint 2 ein.
+
+### Fortschritt seit Abnahme
+
+- Das Datenmodell enthält nun neben Decks und Hülle auch ein Wurmlochobjekt mit abgeleiteten Kenngrößen.
+- Das Haupt-README im Dokumentationsordner verweist jetzt auf die Architekturunterlagen und erleichtert die Navigation.

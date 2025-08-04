@@ -79,8 +79,18 @@ class Hull:
 
 
 @dataclass
+class Wormhole:
+    """Central cylindrical passage running through the station."""
+
+    radius_m: float
+    height_m: float
+    base_thickness_m: float = 0.0
+
+
+@dataclass
 class StationModel:
     """Container aggregating all geometry elements."""
 
     decks: List[Deck] = field(default_factory=list)
     hull: Optional[Hull] = None
+    wormhole: Optional[Wormhole] = None

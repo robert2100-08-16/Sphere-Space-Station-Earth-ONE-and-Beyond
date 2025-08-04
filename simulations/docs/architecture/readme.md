@@ -8,4 +8,4 @@ Dieses Verzeichnis bündelt Unterlagen zum Schichtenmodell des Projekts. Das Mod
 | --- | --- | --- |
 | [layered-architecture.md](layered-architecture.md) | Erläutert das Schichtenmodell | simulations/docs/architecture/layered-architecture.md |
 | [library-evaluation.md](library-evaluation.md) | Vergleich von STEP- und glTF-Bibliotheken | simulations/docs/architecture/library-evaluation.md |
-| [data-model.md](data-model.md) | Dokumentation des Datenmodells (`Deck`, `Hull`, `StationModel`) | simulations/docs/architecture/data-model.md |
+| [data-model.md](data-model.md) | Dokumentation des Datenmodells (`Deck`, `Hull`, `Wormhole`, `StationModel`) | simulations/docs/architecture/data-model.md |
