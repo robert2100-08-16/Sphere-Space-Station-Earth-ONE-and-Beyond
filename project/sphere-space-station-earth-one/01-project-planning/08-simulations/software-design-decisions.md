@@ -30,3 +30,8 @@ To make the simulation versatile and easier to test, Approach 1 is being implem
 ## 1.3 Sources
 
 No external sources used.
+
+## 1.4 STEP/glTF/JSON Export
+
+- Station geometry is computed directly in the Blender hull simulation via `SphereDeckCalculator`.
+- Exporters output STEP, glTF, and JSON files; `deck_3d_construction_data.csv` is deprecated and remains only for reporting.

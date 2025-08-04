@@ -1,5 +1,4 @@
 import argparse
-import csv
 import json
 import os
 import subprocess
@@ -10,13 +9,18 @@ from pathlib import Path
 # Allow execution without installing the package by adding the repository root
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
+from simulations.sphere_space_station_simulations import SphereDeckCalculator
 from simulations.sphere_space_station_simulations.adapters.gltf_exporter import (
     export_gltf,
 )
 from simulations.sphere_space_station_simulations.adapters.step_exporter import (
     export_step,
 )
-from simulations.sphere_space_station_simulations.data_model import Deck, Hull, StationModel
+from simulations.sphere_space_station_simulations.data_model import (
+    Deck,
+    Hull,
+    StationModel,
+)
 
 
 def main() -> None:
@@ -42,9 +46,7 @@ def main() -> None:
     parser.add_argument(
         "--export-gltf", help="Write a glTF file with the station geometry"
     )
-    parser.add_argument(
-        "--export-json", help="Write the station data model as JSON"
-    )
+    parser.add_argument("--export-json", help="Write the station data model as JSON")
     parser.add_argument(
         "extra",
         nargs=argparse.REMAINDER,
@@ -53,21 +55,29 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    csv_path = os.path.join(os.path.dirname(__file__), "deck_3d_construction_data.csv")
-    with open(csv_path, newline="") as fh:
-        rows = list(csv.DictReader(fh))
+    calculator = SphereDeckCalculator(
+        "Deck Dimensions of a Sphere",
+        sphere_diameter=127.0,
+        hull_thickness=0.5,
+        windows_per_deck_ratio=0.20,
+        num_decks=16,
+        deck_000_outer_radius=10.5,
+        deck_height_brutto=3.5,
+        deck_ceiling_thickness=0.5,
+    )
+    calculator.calculate_dynamics_of_a_sphere(angular_velocity=0.5)
 
     model = StationModel(
         decks=[
             Deck(
-                id=int(row["deck_id"].split()[1]),
-                inner_radius_m=float(row["inner_radius_m"]),
-                outer_radius_m=float(row["outer_radius_m"]),
-                height_m=float(row["deck_height_m"]),
+                id=int(row[SphereDeckCalculator.DECK_ID_LABEL].split("_")[1]),
+                inner_radius_m=row[SphereDeckCalculator.INNER_RADIUS_LABEL],
+                outer_radius_m=row[SphereDeckCalculator.OUTER_RADIUS_LABEL],
+                height_m=row[SphereDeckCalculator.DECK_HEIGHT_LABEL],
             )
-            for row in rows
+            for _, row in calculator.df_decks.iterrows()
         ],
-        hull=Hull(radius_m=float(rows[-1]["outer_radius_m"])) if rows else None,
+        hull=Hull(radius_m=calculator.sphere_diameter / 2),
     )
 
     if args.export_step:
