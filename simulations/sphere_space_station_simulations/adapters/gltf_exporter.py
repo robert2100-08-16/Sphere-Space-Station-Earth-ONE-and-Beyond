@@ -37,15 +37,15 @@ from pygltflib import (
     Scene,
 )
 
-from ..data_model import Deck, Hull, StationModel
+from ..data_model import Deck, Hull, StationModel, Wormhole
 
 
 if cq is not None:  # pragma: no cover - exercised when cadquery is installed
+
     def _tessellate(obj: cq.Workplane) -> Tuple[np.ndarray, np.ndarray]:
         vertices, faces = obj.val().tessellate(0.5)
         verts = [v.toTuple() if hasattr(v, "toTuple") else v for v in vertices]
         return np.array(verts, dtype=np.float32), np.array(faces, dtype=np.uint32)
-
 
     def _build_deck_mesh(
         deck: Deck,
@@ -73,7 +73,6 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
             windows.append(_tessellate(glass))
         return _tessellate(solid), windows
 
-
     def _build_hull_mesh(
         hull: Hull,
     ) -> Tuple[Tuple[np.ndarray, np.ndarray], List[Tuple[np.ndarray, np.ndarray]]]:
@@ -97,6 +96,11 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
             )
             windows.append(_tessellate(glass))
         return _tessellate(solid), windows
+
+    def _build_wormhole_mesh(wormhole: Wormhole) -> Tuple[np.ndarray, np.ndarray]:
+        solid = cq.Workplane("XY").circle(wormhole.radius_m).extrude(wormhole.height_m)
+        return _tessellate(solid)
+
 else:
     # ``cadquery`` is unavailable.  Produce very small placeholder meshes so that
     # the exporter can still generate a valid glTF file used in the tests.  The
@@ -119,7 +123,6 @@ else:
         faces = np.array([[0, 1, 2], [0, 2, 3]], dtype=np.uint32)
         return (verts, faces), []
 
-
     def _build_hull_mesh(
         hull: Hull,
     ) -> Tuple[Tuple[np.ndarray, np.ndarray], List[Tuple[np.ndarray, np.ndarray]]]:
@@ -135,6 +138,16 @@ else:
         )
         faces = np.array([[0, 1, 2], [0, 1, 3], [1, 2, 3], [2, 0, 3]], dtype=np.uint32)
         return (verts, faces), []
+
+    def _build_wormhole_mesh(wormhole: Wormhole) -> Tuple[np.ndarray, np.ndarray]:
+        temp_deck = Deck(
+            id=0,
+            inner_radius_m=0.0,
+            outer_radius_m=wormhole.radius_m,
+            height_m=wormhole.height_m,
+        )
+        (verts, faces), _ = _build_deck_mesh(temp_deck)
+        return verts, faces
 
 
 def _add_mesh(
@@ -241,6 +254,11 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
         for wv, wf in windows:
             _add_mesh(binary, buffer_views, accessors, meshes, nodes, wv, wf, 1)
             child_nodes.append(len(nodes) - 1)
+
+    if model.wormhole:
+        verts, faces = _build_wormhole_mesh(model.wormhole)
+        _add_mesh(binary, buffer_views, accessors, meshes, nodes, verts, faces, 0)
+        child_nodes.append(len(nodes) - 1)
 
     root = Node(children=child_nodes)
     nodes.insert(0, root)
