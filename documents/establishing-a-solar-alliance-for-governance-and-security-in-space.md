@@ -1,5 +1,5 @@
 ---
-title: "Document 9: Establishing a Solar Alliance for Governance and Security in Space"
+title: "Establishing a Solar Alliance for Governance and Security in Space"
 version: 1.0.0
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
@@ -16,7 +16,7 @@ history:
 
 ---
 
-### 1.0.1 **Establishing a Solar Alliance for Governance and Security in Space**
+## 1.1 **Establishing a Solar Alliance for Governance and Security in Space**
 
 
 **Contents:**
@@ -30,7 +30,7 @@ history:
 
 ---
 
-## 1.1 **Introduction**
+### 1.1 **Introduction**
 
 As humanity expands its reach beyond Earth, the need for a structured, fair, and democratic governance framework in space becomes imperative. The Solar Alliance is envisioned as a democratically legitimized body with the authority to oversee and regulate all activities throughout the Solar System, excluding Earth itself, until a globally democratic consensus among Earth’s nations is achieved. This document outlines the necessity, advantages, and vision of the Solar Alliance, emphasizing its role in ensuring security, equity, and sustainability on celestial bodies, stations, crafts, and orbital installations across the Solar System.
 

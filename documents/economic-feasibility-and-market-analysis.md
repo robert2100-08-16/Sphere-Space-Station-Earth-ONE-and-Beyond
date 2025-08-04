@@ -1,5 +1,5 @@
 ---
-title: "Document 6: Economic Feasibility and Market Analysis"
+title: "Economic Feasibility and Market Analysis"
 version: 1.0.0
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
@@ -52,17 +52,17 @@ The Earth ONE Sphere Station Project aims to create a sustainable, economically 
 
 ### 1.1.3 **Cost Analysis and Investment Requirements**
 
-#### 1.1.3.1 **2.1 Development Cost Estimate**
+#### 1.1.3.1 **Development Cost Estimate**
 
 With a target development cost of **€1 billion** (excluding transportation), Earth ONE leverages modular design and private-sector collaboration. This cost covers essential infrastructure, life-support systems, energy systems, and on-orbit assembly.
 
-#### 1.1.3.2 **2.2 Transportation Cost Estimate**
+#### 1.1.3.2 **Transportation Cost Estimate**
 
 - **Earth-to-LEO Transport**: 700,000 metric tons at €1 million per 100-ton launch, totaling €7 billion.
 - **Moon-to-LEO Transport**: 300,000 metric tons with phased pricing (€1 million in early years, reduced over time), totaling €1.5 billion.
 - **Total Transportation Cost**: €8.5 billion
 
-#### 1.1.3.3 **2.3 Operating Costs**
+#### 1.1.3.3 **Operating Costs**
 
 - **Annual Operating Budget**: €25 million per year, covering staff salaries, maintenance, energy, life-support, food production, and communication.
 - **Operating Cost per Resident (at 700 occupancy)**: Approximately €3,000 per month.
@@ -73,19 +73,19 @@ With a target development cost of **€1 billion** (excluding transportation), E
 
 The target markets for Earth ONE include residential tenants, lab and industrial researchers, retail shops, and tourists. A competitive pricing structure aims to attract diverse occupants across these markets.
 
-#### 1.1.4.1 **3.1 Space Tourism and Hospitality Market**
+#### 1.1.4.1 **Space Tourism and Hospitality Market**
 
 - **Pricing Model**: €200/day for a standard 2-bed hotel room; €1,000/day for a luxury suite.
 - **Target Audience**: High-net-worth individuals, space enthusiasts, corporate guests.
 - **Revenue Projection**: Projected annual income from hotel occupancy at full capacity is €5 million to €10 million.
 
-#### 1.1.4.2 **3.2 Research and Industrial Leasing**
+#### 1.1.4.2 **Research and Industrial Leasing**
 
 - **Lab and Industrial Rents**: €100 per m² per month on designated outer or inner decks for research, manufacturing, and storage.
 - **Market Demand**: Pharmaceutical companies, biotech, materials science, and electronics firms seeking microgravity environments.
 - **Revenue Projection**: Lab and industrial space leasing could generate €10 million to €20 million annually.
 
-#### 1.1.4.3 **3.3 Retail and Consumer Market**
+#### 1.1.4.3 **Retail and Consumer Market**
 
 - **Shop Rents**: Premium consumer decks (Decks 006-010) at €150 per m² per month; other decks at €100 per m² per month.
 - **Target Audience**: Retailers, restaurants, service providers.
@@ -97,14 +97,14 @@ The target markets for Earth ONE include residential tenants, lab and industrial
 
 The Earth ONE business model diversifies revenue across several streams to ensure financial stability and reduce dependency on any single market.
 
-#### 1.1.5.1 **4.1 Core Revenue Streams**
+#### 1.1.5.1 **Core Revenue Streams**
 
 1. **Residential Rentals**: Long-term rentals with guaranteed base costs.
 2. **Hotel Rooms**: Short-term tourism stays and corporate accommodations.
 3. **Lab and Industrial Leasing**: Space for research, manufacturing, and industrial activities.
 4. **Retail Shop Leasing**: Consumer-focused areas on premium and standard decks.
 
-#### 1.1.5.2 **4.2 Secondary Revenue Streams**
+#### 1.1.5.2 **Secondary Revenue Streams**
 
 1. **Educational Programs**: Virtual classes and internships with universities.
 2. **Media and Broadcasting**: Partnerships with media outlets for events and educational content.
@@ -116,7 +116,7 @@ The Earth ONE business model diversifies revenue across several streams to ensur
 
 This section outlines the detailed rental pricing model for Earth ONE, designed to cater to a broad range of clients, from individual residents to large corporations.
 
-#### 1.1.6.1 **5.1 Residential Rentals**
+#### 1.1.6.1 **Residential Rentals**
 
 - **20 m² Flat**: €3,000 per month (includes utilities, basic food, and life-support).
 - **40 m² Flat**: €5,000 per month (includes utilities, basic food, and life-support).
@@ -124,21 +124,21 @@ This section outlines the detailed rental pricing model for Earth ONE, designed 
 
 These rates provide guaranteed, predictable pricing, catering to long-term residents and facilitating life-support and operational cost sharing.
 
-#### 1.1.6.2 **5.2 Hotel Room Rentals**
+#### 1.1.6.2 **Hotel Room Rentals**
 
 - **Standard Room (2 beds, 15 m², ***** class)**: €200 per day.
 - **Luxury Suite (2 bedrooms, large bathtub, 25 m², ***** class)**: €1,000 per day.
 
 Hotel accommodations cater to short-term stays and space tourism, offering a unique experience in a high-demand sector.
 
-#### 1.1.6.3 **5.3 Lab and Industrial Leasing (Outer Decks >010 or Inner Decks <006)**
+#### 1.1.6.3 **Lab and Industrial Leasing (Outer Decks >010 or Inner Decks <006)**
 
 - **Research and Industrial Space**: €100 per m² per month.
    - Includes hazard prevention (fire, explosion, biohazard), energy, air, and sewage services.
 
 These areas are ideal for biotech, pharmaceutical, and advanced materials research that benefits from microgravity conditions.
 
-#### 1.1.6.4 **5.4 Retail Shop Rentals**
+#### 1.1.6.4 **Retail Shop Rentals**
 
 - **Premium Consumer Decks (Decks 006-010)**: €150 per m² per month.
 - **Other Decks**: €100 per m² per month.
@@ -149,13 +149,13 @@ Retail spaces offer vendors the opportunity to cater to the onboard community, f
 
 ### 1.1.7 **Economic Sustainability and Break-Even Analysis**
 
-#### 1.1.7.1 **6.1 Break-Even Point and ROI**
+#### 1.1.7.1 **Break-Even Point and ROI**
 
 - **Total Estimated Investment**: €9.5 billion over 10 years.
 - **Annual Revenue Projection**: €50 million to €100 million.
 - **Break-Even Timeline**: Estimated at 12-15 years, contingent on high occupancy rates and operational efficiency.
 
-#### 1.1.7.2 **6.2 Return on Investment (ROI)**
+#### 1.1.7.2 **Return on Investment (ROI)**
 
 - **Projected ROI**: 8-12% over a 15-year period.
 - **Long-Term Viability**: Revenue growth is expected as the station expands its offerings and increases resident and tourist capacity.
@@ -208,6 +208,6 @@ The main risks include market demand fluctuations, technological failures, and c
 
 
 
-# D. Sources
+# 1.1.11 Sources
 
 No external sources used.
