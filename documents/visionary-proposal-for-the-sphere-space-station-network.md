@@ -9,12 +9,17 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
+
 # 1. **Visionary Proposal for the Sphere Space Station Network**
 
-**License: (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.**
-**Date: 2024-12-05**
+| | |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Document:** | ***Visionary Proposal for the Sphere Space Station Network*** |
+| **Date:** | 2024-12-05 |
+| **License:** | (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED. |
+| **Content:** | 1.1 Introduction<br>1.2 Earth ONE<br>1.3 Lunar ONE<br>1.4 Beyond<br>1.5 Conclusion<br>1.6 Sources |
+| | |
 
----
 
 ## 1.1 **Introduction**
 
@@ -45,6 +50,6 @@ The Sphere Space Station concept is a rotating 127 Meter Diameter Sphere with 16
 
 The Sphere Space Station Network is poised to revolutionize human presence in space, fostering scientific innovation, economic development, and international collaboration. By investing in this visionary project, the EU can lead the way in sustainable space exploration and secure its position at the forefront of the space economy.
 
-## 1.6 Sources
+## 1.6 **Sources**
 
 No external sources used.

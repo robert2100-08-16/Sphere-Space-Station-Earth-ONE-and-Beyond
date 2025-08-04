@@ -9,6 +9,7 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
+
 # 1. **Energy and Thermal Management Systems**
 
 
@@ -17,8 +18,8 @@ history:
 | **Document:** | ***Energy and Thermal Management Systems for the Sphere Station*** |
 | **Date:** | 2024-11-01 |
 | **License:** | (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED. |
-| **Contents:** | 1. **Primary Energy Source and Generation Systems**<br>2. **Backup and Redundant Power Systems**<br>3. **Thermal Management and Heat Dissipation**<br>4. **Energy Efficiency and Conservation**<br>5. **Environmental and Safety  Considerations**<br>6. **Sources** | 
-| |
+| **Contents:** | 1.1 Primary Energy Source and Generation Systems<br>1.2 Backup and Redundant Power Systems<br>1.3 Thermal Management and Heat Dissipation<br>1.4 Energy Efficiency and Conservation<br>1.5 Environmental and Safety  Considerations<br>1.6 Sources | 
+| | |
 
 
 ## 1.1 **Primary Energy Source and Generation Systems**

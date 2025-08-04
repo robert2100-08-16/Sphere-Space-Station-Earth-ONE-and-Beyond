@@ -9,6 +9,7 @@ history:
     change: "Initial"
     reference: -pr-ambel-ethik-sicherheit.md
 ---
+
 # 1. Preamble — Ethics & Security
 
 We, all natural persons, legal entities, and AI systems participating in the Sphere Space Station Earth ONE & Beyond project, hereby acknowledge the following principles as binding and commit to their perpetual observance:

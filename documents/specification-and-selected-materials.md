@@ -9,22 +9,21 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
+
 # 1. **Specification and Selected Materials**
 
-**License: (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.**
-**Date: 2024-11-05**
+| | |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Document:** | ***Specification and Selected Materials*** |
+| **Date:** | 2024-11-05 |
+| **License:** | (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED. |
+| **Contents:** | 1.1 Overview<br>1.2 Introduction<br>1.3 Material Requirements and Specifications<br>1.4 Structural Components and Material Selection<br>1.5 Appendix A: Window Specification and Material Selection of LEO-based Earth ONE Station<br>1.6 Conclusion<br>1.7 Sources |
+| | |
 
----
 
 ## 1.1 Overview
 
 The Sphere Space Station (Earth ONE) is an innovative space station designed specifically for operation in Low Earth Orbit (LEO). This document describes the material selection and specifications for various structural components and functional units of the station. Based on the unique requirements of space deployment, special materials and composites have been chosen to withstand extreme environmental conditions and operational demands.
-
-**Contents:**
-- Introduction
-- Material Requirements and Specifications
-- Structural Components and Material Selection
-- Appendix A: Window Specification and Material Selection of LEO-based Earth ONE Station
 
 ---
 
@@ -99,51 +98,51 @@ Materials are chosen specifically according to the application area and mechanic
 
 ---
 
-# A. Appendix A: Window Specification and Material Selection of LEO-based Earth ONE Station
+## 1.6 Appendix A: Window Specification and Material Selection of LEO-based Earth ONE Station
 
 **High-Performance Composite Window for Space Applications: Material and Specification Overview**
 
-## A.1 Introduction
+### A.1 Introduction
 
 The selection of materials for the windows of the Earth ONE station demands an extraordinary level of durability. These windows are subject to extreme temperature fluctuations, rapid decompression, impacts from micrometeorites, and high levels of UV and cosmic radiation. The proposed composite window uses a multi-layered construction designed to withstand these conditions, ensuring optical clarity and maximum protection.
 
-## A.2 Window Requirements in Low Earth Orbit (LEO)
+### A.2 Window Requirements in Low Earth Orbit (LEO)
 
 - **Temperature Range**: -150°C to +120°C, requiring resistance to extreme thermal cycling.
 - **Pressure Fluctuations**: Resilience to rapid decompression without failure.
 - **Impact Resistance**: Resistance to micrometeorite impacts at velocities of up to 15 km/s.
 - **Radiation Shielding**: UV and cosmic radiation protection to prevent damage over extended periods.
 
-## A.3 Layered Material Structure
+### A.3 Layered Material Structure
 
-### A.3.1 **Outer Layer: Aluminum Oxide (Sapphire) or Aluminum Oxynitride (ALON)**
+#### A.3.1 **Outer Layer: Aluminum Oxide (Sapphire) or Aluminum Oxynitride (ALON)**
    - **Properties**: Hardness, UV resistance, and protection against high-velocity impacts.
    - **Thickness**: 5 cm, providing optimal micrometeorite resistance.
 
-### A.3.2 **Middle Layer(s): Fused Silica (Quartz Glass) and Polycarbonate**
+#### A.3.2 **Middle Layer(s): Fused Silica (Quartz Glass) and Polycarbonate**
    - **Fused Silica**: Thermal stability and UV shielding.
    - **Polycarbonate**: Shock absorption and impact resistance.
    - **Total Thickness**: 10 cm for fused silica and 5 cm for polycarbonate.
 
-### A.3.3 **Inner Layer: Borosilicate or Cerium-doped Glass**
+#### A.3.3 **Inner Layer: Borosilicate or Cerium-doped Glass**
    - **Properties**: Additional radiation protection and optical clarity preservation.
    - **Thickness**: 3 cm.
 
-## A.4 Total Thickness and Weight
+### A.4 Total Thickness and Weight
 
 - **Overall Thickness**: Approximately 20–30 cm for optimal protection.
 - **Weight per Square Meter**: Approximately 530–550 kg/m², significantly heavier than conventional bulletproof glass but offering substantially greater resistance to space-specific hazards.
 
-## A.5 Comparison to Bulletproof Automotive Glass
+### A.5 Comparison to Bulletproof Automotive Glass
 
 In contrast to high-end bulletproof glass, which is optimized for low-velocity impacts and ambient temperatures, this space-grade composite window structure withstands high-energy impacts, thermal extremes, and radiation exposure, ensuring robust and reliable performance for the Earth ONE station.
 
 ---
 
-**Conclusion**
+## 1.7 **Conclusion**
 
 The specified materials and configurations of the Earth ONE station enable unparalleled resilience against the harshest conditions of the low Earth orbit environment. By tailoring each component's material properties to its functional demands, the Earth ONE station is engineered for optimal performance, durability, and safety.
 
-# A. Sources
+## 1.8 **Sources**
 
 No external sources used.

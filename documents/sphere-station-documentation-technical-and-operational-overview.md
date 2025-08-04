@@ -9,12 +9,16 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
+
 # 1. Sphere Station Documentation: Technical and Operational Overview
 
-**License: (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.**
-**Date: 2024-10-30**
+| | |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Document:** | ***Sphere Station Documentation: Technical and Operational Overview*** |
+| **Date:** | 2024-10-30 |
+| **License:** | (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED. |
+| | |
 
----
 
 This overview links to the detailed documentation for the Sphere Station project.
 

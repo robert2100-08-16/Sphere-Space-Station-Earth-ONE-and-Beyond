@@ -9,14 +9,15 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
----
 
 # 1. **Concept and Feasibility Analysis for the SpaceSphere Project**
 
-**License: (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.**
-**Date: 2024-10-31**
-
----
+| | |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Document:** | ***Concept and Feasibility Analysis for the SpaceSphere Project*** |
+| **Date:** | 2024-10-31 |
+| **License:** | (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED. |
+| | |
 
 ## 1.1 **Abstract**
 
@@ -32,13 +33,13 @@ The SpaceSphere is conceptualized as a spherical space station that generates ar
 
 ## 1.3 **Specifications and Structure of the SpaceSphere**
 
-### 1.3.1 **2.1 General Dimensions and Layout**
+### 1.3.1 **General Dimensions and Layout**
 
 - **Overall Diameter**: 127 meters.
 - **Number of Decks**: 16 concentric decks, numbered from Deck 0 (central area) to Deck 15 (outer deck).
 - **Total Volume**: The SpaceSphere has an effective total volume of 852,661 m³, allocated for habitation, life support, and propulsion systems.
 
-### 1.3.2 **2.2 Geometry and Gravity Distribution on the Decks**
+### 1.3.2 **Geometry and Gravity Distribution on the Decks**
 
 The rotation of the SpaceSphere generates artificial gravity, increasing radially outward. A detailed list of all deck data can be found in the appendix. Key parameters for selected decks are summarized below:
 
@@ -50,7 +51,7 @@ The rotation of the SpaceSphere generates artificial gravity, increasing radiall
 
 This table shows the increasing gravity from 2.5 m/s² on Deck 0 up to 15.63 m/s² on Deck 15. Deck 8 is designed for a gravity of 9.81 m/s², equivalent to Earth’s gravity, and serves as the main residential and working area.
 
-### 1.3.3 **2.3 Deck Configuration and Spatial Volume**
+### 1.3.3 **Deck Configuration and Spatial Volume**
 
 - **Deck Height and Ceiling Thickness**: Most decks have a net height of 3 meters, allowing comfortable mobility.
 - **Net Space Volume**: Net space volumes vary from approximately 39,000 m³ on Deck 0 to about 26,000 m³ on Deck 15.
@@ -60,7 +61,7 @@ This table shows the increasing gravity from 2.5 m/s² on Deck 0 up to 15.63 m/s
 
 ## 1.4 **Operational Cost Analysis**
 
-### 1.4.1 **3.1 Construction and Development Costs (Adjusted)**
+### 1.4.1 **Construction and Development Costs (Adjusted)**
 
 Based on updated volume and mass data, the following adjusted cost estimate is derived for the construction and launch of the SpaceSphere:
 
@@ -68,7 +69,7 @@ Based on updated volume and mass data, the following adjusted cost estimate is d
 - **Manufacturing and Assembly**: €655 million, including new structural requirements
 - **Transportation and Launch**: €8.7 billion (based on 100-ton segments at optimistically estimated launch costs)
 
-### 1.4.2 **3.2 Annual Operating Costs**
+### 1.4.2 **Annual Operating Costs**
 
 Despite the self-sustaining architecture aimed at minimizing operational costs, there remain ongoing expenses:
 
@@ -78,7 +79,7 @@ Despite the self-sustaining architecture aimed at minimizing operational costs, 
 - **Communication and Data Transmission**: €2 million
 - **Emergency Supplies**: €3 million for unexpected stock replenishments
 
-### 1.4.3 **3.3 Long-Term Maintenance and Upgrades**
+### 1.4.3 **Long-Term Maintenance and Upgrades**
 
 Major maintenance and potential upgrades will be required every decade to ensure long-term usability. Estimated cost: **€500 million per decade**.
 
@@ -86,15 +87,15 @@ Major maintenance and potential upgrades will be required every decade to ensure
 
 ## 1.5 **Technical Challenges and Feasibility**
 
-### 1.5.1 **4.1 Rotational and Gravity Stability**
+### 1.5.1 **Rotational and Gravity Stability**
 
 The rotation of the SpaceSphere must be carefully controlled to ensure a consistent gravity distribution. The challenge lies in ensuring structural integrity at high speed while integrating mechanisms for fine-tuning rotation.
 
-### 1.5.2 **4.2 Life Support and Closed-Loop Systems**
+### 1.5.2 **Life Support and Closed-Loop Systems**
 
 The hydroponic gardens and recycling facilities on decks with Earth-like gravity require continuous monitoring and maintenance. Integrating these systems on Deck 8 balances spatial utilization with energy consumption.
 
-### 1.5.3 **4.3 Thermal and Radiation Shielding**
+### 1.5.3 **Thermal and Radiation Shielding**
 
 The outer hull, with a thickness of 0.5 meters, provides basic protection against radiation and thermal fluctuations. Additional shielding may be required to protect the crew from cosmic radiation and solar storms.
 
@@ -121,7 +122,7 @@ The SpaceSphere represents an ambitious concept for the future of space explorat
 
 ---
 
-# A. **Appendix: Complete Deck Listing**
+## 1.8 **Appendix: Complete Deck Listing**
 
 Below is the full list of geometric and dynamic properties for each deck:
 
@@ -144,6 +145,6 @@ Below is the full list of geometric and dynamic properties for each deck:
 | **014** | 56.0               | 59.0                 | 3.0                 | 29.50                      | 14.75                            | 54,984.62              |
 | **015** | 59.5               | 62.5                 | 3.0                 | 31.25                      | 15.63                            | 26,328.88              |
 
-# A. Sources
+## 1.9 Sources
 
 No external sources used.

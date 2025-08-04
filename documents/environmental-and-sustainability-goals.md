@@ -9,6 +9,7 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
+
 # 1. **Environmental and Sustainability Goals**
 
 | | |
@@ -16,8 +17,8 @@ history:
 | **Document:**  | ***Environmental and Sustainability Goals for the Sphere Station and Space Operations*** |
 | **Date:**      | 2024-10-30 |
 | **License:**   | (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED. |
-| **Contents:**  | 1. **Introduction**<br>2. **Core Environmental and Sustainability Principles**<br>3. **Environmental Management and Waste Reduction**<br>4. **Energy Management**<br>5. **Sustainable Supply Chain**<br>6. **Waste Minimization and Recycling**<br>7. **Environmental and Educational Impact**<br>8. **Conclusion and Long-Term Vision**<br>9. **Appendix: Sustainability Metrics and Goals**<br>10. **Sources** |
-| |
+| **Contents:**  | 1.1 Introduction<br>1.2 Core Environmental and Sustainability Principles<br>1.3 Environmental Management and Waste Reduction<br>1.4 Energy Management<br>1.5 Sustainable Supply Chain<br>1.6 Waste Minimization and Recycling<br>1.7 Environmental and Educational Impact<br>1.8 Conclusion and Long-Term Vision<br>1.9 Appendix: Sustainability Metrics and Goals<br>1.10 Sources |
+| | |
 
 
 ## 1.1 **Introduction**

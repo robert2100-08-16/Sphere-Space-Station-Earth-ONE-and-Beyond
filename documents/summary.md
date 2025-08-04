@@ -9,7 +9,8 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
-# 1. Summary
+
+# Summary
 
 * [Introduction](readme.md)
 * [Sphere Station Documentation: Technical and Operational Overview](sphere-station-documentation-technical-and-operational-overview.md)
