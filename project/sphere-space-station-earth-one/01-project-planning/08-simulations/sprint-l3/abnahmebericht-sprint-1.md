@@ -1,38 +1,37 @@
-# 1. Abnahmebericht Sprint 1
+# Abnahmebericht Sprint 1
 
-Als Product Owner habe ich den Commit `4276cd0` für Sprint 1 geprüft. Die wesentlichen Aufgaben aus Sprint 1 laut Sprintplan waren:
+Acceptance Sprint 1 vom Sprintplan L3:
+(project/sphere-space-station-earth-one/01-project-planning/08-simulations/sprint-l3/sprintplan-l3-step-gltf-integration-und-cad-detailierung.md)
 
-1. **Bibliotheks‑Research zu STEP/glTF** – Es sollte eine Evaluierung der verfügbaren Bibliotheken erfolgen und dokumentiert werden.
-2. **Schichtmodell definieren** – Ein Dokument, das das KERNEL→ADAPTER→GUI‑Modell beschreibt.
-3. **Datenmodell/DTO definieren** – Eine einheitliche Datenstruktur für Decks und Hülle.
-4. **Prototyp‑Exporter für STEP und glTF** – Minimal lauffähige Exporter, die Dateien erzeugen.
-5. **Unit‑Tests anlegen** – Zumindest testen, dass die Prototyp‑Exporter Dateien erzeugen.
+Gern – ich habe mir den aktuellen Stand von Sprint 1 anhand der eingereichten Änderungen noch einmal unter dem Blickwinkel des ursprünglich vereinbarten Plans angesehen.
 
-### 1.0.1 Erfüllte Punkte
+### Erreichte Ergebnisse
 
-* **Research und Dokumentation:** In `docs/architecture/library_evaluation.md` wurde ein Vergleich verschiedener STEP‑ und glTF‑Bibliotheken erstellt, inklusive Lizenz‑ und Funktionsbewertung. Das entspricht dem geforderten Research.
-* **Schichtmodell:** Ein klarer Entwurf des Schichtenmodells wurde in `docs/architecture/layered_architecture.md` festgehalten – das KERNEL berechnet, die Adapter exportieren und die GUI konsumiert. Außerdem wurde das Konstruktionshandbuch um Hinweise zum Schichtmodell und den Prototyp‑Exportern ergänzt.
-* **Datenmodell:** Es wurde eine `data_model.py` angelegt, die Dataclasses für `Deck`, `Hull` und `StationModel` definiert. Damit ist ein grundlegender DTO‑Ansatz vorhanden.
-* **Prototyp‑Exporter:** Es gibt je einen ersten Exporter für glTF und STEP. Beide schreiben minimale Dateien mit Metadaten oder Kommentaren. Das ist als Proof‑of‑Concept in Ordnung.
-* **Tests:** Ein Testmodul prüft, dass die Exporter Dateien erzeugen und bestimmte Inhalte enthalten. Damit sind rudimentäre Unit‑Tests vorhanden.
+* **Schichtenmodell und Dokumentation**: Es wurde ein klares KERNEL‑→‑ADAPTER‑→‑GUI‑Modell beschrieben und dokumentiert, inklusive einer ersten Architekturübersicht und eines Bibliothekenvergleichs für STEP und glTF. Damit sind die Grundlagen gelegt.
+* **Datenmodell**: Mit `data_model.py` gibt es jetzt Dataclasses für Decks, Hülle und ein Gesamtmodell. Das schafft die nötige Grundlage für den Datenaustausch.
+* **Prototyp‑Exporter**: Sowohl ein STEP‑Exporter als auch ein glTF‑Exporter liegen als Prototyp vor. Tests stellen sicher, dass diese Funktionen lauffähige Dateien erzeugen.
+* **Tests und erste Integrationspunkte**: Ein einfaches Testmodul prüft die Erzeugung der Dateien; das Konstruktionshandbuch enthält Hinweise zum Schichtmodell und zur Umstellung auf die neuen Formate.
 
-### 1.0.2 Offene Punkte / Deltas
+### Fehlende Punkte / Deltas
 
-1. **Umfang des Datenmodells:** Die DTOs enthalten bislang nur wenige Attribute (id, Radien, Höhe). Es fehlen viele Werte aus dem vorhandenen KERNEL wie Netto‑Radien, Zylinderlängen, Basisflächen, Volumina oder Fenstergeometrie. Für die spätere CAD‑Detailierung müssen diese Felder ergänzt werden. Aufgabe: Datenmodell um die in `SphereDeckCalculator` genutzten Labels erweitern und gegebenenfalls verschachtelte Strukturen (z. B. Fensterpositionen) einführen.
+1. **Umfangreiche Geometriedaten im DTO**: Aktuell enthalten die Deck‑Objekte nur minimale Angaben (innerer Radius, äußerer Radius, Höhe). Weitere im Kern vorhandene Werte wie Netto‑Radien, Zylinderlängen, Basis‑ und Volumenflächen sowie insbesondere Fenster‑ und Wurmloch‑Geometrien fehlen. Diese sind nötig, um die späteren STEP-/glTF‑Dateien vollständig zu befüllen.
+   **Was noch zu tun ist:** Die Dataclasses um alle relevanten Felder aus `SphereDeckCalculator` ergänzen und ggf. verschachtelte Strukturen (Fensterlisten etc.) einführen.
 
-2. **Exporter-Funktionalität:** Der STEP‑Exporter schreibt aktuell nur Kommentare mit Deck‑IDs und Hüllenradius, der glTF‑Exporter nur Metadaten ohne Geometrie. Ziel des Sprints war lediglich ein Prototyp, daher ist das akzeptabel. Für die kommenden Sprints müssen diese Exporter jedoch echte Geometrien erzeugen:
+2. **Exporter liefern nur Metadaten**: Die aktuellen STEP‑ und glTF‑Exporter erzeugen lediglich Kommentare oder `extras`‑Felder, aber keine echte Geometrie. Für den Prototyp reicht das, aber für Sprint 2 müssen sie die komplette Geometrie als B‑Rep (STEP) bzw. Meshes mit Materialien (glTF) erzeugen.
+   **Was noch zu tun ist:**
 
-   * STEP‑Exporter: Erzeugung von B‑Rep‑Volumenkörpern für Decks und Hülle, eventuell unter Nutzung von CadQuery.
-   * glTF‑Exporter: Erstellung von Meshes, Materials und einfachen Animationen.
+   * Für den STEP‑Exporter eine Bibliothek wie CadQuery nutzen, um aus Radien und Höhen Zylinder und Sphären zu generieren.
+   * Für den glTF‑Exporter mit `trimesh` Meshes erzeugen, die Decks, Hülle, Wurmloch und Basisringe repräsentieren, und diese in einen glTF‑Container packen.
 
-3. **Architektur‑README:** In `docs/architecture/README.md` steht nur ein Einzeiler. Sinnvoll wäre, in diesem README eine Übersicht über alle Architektur‑Dokumente, deren Zweck und Verlinkungen zu geben.
+3. **Integration in die bestehenden Starter**: Die neuen Exporter werden bislang nirgends aus den Simulationen aufgerufen. Es fehlen CLI‑Optionen oder Funktionsaufrufe, um das `StationModel` aus `SphereDeckCalculator` zu füllen und dann die Exporter zu nutzen.
+   **Was noch zu tun ist:** Die Starter‑Skripte (Deck‑, Hull‑ und Station‑Simulation) um Parameter wie `--export-step`/`--export-gltf` erweitern, die das Datenmodell befüllen und den jeweiligen Exporter aufrufen.
 
-4. **Integration ins bestehende KERNEL:** Die neuen Exporter werden momentan nicht aus den vorhandenen KERNEL‑Klassen heraus aufgerufen. Es fehlt noch eine Schnittstelle, die aus `SphereDeckCalculator` oder `StationSimulation` die DTOs füllt und die Export‑Funktionen aufruft (z. B. via CLI‑Optionen). Aufgabe: In den Starter‑Skripten eine CLI‑Option `--export-step`/`--export-gltf` bereitstellen, die das Datenmodell füllt und die Prototyp‑Exporter nutzt.
+4. **Testabdeckung erweitern**: Es gibt nur einen minimalen Test für die Dateiexistenz. Zukünftig sollten die Tests prüfen, ob die Anzahl der exportierten Decks der Simulation entspricht und ob im STEP‑/glTF‑Output alle relevanten Geometrien vorhanden sind.
+   **Was noch zu tun ist:** Erweiterte Unit‑Tests schreiben, die den Inhalt des Exports parsen (z. B. via glTF‑Parser oder STEP‑Reader) und die Integrität der Daten validieren.
 
-5. **Unit‑Test‑Abdeckung:** Die Tests prüfen lediglich, ob Dateien existieren und gewisse Zeichenketten enthalten. Später sollten Tests die korrekte Anzahl von Decks und die Richtigkeit der Geometrie im STEP/glTF überprüfen.
+5. **Dokumentationsnavigation**: Im Architektur‑Ordner existieren mehrere Dateien, aber das Haupt‑README verweist noch nicht auf sie.
+   **Was noch zu tun ist:** Eine Inhaltsübersicht im Haupt‑README ergänzen und klar verlinken, wo sich welches Dokument befindet.
 
-6. **Dokumentationsstruktur:** Es wurden neue Dokumente angelegt, aber es fehlt eine zentrale Navigation (z. B. im Haupt‑README) mit Verweisen auf das Schichtmodell, die Bibliotheks‑Evaluation und die Datenmodellbeschreibung.
+### Empfehlung
 
-### 1.0.3 Fazit
-
-Die wesentlichen Ziele von Sprint 1 wurden erreicht: Das Schichtenmodell ist definiert, Bibliotheken wurden evaluiert, ein einfaches Datenmodell und erste Exporter‑Prototypen existieren, und grundlegende Tests wurden geschrieben. Für die nächsten Iterationen sollten die offenen Punkte adressiert werden: Erweiterung des Datenmodells, echte Geometrie‑Exportfunktionen, bessere Integration in die KERNEL‑API, weiterführende Tests und eine konsistente Dokumentationsnavigation.
+Sprint 1 ist in Grundzügen erfüllt, vor allem hinsichtlich der Analyse und Vorbereitung. Die weiteren Schritte bestehen darin, das Datenmodell zu vervollständigen, die Exporter funktional auszubauen und sie in den vorhandenen Workflow zu integrieren. Bitte plane diese Punkte konkret für Sprint 2 ein.
