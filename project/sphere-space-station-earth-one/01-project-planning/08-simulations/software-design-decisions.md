@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.2.0
+version: 1.3.0
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.0
+    date: 2025-08-05
+    change: "Moved scene preparation to starter script and simplified Blender adapter"
   - version: 1.2.0
     date: 2025-08-05
     change: "Automatic glTF generation for Blender via prepare_scene"

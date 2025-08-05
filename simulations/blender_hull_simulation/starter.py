@@ -21,6 +21,7 @@ from simulations.sphere_space_station_simulations.data_model import (
     Hull,
     StationModel,
 )
+from simulations.blender_hull_simulation.prepare_blender_scene import prepare_scene
 
 
 def main() -> None:
@@ -87,6 +88,9 @@ def main() -> None:
     if args.export_json:
         with Path(args.export_json).open("w", encoding="utf-8") as fh:
             json.dump(asdict(model), fh, indent=2)
+
+    script_dir = os.path.dirname(__file__)
+    prepare_scene(os.path.join(script_dir, "station.glb"))
 
     blender = args.blender
     if not blender:
