@@ -22,7 +22,7 @@ from simulations.sphere_space_station_simulations.adapters import (
     export_json,
 )
 
-
+logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("prep")
 
 

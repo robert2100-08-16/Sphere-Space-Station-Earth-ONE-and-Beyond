@@ -19,7 +19,7 @@ from simulations.sphere_space_station_simulations.data_model import (
     StationModel,
 )
 
-
+logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("sim")
 
 

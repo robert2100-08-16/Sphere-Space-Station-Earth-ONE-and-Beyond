@@ -14,7 +14,7 @@ from .. import animation as animation_mod
 from .. import reporting as reporting_mod
 from .hull import calculate_hull_geometry
 
-
+logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("calc")
 
 RESULTS_DIR = Path(__file__).resolve().parents[1] / "results"

@@ -12,8 +12,9 @@ import logging
 from pathlib import Path
 from typing import List, Tuple
 
-
+logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("gltf")
+
 
 # ``cadquery`` is an optional dependency used for generating the geometry of the
 # space station.  The test environment does not provide it, so the module falls
