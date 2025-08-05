@@ -12,8 +12,8 @@ import logging
 from pathlib import Path
 from typing import List, Tuple
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+
+log = logging.getLogger("gltf")
 
 # ``cadquery`` is an optional dependency used for generating the geometry of the
 # space station.  The test environment does not provide it, so the module falls
@@ -22,7 +22,7 @@ logger = logging.getLogger(__name__)
 try:  # pragma: no cover - exercised indirectly in tests
     import cadquery as cq  # type: ignore
 except Exception:  # pragma: no cover - cadquery is optional
-    logger.info("---- CadQuery not available, using placeholder meshes. ----")
+    log.info("---- CadQuery not available, using placeholder meshes. ----")
     # Set `cq` to None so that the rest of the code can check for its availability
     cq = None  # type: ignore[assignment]
 import numpy as np
@@ -277,7 +277,7 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
     path = Path(filepath)
     path.parent.mkdir(parents=True, exist_ok=True)
 
-    logger.info(f"Exporting glTF to {path}")
+    log.info("Exporting glTF to %s", path)
     binary = bytearray()
     buffer_views: List[BufferView] = []
     accessors: List[Accessor] = []

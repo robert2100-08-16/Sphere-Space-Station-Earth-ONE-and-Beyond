@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.3.2
+version: 1.3.3
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.3
+    date: 2025-08-07
+    change: "Shortened logger names for Blender scene prep and glTF exporter"
   - version: 1.3.2
     date: 2025-08-06
     change: "Added logging to simulation modules for better diagnostics"
