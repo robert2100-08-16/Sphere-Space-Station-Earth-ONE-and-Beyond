@@ -21,7 +21,7 @@ try:  # pragma: no cover - best effort for optional dependency
 except Exception:  # pragma: no cover - cadquery is optional
     cq = None  # type: ignore[assignment]
 
-from ..data_model import Deck, Hull, StationModel, Wormhole
+from ..data_model import BaseRing, Deck, Hull, StationModel, Wormhole
 
 
 if cq is not None:  # pragma: no cover - exercised when cadquery is installed
@@ -64,6 +64,17 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
     def _build_wormhole(wormhole: Wormhole) -> cq.Workplane:
         return cq.Workplane("XY").circle(wormhole.radius_m).extrude(wormhole.height_m)
 
+    def _build_base_ring(ring: BaseRing) -> cq.Workplane:
+        outer = ring.radius_m + ring.width_m / 2
+        inner = ring.radius_m - ring.width_m / 2
+        return (
+            cq.Workplane("XY")
+            .circle(outer)
+            .circle(inner)
+            .extrude(ring.width_m)
+            .translate((0, 0, ring.position_z_m))
+        )
+
     def export_step(model: StationModel, filepath: str | Path) -> Path:
         """Export the given ``StationModel`` as a STEP file."""
 
@@ -74,17 +85,33 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
 
         for deck in model.decks:
             solid, windows = _build_deck(deck)
-            assembly.add(solid, name=f"deck_{deck.id}", metadata={"material": "Stahl"})
+            assembly.add(
+                solid,
+                name=f"deck_{deck.id}",
+                metadata={
+                    "material": (deck.material.name if deck.material else "Stahl")
+                },
+            )
             for i, win in enumerate(windows):
                 assembly.add(
                     win,
                     name=f"deck_{deck.id}_window_{i}",
-                    metadata={"material": "Glas"},
+                    metadata={
+                        "material": (win.material.name if win.material else "Glas")
+                    },
                 )
 
         if model.hull:
             solid, windows = _build_hull(model.hull)
-            assembly.add(solid, name="hull", metadata={"material": "Stahl"})
+            assembly.add(
+                solid,
+                name="hull",
+                metadata={
+                    "material": (
+                        model.hull.material.name if model.hull.material else "Stahl"
+                    )
+                },
+            )
             for i, win in enumerate(windows):
                 assembly.add(
                     win, name=f"hull_window_{i}", metadata={"material": "Glas"}
@@ -92,7 +119,27 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
 
         if model.wormhole:
             solid = _build_wormhole(model.wormhole)
-            assembly.add(solid, name="wormhole", metadata={"material": "Stahl"})
+            assembly.add(
+                solid,
+                name="wormhole",
+                metadata={
+                    "material": (
+                        model.wormhole.material.name
+                        if model.wormhole.material
+                        else "Stahl"
+                    )
+                },
+            )
+
+        for i, ring in enumerate(model.base_rings):
+            solid = _build_base_ring(ring)
+            assembly.add(
+                solid,
+                name=f"base_ring_{i}",
+                metadata={
+                    "material": (ring.material.name if ring.material else "Stahl")
+                },
+            )
 
         assembly.save(str(path), "STEP")
         return path
@@ -109,6 +156,7 @@ else:
         lines = [
             "STEP PLACEHOLDER\n",
             f"decks={len(model.decks)}\n",
+            f"base_rings={len(model.base_rings)}\n",
             f"hull={1 if model.hull else 0}\n",
             f"wormhole={1 if model.wormhole else 0}\n",
         ]

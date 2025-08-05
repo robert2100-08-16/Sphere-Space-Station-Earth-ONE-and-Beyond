@@ -29,7 +29,7 @@ from pygltflib import (
     Buffer,
     BufferView,
     GLTF2,
-    Material,
+    Material as GLTFMaterial,
     Mesh,
     Node,
     PbrMetallicRoughness,
@@ -37,7 +37,40 @@ from pygltflib import (
     Scene,
 )
 
-from ..data_model import Deck, Hull, StationModel, Wormhole
+from ..data_model import (
+    BaseRing,
+    Deck,
+    Hull,
+    Material as ModelMaterial,
+    StationModel,
+    Wormhole,
+)
+
+DEFAULT_STEEL = ModelMaterial("Stahl", (0.8, 0.8, 0.8, 1.0))
+DEFAULT_GLASS = ModelMaterial("Glas", (0.5, 0.7, 1.0, 0.3))
+
+
+def _ensure_material(
+    materials: List[GLTFMaterial],
+    lookup: dict[str, int],
+    mat: ModelMaterial,
+) -> int:
+    if mat.name not in lookup:
+        color = list(mat.color_rgba) if mat.color_rgba else [0.8, 0.8, 0.8, 1.0]
+        metallic = 0.0 if mat.name == "Glas" else 0.8
+        rough = 0.1 if mat.name == "Glas" else 0.4
+        materials.append(
+            GLTFMaterial(
+                name=mat.name,
+                pbrMetallicRoughness=PbrMetallicRoughness(
+                    baseColorFactor=color,
+                    metallicFactor=metallic,
+                    roughnessFactor=rough,
+                ),
+            )
+        )
+        lookup[mat.name] = len(materials) - 1
+    return lookup[mat.name]
 
 
 if cq is not None:  # pragma: no cover - exercised when cadquery is installed
@@ -101,6 +134,18 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
         solid = cq.Workplane("XY").circle(wormhole.radius_m).extrude(wormhole.height_m)
         return _tessellate(solid)
 
+    def _build_base_ring_mesh(ring: BaseRing) -> Tuple[np.ndarray, np.ndarray]:
+        outer = ring.radius_m + ring.width_m / 2
+        inner = ring.radius_m - ring.width_m / 2
+        solid = (
+            cq.Workplane("XY")
+            .circle(outer)
+            .circle(inner)
+            .extrude(ring.width_m)
+            .translate((0, 0, ring.position_z_m))
+        )
+        return _tessellate(solid)
+
 else:
     # ``cadquery`` is unavailable.  Produce very small placeholder meshes so that
     # the exporter can still generate a valid glTF file used in the tests.  The
@@ -147,6 +192,19 @@ else:
             height_m=wormhole.height_m,
         )
         (verts, faces), _ = _build_deck_mesh(temp_deck)
+        return verts, faces
+
+    def _build_base_ring_mesh(ring: BaseRing) -> Tuple[np.ndarray, np.ndarray]:
+        verts = np.array(
+            [
+                [-0.4, -0.4, 0.0],
+                [0.4, -0.4, 0.0],
+                [0.4, 0.4, 0.0],
+                [-0.4, 0.4, 0.0],
+            ],
+            dtype=np.float32,
+        )
+        faces = np.array([[0, 1, 2], [0, 2, 3]], dtype=np.uint32)
         return verts, faces
 
 
@@ -219,45 +277,93 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
     meshes: List[Mesh] = []
     nodes: List[Node] = []
 
-    materials = [
-        Material(
-            name="Stahl",
-            pbrMetallicRoughness=PbrMetallicRoughness(
-                baseColorFactor=[0.8, 0.8, 0.8, 1.0],
-                metallicFactor=0.8,
-                roughnessFactor=0.4,
-            ),
-        ),
-        Material(
-            name="Glas",
-            pbrMetallicRoughness=PbrMetallicRoughness(
-                baseColorFactor=[0.5, 0.7, 1.0, 0.3],
-                metallicFactor=0.0,
-                roughnessFactor=0.1,
-            ),
-        ),
-    ]
+    materials: List[GLTFMaterial] = []
+    material_lookup: dict[str, int] = {}
+
+    def mat_index(mat: ModelMaterial | None) -> int:
+        base = DEFAULT_GLASS if mat and mat.name == "Glas" else DEFAULT_STEEL
+        chosen = mat or base
+        return _ensure_material(materials, material_lookup, chosen)
 
     child_nodes: List[int] = []
     for deck in model.decks:
         (verts, faces), windows = _build_deck_mesh(deck)
-        _add_mesh(binary, buffer_views, accessors, meshes, nodes, verts, faces, 0)
+        _add_mesh(
+            binary,
+            buffer_views,
+            accessors,
+            meshes,
+            nodes,
+            verts,
+            faces,
+            mat_index(deck.material),
+        )
         child_nodes.append(len(nodes) - 1)
         for wv, wf in windows:
-            _add_mesh(binary, buffer_views, accessors, meshes, nodes, wv, wf, 1)
+            _add_mesh(
+                binary,
+                buffer_views,
+                accessors,
+                meshes,
+                nodes,
+                wv,
+                wf,
+                mat_index(DEFAULT_GLASS),
+            )
             child_nodes.append(len(nodes) - 1)
+
+    for ring in model.base_rings:
+        verts, faces = _build_base_ring_mesh(ring)
+        _add_mesh(
+            binary,
+            buffer_views,
+            accessors,
+            meshes,
+            nodes,
+            verts,
+            faces,
+            mat_index(ring.material),
+        )
+        child_nodes.append(len(nodes) - 1)
 
     if model.hull:
         (verts, faces), windows = _build_hull_mesh(model.hull)
-        _add_mesh(binary, buffer_views, accessors, meshes, nodes, verts, faces, 0)
+        _add_mesh(
+            binary,
+            buffer_views,
+            accessors,
+            meshes,
+            nodes,
+            verts,
+            faces,
+            mat_index(model.hull.material),
+        )
         child_nodes.append(len(nodes) - 1)
         for wv, wf in windows:
-            _add_mesh(binary, buffer_views, accessors, meshes, nodes, wv, wf, 1)
+            _add_mesh(
+                binary,
+                buffer_views,
+                accessors,
+                meshes,
+                nodes,
+                wv,
+                wf,
+                mat_index(DEFAULT_GLASS),
+            )
             child_nodes.append(len(nodes) - 1)
 
     if model.wormhole:
         verts, faces = _build_wormhole_mesh(model.wormhole)
-        _add_mesh(binary, buffer_views, accessors, meshes, nodes, verts, faces, 0)
+        _add_mesh(
+            binary,
+            buffer_views,
+            accessors,
+            meshes,
+            nodes,
+            verts,
+            faces,
+            mat_index(model.wormhole.material),
+        )
         child_nodes.append(len(nodes) - 1)
 
     root = Node(children=child_nodes)
