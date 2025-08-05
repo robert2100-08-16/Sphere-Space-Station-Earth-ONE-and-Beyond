@@ -32,3 +32,11 @@ Bei der Prüfung von Sprint 2 anhand des aktuellen Repos‐Stands (Branch `mai
 ### Fazit
 
 Die Kernaufgaben des Sprints – funktionierende STEP‑/glTF‑Exporter und ein JSON‑Format – sind erfolgreich umgesetzt. Auch die CLI‑Integration und der glTF‑basierte Hull‑Import in Blender entsprechen den Erwartungen. Nicht abgeschlossen ist jedoch die vollständige Ablösung der CSV‑Transportwege: der Blender‑Deck‑Adapter arbeitet weiterhin mit CSV und die dazugehörigen Dateien existieren noch. Für Sprint 3 sollte der Fokus darauf liegen, diese Altlasten zu entfernen, alle Geometrieinformationen über das Datenmodell und die Exporter abzubilden und die Testabdeckung um STEP‑Import und Blender‑Integration zu erweitern.
+
+### Update
+
+Die genannten offenen Punkte wurden inzwischen adressiert:
+- Der Blender-Deck-Adapter lädt nun glTF-Dateien und alle CSV-Hilfsdateien wurden entfernt.
+- Zusätzliche Tests prüfen STEP-Export und glTF-Import in Blender.
+- Die Station-Simulation bietet Exportoptionen für STEP, glTF und JSON.
+- Die Architektur-Dokumentation verweist auf alle Exporter und erläutert die verbleibende CSV-Nutzung für Reports.

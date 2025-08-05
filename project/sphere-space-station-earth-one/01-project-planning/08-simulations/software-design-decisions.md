@@ -11,7 +11,8 @@ history:
 ---
 # 1. Software Design Decisions
 
-This document summarizes important architectural decisions of the Python software. The goal is a long-term maintainable library for calculations and 3D simulations of the Sphere Space Station.
+This document summarizes important architectural decisions of the Python software. The goal is a long-term maintainable library
+for calculations and 3D simulations of the Sphere Space Station.
 
 ## 1.1 Evaluation of Approaches
 
@@ -33,5 +34,6 @@ No external sources used.
 
 ## 1.4 STEP/glTF/JSON Export
 
-- Station geometry is computed directly in the Blender hull simulation via `SphereDeckCalculator`.
-- Exporters output STEP, glTF, and JSON files; `deck_3d_construction_data.csv` is deprecated and remains only for reporting.
+- Station geometry is computed via `SphereDeckCalculator` and transformed into a structured `StationModel`.
+- Exporters write STEP, glTF and JSON files which serve as the primary interchange formats.
+- Blender adapters import the generated glTF directly; the helper CSV `deck_3d_construction_data.csv` was removed and CSV remains only for analytical reports such as `results/deck_dimensions.csv`.

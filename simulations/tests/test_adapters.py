@@ -47,3 +47,13 @@ def test_exporters_create_files(tmp_path: Path) -> None:
         data = json.load(handle)
     assert data["decks"][0]["windows"][0]["size_m"] == 0.2
     assert data["hull"]["windows"][0]["position"][2] == 3.0
+
+
+def test_step_file_contains_component_counts(tmp_path: Path) -> None:
+    model = StationModel(decks=[Deck(1, 1.0, 2.0, 0.5)], hull=Hull(3.0))
+    step_file = export_step(model, tmp_path / "station.step")
+    with step_file.open("r", encoding="utf-8") as handle:
+        content = handle.read()
+    assert f"decks={len(model.decks)}" in content
+    assert "hull=1" in content
+    assert "wormhole=0" in content

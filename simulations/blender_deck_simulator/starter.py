@@ -1,15 +1,7 @@
 import argparse
-from pathlib import Path
 import os
 import subprocess
 import sys
-
-# Allow running without installing the package
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
-
-from simulations.sphere_space_station_simulations.data_preparation import (
-    generate_deck_construction_csv,
-)
 
 
 def main() -> None:
@@ -36,10 +28,6 @@ def main() -> None:
     )
 
     args = parser.parse_args()
-    input_csv = Path(__file__).resolve().parents[1] / "results" / "deck_dimensions.csv"
-    output_csv = Path(__file__).resolve().parent / "deck_3d_construction_data.csv"
-    generate_deck_construction_csv(input_csv, output_csv)
-
     blender = args.blender
     if not blender:
         print("BLENDER_PATH not set and --blender not provided", file=sys.stderr)
