@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.3.1
+version: 1.3.2
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.2
+    date: 2025-08-06
+    change: "Added logging to simulation modules for better diagnostics"
   - version: 1.3.1
     date: 2025-08-05
     change: "Corrected root node placement in glTF exporter to avoid recursion"
