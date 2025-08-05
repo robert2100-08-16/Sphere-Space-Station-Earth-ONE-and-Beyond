@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.3.0
+version: 1.3.1
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.1
+    date: 2025-08-05
+    change: "Corrected root node placement in glTF exporter to avoid recursion"
   - version: 1.3.0
     date: 2025-08-05
     change: "Moved scene preparation to starter script and simplified Blender adapter"
