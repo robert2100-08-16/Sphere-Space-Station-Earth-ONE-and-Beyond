@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import sys
 
 try:  # pragma: no cover - handled in tests
     import bpy  # type: ignore
@@ -22,9 +23,10 @@ except Exception:  # pragma: no cover - Blender not available
 try:
     from .prepare_blender_scene import prepare_scene
 except ImportError:  # pragma: no cover - direct script execution
+    script_path = os.path.dirname(__file__)
+    sys.path.append(script_path)
+    sys.path.append(os.path.abspath(os.path.join(script_path, "..", "..")))
     from prepare_blender_scene import prepare_scene
-
-from .prepare_blender_scene import prepare_scene
 
 
 def import_gltf(filepath: str) -> None:
