@@ -1,6 +1,22 @@
 import argparse
+from pathlib import Path
 from typing import Any
+
 from simulations.sphere_space_station_simulations import SphereDeckCalculator
+from simulations.sphere_space_station_simulations.adapters.gltf_exporter import (
+    export_gltf,
+)
+from simulations.sphere_space_station_simulations.adapters.json_exporter import (
+    export_json,
+)
+from simulations.sphere_space_station_simulations.adapters.step_exporter import (
+    export_step,
+)
+from simulations.sphere_space_station_simulations.data_model import (
+    Deck,
+    Hull,
+    StationModel,
+)
 
 
 class StationSimulation:
@@ -56,6 +72,20 @@ class StationSimulation:
         if self.enable_emergency_drills:
             self.run_emergency_drills()
 
+    def to_station_model(self) -> StationModel:
+        return StationModel(
+            decks=[
+                Deck(
+                    id=int(row[SphereDeckCalculator.DECK_ID_LABEL].split("_")[1]),
+                    inner_radius_m=row[SphereDeckCalculator.INNER_RADIUS_LABEL],
+                    outer_radius_m=row[SphereDeckCalculator.OUTER_RADIUS_LABEL],
+                    height_m=row[SphereDeckCalculator.DECK_HEIGHT_LABEL],
+                )
+                for _, row in self.decks.iterrows()
+            ],
+            hull=Hull(radius_m=self.calculator.sphere_diameter / 2),
+        )
+
 
 def parse_args(args: Any | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Sphere Station Simulation")
@@ -83,6 +113,13 @@ def parse_args(args: Any | None = None) -> argparse.Namespace:
         dest="emergency_drills",
         help="Disable emergency drills",
     )
+    parser.add_argument(
+        "--export-step", help="Write a STEP file with the station geometry"
+    )
+    parser.add_argument(
+        "--export-gltf", help="Write a glTF file with the station geometry"
+    )
+    parser.add_argument("--export-json", help="Write the station data model as JSON")
     return parser.parse_args(args)
 
 
@@ -95,6 +132,14 @@ def main(args: Any | None = None) -> None:
         enable_emergency_drills=cli_args.emergency_drills,
     )
     sim.run()
+
+    model = sim.to_station_model()
+    if cli_args.export_step:
+        export_step(model, Path(cli_args.export_step))
+    if cli_args.export_gltf:
+        export_gltf(model, Path(cli_args.export_gltf))
+    if cli_args.export_json:
+        export_json(model, Path(cli_args.export_json))
 
 
 if __name__ == "__main__":
