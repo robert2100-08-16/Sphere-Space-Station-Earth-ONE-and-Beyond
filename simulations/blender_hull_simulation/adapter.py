@@ -12,21 +12,12 @@ Run this script inside Blender or from the command line with
 
 from __future__ import annotations
 
-import argparse
 import os
-import sys
 
 try:  # pragma: no cover - handled in tests
     import bpy  # type: ignore
 except Exception:  # pragma: no cover - Blender not available
     bpy = None  # type: ignore[assignment]
-try:
-    from .prepare_blender_scene import prepare_scene
-except ImportError:  # pragma: no cover - direct script execution
-    script_path = os.path.dirname(__file__)
-    sys.path.append(script_path)
-    sys.path.append(os.path.abspath(os.path.join(script_path, "..", "..")))
-    from prepare_blender_scene import prepare_scene
 
 
 def import_gltf(filepath: str) -> None:
@@ -60,19 +51,8 @@ def assign_basic_material(material_name: str = "HullMaterial") -> None:
 
 
 def main(argv: list[str] | None = None) -> None:
-    parser = argparse.ArgumentParser(add_help=False)
-    parser.add_argument(
-        "--prepare", action="store_true", help="Generate scene and exit"
-    )
-    args, _ = parser.parse_known_args(argv)
-
     script_dir = os.path.dirname(__file__)
     gltf_path = os.path.join(script_dir, "station.glb")
-
-    if args.prepare or not os.path.exists(gltf_path):
-        prepare_scene(gltf_path)
-        if args.prepare:
-            return
 
     if not os.path.exists(gltf_path):
         raise FileNotFoundError(gltf_path)
