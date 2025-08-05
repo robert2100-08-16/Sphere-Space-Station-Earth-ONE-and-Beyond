@@ -19,6 +19,10 @@ try:  # pragma: no cover - handled in tests
     import bpy  # type: ignore
 except Exception:  # pragma: no cover - Blender not available
     bpy = None  # type: ignore[assignment]
+try:
+    from .prepare_blender_scene import prepare_scene
+except ImportError:  # pragma: no cover - direct script execution
+    from prepare_blender_scene import prepare_scene
 
 from .prepare_blender_scene import prepare_scene
 
