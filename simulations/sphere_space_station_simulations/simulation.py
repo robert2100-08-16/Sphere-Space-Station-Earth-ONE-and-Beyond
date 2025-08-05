@@ -1,4 +1,5 @@
 import argparse
+import logging
 from pathlib import Path
 from typing import Any
 
@@ -19,6 +20,9 @@ from simulations.sphere_space_station_simulations.data_model import (
 )
 
 
+log = logging.getLogger("sim")
+
+
 class StationSimulation:
     """High level simulation integrating deck and hull models."""
 
@@ -34,7 +38,7 @@ class StationSimulation:
         self.enable_life_support = enable_life_support
         self.enable_emergency_drills = enable_emergency_drills
 
-        # Load deck and hull models using the existing calculator
+        log.info("Loading station geometry")
         self.calculator = SphereDeckCalculator(
             "Deck Dimensions of a Sphere",
             sphere_diameter=127.0,
@@ -51,18 +55,19 @@ class StationSimulation:
         self.hull = self.calculator.hull_geometry
 
     def simulate_docking(self) -> None:
-        print("[Docking] Simulating spacecraft docking operations...")
+        log.info("Simulating spacecraft docking operations")
 
     def run_mission_control(self) -> None:
-        print("[Mission] Executing mission control scenario...")
+        log.info("Executing mission control scenario")
 
     def run_life_support(self) -> None:
-        print("[Life Support] Running life-support simulation...")
+        log.info("Running life-support simulation")
 
     def run_emergency_drills(self) -> None:
-        print("[Emergency] Performing emergency drill sequence...")
+        log.info("Performing emergency drill sequence")
 
     def run(self) -> None:
+        log.info("Running station simulation")
         if self.enable_docking:
             self.simulate_docking()
         if self.enable_mission_control:
@@ -71,6 +76,7 @@ class StationSimulation:
             self.run_life_support()
         if self.enable_emergency_drills:
             self.run_emergency_drills()
+        log.info("Station simulation finished")
 
     def to_station_model(self) -> StationModel:
         return StationModel(
@@ -124,6 +130,7 @@ def parse_args(args: Any | None = None) -> argparse.Namespace:
 
 
 def main(args: Any | None = None) -> None:
+    logging.basicConfig(level=logging.INFO)
     cli_args = parse_args(args)
     sim = StationSimulation(
         enable_docking=cli_args.docking,

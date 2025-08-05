@@ -1,17 +1,21 @@
-import pandas as pd
-import numpy as np
+import logging
 from pathlib import Path
+from typing import Union, List
 
-from mpl_toolkits.mplot3d import Axes3D
-from matplotlib.animation import FuncAnimation
 import matplotlib.animation as animation
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from matplotlib.animation import FuncAnimation
+from mpl_toolkits.mplot3d import Axes3D
 from tqdm import tqdm
-from typing import Union, List
 
 from .. import animation as animation_mod
 from .. import reporting as reporting_mod
 from .hull import calculate_hull_geometry
+
+
+log = logging.getLogger("calc")
 
 RESULTS_DIR = Path(__file__).resolve().parents[1] / "results"
 DATA_DIR = RESULTS_DIR / "data"
@@ -83,6 +87,7 @@ class SphereDeckCalculator:
         self.deck_000_outer_radius = deck_000_outer_radius
         self.deck_height_brutto = deck_height_brutto
         self.deck_ceiling_thickness = deck_ceiling_thickness
+        log.info("Deck calculator initialized: %s", title)
         self.df_decks = self._calculate_cylindric_decks_of_a_sphere()
         self.hull_geometry = calculate_hull_geometry(
             self.inner_sphere_diameter,
@@ -232,6 +237,7 @@ class SphereDeckCalculator:
         return df_decks
 
     def calculate_dynamics_of_a_sphere(self, angular_velocity: float):
+        log.info("Calculating dynamics with angular velocity %.2f", angular_velocity)
         self.df_decks[self.ROTATION_VELOCITY_LABEL] = (
             self.df_decks[self.OUTER_RADIUS_NETTO_LABEL] * angular_velocity
         )
@@ -239,7 +245,6 @@ class SphereDeckCalculator:
             self.df_decks[self.ROTATION_VELOCITY_LABEL] ** 2
             / self.df_decks[self.OUTER_RADIUS_NETTO_LABEL]
         )
-
         return self.df_decks
 
     def calculate_total_volume(self):

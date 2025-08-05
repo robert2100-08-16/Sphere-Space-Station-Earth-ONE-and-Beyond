@@ -22,8 +22,8 @@ from simulations.sphere_space_station_simulations.adapters import (
     export_json,
 )
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+
+log = logging.getLogger("prep")
 
 
 def _build_default_model() -> StationModel:
@@ -77,21 +77,21 @@ def prepare_scene(
     if not force_new:
         # If the file already exists and we are not forcing a new one, return the existing path
         if path.exists():
-            logger.info(f"Using existing glTF file at {path}")
+            log.info("Using existing glTF file at %s", path)
             return path
     else:
         # If we are forcing a new one, delete the existing file if it exists
         if path.exists():
             path.unlink()
-            logger.info(f"Deleted existing glTF file at {path}")
+            log.info("Deleted existing glTF file at %s", path)
 
     # Ensure the parent directory exists
     if not path.parent.exists():
         path.parent.mkdir(parents=True, exist_ok=True)
-        logger.info(f"Created directory {path.parent}")
+        log.info("Created directory %s", path.parent)
 
     # If the file does not exist, we need to create it
-    logger.info(f"Preparing scene at {path}")
+    log.info("Preparing scene at %s", path)
     # Build the default model
     model = _build_default_model()
 
