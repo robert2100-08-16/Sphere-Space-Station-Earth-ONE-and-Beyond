@@ -366,8 +366,8 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
         )
         child_nodes.append(len(nodes) - 1)
 
-    root = Node(children=child_nodes)
-    nodes.insert(0, root)
+    root_idx = len(nodes)
+    nodes.append(Node(children=child_nodes))
 
     # Animation data (rotation around Z axis)
     time_data = np.array([0.0, 1.0], dtype=np.float32)
@@ -405,12 +405,12 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
 
     sampler = AnimationSampler(input=len(accessors) - 2, output=len(accessors) - 1)
     channel = AnimationChannel(
-        sampler=0, target=AnimationChannelTarget(node=0, path="rotation")
+        sampler=0, target=AnimationChannelTarget(node=root_idx, path="rotation")
     )
     animations = [Animation(samplers=[sampler], channels=[channel])]
 
     buffer = Buffer(byteLength=len(binary))
-    scene = Scene(nodes=[0])
+    scene = Scene(nodes=[root_idx])
     gltf = GLTF2(
         scenes=[scene],
         nodes=nodes,
