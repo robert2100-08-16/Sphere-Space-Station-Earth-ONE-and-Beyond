@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.1.0
+version: 1.2.0
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.2.0
+    date: 2025-08-05
+    change: "Automatic glTF generation for Blender via prepare_scene"
   - version: 1.1.0
     date: 2025-02-14
     change: "Added BaseRing DTO, material metadata and exporter tests"
@@ -41,3 +44,5 @@ No external sources used.
 - Exporters write STEP, glTF and JSON files which serve as the primary interchange formats.
 - Blender adapters import the generated glTF directly; the helper CSV `deck_3d_construction_data.csv` was removed and CSV remains only for analytical reports such as `results/deck_dimensions.csv`.
 - The data model now includes `BaseRing` elements and material/colour properties for all geometry. Exporters and tests ensure that rings and materials are preserved across STEP, glTF and JSON workflows.
+- A helper `prepare_scene` script automatically creates the required `station.glb`
+  file when Blender adapters run, reducing manual export steps.
