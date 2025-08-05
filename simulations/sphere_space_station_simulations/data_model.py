@@ -19,6 +19,7 @@ class Window:
     position: Tuple[float, float, float]
     size_m: float
     count: int = 1
+    material: Optional["Material"] = None
 
 
 @dataclass
@@ -35,6 +36,7 @@ class Deck:
     net_height_m: Optional[float] = None
     base_area_m2: Optional[float] = None
     volume_m3: Optional[float] = None
+    material: Optional["Material"] = None
 
     def __post_init__(self) -> None:
         self.net_inner_radius_m = (
@@ -67,6 +69,7 @@ class Hull:
     net_radius_m: Optional[float] = None
     surface_area_m2: Optional[float] = None
     volume_m3: Optional[float] = None
+    material: Optional["Material"] = None
 
     def __post_init__(self) -> None:
         self.net_radius_m = (
@@ -85,6 +88,25 @@ class Wormhole:
     radius_m: float
     height_m: float
     base_thickness_m: float = 0.0
+    material: Optional["Material"] = None
+
+
+@dataclass
+class BaseRing:
+    """Structural ring attached to the hull."""
+
+    radius_m: float
+    width_m: float
+    position_z_m: float
+    material: Optional["Material"] = None
+
+
+@dataclass
+class Material:
+    """Material with an optional RGBA colour."""
+
+    name: str
+    color_rgba: Tuple[float, float, float, float] | None = None
 
 
 @dataclass
@@ -92,5 +114,6 @@ class StationModel:
     """Container aggregating all geometry elements."""
 
     decks: List[Deck] = field(default_factory=list)
+    base_rings: List[BaseRing] = field(default_factory=list)
     hull: Optional[Hull] = None
     wormhole: Optional[Wormhole] = None

@@ -11,6 +11,6 @@ into a range of external formats:
 
 from .gltf_exporter import export_gltf
 from .step_exporter import export_step
-from .json_exporter import export_json
+from .json_exporter import export_json, import_json
 
-__all__ = ["export_gltf", "export_step", "export_json"]
+__all__ = ["export_gltf", "export_step", "export_json", "import_json"]
