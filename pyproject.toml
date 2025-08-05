@@ -6,15 +6,23 @@ authors = [
   {name = "Robert Alexander Massinger", email = "robert@robert-alexander-massinger-space-technologies.com"}
 ]
 readme = "README.md"
-license = {file = "LICENSE-MIT"}
+license = "MIT"
 requires-python = ">=3.8"
 
-[project.dependencies]
-pandas = "*"
-numpy = "*"
-matplotlib = "*"
-tqdm = "*"
-pygltflib = "*"
+dependencies = [
+  "pandas",
+  "numpy<1.24",
+  "matplotlib",
+  "tqdm",
+  "pygltflib",
+  "black",
+  "pytest",
+  "cadquery",
+  "protobuf>=3.20.3,<5.0.0dev,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5",
+  "wrapt>=1.11.0,<1.15",
+  "packaging<25,>=20"
+]
+
 
 [project.urls]
 Homepage = "https://robert-alexander-massinger-space-technologies.com"
@@ -22,3 +30,6 @@ Homepage = "https://robert-alexander-massinger-space-technologies.com"
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["simulations"]

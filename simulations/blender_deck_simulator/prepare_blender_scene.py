@@ -7,7 +7,7 @@ workflows.
 """
 
 from __future__ import annotations
-
+import logging
 from pathlib import Path
 
 from simulations.sphere_space_station_simulations import SphereDeckCalculator
@@ -21,6 +21,9 @@ from simulations.sphere_space_station_simulations.adapters import (
     export_step,
     export_json,
 )
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 def _build_default_model() -> StationModel:
@@ -56,6 +59,7 @@ def prepare_scene(
     *,
     create_step: bool = False,
     create_json: bool = False,
+    force_new: bool = True,  # Be carefully: Whether to force creation of new files even if they exist, but if the model is different, must be set to True!
 ) -> Path:
     """Ensure the required glTF file exists for Blender.
 
@@ -69,9 +73,26 @@ def prepare_scene(
     """
 
     path = Path(output_path)
-    if path.exists():
-        return path
 
+    if not force_new:
+        # If the file already exists and we are not forcing a new one, return the existing path
+        if path.exists():
+            logger.info(f"Using existing glTF file at {path}")
+            return path
+    else:
+        # If we are forcing a new one, delete the existing file if it exists
+        if path.exists():
+            path.unlink()
+            logger.info(f"Deleted existing glTF file at {path}")
+
+    # Ensure the parent directory exists
+    if not path.parent.exists():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        logger.info(f"Created directory {path.parent}")
+
+    # If the file does not exist, we need to create it
+    logger.info(f"Preparing scene at {path}")
+    # Build the default model
     model = _build_default_model()
 
     path.parent.mkdir(parents=True, exist_ok=True)

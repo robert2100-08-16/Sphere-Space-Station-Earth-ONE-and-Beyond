@@ -1,4 +1,6 @@
 __pycache__/
+build/
+*egg-info/
 simulations/deck_calculator/*_frames/
 *.pyc
 *.glb
