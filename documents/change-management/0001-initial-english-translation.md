@@ -9,6 +9,7 @@ history:
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
+
 This change document tracks the initial translation of documentation to English and the adoption of GitBook-style file naming conventions.
 
 # 1. Sources

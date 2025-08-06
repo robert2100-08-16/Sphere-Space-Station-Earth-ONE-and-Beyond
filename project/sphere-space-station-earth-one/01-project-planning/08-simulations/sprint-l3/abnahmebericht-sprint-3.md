@@ -1,4 +1,4 @@
-Verstanden, ich werde die Sprint 3 Dokumentation im angegebenen Pfad über den GitHub Connector abrufen. Danach überprüfe ich, inwiefern der aktuelle Status den Erwartungen entspricht, analysiere die Abweichungen und formuliere, was noch getan werden muss sowie wie genau es umgesetzt werden sollte. Ich mache mich jetzt an die Arbeit.
+# accepteance Report Sprint L3-3
 
 
 Bei der Abnahme von Sprint 3 habe ich den Sprintplan „STEP-/glTF‑Integration & CAD‑Detailierung” mit dem tatsächlichen Stand im Repository verglichen. Sprint 3 hat laut Plan das Ziel, die CAD‑Modelle reicher zu detaillieren (Decks mit Deckenelementen, Stützen, Korridoren; Hülle mit Versteifungen, Wartungsschleusen und Docking‑Ports; Fenster mit Rahmen), optionale Parameter für diese Details einzuführen und die Exporter entsprechend anzupassen.
