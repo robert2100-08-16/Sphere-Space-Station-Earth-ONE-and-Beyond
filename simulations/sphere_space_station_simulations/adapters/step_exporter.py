@@ -93,11 +93,14 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
                 },
             )
             for i, win in enumerate(windows):
+                window = deck.windows[i]
                 assembly.add(
                     win,
                     name=f"deck_{deck.id}_window_{i}",
                     metadata={
-                        "material": (win.material.name if win.material else "Glas")
+                        "material": (
+                            window.material.name if window.material else "Glas"
+                        )
                     },
                 )
 
@@ -113,8 +116,15 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
                 },
             )
             for i, win in enumerate(windows):
+                window = model.hull.windows[i]
                 assembly.add(
-                    win, name=f"hull_window_{i}", metadata={"material": "Glas"}
+                    win,
+                    name=f"hull_window_{i}",
+                    metadata={
+                        "material": (
+                            window.material.name if window.material else "Glas"
+                        )
+                    },
                 )
 
         if model.wormhole:
