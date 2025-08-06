@@ -1,5 +1,5 @@
 ---
-title: "Acceptance Report Sprint 2"
+title: "Acceptance Report Sprint L3-2"
 version: 1.0.1
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
@@ -10,7 +10,7 @@ history:
     reference: "abnahmebericht-sprint-2.md"
 ---
 
-# Acceptance Report Sprint 2
+# Acceptance Report Sprint L3-2
 
 When reviewing Sprint 2 based on the current repository state (branch `main`), the following findings and deltas compared to the sprint plan emerge:
 

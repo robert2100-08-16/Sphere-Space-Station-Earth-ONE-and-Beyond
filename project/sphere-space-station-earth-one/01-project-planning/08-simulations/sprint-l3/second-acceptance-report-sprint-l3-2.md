@@ -1,5 +1,5 @@
 ---
-title: "Second Acceptance Report Sprint 2"
+title: "Second Acceptance Report Sprint L3-2"
 version: 1.0.1
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
@@ -10,7 +10,7 @@ history:
     reference: "2-abnahmebericht-sprint-2.md"
 ---
 
-# Second Acceptance Report Sprint 2
+# Second Acceptance Report Sprint L3-2
 
 As Product Owner I conducted the second acceptance of Sprint 2 based on Sprint Plan L3 “STEP/glTF Integration & CAD Detailing” and reviewed the current state in the repository. The sprint plan for Sprint 2 (13–24 Oct 2025) foresees the following tasks and deliverables: final STEP and glTF exporters with all geometry, JSON/DTO export, revision of the Blender adapter, replacement of CSV geometry, extension of starter scripts with export options and expanded tests.
 

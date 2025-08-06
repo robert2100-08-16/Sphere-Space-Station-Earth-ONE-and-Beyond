@@ -1,5 +1,5 @@
 ---
-title: "Acceptance Report Sprint 1"
+title: "Acceptance Report Sprint L3-1"
 version: 1.0.1
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
@@ -10,7 +10,7 @@ history:
     reference: "abnahmebericht-sprint-1.md"
 ---
 
-# Acceptance Report Sprint 1
+# Acceptance Report Sprint L3-1
 
 Acceptance of Sprint 1 from Sprint Plan L3:
 (project/sphere-space-station-earth-one/01-project-planning/08-simulations/sprint-l3/sprint-plan-l3-step-gltf-integration-and-cad-detailing.md)

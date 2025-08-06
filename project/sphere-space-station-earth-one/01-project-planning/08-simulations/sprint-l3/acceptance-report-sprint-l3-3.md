@@ -1,5 +1,5 @@
 ---
-title: "Acceptance Report Sprint 3"
+title: "Acceptance Report Sprint L3-3"
 version: 1.0.1
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
@@ -10,7 +10,7 @@ history:
     reference: "abnahmebericht-sprint-3.md"
 ---
 
-# Acceptance Report Sprint 3
+# Acceptance Report Sprint L3-3
 
 During the acceptance of Sprint 3 I compared the sprint plan “STEP/glTF Integration & CAD Detailing” with the actual state in the repository. According to the plan, Sprint 3 aims to further detail the CAD models (decks with ceiling elements, supports, corridors; hull with stiffeners, maintenance hatches and docking ports; windows with frames), introduce optional parameters for these details and adapt the exporters accordingly.
 
