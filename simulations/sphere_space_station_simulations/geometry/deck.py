@@ -12,7 +12,7 @@ from tqdm import tqdm
 
 from .. import animation as animation_mod
 from .. import reporting as reporting_mod
-from .hull import calculate_hull_geometry
+from .hull import calculate_hull_geometry, calculate_docking_port_positions
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("calc")
@@ -65,6 +65,9 @@ class SphereDeckCalculator:
         deck_000_outer_radius: float,
         deck_height_brutto: float,
         deck_ceiling_thickness: float,
+        supports_per_deck: int = 0,
+        num_docking_ports: int = 0,
+        docking_port_diameter: float = 1.0,
     ):
         """Generate deck dimensions of a sphere.
 
@@ -87,6 +90,9 @@ class SphereDeckCalculator:
         self.deck_000_outer_radius = deck_000_outer_radius
         self.deck_height_brutto = deck_height_brutto
         self.deck_ceiling_thickness = deck_ceiling_thickness
+        self.supports_per_deck = supports_per_deck
+        self.num_docking_ports = num_docking_ports
+        self.docking_port_diameter = docking_port_diameter
         log.info("Deck calculator initialized: %s", title)
         self.df_decks = self._calculate_cylindric_decks_of_a_sphere()
         self.hull_geometry = calculate_hull_geometry(
@@ -96,6 +102,16 @@ class SphereDeckCalculator:
             self.LENGTH_OUTER_RADIUS_NETTO_LABEL,
         )
         self.window_geometry = self._calculate_window_geometry()
+        self.support_geometry = self._calculate_support_geometry()
+        self.docking_ports = (
+            calculate_docking_port_positions(
+                self.inner_sphere_diameter / 2,
+                self.num_docking_ports,
+                self.docking_port_diameter,
+            )
+            if self.num_docking_ports > 0
+            else {}
+        )
         self.animation_writers = animation.writers.list()
         self.selected_animation_writer = None
 
@@ -136,6 +152,30 @@ class SphereDeckCalculator:
             }
 
         return window_geometry  # Return the dictionary
+
+    def _calculate_support_geometry(self):
+        """Calculate support column geometry for each deck."""
+        support_geometry = {}
+        if self.supports_per_deck <= 0:
+            return support_geometry
+
+        for i in range(1, self.num_decks):
+            r = self.df_decks[self.OUTER_RADIUS_LABEL].iloc[i]
+            z_deck_center = self.df_decks[self.LENGTH_OUTER_RADIUS_LABEL].iloc[i] / 2
+            theta = np.linspace(0, 2 * np.pi, self.supports_per_deck, endpoint=False)
+            x_supports = r * np.cos(theta)
+            y_supports = r * np.sin(theta)
+            z_supports_top = np.full(self.supports_per_deck, z_deck_center)
+            z_supports_bottom = np.full(self.supports_per_deck, -z_deck_center)
+
+            support_geometry[f"{SphereDeckCalculator.DECK_NAME}{i:03}"] = {
+                "x": x_supports,
+                "y": y_supports,
+                "z_top": z_supports_top,
+                "z_bottom": z_supports_bottom,
+            }
+
+        return support_geometry
 
     def _calculate_cylindric_decks_of_a_sphere(self):
         sphere_radius = self.inner_sphere_diameter / 2
