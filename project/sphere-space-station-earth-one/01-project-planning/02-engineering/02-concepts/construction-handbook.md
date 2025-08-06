@@ -1,9 +1,12 @@
 ---
 title: "Construction Handbook"
-version: 1.0.0
+version: 1.1.0
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.1.0
+    date: 2025-08-08
+    change: "Integrated deck supports and docking port planning into simulation"
   - version: 1.0.0
     date: 2024-10-30
     change: "Initial"
@@ -24,6 +27,8 @@ This handbook collects key decisions for modeling the Sphere Space Station and s
 - **Hull simulation**: An additional script `adapter.py` creates a simplified outer hull. A dedicated VS Code launch entry makes it easy to test the script.
 - **Blender helpers** reside in the subpackage `blender_helpers` and are imported by the adapter.
 - **Hull geometry** is computed by `geometry/hull.py` and imported by the deck logic.
+- **Deck supports and docking ports** can be parametrized in `SphereDeckCalculator`,
+  enriching the structural model with columns and equatorial docking locations.
 - **Station simulation** has moved to `simulation.py` and can be started directly from the library. `run_simulation.py` is now called `starter.py`.
 - **glTF-based hull import**: `blender_hull_simulation/adapter.py` loads the geometry from a glTF file exported by `gltf_exporter.py` and assigns a simple material, removing the previous CSV dependency.
 - **CSV transport removed**: `deck_3d_construction_data.csv` and its generator were dropped; CSV is retained only for reports such as `results/deck_dimensions.csv`.

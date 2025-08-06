@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from typing import Tuple
+from typing import Tuple, Dict
 
 
 def calculate_hull_geometry(
@@ -65,3 +65,28 @@ def calculate_hull_geometry(
         y_base_ring_bottom,
         z_base_ring_bottom_grid,
     )
+
+
+def calculate_docking_port_positions(
+    sphere_radius: float, num_ports: int, port_diameter: float
+) -> Dict[str, np.ndarray]:
+    """Return equatorial docking port centres for the hull.
+
+    Ports are arranged evenly around the equator (``z = 0``) of the sphere.
+
+    Args:
+        sphere_radius: Radius of the inner sphere.
+        num_ports: Number of docking ports to place.
+        port_diameter: Diameter of each port in metres.
+
+    Returns:
+        Dictionary containing ``x``, ``y`` and ``z`` arrays with centre
+        coordinates as well as a ``diameter`` array.
+    """
+
+    theta = np.linspace(0, 2 * np.pi, num_ports, endpoint=False)
+    x = sphere_radius * np.cos(theta)
+    y = sphere_radius * np.sin(theta)
+    z = np.zeros(num_ports)
+    diam = np.full(num_ports, port_diameter)
+    return {"x": x, "y": y, "z": z, "diameter": diam}
