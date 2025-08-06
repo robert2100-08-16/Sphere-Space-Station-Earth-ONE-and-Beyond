@@ -1,9 +1,12 @@
 ---
 title: "Construction Handbook"
-version: 1.1.0
+version: 1.1.1
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.1.1
+    date: 2025-08-10
+    change: "Corrected window material handling in STEP exporter"
   - version: 1.1.0
     date: 2025-08-08
     change: "Integrated deck supports and docking port planning into simulation"
@@ -38,6 +41,7 @@ This handbook collects key decisions for modeling the Sphere Space Station and s
 - **CLI exporter**: Starter scripts now support `--export-step`, `--export-gltf`, and `--export-json` to output geometry files; CSV remains as reporting output.
 - **Detailed data model**: `Deck` and `Hull` include net radii, cylinder lengths, base areas, and volumes, and support nested window specifications (position, size, count).
 - **CAD and glTF exporters**: STEP files now contain B-rep solids with material placeholders (steel/glass); the glTF export generates meshes with PBR materials and a simple rotation animation.
+- **Window materials**: STEP exporter uses material settings from `Window` instances instead of CadQuery solids.
 - **STEP archiving**: The generated `station.step` is stored as the Base64 file `station.step.base64` to avoid binary diffs.
 
 Further adjustments and releases will be added to this document.

@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.3.5
+version: 1.3.6
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.6
+    date: 2025-08-10
+    change: "Fixed STEP exporter window material reference"
   - version: 1.3.5
     date: 2025-08-09
     change: "Added Sprint-L3 engineering guidelines"
@@ -64,3 +67,4 @@ No external sources used.
 - The data model now includes `BaseRing` elements and material/colour properties for all geometry. Exporters and tests ensure that rings and materials are preserved across STEP, glTF and JSON workflows.
 - A helper `prepare_scene` script automatically creates the required `station.glb`
   file when Blender adapters run, reducing manual export steps.
+- The STEP exporter now reads window materials from the underlying `Window` instances.
