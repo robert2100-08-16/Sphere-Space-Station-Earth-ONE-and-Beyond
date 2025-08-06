@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.3.4
+version: 1.3.5
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.5
+    date: 2025-08-09
+    change: "Added Sprint-L3 engineering guidelines"
   - version: 1.3.4
     date: 2025-08-08
     change: "Added support for deck supports and docking port geometry"
