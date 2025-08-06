@@ -25,7 +25,9 @@ from simulations.sphere_space_station_simulations.data_model import (
     BaseRing,
     Deck,
     Hull,
+    Material,
     StationModel,
+    Window,
     Wormhole,
 )
 from simulations.blender_hull_simulation import adapter
@@ -123,3 +125,12 @@ def test_step_placeholder_contains_ring_count(tmp_path: Path) -> None:
     with step_path.open("r", encoding="utf-8") as handle:
         content = handle.read()
     assert f"base_rings={len(model.base_rings)}" in content
+
+
+def test_step_exporter_handles_window_material(tmp_path: Path) -> None:
+    model = _make_model()
+    model.decks[0].windows = [
+        Window(position=(0.0, 0.0, 0.0), size_m=0.5, material=Material("Glas"))
+    ]
+    step_path = export_step(model, tmp_path / "station.step")
+    assert step_path.exists()
