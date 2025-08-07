@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.3.8
+version: 1.3.9
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.9
+    date: 2025-08-13
+    change: "Introduced SceneModel and configuration flags for optional modules"
   - version: 1.3.8
     date: 2025-08-12
     change: "Introduced Support and DockingPort DTOs with exporter and CLI integration"
@@ -75,3 +78,11 @@ No external sources used.
   file when Blender adapters run, reducing manual export steps.
 - The STEP exporter now reads window materials from the underlying `Window` instances.
 - Standard materials (`Stahl`, `Aluminium`, `Glas`, `Polymer`) are provided in the data model and can be selected via CLI parameters for decks and the hull. Exporters propagate these selections to STEP and glTF outputs.
+
+## 1.5 Scene configuration
+
+- A new `SceneConfiguration` dataclass defines boolean `include_<module>` flags for transport,
+  energy, safety, docking, propulsion and life support modules.
+- `SceneModel` wraps `StationModel` together with this configuration and exposes enabled
+  modules via `enabled_modules()`. The approach keeps the schema extensible for future
+  sub-systems.
