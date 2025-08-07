@@ -16,6 +16,9 @@ from simulations.sphere_space_station_simulations.adapters.step_exporter import 
 from simulations.sphere_space_station_simulations.data_model import (
     Deck,
     Hull,
+    Material,
+    STANDARD_MATERIALS,
+    STEEL,
     StationModel,
 )
 
@@ -32,11 +35,15 @@ class StationSimulation:
         enable_mission_control: bool = True,
         enable_life_support: bool = True,
         enable_emergency_drills: bool = True,
+        deck_material: Material = STEEL,
+        hull_material: Material = STEEL,
     ) -> None:
         self.enable_docking = enable_docking
         self.enable_mission_control = enable_mission_control
         self.enable_life_support = enable_life_support
         self.enable_emergency_drills = enable_emergency_drills
+        self.deck_material = deck_material
+        self.hull_material = hull_material
 
         log.info("Loading station geometry")
         self.calculator = SphereDeckCalculator(
@@ -86,10 +93,14 @@ class StationSimulation:
                     inner_radius_m=row[SphereDeckCalculator.INNER_RADIUS_LABEL],
                     outer_radius_m=row[SphereDeckCalculator.OUTER_RADIUS_LABEL],
                     height_m=row[SphereDeckCalculator.DECK_HEIGHT_LABEL],
+                    material=self.deck_material,
                 )
                 for _, row in self.decks.iterrows()
             ],
-            hull=Hull(radius_m=self.calculator.sphere_diameter / 2),
+            hull=Hull(
+                radius_m=self.calculator.sphere_diameter / 2,
+                material=self.hull_material,
+            ),
         )
 
 
@@ -120,6 +131,18 @@ def parse_args(args: Any | None = None) -> argparse.Namespace:
         help="Disable emergency drills",
     )
     parser.add_argument(
+        "--deck-material",
+        choices=list(STANDARD_MATERIALS.keys()),
+        default=STEEL.name,
+        help="Material to assign to all decks",
+    )
+    parser.add_argument(
+        "--hull-material",
+        choices=list(STANDARD_MATERIALS.keys()),
+        default=STEEL.name,
+        help="Material to assign to the hull",
+    )
+    parser.add_argument(
         "--export-step", help="Write a STEP file with the station geometry"
     )
     parser.add_argument(
@@ -137,6 +160,8 @@ def main(args: Any | None = None) -> None:
         enable_mission_control=cli_args.mission_control,
         enable_life_support=cli_args.life_support,
         enable_emergency_drills=cli_args.emergency_drills,
+        deck_material=STANDARD_MATERIALS[cli_args.deck_material],
+        hull_material=STANDARD_MATERIALS[cli_args.hull_material],
     )
     sim.run()
 

@@ -109,6 +109,21 @@ class Material:
     color_rgba: Tuple[float, float, float, float] | None = None
 
 
+# Predefined standard materials used throughout the station model.  These
+# constants provide sensible defaults and can be referenced via their German
+# names in CLI options or configuration files.
+STEEL = Material("Stahl", (0.8, 0.8, 0.8, 1.0))
+ALUMINIUM = Material("Aluminium", (0.77, 0.77, 0.78, 1.0))
+GLASS = Material("Glas", (0.5, 0.7, 1.0, 0.3))
+POLYMER = Material("Polymer", (1.0, 0.2, 0.2, 1.0))
+
+# Lookup table to resolve a material by its name.  Used by the simulation CLI to
+# translate command line parameters into :class:`Material` instances.
+STANDARD_MATERIALS: dict[str, Material] = {
+    m.name: m for m in (STEEL, ALUMINIUM, GLASS, POLYMER)
+}
+
+
 @dataclass
 class StationModel:
     """Container aggregating all geometry elements."""

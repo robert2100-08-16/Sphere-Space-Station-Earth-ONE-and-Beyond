@@ -49,12 +49,11 @@ from ..data_model import (
     Deck,
     Hull,
     Material as ModelMaterial,
+    STEEL,
+    GLASS,
     StationModel,
     Wormhole,
 )
-
-DEFAULT_STEEL = ModelMaterial("Stahl", (0.8, 0.8, 0.8, 1.0))
-DEFAULT_GLASS = ModelMaterial("Glas", (0.5, 0.7, 1.0, 0.3))
 
 
 def _ensure_material(
@@ -288,9 +287,14 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
     materials: List[GLTFMaterial] = []
     material_lookup: dict[str, int] = {}
 
-    def mat_index(mat: ModelMaterial | None) -> int:
-        base = DEFAULT_GLASS if mat and mat.name == "Glas" else DEFAULT_STEEL
-        chosen = mat or base
+    def mat_index(mat: ModelMaterial | None, default: ModelMaterial) -> int:
+        """Return the index of ``mat`` or fall back to ``default``.
+
+        This helper ensures that windows receive glass by default while all
+        other elements use steel unless a specific material is supplied.
+        """
+
+        chosen = mat or default
         return _ensure_material(materials, material_lookup, chosen)
 
     child_nodes: List[int] = []
@@ -304,7 +308,7 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
             nodes,
             verts,
             faces,
-            mat_index(deck.material),
+            mat_index(deck.material, STEEL),
         )
         child_nodes.append(len(nodes) - 1)
         for wv, wf in windows:
@@ -316,7 +320,7 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
                 nodes,
                 wv,
                 wf,
-                mat_index(DEFAULT_GLASS),
+                mat_index(None, GLASS),
             )
             child_nodes.append(len(nodes) - 1)
 
@@ -330,7 +334,7 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
             nodes,
             verts,
             faces,
-            mat_index(ring.material),
+            mat_index(ring.material, STEEL),
         )
         child_nodes.append(len(nodes) - 1)
 
@@ -344,7 +348,7 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
             nodes,
             verts,
             faces,
-            mat_index(model.hull.material),
+            mat_index(model.hull.material, STEEL),
         )
         child_nodes.append(len(nodes) - 1)
         for wv, wf in windows:
@@ -356,7 +360,7 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
                 nodes,
                 wv,
                 wf,
-                mat_index(DEFAULT_GLASS),
+                mat_index(None, GLASS),
             )
             child_nodes.append(len(nodes) - 1)
 
@@ -370,7 +374,7 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
             nodes,
             verts,
             faces,
-            mat_index(model.wormhole.material),
+            mat_index(model.wormhole.material, STEEL),
         )
         child_nodes.append(len(nodes) - 1)
 
