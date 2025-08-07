@@ -61,3 +61,37 @@ def test_cli_export_options(tmp_path, monkeypatch):
     assert called["step"] == step
     assert called["gltf"] == gltf
     assert called["json"] == json_path
+
+
+def test_cli_material_options(tmp_path, monkeypatch):
+    from simulations.sphere_space_station_simulations import simulation
+
+    captured = {}
+
+    def fake_json(model, path):
+        captured["deck"] = model.decks[0].material.name
+        captured["hull"] = model.hull.material.name if model.hull else None
+        path.write_text("{}", encoding="utf-8")
+        return path
+
+    monkeypatch.setattr(simulation, "export_json", fake_json)
+
+    json_path = tmp_path / "station.json"
+
+    simulation.main(
+        [
+            "--export-json",
+            str(json_path),
+            "--deck-material",
+            "Aluminium",
+            "--hull-material",
+            "Polymer",
+            "--no-docking",
+            "--no-mission-control",
+            "--no-life-support",
+            "--no-emergency",
+        ]
+    )
+
+    assert captured["deck"] == "Aluminium"
+    assert captured["hull"] == "Polymer"
