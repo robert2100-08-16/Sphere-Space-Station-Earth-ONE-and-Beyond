@@ -45,7 +45,7 @@ jobs:
           fi
 
           echo "✓ Manifest found: $MANIFEST"
-          python3 - <<'PY'
+          MANIFEST="$MANIFEST" python3 - <<'PY'
           import os, sys, yaml
           changed = """${CHANGED_FILES}""".splitlines()
           with open(os.environ["MANIFEST"], "r", encoding="utf-8") as f:
