@@ -1,8 +1,8 @@
 publish:
-  - type: folder
-    path: documents
-    out: documents.md
+  - path: documents
+    out: documents
+    type: folder
 
-  - type: file
-    path: readme.md
+  - path: readme.md
     out: README.md
+    type: file
