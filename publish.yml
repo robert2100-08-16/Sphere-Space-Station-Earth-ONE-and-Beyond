@@ -4,5 +4,5 @@ publish:
     type: folder
 
   - path: readme.md
-    out: README.md
+    out: readme.md
     type: file
