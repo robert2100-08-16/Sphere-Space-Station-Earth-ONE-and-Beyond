@@ -48,11 +48,13 @@ from ..data_model import (
     BaseRing,
     Deck,
     Hull,
+    DockingPort,
     Material as ModelMaterial,
     STEEL,
     GLASS,
     StationModel,
     Wormhole,
+    Support,
 )
 
 
@@ -152,6 +154,24 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
         )
         return _tessellate(solid)
 
+    def _build_support_mesh(support: Support) -> Tuple[np.ndarray, np.ndarray]:
+        solid = (
+            cq.Workplane("XY")
+            .circle(support.radius_m)
+            .extrude(support.height_m, both=True)
+            .translate(support.position)
+        )
+        return _tessellate(solid)
+
+    def _build_docking_port_mesh(port: DockingPort) -> Tuple[np.ndarray, np.ndarray]:
+        solid = (
+            cq.Workplane("XY")
+            .circle(port.diameter_m / 2)
+            .extrude(port.depth_m)
+            .translate((port.position[0], port.position[1], port.position[2] - port.depth_m / 2))
+        )
+        return _tessellate(solid)
+
 else:
     # ``cadquery`` is unavailable.  Produce very small placeholder meshes so that
     # the exporter can still generate a valid glTF file used in the tests.  The
@@ -212,6 +232,43 @@ else:
         )
         faces = np.array([[0, 1, 2], [0, 2, 3]], dtype=np.uint32)
         return verts, faces
+
+    def _build_support_mesh(support: Support) -> Tuple[np.ndarray, np.ndarray]:
+        verts = np.array(
+            [
+                [-0.1, -0.1, 0.0],
+                [0.1, -0.1, 0.0],
+                [0.1, 0.1, 0.0],
+                [-0.1, 0.1, 0.0],
+                [-0.1, -0.1, support.height_m],
+                [0.1, -0.1, support.height_m],
+                [0.1, 0.1, support.height_m],
+                [-0.1, 0.1, support.height_m],
+            ],
+            dtype=np.float32,
+        )
+        faces = np.array(
+            [
+                [0, 1, 2],
+                [0, 2, 3],
+                [4, 5, 6],
+                [4, 6, 7],
+                [0, 1, 5],
+                [0, 5, 4],
+                [1, 2, 6],
+                [1, 6, 5],
+                [2, 3, 7],
+                [2, 7, 6],
+                [3, 0, 4],
+                [3, 4, 7],
+            ],
+            dtype=np.uint32,
+        )
+        return verts, faces
+
+    def _build_docking_port_mesh(port: DockingPort) -> Tuple[np.ndarray, np.ndarray]:
+        temp = Support(deck_id=0, position=(0, 0, 0), height_m=port.depth_m, radius_m=port.diameter_m / 2)
+        return _build_support_mesh(temp)
 
 
 def _add_mesh(
@@ -375,6 +432,34 @@ def export_gltf(model: StationModel, filepath: str | Path) -> Path:
             verts,
             faces,
             mat_index(model.wormhole.material, STEEL),
+        )
+        child_nodes.append(len(nodes) - 1)
+
+    for support in model.supports:
+        verts, faces = _build_support_mesh(support)
+        _add_mesh(
+            binary,
+            buffer_views,
+            accessors,
+            meshes,
+            nodes,
+            verts,
+            faces,
+            mat_index(support.material, STEEL),
+        )
+        child_nodes.append(len(nodes) - 1)
+
+    for port in model.docking_ports:
+        verts, faces = _build_docking_port_mesh(port)
+        _add_mesh(
+            binary,
+            buffer_views,
+            accessors,
+            meshes,
+            nodes,
+            verts,
+            faces,
+            mat_index(port.material, STEEL),
         )
         child_nodes.append(len(nodes) - 1)
 

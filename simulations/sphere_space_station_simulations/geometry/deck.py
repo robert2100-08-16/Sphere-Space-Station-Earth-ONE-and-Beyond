@@ -13,6 +13,7 @@ from tqdm import tqdm
 from .. import animation as animation_mod
 from .. import reporting as reporting_mod
 from .hull import calculate_hull_geometry, calculate_docking_port_positions
+from ..data_model import Support, DockingPort
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("calc")
@@ -176,6 +177,50 @@ class SphereDeckCalculator:
             }
 
         return support_geometry
+
+    def get_supports(self, radius: float = 0.1) -> List[Support]:
+        """Return support columns as :class:`Support` instances."""
+        supports: List[Support] = []
+        for deck_name, coords in self.support_geometry.items():
+            deck_id = int(deck_name.split("_")[1])
+            for x, y, z_top, z_bottom in zip(
+                coords["x"],
+                coords["y"],
+                coords["z_top"],
+                coords["z_bottom"],
+            ):
+                height = z_top - z_bottom
+                center_z = (z_top + z_bottom) / 2
+                supports.append(
+                    Support(
+                        deck_id=deck_id,
+                        position=(float(x), float(y), float(center_z)),
+                        height_m=float(height),
+                        radius_m=radius,
+                        material=None,
+                    )
+                )
+        return supports
+
+    def get_docking_ports(self, depth: float = 0.5) -> List[DockingPort]:
+        """Return docking ports as :class:`DockingPort` instances."""
+        ports: List[DockingPort] = []
+        geom = self.docking_ports
+        for x, y, z, diam in zip(
+            geom.get("x", []),
+            geom.get("y", []),
+            geom.get("z", []),
+            geom.get("diameter", []),
+        ):
+            ports.append(
+                DockingPort(
+                    position=(float(x), float(y), float(z)),
+                    diameter_m=float(diam),
+                    depth_m=depth,
+                    material=None,
+                )
+            )
+        return ports
 
     def _calculate_cylindric_decks_of_a_sphere(self):
         sphere_radius = self.inner_sphere_diameter / 2

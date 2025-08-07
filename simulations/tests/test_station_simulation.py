@@ -95,3 +95,39 @@ def test_cli_material_options(tmp_path, monkeypatch):
 
     assert captured["deck"] == "Aluminium"
     assert captured["hull"] == "Polymer"
+
+
+def test_cli_supports_and_ports(tmp_path, monkeypatch):
+    from simulations.sphere_space_station_simulations import simulation
+
+    captured = {}
+
+    def fake_json(model, path):
+        captured["supports"] = len(model.supports)
+        captured["ports"] = len(model.docking_ports)
+        path.write_text("{}", encoding="utf-8")
+        return path
+
+    monkeypatch.setattr(simulation, "export_json", fake_json)
+
+    json_path = tmp_path / "station.json"
+
+    simulation.main(
+        [
+            "--export-json",
+            str(json_path),
+            "--supports-per-deck",
+            "2",
+            "--docking-ports",
+            "3",
+            "--docking-port-diameter",
+            "1.5",
+            "--no-docking",
+            "--no-mission-control",
+            "--no-life-support",
+            "--no-emergency",
+        ]
+    )
+
+    assert captured["supports"] == 2 * (16 - 1)
+    assert captured["ports"] == 3

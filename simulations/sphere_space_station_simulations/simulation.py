@@ -37,6 +37,9 @@ class StationSimulation:
         enable_emergency_drills: bool = True,
         deck_material: Material = STEEL,
         hull_material: Material = STEEL,
+        supports_per_deck: int = 0,
+        num_docking_ports: int = 0,
+        docking_port_diameter: float = 1.0,
     ) -> None:
         self.enable_docking = enable_docking
         self.enable_mission_control = enable_mission_control
@@ -44,6 +47,9 @@ class StationSimulation:
         self.enable_emergency_drills = enable_emergency_drills
         self.deck_material = deck_material
         self.hull_material = hull_material
+        self.supports_per_deck = supports_per_deck
+        self.num_docking_ports = num_docking_ports
+        self.docking_port_diameter = docking_port_diameter
 
         log.info("Loading station geometry")
         self.calculator = SphereDeckCalculator(
@@ -55,6 +61,9 @@ class StationSimulation:
             deck_000_outer_radius=10.5,
             deck_height_brutto=3.5,
             deck_ceiling_thickness=0.5,
+            supports_per_deck=self.supports_per_deck,
+            num_docking_ports=self.num_docking_ports,
+            docking_port_diameter=self.docking_port_diameter,
         )
         # Trigger calculation so geometry is available
         self.calculator.calculate_dynamics_of_a_sphere(angular_velocity=0.5)
@@ -101,6 +110,8 @@ class StationSimulation:
                 radius_m=self.calculator.sphere_diameter / 2,
                 material=self.hull_material,
             ),
+            supports=self.calculator.get_supports(),
+            docking_ports=self.calculator.get_docking_ports(),
         )
 
 
@@ -143,6 +154,24 @@ def parse_args(args: Any | None = None) -> argparse.Namespace:
         help="Material to assign to the hull",
     )
     parser.add_argument(
+        "--supports-per-deck",
+        type=int,
+        default=0,
+        help="Number of support columns per deck",
+    )
+    parser.add_argument(
+        "--docking-ports",
+        type=int,
+        default=0,
+        help="Number of docking ports on the hull",
+    )
+    parser.add_argument(
+        "--docking-port-diameter",
+        type=float,
+        default=1.0,
+        help="Diameter of docking ports in metres",
+    )
+    parser.add_argument(
         "--export-step", help="Write a STEP file with the station geometry"
     )
     parser.add_argument(
@@ -162,6 +191,9 @@ def main(args: Any | None = None) -> None:
         enable_emergency_drills=cli_args.emergency_drills,
         deck_material=STANDARD_MATERIALS[cli_args.deck_material],
         hull_material=STANDARD_MATERIALS[cli_args.hull_material],
+        supports_per_deck=cli_args.supports_per_deck,
+        num_docking_ports=cli_args.docking_ports,
+        docking_port_diameter=cli_args.docking_port_diameter,
     )
     sim.run()
 

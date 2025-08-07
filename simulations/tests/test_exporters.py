@@ -29,6 +29,8 @@ from simulations.sphere_space_station_simulations.data_model import (
     StationModel,
     Window,
     Wormhole,
+    Support,
+    DockingPort,
 )
 from simulations.blender_hull_simulation import adapter
 
@@ -121,10 +123,31 @@ def test_blender_import_mesh_count(monkeypatch, tmp_path: Path) -> None:
 
 def test_step_placeholder_contains_ring_count(tmp_path: Path) -> None:
     model = _make_model()
+    model.supports = [Support(deck_id=1, position=(0, 0, 0), height_m=1.0, radius_m=0.1)]
+    model.docking_ports = [DockingPort(position=(1.0, 0.0, 0.0), diameter_m=0.5, depth_m=0.2)]
     step_path = export_step(model, tmp_path / "station.step")
     with step_path.open("r", encoding="utf-8") as handle:
         content = handle.read()
     assert f"base_rings={len(model.base_rings)}" in content
+    assert "supports=1" in content
+    assert "docking_ports=1" in content
+
+
+def test_gltf_includes_supports_and_ports(tmp_path: Path) -> None:
+    model = _make_model()
+    model.supports = [Support(deck_id=1, position=(0, 0, 0), height_m=1.0, radius_m=0.1)]
+    model.docking_ports = [DockingPort(position=(1.0, 0.0, 0.0), diameter_m=0.5, depth_m=0.2)]
+    gltf_path = export_gltf(model, tmp_path / "station.glb")
+    gltf = GLTF2().load(str(gltf_path))
+    expected_meshes = (
+        len(model.decks)
+        + len(model.base_rings)
+        + (1 if model.hull else 0)
+        + (1 if model.wormhole else 0)
+        + len(model.supports)
+        + len(model.docking_ports)
+    )
+    assert len(gltf.meshes) == expected_meshes
 
 
 def test_step_exporter_handles_window_material(tmp_path: Path) -> None:

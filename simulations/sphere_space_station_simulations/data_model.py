@@ -23,6 +23,27 @@ class Window:
 
 
 @dataclass
+class Support:
+    """Structural support column inside a deck."""
+
+    deck_id: int
+    position: Tuple[float, float, float]
+    height_m: float
+    radius_m: float
+    material: Optional["Material"] = None
+
+
+@dataclass
+class DockingPort:
+    """Docking port mounted on the hull."""
+
+    position: Tuple[float, float, float]
+    diameter_m: float
+    depth_m: float
+    material: Optional["Material"] = None
+
+
+@dataclass
 class Deck:
     """Cylinder-shaped deck of the station."""
 
@@ -130,5 +151,7 @@ class StationModel:
 
     decks: List[Deck] = field(default_factory=list)
     base_rings: List[BaseRing] = field(default_factory=list)
+    supports: List[Support] = field(default_factory=list)
+    docking_ports: List[DockingPort] = field(default_factory=list)
     hull: Optional[Hull] = None
     wormhole: Optional[Wormhole] = None
