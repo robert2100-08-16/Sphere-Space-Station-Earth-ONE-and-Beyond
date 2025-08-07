@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - 'publish/**'   # verhindert Re-Trigger durch die generierten PDFs
+      - 'publish/**'   # Prevent retrigger from generated PDFs
 
 jobs:
   selective-publish:
@@ -19,7 +19,63 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Python
+      - name: Get changed files and check manifest relevance
+        id: precheck
+        shell: bash
+        run: |
+          set -euo pipefail
+          BEFORE="${{ github.event.before }}"
+          if [[ -z "$BEFORE" || "$BEFORE" == "0000000000000000000000000000000000000000" ]]; then
+            BEFORE="$(git rev-parse ${{ github.sha }}^ || echo '')"
+          fi
+          if [[ -z "$BEFORE" ]]; then
+            BEFORE="HEAD~1"
+          fi
+          echo "Comparing $BEFORE -> ${{ github.sha }}"
+          CHANGED_FILES=$(git diff --name-only "$BEFORE" ${{ github.sha }})
+
+          # Find manifest
+          if [[ -f publish.yaml ]]; then
+            MANIFEST="publish.yaml"
+          elif [[ -f publish.yml ]]; then
+            MANIFEST="publish.yml"
+          else
+            echo "❌ No publish.yaml or publish.yml found in repo."
+            exit 1
+          fi
+
+          echo "✓ Manifest found: $MANIFEST"
+          python3 - <<'PY'
+          import os, sys, yaml
+          changed = """${CHANGED_FILES}""".splitlines()
+          with open(os.environ["MANIFEST"], "r", encoding="utf-8") as f:
+              data = yaml.safe_load(f) or {}
+          entries = data.get("publish", [])
+          if not isinstance(entries, list):
+              print("❌ 'publish' key in manifest must be a list.")
+              sys.exit(1)
+          
+          relevant = False
+          for entry in entries:
+              path = (entry or {}).get("path")
+              out = (entry or {}).get("out")
+              typ = (entry or {}).get("type")
+              if not path or not out or not typ:
+                  print(f"⚠ Skipping invalid manifest entry: {entry}")
+                  continue
+              if not os.path.exists(path):
+                  print(f"❌ Path from manifest not found: \"{path}\"")
+                  print("   Tip: Check spelling and case sensitivity.")
+                  sys.exit(1)
+              if any(cf == path or cf.startswith(f"{path}/") for cf in changed):
+                  relevant = True
+          
+          if not relevant:
+              print("ℹ No relevant changes detected — exiting early.")
+              sys.exit(0)
+          PY
+
+      - name: Set up Python and install dependencies
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
@@ -35,63 +91,21 @@ jobs:
           sudo fc-cache -f -v
           wget https://gist.githubusercontent.com/zr-tex8r/a5410ad20ab291c390884b960c900537/raw/latex-emoji.lua -O latex-emoji.lua
 
-      - name: Get changed files
-        id: diff
-        shell: bash
-        run: |
-          BEFORE="${{ github.event.before }}"
-          if [[ -z "$BEFORE" || "$BEFORE" == "0000000000000000000000000000000000000000" ]]; then
-            BEFORE="$(git rev-parse ${{ github.sha }}^ || echo '')"
-          fi
-          if [[ -z "$BEFORE" ]]; then
-            # Fallback auf vorherigen Commit
-            BEFORE="HEAD~1"
-          fi
-          echo "Comparing $BEFORE -> ${{ github.sha }}"
-          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
-          git diff --name-only "$BEFORE" ${{ github.sha }} >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-
-      - name: Selective publish & PDF convert
+      - name: Selective publish & PDF conversion
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p publish
-
           python3 <<'PY'
-          import os, subprocess, sys, tempfile, yaml, shutil, pathlib, re
-
-          changed_files = os.environ.get("CHANGED_FILES","").splitlines()
-
-          def load_manifest():
-              # Unterstütze publish.yaml (Standard) und Fallback publish.yml
-              for fname in ("publish.yaml", "publish.yml"):
-                  if os.path.exists(fname):
-                      with open(fname, "r", encoding="utf-8") as f:
-                          data = yaml.safe_load(f) or {}
-                      pubs = data.get("publish", [])
-                      if not isinstance(pubs, list):
-                          print("⚠ 'publish' ist nicht als Liste definiert.")
-                          sys.exit(1)
-                      return pubs, fname
-              print("❌ Keine publish.yaml oder publish.yml im Repo gefunden.")
-              sys.exit(1)
-
-          def has_relevant_change(path: str) -> bool:
-              path = path.rstrip("/").replace("\\","/")
-              for cf in changed_files:
-                  cf = cf.replace("\\","/")
-                  if cf == path or cf.startswith(f"{path}/"):
-                      return True
-              return False
-
-          def normalize_markdown(text: str) -> str:
-              # Ersetze Unicode-Indices durch LaTeX-Form (z.B. ₂ -> $_2$)
-              subs = {"₀":"$_0$","₁":"$_1$","₂":"$_2$","₃":"$_3$","₄":"$_4$",
-                      "₅":"$_5$","₆":"$_6$","₇":"$_7$","₈":"$_8$","₉":"$_9$"}
+          import os, subprocess, sys, tempfile, yaml, pathlib
+          
+          subs = {"₀":"$_0$","₁":"$_1$","₂":"$_2$","₃":"$_3$","₄":"$_4$",
+                  "₅":"$_5$","₆":"$_6$","₇":"$_7$","₈":"$_8$","₉":"$_9$"}
+          
+          def normalize_md(text):
               return "".join(subs.get(ch, ch) for ch in text)
-
-          def run_pandoc(md_path: str, pdf_out: str):
+          
+          def run_pandoc(md_path, pdf_out):
               pathlib.Path(os.path.dirname(pdf_out)).mkdir(parents=True, exist_ok=True)
               cmd = [
                   "pandoc", md_path, "-o", pdf_out,
@@ -105,35 +119,27 @@ jobs:
               ]
               print("→ Pandoc:", " ".join(cmd))
               subprocess.check_call(cmd)
-
-          def convert_file(md_file: str, pdf_out: str):
-              if not os.path.exists(md_file):
-                  print(f"⚠ Datei nicht gefunden: {md_file}")
-                  return
+          
+          def convert_file(md_file, pdf_out):
               with open(md_file, "r", encoding="utf-8") as f:
-                  content = normalize_markdown(f.read())
+                  content = normalize_md(f.read())
               with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tmp:
                   tmp.write(content)
                   tmp_md = tmp.name
               try:
                   run_pandoc(tmp_md, pdf_out)
               finally:
-                  try: os.unlink(tmp_md)
-                  except: pass
-
-          def convert_folder(folder: str, pdf_out: str):
-              if not os.path.isdir(folder):
-                  print(f"⚠ Ordner nicht gefunden: {folder}")
-                  return
+                  os.unlink(tmp_md)
+          
+          def convert_folder(folder, pdf_out):
               parts = []
               for root, _, files in os.walk(folder):
                   for fname in sorted(files):
                       if fname.lower().endswith((".md",".markdown")):
-                          fpath = os.path.join(root, fname)
-                          with open(fpath, "r", encoding="utf-8") as f:
-                              parts.append(normalize_markdown(f.read()))
+                          with open(os.path.join(root, fname), "r", encoding="utf-8") as f:
+                              parts.append(normalize_md(f.read()))
               if not parts:
-                  print(f"ℹ Keine Markdown-Dateien in {folder} gefunden – PDF wird übersprungen.")
+                  print(f"ℹ No Markdown files in {folder} — skipping PDF.")
                   return
               combined = "\n\n\\newpage\n\n".join(parts)
               with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tmp:
@@ -142,35 +148,27 @@ jobs:
               try:
                   run_pandoc(tmp_md, pdf_out)
               finally:
-                  try: os.unlink(tmp_md)
-                  except: pass
-
-          entries, manifest_name = load_manifest()
-          print(f"✓ Manifest geladen: {manifest_name}")
-
+                  os.unlink(tmp_md)
+          
+          changed_files = os.popen("git diff --name-only ${{ github.event.before }} ${{ github.sha }}").read().splitlines()
+          with open("publish.yaml", "r", encoding="utf-8") as f:
+              entries = yaml.safe_load(f).get("publish", [])
+          
           for entry in entries:
-              path = (entry or {}).get("path")
-              out  = (entry or {}).get("out")
-              typ  = (entry or {}).get("type")
-              if not path or not out or not typ:
-                  print(f"⚠ Ungültiger Eintrag übersprungen: {entry}")
-                  continue
-
-              relevant = has_relevant_change(path)
-              if not relevant:
-                  print(f"ℹ Keine Änderungen in «{path}» → Überspringe «{out}»")
-                  continue
-
-              pdf_out = os.path.join("publish", out)
-              print(f"✔ Änderungen in «{path}» → Erzeuge PDF «{pdf_out}»")
-
-              if typ == "file":
-                  # Erwartet Markdown-Eingaben; andere Dateitypen werden versucht, aber evtl. scheitern.
-                  convert_file(path, pdf_out)
-              elif typ == "folder":
-                  convert_folder(path, pdf_out)
+              path = entry.get("path")
+              out  = entry.get("out")
+              typ  = entry.get("type")
+              if any(cf == path or cf.startswith(f"{path}/") for cf in changed_files):
+                  pdf_out = os.path.join("publish", out)
+                  print(f"✔ Changes in {path} → creating {pdf_out}")
+                  if typ == "file":
+                      convert_file(path, pdf_out)
+                  elif typ == "folder":
+                      convert_folder(path, pdf_out)
+                  else:
+                      print(f"⚠ Unknown type '{typ}' — skipping.")
               else:
-                  print(f"⚠ Unbekannter Typ «{typ}» für {path} – übersprungen.")
+                  print(f"ℹ No changes in {path} → skipping.")
           PY
 
       - name: Commit and push generated PDFs
@@ -183,5 +181,4 @@ jobs:
             git commit -m "chore: selective publish → PDF (auto)"
             git push
           else
-            echo "Keine Änderungen in /publish – nichts zu committen."
-          fi
+            echo "No changes in /publish — nothing to commit."
