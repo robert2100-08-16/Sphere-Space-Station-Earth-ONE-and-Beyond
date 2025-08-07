@@ -1,0 +1,40 @@
+name: STEP and glTF CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  export-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Generate geometry files
+        run: |
+          python -m simulations.sphere_space_station_simulations.simulation \
+            --export-step station.step \
+            --export-gltf station.glb \
+            --export-json station.json
+      - name: Verify glTF
+        run: |
+          python - <<'PY'
+          from pygltflib import GLTF2
+          GLTF2().load('station.glb')
+          PY
+      - name: Run tests
+        run: pytest -q
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: geometry
+          path: |
+            station.step
+            station.glb
+            station.json

@@ -1,10 +1,9 @@
 """Blender adapter loading a glTF hull model.
 
-The previous prototype read ``deck_3d_construction_data.csv`` and created a
-primitive sphere based on the outer deck radius.  This version assumes that the
-geometry has already been exported to a glTF file by ``gltf_exporter.py`` and
-imports it directly using Blender's Python API.  After import a simple material
-is assigned to all mesh objects so the model is immediately visible.
+This version assumes that the geometry has already been exported to a glTF file
+by ``gltf_exporter.py`` and imports it directly using Blender's Python API.
+After import a simple material is assigned to all mesh objects so the model is
+immediately visible.
 
 Run this script inside Blender or from the command line with
 ``blender --python adapter.py``.
