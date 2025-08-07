@@ -1,0 +1,8 @@
+# Sample configuration for a full station scene.
+# Each flag enables an optional subsystem module.
+include_transport = true
+include_energy = false
+include_safety = false
+include_docking = false
+include_propulsion = false
+include_life_support = true

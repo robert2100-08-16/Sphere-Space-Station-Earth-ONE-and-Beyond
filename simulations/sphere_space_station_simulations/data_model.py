@@ -155,3 +155,23 @@ class StationModel:
     docking_ports: List[DockingPort] = field(default_factory=list)
     hull: Optional[Hull] = None
     wormhole: Optional[Wormhole] = None
+
+
+@dataclass
+class SceneConfiguration:
+    """Flags controlling optional sub-systems in a full station scene."""
+
+    include_transport: bool = False
+    include_energy: bool = False
+    include_safety: bool = False
+    include_docking: bool = False
+    include_propulsion: bool = False
+    include_life_support: bool = False
+
+    def included_modules(self) -> List[str]:
+        """Return a list of enabled module names without the ``include_`` prefix."""
+        return [
+            name.removeprefix("include_")
+            for name, value in vars(self).items()
+            if name.startswith("include_") and value
+        ]
