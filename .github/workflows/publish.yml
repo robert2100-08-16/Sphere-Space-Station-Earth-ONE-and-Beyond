@@ -35,38 +35,38 @@ jobs:
 
           echo "Parsing publish.yml..."
           python3 <<'PYTHON'
-import os
-import yaml
-
-changed_files = os.environ['CHANGED_FILES'].splitlines()
-
-with open('publish.yml') as f:
-    entries = yaml.safe_load(f)['publish']
-
-for entry in entries:
-    path = entry['path']
-    out = entry['out']
-    type_ = entry['type']
-
-    relevant_change = any(
-        changed == path or changed.startswith(path + '/') for changed in changed_files
-    )
-
-    if relevant_change:
-        print(f"\u2705 \u00c4nderungen erkannt bei: {path} \u2192 Generiere {out}")
-        if type_ == 'file':
-            os.system(f'cp {path} publish/{out}')
-        elif type_ == 'folder':
-            with open('temp_combined.md', 'w') as outfile:
-                for root, _, files in os.walk(path):
-                    for fname in sorted(files):
-                        if fname.endswith('.md'):
-                            with open(os.path.join(root, fname)) as infile:
-                                outfile.write(infile.read() + '\n\n')
-            os.system('mv temp_combined.md publish/' + out)
-    else:
-        print(f"\u2139\ufe0f Keine \u00c4nderungen bei: {path} \u2192 \u00dcberspringe {out}")
-PYTHON
+          import os
+          import yaml
+          
+          changed_files = os.environ['CHANGED_FILES'].splitlines()
+          
+          with open('publish.yml') as f:
+              entries = yaml.safe_load(f)['publish']
+          
+          for entry in entries:
+              path = entry['path']
+              out = entry['out']
+              type_ = entry['type']
+          
+              relevant_change = any(
+                  changed == path or changed.startswith(path + '/') for changed in changed_files
+              )
+          
+              if relevant_change:
+                  print(f"\u2705 \u00c4nderungen erkannt bei: {path} \u2192 Generiere {out}")
+                  if type_ == 'file':
+                      os.system(f'cp {path} publish/{out}')
+                  elif type_ == 'folder':
+                      with open('temp_combined.md', 'w') as outfile:
+                          for root, _, files in os.walk(path):
+                              for fname in sorted(files):
+                                  if fname.endswith('.md'):
+                                      with open(os.path.join(root, fname)) as infile:
+                                          outfile.write(infile.read() + '\n\n')
+                      os.system('mv temp_combined.md publish/' + out)
+              else:
+                  print(f"\u2139\ufe0f Keine \u00c4nderungen bei: {path} \u2192 \u00dcberspringe {out}")
+          PYTHON
 
       - name: Commit and push changes
         run: |
