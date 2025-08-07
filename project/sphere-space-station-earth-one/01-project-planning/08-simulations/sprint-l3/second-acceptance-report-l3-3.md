@@ -7,6 +7,7 @@ The sprint plan for sprint L3 (27 Oct – 07 Nov 2025) clearly defined sev
 * **New parameters for supports and docking ports:** The simulation engine’s `SphereDeckCalculator` introduces parameters (`supports_per_deck`, `num_docking_ports`, `docking_port_diameter`) and computes locations for supports.  A `Material` data class exists and default materials (“Stahl” and “Glas”) are used.  These additions align with the sprint plan’s requirement to begin adding structural details and materials.
 * **Material handling in exporters:** The glTF exporter creates GLTF materials with PBR properties depending on the `Material` name (e.g., metallic/roughness values for steel and glass).  The STEP exporter attaches material metadata to deck/hull/base ring/wormhole solids.
 * **Standard material definitions and CLI options:** Predefined materials ("Stahl", "Aluminium", "Glas", "Polymer") with RGBA colours are available in the data model.  The simulation CLI allows choosing deck and hull materials, and exporters include these selections in their outputs.
+* **Support and docking port export:** Both exporters now generate meshes/B-Rep bodies for support columns and docking ports and apply material metadata.
 * **Basic rotation animation:** The glTF exporter still provides the simple rotation animation of the whole station noted in prior sprints.
 
 ### Deltas – what is still missing
@@ -14,13 +15,13 @@ The sprint plan for sprint L3 (27 Oct – 07 Nov 2025) clearly defined sev
 1. **Geometry for corridors, window frames and emergency exits.**
 
    * The current data model has no classes or structures for corridors, frames or emergency exits.
-   * The `SphereDeckCalculator` only computes support positions; there is no geometry for supports or docking ports, and nothing for corridors or emergency exits.
-   * **To complete:** define DTOs (e.g., `Corridor`, `WindowFrame`, `EmergencyExit`, `Support`, `DockingPort`) in `data_model.py` with appropriate dimensions and materials; extend `SphereDeckCalculator` to calculate their geometry using CadQuery; integrate these objects into the station model (decks or hull) and attach them to the correct deck/hull positions.  Engineering guidelines specify new parameters such as `corridors_per_deck` (default 2), `corridor_width` ≈ 2 m, `window_frame_thickness` 0.15 m and `num_emergency_exits` 2 per deck【F:project/sphere-space-station-earth-one/01-project-planning/08-simulations/sprint-l3/engineering-guidelines.md†L5-L15】.  The accompanying engineering brief describes tangential corridors running like ring roads around each deck with optional 0.5 m high conveyors for cargo transport【F:project/sphere-space-station-earth-one/01-project-planning/02-engineering/02-concepts/engineering-to-simulation-l3ff.pdf†L10-L18】.
+   * Supports and docking ports are modelled, but corridors and emergency exits remain unimplemented.
+   * **To complete:** define DTOs (e.g., `Corridor`, `WindowFrame`, `EmergencyExit`) in `data_model.py` with appropriate dimensions and materials; extend `SphereDeckCalculator` to calculate their geometry using CadQuery; integrate these objects into the station model (decks or hull) and attach them to the correct deck/hull positions.  Engineering guidelines specify new parameters such as `corridors_per_deck` (default 2), `corridor_width` ≈ 2 m, `window_frame_thickness` 0.15 m and `num_emergency_exits` 2 per deck【F:project/sphere-space-station-earth-one/01-project-planning/08-simulations/sprint-l3/engineering-guidelines.md†L5-L15】.  The accompanying engineering brief describes tangential corridors running like ring roads around each deck with optional 0.5 m high conveyors for cargo transport【F:project/sphere-space-station-earth-one/01-project-planning/02-engineering/02-concepts/engineering-to-simulation-l3ff.pdf†L10-L18】.
 
 2. **Exporting the new details.**
 
-   * Neither the glTF exporter nor the STEP exporter references supports, docking ports, corridors, window frames or emergency exits.
-   * **To complete:** update `_build_deck_mesh` and `_build_hull_mesh` in the glTF exporter to accept lists of additional solids and window frames, convert them to meshes and assign proper materials.  For the STEP exporter, create helper functions to build B‑Rep solids for each new component and add them to the assembly with the correct metadata.  The engineering guidelines require both exporters to generate separate bodies for corridors, frames, emergency exits and docking ports and to store material metadata in STEP while applying PBR materials and logical node names in glTF【F:project/sphere-space-station-earth-one/01-project-planning/08-simulations/sprint-l3/engineering-guidelines.md†L43-L55】.
+   * The glTF and STEP exporters now handle supports and docking ports but still ignore corridors, window frames and emergency exits.
+   * **To complete:** extend `_build_deck_mesh` and `_build_hull_mesh` in the glTF exporter to accept lists of additional solids and window frames, convert them to meshes and assign proper materials.  For the STEP exporter, create helper functions to build B‑Rep solids for each remaining component and add them to the assembly with the correct metadata.  The engineering guidelines require exporters to generate separate bodies for corridors, frames and emergency exits and to store material metadata in STEP while applying PBR materials and logical node names in glTF【F:project/sphere-space-station-earth-one/01-project-planning/08-simulations/sprint-l3/engineering-guidelines.md†L43-L55】.
 
 3. **Detail animations.**
 
@@ -34,8 +35,8 @@ The sprint plan for sprint L3 (27 Oct – 07 Nov 2025) clearly defined sev
 
 5. **Testing & CLI integration.**
 
-   * There are currently no tests covering the new geometry or exports.  Existing tests focus on simple placeholder meshes.
-   * **To complete:** write unit tests verifying that the new DTOs are created correctly, the `SphereDeckCalculator` generates the expected number and placement of supports, corridors and exits, and that glTF and STEP exporters include these elements with correct materials and animations.  Update CLI scripts to accept parameters for the number of supports/docking ports, corridor widths, etc., and add tests to ensure CLI options work.  Suggested test modules and checks are outlined in the engineering guidelines, including geometry and exporter tests plus regression coverage【F:project/sphere-space-station-earth-one/01-project-planning/08-simulations/sprint-l3/engineering-guidelines.md†L56-L63】.
+   * Initial tests now cover supports, docking ports and CLI options, but corridors, frames and emergency exits remain untested.
+   * **To complete:** write unit tests verifying corridor and exit geometry and that exporters include these elements with correct materials and animations.  Extend CLI scripts with corridor parameters and add tests to ensure these options work.  Suggested checks are outlined in the engineering guidelines, including geometry and exporter tests plus regression coverage【F:project/sphere-space-station-earth-one/01-project-planning/08-simulations/sprint-l3/engineering-guidelines.md†L56-L63】.
 
 6. **Documentation updates.**
 
@@ -44,4 +45,4 @@ The sprint plan for sprint L3 (27 Oct – 07 Nov 2025) clearly defined sev
 
 ### Summary and guidance
 
-The current implementation has made progress in adding material classes, CLI material selection and starting support and docking port parameters.  However, most of the sprint‑L3 deliverables remain unfulfilled: there is no corridor, window frame or emergency exit geometry; exporters do not output supports or docking ports; no detail animations or Blender scene exists; tests and documentation are missing.  To close sprint 3, the development team needs to implement the missing data models, compute and export the new geometry, create animations, provide examples and tests, and update documentation as outlined above.
+The current implementation has made progress in adding material classes, CLI material selection and modelling plus exporting supports and docking ports.  However, most of the sprint‑L3 deliverables remain unfulfilled: there is no corridor, window frame or emergency exit geometry; exporters ignore these elements; no detail animations or Blender scene exists; tests and documentation for the remaining features are missing.  To close sprint 3, the development team needs to implement the missing data models, compute and export the new geometry, create animations, provide examples and tests, and update documentation as outlined above.

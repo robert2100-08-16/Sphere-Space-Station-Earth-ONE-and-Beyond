@@ -15,14 +15,14 @@ def _create_calc(**kwargs):
     )
 
 
-def test_support_geometry_count():
+def test_support_dto_count():
     calc = _create_calc(supports_per_deck=4)
-    supports = calc.support_geometry["Deck_001"]
-    assert len(supports["x"]) == 4
+    supports = calc.get_supports()
+    assert len(supports) == 4 * (calc.num_decks - 1)
 
 
-def test_docking_port_positions():
+def test_docking_port_dtos():
     calc = _create_calc(num_docking_ports=3)
-    ports = calc.docking_ports
-    assert len(ports["x"]) == 3
-    assert all(z == 0 for z in ports["z"])
+    ports = calc.get_docking_ports()
+    assert len(ports) == 3
+    assert all(p.position[2] == 0 for p in ports)

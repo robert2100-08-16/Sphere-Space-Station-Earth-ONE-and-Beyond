@@ -21,7 +21,7 @@ try:  # pragma: no cover - best effort for optional dependency
 except Exception:  # pragma: no cover - cadquery is optional
     cq = None  # type: ignore[assignment]
 
-from ..data_model import BaseRing, Deck, Hull, StationModel, Wormhole
+from ..data_model import BaseRing, Deck, Hull, StationModel, Wormhole, Support, DockingPort
 
 
 if cq is not None:  # pragma: no cover - exercised when cadquery is installed
@@ -73,6 +73,22 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
             .circle(inner)
             .extrude(ring.width_m)
             .translate((0, 0, ring.position_z_m))
+        )
+
+    def _build_support(support: Support) -> cq.Workplane:
+        return (
+            cq.Workplane("XY")
+            .circle(support.radius_m)
+            .extrude(support.height_m, both=True)
+            .translate(support.position)
+        )
+
+    def _build_docking_port(port: DockingPort) -> cq.Workplane:
+        return (
+            cq.Workplane("XY")
+            .circle(port.diameter_m / 2)
+            .extrude(port.depth_m)
+            .translate((port.position[0], port.position[1], port.position[2] - port.depth_m / 2))
         )
 
     def export_step(model: StationModel, filepath: str | Path) -> Path:
@@ -151,6 +167,28 @@ if cq is not None:  # pragma: no cover - exercised when cadquery is installed
                 },
             )
 
+        for i, support in enumerate(model.supports):
+            solid = _build_support(support)
+            assembly.add(
+                solid,
+                name=f"support_{i}",
+                metadata={
+                    "material": (
+                        support.material.name if support.material else "Stahl"
+                    )
+                },
+            )
+
+        for i, port in enumerate(model.docking_ports):
+            solid = _build_docking_port(port)
+            assembly.add(
+                solid,
+                name=f"docking_port_{i}",
+                metadata={
+                    "material": (port.material.name if port.material else "Stahl")
+                },
+            )
+
         assembly.save(str(path), "STEP")
         return path
 
@@ -169,6 +207,8 @@ else:
             f"base_rings={len(model.base_rings)}\n",
             f"hull={1 if model.hull else 0}\n",
             f"wormhole={1 if model.wormhole else 0}\n",
+            f"supports={len(model.supports)}\n",
+            f"docking_ports={len(model.docking_ports)}\n",
         ]
         with open(path, "w", encoding="utf8") as handle:
             handle.writelines(lines)

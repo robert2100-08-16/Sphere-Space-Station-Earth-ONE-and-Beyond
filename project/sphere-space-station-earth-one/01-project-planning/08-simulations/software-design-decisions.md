@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.3.7
+version: 1.3.8
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.8
+    date: 2025-08-12
+    change: "Introduced Support and DockingPort DTOs with exporter and CLI integration"
   - version: 1.3.7
     date: 2025-08-11
     change: "Defined standard materials and CLI material selection"
