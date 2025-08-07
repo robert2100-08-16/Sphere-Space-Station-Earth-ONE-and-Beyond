@@ -8,6 +8,30 @@ Sphere Space Station Earth ONE and Beyond
 - Sphere Station Documentation: Technical and Operational Overview
 - [Architecture Overview](simulations/docs/architecture/readme.md)
 
+### 1.1.1 CLI Export Options / CLI-Exportoptionen
+
+Use the simulation starter to create geometry files:
+
+```bash
+python -m simulations.sphere_space_station_simulations.simulation \
+    --export-step station.step \
+    --export-gltf station.glb \
+    --export-json station.json
+```
+
+Mit dem obigen Befehl lassen sich STEP-, glTF- und JSON-Dateien erzeugen. Der
+frühere CSV-Transport für Geometriedaten wurde entfernt.
+
+### 1.1.2 Layer Model / Schichtenmodell
+
+The project follows a layered architecture separating **KERNEL**,
+**ADAPTER** and **GUI** components. Details are documented in
+`simulations/docs/architecture`.
+
+Das Projekt verwendet ein Schichtenmodell mit **KERNEL**-, **ADAPTER**- und
+**GUI**-Ebenen. Weitere Informationen stehen in
+`simulations/docs/architecture`.
+
 All documents in the `documents` directory must be written in English, except for proper names.
 
 ---

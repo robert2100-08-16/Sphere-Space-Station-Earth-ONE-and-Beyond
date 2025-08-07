@@ -1,6 +1,6 @@
 # 1. Beschreibung der Deckdaten
 
-Diese Datei erläutert die Struktur der CSV `deck_3d_construction_data.csv`. Die Werte stammen aus den Berechnungen des Skriptes `generate_3d_construction_csv.py` und dienen der Erstellung der 3D-Segmente in Blender.
+Diese Datei erläutert die berechneten Deckparameter der Station. Die frühere CSV `deck_3d_construction_data.csv` wurde entfernt; Geometriedaten werden jetzt direkt über die CLI‑Optionen `--export-step` und `--export-gltf` erzeugt und anschließend in Blender importiert.
 
 ## 1.1 Grundbeschreibung was ein DECK ist
 Der Raum zwischen einer koaxialer Sphere Röhre n (mit Durchmesser d1) und der nächsten koaxialen Sphere Röhre n+1 (mit Durchmesser d2, wobei d2 > d1).
