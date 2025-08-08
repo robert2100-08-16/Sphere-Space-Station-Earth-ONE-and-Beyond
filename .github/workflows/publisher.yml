@@ -31,6 +31,7 @@ jobs:
           if [[ -z "$BEFORE" ]]; then
             BEFORE="HEAD~1"
           fi
+          echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
           echo "Comparing $BEFORE -> ${{ github.sha }}"
           CHANGED_FILES=$(git diff --name-only "$BEFORE" ${{ github.sha }})
 
@@ -43,44 +44,50 @@ jobs:
             echo "❌ No publish.yaml or publish.yml found in repo."
             exit 1
           fi
-
+          echo "manifest=$MANIFEST" >> "$GITHUB_OUTPUT"
           echo "✓ Manifest found: $MANIFEST"
-          MANIFEST="$MANIFEST" python3 - <<'PY'
-          import os, sys, yaml
-          changed = """${CHANGED_FILES}""".splitlines()
-          with open(os.environ["MANIFEST"], "r", encoding="utf-8") as f:
-              data = yaml.safe_load(f) or {}
-          entries = data.get("publish", [])
-          if not isinstance(entries, list):
-              print("❌ 'publish' key in manifest must be a list.")
-              sys.exit(1)
-          
-          relevant = False
-          for entry in entries:
-              path = (entry or {}).get("path")
-              out = (entry or {}).get("out")
-              typ = (entry or {}).get("type")
-              if not path or not out or not typ:
-                  print(f"⚠ Skipping invalid manifest entry: {entry}")
-                  continue
-              if not os.path.exists(path):
-                  print(f"❌ Path from manifest not found: \"{path}\"")
-                  print("   Tip: Check spelling and case sensitivity.")
-                  sys.exit(1)
-              if any(cf == path or cf.startswith(f"{path}/") for cf in changed):
-                  relevant = True
-          
-          if not relevant:
-              print("ℹ No relevant changes detected — exiting early.")
-              sys.exit(0)
-          PY
+
+          NEED_PUBLISH=$(MANIFEST="$MANIFEST" python3 - <<'PY'
+import os, yaml, sys
+changed = """${CHANGED_FILES}""".splitlines()
+with open(os.environ["MANIFEST"], "r", encoding="utf-8") as f:
+    data = yaml.safe_load(f) or {}
+entries = data.get("publish", [])
+if not isinstance(entries, list):
+    print("❌ 'publish' key in manifest must be a list.")
+    sys.exit(1)
+for entry in entries:
+    path = (entry or {}).get("path")
+    out = (entry or {}).get("out")
+    typ = (entry or {}).get("type")
+    if not path or not out or not typ:
+        print(f"⚠ Skipping invalid manifest entry: {entry}")
+        continue
+    if not os.path.exists(path):
+        print(f"❌ Path from manifest not found: \"{path}\"")
+        print("   Tip: Check spelling and case sensitivity.")
+        sys.exit(1)
+    if any(cf == path or cf.startswith(f"{path}/") for cf in changed):
+        print("true")
+        sys.exit(0)
+print("false")
+PY
+          )
+          if [[ "$NEED_PUBLISH" != "true" ]]; then
+            echo "ℹ No relevant changes detected — exiting early."
+            echo "should_publish=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "should_publish=true" >> "$GITHUB_OUTPUT"
 
       - name: Set up Python and install dependencies
+        if: steps.precheck.outputs.should_publish == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
       - name: Install dependencies (PyYAML, Pandoc/LaTeX, emoji fonts)
+        if: steps.precheck.outputs.should_publish == 'true'
         run: |
           pip install pyyaml
           sudo apt-get update
@@ -92,86 +99,93 @@ jobs:
           wget https://gist.githubusercontent.com/zr-tex8r/a5410ad20ab291c390884b960c900537/raw/latex-emoji.lua -O latex-emoji.lua
 
       - name: Selective publish & PDF conversion
+        if: steps.precheck.outputs.should_publish == 'true'
+        env:
+          MANIFEST: ${{ steps.precheck.outputs.manifest }}
+          BEFORE: ${{ steps.precheck.outputs.before }}
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p publish
           python3 <<'PY'
-          import os, subprocess, sys, tempfile, yaml, pathlib
-          
-          subs = {"₀":"$_0$","₁":"$_1$","₂":"$_2$","₃":"$_3$","₄":"$_4$",
-                  "₅":"$_5$","₆":"$_6$","₇":"$_7$","₈":"$_8$","₉":"$_9$"}
-          
-          def normalize_md(text):
-              return "".join(subs.get(ch, ch) for ch in text)
-          
-          def run_pandoc(md_path, pdf_out):
-              pathlib.Path(os.path.dirname(pdf_out)).mkdir(parents=True, exist_ok=True)
-              cmd = [
-                  "pandoc", md_path, "-o", pdf_out,
-                  "--pdf-engine", "lualatex",
-                  "-V", "mainfont=DejaVu Sans",
-                  "-V", "monofont=DejaVu Sans Mono",
-                  "-V", "emoji=OpenMoji-black-glyf.ttf",
-                  "--lua-filter=latex-emoji.lua",
-                  "-M", "emojifont=OpenMoji-black-glyf.ttf",
-                  "-M", "color=false"
-              ]
-              print("→ Pandoc:", " ".join(cmd))
-              subprocess.check_call(cmd)
-          
-          def convert_file(md_file, pdf_out):
-              with open(md_file, "r", encoding="utf-8") as f:
-                  content = normalize_md(f.read())
-              with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tmp:
-                  tmp.write(content)
-                  tmp_md = tmp.name
-              try:
-                  run_pandoc(tmp_md, pdf_out)
-              finally:
-                  os.unlink(tmp_md)
-          
-          def convert_folder(folder, pdf_out):
-              parts = []
-              for root, _, files in os.walk(folder):
-                  for fname in sorted(files):
-                      if fname.lower().endswith((".md",".markdown")):
-                          with open(os.path.join(root, fname), "r", encoding="utf-8") as f:
-                              parts.append(normalize_md(f.read()))
-              if not parts:
-                  print(f"ℹ No Markdown files in {folder} — skipping PDF.")
-                  return
-              combined = "\n\n\\newpage\n\n".join(parts)
-              with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tmp:
-                  tmp.write(combined)
-                  tmp_md = tmp.name
-              try:
-                  run_pandoc(tmp_md, pdf_out)
-              finally:
-                  os.unlink(tmp_md)
-          
-          changed_files = os.popen("git diff --name-only ${{ github.event.before }} ${{ github.sha }}").read().splitlines()
-          with open("publish.yaml", "r", encoding="utf-8") as f:
-              entries = yaml.safe_load(f).get("publish", [])
-          
-          for entry in entries:
-              path = entry.get("path")
-              out  = entry.get("out")
-              typ  = entry.get("type")
-              if any(cf == path or cf.startswith(f"{path}/") for cf in changed_files):
-                  pdf_out = os.path.join("publish", out)
-                  print(f"✔ Changes in {path} → creating {pdf_out}")
-                  if typ == "file":
-                      convert_file(path, pdf_out)
-                  elif typ == "folder":
-                      convert_folder(path, pdf_out)
-                  else:
-                      print(f"⚠ Unknown type '{typ}' — skipping.")
-              else:
-                  print(f"ℹ No changes in {path} → skipping.")
-          PY
+import os, subprocess, sys, tempfile, yaml, pathlib
+
+subs = {"₀":"$_0$","₁":"$_1$","₂":"$_2$","₃":"$_3$","₄":"$_4$",
+        "₅":"$_5$","₆":"$_6$","₇":"$_7$","₈":"$_8$","₉":"$_9$"}
+
+def normalize_md(text):
+    return "".join(subs.get(ch, ch) for ch in text)
+
+def run_pandoc(md_path, pdf_out):
+    pathlib.Path(os.path.dirname(pdf_out)).mkdir(parents=True, exist_ok=True)
+    cmd = [
+        "pandoc", md_path, "-o", pdf_out,
+        "--pdf-engine", "lualatex",
+        "-V", "mainfont=DejaVu Sans",
+        "-V", "monofont=DejaVu Sans Mono",
+        "-V", "emoji=OpenMoji-black-glyf.ttf",
+        "--lua-filter=latex-emoji.lua",
+        "-M", "emojifont=OpenMoji-black-glyf.ttf",
+        "-M", "color=false",
+    ]
+    print("→ Pandoc:", " ".join(cmd))
+    subprocess.check_call(cmd)
+
+def convert_file(md_file, pdf_out):
+    with open(md_file, "r", encoding="utf-8") as f:
+        content = normalize_md(f.read())
+    with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tmp:
+        tmp.write(content)
+        tmp_md = tmp.name
+    try:
+        run_pandoc(tmp_md, pdf_out)
+    finally:
+        os.unlink(tmp_md)
+
+def convert_folder(folder, pdf_out):
+    parts = []
+    for root, _, files in os.walk(folder):
+        for fname in sorted(files):
+            if fname.lower().endswith((".md",".markdown")):
+                with open(os.path.join(root, fname), "r", encoding="utf-8") as f:
+                    parts.append(normalize_md(f.read()))
+    if not parts:
+        print(f"ℹ No Markdown files in {folder} — skipping PDF.")
+        return
+    combined = "\n\n\\newpage\n\n".join(parts)
+    with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tmp:
+        tmp.write(combined)
+        tmp_md = tmp.name
+    try:
+        run_pandoc(tmp_md, pdf_out)
+    finally:
+        os.unlink(tmp_md)
+
+BEFORE = os.environ["BEFORE"]
+SHA = os.environ["GITHUB_SHA"]
+changed_files = os.popen(f"git diff --name-only {BEFORE} {SHA}").read().splitlines()
+with open(os.environ["MANIFEST"], "r", encoding="utf-8") as f:
+    entries = yaml.safe_load(f).get("publish", [])
+
+for entry in entries:
+    path = entry.get("path")
+    out  = entry.get("out")
+    typ  = entry.get("type")
+    if any(cf == path or cf.startswith(f"{path}/") for cf in changed_files):
+        pdf_out = os.path.join("publish", out)
+        print(f"✔ Changes in {path} → creating {pdf_out}")
+        if typ == "file":
+            convert_file(path, pdf_out)
+        elif typ == "folder":
+            convert_folder(path, pdf_out)
+        else:
+            print(f"⚠ Unknown type '{typ}' — skipping.")
+    else:
+        print(f"ℹ No changes in {path} → skipping.")
+PY
 
       - name: Commit and push generated PDFs
+        if: steps.precheck.outputs.should_publish == 'true'
         shell: bash
         run: |
           if [[ -n "$(git status --porcelain publish)" ]]; then
