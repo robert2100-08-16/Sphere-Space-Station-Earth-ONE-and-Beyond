@@ -160,16 +160,30 @@ jobs:
               finally:
                   os.unlink(tmp_md)
           
+          def extract_md_paths_from_summary(folder):
+              summary_path = os.path.join(folder, "summary.md")
+              if not os.path.exists(summary_path):
+                  return []
+              import re
+              paths = []
+              with open(summary_path, "r", encoding="utf-8") as f:
+                  for line in f:
+                      for match in re.findall(r'\(([^)]+\.md)\)', line):
+                          if not match.startswith("http://") and not match.startswith("https://"):
+                              paths.append(os.path.normpath(os.path.join(folder, match)))
+              return paths
+
           def convert_folder(folder, pdf_out):
-              md_files = []
-              for root, _, files in os.walk(folder):
-                  for fname in sorted(files):
-                      if fname.lower().endswith((".md", ".markdown")):
-                          full_path = os.path.join(root, fname)
-                          if fname.lower() == "readme.md":
-                              md_files.insert(0, full_path)
-                          else:
-                              md_files.append(full_path)
+              md_files = extract_md_paths_from_summary(folder)
+              if not md_files:
+                  for root, _, files in os.walk(folder):
+                      for fname in sorted(files):
+                          if fname.lower().endswith((".md", ".markdown")):
+                              full_path = os.path.join(root, fname)
+                              if fname.lower() == "readme.md":
+                                  md_files.insert(0, full_path)
+                              else:
+                                  md_files.append(full_path)
               if not md_files:
                   print(f"ℹ No Markdown files in {folder} — skipping PDF.")
                   return
@@ -178,6 +192,8 @@ jobs:
                   with open(path, "r", encoding="utf-8") as f:
                       parts.append(normalize_md(f.read()))
               combined = "\n\n\\newpage\n\n".join(parts)
+              with open(os.path.join("publish", "combined.md"), "w", encoding="utf-8") as combined_file:
+                  combined_file.write(combined)
               with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tmp:
                   tmp.write(combined)
                   tmp_md = tmp.name
