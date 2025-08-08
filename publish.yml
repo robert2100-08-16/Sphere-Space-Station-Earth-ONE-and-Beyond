@@ -1,6 +1,6 @@
 publish:
   - path: documents
-    out: documents.pdf
+    out: sphere-space-station-earth-one-and-beyond.pdf
     type: folder
 
   - path: readme.md
