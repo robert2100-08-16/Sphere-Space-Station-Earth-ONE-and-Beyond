@@ -48,9 +48,9 @@ jobs:
           echo "✓ Manifest found: $MANIFEST"
           echo "Changed files:\n$CHANGED_FILES"
 
-          NEED_PUBLISH=$(MANIFEST="$MANIFEST" python3 - <<'PY'
+          NEED_PUBLISH=$(CHANGED_FILES="$CHANGED_FILES" MANIFEST="$MANIFEST" python3 - <<'PY'
           import os, yaml, sys
-          changed = """${CHANGED_FILES}""".splitlines()
+          changed = os.environ.get("CHANGED_FILES", "").splitlines()
           with open(os.environ["MANIFEST"], "r", encoding="utf-8") as f:
               data = yaml.safe_load(f) or {}
           entries = data.get("publish", [])
