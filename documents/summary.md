@@ -34,7 +34,6 @@ history:
   * [5.1 Establishing a Solar Alliance for Governance and Security in Space](05-security-governance-and-alliances/5.1-establishing-a-solar-alliance-for-governance-and-security-in-space.md)
 * [Chapter 6 – Expansion and Future Projects](06-expansion-and-future-projects/readme.md)
   * [6.1 Future Expansion of the Sphere Station Network and Sphere Space Crafts](06-expansion-and-future-projects/6.1-future-expansion-of-the-sphere-station-network-and-sphere-space-crafts.md)
-  * [6.2 Appendices from Future Expansion](06-expansion-and-future-projects/6.2-appendices-from-future-expansion.md)
 * [Chapter 7 – Comprehensive Technical Documentation](07-comprehensive-technical-documentation/readme.md)
   * [7.1 Sphere Station Documentation: Technical and Operational Overview](07-comprehensive-technical-documentation/7.1-sphere-station-documentation-technical-and-operational-overview.md)
   * [7.2 Partial Concepts](07-comprehensive-technical-documentation/partial-concepts/readme.md)
