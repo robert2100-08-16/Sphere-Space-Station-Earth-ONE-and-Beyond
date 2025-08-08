@@ -11,6 +11,7 @@ history:
 ---
 
 # 1. Change
+
 This change document tracks the initial translation of documentation to English and the adoption of GitBook-style file naming conventions.
 
 # 1.1 Sources
