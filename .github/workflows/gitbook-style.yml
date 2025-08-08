@@ -26,11 +26,35 @@ jobs:
                   if new != name:
                       subprocess.run(['git', 'mv', os.path.join(root, name), os.path.join(root, new)])
           PYTHON
+      - name: Ensure GitBook summary
+        run: |
+          python <<'PYTHON'
+          import json, pathlib, re, subprocess
+          with open('book.json') as f:
+              root = pathlib.Path(json.load(f)['root'])
+          summary = root / 'summary.md'
+          md_files = [p for p in root.rglob('*.md') if p.name.lower() != 'summary.md']
+          links = set()
+          if summary.exists():
+              content = summary.read_text()
+              links = set(re.findall(r'\(([^)]+)\)', content))
+          else:
+              content = '# Summary\n\n'
+          missing = [p for p in md_files if str(p.relative_to(root)).replace('\\','/') not in links]
+          if not summary.exists() or missing:
+              text = content.rstrip() + ('\n' if content else '')
+              for p in missing:
+                  rel = str(p.relative_to(root)).replace('\\','/')
+                  title = p.stem.replace('-', ' ').title()
+                  text += f"* [{title}]({rel})\n"
+              summary.write_text(text)
+              subprocess.run(['git', 'add', str(summary)])
+          PYTHON
       - name: Commit changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git commit -am "chore: rename files to gitbook style [skip ci]"
+            git commit -am "chore: apply GitBook style updates [skip ci]"
             git push
           fi
