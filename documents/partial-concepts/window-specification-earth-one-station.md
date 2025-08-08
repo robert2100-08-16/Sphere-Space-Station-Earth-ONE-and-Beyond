@@ -9,6 +9,7 @@ history:
     change: "Initial"
     reference: documents/change-management/0001-initial-english-translation.md
 ---
+
 # 1. Window Specification for Earth ONE Station
 
 The Earth ONE station requires windows that withstand extreme thermal cycling, rapid decompression, micrometeorite impacts, and intense UV and cosmic radiation. A multi-layered composite structure is proposed:
