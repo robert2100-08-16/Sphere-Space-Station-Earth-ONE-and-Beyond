@@ -5,7 +5,7 @@ owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
   - version: 1.0.0
-    date: 2024-06-01
+    date: 2025-08-03
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
 ---
