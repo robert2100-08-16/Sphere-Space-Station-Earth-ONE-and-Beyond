@@ -50,6 +50,7 @@ jobs:
           NEED_PUBLISH=$(MANIFEST="$MANIFEST" python3 - <<'PY'
           import os, yaml, sys
           changed = """${CHANGED_FILES}""".splitlines()
+          print(f"Changed files:\n{changed}")
           with open(os.environ["MANIFEST"], "r", encoding="utf-8") as f:
               data = yaml.safe_load(f) or {}
           entries = data.get("publish", [])
@@ -60,6 +61,7 @@ jobs:
               path = (entry or {}).get("path")
               out = (entry or {}).get("out")
               typ = (entry or {}).get("type")
+              print(f"Checking entry: {entry}") 
               if not path or not out or not typ:
                   print(f"⚠ Skipping invalid manifest entry: {entry}")
                   continue
