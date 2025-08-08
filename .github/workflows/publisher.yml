@@ -197,3 +197,4 @@ jobs:
             git push
           else
             echo "No changes in /publish — nothing to commit."
+          fi
