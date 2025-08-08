@@ -9,6 +9,7 @@ history:
     change: "Initial"
     reference: documents/change-management/0001-initial-english-translation.md
 ---
+
 # 1. Deck Concept of the Sphere Space Station Earth ONE
 
 ## 1.1 Realistic Volume Calculation and Deck Allocation

@@ -1,5 +1,5 @@
 publish:
-  - path: documents
+  - path: documents/**
     out: documents.pdf
     type: folder
 
