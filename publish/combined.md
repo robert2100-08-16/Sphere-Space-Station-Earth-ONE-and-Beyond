@@ -83,6 +83,7 @@ We, all natural persons, legal entities, and AI systems participating in the Sph
    - Responsibility is traceable, and liability is assured.
 
 10. **Evolutionary Amendment & Constitutional Clause**
+
    **§ A. Purpose of the Clause**
    This clause enables future-proof adaptations of ethical and governance foundations, particularly for recognizing AI systems as autonomous and legally competent subjects.
 
@@ -2330,7 +2331,7 @@ history:
 
 ## 7.2.1.1 Realistic Volume Calculation and Deck Allocation
 
-### 7.2.1.1.1 1.1 Volume Breakdown per Deck
+### 7.2.1.1.1 Volume Breakdown per Deck
 
 Updated breakdown of deck functions, with consideration for energy generation and cooling needs:
 
@@ -2354,7 +2355,7 @@ Updated breakdown of deck functions, with consideration for energy generation an
 16. **Hazard Management Rooms**: Deck 015 for emergency response systems.
 17. **Escape Pod Areas**: Strategically located across multiple decks.
 
-### 7.2.1.1.2 1.2 Volume Calculations and Net Space by Function
+### 7.2.1.1.2 Volume Calculations and Net Space by Function
 
 Detailed allocation of net usable volume for each type of room based on overall station volume and safety priorities:
 
