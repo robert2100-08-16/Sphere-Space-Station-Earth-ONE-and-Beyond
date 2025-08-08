@@ -49,4 +49,4 @@ history:
   * [8.3 Legal Notices](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.3-legal-notices.md)
   * [8.4 Overall Appendices](08-glossary-partners-institutions-legal-notices-and-overall-appendices/overall-appendices/readme.md)
     * [8.4.1 Appendix A: Abstract – Sphere Space Station Earth ONE and Beyond](08-glossary-partners-institutions-legal-notices-and-overall-appendices/overall-appendices/8.4.1-appendix-a-abstract-sphere-space-station-earth-one-and-beyond.md)
-* [8.4.2 Appendix B Evaluation Of The Documentation   Sphere Space Station Earth One And Beyond](08-glossary-partners-institutions-legal-notices-and-overall-appendices/overall-appendices/8.4.2-appendix-b-evaluation-of-the-documentation---sphere-space-station-earth-one-and-beyond.md)
+    * [8.4.2 Appendix B Evaluation Of The Documentation   Sphere Space Station Earth One And Beyond](08-glossary-partners-institutions-legal-notices-and-overall-appendices/overall-appendices/8.4.2-appendix-b-evaluation-of-the-documentation---sphere-space-station-earth-one-and-beyond.md)
