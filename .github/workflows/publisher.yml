@@ -109,15 +109,28 @@ jobs:
           set -euo pipefail
           mkdir -p publish
           python3 <<'PY'
-          import os, subprocess, sys, tempfile, yaml, pathlib
+          import os, subprocess, sys, tempfile, yaml, pathlib, json
           
           subs = {"₀":"$_0$","₁":"$_1$","₂":"$_2$","₃":"$_3$","₄":"$_4$",
                   "₅":"$_5$","₆":"$_6$","₇":"$_7$","₈":"$_8$","₉":"$_9$"}
           
           def normalize_md(text):
               return "".join(subs.get(ch, ch) for ch in text)
+
+          def get_book_title(folder):
+              try:
+                  with open("book.json", "r", encoding="utf-8") as f:
+                      data = json.load(f)
+                  root = data.get("root", "")
+                  if root.startswith("./"):
+                      root = root[2:]
+                  if os.path.normpath(root) == os.path.normpath(folder):
+                      return data.get("title")
+              except Exception:
+                  pass
+              return None
           
-          def run_pandoc(md_path, pdf_out):
+          def run_pandoc(md_path, pdf_out, add_toc=False, title=None):
               pathlib.Path(os.path.dirname(pdf_out)).mkdir(parents=True, exist_ok=True)
               cmd = [
                   "pandoc", md_path, "-o", pdf_out,
@@ -129,6 +142,10 @@ jobs:
                   "-M", "emojifont=OpenMoji-black-glyf.ttf",
                   "-M", "color=false",
               ]
+              if add_toc:
+                  cmd.append("--toc")
+              if title:
+                  cmd.extend(["-V", f"title={title}"])
               print("→ Pandoc:", " ".join(cmd))
               subprocess.check_call(cmd)
           
@@ -144,21 +161,29 @@ jobs:
                   os.unlink(tmp_md)
           
           def convert_folder(folder, pdf_out):
-              parts = []
+              md_files = []
               for root, _, files in os.walk(folder):
                   for fname in sorted(files):
-                      if fname.lower().endswith((".md",".markdown")):
-                          with open(os.path.join(root, fname), "r", encoding="utf-8") as f:
-                              parts.append(normalize_md(f.read()))
-              if not parts:
+                      if fname.lower().endswith((".md", ".markdown")):
+                          full_path = os.path.join(root, fname)
+                          if fname.lower() == "readme.md":
+                              md_files.insert(0, full_path)
+                          else:
+                              md_files.append(full_path)
+              if not md_files:
                   print(f"ℹ No Markdown files in {folder} — skipping PDF.")
                   return
+              parts = []
+              for path in md_files:
+                  with open(path, "r", encoding="utf-8") as f:
+                      parts.append(normalize_md(f.read()))
               combined = "\n\n\\newpage\n\n".join(parts)
               with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tmp:
                   tmp.write(combined)
                   tmp_md = tmp.name
               try:
-                  run_pandoc(tmp_md, pdf_out)
+                  title = get_book_title(folder)
+                  run_pandoc(tmp_md, pdf_out, add_toc=True, title=title)
               finally:
                   os.unlink(tmp_md)
           
