@@ -31,7 +31,7 @@
     * [7.2.4 Window Specification Earth One Station](07-comprehensive-technical-documentation/7.2-partial-concepts/7.2.4-window-specification-earth-one-station.md)
   * [Readme](07-comprehensive-technical-documentation/7.3-change-management/readme.md)
     * [7.3.1 Initial English Translation](07-comprehensive-technical-documentation/7.3-change-management/7.3.1-initial-english-translation.md)
-    * [7.3.2 Summary Of Single Source Of Truth To Gitbook](07-comprehensive-technical-documentation/7.3-change-management/7.3.2-summary-of-single-source-of-truth-to-gitbook.md)
+    * [7.3.2 Bring The Single Source Of Truth Documents Into Gitbook Format](07-comprehensive-technical-documentation/7.3-change-management/7.3.2-bring-the-single-source-of-truth-documents-into-gitbook-format.md)
   * [Readme](07-comprehensive-technical-documentation/7.4-research-development/readme.md)
     * [7.4.1 Sphere Station Simulator Research Summary](07-comprehensive-technical-documentation/7.4-research-development/7.4.1-sphere-station-simulator-research-summary.md)
     * [7.4.2 Earth One Station Orbit Polar Docking And Human Factors](07-comprehensive-technical-documentation/7.4-research-development/7.4.2-earth-one-station---orbit-polar-docking-and-human-factors.md)
