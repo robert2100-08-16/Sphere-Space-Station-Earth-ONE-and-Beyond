@@ -76,10 +76,11 @@ jobs:
               except Exception:
                   return {}
 
-          def first_h1(text: str):
+          def first_heading(text: str):
               for line in text.splitlines():
-                  if line.strip().startswith('# '):
-                      return line.strip()[2:].strip()
+                  stripped = line.strip()
+                  if stripped.startswith('#'):
+                      return re.sub(r'^#+\s*', '', stripped).strip()
               return None
 
           def title_from_filename(p: Path):
@@ -127,7 +128,7 @@ jobs:
                   text = p.read_text(encoding='utf-8')
               except Exception:
                   text = ''
-              h = first_h1(text) or title_from_filename(p)
+              h = first_heading(text) or title_from_filename(p)
               # sanitize brackets in titles
               h = h.replace('[','(').replace(']',')')
               return h
@@ -142,7 +143,10 @@ jobs:
                   title = dir_path.name
                   title = re.sub(r'[-_]+', ' ', title).strip().title()
                   if readme:
-                      lines.append('  ' * level + f"* [{make_item_title(readme)}]({rel_link(readme)})")
+                      title = make_item_title(readme)
+                      if title.lower() == 'readme':
+                          title = title_from_filename(dir_path)
+                      lines.append('  ' * level + f"* [{title}]({rel_link(readme)})")
                   else:
                       lines.append('  ' * level + f"* {title}")
 
