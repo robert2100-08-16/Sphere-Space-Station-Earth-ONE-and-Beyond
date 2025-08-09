@@ -2,240 +2,208 @@ name: Selective Publish to PDF
 
 on:
   push:
-    branches:
-      - main
-    paths-ignore:
-      - 'publish/**'   # Prevent retrigger from generated PDFs
+    branches: [main]
 
 jobs:
-  selective-publish:
+  rename-and-summary:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Get changed files and check manifest relevance
-        id: precheck
-        shell: bash
+      - name: Rename files to GitBook style
         run: |
-          set -euo pipefail
-          BEFORE="${{ github.event.before }}"
-          if [[ -z "$BEFORE" || "$BEFORE" == "0000000000000000000000000000000000000000" ]]; then
-            BEFORE="$(git rev-parse ${{ github.sha }}^ || echo '')"
-          fi
-          if [[ -z "$BEFORE" ]]; then
-            BEFORE="HEAD~1"
-          fi
-          echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
-          echo "Comparing $BEFORE -> ${{ github.sha }}"
-          CHANGED_FILES=$(git diff --name-only "$BEFORE" ${{ github.sha }})
+          python <<'PYTHON'
+          import os, re, subprocess, shutil
+          from pathlib import Path
 
-          # Find manifest
-          if [[ -f publish.yaml ]]; then
-            MANIFEST="publish.yaml"
-          elif [[ -f publish.yml ]]; then
-            MANIFEST="publish.yml"
-          else
-            echo "❌ No publish.yaml or publish.yml found in repo."
-            exit 1
-          fi
-          echo "manifest=$MANIFEST" >> "$GITHUB_OUTPUT"
-          echo "✓ Manifest found: $MANIFEST"
-          echo "Changed files:\n$CHANGED_FILES"
+          ROOT = Path('.').resolve()
+          SKIP_DIRS = {'.git', '.github', 'node_modules', '__pycache__', '.venv', 'simulations'}
 
-          NEED_PUBLISH=$(CHANGED_FILES="$CHANGED_FILES" MANIFEST="$MANIFEST" python3 - <<'PY'
-          import os, yaml, sys
-          changed = os.environ.get("CHANGED_FILES", "").splitlines()
-          with open(os.environ["MANIFEST"], "r", encoding="utf-8") as f:
-              data = yaml.safe_load(f) or {}
-          entries = data.get("publish", [])
-          if not isinstance(entries, list):
-              print("❌ 'publish' key in manifest must be a list.")
-              sys.exit(1)
-          for entry in entries:
-              path = (entry or {}).get("path")
-              out = (entry or {}).get("out")
-              typ = (entry or {}).get("type")              
-              if not path or not out or not typ:
-                  print(f"⚠ Skipping invalid manifest entry: {entry}")
-                  continue
-              if not os.path.exists(path):
-                  print(f"❌ Path from manifest not found: \"{path}\"")
-                  print("   Tip: Check spelling and case sensitivity.")
-                  sys.exit(1)
-              if any(cf == path or cf.startswith(f"{path}/") for cf in changed):
-                  print("true")
-                  sys.exit(0)
-          print("false")
-          PY
-          )
-          if [[ "$NEED_PUBLISH" != "true" ]]; then
-            echo "ℹ No relevant changes detected — exiting early."
-            echo "should_publish=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          echo "should_publish=true" >> "$GITHUB_OUTPUT"
-
-      - name: Set up Python and install dependencies
-        if: steps.precheck.outputs.should_publish == 'true'
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies (PyYAML, Pandoc/LaTeX, emoji fonts)
-        if: steps.precheck.outputs.should_publish == 'true'
-        run: |
-          pip install pyyaml
-          sudo apt-get update
-          sudo apt-get install -y pandoc texlive-luatex texlive-fonts-recommended texlive-latex-extra texlive-lang-cjk fonts-dejavu-core wget
-          sudo mkdir -p /usr/share/fonts/truetype/openmoji
-          sudo wget -O /usr/share/fonts/truetype/openmoji/OpenMoji-black-glyf.ttf \
-            https://github.com/hfg-gmuend/openmoji/raw/master/font/OpenMoji-black-glyf/OpenMoji-black-glyf.ttf
-          sudo fc-cache -f -v
-          wget https://gist.githubusercontent.com/zr-tex8r/a5410ad20ab291c390884b960c900537/raw/latex-emoji.lua -O latex-emoji.lua
-
-      - name: Selective publish & PDF conversion
-        if: steps.precheck.outputs.should_publish == 'true'
-        env:
-          MANIFEST: ${{ steps.precheck.outputs.manifest }}
-          BEFORE: ${{ steps.precheck.outputs.before }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p publish
-          python3 <<'PY'
-          import os, subprocess, sys, tempfile, yaml, pathlib, json
-          
-          subs = {"₀":"$_0$","₁":"$_1$","₂":"$_2$","₃":"$_3$","₄":"$_4$",
-                  "₅":"$_5$","₆":"$_6$","₇":"$_7$","₈":"$_8$","₉":"$_9$"}
-          
-          def normalize_md(text):
-              return "".join(subs.get(ch, ch) for ch in text)
-
-          def get_book_title(folder):
-              try:
-                  with open("book.json", "r", encoding="utf-8") as f:
-                      data = json.load(f)
-                  root = data.get("root", "")
-                  if root.startswith("./"):
-                      root = root[2:]
-                  if os.path.normpath(root) == os.path.normpath(folder):
-                      return data.get("title")
-              except Exception:
-                  pass
-              return None
-          
-          def run_pandoc(md_path, pdf_out, add_toc=False, title=None):
-              pathlib.Path(os.path.dirname(pdf_out)).mkdir(parents=True, exist_ok=True)
-              cmd = [
-                  "pandoc", md_path, "-o", pdf_out,
-                  "--pdf-engine", "lualatex",
-                  "-V", "mainfont=DejaVu Sans",
-                  "-V", "monofont=DejaVu Sans Mono",
-                  "-V", "emoji=OpenMoji-black-glyf.ttf",
-                  "--lua-filter=latex-emoji.lua",
-                  "-M", "emojifont=OpenMoji-black-glyf.ttf",
-                  "-M", "color=false",
-              ]
-              if add_toc:
-                  cmd.append("--toc")
-              if title:
-                  cmd.extend(["-V", f"title={title}"])
-              print("→ Pandoc:", " ".join(cmd))
-              subprocess.check_call(cmd)
-          
-          def convert_file(md_file, pdf_out):
-              with open(md_file, "r", encoding="utf-8") as f:
-                  content = normalize_md(f.read())
-              with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tmp:
-                  tmp.write(content)
-                  tmp_md = tmp.name
-              try:
-                  run_pandoc(tmp_md, pdf_out)
-              finally:
-                  os.unlink(tmp_md)
-          
-          def extract_md_paths_from_summary(folder):
-              summary_path = os.path.join(folder, "summary.md")
-              if not os.path.exists(summary_path):
-                  return []
-              import re
-              paths = []
-              with open(summary_path, "r", encoding="utf-8") as f:
-                  for line in f:
-                      for match in re.findall(r'\(([^)]+\.md)\)', line):
-                          if not match.startswith("http://") and not match.startswith("https://"):
-                              paths.append(os.path.normpath(os.path.join(folder, match)))
-              return paths
-
-          def convert_folder(folder, pdf_out):
-              md_files = extract_md_paths_from_summary(folder)
-              if not md_files:
-                  for root, _, files in os.walk(folder):
-                      for fname in sorted(files):
-                          if fname.lower().endswith((".md", ".markdown")):
-                              full_path = os.path.join(root, fname)
-                              if fname.lower() == "readme.md":
-                                  md_files.insert(0, full_path)
-                              else:
-                                  md_files.append(full_path)
-              if not md_files:
-                  print(f"ℹ No Markdown files in {folder} — skipping PDF.")
+          def safe_git_mv(src: Path, dst: Path):
+              if src == dst:
                   return
-              parts = []
-              for path in md_files:
-                  with open(path, "r", encoding="utf-8") as f:
-                      parts.append(normalize_md(f.read()))
-              combined = "\n\n\\newpage\n\n".join(parts)
-              with open(os.path.join("publish", "combined.md"), "w", encoding="utf-8") as combined_file:
-                  combined_file.write(combined)
-              with tempfile.NamedTemporaryFile("w", suffix=".md", delete=False, encoding="utf-8") as tmp:
-                  tmp.write(combined)
-                  tmp_md = tmp.name
-              try:
-                  title = get_book_title(folder)
-                  run_pandoc(tmp_md, pdf_out, add_toc=True, title=title)
-              finally:
-                  os.unlink(tmp_md)
-          
-          BEFORE = os.environ["BEFORE"]
-          SHA = os.environ["GITHUB_SHA"]
-          changed_files = os.popen(f"git diff --name-only {BEFORE} {SHA}").read().splitlines()
-          with open(os.environ["MANIFEST"], "r", encoding="utf-8") as f:
-              entries = yaml.safe_load(f).get("publish", [])
-          
-          for entry in entries:
-              path = entry.get("path")
-              out  = entry.get("out")
-              typ  = entry.get("type")
-              if any(cf == path or cf.startswith(f"{path}/") for cf in changed_files):
-                  pdf_out = os.path.join("publish", out)
-                  print(f"✔ Changes in {path} → creating {pdf_out}")
-                  if typ == "file":
-                      convert_file(path, pdf_out)
-                  elif typ == "folder":
-                      convert_folder(path, pdf_out)
-                  else:
-                      print(f"⚠ Unknown type '{typ}' — skipping.")
-              else:
-                  print(f"ℹ No changes in {path} → skipping.")
-          PY
+              dst.parent.mkdir(parents=True, exist_ok=True)
+              # Handle case-insensitive FS or collisions
+              if dst.exists() and src.resolve() != dst.resolve():
+                  # If content identical, just remove src after mv attempt
+                  try:
+                      subprocess.run(['git', 'rm', '-r', '--cached', str(dst)], check=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                  except Exception:
+                      pass
+              subprocess.run(['git', 'mv', str(src), str(dst)], check=False)
 
-      - name: Commit and push generated PDFs
-        if: steps.precheck.outputs.should_publish == 'true'
-        shell: bash
+          for root, dirs, files in os.walk(ROOT, topdown=True):
+              # prune directories
+              rel = Path(root).relative_to(ROOT)
+              if any(p.name in SKIP_DIRS for p in rel.parts):
+                  dirs[:] = []
+                  continue
+              # filter & normalize directory names first
+              for d in list(dirs):
+                  if d in SKIP_DIRS or d.startswith('.git'):
+                      dirs.remove(d)
+                      continue
+                  new = re.sub(r'[^a-z0-9.-]+', '-', d.lower()).strip('-')
+                  if new != d:
+                      safe_git_mv(Path(root)/d, Path(root)/new)
+                      # reflect rename in traversal
+                      dirs[dirs.index(d)] = new
+
+              # files
+              for name in files:
+                  if name.startswith('.') or name.endswith('.py'):
+                      continue
+                  new = re.sub(r'[^a-z0-9.-]+', '-', name.lower()).strip('-')
+                  if new != name:
+                      safe_git_mv(Path(root)/name, Path(root)/new)
+          PYTHON
+
+      - name: Ensure clean GitBook summary
         run: |
-          if [[ -n "$(git status --porcelain publish)" ]]; then
-            git config user.name  "github-actions[bot]"
+          python <<'PYTHON'
+          import json, re, os
+          from pathlib import Path
+          import subprocess
+          import sys
+
+          # --- helpers ---
+          def read_json(path: Path):
+              try:
+                  return json.loads(path.read_text(encoding='utf-8'))
+              except Exception:
+                  return {}
+
+          def first_h1(text: str):
+              for line in text.splitlines():
+                  if line.strip().startswith('# '):
+                      return line.strip()[2:].strip()
+              return None
+
+          def title_from_filename(p: Path):
+              name = p.stem
+              # Prefer natural words from kebab/underscore
+              name = re.sub(r'[-_]+', ' ', name)
+              name = re.sub(r'\s+', ' ', name).strip()
+              return name.title() if name else p.stem
+
+          def natural_key(s: str):
+              # for natural sorting: "file2" before "file10"
+              return [int(t) if t.isdigit() else t.lower() for t in re.split(r'(\d+)', s)]
+
+          # --- load book.json & paths ---
+          book = read_json(Path('book.json')) if Path('book.json').exists() else {}
+          root_dir = Path(book.get('root', '.')).resolve()
+          structure = book.get('structure', {})
+          summary_rel = structure.get('summary', 'summary.md')
+          summary_path = (root_dir / summary_rel).resolve()
+
+          # normalized skip sets
+          SKIP_DIRS = {'.git', '.github', 'node_modules', '__pycache__', '.venv', 'simulations'}
+          MD_EXT = {'.md'}
+
+          # --- collect tree ---
+          def md_files_in_dir(dir_path: Path):
+              files = [p for p in dir_path.iterdir() if p.is_file() and p.suffix.lower() in MD_EXT]
+              files = [p for p in files if p.resolve() != summary_path.resolve()]  # skip summary itself
+              # Prefer README.md first if present
+              readme = [p for p in files if p.name.lower() == 'readme.md']
+              others = sorted([p for p in files if p.name.lower() != 'readme.md'], key=lambda p: natural_key(p.name))
+              return (readme + others)
+
+          def child_dirs(dir_path: Path):
+              dirs = [p for p in dir_path.iterdir() if p.is_dir()]
+              dirs = [d for d in dirs if d.name not in SKIP_DIRS and not d.name.startswith('.')]
+              return sorted(dirs, key=lambda p: natural_key(p.name))
+
+          def rel_link(p: Path):
+              # POSIX style for markdown links
+              return str(p.relative_to(root_dir)).replace('\\','/')
+
+          def make_item_title(p: Path):
+              try:
+                  text = p.read_text(encoding='utf-8')
+              except Exception:
+                  text = ''
+              h = first_h1(text) or title_from_filename(p)
+              # sanitize brackets in titles
+              h = h.replace('[','(').replace(']',')')
+              return h
+
+          lines = ['# Summary', '']
+          
+          def emit_dir(dir_path: Path, level: int):
+              # directory header: link README if present; else plain title (not a link)
+              files = md_files_in_dir(dir_path)
+              readme = next((p for p in files if p.name.lower() == 'readme.md'), None)
+              if dir_path != root_dir:
+                  title = dir_path.name
+                  title = re.sub(r'[-_]+', ' ', title).strip().title()
+                  if readme:
+                      lines.append('  ' * level + f"* [{make_item_title(readme)}]({rel_link(readme)})")
+                  else:
+                      lines.append('  ' * level + f"* {title}")
+
+              # files (excluding README already handled)
+              for p in files:
+                  if p.name.lower() == 'readme.md' and dir_path != root_dir:
+                      continue
+                  if dir_path == root_dir and p.name.lower() == 'readme.md':
+                      # top-level README first
+                      lines.append('  ' * level + f"* [{make_item_title(p)}]({rel_link(p)})")
+                  elif p.name.lower() != 'readme.md':
+                      lines.append('  ' * (level + (0 if dir_path==root_dir else 1)) + f"* [{make_item_title(p)}]({rel_link(p)})")
+
+              # recurse into subdirs
+              for d in child_dirs(dir_path):
+                  emit_dir(d, level if dir_path==root_dir else level+1)
+
+          # Start: top-level README first, then others, then dirs
+          top_files = md_files_in_dir(root_dir)
+          top_readme = [p for p in top_files if p.name.lower() == 'readme.md']
+          top_others = [p for p in top_files if p.name.lower() != 'readme.md']
+
+          # Emit top-level README (if any)
+          for p in top_readme:
+              lines.append(f"* [{make_item_title(p)}]({rel_link(p)})")
+
+          # Emit other top-level files
+          for p in top_others:
+              lines.append(f"* [{make_item_title(p)}]({rel_link(p)})")
+
+          # Emit directories
+          for d in child_dirs(root_dir):
+              emit_dir(d, level=0)
+
+          new_content = "\n".join(lines).rstrip() + "\n"
+
+          # Ensure parent exists
+          summary_path.parent.mkdir(parents=True, exist_ok=True)
+          old_content = ''
+          if summary_path.exists():
+              try:
+                  old_content = summary_path.read_text(encoding='utf-8')
+              except Exception:
+                  old_content = ''
+
+          if old_content != new_content:
+              summary_path.write_text(new_content, encoding='utf-8')
+              subprocess.run(['git', 'add', str(summary_path)], check=False)
+              print("SUMMARY.MD UPDATED")
+          else:
+              print("SUMMARY.MD OK")
+
+          PYTHON
+
+      - name: Commit changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add publish
-            git commit -m "chore: selective publish → PDF (auto)"
+            git commit -m "chore: regenerate summary.md from book.json structure [skip ci]"
             git push
           else
-            echo "No changes in /publish — nothing to commit."
+            echo "SUMMARY.MD OK"
           fi
