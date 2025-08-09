@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.3.9
+version: 1.3.10
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.10
+    date: 2025-08-14
+    change: "Added safety scenario simulation utility to QA tools"
   - version: 1.3.9
     date: 2025-08-13
     change: "Introduced SceneModel and configuration flags for optional modules"
@@ -86,3 +89,10 @@ No external sources used.
 - `SceneModel` wraps `StationModel` together with this configuration and exposes enabled
   modules via `enabled_modules()`. The approach keeps the schema extensible for future
   sub-systems.
+
+## 1.6 Safety scenario QA
+
+An internal QA utility `simulate_safety_scenarios` checks documentation for
+emergency preparedness regarding fire, radiation and pressure loss. It flags
+missing evacuation routes or redundant systems to align the project with the
+Preamble and international safety standards.

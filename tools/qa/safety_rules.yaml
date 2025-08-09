@@ -1,0 +1,12 @@
+preamble:
+  section: "0.1 Preamble — Ethics & Security"
+  criteria:
+    - "QA-4: Safety Compliance"
+
+international_standards:
+  fire:
+    - "NFPA 130: Standard for Fixed Guideway Transit and Passenger Rail Systems"
+  radiation:
+    - "IAEA Safety Standards for Radiation Protection"
+  pressure_loss:
+    - "ISO 14620-1:2011 Space systems — Safety requirements"
