@@ -48,9 +48,9 @@ def check_completeness(document, template):
     missing = {}
 
     for key in template:
-        required = set(template.get(key, []))
+        required_list = template.get(key, [])
         present = set(document.get(key, []))
-        absent = sorted(required - present)
+        absent = [item for item in required_list if item not in present]
         if absent:
             missing[key] = absent
 
