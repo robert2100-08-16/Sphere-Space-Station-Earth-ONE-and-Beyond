@@ -1,6 +1,6 @@
 # Summary
 
-* [1. Documents](readme.md)
+* [The Sphere Space Station Earth ONE and Beyond Project](readme.md)
 * [0. Prologue – Ethics & Security](00-prologue-ethics-and-security/readme.md)
   * [0.1 Preamble Ethics And Security](00-prologue-ethics-and-security/0.1-preamble-ethics-and-security.md)
 * [1. Vision and Inception](01-vision-and-inception/readme.md)
