@@ -5,56 +5,205 @@ on:
     branches: [main]
 
 jobs:
-  rename:
+  rename-and-summary:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
       - name: Rename files to GitBook style
         run: |
           python <<'PYTHON'
-          import os, re, subprocess
-          for root, dirs, files in os.walk('.', topdown=False):
-              if root.startswith('./.git') or root.startswith('./simulations'):
+          import os, re, subprocess, shutil
+          from pathlib import Path
+
+          ROOT = Path('.').resolve()
+          SKIP_DIRS = {'.git', '.github', 'node_modules', '__pycache__', '.venv', 'simulations'}
+
+          def safe_git_mv(src: Path, dst: Path):
+              if src == dst:
+                  return
+              dst.parent.mkdir(parents=True, exist_ok=True)
+              # Handle case-insensitive FS or collisions
+              if dst.exists() and src.resolve() != dst.resolve():
+                  # If content identical, just remove src after mv attempt
+                  try:
+                      subprocess.run(['git', 'rm', '-r', '--cached', str(dst)], check=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                  except Exception:
+                      pass
+              subprocess.run(['git', 'mv', str(src), str(dst)], check=False)
+
+          for root, dirs, files in os.walk(ROOT, topdown=True):
+              # prune directories
+              rel = Path(root).relative_to(ROOT)
+              if any(p.name in SKIP_DIRS for p in rel.parts):
+                  dirs[:] = []
                   continue
-              for name in dirs + files:
-                  if name.startswith('.git') or name.endswith('.py'):
+              # filter & normalize directory names first
+              for d in list(dirs):
+                  if d in SKIP_DIRS or d.startswith('.git'):
+                      dirs.remove(d)
                       continue
-                  new = re.sub(r'[^a-z0-9.-]+', '-', name.lower())
+                  new = re.sub(r'[^a-z0-9.-]+', '-', d.lower()).strip('-')
+                  if new != d:
+                      safe_git_mv(Path(root)/d, Path(root)/new)
+                      # reflect rename in traversal
+                      dirs[dirs.index(d)] = new
+
+              # files
+              for name in files:
+                  if name.startswith('.') or name.endswith('.py'):
+                      continue
+                  new = re.sub(r'[^a-z0-9.-]+', '-', name.lower()).strip('-')
                   if new != name:
-                      subprocess.run(['git', 'mv', os.path.join(root, name), os.path.join(root, new)])
+                      safe_git_mv(Path(root)/name, Path(root)/new)
           PYTHON
-      - name: Ensure GitBook summary
+
+      - name: Ensure clean GitBook summary
         run: |
           python <<'PYTHON'
-          import json, pathlib, re, subprocess
-          with open('book.json') as f:
-              root = pathlib.Path(json.load(f)['root'])
-          summary = root / 'summary.md'
-          md_files = [p for p in root.rglob('*.md') if p.name.lower() != 'summary.md']
-          links = set()
-          if summary.exists():
-              content = summary.read_text()
-              links = set(re.findall(r'\(([^)]+)\)', content))
+          import json, re, os
+          from pathlib import Path
+          import subprocess
+          import sys
+
+          # --- helpers ---
+          def read_json(path: Path):
+              try:
+                  return json.loads(path.read_text(encoding='utf-8'))
+              except Exception:
+                  return {}
+
+          def first_h1(text: str):
+              for line in text.splitlines():
+                  if line.strip().startswith('# '):
+                      return line.strip()[2:].strip()
+              return None
+
+          def title_from_filename(p: Path):
+              name = p.stem
+              # Prefer natural words from kebab/underscore
+              name = re.sub(r'[-_]+', ' ', name)
+              name = re.sub(r'\s+', ' ', name).strip()
+              return name.title() if name else p.stem
+
+          def natural_key(s: str):
+              # for natural sorting: "file2" before "file10"
+              return [int(t) if t.isdigit() else t.lower() for t in re.split(r'(\d+)', s)]
+
+          # --- load book.json & paths ---
+          book = read_json(Path('book.json')) if Path('book.json').exists() else {}
+          root_dir = Path(book.get('root', '.')).resolve()
+          structure = book.get('structure', {})
+          summary_rel = structure.get('summary', 'summary.md')
+          summary_path = (root_dir / summary_rel).resolve()
+
+          # normalized skip sets
+          SKIP_DIRS = {'.git', '.github', 'node_modules', '__pycache__', '.venv', 'simulations'}
+          MD_EXT = {'.md'}
+
+          # --- collect tree ---
+          def md_files_in_dir(dir_path: Path):
+              files = [p for p in dir_path.iterdir() if p.is_file() and p.suffix.lower() in MD_EXT]
+              files = [p for p in files if p.resolve() != summary_path.resolve()]  # skip summary itself
+              # Prefer README.md first if present
+              readme = [p for p in files if p.name.lower() == 'readme.md']
+              others = sorted([p for p in files if p.name.lower() != 'readme.md'], key=lambda p: natural_key(p.name))
+              return (readme + others)
+
+          def child_dirs(dir_path: Path):
+              dirs = [p for p in dir_path.iterdir() if p.is_dir()]
+              dirs = [d for d in dirs if d.name not in SKIP_DIRS and not d.name.startswith('.')]
+              return sorted(dirs, key=lambda p: natural_key(p.name))
+
+          def rel_link(p: Path):
+              # POSIX style for markdown links
+              return str(p.relative_to(root_dir)).replace('\\','/')
+
+          def make_item_title(p: Path):
+              try:
+                  text = p.read_text(encoding='utf-8')
+              except Exception:
+                  text = ''
+              h = first_h1(text) or title_from_filename(p)
+              # sanitize brackets in titles
+              h = h.replace('[','(').replace(']',')')
+              return h
+
+          lines = ['# Summary', '']
+          
+          def emit_dir(dir_path: Path, level: int):
+              # directory header: link README if present; else plain title (not a link)
+              files = md_files_in_dir(dir_path)
+              readme = next((p for p in files if p.name.lower() == 'readme.md'), None)
+              if dir_path != root_dir:
+                  title = dir_path.name
+                  title = re.sub(r'[-_]+', ' ', title).strip().title()
+                  if readme:
+                      lines.append('  ' * level + f"* [{make_item_title(readme)}]({rel_link(readme)})")
+                  else:
+                      lines.append('  ' * level + f"* {title}")
+
+              # files (excluding README already handled)
+              for p in files:
+                  if p.name.lower() == 'readme.md' and dir_path != root_dir:
+                      continue
+                  if dir_path == root_dir and p.name.lower() == 'readme.md':
+                      # top-level README first
+                      lines.append('  ' * level + f"* [{make_item_title(p)}]({rel_link(p)})")
+                  elif p.name.lower() != 'readme.md':
+                      lines.append('  ' * (level + (0 if dir_path==root_dir else 1)) + f"* [{make_item_title(p)}]({rel_link(p)})")
+
+              # recurse into subdirs
+              for d in child_dirs(dir_path):
+                  emit_dir(d, level if dir_path==root_dir else level+1)
+
+          # Start: top-level README first, then others, then dirs
+          top_files = md_files_in_dir(root_dir)
+          top_readme = [p for p in top_files if p.name.lower() == 'readme.md']
+          top_others = [p for p in top_files if p.name.lower() != 'readme.md']
+
+          # Emit top-level README (if any)
+          for p in top_readme:
+              lines.append(f"* [{make_item_title(p)}]({rel_link(p)})")
+
+          # Emit other top-level files
+          for p in top_others:
+              lines.append(f"* [{make_item_title(p)}]({rel_link(p)})")
+
+          # Emit directories
+          for d in child_dirs(root_dir):
+              emit_dir(d, level=0)
+
+          new_content = "\n".join(lines).rstrip() + "\n"
+
+          # Ensure parent exists
+          summary_path.parent.mkdir(parents=True, exist_ok=True)
+          old_content = ''
+          if summary_path.exists():
+              try:
+                  old_content = summary_path.read_text(encoding='utf-8')
+              except Exception:
+                  old_content = ''
+
+          if old_content != new_content:
+              summary_path.write_text(new_content, encoding='utf-8')
+              subprocess.run(['git', 'add', str(summary_path)], check=False)
+              print("SUMMARY.MD UPDATED")
           else:
-              content = '# Summary\n\n'
-          missing = [p for p in md_files if str(p.relative_to(root)).replace('\\','/') not in links]
-          if not summary.exists() or missing:
-              text = content.rstrip() + ('\n' if content else '')
-              for p in missing:
-                  rel = str(p.relative_to(root)).replace('\\','/')
-                  title = p.stem.replace('-', ' ').title()
-                  text += f"* [{title}]({rel})\n"
-              summary.write_text(text)
-              subprocess.run(['git', 'add', str(summary)])
+              print("SUMMARY.MD OK")
+
           PYTHON
+
       - name: Commit changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git commit -am "chore: apply GitBook style updates [skip ci]"
+            git commit -m "chore: regenerate summary.md from book.json structure [skip ci]"
             git push
+          else
+            echo "SUMMARY.MD OK"
           fi
