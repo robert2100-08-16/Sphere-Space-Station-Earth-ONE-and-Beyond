@@ -38,7 +38,7 @@ jobs:
           for root, dirs, files in os.walk(ROOT, topdown=True):
               # prune directories
               rel = Path(root).relative_to(ROOT)
-              if any(p.name in SKIP_DIRS for p in rel.parts):
+              if any(p in SKIP_DIRS for p in rel.parts):
                   dirs[:] = []
                   continue
               # filter & normalize directory names first
