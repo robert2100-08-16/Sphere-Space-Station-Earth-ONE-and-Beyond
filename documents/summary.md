@@ -57,3 +57,4 @@ history:
     * [8.4.4 Appendix D: Sphere Space Station Earth ONE Executive Summries](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.4-appendix-d-Sphere-Space-Station-Earth-ONE-executive-summries)
 * [8.4.3 Appendix C Invitation To Participate Research Funding Engineering And Construction Partnership](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.3-appendix-c-invitation-to-participate-research-funding-engineering-and-construction-partnership.md)
 * [8.4.4 Appendix D Sphere Space Station Earth One Executive Summries](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.4-appendix-d-sphere-space-station-earth-one-executive-summries.md)
+* [7.3.2 Summary Of Single Source Of Truth To Gitbook](07-comprehensive-technical-documentation/7.3-change-management/7.3.2-summary-of-single-source-of-truth-to-gitbook.md)
