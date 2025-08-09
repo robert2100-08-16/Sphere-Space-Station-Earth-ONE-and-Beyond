@@ -2,6 +2,7 @@
 
 from .factual_accuracy import check_factual_accuracy
 from .consistency import find_contradictions
+from .traceability import link_sources
 
 
 def semantic_analysis(document):
@@ -12,6 +13,9 @@ def semantic_analysis(document):
 def run_pipeline(document):
     """Run QA pipeline on a document."""
     check_factual_accuracy(document)
+
+    # Link chapters to external sources and verify references
+    document["source_links"] = link_sources(document)
 
     # Consistency checks across chapters
     chapters = document.get("chapters") or []
