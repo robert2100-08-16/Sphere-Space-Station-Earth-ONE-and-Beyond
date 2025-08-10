@@ -79,7 +79,10 @@ def tag_issues(pre: dict, safety: dict) -> list[dict[str, str]]:
 
 def create_report(issues: list[dict[str, str]], output_dir: Path | None = None) -> Path:
     """Write a QA report with chapter references and categorization."""
-    output_dir = output_dir or Path("reports/qa")
+    output_dir = (
+        output_dir
+        or Path(__file__).resolve().parent.parent / "reports" / "qa"
+    )
     output_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.utcnow().strftime("%Y%m%d%H%M%S")
     report_path = output_dir / f"qa-report-{timestamp}.md"

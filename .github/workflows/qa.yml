@@ -4,15 +4,21 @@ on:
   push:
     paths:
       - '**/*.md'
-      - 'docs/**'
+      - 'tools/docs/**'
       - 'documents/**'
       - 'project/**'
+      - 'tools/reports/**'
+      - 'tools/logs/**'
+      - 'tools/tests/**'
   pull_request:
     paths:
       - '**/*.md'
-      - 'docs/**'
+      - 'tools/docs/**'
       - 'documents/**'
       - 'project/**'
+      - 'tools/reports/**'
+      - 'tools/logs/**'
+      - 'tools/tests/**'
 
 jobs:
   qa:
@@ -27,4 +33,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run QA pipeline
-        run: pytest tests/qa -q
+        run: |
+          PYTHONPATH=. pytest tools/tests/qa -q
