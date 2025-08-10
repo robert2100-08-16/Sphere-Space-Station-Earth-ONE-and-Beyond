@@ -35,6 +35,8 @@
   * [7.4 Research & Development (RD)](07-comprehensive-technical-documentation/7.4-research-development/readme.md)
     * [7.4.1 Sphere Station Simulator – Research Summary](07-comprehensive-technical-documentation/7.4-research-development/7.4.1-sphere-station-simulator-research-summary.md)
     * [7.4.2 Earth ONE Station: Orbit, Polar Docking, and Human Factors](07-comprehensive-technical-documentation/7.4-research-development/7.4.2-earth-one-station---orbit-polar-docking-and-human-factors.md)
+  * 7.5 Processes
+    * [7.5.1 Engineering Process (Coarse → Fine)](07-comprehensive-technical-documentation/7.5-processes/7.5.1-engineering-process.md)
 * [8. Glossary, Partners & Institutions, Legal Notices, and Overall Appendices](08-glossary-partners-institutions-legal-notices-and-overall-appendices/readme.md)
   * [8.1 Glossary](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.1-glossary.md)
   * [8.2 Partners & Institutions](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.2-partners-and-institutions.md)
