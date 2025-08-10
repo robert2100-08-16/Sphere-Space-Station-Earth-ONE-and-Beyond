@@ -19,5 +19,5 @@ result = run_pipeline("document.json", presentation_format="pitch")
 print(result["report_path"])
 ```
 
-Reports are written to `reports/qa/` with chapter references and
+Reports are written to `tools/reports/qa/` with chapter references and
 issue categories.

@@ -10,7 +10,7 @@ from typing import Dict, List
 # logging configuration
 # ---------------------------------------------------------------------------
 
-LOG_DIR = Path(__file__).resolve().parents[2] / "logs" / "safety"
+LOG_DIR = Path(__file__).resolve().parent.parent / "logs" / "safety"
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 LOG_FILE = LOG_DIR / "audit.log"
 

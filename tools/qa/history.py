@@ -8,7 +8,9 @@ from pathlib import Path
 from typing import List, Dict
 import shutil
 
-HISTORY_DIR = Path("reports/qa/history")
+HISTORY_DIR = (
+    Path(__file__).resolve().parent.parent / "reports" / "qa" / "history"
+)
 HISTORY_FILE = HISTORY_DIR / "history.json"
 
 
