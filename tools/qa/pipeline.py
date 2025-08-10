@@ -20,6 +20,7 @@ from typing import Any
 from .checklist import CHECKLISTS, check_completeness
 from .consistency import find_contradictions
 from .factual_accuracy import check_factual_accuracy
+from .history import record_release
 from .presentation import generate_pitch
 from .safety import simulate_safety_scenarios
 from .traceability import link_sources
@@ -125,6 +126,7 @@ def run_pipeline(
     issues = tag_issues(pre, safety)
     report_path = create_report(issues)
     review_message = review(report_path)
+    history_path = record_release(report_path, f"{len(issues)} issues")
 
     result = {
         "pre_check": pre,
@@ -133,6 +135,7 @@ def run_pipeline(
         "issues": issues,
         "report_path": str(report_path),
         "review": review_message,
+        "history": str(history_path),
     }
 
     if presentation_format == "pitch":
