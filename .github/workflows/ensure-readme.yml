@@ -1,0 +1,46 @@
+name: Ensure readme.md in every folder
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ensure-readmes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create missing readme.md files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          # Alle Verzeichnisse außer versteckten (./.git, .github, etc.)
+          # Root-Verzeichnis (.) bleibt enthalten.
+          created=0
+          while IFS= read -r -d '' dir; do
+            # Falls bereits README/readme existiert, überspringen
+            if [[ -e "$dir/README.md" || -e "$dir/readme.md" || -e "$dir/Readme.md" ]]; then
+              continue
+            fi
+            foldername="$(basename "$dir")"
+            printf '# %s\n' "$foldername" > "$dir/readme.md"
+            echo "created: $dir/readme.md"
+            created=$((created+1))
+          done < <(find . -type d -not -path '*/.*' -print0)
+
+          # Nur committen/pushen, wenn es Änderungen gab
+          if [[ $created -gt 0 ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore: add missing readme.md files [skip ci]"
+            git push
+          else
+            echo "No missing readme.md files found."
+          fi
