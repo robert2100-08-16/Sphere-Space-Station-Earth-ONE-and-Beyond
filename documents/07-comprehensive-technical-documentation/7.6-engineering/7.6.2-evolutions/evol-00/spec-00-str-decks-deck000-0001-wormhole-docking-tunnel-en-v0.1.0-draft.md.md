@@ -1,4 +1,4 @@
-#### SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v0.1.0-DRAFT 
+# SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v0.1.0-DRAFT 
 
 **The Engineering of DECK000 – The Wormhole**
 
@@ -8,13 +8,13 @@
 
 ---
 
-#### 7.6.2.1.1 Abstract
+## 1 Abstract
 
 DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube that runs straight through the station from the North pole to the South pole. In Evolution 1, the assembly is a 127 m long tube with an outer diameter of 22 m and a clear inner diameter of 20 m. The primary barrel is a silicon‑carbide (SiC) composite reinforced with steel or Inconel for toughness. Starting 3.5 m from the north polar end and repeating every 20 m along the axis, 10 m‑long Inconel docking‑ring subassemblies are installed and numbered sequentially (00, 01, 02 …) from North to South. Between docking rings, “window tube” segments provide outward viewing; each segment integrates rectangular window units of 4 m (axial) × 3 m (tall), built to the program’s space‑grade multilayer window specification (ALON/sapphire + fused silica + polycarbonate + borosilicate/cerium‑doped glass). The result is a micro‑g corridor (near the spin axis) enabling safe berthing, people/cargo transfer, observation, and emergency egress.
 
 ---
 
-#### 7.6.2.1.2 Description (Evolution 1 – Baseline Geometry & Materials)
+## 2 Description (Evolution 1 – Baseline Geometry & Materials)
 
 ### A. System Overview
 
@@ -103,7 +103,7 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
 
 ---
 
-#### 7.6.2.1.3 Forward Work (next revision)
+## 3 Forward Work (next revision)
 
 1. Complete pressure & docking load cases and size the barrel thickness and reinforcements.
 2. Human‑factors layout (window count/placement, handrail nets, signage).
