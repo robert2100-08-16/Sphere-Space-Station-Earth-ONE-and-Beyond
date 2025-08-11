@@ -44,7 +44,7 @@
       * [7.6.1.2 Guideline Document: The Evolution Principle](07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/7.6.1.2-guideline-document-the-evolution-principle.md)
     * [7.6.2-evolutions](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/readme.md)
       * [Current Evolution: (EVOLUTION 00 - The Beginning)(EVOL-00\readme.md)](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/current-evolution.md)
-      * [EVOLUTION 00 - The Beginning](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/readme.md)
+      * [EVOLUTION 00 — The Beginning](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/readme.md)
         * [SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v0.1.0-DRAFT](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/spec-00-str-decks-deck000-0001-wormhole-docking-tunnel-en-v0.1.0-draft.md.md)
     * [7.6.3 History](07-comprehensive-technical-documentation/7.6-engineering/7.6.3-history/readme.md)
 * [8. Glossary, Partners & Institutions, Legal Notices, and Overall Appendices](08-glossary-partners-institutions-legal-notices-and-overall-appendices/readme.md)
