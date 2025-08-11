@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.3.11
+version: 1.3.12
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.12
+    date: 2025-08-16
+    change: "Clarified EVOL-00 deck module wording and tagged EVOL-00-DECK000-v0.1.0"
   - version: 1.3.11
     date: 2025-08-15
     change: "Introduced EV0 deck module for axial tube geometry"
