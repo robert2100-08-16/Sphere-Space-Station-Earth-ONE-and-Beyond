@@ -1,1 +1,3 @@
-# [EVOLUTION 00 - The Beginning](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/EVOL-00/readme.md)
+# [EVOLUTION 00 - The Beginning](EVOL-00\readme.md)
+
+Direct link to the current EVOLUTION.
