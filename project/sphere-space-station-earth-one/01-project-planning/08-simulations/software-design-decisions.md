@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.3.10
+version: 1.3.11
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.11
+    date: 2025-08-15
+    change: "Introduced EV0 deck module for axial tube geometry"
   - version: 1.3.10
     date: 2025-08-14
     change: "Added safety scenario simulation utility to QA tools"
@@ -96,3 +99,7 @@ An internal QA utility `simulate_safety_scenarios` checks documentation for
 emergency preparedness regarding fire, radiation and pressure loss. It flags
 missing evacuation routes or redundant systems to align the project with the
 Preamble and international safety standards.
+
+## 1.7 Deck evolution modules
+
+- EV0 module generates DECK000 axial tube geometry and exports OBJ and CSV reports.
