@@ -60,7 +60,7 @@ jobs:
           for entry in entries:
               path = (entry or {}).get("path")
               out = (entry or {}).get("out")
-              typ = (entry or {}).get("type")              
+              typ = (entry or {}).get("type")
               if not path or not out or not typ:
                   print(f"⚠ Skipping invalid manifest entry: {entry}")
                   continue
@@ -110,10 +110,10 @@ jobs:
           mkdir -p publish
           python3 <<'PY'
           import os, subprocess, sys, tempfile, yaml, pathlib, json
-          
+
           subs = {"₀":"$_0$","₁":"$_1$","₂":"$_2$","₃":"$_3$","₄":"$_4$",
                   "₅":"$_5$","₆":"$_6$","₇":"$_7$","₈":"$_8$","₉":"$_9$"}
-          
+
           def normalize_md(text):
               return "".join(subs.get(ch, ch) for ch in text)
 
@@ -129,7 +129,7 @@ jobs:
               except Exception:
                   pass
               return None
-          
+
           def run_pandoc(md_path, pdf_out, add_toc=False, title=None):
               pathlib.Path(os.path.dirname(pdf_out)).mkdir(parents=True, exist_ok=True)
               cmd = [
@@ -148,7 +148,7 @@ jobs:
                   cmd.extend(["-V", f"title={title}"])
               print("→ Pandoc:", " ".join(cmd))
               subprocess.check_call(cmd)
-          
+
           def convert_file(md_file, pdf_out):
               with open(md_file, "r", encoding="utf-8") as f:
                   content = normalize_md(f.read())
@@ -159,7 +159,7 @@ jobs:
                   run_pandoc(tmp_md, pdf_out)
               finally:
                   os.unlink(tmp_md)
-          
+
           def extract_md_paths_from_summary(folder):
               summary_path = os.path.join(folder, "summary.md")
               if not os.path.exists(summary_path):
@@ -202,13 +202,13 @@ jobs:
                   run_pandoc(tmp_md, pdf_out, add_toc=True, title=title)
               finally:
                   os.unlink(tmp_md)
-          
+
           BEFORE = os.environ["BEFORE"]
           SHA = os.environ["GITHUB_SHA"]
           changed_files = os.popen(f"git diff --name-only {BEFORE} {SHA}").read().splitlines()
           with open(os.environ["MANIFEST"], "r", encoding="utf-8") as f:
               entries = yaml.safe_load(f).get("publish", [])
-          
+
           for entry in entries:
               path = entry.get("path")
               out  = entry.get("out")
@@ -235,6 +235,7 @@ jobs:
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add publish
             git commit -m "chore: selective publish → PDF (auto)"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
             git push
           else
             echo "No changes in /publish — nothing to commit."
