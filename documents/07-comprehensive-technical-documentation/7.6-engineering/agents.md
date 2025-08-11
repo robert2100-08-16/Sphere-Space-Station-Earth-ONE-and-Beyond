@@ -1,99 +1,99 @@
-# AGENTS.md (Arbeitsanweisungen & Verantwortlichkeiten)
+# AGENTS.md (Working Instructions & Responsibilities)
 
-> Dieses Kapitel kann 1:1 als `AGENTS.md` in das Repository übernommen werden.
+> This chapter can be adopted 1:1 as `AGENTS.md` in the repository.
 
-## A) Agenten & Kurz‑Aliasse
+## A) AI Agents & Short Aliases
 
-| Rolle / Name             | Alias          | Schwerpunkt                                      |
-| ------------------------ | -------------- | ------------------------------------------------ |
-| Engineer SGI Lina        | `@sgi-lina`    | Struktur & Integration (STR, ARCH)               |
-| Engineer Leo             | `@eng-leo`     | Feldtests, Kundenlösungen (OPS, TST)             |
-| Engineer Kai Nova        | `@eng-kai`     | Antrieb & Habitat (PROP, STR)                    |
-| Engineer Mara Flux       | `@eng-mara`    | Energie & Ressourcenflüsse (PWR, THM)            |
-| Engineer Elias Core      | `@eng-elias`   | Kernsysteme, Reaktor, Safety‑Arch (REACTOR, SAF) |
-| Economist Alethea Voss   | `@eco-alethea` | Markt/Trends (impact‑review)                     |
-| Economist Orion Hale     | `@eco-orion`   | Invest (impact‑review)                           |
-| CFO Terra Chen           | `@cfo-terra`   | Kosten, CAPEX/OPEX                               |
-| Trade Analyst Nova Reyes | `@trade-nova`  | Transport/Rohstoffe                              |
-| CEO Aris Vega            | `@ceo-aris`    | Vision, Policy‑Gate                              |
-| COO Liora Stern          | `@ops-lio`     | Betrieb, SOPs                                    |
-| CTO Jonas Frame          | `@cto-jonas`   | Technische Richtung, Gatekeeper                  |
-| CSO Mira Terra           | `@cso-mira`    | Nachhaltigkeit, Safety‑Policy                    |
+| Role / Name              | Alias          | Focus                                             | **Minimum AI Agent Capability (baseline)**                                                                                                                                        |
+| ------------------------ | -------------- | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Engineer SGI Lina        | `@sgi-lina`    | Structure & Integration (STR, ARCH)               | MSc/PhD Structural or Aerospace Eng; **Senior Systems Engineer**; PE-equivalent (or EU chartered) for structures; Cognitive **IQ-equiv ≥130**; **AI class ≥ ChatGPT 5 Thinking**. |
+| Engineer Leo             | `@eng-leo`     | Field Tests, Customer Solutions (OPS, TST)        | BSc/MSc Mech/EE/Mechatronics; **Senior Test/Field Engineer**; HW/SW integration & HIL test competency; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                      |
+| Engineer Kai Nova        | `@eng-kai`     | Propulsion & Habitat (PROP, STR)                  | MSc/PhD Aerospace/Propulsion; **Senior/Principal Propulsion Engineer**; rocket/EP modeling & safety margins; **IQ-equiv ≥130**; **AI class ≥ ChatGPT 5 Thinking**.                |
+| Engineer Mara Flux       | `@eng-mara`    | Power & Resource Flows (PWR, THM)                 | MSc Power Systems/Thermal Eng; **Senior Energy/Thermal Engineer**; heat-rejection & redundancy planning; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                    |
+| Engineer Elias Core      | `@eng-elias`   | Core Systems, Reactor, Safety-Arch (REACTOR, SAF) | MSc/PhD Nuclear or Safety Eng; **Principal Safety/Nuclear Engineer**; licensed/safety case authoring; **IQ-equiv ≥130**; **AI class ≥ ChatGPT 5 Thinking**.                       |
+| Economist Alethea Voss   | `@eco-alethea` | Markets/Trends (impact-review)                    | MSc/PhD Economics/Econometrics; **Senior Economist**; time-series/causal inference; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                                         |
+| Economist Orion Hale     | `@eco-orion`   | Investment (impact-review)                        | MSc Finance/Econ (or MBA+quant); **Senior Investment Strategist**; **CFA Level II+**; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                                       |
+| CFO Terra Chen           | `@cfo-terra`   | Cost, CAPEX/OPEX                                  | MBA/MA Finance; **CFO-level**; **CPA or CFA**; capital stack & project finance proficiency; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                                 |
+| Trade Analyst Nova Reyes | `@trade-nova`  | Transport/Raw Materials                           | MSc Supply Chain/Industrial Eng; **Senior Trade & Logistics Analyst**; OR & network modeling; **IQ-equiv ≥120**; **AI class ≥ ChatGPT 5 Thinking**.                               |
+| CEO Aris Vega            | `@ceo-aris`    | Vision, Policy Gate                               | MSc Eng or MBA; **Executive-level** strategy & governance; stakeholder diplomacy; **IQ-equiv ≥130**; **AI class ≥ ChatGPT 5 Thinking**.                                           |
+| COO Liora Stern          | `@ops-lio`     | Operations, SOPs                                  | MSc Industrial/Operations Eng; **Senior/VP Ops**; Lean Six Sigma **Black Belt**; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                                            |
+| CTO Jona Frame           | `@cto-jona`    | Technology Direction, Gatekeeper                  | PhD Systems/CS/Aerospace (or MSc + ≥10y); **Chief Architect**; INCOSE/CSEP-level systems practice; **IQ-equiv ≥130**; **AI class ≥ ChatGPT 5 Thinking**.                          |
+| CSO Mira Terra           | `@cso-mira`    | Sustainability, Safety Policy                     | MSc/PhD Environmental Science or Safety Eng; **Senior/Principal**; CSP/ISO-14001 expertise; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                                 |
 
-> **Erweiterbar:** Neue Agenten/Teams via RFC mit Alias‑Def.
+> **Extensible:** New agents/teams via RFC with alias definition.
 
-## B) Ownership‑Modell
+## B) Ownership Model
 
-Jedes Dokument hat **owner** (DRI) und **reviewers** im Front‑Matter.
+Every document has **owner** (DRI) and **reviewers** in the front matter.
 
-* **Owner‑Pflichten:** Inhaltliche Korrektheit, Pflege von Links (RFC/ADR/TST), Einhaltung der Konvention.
-* **Reviewer‑Pflichten:** Fachprüfung (Disziplin), Konsistenz zu Architektur/ICD, Risiken/Safety.
+* **Owner duties:** Content correctness; upkeep of links (RFC/ADR/TST); adherence to conventions.
+* **Reviewer duties:** Discipline check; consistency with architecture/ICD; risks/safety.
 
-**Minimal‑Reviews pro DOC‑Typ:**
+**Minimum reviews by DOC type:**
 
-* **SPEC/SRS/ICD/SAF/HAZ:** mind. 2 Reviews – davon **1× fachlich**, **1× SAF/Arch** (je nach Thema `@eng-elias` oder `@cso-mira` bzw. `@cto-jonas`).
-* **ADR:** mind. 1 Arch‑Review (`@cto-jonas` oder `@sgi-lina`).
-* **RFC:** mind. 2 Reviews (Fach + Arch/Safety). Entscheid wird protokolliert.
-* **TST:** mind. 1 Fach‑Review (betroffene Disziplin) + 1 OPS (`@ops-lio`).
+* **SPEC/SRS/ICD/SAF/HAZ:** at least **2 reviews** — **1× discipline**, **1× SAF/Arch** (topic-dependent `@eng-elias` or `@cso-mira` or `@cto-jona`).
+* **ADR:** at least **1** architecture review (`@cto-jona` or `@sgi-lina`).
+* **RFC:** at least **2** reviews (Discipline + Arch/Safety). Decision is recorded.
+* **TST:** at least **1** discipline review (affected field) + 1 OPS (`@ops-lio`).
 
-## C) Arbeitsabläufe
+## C) Workflows
 
-1. **Issue/Ticket** anlegen (Problem, Ziel, Scope, Zugehörigkeit DOC/DISC/SYS/DECK).
-2. **RFC** schreiben, wenn Architektur/Schnittstellen betroffen sind.
-3. **Dokument anlegen/ändern** (Namensschema + Front‑Matter).
-4. **PR erstellen** mit Template (siehe unten).
-5. **Reviews & Checks** (Lint, Links, Tabellen, Einheiten).
-6. **Freigabe:** Merge + Statuswechsel auf **APPROVED**; SSOT‑Verweis aktualisieren.
-7. **Ablösung:** Vorgänger nach `7.6.1-history/` verschieben; `supersedes/superseded_by` pflegen.
+1. Create **issue/ticket** (problem, goal, scope, mapping to DOC/DISC/SYS/DECK).
+2. Write **RFC** when architecture/interfaces are impacted.
+3. **Create/change document** (naming scheme + front matter).
+4. Open **PR** with template (see below).
+5. **Reviews & checks** (lint, links, tables, units).
+6. **Approval:** merge + set status to **APPROVED**; update SSOT reference.
+7. **Sunset:** move predecessor to `7.6.1-history/`; maintain `supersedes/superseded_by`.
 
-## D) Commit‑/PR‑Konventionen
+## D) Commit / PR Conventions
 
-**Commit‑Prefix:** `[<DOC>][<DISC>][<SYS>][<DECK>]`
-**PR‑Titel:** identisch.
+**Commit prefix:** `[<DOC>][<DISC>][<SYS>][<DECK>]`
+**PR title:** identical.
 **Labels:** `disc/STR`, `sys/REACTOR`, `deck/DECK015`, `doc/SPEC`, `state/REVIEW`, `rfc/2025-0007`.
 
-**PR‑Template (Markdown):**
+**PR template (Markdown):**
 
 ```markdown
 ### Why
-(Bezug zum Issue/RFC, Motivation)
+(Link to Issue/RFC, motivation)
 
 ### What
-(Kernänderungen, betroffene Dateien)
+(Core changes, affected files)
 
 ### Impact
-(Backwards Compatibility, Risiken, Migration)
+(Backwards compatibility, risks, migration)
 
 ### Verification
-(Tests/Simulationen/Prüfungen, Verweise TST‑IDs)
+(Tests/simulations/inspections, TST IDs)
 
 ### Links
 RFC/ADR/CR/Issues
 
 ### Checklist
-- [ ] Namensschema & Front‑Matter korrekt
-- [ ] Tabellen/Abbildungen nummeriert & referenziert
-- [ ] Einheiten (SI) konsistent
-- [ ] RFC/ADR/TST verlinkt
-- [ ] Reviews angefragt (min. 2 bei SPEC/ICD/SAF/HAZ)
+- [ ] Naming scheme & front matter correct
+- [ ] Tables/figures numbered & referenced
+- [ ] Units (SI) consistent
+- [ ] RFC/ADR/TST linked
+- [ ] Reviews requested (min. 2 for SPEC/ICD/SAF/HAZ)
 ```
 
 ## E) Quality Gates
 
-* **Linting:** CI prüft Dateinamen, Front‑Matter‑Felder, erlaubte Codes (DISC/SYS/DECK), SemVer‑Format.
-* **Blocker:** fehlende Reviews, kaputte Links, falsches SemVer, fehlende `supersedes`‑Pflege.
+* **Linting:** CI checks filenames, front-matter fields, allowed codes (DISC/SYS/DECK), SemVer format.
+* **Blockers:** missing reviews, broken links, wrong SemVer, missing `supersedes` maintenance.
 
-## F) Eskalation & Entscheid
+## F) Escalation & Decision
 
-* Konflikte zwischen Disziplinen: Moderation durch `@cto-jonas` (Architektur) + `@cso-mira` (Nachhaltigkeit/Safety).
-* Zeitkritisch/sicherheitskritisch: Ad‑hoc‑Board (`@cto-jonas`, `@eng-elias`, `@cso-mira`, Owner).
+* Cross-discipline conflicts: moderation by `@cto-jonas` (architecture) + `@cso-mira` (sustainability/safety).
+* Time-critical/safety-critical: ad-hoc board (`@cto-jonas`, `@eng-elias`, `@cso-mira`, Owner).
 
-## G) Kurz‑Cheatsheet
+## G) Quick Cheat Sheet
 
-* **Neues SPEC?** → Dateiname nach Schema, YAML füllen, RFC verlinken, 2 Reviews einholen.
-* **Kleine Korrektur?** → PATCH‑Bump; bei Bedeutungsänderung MINOR/MAJOR.
-* **Doc ersetzt?** → neues Doc **MAJOR** oder neue `EVOL`, `supersedes`/`superseded_by` pflegen, Vorgänger in `history/`.
+* **New SPEC?** → Name per scheme, fill YAML, link RFC, obtain **2** reviews.
+* **Small fix?** → **PATCH** bump; for semantic change use **MINOR/MAJOR**.
+* **Doc replaced?** → new doc **MAJOR** or new `EVOL`; maintain `supersedes/superseded_by`; move predecessor to `history/`.
 
 ---
 
-*Ende des Dokuments.*
+*End of document.*

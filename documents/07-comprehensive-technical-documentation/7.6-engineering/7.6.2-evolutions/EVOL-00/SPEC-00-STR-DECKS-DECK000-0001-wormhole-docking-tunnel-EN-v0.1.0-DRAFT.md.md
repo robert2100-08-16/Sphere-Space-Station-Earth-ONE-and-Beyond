@@ -1,4 +1,6 @@
-#### ENG-00-00-DECKS-000 Engineering of DECK000 – The Wormhole
+#### SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v0.1.0-DRAFT 
+
+**The Engineering of DECK000 – The Wormhole**
 
 **Document status:** Draft (Evolution 1 – Baseline)
 **Date:** 2025‑08‑10
