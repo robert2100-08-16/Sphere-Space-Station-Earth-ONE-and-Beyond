@@ -2714,6 +2714,1510 @@ Earth ONE combines innovative orbital and docking strategies with human-centered
 
 \newpage
 
+## 7.5 Processes
+
+
+\newpage
+
+### 7.5.1 Engineering Process (Coarse → Fine)
+
+**Purpose.** Establish a clear, auditable, and scalable process to design, build, verify, operate, and evolve the Sphere Space Station Earth ONE. The guiding principle is **coarse first, then finer**—we start broad to frame the whole system, then iteratively refine down to parts, interfaces, and procedures until the system is flight-ready and maintainable.
+
+---
+
+#### 7.5.1.1 Foundations & Guardrails
+
+* **Ethics, Safety, Transparency.** Adhere to project preamble; document every safety-critical decision; keep artifacts auditable.
+* **Single Source of Truth (SSOT).** All specs, models, decisions, and approvals are maintained in the project’s documentation space; changes only via controlled requests.
+* **Configuration Management.** Version every artifact (requirements, CAD, code, models); trace from requirement → design → test → result.
+* **Standards.** Apply MBSE (SysML/UML), ECSS/NASA-SE handbooks where applicable, RAMS practices, FMEA/FTA for hazards, ICD discipline for interfaces.
+
+---
+
+#### 7.5.1.2 Coarse Layer — Vision to System Concept
+
+**Objective.** Align on what we’re building and why; set bounding boxes.
+
+**Core outputs.**
+
+* Mission Objectives & Success Criteria (primary, secondary, stretch).
+* System Concept of Operations (ConOps) incl. orbit, spin, docking, traffic, crew flows, emergency philosophy.
+* Top-Level Requirements (TLRs): performance, capacity (\~700 ppl), safety, sustainability, cost, schedule.
+* Initial Architecture: segment breakdown (Structure, Power/Thermal, Life Support, Avionics/Comms, Attitude/Propulsion, Safety, Ops/Logistics).
+* **LoD Levels (fidelity ladder):**
+
+  * **LoD-0:** Back-of-envelope sizing, mass/power/heat budgets, first feasibility deltas.
+  * **LoD-1:** Analytic models per discipline; strawman interfaces.
+
+**Gate: SRR (System Requirements Review).** Approve TLRs, ConOps, initial budgets, risk register v1.
+
+---
+
+#### 7.5.1.3 System Architecture & Trade Studies (Refinement #1)
+
+**Objective.** Choose the big rocks; prove feasibility with numbers.
+
+**Activities.**
+
+* MBSE model (SysML) with functional, logical, and physical views.
+* Trades: reactor vs microreactor mixes; radiator geometry; deck gravity bands; docking topology; shielding options; escape system variants.
+* Interfaces: draft ICDs between segments (mechanical, thermal, electrical, data, fluid).
+* Preliminary Safety Assessment: hazard tree, fault containment regions, safe states, crew survival time budgets.
+* Cost & Schedule envelopes; ops concept for assembly and resupply.
+
+**Outputs.** Updated mass/power/thermal/radiation budgets; ICD set v0.1; hazard log v0.1; ops-timeline sketch.
+
+**Gate: SDR/Architecture Review.** Approve chosen architecture and key trades.
+
+---
+
+#### 7.5.1.4 Preliminary Design (Refinement #2)
+
+**Objective.** Turn architecture into validated preliminary designs per subsystem.
+
+**Activities.**
+
+* Subsystem PDRs (Structure & Decks; Power & Thermal; Life Support; Avionics/Comms; Attitude & Propulsion; Safety & Evac; Ground & Ops).
+* Model maturation to **LoD-2:** coupled analyses (rotational dynamics ↔ structure; heat ↔ power; ECLSS ↔ crew loads).
+* Digital Twin v1 (simulation backbone) for end-to-end performance runs.
+* Preliminary test plans (qualification/acceptance); verification cross-matrix (req ↔ test/analysis/inspection/demo).
+
+**Outputs.** Subsystem specs v1.0, ICDs v0.5, risk register v2, verification plan v1, draft manufacturing plans.
+
+**Gate: PDR.** Converged preliminary design; cost/schedule re-baseline; go/no-go to detailed design.
+
+---
+
+#### 7.5.1.5 Detailed Design & Build Readiness (Refinement #3)
+
+**Objective.** Lock drawings, parts, and processes; prove producibility.
+
+**Activities.**
+
+* Detailed CAD & drawings; tolerances; materials/finishes; process sheets.
+* Parts lists/BOMs; long-lead procurement; supplier qualification.
+* Software design to code complete for flight/ground; ICDs finalized.
+* Design for Assembly/Integration/Service (DFx); human factors layouts for high‑g and 1g decks.
+* Safety: FMEAs to item level; red-team reviews; evacuation and fire suppression design finalized.
+* Model maturation to **LoD-3:** integrated multi-physics models; HIL benches for critical loops (ECLSS, power, guidance).
+
+**Outputs.**
+
+* Released drawings (RFD/RFW processes ready), ICDs v1.0, work instructions, inspection plans, software CI/CD pipelines.
+
+**Gate: CDR (Critical Design Review).** Design is buildable, safe, and testable.
+
+---
+
+#### 7.5.1.6 Integration, Verification & Validation (V\&V)
+
+**Objective.** Prove the system meets requirements and is flightworthy.
+
+**Build tiers.**
+
+* **EM/Breadboards:** early risk retirement.
+* **QM (Qualification Models):** to limits and beyond (thermal‑vac, vibration, EMI/EMC, radiation/SEU).
+* **FM (Flight Models):** acceptance test regime; traceability to QMs.
+
+**Verification methods.** Test, Analysis, Inspection, Demonstration (TAID). Maintain a closed-loop **Verification Matrix**.
+
+**System-level.** End‑to‑end tests on spin rigs; emergency drills; power/thermal load shedding; fault injection; crew-in-the-loop sims.
+
+**Gates.**
+
+* **TRR (Test Readiness Review)** → start formal test.
+* **QR (Qualification Review)** → qual complete.
+* **FAR (Flight Acceptance Review)** → flight approve.
+
+---
+
+#### 7.5.1.7 Launch, Assembly & Commissioning
+
+**Objective.** Safely deploy, assemble, spin-up, and commission the station.
+
+**Activities.**
+
+* Launch campaign & on‑orbit assembly scripts; robotics tools; alignment & metrology.
+* Incremental spin-up with telemetry guardrails; mode management & hold points.
+* Commissioning tests: ECLSS stability, power/thermal steady-state, crew habitat checks, docking rehearsals, evacuation drills.
+
+**Gate: ORR (Operations Readiness Review).** Authorize nominal operations.
+
+---
+
+#### 7.5.1.8 Operations, Maintenance & Evolution (Refinement #4+)
+
+**Objective.** Keep it safe, efficient, and improving.
+
+**Practices.**
+
+* Reliability engineering (RCM), predictive maintenance (vibration/thermal analytics), spare strategy.
+* Change management: ECR/ECO workflow; controlled rollouts; regression V\&V.
+* Post‑flight/ops data into digital twin for continuous calibration.
+* Periodic Safety Reviews; audit trails; incident investigation playbooks.
+
+**Gate: FRR (Flight/Operations Readiness for upgrades)** per upgrade wave.
+
+---
+
+#### 7.5.1.9 Cross‑Cutting Disciplines & Checklists
+
+**Risk Management.** Identify → assess → mitigate; keep burn‑down visible.
+
+**Human Systems Integration.** Habitability, workload, health (radiation, rotation adaptation), emergency egress time.
+
+**Sustainability.** Closed loops (air, water, waste), energy efficiency, recycling; environmental compliance.
+
+**Security & Resilience.** Cybersecurity, physical security, fault tolerance, degraded-mode operations.
+
+**Compliance & Legal.** Space law, export control, reactor licensing, debris mitigation.
+
+**Cost & Schedule Control.** Earned value, critical path, contingency management.
+
+---
+
+#### 7.5.1.10 Interface & Documentation Discipline
+
+* **ICDs:** mechanical, thermal, electrical, data, fluid; unique IDs; auto‑validation checks.
+* **Design Books:** one per subsystem (requirements, rationale, calcs, margins, tests, as‑built).
+* **Review Datasets:** frozen snapshots at SRR/SDR/PDR/CDR/TRR/ORR/FAR; archived in SSOT.
+
+---
+
+#### 7.5.1.11 Levels of Detail (LoD) Summary (Coarse → Fine)
+
+* **LoD‑0:** Concept sizing; 10–20% margins; feasibility only.
+* **LoD‑1:** Discipline analytics; key trades; preliminary ICDs.
+* **LoD‑2:** Coupled subsystem models; preliminary test plans.
+* **LoD‑3:** Integrated models; HIL benches; detailed drawings.
+* **LoD‑4:** Qualification/acceptance results; as‑built configs.
+* **LoD‑5:** In‑service telemetry‑calibrated models; ops baselines.
+
+---
+
+#### 7.5.1.12 Reviews (Quality Gates) — At a Glance
+
+* **SRR** → requirements & ConOps approved.
+* **SDR/AR** → architecture frozen.
+* **PDR** → preliminary design mature.
+* **CDR** → detailed design releasable.
+* **TRR** → test campaign ready.
+* **QR/FAR** → qualified & flight‑accepted.
+* **ORR** → operations authorized.
+
+---
+
+#### 7.5.1.13 Minimal Template Set (Starter Kit)
+
+* Mission Objectives Sheet • ConOps Canvas • TLR List • Risk Register • Architecture Block Diagram • Budget Sheets (mass/power/thermal) • Trade Study Template • ICD Template • Verification Matrix • Test Plan Template • Safety Case Outline • Review Checklist Pack (SRR→ORR) • Change Request (ECR/ECO) forms.
+
+---
+
+#### 7.5.1.14 Success Metrics
+
+* Technical: margins met, fault tolerance, RAMS KPIs.
+* Programmatic: milestone hit rate, variance ≤ thresholds.
+* Safety: zero loss‑of‑life incidents; risk exposure within limits.
+* Sustainability: recycling efficiencies, energy intensity, waste KPIs.
+* Operations: uptime, mean time to repair, anomaly closure time.
+
+---
+
+*This document is living. All edits proceed via change control in the SSOT with full traceability from requirement to verification and operational evidence.*
+
+---
+
+#### 7.5.1.15 Appendices
+
+## Appendix A — Engineering Glossary (Detailed)
+
+*Scope.* This glossary collects core terms used throughout the engineering process for Sphere Space Station Earth ONE. It follows an alphabetical order. Cross‑references are indicated with arrows (→). See also the sections **Reviews**, **Levels of Detail**, **Interface & Documentation Discipline**, and **V\&V** in this document.
+
+### A
+
+* **Acceptance Test (AT).** Formal test performed on a Flight Model (FM) to show it meets acceptance criteria before delivery/launch. (→ Qualification Test, FAR)
+* **Acceptance Review (FAR).** Flight Acceptance Review; gate confirming that hardware/software is accepted for flight. (→ Reviews)
+* **AIT (Assembly, Integration & Test).** End‑to‑end process of assembling parts, integrating subsystems, and testing at each tier. (→ V\&V)
+* **All‑Up Test.** System test with all subsystems active in mission‑like configuration.
+* **Anomaly.** Any unexpected behavior, result, or condition requiring triage, root‑cause analysis, and corrective action. (→ NCR, MRB)
+* **As‑Built / As‑Designed / As‑Run.** Frozen configurations: manufactured/installed state; original design baseline; actual procedures executed. Used for traceability.
+* **Avionics.** Spacecraft electronics for command, data handling, guidance, navigation, and control.
+
+### B
+
+* **Baseline.** The authoritative, controlled definition of a configuration or requirement set at a point in time. Changes require approval. (→ CCB)
+* **BOM (Bill of Materials).** Hierarchical list of all items needed to manufacture and assemble a product, with part numbers and revisions.
+* **Breadboard (EM).** Early experimental hardware (Engineering Model) used to validate principles; not flight‑like in form or finish. (→ QM, FM)
+* **Budget (Mass/Power/Thermal/Radiation).** Allocated resources per subsystem with margins; tracked from early sizing through operations.
+* **Burn‑Down Chart.** Visual tracking of risk or work remaining versus time; used for risk retirement and schedule focus.
+
+### C
+
+* **CBE (Current Best Estimate).** The latest realistic estimate of a parameter before margin; paired with growth allowance. (→ Margin)
+* **CCB (Change Control Board).** Authority that reviews and approves changes to baselines, ICDs, and requirements. (→ ECR/ECO)
+* **CDR (Critical Design Review).** Gate confirming detailed design is producible, testable, and safe. (→ Reviews)
+* **Commissioning.** Post‑assembly activation and calibration to transition to nominal operations. (→ ORR)
+* **Common‑Mode Failure.** A single cause leading to multiple failures simultaneously, often violating redundancy assumptions.
+* **ConOps (Concept of Operations).** Narrative of how the system is used over its life cycle—modes, users, environments, and scenarios. (→ SRR)
+* **Configuration Management (CM).** Governance and tooling for identifying, controlling, tracking, and auditing all configuration items.
+* **Contingency Mode.** Predefined degraded mode to preserve safety and assets when nominal performance is not possible. (→ Safe State)
+* **Coriolis Effects.** Apparent forces in rotating frames affecting crew perception and fluid flows in spin gravity habitats.
+* **COTS (Commercial Off‑The‑Shelf).** Non‑custom components procured as‑is; usually require environment qualification.
+* **Crew Survival Time (CST).** Minimum guaranteed time for crew survival after a critical failure, given emergency provisions.
+* **Critical Item List (CIL).** Catalog of safety‑critical parts and processes requiring special controls.
+* **Critical Path.** The sequence of tasks that determines the project’s minimum schedule; any delay here delays the whole.
+
+### D
+
+* **Datum (Mechanical).** Reference feature used for locating and aligning parts during inspection and assembly.
+* **DFx (Design for X).** Design for Assembly/Integration/Service/Manufacture/Safety; methods to reduce cost and risk. (→ AIT)
+* **Digital Twin.** High‑fidelity, continuously updated model mirroring the as‑built system using telemetry and test data. (→ V\&V)
+* **Deviation / Waiver (RFD/RFW).** Formal permission to depart from a requirement (waiver) or from the design during build (deviation). (→ CCB)
+* **Degrees of Freedom (DoF).** Independent parameters defining motion or state of a system.
+* **Docking Envelope.** Spatial/kinematic limits and alignment tolerances for capture and berthing operations.
+* **Downmass / Upmass.** Mass returned from orbit / mass launched to orbit; key logistics constraints.
+
+### E
+
+* **ECLSS (Environmental Control and Life Support System).** Air, water, waste, thermal comfort, and pressure control systems for crewed habitats.
+* **ECO / ECR.** Engineering Change Order / Request; proposal and approval workflow for modifying baselines. (→ CCB)
+* **EM (Engineering Model).** Early hardware used for functional trials; not qualified for flight. (→ Breadboard, QM, FM)
+* **EMI/EMC.** Electromagnetic Interference / Compatibility; design and test to ensure mutual non‑interference. (→ Qualification)
+* **End‑to‑End Test.** System test from stimulus to response across all relevant interfaces and modes.
+* **Evacuation Time.** Maximum allowed time to reach safe refuge or escape vehicle from any point in the habitat. (→ Human Systems Integration)
+
+### F
+
+* **FAI (First Article Inspection).** Complete verification that the first produced unit meets all drawing and spec requirements.
+* **FAR (Flight Acceptance Review).** Gate approving flight readiness of production units, closing open actions and NCRs. (→ Acceptance Test)
+* **Fault Containment Region (FCR).** Architectural boundary within which faults are isolated to prevent system‑wide propagation. (→ FDIR)
+* **FDIR (Fault Detection, Isolation & Recovery).** Automated and procedural mechanisms to detect, locate, and recover from faults.
+* **FMEA (Failure Modes & Effects Analysis).** Bottom‑up hazard analysis identifying failure modes, effects, and mitigations. (→ FTA)
+* **FM (Flight Model).** The unit intended to fly, built to flight standards and passing acceptance tests. (→ QM)
+* **FRR (Flight/Operations Readiness Review).** Gate authorizing a specific operation or mission phase. (→ ORR)
+* **FTA (Fault Tree Analysis).** Top‑down analysis modeling combinations of faults that lead to hazards or top events.
+
+### G
+
+* **G‑Level / Partial‑g.** Effective gravity from rotation at a given deck radius and spin rate; defines human factors constraints. (→ Spin Gravity)
+* **GCR (Galactic Cosmic Rays).** High‑energy background radiation in deep space; key driver for shielding design. (→ SPE)
+* **Gate (Quality Gate).** Formal milestone with entry/exit criteria (SRR, PDR, CDR, TRR, QR, FAR, ORR). (→ Reviews)
+* **GSE (Ground Support Equipment).** Non‑flight equipment used to build, test, and operate flight hardware on ground.
+* **Growth Allowance.** Planned margin to accommodate expected mass/power increases as designs mature. (→ CBE, Margin)
+
+### H
+
+* **Hazard Log.** Controlled list of hazards, causes, mitigations, verification, and status across the lifecycle. (→ Safety Case)
+* **HIL (Hardware‑in‑the‑Loop).** Test setup coupling real hardware with simulated environments for closed‑loop verification. (→ SIL, MIL)
+* **Hold Point.** A planned pause in a procedure requiring explicit authorization to proceed; used in critical operations.
+* **Human‑Rating.** Meeting stringent safety and reliability criteria for crewed missions.
+* **Human Systems Integration (HSI).** Integration of human factors across design—workload, habitability, health, and emergency egress.
+
+### I
+
+* **ICD (Interface Control Document).** Controlled specification of all mechanical, electrical, thermal, data, and fluid interfaces. (→ ICWG)
+* **Incident.** Event that disrupts nominal operations; may or may not cause damage. (→ Anomaly, Mishap)
+* **Ingress / Egress.** Entry to and exit from zones, vehicles, or modules; must meet timing and clearance requirements. (→ Evacuation Time)
+* **ICWG (Interface Control Working Group).** Cross‑discipline forum that authors and maintains ICDs under change control.
+* **Inspection.** Verification by measurement, visual checks, or instrumented methods against drawings and specs.
+* **IPT (Integrated Product Team).** Multidisciplinary team responsible for a product or subsystem across its lifecycle.
+
+### J
+
+* **Jitter.** Small, rapid variations in signal, pointing, or motion that can degrade performance; controlled by design and damping.
+
+### K
+
+* **KPI (Key Performance Indicator).** Quantified measure reflecting progress or performance in technical or programmatic domains.
+
+### L
+
+* **Launch Campaign.** Coordinated sequence of pre‑launch activities including rehearsals, fueling, and integration with the launch vehicle.
+* **LBB (Leak‑Before‑Burst).** Design philosophy ensuring a detectable leak precedes catastrophic rupture. (→ Safety Case)
+* **Level of Detail (LoD).** Fidelity ladder for models and designs from coarse (LoD‑0) to in‑service baselines (LoD‑5). (→ Levels of Detail)
+* **Life‑Limited Part (LLP).** Part with a certified service life after which it must be removed or overhauled.
+* **Lockstep Redundancy.** Parallel identical processors/components operating in sync for fault detection and voting. (→ Redundancy)
+
+### M
+
+* **Margin.** Performance headroom carried to account for uncertainty and growth; tracked and protected at every gate. (→ CBE)
+* **MBSE (Model‑Based Systems Engineering).** Formalized application of models to support requirements, design, analysis, and V\&V. (→ SysML)
+* **Metrology.** Measurement science applied to alignment, geometry, and tolerances during AIT.
+* **MIL / SIL.** Model‑in‑the‑Loop and Software‑in‑the‑Loop test stages before HIL. (→ HIL)
+* **Mishap / Near‑Miss.** An accident with damage/injury / a narrowly avoided mishap; both are reportable with corrective actions.
+* **MRB (Material Review Board).** Authority to disposition non‑conformances (use‑as‑is, rework, repair, scrap). (→ NCR)
+* **MTBF / MTTR / Availability.** Mean time between failures; mean time to repair; fraction of time system is operational.
+* **Mode (Nominal/Degraded/Safe).** Discrete configurations governing behavior, protections, and authority limits. (→ Safe State)
+
+### N
+
+* **NCR (Non‑Conformance Report).** Record of deviation from requirements/specs discovered in build or test; triggers MRB action.
+* **Nominal.** As planned and expected, within specified tolerances.
+* **N+1 Redundancy.** Having one more unit than required for function to tolerate a single failure. (→ Redundancy)
+
+### O
+
+* **ORR (Operations Readiness Review).** Gate authorizing routine operations after commissioning. (→ Reviews)
+* **Operations Concept.** See **ConOps**.
+* **Ops Handbook.** Authoritative procedures, flight rules, and mode definitions for operators and crew.
+* **Outgassing.** Release of gases from materials in vacuum; managed via bake‑out and materials selection.
+
+### P
+
+* **PDR (Preliminary Design Review).** Gate confirming the design meets requirements at preliminary maturity. (→ Reviews)
+* **PFM (Protoflight Model).** Flight‑representative unit used for both qualification‑like and acceptance‑like testing under combined regimes.
+* **Power/Thermal Balance.** Condition where generated power and rejected heat meet steady‑state limits across modes. (→ Budgets)
+* **Precession / Nutation.** Slow and oscillatory changes in spin axis orientation affecting pointing and g‑uniformity. (→ Rotational Dynamics)
+* **Predictive Maintenance.** Maintenance scheduled based on condition monitoring (vibration, temperature) rather than fixed intervals. (→ RCM)
+* **Protocol (Telemetry/Commands).** Defined messaging structures and link layers used for commanding and data return.
+
+### Q
+
+* **Qualification (Qualification Test).** Demonstration that design meets requirements with margin under worst‑case environments. (→ QR)
+* **QR (Qualification Review).** Gate confirming completion of qualification program and closure of findings.
+* **Quality Escape.** Defect that passes through build/test gates undetected; addressed via corrective and preventive action (CAPA).
+
+### R
+
+* **Radiation (SEE/SEU/TID).** Single‑Event Effects (transients or damage), Single‑Event Upsets (bit flips), and Total Ionizing Dose accumulation. (→ Shielding)
+* **RAMS.** Reliability, Availability, Maintainability, Safety—key system attributes tracked across lifecycle.
+* **Redundancy (Cold/Warm/Hot).** Standby off / powered standby / active parallel redundancy strategies. (→ FDIR)
+* **RCM (Reliability‑Centered Maintenance).** Maintenance planning focused on preserving functions and managing failure consequences.
+* **Requirement (Shall/Should/May).** Binding / recommended / optional statements that are uniquely identified, testable, and traced. (→ Verification Methods)
+* **Review Pack.** Frozen set of artifacts presented at a gate (agenda, minutes, action items, decisions, deltas). (→ Reviews)
+* **Risk Matrix.** Likelihood × consequence grid used to prioritize mitigations; often 5×5 with color coding.
+* **Rotational Dynamics.** Behavior of spinning structures including balance, modal coupling, and control interactions. (→ Spin Gravity)
+
+### S
+
+* **Safe State.** Minimal‑risk condition the system autonomously enters on serious fault—power‑positive, thermally safe, crew safe. (→ FDIR)
+* **Safety Case.** Structured argument with evidence that the system is acceptably safe for a given context; linked to hazard log. (→ Hazard Log)
+* **Sabatier Process.** ECLSS reaction converting CO$_2$ and H$_2$ to CH$_4$ and H$_2$O for oxygen recovery and fuel by‑product.
+* **SDR / AR.** System Definition/Architecture Review; gate where architecture and key trades are frozen. (→ Reviews)
+* **SEE / SEU.** Single‑Event Effects / Upsets caused by energetic particles; mitigated by shielding, redundancy, and ECC.
+* **Shielding (Areal Density).** Mass per area (g/cm²) of protective material against radiation; water/PE effective for GCR moderation.
+* **SIL / MIL.** Software‑/Model‑in‑the‑Loop testing stages. (→ HIL)
+* **Single Fault Tolerance (SFT).** Ability to tolerate any single failure without loss of critical function.
+* **Spin Gravity.** Artificial gravity via rotation; characterized by radius, angular speed, and g‑gradient. (→ G‑Level, Coriolis)
+* **SSOT (Single Source of Truth).** The authoritative repository for requirements, designs, and decisions. (→ Configuration Management)
+* **SysML.** Systems Modeling Language used to capture MBSE architectures and traceability.
+* **System‑of‑Systems (SoS).** Interconnected systems working together (e.g., station + vehicles + ground + logistics).
+
+### T
+
+* **TAID (Test/Analysis/Inspection/Demonstration).** Verification methods used to close requirements. (→ V\&V)
+* **Telemetry.** Measured data sent from system to operators for monitoring and analysis.
+* **Thermal‑Vacuum (TVAC).** Test environment simulating vacuum and temperature extremes for qualification/acceptance.
+* **TRL (Technology Readiness Level).** 1–9 scale expressing maturity from basic principles to flight‑proven.
+* **TRR (Test Readiness Review).** Gate confirming readiness to start a test campaign with defined objectives and resources.
+* **Trade Study.** Structured comparison of options using weighted criteria, uncertainty analysis, and sensitivity.
+
+### U
+
+* **Uncrewed Operations.** Automated or tele‑operated modes without crew on board; require additional autonomy & FDIR.
+* **Upmass / Downmass.** See **Downmass / Upmass**. (→ Logistics)
+
+### V
+
+* **Validation vs Verification.** *Verification*: did we build the system right (against requirements)? *Validation*: did we build the right system (against user need)?
+* **V\&V Cross‑Reference Matrix.** Requirements‑to‑evidence table showing TAID closure status and results.
+* **Vibration Test (Sine/Random).** Structural/environmental tests to verify survivability and workmanship.
+
+### W
+
+* **Waiver (RFW).** Approval to accept non‑compliance permanently, with risk rationale and compensating controls. (→ Deviation)
+* **Watchdog Timer.** Hardware/software timer that resets or reconfigures a system when not periodically serviced. (→ FDIR)
+* **Work Instruction (WI).** Controlled, step‑by‑step procedure for a specific task with tools, torques, and hold points.
+* **Worst‑Case Analysis (WCA).** Analytical proof that performance meets requirements under simultaneous worst‑case conditions.
+
+### X, Y, Z
+
+* **µg / Zero‑g.** Microgravity/near‑weightlessness; contrasted with partial‑g in spin habitats.
+* **TBD / TBR / TBC.** To Be Determined / Resolved / Confirmed; placeholders tracked to closure with owners and due dates.
+
+*End of Appendix A.*
+
+
+\newpage
+
+# 7.6-engineering
+
+
+\newpage
+
+# AGENTS.md — Roles, Responsibilities & EVOL Working Rules
+
+> Applies to all engineering/product docs under `7.6-engineering/...`. **EVOL** is the primary organizing principle; every activity ensures **one SSOT per topic and EVOL**.&
+
+# A) Agents & Short Aliases (with DISC scope)
+
+| Role / Name                  | Alias          | Primary Discipline(s) (DISC) | Systems/Scope (SYS — examples) |
+| ---------------------------- | -------------- | ---------------------------- | ------------------------------ |
+| Engineer **SGI Lina**        | `@sgi-lina`    | ARCH, STR                    | CORE, HULL, DECKS              |
+| Engineer **Leo**             | `@eng-leo`     | OPS, TST                     | DOCK, LIFT                     |
+| Engineer **Kai Nova**        | `@eng-kai`     | PROP, STR                    | PROP, CORE                     |
+| Engineer **Mara Flux**       | `@eng-mara`    | PWR, THM                     | PDN, RAD                       |
+| Engineer **Elias Core**      | `@eng-elias`   | SAF, REACTOR (↔ PWR)         | REACTOR, CORE                  |
+| Economist **Alethea Voss**   | `@eco-alethea` | Markets / Impact             | —                              |
+| Economist **Orion Hale**     | `@eco-orion`   | Investment / Impact          | —                              |
+| **CFO Terra Chen**           | `@cfo-terra`   | Finance                      | —                              |
+| Trade Analyst **Nova Reyes** | `@trade-nova`  | Transport / Materials        | DOCK, COMMS                    |
+| **CEO Aris Vega**            | `@ceo-aris`    | Policy Gate                  | —                              |
+| **COO Liora Stern**          | `@ops-lio`     | OPS                          | OPS                            |
+| **CTO Jona Frame**           | `@cto-jona`    | ARCH, SW                     | CORE, COMMS                    |
+| **CSO Mira Terra**           | `@cso-mira`    | SAF, ECLS                    | LHS, SAF                       |
+
+**Codes:** DISC/SYS values follow 7.6.1.1 (ARCH, STR, THM, PWR, ECLS, SAF, GNC, PROP, OPS, ELEC, SW · CORE, HULL, DECKS, REACTOR, RAD, PDN, LHS, DOCK, LIFT, AIR, WAT, WASTE, COMMS).&
+
+# B) Ownership Model (Owner & Reviewers)
+
+Each document lists **Owner (DRI)** and **Reviewers** in **YAML front-matter**. Values must match the filename schema (EVOL, DISC, SYS/SYSID, LANG, STATE). **Exactly one SSOT per topic and EVOL** (state: APPROVED). &
+
+**Owner duties**
+
+* Technical correctness; maintain RFC/ADR/CR links; keep `supersedes/superseded_by` current.
+* Keep naming, SemVer, and **STATE** consistent in filename & front-matter.
+* Ensure traceability (Requirements → Interfaces → Verification).&
+
+**Reviewer duties**
+
+* Discipline review (DISC) + architecture/interface coherence; address risk/safety.
+* Gatekeeper for **EVOL compliance** (no silent overwrites; changes via RFC/CR).&
+
+**Minimum reviews by doc type**
+
+* **SPEC/SRS/ICD/SAF/HAZ:** ≥ **2** — 1× discipline, 1× Arch/Safety (`@eng-elias` or `@cso-mira` or `@cto-jona`).
+* **ADR:** ≥ **1** architecture review (`@cto-jona` or `@sgi-lina`).
+* **RFC:** ≥ **2** (discipline + Arch/Safety) — decision recorded.
+* **TST:** ≥ **1** discipline + **1** OPS (`@ops-lio`).
+  These thresholds support states **DRAFT → REVIEW → APPROVED → OBSOLETE** and the SSOT rule.&
+
+# C) EVOL Duties & Visibility
+
+* **Badge the generation everywhere:** filenames, paths, binaries, UI “About”, dashboards, API headers, contracts, and public comms carry **EVOL-XX**.
+* **One EVOL, one SSOT per topic.**
+* **`current-evolution.md`** points to the active EVOL README; on freeze, archive under `7.6.3-history/EVOL-XX/...`.
+* **Compare Pages** (EVOL-(N-1) ↔ EVOL-N) and **Now/Next/Later** roadmaps are auto-built.  &
+
+# D) Workflow (Issue → Freeze)
+
+1. **Issue/Ticket:** Problem, objective, mapping to `DOC/DISC/SYS/SYSID/DECK`.
+2. **RFC** if architecture/interfaces are impacted (motivation, impact, migration, decision path).
+3. **Document change** under `7.6.2-evolutions/EVOL-XX/...` with correct **filename schema** and **front-matter**.
+4. **Open PR** (template below) — commit/PR titles include prefixes and **EVOL-XX**.
+5. **Reviews & CI:** Lint (schema/front-matter), links, numbered tables/figures, SI units.
+6. **Approval & Merge:** Set state to **APPROVED**, mark SSOT (`source_of_truth: true`).
+7. **Release & Freeze:** Tag `EVOL-XX-YYYY.MM`, release notes & migration guide; freeze and archive. &
+
+# E) Commit / PR Conventions
+
+**Commit/PR prefix:**
+`[<DOC>][<DISC>][<SYS>][<SYSID>][EVOL-XX] short summary`
+
+**PR template**
+
+```markdown
+### Why
+(Link to Issue/RFC; motivation)
+
+### What
+(Key changes; affected files)
+
+### Impact
+(Compatibility, risks, migration)
+
+### Verification
+(Tests/sims/inspections; TST IDs)
+
+### Links
+RFC/ADR/CR/Issues
+
+### Checklist
+- [ ] Naming & front-matter consistent (EVOL/DISC/SYS/SYSID/LANG/STATE)
+- [ ] Tables/figures numbered & referenced; SI units
+- [ ] RFC/ADR/TST linked
+- [ ] Minimum reviews requested (see Section B)
+```
+
+Aligned with 7.6.1.1 §§8–10 and CI rules.&
+
+# F) Quality Gates (CI/Lint) & Merge Blockers
+
+* **Hard lint checks:**
+
+  * EVOL in path == EVOL in filename; regex schema satisfied.
+  * Front-matter ↔ filename consistency (`id`, `evolution`, `discipline`, `system`, `system_id`, `seq`, `lang`, `state`).
+  * SemVer valid; `STATE` consistent in name & front-matter.
+* **Blockers:** missing reviews, broken RFC/ADR/CR links, wrong SemVer, stale `supersedes/superseded_by`.&
+
+# G) Governance & Decisions (EVOL Board)
+
+* **Open a new EVOL** only for **system-wide architectural breaks** / unshimmable interface breaks / changed ops doctrine.
+* Submit request via **RFC** with impact analysis, migration, and customer narrative; board review (Architecture, Safety, Ops, Finance, Programs).
+* **Freeze & fork forward:** freeze EVOL-N (read-only/patch-only), continue development in EVOL-(N+1).&
+
+**Escalation**
+
+* Cross-discipline conflict: moderation by `@cto-jona` (Architecture) + `@cso-mira` (Safety/Sustainability).
+* Time-critical/Safety-critical: ad-hoc board (`@cto-jona`, `@eng-elias`, `@cso-mira`, Owner).&
+
+# H) Role-Specific Responsibilities (excerpt)
+
+* **@cto-jona (Architecture Gate):** architecture compliance, ADR index, EVOL-change gatekeeper.&
+* **@cso-mira / @eng-elias (Safety Gate):** SAF/HAZ dossiers, ops doctrine, EVOL support windows.&
+* **@ops-lio (Ops Gate):** SOPs, operations/maintenance chapters, VVP/V\&V coverage.&
+* **@sgi-lina (Systems/STR):** structure/ICD coherence, Req↔Verification traceability.&
+* **@eng-mara (PWR/THM):** energy/thermal flows, EVOL compare pages for PWR/THM ICDs.&
+* **@eng-kai (PROP):** propulsion interfaces, migration paths for thrust/power changes.&
+* **@eng-leo (OPS/TST):** test plans/reports, conformance (TST) ↔ SPEC/ICD.&
+* **@cfo-terra / @eco-orion / @eco-alethea / @trade-nova (Economics/Transport):** release/freeze gates, support policy, migration cost awareness.&
+
+# I) Quick Cheat Sheet
+
+* **New SPEC?** → Filename per schema, fill YAML, link RFC, collect **2 reviews**, set state.&
+* **Small fix?** → **PATCH** bump; semantic changes = **MINOR/MAJOR** (within the EVOL).&
+* **Architectural break?** → RFC → Board → maybe **new EVOL**; freeze the old EVOL.&
+* **Release?** → Tag `EVOL-XX-YYYY.MM`, release notes + migration guide, verify `current-evolution.md`, publish compare pages. &
+
+# Appendix 1: Filename Schema & Front-Matter (Quick Ref)
+
+**Filename**
+`<DOC>-<EVOL>-<DISC>-<SYS>-<SYSID>-<SEQ>-<TITLE>-<LANG>-v<MAJOR.MINOR.PATCH>[<PRERELEASE>][+<BUILD>][-<STATE>].md`
+Allowed fields/states/regex see 7.6.1.1 §§4–6 & §13. &
+
+**Front-matter (required)**
+`id, title, version, state, evolution, discipline, system, system_id, seq, owner, reviewers, source_of_truth, supersedes, superseded_by, rfc_links, adr_links, cr_links, date, lang` — values must match the filename.&
+
+# Appendix 2: Example PR Title
+
+```
+[SPEC][STR][DECKS][DECK000][EVOL-01] hatch tolerances v1.1.0
+```
+
+Conforms to 7.6.1.1 §8 examples.&
+
+# Validity & Maintenance
+
+This document is the **SSOT** for roles/workflows in EVOL contexts. Changes via **RFC** only; approval by Architecture/Safety/Ops gates. Show the active EVOL badge in the header and maintain the EVOL README.&
+
+---
+
+
+
+
+\newpage
+
+# 7.6.1-global-standards
+
+
+\newpage
+
+#### 7.6.1.1 Guideline Document: Evolution‑Engineering-Naming-Folder Convention
+
+**Version:** 1.0.0
+**Date:** 2025-08-10
+**Status:** REVIEW
+
+> Goal: Traceable, machine-sortable, version-safe documentation for a large-scale, multi-generation system. This makes **Evolution (EVOL) a first-class organizing principle** and aligns naming, foldering, and governance with product-generation thinking.
+
+---
+
+## 1) Scope & Core Principles
+
+**Scope:** all engineering files under `7.6-engineering/`, including active evolutions and frozen history.
+
+**Principles:**
+
+* **Evolution-first:** Each product generation (EVOL-XX) is a self-contained, auditable capsule (architecture, specs, tests, ops). Breaking architectural changes open a **new EVOL**.
+* **SSOT:** Single Source of Truth – exactly one **APPROVED** reference document per topic per EVOL.
+* **Traceability:** Requirements → Interfaces → Verification. Every change references RFC/CR/ADR.
+* **Readability & Sortability:** Short codes, fixed order, leading zeros, ISO date, SemVer, kebab-case titles.
+* **Stability:** Discipline/System codes and folder schema are controlled; changes only via RFC.
+* **Auditability:** History is frozen, signed/tagged, and never rewritten.
+
+---
+
+## 2) Folder Structure (Top‑Down)
+
+```text
+7.6-engineering/
+├─ 7.6.1-global-standards/            # company-wide conventions, checklists, templates
+├─ 7.6.2-evolutions/                  # active working evolutions
+│  ├─ EVOL-01/
+│  │  ├─ 00-standards-templates/      # EVOL-local templates (may refine global ones)
+│  │  ├─ 01-architecture/             # system architecture, ADRs
+│  │  ├─ 02-specs/                    # SRS, SPEC, ICD, SAF, HAZ, VVP ...
+│  │  ├─ 03-interfaces/               # mechanical/electrical/software
+│  │  ├─ 04-calculations/             # spreadsheets, proofs, substantiation
+│  │  ├─ 05-models-cad-sim/           # CAD, FEM/CFD/simulation
+│  │  ├─ 06-tests-verification/       # V&V plans/reports, acceptance
+│  │  ├─ 07-ops-maintenance/          # operations, maintenance, SOPs
+│  │  └─ 08-change-management/        # RFC/CR/approvals (referenced by all docs)
+|  |  └─ readme.md                    # The readme.md of the evolution
+│  └─ current-evolution.md            # contains an url to the current evolution's readme.md
+└─ 7.6.3-history/                     # frozen, superseded evolutions (read-only)
+  └─ EVOL-00/
+     ├─ 00-standards-templates/
+     ├─ 01-architecture/
+     ├─ 02-specs/
+     ├─ 03-interfaces/
+     ├─ 04-calculations/
+     ├─ 05-models-cad-sim/
+     ├─ 06-tests-verification/
+     ├─ 07-ops-maintenance/
+     └─ 08-change-management/
+```
+
+**README per folder**: purpose, index, mandatory links (relevant ADR/RFC/TST) and ownership.
+
+**Evolution Charter (`EVOL-XX/README.md`)** must include: scope & goals, compatibility promises, key risks, ADR index, exit criteria for freeze.
+
+---
+
+## 3) Evolution Lifecycle
+
+1. **Initiate EVOL-XX** (charter, owners, scope).
+2. **Work** (docs evolve under `7.6.2-evolutions/EVOL-XX`).
+3. **Release** (tag `EVOL-XX-YYYY.MM`, set document states; symlink `current` may advance).
+4. **Freeze & Archive** (move EVOL-XX to `7.6.3-history/`; read-only; security/Legal notes only).
+
+---
+
+## 4) File‑Naming Scheme (per document)
+
+```text
+<DOC>-<EVOL>-<DISC>-<SYS>-<SYSID>-<SEQ>-<TITLE>-<LANG>-v<MAJOR.MINOR.PATCH>[<PRERELEASE>][+<BUILD>][-<STATE>].md
+```
+
+**Field definitions:**
+
+* `DOC` (document type): **SPEC**, **SRS**, **ICD**, **ADR**, **RFC**, **CR**, **TST**, **CALC**, **DRAW**, **BOM**, **SOP**, **SAF**, **HAZ**, **VVP**.
+* `EVOL` (evolution line): **00**, **01**, **02** … (product generation). Must match the parent `EVOL-XX` directory.
+* `DISC` (discipline): **ARCH**, **STR**, **THM**, **PWR**, **ECLS**, **SAF**, **GNC**, **PROP**, **OPS**, **ELEC**, **SW**.
+* `SYS` (system/subsystem examples): **CORE**, **HULL**, **DECKS**, **REACTOR**, **RAD**, **PDN**, **LHS**, **DOCK**, **LIFT**, **AIR**, **WAT**, **WASTE**, **COMMS**.
+* `SYSID` (system reference): **DOCK01** … **DOCK05**, or **DECK000** … **DECK015**, or **ALL**, or **[A SPECIFIC SYSTEM]**….
+* `SEQ` (sequential number per combination, e.g. multiple documents per unit): **0001**, **0002** …
+* `TITLE` (kebab-case, ≤ 8 words).
+* `LANG`: **DE**, **EN**.
+* `v<MAJOR.MINOR.PATCH>`: **SemVer** (see §5).
+* `<PRERELEASE>` (optional): `-alpha.1`, `-beta.2`, `-rc.1`.
+* `+<BUILD>` (optional): e.g., `+20250810`, `+git.abcdef`.
+* `STATE` (optional, workflow status): **DRAFT**, **REVIEW**, **APPROVED**, **OBSOLETE**.
+
+**Examples:**
+
+```text
+SPEC-01-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v1.0.0-DRAFT.md
+ICD-01-THM-RAD-ALL-0044-radiator-icd-ports-DE-v1.3.0-REVIEW.md
+ADR-01-ARCH-CORE-ALL-0003-spin-rate-baseline-EN-v1.0.0.md
+RFC-01-SAF-REACTOR-DECK015-0007-shielding-upgrade-EN-v0.3.0-alpha.2.md
+```
+
+**Lint rule:** directory `EVOL-XX` and filename `EVOL` **must match**; PRs failing this are rejected.
+
+---
+
+## 5) Versioning (SemVer) & Document States
+
+**SemVer:** `MAJOR.MINOR.PATCH`
+
+* **EVOL vs. MAJOR:** Breaking **architectural** changes (cross-cutting, system-wide) create a **new EVOL**. Within a given EVOL, use **MAJOR** for incompatible changes that remain scoped to that EVOL (e.g., an ICD break that does not warrant a new generation).
+* **MINOR:** backward-compatible additions (new sections/requirements, clarifications).
+* **PATCH:** editorial fixes (typos, formatting, non-semantic wording).
+* **Prerelease:** `-alpha.N`, `-beta.N`, `-rc.N` until release.
+* **Build:** `+YYYYMMDD` or `+git.<shortsha>` optional.
+
+**States:** `DRAFT` → `REVIEW` (≥ 2 reviewers) → `APPROVED` (SSOT) → `OBSOLETE` (replaced).
+Transition to **APPROVED** requires a linked RFC/CR and a verification reference if applicable.
+
+---
+
+## 6) Required YAML Front Matter
+
+Every file starts with YAML front matter:
+
+```yaml
+---
+id: SPEC-01-STR-DECKS-DECK000-0001
+title: Wormhole Docking Tunnel – Structural Specification
+version: v1.0.0
+state: DRAFT
+evolution: "01"
+discipline: STR
+system: [DECK]
+system_id: [DECK000]
+seq: [1111]
+owner: "@sgi-lina"
+reviewers: ["@saf-core", "@ops-lio"]
+source_of_truth: true
+supersedes: null
+superseded_by: null
+rfc_links: ["RFC-2025-0007"]
+adr_links: ["ADR-01-ARCH-CORE-ALL-0003"]
+cr_links: []
+date: 2025-08-10
+lang: EN
+---
+```
+
+---
+
+## 7) Change Management
+
+* **RFC ID:** `RFC-YYYY-####` (e.g., `RFC-2025-0007`). Content: change, motivation, impact, migration, participants, decision.
+* **CR ID:** `CR-YYYY-####` for implementation packages.
+* **Process:** Issue → RFC (review) → decision → implementation (CR/PR) → update docs → test/accept → state change.
+* **Superseding:** Old doc sets `superseded_by`, new doc sets `supersedes`. On EVOL freeze, move whole `EVOL-XX` to `7.6.3-history/`.
+* **Tags:** On release/freeze, tag repo `EVOL-01-YYYY.MM` and record checksum of key artifacts (ICDs, SPECs, models, TST reports).
+
+---
+
+## 8) Commit Messages & PR Titles
+
+**Format:**
+
+```
+[<DOC>][<DISC>][<SYS>][<DECK>][EVOL-XX] short summary
+
+Body:
+- why: motivation/issue link
+- what: key changes
+- impact: backward compat / risks
+- refs: RFC/ADR/CR IDs
+```
+
+**Example:**
+
+```
+[SPEC][STR][DECKS][DECK000][EVOL-01] define hatch tolerances v1.1.0
+
+why: close gaps from TST-... results
+what: ±0.2 mm tolerance band, update figs 2–4
+impact: compatible; requires retest case 2
+refs: RFC-2025-0009, ADR-01-ARCH-CORE-ALL-0003
+```
+
+---
+
+## 9) CODE Tables (governed via RFC)
+
+### 9.1 Document Types (`DOC`)
+
+SPEC, SRS, ICD, ADR, RFC, CR, TST, CALC, DRAW, BOM, SOP, SAF, HAZ, VVP
+
+### 9.2 Disciplines (`DISC`)
+
+ARCH – Architecture/System; STR – Structures/Mechanics; THM – Thermal; PWR – Energy/Power; ECLS – Life Support; SAF – Safety; GNC – Guidance, Navigation & Control; PROP – Propulsion; OPS – Operations; ELEC – Electrical; SW – Software
+
+### 9.3 Systems (`SYS`) – selection
+
+CORE, HULL, DECKS, REACTOR, RAD, PDN, LHS, DOCK, LIFT, AIR, WAT, WASTE, COMMS
+
+### 9.4 Deck IDs (`DECK`)
+
+DECK000 … DECK015; `ALL` for cross-deck.
+
+### 9.5 States (`STATE`)
+
+DRAFT, REVIEW, APPROVED, OBSOLETE.
+
+---
+
+## 10) Templates (Short Forms)
+
+> Full templates are in `7.6.1-global-standards/` (global) and may be refined under `7.6.2-evolutions/EVOL-XX/00-standards-templates/`.
+
+### 10.1 SPEC (Markdown)
+
+```markdown
+---
+# (YAML front matter as in §6)
+---
+
+# 1. Purpose & Context
+# 2. Scope
+# 3. Terms & References
+# 4. Requirements (SPEC-REQ-001 …)
+# 5. Constraints & Assumptions
+# 6. Verification (SPEC-REQ ↔ test cases)
+# 7. Risks & Safety Notes
+# 8. Change History
+```
+
+### 10.2 ICD
+
+```markdown
+---
+# (YAML front matter as in §6)
+---
+
+# 1. Interface Overview
+# 2. Mechanical (coordinates, tolerances, drawings)
+# 3. Electrical (pins, voltages, signals)
+# 4. Software/Protocol (frames, timing)
+# 5. States & Failure Cases
+# 6. Tests (conformance)
+# 7. Change History
+```
+
+### 10.3 ADR
+
+```markdown
+---
+# (YAML front matter as in §6)
+---
+
+# Context
+# Decision
+# Consequences
+# Alternatives
+# References (RFC, SPEC)
+```
+
+### 10.4 RFC
+
+```markdown
+---
+# (YAML front matter as in §6)
+---
+
+# Problem & Motivation
+# Proposal (high level)
+# Impact (technology, risk, cost)
+# Compatibility & Migration
+# Review Plan & Owner
+# Decision (date, participants)
+```
+
+### 10.5 TST (Test Report)
+
+```markdown
+---
+# (YAML front matter as in §6)
+---
+
+# Test Objective
+# Test Environment
+# Test Cases (ID, steps, expectation)
+# Results & Evidence
+# Deviations / Non-Conformities
+# Conclusion & Approval
+```
+
+### 10.6 CALC
+
+```markdown
+---
+# (YAML front matter as in §6)
+---
+
+# Assumptions & Parameters (with sources)
+# Derivation / Methodology
+# Calculation Steps (formulae, units)
+# Results (tables / graphs)
+# Sensitivity & Uncertainties
+# Correlation with Measurement / Simulation
+```
+
+---
+
+## 11) Quality Rules
+
+* One topic per document; split and cross-link large topics.
+* Number all tables/figures; reference them in text; SI units with proper prefixes.
+* Every numeric claim has a derivation/source; plots have axis labels & units.
+* No “silent overwrites”: every change via RFC/CR; states updated accordingly.
+* EVOL encapsulation: avoid cross-EVOL dependencies; shared assets only when truly identical and versioned.
+
+---
+
+## 12) Automation & CI
+
+* **Linting:** enforce filename schema ↔ front matter consistency (EVOL, DISC, SYS, DECK, LANG, STATE).
+* **Tagging:** generate `EVOL-XX-YYYY.MM` tags and a signed manifest of key artifacts.
+* **Compare Pages:** auto-build "EVOL-00 ↔ EVOL-01" diffs for ICDs/SPECs; publish in docs.
+
+---
+
+## 13) Appendix CI/LINT
+
+### CI/LINT: Filename Regex & Cross-Checks
+
+**Filename Regex:**
+
+```regex
+^(SPEC|SRS|ICD|ADR|RFC|CR|TST|CALC|DRAW|BOM|SOP|SAF|HAZ|VVP)-\d{2}-[A-Z]{2,4}-[A-Z0-9]+-[A-Z0-9]+-\d{4}-[a-z0-9-]{1,80}-(DE|EN)-v\d+\.\d+\.\d+(?:-(alpha|beta|rc)\.\d+)?(?:\+\S+)?(?:-(DRAFT|REVIEW|APPROVED|OBSOLETE))?\.md$
+```
+
+**Linting Cross-Checks:**
+
+- EVOL in the directory path **must match** EVOL in the filename.
+- YAML front-matter fields (e.g., `id`, `evolution`, `discipline`, `system`, `system_id`, `seq`, `lang`, `state`) **must match** corresponding filename segments.
+- `state` field and filename suffix (e.g., `-DRAFT`, `-REVIEW`) **must be consistent**.
+
+---
+
+## 14) Appendix 14 – Glossary (Abbreviations) / Appendix 14 – Glossar (Abkürzungen)
+
+> This glossary consolidates **all abbreviations, codes, and fields** used in the guideline “Evolution‑Engineering‑Naming‑Folder Convention” – incl. short description and category. Languages: **EN (English) / DE (Deutsch)**.
+>
+> Dieses Glossar bündelt **alle Abkürzungen, Codes und Felder**, die in der Guideline »Evolution‑Engineering‑Naming‑Folder Convention« verwendet werden – inkl. Kurzbeschreibung und Kategorie. Sprachen: **EN (English) / DE (Deutsch)**.
+
+**As of / Stand:** 2025‑08‑10  ·  **Source / Quelle:** Guideline 7.6.1.1 and project context 7.6‑engineering
+
+---
+
+### 14.1 Process & Governance / Prozess & Governance
+
+| Code     | Long form (EN)                 | Langform (DE)                 | Description (EN)                                                                         | Beschreibung (DE)                                                                  |
+| -------- | ------------------------------ | ----------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **EVOL** | Evolution / Product Generation | Evolution / Produktgeneration | Product generation (EVOL‑00, ‑01 …). New EVOL when the architecture changes system‑wide. | Produktgeneration (EVOL‑00, ‑01 …). Neue EVOL bei systemweiten Architekturbrüchen. |
+| **SSOT** | Single Source of Truth         | Single Source of Truth        | Exactly one APPROVED reference document per topic & EVOL.                                | *Genau ein* APPROVED‑Referenzdokument pro Thema & EVOL.                            |
+| **RFC**  | Request for Comments           | Request for Comments          | Formal change idea/decision brief (RFC‑YYYY‑####).                                       | Formale Änderungsidee/Entscheidungsvorlage (RFC‑YYYY‑####).                        |
+| **CR**   | Change Request                 | Change Request                | Implementation package for an approved RFC (CR‑YYYY‑####).                               | Umsetzungspaket zu einem beschlossenen RFC (CR‑YYYY‑####).                         |
+| **ADR**  | Architecture Decision Record   | Architecture Decision Record  | Architecture decision (context, decision, consequences).                                 | Architekturentscheidung (Kontext, Entscheidung, Konsequenzen).                     |
+| **PR**   | Pull Request                   | Pull Request                  | Code/docs change for review/integration.                                                 | Code/Docs‑Änderung zur Review/Integration.                                         |
+| **CI**   | Continuous Integration         | Continuous Integration        | Automated checks (lint, build, diffs, manifests).                                        | Automatisierte Checks (Lint, Build, Diffs, Manifeste).                             |
+| **LINT** | Linting                        | Linting                       | Rules/checks for filenames, front‑matter, consistency.                                   | Regeln/Prüfungen für Dateinamen, Front‑Matter, Konsistenz.                         |
+| **V\&V** | Verification & Validation      | Verification & Validation     | Verification/validation: evidence against requirements.                                  | Verifikation/Validierung: Nachweis gegen Anforderungen.                            |
+
+---
+
+### 14.2 File‑Name Schema (Fields & States) / Dateinamen‑Schema (Felder & Stati)
+
+| Code           | Long form (EN)      | Langform (DE)       | Description (EN)                                                               | Beschreibung (DE)                                                              |
+| -------------- | ------------------- | ------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| **DOC**        | Document type       | Dokumenttyp         | e.g., SPEC, SRS, ICD, ADR, RFC, CR, TST, CALC, DRAW, BOM, SOP, SAF, HAZ, VVP.  | z. B. SPEC, SRS, ICD, ADR, RFC, CR, TST, CALC, DRAW, BOM, SOP, SAF, HAZ, VVP.  |
+| **EVOL**       | Evolution           | Evolution           | Two digits (00, 01 …); must match folder *EVOL‑XX*.                            | Zweistellig (00, 01 …); muss zum Ordner *EVOL‑XX* passen.                      |
+| **DISC**       | Discipline          | Disziplin           | ARCH, STR, THM, PWR, ECLS, SAF, GNC, PROP, OPS, ELEC, SW.                      | ARCH, STR, THM, PWR, ECLS, SAF, GNC, PROP, OPS, ELEC, SW.                      |
+| **SYS**        | System              | System              | CORE, HULL, DECKS, REACTOR, RAD, PDN, LHS, DOCK, LIFT, AIR, WAT, WASTE, COMMS. | CORE, HULL, DECKS, REACTOR, RAD, PDN, LHS, DOCK, LIFT, AIR, WAT, WASTE, COMMS. |
+| **SYSID**      | System ID           | System‑ID           | Concrete unit (e.g., DOCK01…05, DECK000…015, ALL …).                           | Konkrete Einheit (z. B. DOCK01…05, DECK000…015, ALL …).                        |
+| **SEQ**        | Sequence            | Sequenz             | Four digits (0001…); running number per (DOC,EVOL,DISC,SYS,SYSID).             | Vierstellig (0001…); laufende Nummer pro (DOC,EVOL,DISC,SYS,SYSID).            |
+| **TITLE**      | Title (kebab‑case)  | Titel (kebab‑case)  | ≤ 8 words, technically concise.                                                | ≤ 8 Wörter, technisch prägnant.                                                |
+| **LANG**       | Language            | Sprache             | DE, EN.                                                                        | DE, EN.                                                                        |
+| **STATE**      | Document state      | Dokumentstatus      | DRAFT → REVIEW → APPROVED → OBSOLETE.                                          | DRAFT → REVIEW → APPROVED → OBSOLETE.                                          |
+| **SemVer**     | Semantic Versioning | Semantic Versioning | vMAJOR.MINOR.PATCH (prerelease/build optional).                                | vMAJOR.MINOR.PATCH (Prerelease/Build optional).                                |
+| **Prerelease** | Pre‑release tag     | Vorab‑Kennung       | -alpha.N, -beta.N, -rc.N.                                                      | -alpha.N, -beta.N, -rc.N.                                                      |
+| **Build**      | Build metadata      | Build‑Metadaten     | +YYYYMMDD, +git.<shortsha> …                                                   | +YYYYMMDD, +git.<shortsha> …                                                   |
+
+#### Document Types (DOC) / Dokumenttypen (DOC)
+
+| Code     | Long form (EN)                      | Langform (DE)                  | Short description (EN)                     | Kurzbeschreibung (DE)                       |
+| -------- | ----------------------------------- | ------------------------------ | ------------------------------------------ | ------------------------------------------- |
+| **SPEC** | Specification                       | Spezifikation                  | Requirements & technical provisions.       | Anforderungen & technische Vorgaben.        |
+| **SRS**  | Software Requirements Specification | Software Requirements Spec     | Software requirements.                     | Software‑Anforderungen.                     |
+| **ICD**  | Interface Control Document          | Interface Control Document     | Interfaces (mech./electr./SW).             | Schnittstellen (mech./elektr./SW).          |
+| **ADR**  | Architecture Decision Record        | Architecture Decision Record   | Architecture decision.                     | Architekturentscheidung.                    |
+| **RFC**  | Request for Comments                | Request for Comments           | Change proposal/decision.                  | Änderungsvorschlag/Entscheidung.            |
+| **CR**   | Change Request                      | Change Request                 | Implementation order/package.              | Umsetzungsauftrag/‑paket.                   |
+| **TST**  | Test Report / Test Spec             | Test Report / Test Spec        | Test plan/report (V\&V).                   | Prüfplan/‑bericht (V\&V).                   |
+| **CALC** | Calculation                         | Calculation                    | Calculations, derivations, substantiation. | Berechnungen, Herleitungen, Substantiation. |
+| **DRAW** | Drawing                             | Drawing                        | Drawings/plots.                            | Zeichnungen/Plots.                          |
+| **BOM**  | Bill of Materials                   | Bill of Materials              | Parts list.                                | Stückliste.                                 |
+| **SOP**  | Standard Operating Procedure        | Standard Operating Procedure   | Operating/work instruction.                | Betriebs‑/Arbeitsanweisung.                 |
+| **SAF**  | Safety Dossier                      | Safety Dossier                 | Safety evidence.                           | Sicherheit/Safety‑Nachweise.                |
+| **HAZ**  | Hazard Analysis                     | Hazard Analysis                | Hazard/risk analysis.                      | Gefährdungs‑/Risikoanalyse.                 |
+| **VVP**  | Verification & Validation Plan      | Verification & Validation Plan | V\&V plan/coverage.                        | V\&V‑Plan/Abdeckung.                        |
+
+#### Disciplines (DISC) / Disziplinen (DISC)
+
+| Code     | Long form (EN)                       | Langform (DE)                                                         |
+| -------- | ------------------------------------ | --------------------------------------------------------------------- |
+| **ARCH** | Architecture & Systems               | Architektur / Architecture & Systems                                  |
+| **STR**  | Structures & Mechanics               | Strukturen / Structures & Mechanics                                   |
+| **THM**  | Thermal                              | Thermik / Thermal                                                     |
+| **PWR**  | Power                                | Energie / Power                                                       |
+| **ECLS** | Environmental Control & Life Support | Umweltkontrolle & Lebenserhalt / Environmental Control & Life Support |
+| **SAF**  | Safety                               | Sicherheit / Safety                                                   |
+| **GNC**  | Guidance, Navigation & Control       | Lageführung, Navigation & Regelung / Guidance, Navigation & Control   |
+| **PROP** | Propulsion                           | Antrieb / Propulsion                                                  |
+| **OPS**  | Operations                           | Betrieb / Operations                                                  |
+| **ELEC** | Electrical                           | Elektrik/Elektronik / Electrical                                      |
+| **SW**   | Software                             | Software                                                              |
+
+#### Systems (SYS – selection) / Systeme (SYS – Auswahl)
+
+| Code        | Long form (EN)             | Langform (DE)              | Note (EN)   | Hinweis (DE)              |
+| ----------- | -------------------------- | -------------------------- | ----------- | ------------------------- |
+| **CORE**    | Core                       | Kernsystem                 |             |                           |
+| **HULL**    | Hull                       | Hülle                      |             |                           |
+| **DECKS**   | Decks                      | Decks                      |             |                           |
+| **REACTOR** | Reactor                    | Reaktor                    |             |                           |
+| **RAD**     | Radiator System            | Radiatoren                 |             |                           |
+| **PDN**     | Power Distribution Network | Power Distribution Network | Power grid. | Stromverteilnetz.         |
+| **LHS**     | Life Support System        | Life Support System        | ↔ ECLS.     | Lebenserhaltung (↔ ECLS). |
+| **DOCK**    | Dock                       | Docking / Dock             |             |                           |
+| **LIFT**    | Lifts                      | Aufzüge                    |             |                           |
+| **AIR**     | Air systems                | Luftsysteme                |             |                           |
+| **WAT**     | Water systems              | Wassersysteme              |             |                           |
+| **WASTE**   | Waste / Disposal           | Abfall/Entsorgung          |             |                           |
+| **COMMS**   | Communications             | Kommunikation              |             |                           |
+
+**States / Status (STATE):** DRAFT · REVIEW · APPROVED · OBSOLETE
+
+---
+
+### 14.3 Front‑Matter (YAML fields) / Front‑Matter (YAML‑Felder)
+
+| Field                                   | Bedeutung (DE)                                       | Meaning (EN)                                        |
+| --------------------------------------- | ---------------------------------------------------- | --------------------------------------------------- |
+| **id**                                  | Stabile ID = <DOC>-<EVOL>-<DISC>-<SYS>-<SYSID>-<SEQ> | Stable ID = <DOC>-<EVOL>-<DISC>-<SYS>-<SYSID>-<SEQ> |
+| **title**                               | Volltitel des Dokuments                              | Full document title                                 |
+| **version**                             | SemVer inkl. v‑Präfix                                | SemVer incl. v‑prefix                               |
+| **state**                               | DRAFT/REVIEW/APPROVED/OBSOLETE                       | DRAFT/REVIEW/APPROVED/OBSOLETE                      |
+| **evolution**                           | EVOL als String ("01")                               | EVOL as string ("01")                               |
+| **discipline**                          | DISC‑Code (z. B. STR)                                | DISC code (e.g., STR)                               |
+| **system / system\_id**                 | System(e) / Instanz(en)                              | System(s) / instance(s)                             |
+| **seq**                                 | Sequenz (Array, vierstellig)                         | Sequence (array, four digits)                       |
+| **owner**                               | Owner/Handle (z. B. @sgi‑lina)                       | Owner/handle (e.g., @sgi‑lina)                      |
+| **reviewers**                           | Reviewer‑Handles                                     | Reviewer handles                                    |
+| **source\_of\_truth**                   | true = SSOT‑Dokument                                 | true = SSOT document                                |
+| **supersedes / superseded\_by**         | Ersetzt / wird ersetzt von                           | Supersedes / superseded by                          |
+| **rfc\_links / adr\_links / cr\_links** | Referenzen auf RFC/ADR/CR                            | References to RFC/ADR/CR                            |
+| **date**                                | ISO‑Datum (YYYY‑MM‑DD)                               | ISO date (YYYY‑MM‑DD)                               |
+| **lang**                                | DE/EN                                                | DE/EN                                               |
+
+---
+
+### 14.4 Orbits, Mission & Physics (Project Context) / Orbits, Mission & Physik (Projektkontext)
+
+| Code        | Long form (EN)               | Langform (DE)                      | Description (EN)                        | Beschreibung (DE)                             |
+| ----------- | ---------------------------- | ---------------------------------- | --------------------------------------- | --------------------------------------------- |
+| **LEO**     | Low Earth Orbit              | Niedriger Erdorbit                 | Low Earth orbit.                        | Niedriger Erdorbit.                           |
+| **GEO**     | Geostationary Orbit          | Geostationärer Orbit               | Geostationary orbit.                    | Geostationärer Orbit.                         |
+| **GTO**     | Geostationary Transfer Orbit | Geostationary Transfer Orbit       | Transfer orbit to GEO.                  | Transferbahn zu GEO.                          |
+| **L1/L2**   | Lagrange Points              | Lagrange‑Punkte                    | Equilibrium points in two‑body systems. | Gleichgewichtspunkte in Zwei‑Körper‑Systemen. |
+| **Δv / dv** | Delta‑v / Change in Velocity | Delta‑v / Geschwindigkeitsänderung | Velocity change needed for maneuvers.   | Geschwindigkeitsänderung für Manöver.         |
+| **Isp**     | Specific Impulse             | Spezifischer Impuls                | Efficiency metric for engines.          | Effizienzmaß für Triebwerke.                  |
+
+---
+
+### 14.5 Energy & Propulsion (Project Context) / Energie & Antrieb (Projektkontext)
+
+| Code    | Long form (EN)              | Langform (DE)               | Description (EN)                                    | Beschreibung (DE)                                          |
+| ------- | --------------------------- | --------------------------- | --------------------------------------------------- | ---------------------------------------------------------- |
+| **SMR** | Small Modular Reactor       | Small Modular Reactor       | Compact nuclear reactor (e.g., NuScale 60 MW).      | Kompakter Kernreaktor (z. B. NuScale 60 MW).               |
+| **NEP** | Nuclear Electric Propulsion | Nuclear Electric Propulsion | Nuclear‑electric propulsion (high Isp, low thrust). | Nuklear‑elektrischer Antrieb (hoher Isp, niedriger Schub). |
+| **NTP** | Nuclear Thermal Propulsion  | Nuclear Thermal Propulsion  | Nuclear‑thermal propulsion (high thrust).           | Nuklear‑thermischer Antrieb (hoher Schub).                 |
+| **SEP** | Solar Electric Propulsion   | Solar Electric Propulsion   | Solar‑electric propulsion.                          | Solar‑elektrischer Antrieb.                                |
+| **MLI** | Multi‑Layer Insulation      | Multi‑Layer Insulation      | Multi‑layer thermal insulation.                     | Mehrlagige Wärmedämmung.                                   |
+
+---
+
+### 14.6 Operations, Safety & Systems (Project Context) / Betrieb, Sicherheit & Systeme (Projektkontext)
+
+| Code    | Long form (EN)               | Langform (DE)                | Description (EN)                  | Beschreibung (DE)               |
+| ------- | ---------------------------- | ---------------------------- | --------------------------------- | ------------------------------- |
+| **EVA** | Extravehicular Activity      | Außeneinsatz                 | Work outside the station.         | Arbeiten außerhalb der Station. |
+| **RCS** | Reaction Control System      | Reaction Control System      | Attitude/fine‑maneuver thrusters. | Lage‑/Feinmanöver‑Triebwerke.   |
+| **SOP** | Standard Operating Procedure | Standard Operating Procedure | Standard operating procedures.    | Standard‑Betriebsverfahren.     |
+| **HAZ** | Hazard Analysis              | Hazard Analysis              | Hazard analysis.                  | Gefährdungsanalyse.             |
+| **SAF** | Safety Dossier               | Safety Dossier               | Safety evidence/records.          | Sicherheitsnachweise.           |
+
+---
+
+### 14.7 Materials & Windows (Project Context) / Materialien & Fenster (Projektkontext)
+
+| Code     | Long form (EN)               | Langform (DE)                | Description (EN)                                | Beschreibung (DE)                              |
+| -------- | ---------------------------- | ---------------------------- | ----------------------------------------------- | ---------------------------------------------- |
+| **SiC**  | Silicon Carbide              | Siliziumkarbid               | Structure/protection, very hard/heat‑resistant. | Struktur/Schutz, sehr hart/hitzefest.          |
+| **ALON** | Aluminum Oxynitride          | Aluminium‑Oxynitrid          | Transparent ceramic armor/window material.      | Transparentes Keramik‑Panzer‑/Fenstermaterial. |
+| **FEM**  | Finite Element Method        | Finite‑Elemente‑Methode      | Structural/strength analysis.                   | Struktur‑/Festigkeitsanalyse.                  |
+| **CFD**  | Computational Fluid Dynamics | Computational Fluid Dynamics | Flow simulation.                                | Strömungssimulation.                           |
+| **CAD**  | Computer‑Aided Design        | Computer‑Aided Design        | Design data/models.                             | Konstruktionsdaten/Modelle.                    |
+
+---
+
+### 14.8 Communication & Outreach / Kommunikation & Öffentlichkeitsarbeit
+
+| Code      | Long form (EN)                                | Langform (DE)                                 | Description (EN)            | Beschreibung (DE)           |
+| --------- | --------------------------------------------- | --------------------------------------------- | --------------------------- | --------------------------- |
+| **STEM**  | Science, Technology, Engineering, Mathematics | Science, Technology, Engineering, Mathematics | Education/outreach context. | Bildungs‑/Outreach‑Kontext. |
+| **VR/AR** | Virtual/Augmented Reality                     | Virtual/Augmented Reality                     | Immersive visualization.    | Immersive Visualisierung.   |
+
+---
+
+### 14.9 Governance & Alliances / Governance & Allianzen
+
+| Code     | Long form (EN)                          | Langform (DE)                           | Description (EN)           | Beschreibung (DE)                |
+| -------- | --------------------------------------- | --------------------------------------- | -------------------------- | -------------------------------- |
+| **IDSA** | International Democratic Solar Alliance | International Democratic Solar Alliance | Proposed solar governance. | Vorgeschlagene Solar‑Governance. |
+
+---
+
+### 14.10 Languages, Units & Format / Sprachen, Einheiten & Format
+
+| Code           | Long form (EN)        | Langform (DE)         | Description (EN)                    | Beschreibung (DE)                        |
+| -------------- | --------------------- | --------------------- | ----------------------------------- | ---------------------------------------- |
+| **DE / EN**    | German / English      | Deutsch / English     | Language codes.                     | Sprachcodes.                             |
+| **SI**         | Système International | Système International | Unit system (with prefixes).        | Einheitensystem (mit Präfixen).          |
+| **ISO Date**   | ISO Date              | ISO‑Datum             | YYYY‑MM‑DD.                         | YYYY‑MM‑DD.                              |
+| **kebab‑case** | –                     | –                     | Lowercase words, hyphens in titles. | Kleinbuchstaben, Bindestriche in Titeln. |
+
+---
+
+### 14.11 Examples (Reference) / Beispiele (Referenz)
+
+```text
+SPEC-01-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v1.0.0-DRAFT.md
+ICD-01-THM-RAD-ALL-0044-radiator-icd-ports-DE-v1.3.0-REVIEW.md
+ADR-01-ARCH-CORE-ALL-0003-spin-rate-baseline-EN-v1.0.0.md
+RFC-01-SAF-REACTOR-DECK015-0007-shielding-upgrade-EN-v0.3.0-alpha.2.md
+```
+
+> **Note (EN):** EVOL in the path **must** match EVOL in the file name; front‑matter fields and the STATE suffix are lint‑checked.
+>
+> **Hinweis (DE):** EVOL im Pfad **muss** mit EVOL im Dateinamen übereinstimmen; Front‑Matter‑Felder und Suffix‑STATE werden per Lint geprüft.
+
+---
+
+**End Appendix 14 – Glossary (Abbreviations) / Ende Appendix 14 – Glossar (Abkürzungen).**
+
+
+---
+
+*End of document.*
+
+
+\newpage
+
+# 7.6.1.2 Guideline Document: The Evolution Principle
+
+**Version:** 1.0.0
+**Date:** 2025-08-11
+**Status:** DRAFT
+
+> Purpose: Make **Evolution (EVOL)** the primary internal and external identifier, organizing principle, and strategic driver. Ensure every stakeholder—engineering, operations, finance, partners, and customers—can see, audit, and plan around product generations.
+
+---
+
+## 1) Scope & Intent
+
+This principle applies to all systems, subsystems, artifacts, and communications across the Sphere project. It operationalizes **Evolution‑first**: product generations (**EVOL‑00, EVOL‑01, …**) are self‑contained, auditable capsules that structure work, govern change, and frame expectations.
+
+**Outcomes sought:**
+
+* **Visibility:** Evolution state is instantly discoverable in code, docs, UI, packaging, and public comms.
+* **Order:** Generations partition architectural eras; within a generation, SemVer governs compatible change.
+* **Drive:** Generational goals and exit criteria create focus, motivate delivery, and anchor roadmaps.
+
+---
+
+## 2) What “Evolution” Means
+
+**EVOL‑XX = Product Generation.**
+
+* **Boundary:** A generation encapsulates architecture, interfaces, verification, and operations for its era.
+* **Break rule:** A **system‑wide architectural break** opens a **new EVOL**. Within an EVOL, incompatible but scoped changes may increment **MAJOR** (SemVer) without starting a new generation.
+* **Artifacts per EVOL:** Charter, architecture/ADR index, specs & ICDs, tests/V\&V, ops & SOPs, change log, release notes, migration guides, marketing copy, and a signed manifest.
+
+**SemVer inside an EVOL:**
+
+* **MAJOR:** Incompatible change **scoped to the EVOL** (e.g., an ICD break that does not require a new architecture era).
+* **MINOR:** Backward‑compatible additions.
+* **PATCH:** Editorial/non‑semantic fixes.
+
+---
+
+## 3) Why Evolution‑first (Vision)
+
+1. **Internal compass.** Generations focus teams on a clear goal line (“What ships in EVOL‑01?”), simplify trade‑offs, and enable parallel work on EVOL‑N and EVOL‑(N+1).
+
+2. **External signal.** Generations are a **customer‑facing identity** (like automotive model generations) that set expectations about capability, compatibility, and support windows.
+
+3. **Audit & trust.** Each EVOL is an auditable capsule—design, tests, operations—supporting certifications, safety reviews, and partner due diligence.
+
+4. **Strategic cadence.** Generational milestones drive funding gates, supplier readiness, and ecosystem planning.
+
+---
+
+## 4) Core Rules (Non‑Negotiable)
+
+1. **Badge the generation everywhere.** Use EVOL labels in filenames, repo paths, binaries, UI About screens, dashboards, API headers, contracts, and marketing.
+2. **One EVOL, one SSOT per topic.** Each topic has exactly one APPROVED reference document per EVOL.
+3. **New EVOL on architectural break.** If compatibility cannot be maintained across the system boundary (architecture, safety, ops doctrine), you must open **EVOL‑(N+1)**.
+4. **Freeze, then fork forward.** Freeze EVOL‑N (read‑only, patch‑only) and develop EVOL‑(N+1) in a separate capsule. No silent backports across EVOLs.
+5. **Traceability is mandatory.** Every artifact in an EVOL links to its RFC/ADR/CR and V\&V evidence.
+
+---
+
+## 5) Lifecycle & Visibility
+
+**Lifecycle:** Initiate → Work → Release → Freeze & Archive.
+
+* **Initiate:** Write the *EVOL Charter* (scope, goals, compatibility promises, risks, exit criteria). Appoint owners and reviewers.
+* **Work:** Produce and evolve all artifacts under `…/7.6.2-evolutions/EVOL-XX/` with CI linting and manifesting.
+* **Release:** Tag `EVOL-XX-YYYY.MM`, publish release notes and migration guides, update customer‑facing materials.
+* **Freeze & Archive:** Move to `…/7.6.3-history/` (read‑only). Security and legal notices may update; functionality does not.
+
+**Visibility mechanisms (required):**
+
+* **current‑evolution.md** pointer in the evolutions root.
+* **EVOL banner** in user‑facing UIs and operational dashboards.
+* **Compare pages**: automated diffs EVOL‑(N‑1) ↔ EVOL‑N for key specs and ICDs.
+* **Roadmap strip**: Now (EVOL‑N), Next (EVOL‑N+1), Later (N+2) on the program home page.
+
+---
+
+## 6) External Identity (Customer‑Facing)
+
+**Generation labeling:**
+
+* Public names include the generation, e.g., *Sphere Earth ONE — EVOL‑01*.
+* Marketing and documentation lead with the EVOL identity; model‑year‑style messaging communicates evolution (capabilities, safety level, performance).
+
+**Promises per EVOL:**
+
+* **Compatibility window:** the minimum duration interfaces will be supported.
+* **Support policy:** LTS/maintenance timelines per EVOL.
+* **Migration path:** customer‑ready guides and tooling from EVOL‑(N‑1) to EVOL‑N.
+
+**Automotive analogy (informative):** Like BMW model generations, each EVOL is a visible chapter with distinct architecture and capabilities, while trims/options map to MINOR/PATCH evolution within the generation.
+
+---
+
+## 7) Governance & Decision Criteria
+
+**When to open a new EVOL:**
+
+* Cross‑cutting architectural changes (safety doctrine, structural grid, power topology, thermal envelope, life‑support primitives).
+* Interface breaks that cannot be shimmied without unacceptable cost or risk.
+* Operational model change (e.g., new docking paradigm) that invalidates prior procedures.
+
+**Gatekeeping:**
+
+* Changes proposing a new EVOL require an **RFC** with impact analysis, migration plan, and customer‑facing narrative. A cross‑discipline board reviews (Architecture, Safety, Ops, Finance, Programs).
+
+**Within‑EVOL change:**
+
+* Use SemVer and ADR/RFC discipline; default to compatibility, prefer additive designs, and provide deprecation schedules.
+
+---
+
+## 8) Artifacts & Templates (per EVOL)
+
+**Required:**
+
+* **EVOL Charter** (scope, goals, risks, exit criteria).
+* **Architecture overview** + **ADR index**.
+* **SPEC/ICD set** with traceability to requirements and tests.
+* **V\&V plan & reports**; acceptance evidence.
+* **Ops handbook & SOPs**; safety dossier.
+* **Change log & release notes**; **migration guide**.
+* **Signed manifest** of key artifacts with checksums; EVOL tag.
+
+**Template snippets (short):**
+
+**EVOL Charter (outline)**
+
+1. Scope & goals (what this generation must deliver)
+2. Compatibility promises (what remains stable; for how long)
+3. Risks & mitigations (top 5)
+4. Exit criteria for freeze (objective tests & evidence)
+5. Timeline: milestones to Release & Freeze
+
+**Migration Guide (outline)**
+
+1. Audience & prerequisites
+2. What changed and why
+3. Compatibility matrix (old ↔ new)
+4. Step‑by‑step migration
+5. Validation checklist & rollback
+
+---
+
+## 9) Foldering, Naming & CI Hooks (Summary)
+
+* **Foldering:** Each EVOL lives under `7.6.2-evolutions/EVOL-XX/…`; frozen generations move to `7.6.3-history/EVOL-XX/…`.
+* **Naming:** File names carry `<DOC>-<EVOL>-…-v<MAJOR.MINOR.PATCH>-<STATE>.md`. EVOL in path **must** match filename.
+* **CI Hooks:** Lint filename ↔ front‑matter coherence; generate EVOL tags and manifests; auto‑publish compare pages and release notes; block merges on missing RFC/ADR links.
+
+---
+
+## 10) KPIs & Rituals
+
+**KPIs:**
+
+* Generation goal completion rate (per milestone).
+* Interface stability index (breaks avoided vs proposed).
+* Migration lead time for key partners.
+* Documentation completeness (SSOT coverage) at Release.
+
+**Rituals:**
+
+* **EVOL Review** (bi‑weekly): status, risks, decision log.
+* **Interface Council** (monthly): compatibility & deprecations.
+* **Freeze Readiness Review** (gate): verify exit criteria, lock manifests.
+* **Customer Briefing** (at Release): public notes, support window, migration aids.
+
+---
+
+## 11) Non‑Goals (to avoid confusion)
+
+* EVOL is **not** a marketing‑only label; it reflects real architectural eras.
+* EVOL does **not** replace SemVer; it **frames** SemVer within a generation.
+* EVOL changes do **not** rewrite history; prior EVOLs remain frozen and auditable.
+
+---
+
+## 12) Appendix – Quick Reference
+
+**Open new EVOL if:** architecture or ops doctrine changes system‑wide; interfaces cannot be compatibly bridged; safety basis or certification envelope resets.
+
+**Stay within EVOL if:** change is additive or can be shimmed; risk and cost of migration exceed benefit; safety and ops doctrine remain stable.
+
+**Always do:** badge the generation, keep one SSOT per topic per EVOL, trace every change, publish migration paths, and freeze the past before building the future.
+
+
+\newpage
+
+# 7.6.2-evolutions
+
+
+\newpage
+
+# Current Evolution: EVOLUTION 00 - The Beginning
+
+Direct link to the current EVOLUTION
+
+## [EVOLUTION 00 - The Beginning](EVOL-00\readme.md)
+
+
+\newpage
+
+# EVOLUTION 00 — The Beginning
+
+EVOL00 is our first visible chapter: a minimal, end-to-end **working baseline** that proves the architecture in the real world. It is small by design, complete by necessity, and **auditable by default**. EVOL00 establishes the language of the system—structural grid, core interfaces, safety assumptions, and the build-test-operate chain—and makes **Evolution** the primary beacon, clear to team, partners, and users.
+
+Success here isn’t feature breadth; it’s **trust**: a reproducible capsule that can be built, tested, operated, and learned from. When EVOL00 closes, we freeze a clean, signed baseline and open EVOL01 with confidence and velocity.
+
+**Focus:** Clarity over scope · Safety over speed · Evidence over claims · Visibility everywhere.
+
+
+\newpage
+
+# SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v0.1.0-DRAFT 
+
+**The Engineering of DECK000 – The Wormhole**
+
+**Document status:** Draft (Evolution 1 – Baseline)
+**Date:** 2025‑08‑10
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1 Abstract
+
+DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube that runs straight through the station from the North pole to the South pole. In Evolution 1, the assembly is a 127 m long tube with an outer diameter of 22 m and a clear inner diameter of 20 m. The primary barrel is a silicon‑carbide (SiC) composite reinforced with steel or Inconel for toughness. Starting 3.5 m from the north polar end and repeating every 20 m along the axis, 10 m‑long Inconel docking‑ring subassemblies are installed and numbered sequentially (00, 01, 02 …) from North to South. Between docking rings, “window tube” segments provide outward viewing; each segment integrates rectangular window units of 4 m (axial) × 3 m (tall), built to the program’s space‑grade multilayer window specification (ALON/sapphire + fused silica + polycarbonate + borosilicate/cerium‑doped glass). The result is a micro‑g corridor (near the spin axis) enabling safe berthing, people/cargo transfer, observation, and emergency egress.
+
+---
+
+## 2 Description (Evolution 1 – Baseline Geometry & Materials)
+
+### A. System Overview
+
+* **Function:** Central polar docking, transit, and observation corridor in micro‑g; houses guidance, lighting, utilities, and emergency isolation points.
+* **Overall length:** 127 m (North pole interior face to South pole interior face).
+* **Primary diameters:** OD 22 m; ID 20 m (clear).
+* **Primary structure:** SiC composite barrel; local reinforcement with steel/Inconel where penetrations, hatches, or docking hardware concentrate loads.
+* **Environment:** Pressurized to station nominal (TBC; baseline 1 atm); micro‑g zone due to proximity to rotation axis.
+
+### B. Docking‑Ring Architecture
+
+* **Ring modules:** 10 m axial length; OD 22 m (flush with main barrel OD); ID 10 m (constricted throat for docking hardware and hatchway integration).
+* **Material:** Inconel (high‑temperature and corrosion resistance; excellent toughness).
+* **Placement & numbering:** Starting **3.5 m** from the North pole interior face and repeating at a **20 m pitch**; numbered **00** (northmost) through **05** (southmost) in Evolution 1.
+
+**Table 1 — Ring and window‑segment positions (from North pole interior face)**
+
+| Segment | Type         | Axial start (m) | Axial end (m) | Axial length (m) | Notes                               |
+| ------: | ------------ | --------------: | ------------: | ---------------: | ----------------------------------- |
+|       — | Clearance    |             0.0 |           3.5 |              3.5 | forward clearance / taper / systems |
+|      00 | Docking ring |             3.5 |          13.5 |             10.0 | Inconel ring ID 10 m                |
+|       — | Window tube  |            13.5 |          23.5 |             10.0 | window segment                      |
+|      01 | Docking ring |            23.5 |          33.5 |             10.0 |                                     |
+|       — | Window tube  |            33.5 |          43.5 |             10.0 |                                     |
+|      02 | Docking ring |            43.5 |          53.5 |             10.0 |                                     |
+|       — | Window tube  |            53.5 |          63.5 |             10.0 |                                     |
+|      03 | Docking ring |            63.5 |          73.5 |             10.0 |                                     |
+|       — | Window tube  |            73.5 |          83.5 |             10.0 |                                     |
+|      04 | Docking ring |            83.5 |          93.5 |             10.0 |                                     |
+|       — | Window tube  |            93.5 |         103.5 |             10.0 |                                     |
+|      05 | Docking ring |           103.5 |         113.5 |             10.0 |                                     |
+|       — | Window tube  |           113.5 |         123.5 |             10.0 |                                     |
+|       — | Clearance    |           123.5 |         127.0 |              3.5 | aft clearance / taper / systems     |
+
+> **Note:** Evolution 1 uses six docking rings (00–05), preserving 3.5 m service clearances at both ends. Later evolutions may revise counts, spacing, or diameters based on interface selections and docking traffic models.
+
+### C. Window Segments & Glazing Units
+
+* **Window units per segment:** Rectangular apertures integrated into the 10 m “window tube” spans; count and circumferential distribution TBD by human‑factors and structural analyses.
+* **Nominal window aperture:** 4.0 m (axial) × 3.0 m (tall / meridional).
+* **Glazing stack (per program spec):**
+
+  * Outer strike face: **ALON** (or sapphire) \~50 mm for micrometeoroid & UV protection.
+  * Middle layers: **Fused silica** (\~100 mm) + **polycarbonate** (\~50 mm) for thermal stability and impact energy absorption.
+  * Inner layer: **Borosilicate** (or cerium‑doped glass) \~30 mm for radiation attenuation and optical quality.
+  * **Total thickness:** \~200–300 mm; **areal mass:** \~530–550 kg/m².
+* **Shutters & shields:** Each aperture integrates internal blast shutters and external micrometeoroid/thermal shades; automatic closure on pressure loss or debris alerts.
+
+### D. Structural Concept
+
+* **Primary barrel wall:** Thickness TBD from combined loads (pressure, docking loads, thermal gradients). Preliminary design envelope to meet FoS ≥ 2.0 against yield under 1 atm differential plus ring‑induced stress concentrations.
+* **Ring‑to‑barrel joints:** Circumferential flanges with shear keys; dual redundant, high‑temperature elastomer seals (silicone‑based) with metallic C‑seals for vacuum‑rated redundancy.
+* **Local reinforcements:** Around windows (doubler frames), utility penetrations, and docking hardware. Use SiC/steel hybrid frames to spread aperture loads into the barrel laminate.
+* **Thermal control:** Embedded liquid heat loops (glycol‑water or silicone oil), MLI blankets on the outside of the barrel segments not occupied by windows, and conductive paths to station radiators.
+
+### E. Interfaces & Services
+
+* **Mechanical:** Hard‑points in each docking ring for adapter hardware, hatches, grapples, and temporary airlocks.
+* **Avionics & comms:** Redundant comm rails, guidance beacons, and visual docking aids integrated at each ring; cableways routed in protected trunking.
+* **Life support:** Distributed air distribution manifolds, CO$_2$ scrubber returns, water/condensate drains, and emergency O$_2$ drop lines.
+* **Power:** Dual independent DC buses along the tube with local UPS for shutters, lighting, and hatch actuators.
+* **Safety:** Pressure‑isolation bulkheads at ring boundaries (ring can be sealed as a compartment), blast doors for window segments, fire detection & inert‑gas suppression.
+
+### F. Operations & Human Factors
+
+* **Micro‑g ergonomics:** Handrails, foot restraints, and guided translation lines throughout; lighting graded for approach/egress; color‑coded wayfinding matching station standards.
+* **Traffic separation:** North pole dedicated to arrivals, South pole to departures (baseline); center‑tube signage and beacons enforce counter‑flow.
+* **Emergency egress:** Clearly marked safe‑hold nodes at each ring with comms, masks, and emergency supplies; shutters auto‑close upon hazard detection.
+
+### G. Manufacturing & Assembly
+
+* **Moduleization:** 10 m modules (alternating ring modules and window‑tube modules) pre‑fitted with internal systems; on‑orbit assembly via circumferential bolted/bonded joints.
+* **Inspection & maintenance:** Ring‑module inspection ports; replaceable shutter cassettes; window health monitoring (acoustic emission, strain gauges, optical clarity sensors).
+
+### H. Compliance & Reference Specs
+
+* Materials, pressure vessels, fire, glazing, and MMOD protections comply with station‑wide standards (refs). Window stacks must meet the program’s “LEO Window Specification” for thermal cycling, rapid decompression, and micrometeoroid resistance.
+
+### I. Open Parameters (TBD/TBC)
+
+* Barrel wall thickness and detailed layup by load case.
+* Final ring inner diameter vs. docking system selection and hatch design.
+* Window count/distribution per segment after view/structure trade.
+* Detailed thermal loop routing and radiator tie‑ins.
+* Human‑factors lighting and signage specifics.
+
+---
+
+## 3 Forward Work (next revision)
+
+1. Complete pressure & docking load cases and size the barrel thickness and reinforcements.
+2. Human‑factors layout (window count/placement, handrail nets, signage).
+3. Define ring‑module interface for standardized docking adapters.
+4. Hazard analysis (fire, decompression) and emergency procedure overlays.
+5. Manufacturing tolerances, NDI plan, and acceptance criteria.
+
+
+\newpage
+
+### 7.6.3 History
+
+Accomplished, frozen or just superseded evolutions (read-only).
+
+\newpage
+
 # 8. Glossary, Partners & Institutions, Legal Notices, and Overall Appendices
 
 Reference material, supporting organizations, and legal information.
