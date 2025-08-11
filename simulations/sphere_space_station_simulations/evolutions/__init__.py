@@ -1,9 +1,10 @@
 """
 Evolutions namespace for Sphere Space Station geometry.
 
-EVOLUTION 0:
- - Minimal, CAD-freundliche Volumendarstellung der DECK000-Röhre
- - Ohne Boolesche Fenster-Ausschnitte (Fenster später in EV1)
+EVOL-00 (SemVer v0.1.0):
+- Minimal, CAD-freundliche Volumendarstellung der DECK000-Röhre
+- Fenster-Ausschnitte laut SSOT gehören zu EVOL‑00, sind hier jedoch
+  noch nicht modelliert (geplant für v0.1.1).
 """
 
 __all__ = [

@@ -1,5 +1,9 @@
 """
-EVOLUTION 0 – DECK000 'Wormhole' baseline CAD geometry.
+EVOL-00 – DECK000 "Wormhole" baseline CAD geometry (SemVer v0.1.0).
+
+This initial version models the axial tube **without** window apertures to keep
+meshing robust.  According to the SSOT, EVOL‑00 includes rectangular window
+units between the docking rings; those cut-outs will follow in v0.1.1.
 
 Generates a segmented axial tube with:
  - Overall length: 127 m
@@ -8,9 +12,6 @@ Generates a segmented axial tube with:
  - Start of first ring at 3.5 m from the North pole interior face
  - Ring pitch 20 m; window-tube modules (10 m) between rings
  - 3.5 m service clearances at both ends
-
-EV0 deliberately keeps window cutouts as TODO (no boolean subtractions), focusing on
-structural barrels + rings to enable fast CAD import and downstream detailing (EV1+).
 
 Exports:
  - OBJ mesh (watertight shell segments per module)

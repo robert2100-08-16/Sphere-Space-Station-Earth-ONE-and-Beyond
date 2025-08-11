@@ -1,14 +1,15 @@
 # Evolutions – DECK000
 
-**EVOLUTION 0** implements the baseline axial tube geometry for **DECK000**:
+**EVOL-00 v0.1.0** implements the baseline axial tube geometry for **DECK000**
+without window cut-outs:
 
-- Length 127 m; barrel OD 22 m, ID 20 m  
-- Six docking rings (10 m each) with constricted **ID 10 m**, first ring at **3.5 m**, **pitch 20 m**  
-- Window-tube spans (10 m) between rings; 3.5 m service clearances at both ends  
+- Length 127 m; barrel OD 22 m, ID 20 m
+- Six docking rings (10 m each) with constricted **ID 10 m**, first ring at **3.5 m**, **pitch 20 m**
+- Window-tube spans (10 m) between rings; 3.5 m service clearances at both ends
 - Export: single **OBJ** file + **CSV** table (Table-1 equivalent)
 
-> Windows are *not* cut into the barrel in EV0 to keep meshing robust and fast.  
-> EV1+ will introduce aperture cutouts, frames, and glazing solids per program spec.
+Per SSOT, EVOL‑00 includes rectangular window units between the docking rings.
+These apertures will be added in **v0.1.1**.
 
 ## Usage
 
