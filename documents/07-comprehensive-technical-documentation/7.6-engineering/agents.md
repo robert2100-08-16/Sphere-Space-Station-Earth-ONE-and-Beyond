@@ -1,99 +1,158 @@
-# AGENTS.md (Working Instructions & Responsibilities)
+# AGENTS.md — Roles, Responsibilities & EVOL Working Rules
 
-> This chapter can be adopted 1:1 as `AGENTS.md` in the repository.
+> Applies to all engineering/product docs under `7.6-engineering/...`. **EVOL** is the primary organizing principle; every activity ensures **one SSOT per topic and EVOL**.&
 
-## A) AI Agents & Short Aliases
+# A) Agents & Short Aliases (with DISC scope)
 
-| Role / Name              | Alias          | Focus                                             | **Minimum AI Agent Capability (baseline)**                                                                                                                                        |
-| ------------------------ | -------------- | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Engineer SGI Lina        | `@sgi-lina`    | Structure & Integration (STR, ARCH)               | MSc/PhD Structural or Aerospace Eng; **Senior Systems Engineer**; PE-equivalent (or EU chartered) for structures; Cognitive **IQ-equiv ≥130**; **AI class ≥ ChatGPT 5 Thinking**. |
-| Engineer Leo             | `@eng-leo`     | Field Tests, Customer Solutions (OPS, TST)        | BSc/MSc Mech/EE/Mechatronics; **Senior Test/Field Engineer**; HW/SW integration & HIL test competency; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                      |
-| Engineer Kai Nova        | `@eng-kai`     | Propulsion & Habitat (PROP, STR)                  | MSc/PhD Aerospace/Propulsion; **Senior/Principal Propulsion Engineer**; rocket/EP modeling & safety margins; **IQ-equiv ≥130**; **AI class ≥ ChatGPT 5 Thinking**.                |
-| Engineer Mara Flux       | `@eng-mara`    | Power & Resource Flows (PWR, THM)                 | MSc Power Systems/Thermal Eng; **Senior Energy/Thermal Engineer**; heat-rejection & redundancy planning; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                    |
-| Engineer Elias Core      | `@eng-elias`   | Core Systems, Reactor, Safety-Arch (REACTOR, SAF) | MSc/PhD Nuclear or Safety Eng; **Principal Safety/Nuclear Engineer**; licensed/safety case authoring; **IQ-equiv ≥130**; **AI class ≥ ChatGPT 5 Thinking**.                       |
-| Economist Alethea Voss   | `@eco-alethea` | Markets/Trends (impact-review)                    | MSc/PhD Economics/Econometrics; **Senior Economist**; time-series/causal inference; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                                         |
-| Economist Orion Hale     | `@eco-orion`   | Investment (impact-review)                        | MSc Finance/Econ (or MBA+quant); **Senior Investment Strategist**; **CFA Level II+**; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                                       |
-| CFO Terra Chen           | `@cfo-terra`   | Cost, CAPEX/OPEX                                  | MBA/MA Finance; **CFO-level**; **CPA or CFA**; capital stack & project finance proficiency; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                                 |
-| Trade Analyst Nova Reyes | `@trade-nova`  | Transport/Raw Materials                           | MSc Supply Chain/Industrial Eng; **Senior Trade & Logistics Analyst**; OR & network modeling; **IQ-equiv ≥120**; **AI class ≥ ChatGPT 5 Thinking**.                               |
-| CEO Aris Vega            | `@ceo-aris`    | Vision, Policy Gate                               | MSc Eng or MBA; **Executive-level** strategy & governance; stakeholder diplomacy; **IQ-equiv ≥130**; **AI class ≥ ChatGPT 5 Thinking**.                                           |
-| COO Liora Stern          | `@ops-lio`     | Operations, SOPs                                  | MSc Industrial/Operations Eng; **Senior/VP Ops**; Lean Six Sigma **Black Belt**; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                                            |
-| CTO Jona Frame           | `@cto-jona`    | Technology Direction, Gatekeeper                  | PhD Systems/CS/Aerospace (or MSc + ≥10y); **Chief Architect**; INCOSE/CSEP-level systems practice; **IQ-equiv ≥130**; **AI class ≥ ChatGPT 5 Thinking**.                          |
-| CSO Mira Terra           | `@cso-mira`    | Sustainability, Safety Policy                     | MSc/PhD Environmental Science or Safety Eng; **Senior/Principal**; CSP/ISO-14001 expertise; **IQ-equiv ≥125**; **AI class ≥ ChatGPT 5 Thinking**.                                 |
+| Role / Name                  | Alias          | Primary Discipline(s) (DISC) | Systems/Scope (SYS — examples) |
+| ---------------------------- | -------------- | ---------------------------- | ------------------------------ |
+| Engineer **SGI Lina**        | `@sgi-lina`    | ARCH, STR                    | CORE, HULL, DECKS              |
+| Engineer **Leo**             | `@eng-leo`     | OPS, TST                     | DOCK, LIFT                     |
+| Engineer **Kai Nova**        | `@eng-kai`     | PROP, STR                    | PROP, CORE                     |
+| Engineer **Mara Flux**       | `@eng-mara`    | PWR, THM                     | PDN, RAD                       |
+| Engineer **Elias Core**      | `@eng-elias`   | SAF, REACTOR (↔ PWR)         | REACTOR, CORE                  |
+| Economist **Alethea Voss**   | `@eco-alethea` | Markets / Impact             | —                              |
+| Economist **Orion Hale**     | `@eco-orion`   | Investment / Impact          | —                              |
+| **CFO Terra Chen**           | `@cfo-terra`   | Finance                      | —                              |
+| Trade Analyst **Nova Reyes** | `@trade-nova`  | Transport / Materials        | DOCK, COMMS                    |
+| **CEO Aris Vega**            | `@ceo-aris`    | Policy Gate                  | —                              |
+| **COO Liora Stern**          | `@ops-lio`     | OPS                          | OPS                            |
+| **CTO Jona Frame**           | `@cto-jona`    | ARCH, SW                     | CORE, COMMS                    |
+| **CSO Mira Terra**           | `@cso-mira`    | SAF, ECLS                    | LHS, SAF                       |
 
-> **Extensible:** New agents/teams via RFC with alias definition.
+**Codes:** DISC/SYS values follow 7.6.1.1 (ARCH, STR, THM, PWR, ECLS, SAF, GNC, PROP, OPS, ELEC, SW · CORE, HULL, DECKS, REACTOR, RAD, PDN, LHS, DOCK, LIFT, AIR, WAT, WASTE, COMMS).&
 
-## B) Ownership Model
+# B) Ownership Model (Owner & Reviewers)
 
-Every document has **owner** (DRI) and **reviewers** in the front matter.
+Each document lists **Owner (DRI)** and **Reviewers** in **YAML front-matter**. Values must match the filename schema (EVOL, DISC, SYS/SYSID, LANG, STATE). **Exactly one SSOT per topic and EVOL** (state: APPROVED). &
 
-* **Owner duties:** Content correctness; upkeep of links (RFC/ADR/TST); adherence to conventions.
-* **Reviewer duties:** Discipline check; consistency with architecture/ICD; risks/safety.
+**Owner duties**
 
-**Minimum reviews by DOC type:**
+* Technical correctness; maintain RFC/ADR/CR links; keep `supersedes/superseded_by` current.
+* Keep naming, SemVer, and **STATE** consistent in filename & front-matter.
+* Ensure traceability (Requirements → Interfaces → Verification).&
 
-* **SPEC/SRS/ICD/SAF/HAZ:** at least **2 reviews** — **1× discipline**, **1× SAF/Arch** (topic-dependent `@eng-elias` or `@cso-mira` or `@cto-jona`).
-* **ADR:** at least **1** architecture review (`@cto-jona` or `@sgi-lina`).
-* **RFC:** at least **2** reviews (Discipline + Arch/Safety). Decision is recorded.
-* **TST:** at least **1** discipline review (affected field) + 1 OPS (`@ops-lio`).
+**Reviewer duties**
 
-## C) Workflows
+* Discipline review (DISC) + architecture/interface coherence; address risk/safety.
+* Gatekeeper for **EVOL compliance** (no silent overwrites; changes via RFC/CR).&
 
-1. Create **issue/ticket** (problem, goal, scope, mapping to DOC/DISC/SYS/DECK).
-2. Write **RFC** when architecture/interfaces are impacted.
-3. **Create/change document** (naming scheme + front matter).
-4. Open **PR** with template (see below).
-5. **Reviews & checks** (lint, links, tables, units).
-6. **Approval:** merge + set status to **APPROVED**; update SSOT reference.
-7. **Sunset:** move predecessor to `7.6.1-history/`; maintain `supersedes/superseded_by`.
+**Minimum reviews by doc type**
 
-## D) Commit / PR Conventions
+* **SPEC/SRS/ICD/SAF/HAZ:** ≥ **2** — 1× discipline, 1× Arch/Safety (`@eng-elias` or `@cso-mira` or `@cto-jona`).
+* **ADR:** ≥ **1** architecture review (`@cto-jona` or `@sgi-lina`).
+* **RFC:** ≥ **2** (discipline + Arch/Safety) — decision recorded.
+* **TST:** ≥ **1** discipline + **1** OPS (`@ops-lio`).
+  These thresholds support states **DRAFT → REVIEW → APPROVED → OBSOLETE** and the SSOT rule.&
 
-**Commit prefix:** `[<DOC>][<DISC>][<SYS>][<DECK>]`
-**PR title:** identical.
-**Labels:** `disc/STR`, `sys/REACTOR`, `deck/DECK015`, `doc/SPEC`, `state/REVIEW`, `rfc/2025-0007`.
+# C) EVOL Duties & Visibility
 
-**PR template (Markdown):**
+* **Badge the generation everywhere:** filenames, paths, binaries, UI “About”, dashboards, API headers, contracts, and public comms carry **EVOL-XX**.
+* **One EVOL, one SSOT per topic.**
+* **`current-evolution.md`** points to the active EVOL README; on freeze, archive under `7.6.3-history/EVOL-XX/...`.
+* **Compare Pages** (EVOL-(N-1) ↔ EVOL-N) and **Now/Next/Later** roadmaps are auto-built.  &
+
+# D) Workflow (Issue → Freeze)
+
+1. **Issue/Ticket:** Problem, objective, mapping to `DOC/DISC/SYS/SYSID/DECK`.
+2. **RFC** if architecture/interfaces are impacted (motivation, impact, migration, decision path).
+3. **Document change** under `7.6.2-evolutions/EVOL-XX/...` with correct **filename schema** and **front-matter**.
+4. **Open PR** (template below) — commit/PR titles include prefixes and **EVOL-XX**.
+5. **Reviews & CI:** Lint (schema/front-matter), links, numbered tables/figures, SI units.
+6. **Approval & Merge:** Set state to **APPROVED**, mark SSOT (`source_of_truth: true`).
+7. **Release & Freeze:** Tag `EVOL-XX-YYYY.MM`, release notes & migration guide; freeze and archive. &
+
+# E) Commit / PR Conventions
+
+**Commit/PR prefix:**
+`[<DOC>][<DISC>][<SYS>][<SYSID>][EVOL-XX] short summary`
+
+**PR template**
 
 ```markdown
 ### Why
-(Link to Issue/RFC, motivation)
+(Link to Issue/RFC; motivation)
 
 ### What
-(Core changes, affected files)
+(Key changes; affected files)
 
 ### Impact
-(Backwards compatibility, risks, migration)
+(Compatibility, risks, migration)
 
 ### Verification
-(Tests/simulations/inspections, TST IDs)
+(Tests/sims/inspections; TST IDs)
 
 ### Links
 RFC/ADR/CR/Issues
 
 ### Checklist
-- [ ] Naming scheme & front matter correct
-- [ ] Tables/figures numbered & referenced
-- [ ] Units (SI) consistent
+- [ ] Naming & front-matter consistent (EVOL/DISC/SYS/SYSID/LANG/STATE)
+- [ ] Tables/figures numbered & referenced; SI units
 - [ ] RFC/ADR/TST linked
-- [ ] Reviews requested (min. 2 for SPEC/ICD/SAF/HAZ)
+- [ ] Minimum reviews requested (see Section B)
 ```
 
-## E) Quality Gates
+Aligned with 7.6.1.1 §§8–10 and CI rules.&
 
-* **Linting:** CI checks filenames, front-matter fields, allowed codes (DISC/SYS/DECK), SemVer format.
-* **Blockers:** missing reviews, broken links, wrong SemVer, missing `supersedes` maintenance.
+# F) Quality Gates (CI/Lint) & Merge Blockers
 
-## F) Escalation & Decision
+* **Hard lint checks:**
 
-* Cross-discipline conflicts: moderation by `@cto-jonas` (architecture) + `@cso-mira` (sustainability/safety).
-* Time-critical/safety-critical: ad-hoc board (`@cto-jonas`, `@eng-elias`, `@cso-mira`, Owner).
+  * EVOL in path == EVOL in filename; regex schema satisfied.
+  * Front-matter ↔ filename consistency (`id`, `evolution`, `discipline`, `system`, `system_id`, `seq`, `lang`, `state`).
+  * SemVer valid; `STATE` consistent in name & front-matter.
+* **Blockers:** missing reviews, broken RFC/ADR/CR links, wrong SemVer, stale `supersedes/superseded_by`.&
 
-## G) Quick Cheat Sheet
+# G) Governance & Decisions (EVOL Board)
 
-* **New SPEC?** → Name per scheme, fill YAML, link RFC, obtain **2** reviews.
-* **Small fix?** → **PATCH** bump; for semantic change use **MINOR/MAJOR**.
-* **Doc replaced?** → new doc **MAJOR** or new `EVOL`; maintain `supersedes/superseded_by`; move predecessor to `history/`.
+* **Open a new EVOL** only for **system-wide architectural breaks** / unshimmable interface breaks / changed ops doctrine.
+* Submit request via **RFC** with impact analysis, migration, and customer narrative; board review (Architecture, Safety, Ops, Finance, Programs).
+* **Freeze & fork forward:** freeze EVOL-N (read-only/patch-only), continue development in EVOL-(N+1).&
+
+**Escalation**
+
+* Cross-discipline conflict: moderation by `@cto-jona` (Architecture) + `@cso-mira` (Safety/Sustainability).
+* Time-critical/Safety-critical: ad-hoc board (`@cto-jona`, `@eng-elias`, `@cso-mira`, Owner).&
+
+# H) Role-Specific Responsibilities (excerpt)
+
+* **@cto-jona (Architecture Gate):** architecture compliance, ADR index, EVOL-change gatekeeper.&
+* **@cso-mira / @eng-elias (Safety Gate):** SAF/HAZ dossiers, ops doctrine, EVOL support windows.&
+* **@ops-lio (Ops Gate):** SOPs, operations/maintenance chapters, VVP/V\&V coverage.&
+* **@sgi-lina (Systems/STR):** structure/ICD coherence, Req↔Verification traceability.&
+* **@eng-mara (PWR/THM):** energy/thermal flows, EVOL compare pages for PWR/THM ICDs.&
+* **@eng-kai (PROP):** propulsion interfaces, migration paths for thrust/power changes.&
+* **@eng-leo (OPS/TST):** test plans/reports, conformance (TST) ↔ SPEC/ICD.&
+* **@cfo-terra / @eco-orion / @eco-alethea / @trade-nova (Economics/Transport):** release/freeze gates, support policy, migration cost awareness.&
+
+# I) Quick Cheat Sheet
+
+* **New SPEC?** → Filename per schema, fill YAML, link RFC, collect **2 reviews**, set state.&
+* **Small fix?** → **PATCH** bump; semantic changes = **MINOR/MAJOR** (within the EVOL).&
+* **Architectural break?** → RFC → Board → maybe **new EVOL**; freeze the old EVOL.&
+* **Release?** → Tag `EVOL-XX-YYYY.MM`, release notes + migration guide, verify `current-evolution.md`, publish compare pages. &
+
+# Appendix 1: Filename Schema & Front-Matter (Quick Ref)
+
+**Filename**
+`<DOC>-<EVOL>-<DISC>-<SYS>-<SYSID>-<SEQ>-<TITLE>-<LANG>-v<MAJOR.MINOR.PATCH>[<PRERELEASE>][+<BUILD>][-<STATE>].md`
+Allowed fields/states/regex see 7.6.1.1 §§4–6 & §13. &
+
+**Front-matter (required)**
+`id, title, version, state, evolution, discipline, system, system_id, seq, owner, reviewers, source_of_truth, supersedes, superseded_by, rfc_links, adr_links, cr_links, date, lang` — values must match the filename.&
+
+# Appendix 2: Example PR Title
+
+```
+[SPEC][STR][DECKS][DECK000][EVOL-01] hatch tolerances v1.1.0
+```
+
+Conforms to 7.6.1.1 §8 examples.&
+
+# Validity & Maintenance
+
+This document is the **SSOT** for roles/workflows in EVOL contexts. Changes via **RFC** only; approval by Architecture/Safety/Ops gates. Show the active EVOL badge in the header and maintain the EVOL README.&
 
 ---
 
-*End of document.*
+
