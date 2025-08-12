@@ -1,3 +1,3 @@
-### 00-standards-templates
+### 00 Standards Templates
 
 Frozen standards and templates from EVOL-00.

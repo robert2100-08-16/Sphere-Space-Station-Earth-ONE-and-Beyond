@@ -1,3 +1,3 @@
-### 04-calculations
+### 04 Calculations
 
 Supporting calculations and proofs for EVOL-00.
