@@ -21,7 +21,9 @@ from simulations.sphere_space_station_simulations.data_model import (
     Hull,
     StationModel,
 )
-from simulations.blender_hull_simulation.prepare_blender_scene import prepare_scene
+from simulations.sphere_space_station_simulations.prepare_blender_scene import (
+    prepare_scene,
+)
 
 
 def main() -> None:

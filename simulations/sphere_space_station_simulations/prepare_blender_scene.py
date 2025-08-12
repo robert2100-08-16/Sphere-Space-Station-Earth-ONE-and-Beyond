@@ -1,4 +1,4 @@
-"""Utility to ensure Blender hull scenes have required exports.
+"""Utility to ensure Blender scenes have required exports.
 
 The Blender adapter expects a ``station.glb`` file in the same directory.
 This helper generates the file on demand using the shared export
@@ -8,8 +8,9 @@ workflows.
 
 from __future__ import annotations
 
-from pathlib import Path
 import logging
+from pathlib import Path
+
 from simulations.sphere_space_station_simulations import SphereDeckCalculator
 from simulations.sphere_space_station_simulations.data_model import (
     StationModel,
@@ -59,7 +60,7 @@ def prepare_scene(
     *,
     create_step: bool = False,
     create_json: bool = False,
-    force_new: bool = True,  # Be carefully: Whether to force creation of new files even if they exist, but if the model is different, must be set to True!
+    force_new: bool = True,  # Whether to force creation of new files even if they exist
 ) -> Path:
     """Ensure the required glTF file exists for Blender.
 
@@ -74,25 +75,20 @@ def prepare_scene(
     path = Path(output_path)
 
     if not force_new:
-        # If the file already exists and we are not forcing a new one, return the existing path
         if path.exists():
             log.info("Using existing glTF file at %s", path)
             return path
     else:
-        # If we are forcing a new one, delete the existing file if it exists
         if path.exists():
             path.unlink()
             log.info("Deleted existing glTF file at %s", path)
 
-    # Ensure the parent directory exists
     if not path.parent.exists():
         path.parent.mkdir(parents=True, exist_ok=True)
         log.info("Created directory %s", path.parent)
 
-    # If the file does not exist, we need to create it
     log.info("Preparing scene at %s", path)
 
-    # Build the default model
     model = _build_default_model()
 
     path.parent.mkdir(parents=True, exist_ok=True)

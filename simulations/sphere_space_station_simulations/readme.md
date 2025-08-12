@@ -10,6 +10,8 @@ animation/  - functions producing Matplotlib animations
 
 The modules here can be reused by the thin adapters located in the individual simulation folders.
 
+The package also contains `prepare_blender_scene.py`, a helper that creates default `station.glb` files for the Blender adapters.
+
 ## 1.1 Command Line Interface
 
 The ``simulation.py`` module exposes a small CLI for generating geometry files:
