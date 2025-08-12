@@ -3307,12 +3307,48 @@ This document is the **SSOT** for roles/workflows in EVOL contexts. Changes via 
 
 \newpage
 
-# 7.6.1-global-standards
+# 7.6.1 Global Standards
+
+Welcome! This folder defines the **project-wide rules** for how we name, version, structure, review, and ship every document in the Sphere Space Station *Earth ONE & Beyond* Single Source of Truth (SSOT). If you’re writing a spec, an interface control document, an ADR, an RFC, a test report, or a calculation note, **start here**.
+
+---
+
+## What lives here
+
+* **Scope & Core Principles** — Why these standards exist and where they apply.
+* **Folder Structure (top-down)** — How the SSOT is organized so content is discoverable and auditable.
+* **Evolution Lifecycle** — From idea → draft → review → *freeze*; how documents mature alongside engineering work.
+* **File-Naming Scheme** — A strict, machine-checkable pattern so docs are traceable and linkable.
+* **Versioning & Document States** — SemVer + explicit states (e.g., `DRAFT`, `…`, `FROZEN`) to signal readiness.
+* **Required YAML Front Matter** — The minimal metadata every file must declare.
+* **Change Management** — How updates are proposed, reviewed, and recorded.
+* **Commit Messages & PR Titles** — Conventions that feed automation and release notes.
+* **CODE Tables** — Controlled vocabularies (document types, disciplines, systems, decks, states).
+* **Templates** — Short, ready-to-use markdown stubs (SPEC, ICD, ADR, RFC, TST, CALC).
+* **Quality Rules & CI/Lint** — Automated checks (regex, cross-refs, state transitions) that gate merges.
+
+> The outline above corresponds to the “7.6.1 — Global Standards” section in the master documentation.
+
+---
+
+## Quick start
+
+1. **Pick the right template** (SPEC / ICD / ADR / RFC / TST / CALC) from this folder’s `templates`. Each template maps to a **DOC** code in the CODE tables.
+2. **Name your file** using the standard pattern below.
+3. **Add required YAML front matter** (see sample + Appendix 14.3 for the full field list).
+4. **Open a PR** with a compliant title; CI will lint filenames, front-matter, and cross-links.
+5. Drive it through the **Evolution Lifecycle** until the document reaches the intended **state**.
+
+---
+
+## One last thing
+
+When in doubt: **prefer traceability over brevity**. If your change affects safety, mission, budgets, or interfaces, make the intent obvious—in the filename, in the front-matter, and in the PR. The standards here exist so that every critical decision is **auditable, reproducible, and evolvable**.
 
 
 \newpage
 
-#### 7.6.1.1 Guideline Document: Evolution‑Engineering-Naming-Folder Convention
+## 7.6.1.1 Guideline Document: Evolution‑Engineering-Naming-Folder Convention
 
 **Version:** 1.0.0
 **Date:** 2025-08-10
@@ -3322,7 +3358,7 @@ This document is the **SSOT** for roles/workflows in EVOL contexts. Changes via 
 
 ---
 
-## 1) Scope & Core Principles
+### 1) Scope & Core Principles
 
 **Scope:** all engineering files under `7.6-engineering/`, including active evolutions and frozen history.
 
@@ -3337,7 +3373,7 @@ This document is the **SSOT** for roles/workflows in EVOL contexts. Changes via 
 
 ---
 
-## 2) Folder Structure (Top‑Down)
+### 2) Folder Structure (Top‑Down)
 
 ```text
 7.6-engineering/
@@ -3374,7 +3410,7 @@ This document is the **SSOT** for roles/workflows in EVOL contexts. Changes via 
 
 ---
 
-## 3) Evolution Lifecycle
+### 3) Evolution Lifecycle
 
 1. **Initiate EVOL-XX** (charter, owners, scope).
 2. **Work** (docs evolve under `7.6.2-evolutions/EVOL-XX`).
@@ -3383,7 +3419,7 @@ This document is the **SSOT** for roles/workflows in EVOL contexts. Changes via 
 
 ---
 
-## 4) File‑Naming Scheme (per document)
+### 4) File‑Naming Scheme (per document)
 
 ```text
 <DOC>-<EVOL>-<DISC>-<SYS>-<SYSID>-<SEQ>-<TITLE>-<LANG>-v<MAJOR.MINOR.PATCH>[<PRERELEASE>][+<BUILD>][-<STATE>].md
@@ -3417,7 +3453,7 @@ RFC-01-SAF-REACTOR-DECK015-0007-shielding-upgrade-EN-v0.3.0-alpha.2.md
 
 ---
 
-## 5) Versioning (SemVer) & Document States
+### 5) Versioning (SemVer) & Document States
 
 **SemVer:** `MAJOR.MINOR.PATCH`
 
@@ -3432,7 +3468,7 @@ Transition to **APPROVED** requires a linked RFC/CR and a verification reference
 
 ---
 
-## 6) Required YAML Front Matter
+### 6) Required YAML Front Matter
 
 Every file starts with YAML front matter:
 
@@ -3462,7 +3498,7 @@ lang: EN
 
 ---
 
-## 7) Change Management
+### 7) Change Management
 
 * **RFC ID:** `RFC-YYYY-####` (e.g., `RFC-2025-0007`). Content: change, motivation, impact, migration, participants, decision.
 * **CR ID:** `CR-YYYY-####` for implementation packages.
@@ -3472,7 +3508,7 @@ lang: EN
 
 ---
 
-## 8) Commit Messages & PR Titles
+### 8) Commit Messages & PR Titles
 
 **Format:**
 
@@ -3499,35 +3535,35 @@ refs: RFC-2025-0009, ADR-01-ARCH-CORE-ALL-0003
 
 ---
 
-## 9) CODE Tables (governed via RFC)
+### 9) CODE Tables (governed via RFC)
 
-### 9.1 Document Types (`DOC`)
+#### 9.1 Document Types (`DOC`)
 
 SPEC, SRS, ICD, ADR, RFC, CR, TST, CALC, DRAW, BOM, SOP, SAF, HAZ, VVP
 
-### 9.2 Disciplines (`DISC`)
+#### 9.2 Disciplines (`DISC`)
 
 ARCH – Architecture/System; STR – Structures/Mechanics; THM – Thermal; PWR – Energy/Power; ECLS – Life Support; SAF – Safety; GNC – Guidance, Navigation & Control; PROP – Propulsion; OPS – Operations; ELEC – Electrical; SW – Software
 
-### 9.3 Systems (`SYS`) – selection
+#### 9.3 Systems (`SYS`) – selection
 
 CORE, HULL, DECKS, REACTOR, RAD, PDN, LHS, DOCK, LIFT, AIR, WAT, WASTE, COMMS
 
-### 9.4 Deck IDs (`DECK`)
+#### 9.4 Deck IDs (`DECK`)
 
 DECK000 … DECK015; `ALL` for cross-deck.
 
-### 9.5 States (`STATE`)
+#### 9.5 States (`STATE`)
 
 DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-## 10) Templates (Short Forms)
+### 10) Templates (Short Forms)
 
 > Full templates are in `7.6.1-global-standards/` (global) and may be refined under `7.6.2-evolutions/EVOL-XX/00-standards-templates/`.
 
-### 10.1 SPEC (Markdown)
+#### 10.1 SPEC (Markdown)
 
 ```markdown
 ---
@@ -3544,7 +3580,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 # 8. Change History
 ```
 
-### 10.2 ICD
+#### 10.2 ICD
 
 ```markdown
 ---
@@ -3560,7 +3596,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 # 7. Change History
 ```
 
-### 10.3 ADR
+#### 10.3 ADR
 
 ```markdown
 ---
@@ -3574,7 +3610,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 # References (RFC, SPEC)
 ```
 
-### 10.4 RFC
+#### 10.4 RFC
 
 ```markdown
 ---
@@ -3589,7 +3625,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 # Decision (date, participants)
 ```
 
-### 10.5 TST (Test Report)
+#### 10.5 TST (Test Report)
 
 ```markdown
 ---
@@ -3604,7 +3640,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 # Conclusion & Approval
 ```
 
-### 10.6 CALC
+#### 10.6 CALC
 
 ```markdown
 ---
@@ -3621,7 +3657,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-## 11) Quality Rules
+### 11) Quality Rules
 
 * One topic per document; split and cross-link large topics.
 * Number all tables/figures; reference them in text; SI units with proper prefixes.
@@ -3631,7 +3667,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-## 12) Automation & CI
+### 12) Automation & CI
 
 * **Linting:** enforce filename schema ↔ front matter consistency (EVOL, DISC, SYS, DECK, LANG, STATE).
 * **Tagging:** generate `EVOL-XX-YYYY.MM` tags and a signed manifest of key artifacts.
@@ -3639,7 +3675,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-## 13) Appendix CI/LINT
+### 13) Appendix CI/LINT
 
 ### CI/LINT: Filename Regex & Cross-Checks
 
@@ -3657,7 +3693,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-## 14) Appendix 14 – Glossary (Abbreviations) / Appendix 14 – Glossar (Abkürzungen)
+### 14) Appendix 14 – Glossary (Abbreviations) / Appendix 14 – Glossar (Abkürzungen)
 
 > This glossary consolidates **all abbreviations, codes, and fields** used in the guideline “Evolution‑Engineering‑Naming‑Folder Convention” – incl. short description and category. Languages: **EN (English) / DE (Deutsch)**.
 >
@@ -3667,7 +3703,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-### 14.1 Process & Governance / Prozess & Governance
+#### 14.1 Process & Governance / Prozess & Governance
 
 | Code     | Long form (EN)                 | Langform (DE)                 | Description (EN)                                                                         | Beschreibung (DE)                                                                  |
 | -------- | ------------------------------ | ----------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
@@ -3683,7 +3719,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-### 14.2 File‑Name Schema (Fields & States) / Dateinamen‑Schema (Felder & Stati)
+#### 14.2 File‑Name Schema (Fields & States) / Dateinamen‑Schema (Felder & Stati)
 
 | Code           | Long form (EN)      | Langform (DE)       | Description (EN)                                                               | Beschreibung (DE)                                                              |
 | -------------- | ------------------- | ------------------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
@@ -3700,7 +3736,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 | **Prerelease** | Pre‑release tag     | Vorab‑Kennung       | -alpha.N, -beta.N, -rc.N.                                                      | -alpha.N, -beta.N, -rc.N.                                                      |
 | **Build**      | Build metadata      | Build‑Metadaten     | +YYYYMMDD, +git.<shortsha> …                                                   | +YYYYMMDD, +git.<shortsha> …                                                   |
 
-#### Document Types (DOC) / Dokumenttypen (DOC)
+##### Document Types (DOC) / Dokumenttypen (DOC)
 
 | Code     | Long form (EN)                      | Langform (DE)                  | Short description (EN)                     | Kurzbeschreibung (DE)                       |
 | -------- | ----------------------------------- | ------------------------------ | ------------------------------------------ | ------------------------------------------- |
@@ -3719,7 +3755,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 | **HAZ**  | Hazard Analysis                     | Hazard Analysis                | Hazard/risk analysis.                      | Gefährdungs‑/Risikoanalyse.                 |
 | **VVP**  | Verification & Validation Plan      | Verification & Validation Plan | V\&V plan/coverage.                        | V\&V‑Plan/Abdeckung.                        |
 
-#### Disciplines (DISC) / Disziplinen (DISC)
+##### Disciplines (DISC) / Disziplinen (DISC)
 
 | Code     | Long form (EN)                       | Langform (DE)                                                         |
 | -------- | ------------------------------------ | --------------------------------------------------------------------- |
@@ -3735,7 +3771,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 | **ELEC** | Electrical                           | Elektrik/Elektronik / Electrical                                      |
 | **SW**   | Software                             | Software                                                              |
 
-#### Systems (SYS – selection) / Systeme (SYS – Auswahl)
+##### Systems (SYS – selection) / Systeme (SYS – Auswahl)
 
 | Code        | Long form (EN)             | Langform (DE)              | Note (EN)   | Hinweis (DE)              |
 | ----------- | -------------------------- | -------------------------- | ----------- | ------------------------- |
@@ -3757,7 +3793,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-### 14.3 Front‑Matter (YAML fields) / Front‑Matter (YAML‑Felder)
+#### 14.3 Front‑Matter (YAML fields) / Front‑Matter (YAML‑Felder)
 
 | Field                                   | Bedeutung (DE)                                       | Meaning (EN)                                        |
 | --------------------------------------- | ---------------------------------------------------- | --------------------------------------------------- |
@@ -3779,7 +3815,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-### 14.4 Orbits, Mission & Physics (Project Context) / Orbits, Mission & Physik (Projektkontext)
+#### 14.4 Orbits, Mission & Physics (Project Context) / Orbits, Mission & Physik (Projektkontext)
 
 | Code        | Long form (EN)               | Langform (DE)                      | Description (EN)                        | Beschreibung (DE)                             |
 | ----------- | ---------------------------- | ---------------------------------- | --------------------------------------- | --------------------------------------------- |
@@ -3792,7 +3828,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-### 14.5 Energy & Propulsion (Project Context) / Energie & Antrieb (Projektkontext)
+#### 14.5 Energy & Propulsion (Project Context) / Energie & Antrieb (Projektkontext)
 
 | Code    | Long form (EN)              | Langform (DE)               | Description (EN)                                    | Beschreibung (DE)                                          |
 | ------- | --------------------------- | --------------------------- | --------------------------------------------------- | ---------------------------------------------------------- |
@@ -3804,7 +3840,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-### 14.6 Operations, Safety & Systems (Project Context) / Betrieb, Sicherheit & Systeme (Projektkontext)
+#### 14.6 Operations, Safety & Systems (Project Context) / Betrieb, Sicherheit & Systeme (Projektkontext)
 
 | Code    | Long form (EN)               | Langform (DE)                | Description (EN)                  | Beschreibung (DE)               |
 | ------- | ---------------------------- | ---------------------------- | --------------------------------- | ------------------------------- |
@@ -3816,7 +3852,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-### 14.7 Materials & Windows (Project Context) / Materialien & Fenster (Projektkontext)
+#### 14.7 Materials & Windows (Project Context) / Materialien & Fenster (Projektkontext)
 
 | Code     | Long form (EN)               | Langform (DE)                | Description (EN)                                | Beschreibung (DE)                              |
 | -------- | ---------------------------- | ---------------------------- | ----------------------------------------------- | ---------------------------------------------- |
@@ -3828,7 +3864,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-### 14.8 Communication & Outreach / Kommunikation & Öffentlichkeitsarbeit
+#### 14.8 Communication & Outreach / Kommunikation & Öffentlichkeitsarbeit
 
 | Code      | Long form (EN)                                | Langform (DE)                                 | Description (EN)            | Beschreibung (DE)           |
 | --------- | --------------------------------------------- | --------------------------------------------- | --------------------------- | --------------------------- |
@@ -3837,7 +3873,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-### 14.9 Governance & Alliances / Governance & Allianzen
+#### 14.9 Governance & Alliances / Governance & Allianzen
 
 | Code     | Long form (EN)                          | Langform (DE)                           | Description (EN)           | Beschreibung (DE)                |
 | -------- | --------------------------------------- | --------------------------------------- | -------------------------- | -------------------------------- |
@@ -3845,7 +3881,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-### 14.10 Languages, Units & Format / Sprachen, Einheiten & Format
+#### 14.10 Languages, Units & Format / Sprachen, Einheiten & Format
 
 | Code           | Long form (EN)        | Langform (DE)         | Description (EN)                    | Beschreibung (DE)                        |
 | -------------- | --------------------- | --------------------- | ----------------------------------- | ---------------------------------------- |
@@ -3856,7 +3892,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ---
 
-### 14.11 Examples (Reference) / Beispiele (Referenz)
+#### 14.11 Examples (Reference) / Beispiele (Referenz)
 
 ```text
 SPEC-01-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v1.0.0-DRAFT.md
@@ -4067,6 +4103,352 @@ This principle applies to all systems, subsystems, artifacts, and communications
 **Stay within EVOL if:** change is additive or can be shimmed; risk and cost of migration exceed benefit; safety and ops doctrine remain stable.
 
 **Always do:** badge the generation, keep one SSOT per topic per EVOL, trace every change, publish migration paths, and freeze the past before building the future.
+
+
+\newpage
+
+# 7.6.1.3 Evolution Deliverables & Phase Gates
+
+**Effective date:** 2025‑08‑12
+**Applies to:** All Evolutions under `7.6 Engineering`
+**Audience:** Engineers, Test, QA, Safety/Security, Ops, EVOL Board
+**Purpose:** Define the complete, auditable deliverables required to pass the four phase gates of an Evolution—**Proposal → Work → Review → Freeze**—for both **documents** and **products** (RIG/SIM/SUBSYS/SYS/DECK/SPHERE).
+
+---
+
+## 1. Scope & Principles
+
+* Evolutions are **controlled change waves**. Each wave produces a **complete, releasable set** of documents and (where applicable) product artifacts.
+* Every artifact must be **versioned**, **stateful** (`DRAFT` → `REVIEW` → `FROZEN`), and **traceable** to requirements and evidence.
+* Phase gates are **Go/No‑Go decision points** owned by the EVOL Board.
+
+---
+
+## 2. Roles (responsibility summary)
+
+* **Evolution Owner**: accountable for scope, schedule, quality; maintains the Evolution index.
+* **Technical Reviewers** (discipline leads): approve content and test adequacy.
+* **QA/Compliance**: verify format, metadata, traceability, and standards mapping.
+* **Safety/Security**: own hazard analyses, threat models, and waivers.
+* **Ops**: own runbooks, training, and operational readiness inputs.
+* **EVOL Board**: gate decisions and conflict resolution.
+
+---
+
+## 3. Lifecycle Overview
+
+1. **Proposal** — frame the problem, options, and plan. Output: *PDR‑quality* bundle.
+2. **Work** — build, integrate, and prove feasibility. Output: *working drafts + demo evidence*.
+3. **Review** — formal acceptance review. Output: *rc‑labeled packages + V\&V evidence*.
+4. **Freeze** — release, baseline, and archive. Output: *immutable v1.0.0 + manifest*.
+
+---
+
+## 4. Deliverables by Phase (Documents)
+
+### 4.1 Proposal → Gate: EVOL Board “Go”
+
+**Required**
+
+* **RFC.md** (problem, goals/non‑goals, scope, constraints, success criteria).
+* **Options & Decision Drivers** (trade study / alternatives matrix).
+* **High‑Level Architecture** (1–2 diagrams; interfaces touched).
+* **Initial Budgets**: mass, power, heat, volume (coarse).
+* **Risk Register (init)** + key assumptions.
+* **Plan & Resources**: milestones, owners, review window.
+* **Tracking**: Epic created; links recorded in front matter.
+
+**Exit criteria**: EVOL Board approves “Go”; owners/reviewers assigned; epic/backlog exists.
+
+### 4.2 Work → Gate: “Review Package Ready”
+
+**Required (versioned drafts)**
+
+* **SPEC/** (updated specs, `DRAFT`, SemVer `0.x`).
+* **ICD/** (interfaces changed/pinned, `DRAFT`).
+* **ADR/** (records of key architecture choices).
+* **CALC/** (calculations, models, scripts; inputs/outputs checked‑in).
+* **MODEL‑SIM/** (simulation configs with seeds; reproducible runs).
+* **TST/** (verification plan + procedures; benches/rigs if HW).
+* **CHANGELOG.md** (human‑readable since last freeze).
+* **Compliance notes** (standards mapping started).
+* **Risk Register** (updated mitigations).
+
+**Exit criteria**: CI green (lint, schema/front‑matter, links, unit tests); demo evidence of feasibility (sim run, prototype, or analytical proof); no open P0/P1 defects.
+
+### 4.3 Review → Gate: Sign‑offs Complete
+
+**Required (review bundle)**
+
+* **Review Package** (index/cover sheet linking all items).
+* **SPEC/** **v1.0.0‑rc** (`REVIEW`) with redlines resolved.
+* **ICD/** **v1.0.0‑rc** with data dictionary & contracts.
+* **V\&V Matrix** (requirements ↔ tests ↔ evidence).
+* **Test Results** (logs, measurements, sims, tolerances, seeds).
+* **Budgets** updated vs. proposal deltas.
+* **Safety/Security**: FMEA/HAZOP, threat model, waivers/deviations.
+* **Ops Readiness**: runbook draft, rollback, training outline.
+* **Compliance Matrix** (regulatory/standard mapping).
+* **Review Minutes** (actions, dispositions, final sign‑offs).
+
+**Exit criteria**: required sign‑offs recorded; all actions closed or waived; versions/states aligned for freeze.
+
+### 4.4 Freeze → Gate: Release & Archive Done
+
+**Required (frozen artifacts)**
+
+* **SPEC/** & **ICD/** **v1.0.0** `FROZEN` (immutable).
+* **Release Notes** (scope, breaking changes, migration notes).
+* **Parameter Baseline**: `parameters-baseline.json`.
+* **Interface Locks**: `interfaces.lock` (exact versions/hashes).
+* **BOM/SBOM** (SPDX/CycloneDX where SW involved).
+* **Geometry/Models** (neutral exports: STEP/GLTF as applicable).
+* **Test Evidence Archive** (datasets, configs, seeds, checksums).
+* **Ops Runbook (final)**, training pack, SLO/monitoring hooks.
+* **Archive Manifest**: `manifest.sha256` + provenance list.
+* **Tag & Archive**: repo tag (e.g., `EVOL‑07.FROZEN.2025‑08‑12`); copy to `7.6.3 History/EVOL‑07/`.
+
+**Exit criteria**: read‑only flag applied; traceability report passes; ops handover acknowledged.
+
+---
+
+## 5. Deliverables by Phase (Products)
+
+**Product classes**: `RIG` (test rigs), `SIM` (simulators/digital twins), `SUBSYS` (modules), `SYS` (integrated systems), `DECK` (station decks/sections), `SPHERE` (whole station).
+
+### 5.1 Product IDs & configuration keys
+
+* **ID schema**: `CLASS-PRODID-VAR-REV` + **ASN** (physical serial) + **CFGHASH** (configuration hash).
+  Examples: `RIG-THERM-01-A2 / ASN 0007 / CFGHASH 3f9c…`, `DECK-015-PWR-01-B0 / ASN 0001 / CFGHASH 91ab…`.
+
+### 5.2 Proposal (products)
+
+**All classes**: PDR (product decision), top‑level PBS/BOM (10‑line granularity), budget draft, conformity plan, initial risks, block diagrams, build plan (milestones, required rigs/sims, resources).
+**Class‑specific**:
+
+* **RIG**: measurands & target accuracies; calibration strategy.
+* **SIM**: model boundaries; **fidelity metrics** (Δt, numerical error, deviation vs. test data).
+* **SUBSYS/SYS**: interface briefs; preliminary ICD deltas.
+* **DECK/SPHERE**: integration/assembly concept; logistics constraints.
+
+**Exit**: EVOL Board “Go”; product ID reserved; epic/backlog created.
+
+### 5.3 Work (products)
+
+**All classes**: detailed **BOM v0.x**; fabrication packages (drawings, CAM/GERBER, STEP/STL as relevant); configuration files + **CFGHASH**; **ASN** assigned; V\&V plan and test procedures; interim evidence (photos, logs, sim runs with seeds).
+**Class‑specific**:
+
+* **RIG**: calibration log v0.x; uncertainty budget; lab safety clearance.
+* **SIM**: validation vs. rig/flight data; **Golden Runs** + tolerances.
+* **SUBSYS**: EVT/DVT builds; firmware artifacts; bring‑up logs.
+* **SYS**: HIL/CHIL proofs; interface tests; EMV/leak/pressure as applicable.
+* **DECK**: structural assembly evidence; piping/electrical isometrics; leak tests.
+* **SPHERE**: integration timeline; cross‑deck tests; emergency power/LC drills.
+
+**Exit**: CI green; demo/functional proof; no open P0/P1 defects.
+
+### 5.4 Review (products)
+
+**All classes**: review package; **SPEC/ICD v1.0.0‑rc**; V\&V matrix with results; updated budgets & risks; safety/security artifacts; ops drafts.
+**Acceptance tests**:
+
+* **RIG**: **FAT‑RIG** (factory acceptance), calibration certificates, standards trace.
+* **SIM**: **FAT‑SIM** (reproducibility, scenario coverage, fidelity report).
+* **SUBSYS**: **FAT‑SUB** (interfaces & performance), environmental/stress tests.
+* **SYS**: **FAT‑SYS** + HIL proof, controller stability, safe‑state tests.
+* **DECK**: **FAT‑DECK** (pressure, leak, EMV/structure), evacuation/ops drills.
+* **SPHERE**: **ORR‑Draft** (Operational Readiness Review pre‑stage), end‑to‑end exercises.
+
+**Exit**: sign‑offs complete; actions closed or waived.
+
+### 5.5 Freeze (products)
+
+**All classes**: `v1.0.0 FROZEN` release; release notes; traceability report; parameter baseline; `interfaces.lock`; BOM/SBOM; provenance manifest; final ops runbook; training; spares & tools list; evidence archive (datasets, seeds, photos, build logs).
+**Site acceptance**:
+
+* **RIG**: **SAT‑RIG**; in service; maintenance interval set.
+* **SIM**: **SAT‑SIM**; reference Golden Runs stored; regression CI hook.
+* **SUBSYS**: **SAT‑SUB**; serial ASN range opened; spares kit defined.
+* **SYS**: **SAT‑SYS**; emergency procedures verified; telemetry thresholds set.
+* **DECK**: **SAT‑DECK**; handover to integration lead; artifacts set to read‑only.
+* **SPHERE**: **ORR/FRR** completed; operational authorization; tag `SPHERE.FROZEN.YYYY‑MM‑DD`.
+
+---
+
+## 6. Evidence & Traceability
+
+* **V\&V Matrix** is mandatory: requirement → spec clause → test case → result → dataset/seed.
+* **Definition of Evidence (DoE)**: evidence must be **reproducible** (configs + seeds), **attributed** (who/when/tool‑version), and **integrity‑checked** (hashes).
+* **Parameter Baseline** holds numerical knobs; changes require SemVer bump + re‑test scope.
+* **Interface Locks** pin all external contracts by version and checksum.
+* **Asset Map** ties `ASN ↔ CFGHASH ↔ Release‑Tag ↔ Documents/Tests` in machine‑readable form.
+
+---
+
+## 7. Versioning & States
+
+* **SemVer** for documents and products (`MAJOR.MINOR.PATCH`).
+  ‑ `MAJOR`: incompatible changes; ‑ `MINOR`: added functionality; ‑ `PATCH`: fixes/no interface change.
+* **States**: `DRAFT` → `REVIEW` → `FROZEN`. Release candidates use `‑rc` suffix.
+* **Freeze** sets immutability; hotfixes require new patch release + minimal re‑tests.
+
+---
+
+## 8. Configuration Management
+
+* **Product identity**: `CLASS‑PRODID‑VAR‑REV` (human‑readable), **ASN** (serial), **CFGHASH** (config hash).
+* **product.yaml** is the single source of truth for each physical/simulated asset.
+* **Digital twin**: every physical ASN points to a SIM snapshot + Golden Runs.
+
+**Example `product.yaml`**
+
+```yaml
+id: DECK-015-PWR-01
+class: DECK
+variant: "01"
+revision: "B0"
+asn: "0001"
+cfg_hash: "91ab72d4..."
+release_tag: "DECK-015-PWR-01_v1.0.0"
+interfaces:
+  - id: ICD-015-PWR-CTRL_v1.0.0
+  - id: ICD-015-THERM-LOOP_v1.0.0
+budgets:
+  mass_kg: 128000
+  power_kw: 45
+  heat_kw: 38
+  volume_m3: 2100
+evidence:
+  photos: ["evidence/photos/2025-08-01_installation.jpg"]
+  tests: ["tests/FAT-DECK/results-2025-08-05.csv"]
+  datasets: ["evidence/data/pressure-leak-logs.parquet"]
+ops:
+  runbook: "ops/runbook.md"
+  maintenance_interval_days: 180
+```
+
+---
+
+## 9. CI & Quality Gates
+
+* **Front‑matter lint** (required fields), **filename regex**, **cross‑link checks**, **schema validation** for `product.yaml`.
+* **Build/test**: unit tests; model/sim reruns; Golden Run regression; doc link checker.
+* **Security/Safety**: minimum checklists (threat model/FMEA present) before review.
+* **Blocking rules**: merge blocked until all required checks pass and required reviewers sign.
+
+---
+
+## 10. Acceptance & Readiness Reviews
+
+* **FAT** (Factory Acceptance): performed in Review phase; per‑class variants (RIG/SIM/SUBSYS/SYS/DECK).
+* **SAT** (Site Acceptance): performed in Freeze phase; installation/ops readiness confirmed.
+* **ORR/FRR** (Operational/Flight Readiness Reviews): required for **SPHERE** releases.
+
+---
+
+## 11. Release & Archival
+
+* Tag the release (e.g., `EVOL-07.FROZEN.2025-08-12`).
+* Copy frozen set to `7.6.3 History/EVOL-XX/` with `manifest.sha256`.
+* Apply repository read‑only protection to frozen artifacts.
+
+---
+
+## 12. Templates & References
+
+* Short‑form templates exist for **SPEC, ICD, ADR, RFC, TST, CALC**; start from those.
+* Use the **Evolution index** (README of the Evolution) to link all deliverables.
+* For acceptance checklists, use the minimal **FAT/SAT** templates provided under `templates/acceptance/`.
+
+---
+
+## Appendix A — Filename Pattern (documents)
+
+Use the following pattern (illustrative; adapt discipline/scope codes as needed):
+
+```
+^(SPEC|ICD|ADR|RFC|TST|CALC)-(\d+)-([A-Z]{2,5})-([A-Z0-9\-]+)-EN-v(\d+\.\d+\.\d+)(-(DRAFT|REVIEW|FROZEN|RC\d+))?$  
+```
+
+**Examples**
+`SPEC-07-PWR-DECK015-PWR-CTRL-EN-v0.4.0-DRAFT`
+`ICD-07-CTRL-DECK015-THERM-EN-v1.0.0-REVIEW`
+
+## Appendix B — Directory Skeleton (per Evolution)
+
+```
+EVOL-XX/
+  00-proposal/
+    RFC.md
+    options-trade-study.md
+    arch-overview.drawio
+    initial-budgets.xlsx
+    risks-init.csv
+  01-work/
+    SPEC/
+    ICD/
+    ADR/
+    CALC/
+    MODEL-SIM/
+    TST/
+    CHANGELOG.md
+  02-review/
+    review-package.md
+    vv-matrix.xlsx
+    compliance-matrix.xlsx
+    review-minutes.md
+  03-freeze/
+    release-notes.md
+    parameters-baseline.json
+    interfaces.lock
+    sbom.spdx
+    bom.csv
+    manifest.sha256
+  products/
+    RIG/<RIG-ID>/...
+    SIM/<SIM-ID>/...
+    SUBSYS/<SUBSYS-ID>/...
+    SYS/<SYS-ID>/...
+    DECK/<DECK-ID>/...
+    SPHERE/<release-tag>/...
+```
+
+## Appendix C — Review Package Checklist (minimum)
+
+* [ ] Review Package index present and link‑clean.
+* [ ] SPEC/ICD at `v1.0.0-rc`, `REVIEW` state.
+* [ ] V\&V Matrix complete and consistent with evidence.
+* [ ] Test results (logs, seeds, tolerances) attached.
+* [ ] Budgets updated; deltas vs. Proposal highlighted.
+* [ ] Safety/Security artifacts present (FMEA/HAZOP, threat model, waivers).
+* [ ] Ops drafts (runbook, training outline, rollback) attached.
+* [ ] Compliance matrix present.
+* [ ] Review minutes template ready.
+
+## Appendix D — Freeze Manifest (example)
+
+```
+Release: EVOL-07.FROZEN.2025-08-12
+Artifacts:
+  - SPEC/DECK015-PWR-CTRL_v1.0.0.pdf  sha256: a1b2...
+  - ICD/DECK015-THERM_v1.0.0.yaml      sha256: c3d4...
+  - parameters-baseline.json           sha256: e5f6...
+  - interfaces.lock                    sha256: 9abc...
+  - sbom.spdx                          sha256: dede...
+  - bom.csv                            sha256: 4444...
+Evidence:
+  - tests/FAT-DECK/results-2025-08-05.csv  sha256: 7777...
+  - evidence/data/pressure-leak-logs.parquet sha256: 8888...
+Provenance:
+  - commit: 3b1c2d4
+  - built_by: j.smith
+  - built_at: 2025-08-12T10:11:00Z
+```
+
+---
+
+**Definition of Done (Evolution)**
+An Evolution is *done* when all phase deliverables are present, signed off, and archived; frozen artifacts are immutable and linked in the Evolution index; Ops acknowledges handover; traceability report is clean.
 
 
 \newpage
