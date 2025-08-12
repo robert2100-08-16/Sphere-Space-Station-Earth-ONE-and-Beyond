@@ -3145,11 +3145,11 @@ Earth ONE combines innovative orbital and docking strategies with human-centered
 
 \newpage
 
-# AGENTS.md — Roles, Responsibilities & EVOL Working Rules
+## AGENTS.md — Roles, Responsibilities & EVOL Working Rules
 
 > Applies to all engineering/product docs under `7.6-engineering/...`. **EVOL** is the primary organizing principle; every activity ensures **one SSOT per topic and EVOL**.&
 
-# A) Agents & Short Aliases (with DISC scope)
+### A) Agents & Short Aliases (with DISC scope)
 
 | Role / Name                  | Alias          | Primary Discipline(s) (DISC) | Systems/Scope (SYS — examples) |
 | ---------------------------- | -------------- | ---------------------------- | ------------------------------ |
@@ -3169,7 +3169,7 @@ Earth ONE combines innovative orbital and docking strategies with human-centered
 
 **Codes:** DISC/SYS values follow 7.6.1.1 (ARCH, STR, THM, PWR, ECLS, SAF, GNC, PROP, OPS, ELEC, SW · CORE, HULL, DECKS, REACTOR, RAD, PDN, LHS, DOCK, LIFT, AIR, WAT, WASTE, COMMS).&
 
-# B) Ownership Model (Owner & Reviewers)
+### B) Ownership Model (Owner & Reviewers)
 
 Each document lists **Owner (DRI)** and **Reviewers** in **YAML front-matter**. Values must match the filename schema (EVOL, DISC, SYS/SYSID, LANG, STATE). **Exactly one SSOT per topic and EVOL** (state: APPROVED). &
 
@@ -3192,14 +3192,14 @@ Each document lists **Owner (DRI)** and **Reviewers** in **YAML front-matter**. 
 * **TST:** ≥ **1** discipline + **1** OPS (`@ops-lio`).
   These thresholds support states **DRAFT → REVIEW → APPROVED → OBSOLETE** and the SSOT rule.&
 
-# C) EVOL Duties & Visibility
+### C) EVOL Duties & Visibility
 
 * **Badge the generation everywhere:** filenames, paths, binaries, UI “About”, dashboards, API headers, contracts, and public comms carry **EVOL-XX**.
 * **One EVOL, one SSOT per topic.**
 * **`current-evolution.md`** points to the active EVOL README; on freeze, archive under `7.6.3-history/EVOL-XX/...`.
 * **Compare Pages** (EVOL-(N-1) ↔ EVOL-N) and **Now/Next/Later** roadmaps are auto-built.  &
 
-# D) Workflow (Issue → Freeze)
+### D) Workflow (Issue → Freeze)
 
 1. **Issue/Ticket:** Problem, objective, mapping to `DOC/DISC/SYS/SYSID/DECK`.
 2. **RFC** if architecture/interfaces are impacted (motivation, impact, migration, decision path).
@@ -3209,7 +3209,7 @@ Each document lists **Owner (DRI)** and **Reviewers** in **YAML front-matter**. 
 6. **Approval & Merge:** Set state to **APPROVED**, mark SSOT (`source_of_truth: true`).
 7. **Release & Freeze:** Tag `EVOL-XX-YYYY.MM`, release notes & migration guide; freeze and archive. &
 
-# E) Commit / PR Conventions
+### E) Commit / PR Conventions
 
 **Commit/PR prefix:**
 `[<DOC>][<DISC>][<SYS>][<SYSID>][EVOL-XX] short summary`
@@ -3217,22 +3217,22 @@ Each document lists **Owner (DRI)** and **Reviewers** in **YAML front-matter**. 
 **PR template**
 
 ```markdown
-### Why
+#### Why
 (Link to Issue/RFC; motivation)
 
-### What
+#### What
 (Key changes; affected files)
 
-### Impact
+#### Impact
 (Compatibility, risks, migration)
 
-### Verification
+#### Verification
 (Tests/sims/inspections; TST IDs)
 
-### Links
+#### Links
 RFC/ADR/CR/Issues
 
-### Checklist
+#### Checklist
 - [ ] Naming & front-matter consistent (EVOL/DISC/SYS/SYSID/LANG/STATE)
 - [ ] Tables/figures numbered & referenced; SI units
 - [ ] RFC/ADR/TST linked
@@ -3241,7 +3241,7 @@ RFC/ADR/CR/Issues
 
 Aligned with 7.6.1.1 §§8–10 and CI rules.&
 
-# F) Quality Gates (CI/Lint) & Merge Blockers
+### F) Quality Gates (CI/Lint) & Merge Blockers
 
 * **Hard lint checks:**
 
@@ -3250,7 +3250,7 @@ Aligned with 7.6.1.1 §§8–10 and CI rules.&
   * SemVer valid; `STATE` consistent in name & front-matter.
 * **Blockers:** missing reviews, broken RFC/ADR/CR links, wrong SemVer, stale `supersedes/superseded_by`.&
 
-# G) Governance & Decisions (EVOL Board)
+### G) Governance & Decisions (EVOL Board)
 
 * **Open a new EVOL** only for **system-wide architectural breaks** / unshimmable interface breaks / changed ops doctrine.
 * Submit request via **RFC** with impact analysis, migration, and customer narrative; board review (Architecture, Safety, Ops, Finance, Programs).
@@ -3261,7 +3261,7 @@ Aligned with 7.6.1.1 §§8–10 and CI rules.&
 * Cross-discipline conflict: moderation by `@cto-jona` (Architecture) + `@cso-mira` (Safety/Sustainability).
 * Time-critical/Safety-critical: ad-hoc board (`@cto-jona`, `@eng-elias`, `@cso-mira`, Owner).&
 
-# H) Role-Specific Responsibilities (excerpt)
+### H) Role-Specific Responsibilities (excerpt)
 
 * **@cto-jona (Architecture Gate):** architecture compliance, ADR index, EVOL-change gatekeeper.&
 * **@cso-mira / @eng-elias (Safety Gate):** SAF/HAZ dossiers, ops doctrine, EVOL support windows.&
@@ -3272,14 +3272,14 @@ Aligned with 7.6.1.1 §§8–10 and CI rules.&
 * **@eng-leo (OPS/TST):** test plans/reports, conformance (TST) ↔ SPEC/ICD.&
 * **@cfo-terra / @eco-orion / @eco-alethea / @trade-nova (Economics/Transport):** release/freeze gates, support policy, migration cost awareness.&
 
-# I) Quick Cheat Sheet
+### I) Quick Cheat Sheet
 
 * **New SPEC?** → Filename per schema, fill YAML, link RFC, collect **2 reviews**, set state.&
 * **Small fix?** → **PATCH** bump; semantic changes = **MINOR/MAJOR** (within the EVOL).&
 * **Architectural break?** → RFC → Board → maybe **new EVOL**; freeze the old EVOL.&
 * **Release?** → Tag `EVOL-XX-YYYY.MM`, release notes + migration guide, verify `current-evolution.md`, publish compare pages. &
 
-# Appendix 1: Filename Schema & Front-Matter (Quick Ref)
+### Appendix 1: Filename Schema & Front-Matter (Quick Ref)
 
 **Filename**
 `<DOC>-<EVOL>-<DISC>-<SYS>-<SYSID>-<SEQ>-<TITLE>-<LANG>-v<MAJOR.MINOR.PATCH>[<PRERELEASE>][+<BUILD>][-<STATE>].md`
@@ -3288,7 +3288,7 @@ Allowed fields/states/regex see 7.6.1.1 §§4–6 & §13. &
 **Front-matter (required)**
 `id, title, version, state, evolution, discipline, system, system_id, seq, owner, reviewers, source_of_truth, supersedes, superseded_by, rfc_links, adr_links, cr_links, date, lang` — values must match the filename.&
 
-# Appendix 2: Example PR Title
+### Appendix 2: Example PR Title
 
 ```
 [SPEC][STR][DECKS][DECK000][EVOL-01] hatch tolerances v1.1.0
@@ -3296,7 +3296,7 @@ Allowed fields/states/regex see 7.6.1.1 §§4–6 & §13. &
 
 Conforms to 7.6.1.1 §8 examples.&
 
-# Validity & Maintenance
+### Validity & Maintenance
 
 This document is the **SSOT** for roles/workflows in EVOL contexts. Changes via **RFC** only; approval by Architecture/Safety/Ops gates. Show the active EVOL badge in the header and maintain the EVOL README.&
 
@@ -3677,7 +3677,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 
 ### 13) Appendix CI/LINT
 
-### CI/LINT: Filename Regex & Cross-Checks
+#### CI/LINT: Filename Regex & Cross-Checks
 
 **Filename Regex:**
 
@@ -3917,7 +3917,7 @@ RFC-01-SAF-REACTOR-DECK015-0007-shielding-upgrade-EN-v0.3.0-alpha.2.md
 
 \newpage
 
-# 7.6.1.2 Guideline Document: The Evolution Principle
+## 7.6.1.2 Guideline Document: The Evolution Principle
 
 **Version:** 1.0.0
 **Date:** 2025-08-11
@@ -3927,7 +3927,7 @@ RFC-01-SAF-REACTOR-DECK015-0007-shielding-upgrade-EN-v0.3.0-alpha.2.md
 
 ---
 
-## 1) Scope & Intent
+### 1) Scope & Intent
 
 This principle applies to all systems, subsystems, artifacts, and communications across the Sphere project. It operationalizes **Evolution‑first**: product generations (**EVOL‑00, EVOL‑01, …**) are self‑contained, auditable capsules that structure work, govern change, and frame expectations.
 
@@ -3939,7 +3939,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 2) What “Evolution” Means
+### 2) What “Evolution” Means
 
 **EVOL‑XX = Product Generation.**
 
@@ -3955,7 +3955,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 3) Why Evolution‑first (Vision)
+### 3) Why Evolution‑first (Vision)
 
 1. **Internal compass.** Generations focus teams on a clear goal line (“What ships in EVOL‑01?”), simplify trade‑offs, and enable parallel work on EVOL‑N and EVOL‑(N+1).
 
@@ -3967,7 +3967,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 4) Core Rules (Non‑Negotiable)
+### 4) Core Rules (Non‑Negotiable)
 
 1. **Badge the generation everywhere.** Use EVOL labels in filenames, repo paths, binaries, UI About screens, dashboards, API headers, contracts, and marketing.
 2. **One EVOL, one SSOT per topic.** Each topic has exactly one APPROVED reference document per EVOL.
@@ -3977,7 +3977,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 5) Lifecycle & Visibility
+### 5) Lifecycle & Visibility
 
 **Lifecycle:** Initiate → Work → Release → Freeze & Archive.
 
@@ -3995,7 +3995,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 6) External Identity (Customer‑Facing)
+### 6) External Identity (Customer‑Facing)
 
 **Generation labeling:**
 
@@ -4012,7 +4012,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 7) Governance & Decision Criteria
+### 7) Governance & Decision Criteria
 
 **When to open a new EVOL:**
 
@@ -4030,7 +4030,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 8) Artifacts & Templates (per EVOL)
+### 8) Artifacts & Templates (per EVOL)
 
 **Required:**
 
@@ -4062,7 +4062,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 9) Foldering, Naming & CI Hooks (Summary)
+### 9) Foldering, Naming & CI Hooks (Summary)
 
 * **Foldering:** Each EVOL lives under `7.6.2-evolutions/EVOL-XX/…`; frozen generations move to `7.6.3-history/EVOL-XX/…`.
 * **Naming:** File names carry `<DOC>-<EVOL>-…-v<MAJOR.MINOR.PATCH>-<STATE>.md`. EVOL in path **must** match filename.
@@ -4070,7 +4070,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 10) KPIs & Rituals
+### 10) KPIs & Rituals
 
 **KPIs:**
 
@@ -4088,7 +4088,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 11) Non‑Goals (to avoid confusion)
+### 11) Non‑Goals (to avoid confusion)
 
 * EVOL is **not** a marketing‑only label; it reflects real architectural eras.
 * EVOL does **not** replace SemVer; it **frames** SemVer within a generation.
@@ -4096,7 +4096,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 12) Appendix – Quick Reference
+### 12) Appendix – Quick Reference
 
 **Open new EVOL if:** architecture or ops doctrine changes system‑wide; interfaces cannot be compatibly bridged; safety basis or certification envelope resets.
 
@@ -4107,7 +4107,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 \newpage
 
-# 7.6.1.3 Evolution Deliverables & Phase Gates
+## 7.6.1.3 Evolution Deliverables & Phase Gates
 
 **Effective date:** 2025‑08‑12
 **Applies to:** All Evolutions under `7.6 Engineering`
@@ -4116,7 +4116,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 1. Scope & Principles
+### 1. Scope & Principles
 
 * Evolutions are **controlled change waves**. Each wave produces a **complete, releasable set** of documents and (where applicable) product artifacts.
 * Every artifact must be **versioned**, **stateful** (`DRAFT` → `REVIEW` → `FROZEN`), and **traceable** to requirements and evidence.
@@ -4124,7 +4124,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 2. Roles (responsibility summary)
+### 2. Roles (responsibility summary)
 
 * **Evolution Owner**: accountable for scope, schedule, quality; maintains the Evolution index.
 * **Technical Reviewers** (discipline leads): approve content and test adequacy.
@@ -4135,7 +4135,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 3. Lifecycle Overview
+### 3. Lifecycle Overview
 
 1. **Proposal** — frame the problem, options, and plan. Output: *PDR‑quality* bundle.
 2. **Work** — build, integrate, and prove feasibility. Output: *working drafts + demo evidence*.
@@ -4144,9 +4144,9 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 4. Deliverables by Phase (Documents)
+### 4. Deliverables by Phase (Documents)
 
-### 4.1 Proposal → Gate: EVOL Board “Go”
+#### 4.1 Proposal → Gate: EVOL Board “Go”
 
 **Required**
 
@@ -4160,7 +4160,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 **Exit criteria**: EVOL Board approves “Go”; owners/reviewers assigned; epic/backlog exists.
 
-### 4.2 Work → Gate: “Review Package Ready”
+#### 4.2 Work → Gate: “Review Package Ready”
 
 **Required (versioned drafts)**
 
@@ -4176,7 +4176,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 **Exit criteria**: CI green (lint, schema/front‑matter, links, unit tests); demo evidence of feasibility (sim run, prototype, or analytical proof); no open P0/P1 defects.
 
-### 4.3 Review → Gate: Sign‑offs Complete
+#### 4.3 Review → Gate: Sign‑offs Complete
 
 **Required (review bundle)**
 
@@ -4193,7 +4193,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 **Exit criteria**: required sign‑offs recorded; all actions closed or waived; versions/states aligned for freeze.
 
-### 4.4 Freeze → Gate: Release & Archive Done
+#### 4.4 Freeze → Gate: Release & Archive Done
 
 **Required (frozen artifacts)**
 
@@ -4212,16 +4212,16 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 5. Deliverables by Phase (Products)
+### 5. Deliverables by Phase (Products)
 
 **Product classes**: `RIG` (test rigs), `SIM` (simulators/digital twins), `SUBSYS` (modules), `SYS` (integrated systems), `DECK` (station decks/sections), `SPHERE` (whole station).
 
-### 5.1 Product IDs & configuration keys
+#### 5.1 Product IDs & configuration keys
 
 * **ID schema**: `CLASS-PRODID-VAR-REV` + **ASN** (physical serial) + **CFGHASH** (configuration hash).
   Examples: `RIG-THERM-01-A2 / ASN 0007 / CFGHASH 3f9c…`, `DECK-015-PWR-01-B0 / ASN 0001 / CFGHASH 91ab…`.
 
-### 5.2 Proposal (products)
+#### 5.2 Proposal (products)
 
 **All classes**: PDR (product decision), top‑level PBS/BOM (10‑line granularity), budget draft, conformity plan, initial risks, block diagrams, build plan (milestones, required rigs/sims, resources).
 **Class‑specific**:
@@ -4233,7 +4233,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 **Exit**: EVOL Board “Go”; product ID reserved; epic/backlog created.
 
-### 5.3 Work (products)
+#### 5.3 Work (products)
 
 **All classes**: detailed **BOM v0.x**; fabrication packages (drawings, CAM/GERBER, STEP/STL as relevant); configuration files + **CFGHASH**; **ASN** assigned; V\&V plan and test procedures; interim evidence (photos, logs, sim runs with seeds).
 **Class‑specific**:
@@ -4247,7 +4247,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 **Exit**: CI green; demo/functional proof; no open P0/P1 defects.
 
-### 5.4 Review (products)
+#### 5.4 Review (products)
 
 **All classes**: review package; **SPEC/ICD v1.0.0‑rc**; V\&V matrix with results; updated budgets & risks; safety/security artifacts; ops drafts.
 **Acceptance tests**:
@@ -4261,7 +4261,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 **Exit**: sign‑offs complete; actions closed or waived.
 
-### 5.5 Freeze (products)
+#### 5.5 Freeze (products)
 
 **All classes**: `v1.0.0 FROZEN` release; release notes; traceability report; parameter baseline; `interfaces.lock`; BOM/SBOM; provenance manifest; final ops runbook; training; spares & tools list; evidence archive (datasets, seeds, photos, build logs).
 **Site acceptance**:
@@ -4275,7 +4275,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 6. Evidence & Traceability
+### 6. Evidence & Traceability
 
 * **V\&V Matrix** is mandatory: requirement → spec clause → test case → result → dataset/seed.
 * **Definition of Evidence (DoE)**: evidence must be **reproducible** (configs + seeds), **attributed** (who/when/tool‑version), and **integrity‑checked** (hashes).
@@ -4285,7 +4285,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 7. Versioning & States
+### 7. Versioning & States
 
 * **SemVer** for documents and products (`MAJOR.MINOR.PATCH`).
   ‑ `MAJOR`: incompatible changes; ‑ `MINOR`: added functionality; ‑ `PATCH`: fixes/no interface change.
@@ -4294,7 +4294,7 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 ---
 
-## 8. Configuration Management
+### 8. Configuration Management
 
 * **Product identity**: `CLASS‑PRODID‑VAR‑REV` (human‑readable), **ASN** (serial), **CFGHASH** (config hash).
 * **product.yaml** is the single source of truth for each physical/simulated asset.
@@ -4329,7 +4329,7 @@ ops:
 
 ---
 
-## 9. CI & Quality Gates
+### 9. CI & Quality Gates
 
 * **Front‑matter lint** (required fields), **filename regex**, **cross‑link checks**, **schema validation** for `product.yaml`.
 * **Build/test**: unit tests; model/sim reruns; Golden Run regression; doc link checker.
@@ -4338,7 +4338,7 @@ ops:
 
 ---
 
-## 10. Acceptance & Readiness Reviews
+### 10. Acceptance & Readiness Reviews
 
 * **FAT** (Factory Acceptance): performed in Review phase; per‑class variants (RIG/SIM/SUBSYS/SYS/DECK).
 * **SAT** (Site Acceptance): performed in Freeze phase; installation/ops readiness confirmed.
@@ -4346,7 +4346,7 @@ ops:
 
 ---
 
-## 11. Release & Archival
+### 11. Release & Archival
 
 * Tag the release (e.g., `EVOL-07.FROZEN.2025-08-12`).
 * Copy frozen set to `7.6.3 History/EVOL-XX/` with `manifest.sha256`.
@@ -4354,7 +4354,7 @@ ops:
 
 ---
 
-## 12. Templates & References
+### 12. Templates & References
 
 * Short‑form templates exist for **SPEC, ICD, ADR, RFC, TST, CALC**; start from those.
 * Use the **Evolution index** (README of the Evolution) to link all deliverables.
@@ -4362,7 +4362,7 @@ ops:
 
 ---
 
-## Appendix A — Filename Pattern (documents)
+### Appendix A — Filename Pattern (documents)
 
 Use the following pattern (illustrative; adapt discipline/scope codes as needed):
 
@@ -4374,7 +4374,7 @@ Use the following pattern (illustrative; adapt discipline/scope codes as needed)
 `SPEC-07-PWR-DECK015-PWR-CTRL-EN-v0.4.0-DRAFT`
 `ICD-07-CTRL-DECK015-THERM-EN-v1.0.0-REVIEW`
 
-## Appendix B — Directory Skeleton (per Evolution)
+### Appendix B — Directory Skeleton (per Evolution)
 
 ```
 EVOL-XX/
@@ -4413,7 +4413,7 @@ EVOL-XX/
     SPHERE/<release-tag>/...
 ```
 
-## Appendix C — Review Package Checklist (minimum)
+### Appendix C — Review Package Checklist (minimum)
 
 * [ ] Review Package index present and link‑clean.
 * [ ] SPEC/ICD at `v1.0.0-rc`, `REVIEW` state.
@@ -4425,7 +4425,7 @@ EVOL-XX/
 * [ ] Compliance matrix present.
 * [ ] Review minutes template ready.
 
-## Appendix D — Freeze Manifest (example)
+### Appendix D — Freeze Manifest (example)
 
 ```
 Release: EVOL-07.FROZEN.2025-08-12
