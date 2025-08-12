@@ -1,4 +1,4 @@
-# SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v0.1.0-DRAFT 
+### SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v0.1.0-DRAFT 
 
 **The Engineering of DECK000 – The Wormhole**
 
@@ -8,15 +8,15 @@
 
 ---
 
-## 1 Abstract
+#### 1 Abstract
 
 DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube that runs straight through the station from the North pole to the South pole. In Evolution 1, the assembly is a 127 m long tube with an outer diameter of 22 m and a clear inner diameter of 20 m. The primary barrel is a silicon‑carbide (SiC) composite reinforced with steel or Inconel for toughness. Starting 3.5 m from the north polar end and repeating every 20 m along the axis, 10 m‑long Inconel docking‑ring subassemblies are installed and numbered sequentially (00, 01, 02 …) from North to South. Between docking rings, “window tube” segments provide outward viewing; each segment integrates rectangular window units of 4 m (axial) × 3 m (tall), built to the program’s space‑grade multilayer window specification (ALON/sapphire + fused silica + polycarbonate + borosilicate/cerium‑doped glass). The result is a micro‑g corridor (near the spin axis) enabling safe berthing, people/cargo transfer, observation, and emergency egress.
 
 ---
 
-## 2 Description (Evolution 1 – Baseline Geometry & Materials)
+#### 2 Description (Evolution 1 – Baseline Geometry & Materials)
 
-### A. System Overview
+##### A. System Overview
 
 * **Function:** Central polar docking, transit, and observation corridor in micro‑g; houses guidance, lighting, utilities, and emergency isolation points.
 * **Overall length:** 127 m (North pole interior face to South pole interior face).
@@ -24,7 +24,7 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
 * **Primary structure:** SiC composite barrel; local reinforcement with steel/Inconel where penetrations, hatches, or docking hardware concentrate loads.
 * **Environment:** Pressurized to station nominal (TBC; baseline 1 atm); micro‑g zone due to proximity to rotation axis.
 
-### B. Docking‑Ring Architecture
+##### B. Docking‑Ring Architecture
 
 * **Ring modules:** 10 m axial length; OD 22 m (flush with main barrel OD); ID 10 m (constricted throat for docking hardware and hatchway integration).
 * **Material:** Inconel (high‑temperature and corrosion resistance; excellent toughness).
@@ -51,7 +51,7 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
 
 > **Note:** Evolution 1 uses six docking rings (00–05), preserving 3.5 m service clearances at both ends. Later evolutions may revise counts, spacing, or diameters based on interface selections and docking traffic models.
 
-### C. Window Segments & Glazing Units
+##### C. Window Segments & Glazing Units
 
 * **Window units per segment:** Rectangular apertures integrated into the 10 m “window tube” spans; count and circumferential distribution TBD by human‑factors and structural analyses.
 * **Nominal window aperture:** 4.0 m (axial) × 3.0 m (tall / meridional).
@@ -63,14 +63,14 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
   * **Total thickness:** \~200–300 mm; **areal mass:** \~530–550 kg/m².
 * **Shutters & shields:** Each aperture integrates internal blast shutters and external micrometeoroid/thermal shades; automatic closure on pressure loss or debris alerts.
 
-### D. Structural Concept
+##### D. Structural Concept
 
 * **Primary barrel wall:** Thickness TBD from combined loads (pressure, docking loads, thermal gradients). Preliminary design envelope to meet FoS ≥ 2.0 against yield under 1 atm differential plus ring‑induced stress concentrations.
 * **Ring‑to‑barrel joints:** Circumferential flanges with shear keys; dual redundant, high‑temperature elastomer seals (silicone‑based) with metallic C‑seals for vacuum‑rated redundancy.
 * **Local reinforcements:** Around windows (doubler frames), utility penetrations, and docking hardware. Use SiC/steel hybrid frames to spread aperture loads into the barrel laminate.
 * **Thermal control:** Embedded liquid heat loops (glycol‑water or silicone oil), MLI blankets on the outside of the barrel segments not occupied by windows, and conductive paths to station radiators.
 
-### E. Interfaces & Services
+##### E. Interfaces & Services
 
 * **Mechanical:** Hard‑points in each docking ring for adapter hardware, hatches, grapples, and temporary airlocks.
 * **Avionics & comms:** Redundant comm rails, guidance beacons, and visual docking aids integrated at each ring; cableways routed in protected trunking.
@@ -78,22 +78,22 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
 * **Power:** Dual independent DC buses along the tube with local UPS for shutters, lighting, and hatch actuators.
 * **Safety:** Pressure‑isolation bulkheads at ring boundaries (ring can be sealed as a compartment), blast doors for window segments, fire detection & inert‑gas suppression.
 
-### F. Operations & Human Factors
+##### F. Operations & Human Factors
 
 * **Micro‑g ergonomics:** Handrails, foot restraints, and guided translation lines throughout; lighting graded for approach/egress; color‑coded wayfinding matching station standards.
 * **Traffic separation:** North pole dedicated to arrivals, South pole to departures (baseline); center‑tube signage and beacons enforce counter‑flow.
 * **Emergency egress:** Clearly marked safe‑hold nodes at each ring with comms, masks, and emergency supplies; shutters auto‑close upon hazard detection.
 
-### G. Manufacturing & Assembly
+##### G. Manufacturing & Assembly
 
 * **Moduleization:** 10 m modules (alternating ring modules and window‑tube modules) pre‑fitted with internal systems; on‑orbit assembly via circumferential bolted/bonded joints.
 * **Inspection & maintenance:** Ring‑module inspection ports; replaceable shutter cassettes; window health monitoring (acoustic emission, strain gauges, optical clarity sensors).
 
-### H. Compliance & Reference Specs
+##### H. Compliance & Reference Specs
 
 * Materials, pressure vessels, fire, glazing, and MMOD protections comply with station‑wide standards (refs). Window stacks must meet the program’s “LEO Window Specification” for thermal cycling, rapid decompression, and micrometeoroid resistance.
 
-### I. Open Parameters (TBD/TBC)
+##### I. Open Parameters (TBD/TBC)
 
 * Barrel wall thickness and detailed layup by load case.
 * Final ring inner diameter vs. docking system selection and hatch design.
@@ -103,7 +103,7 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
 
 ---
 
-## 3 Forward Work (next revision)
+#### 3 Forward Work (next revision)
 
 1. Complete pressure & docking load cases and size the barrel thickness and reinforcements.
 2. Human‑factors layout (window count/placement, handrail nets, signage).
