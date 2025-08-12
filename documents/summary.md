@@ -37,7 +37,7 @@
     * [7.4.2 Earth ONE Station: Orbit, Polar Docking, and Human Factors](07-comprehensive-technical-documentation/7.4-research-development/7.4.2-earth-one-station---orbit-polar-docking-and-human-factors.md)
   * [7.5 Processes](07-comprehensive-technical-documentation/7.5-processes/readme.md)
     * [7.5.1 Engineering Process (Coarse → Fine)](07-comprehensive-technical-documentation/7.5-processes/7.5.1-engineering-process.md)
-  * [7.6-engineering](07-comprehensive-technical-documentation/7.6-engineering/readme.md)
+  * [7.6 Engineering](07-comprehensive-technical-documentation/7.6-engineering/readme.md)
     * [AGENTS.md — Roles, Responsibilities & EVOL Working Rules](07-comprehensive-technical-documentation/7.6-engineering/agents.md)
     * [7.6.1 Global Standards](07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/readme.md)
       * [7.6.1.1 Guideline Document: Evolution‑Engineering-Naming-Folder Convention](07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/7.6.1.1-guideline-document-engineering-naming---folder-convention.md)
