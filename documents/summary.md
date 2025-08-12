@@ -39,7 +39,7 @@
     * [7.5.1 Engineering Process (Coarse → Fine)](07-comprehensive-technical-documentation/7.5-processes/7.5.1-engineering-process.md)
   * [7.6-engineering](07-comprehensive-technical-documentation/7.6-engineering/readme.md)
     * [AGENTS.md — Roles, Responsibilities & EVOL Working Rules](07-comprehensive-technical-documentation/7.6-engineering/agents.md)
-    * [7.6.1-global-standards](07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/readme.md)
+    * [7.6.1 Global Standards](07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/readme.md)
       * [7.6.1.1 Guideline Document: Evolution‑Engineering-Naming-Folder Convention](07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/7.6.1.1-guideline-document-engineering-naming---folder-convention.md)
       * [7.6.1.2 Guideline Document: The Evolution Principle](07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/7.6.1.2-guideline-document-the-evolution-principle.md)
       * [7.6.1.3 Evolution Deliverables & Phase Gates](07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/7.6.1.3-evolution-deliverables-phase-gates.md)
