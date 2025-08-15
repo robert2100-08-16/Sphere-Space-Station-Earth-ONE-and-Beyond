@@ -2,4 +2,4 @@
 
 Utility entry points for the `sphere_space_station_simulations` package.
 
-- `deck000_evo0_export.py`: Exports the DECK000 EV0 geometry and segment table.
+- `evo0_export_all.py`: Builds and exports all Evolution‑00 artifacts into `simulations/results/`.
