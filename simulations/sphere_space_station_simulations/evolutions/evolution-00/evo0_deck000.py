@@ -8,7 +8,7 @@ units between the docking rings; those cut-outs will follow in v0.1.1.
 Generates a segmented axial tube with:
  - Overall length: 127 m
  - Barrel: OD 22 m, ID 20 m
- - Six docking-ring modules: 10 m axial length, ID 10 m (constricted throat), OD flush (22 m)
+ - Six docking-ring modules: 10 m axial length, ID 20 m (constricted throat), OD flush (22 m)
  - Start of first ring at 3.5 m from the North pole interior face
  - Ring pitch 20 m; window-tube modules (10 m) between rings
  - 3.5 m service clearances at both ends
@@ -45,7 +45,7 @@ from pygltflib import (
     Material as GLTFMaterial,
 )
 
-from ..data_model import Material, STEEL, ALUMINIUM
+from sphere_space_station_simulations.data_model import Material, STEEL, ALUMINIUM
 
 # -------------------------
 # Parameters & segment plan
