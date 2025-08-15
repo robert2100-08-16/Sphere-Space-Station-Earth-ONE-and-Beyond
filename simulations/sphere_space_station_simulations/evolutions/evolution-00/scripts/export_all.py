@@ -25,8 +25,8 @@ from typing import Iterator
 
 
 def _iter_builders() -> Iterator[tuple[str, Callable[[Path], Dict[str, Any]]]]:
-    """Yield ``(module_name, builder)`` pairs for EVOL-00 modules."""
-    evo_dir = Path(__file__).resolve().parent.parent
+    """Yield ``(module_name, builder)`` pairs for EVOLUTION-00 modules."""
+    evo_dir = Path(__file__).resolve().parent.parent / "modules"
     for info in pkgutil.iter_modules([str(evo_dir)]):
         if info.ispkg or info.name.startswith("_") or info.name == "scripts":
             continue
