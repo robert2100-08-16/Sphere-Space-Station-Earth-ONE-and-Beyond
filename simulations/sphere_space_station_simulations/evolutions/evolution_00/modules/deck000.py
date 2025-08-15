@@ -44,7 +44,7 @@ from pygltflib import (
     Material as GLTFMaterial,
 )
 
-from sphere_space_station_simulations.data_model import (
+from simulations.sphere_space_station_simulations.data_model import (
     ALUMINIUM,
     GLASS,
     Material,

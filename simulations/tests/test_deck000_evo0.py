@@ -1,5 +1,10 @@
 import math
-from simulations.sphere_space_station_simulations.evolutions.evolution-00.deck000 import (
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from simulations.sphere_space_station_simulations.evolutions.evolution_00.deck000 import (
     Deck000Params,
     generate_segments,
 )
