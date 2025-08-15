@@ -57,7 +57,7 @@ class Deck000Params:
     length: float = 127.0
     barrel_od: float = 22.0
     barrel_id: float = 20.0
-    ring_id: float = 10.0
+    ring_id: float = 20.0
     ring_len: float = 10.0
     window_len: float = 10.0
     ring_first_offset: float = 3.5

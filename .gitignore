@@ -4,3 +4,5 @@ build/
 simulations/deck_calculator/*_frames/
 *.pyc
 *.glb
+*.blend
+*.blend1
