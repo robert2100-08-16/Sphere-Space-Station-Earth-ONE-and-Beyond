@@ -8,8 +8,8 @@ EVOL-00 (SemVer v0.1.0):
 """
 
 __all__ = [
-    "evo0_deck000",
+    "deck000",
 ]
 
 # Import side-effect free
-from . import evo0_deck000  # noqa: F401
+from . import deck000  # noqa: F401

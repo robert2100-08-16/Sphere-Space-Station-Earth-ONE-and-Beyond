@@ -14,14 +14,14 @@ These apertures will be added in **v0.1.1**.
 ## Usage
 
 ```bash
-python -m simulations.sphere_space_station_simulations.evolutions.evo0_deck000
+python -m simulations.sphere_space_station_simulations.evolutions.evoltuion-00.deck000
 ```
 
 Artifacts:
 
-- `simulations/results/deck000_ev0/deck000_ev0.obj`
-- `simulations/results/deck000_ev0/deck000_ev0_segments.csv`
-- `simulations/results/deck000_ev0/deck000_ev0.glb`
+- `simulations/results/evolutions/evoltuion-00/deck000_ev0.obj`
+- `simulations/results/evolutions/evoltuion-00/deck000_ev0_segments.csv`
+- `simulations/results/evolutions/evoltuion-00/deck000_ev0.glb`
 
 Import the OBJ or glTF in Blender/CAD and proceed with ring-level detailing.
 

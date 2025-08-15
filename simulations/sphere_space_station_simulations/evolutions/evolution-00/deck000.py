@@ -502,6 +502,6 @@ def build_and_export_ev0(
 
 if __name__ == "__main__":
     artifacts = build_and_export_ev0()
-    print("EVOLUTION 0 generated:")
+    print("EVOLUTION 00 generated:")
     for k, v in artifacts.items():
         print(f" - {k}: {v}")
