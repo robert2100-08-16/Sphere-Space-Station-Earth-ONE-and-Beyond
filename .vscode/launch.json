@@ -36,6 +36,17 @@
                 "--blender",
                 "C:/Program Files/Blender Foundation/Blender 4.5/blender.exe"
             ]
+        },
+        {
+            "name": "Blender Evolution 00 Simulator",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/simulations/blender_evo0_simulator/starter.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--blender",
+                "C:/Program Files/Blender Foundation/Blender 4.5/blender.exe"
+            ]
         }
     ]
 }
