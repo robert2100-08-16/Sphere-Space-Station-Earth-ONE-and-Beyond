@@ -404,8 +404,8 @@ def export_gltf(meshes: List[Mesh], out_path: Path) -> None:
                 componentType=5126,
                 count=len(verts),
                 type="VEC3",
-                min=list(verts.min(axis=0)),
-                max=list(verts.max(axis=0)),
+                min=[float(x) for x in verts.min(axis=0)],
+                max=[float(x) for x in verts.max(axis=0)],
             )
         )
 
@@ -462,20 +462,42 @@ def build_and_export_ev0(
     Generates EV0 geometry & reports into out_dir.
     Returns dict with key artifacts.
     """
-    out_dir = Path(out_dir)
-    p = Deck000Params()
-    segments = generate_segments(p)
-    meshes = build_meshes_for_segments(segments, p)
+    try:
+        out_dir = Path(out_dir)
+        out_dir.mkdir(parents=True, exist_ok=True)
 
-    obj_path = out_dir / "deck000_ev0.obj"
-    csv_path = out_dir / "deck000_ev0_segments.csv"
-    gltf_path = out_dir / "deck000_ev0.glb"
+        p = Deck000Params()
+        segments = generate_segments(p)
+        meshes = build_meshes_for_segments(segments, p)
 
-    export_obj(meshes, obj_path)
-    export_csv(segments, csv_path)
-    export_gltf(meshes, gltf_path)
+        obj_path = out_dir / "deck000_ev0.obj"
+        csv_path = out_dir / "deck000_ev0_segments.csv"
+        gltf_path = out_dir / "deck000_ev0.glb"
 
-    return {"obj": obj_path, "csv": csv_path, "gltf": gltf_path}
+        # Ensure each export operation is wrapped in try-except
+        try:
+            export_obj(meshes, obj_path)
+        except Exception as e:
+            print(f"Error exporting OBJ: {e}")
+            raise
+
+        try:
+            export_csv(segments, csv_path)
+        except Exception as e:
+            print(f"Error exporting CSV: {e}")
+            raise
+
+        try:
+            export_gltf(meshes, gltf_path)
+        except Exception as e:
+            print(f"Error exporting GLTF: {e}")
+            raise
+
+        return {"obj": obj_path, "csv": csv_path, "gltf": gltf_path}
+
+    except Exception as e:
+        print(f"Error in build_and_export_ev0: {e}")
+        raise
 
 
 if __name__ == "__main__":
