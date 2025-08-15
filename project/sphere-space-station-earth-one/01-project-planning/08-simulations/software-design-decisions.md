@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.3.13
+version: 1.3.14
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.14
+    date: 2025-08-18
+    change: "EV0 deck evolution exports glTF with materials; CadQuery integration reviewed"
   - version: 1.3.13
     date: 2025-08-17
     change: "Unified Blender scene preparation into shared module"
@@ -108,4 +111,5 @@ Preamble and international safety standards.
 
 ## 1.7 Deck evolution modules
 
-- EV0 module generates DECK000 axial tube geometry and exports OBJ and CSV reports.
+- EV0 module generates DECK000 axial tube geometry and exports OBJ, CSV and glTF reports with basic materials.
+- CadQuery would allow fully parametric solids but remains optional due to its heavy dependency footprint.

@@ -16,15 +16,36 @@ Generates a segmented axial tube with:
 Exports:
  - OBJ mesh (watertight shell segments per module)
  - CSV segment table (Table 1 equivalent)
+ - glTF binary with basic materials
+
+Note:
+CadQuery could generate these solids parametrically and offer richer
+modelling capabilities, but its heavy dependency footprint keeps this
+evolution on a lightweight, hand-rolled mesh builder for now.
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import List, Tuple, Dict
 import math
 import csv
+import numpy as np
+from pygltflib import (
+    GLTF2,
+    Scene,
+    Node,
+    Mesh as GLTFMesh,
+    Buffer,
+    BufferView,
+    Accessor,
+    Primitive,
+    PbrMetallicRoughness,
+    Material as GLTFMaterial,
+)
+
+from ..data_model import Material, STEEL, ALUMINIUM
 
 # -------------------------
 # Parameters & segment plan
@@ -44,6 +65,9 @@ class Deck000Params:
     n_rings: int = 6  # 00..05
     end_clearance: float = 3.5
     radial_segments: int = 96  # circle tessellation
+    ring_material: Material = field(default_factory=lambda: STEEL)
+    window_material: Material = field(default_factory=lambda: ALUMINIUM)
+    clearance_material: Material = field(default_factory=lambda: ALUMINIUM)
 
     @property
     def barrel_ro(self) -> float:
@@ -77,6 +101,7 @@ def generate_segments(p: Deck000Params) -> List[Dict]:
                 r_inner=p.barrel_ri,
                 r_outer=p.barrel_ro,
                 note="forward clearance / taper / systems",
+                material=p.clearance_material,
             )
         )
         z = p.end_clearance
@@ -100,6 +125,7 @@ def generate_segments(p: Deck000Params) -> List[Dict]:
                     r_inner=p.ring_ri,
                     r_outer=p.barrel_ro,
                     note="Inconel ring, constricted ID",
+                    material=p.ring_material,
                 )
             )
         else:
@@ -114,6 +140,7 @@ def generate_segments(p: Deck000Params) -> List[Dict]:
                     r_inner=p.barrel_ri,
                     r_outer=p.barrel_ro,
                     note="window tube (apertures to be detailed in EV1)",
+                    material=p.window_material,
                 )
             )
             # This ring
@@ -126,6 +153,7 @@ def generate_segments(p: Deck000Params) -> List[Dict]:
                     r_inner=p.ring_ri,
                     r_outer=p.barrel_ro,
                     note="Inconel ring, constricted ID",
+                    material=p.ring_material,
                 )
             )
 
@@ -142,6 +170,7 @@ def generate_segments(p: Deck000Params) -> List[Dict]:
                 r_inner=p.barrel_ri,
                 r_outer=p.barrel_ro,
                 note="window tube (apertures to be detailed in EV1)",
+                material=p.window_material,
             )
         )
 
@@ -156,6 +185,7 @@ def generate_segments(p: Deck000Params) -> List[Dict]:
                 r_inner=p.barrel_ri,
                 r_outer=p.barrel_ro,
                 note="aft clearance / taper / systems",
+                material=p.clearance_material,
             )
         )
 
@@ -168,10 +198,11 @@ def generate_segments(p: Deck000Params) -> List[Dict]:
 
 
 class Mesh:
-    __slots__ = ("name", "vertices", "faces")
+    __slots__ = ("name", "vertices", "faces", "material")
 
-    def __init__(self, name: str):
+    def __init__(self, name: str, material: Material):
         self.name = name
+        self.material = material
         self.vertices: List[Tuple[float, float, float]] = []
         self.faces: List[Tuple[int, int, int]] = []
 
@@ -190,12 +221,13 @@ def tube_segment(
     r_inner: float,
     r_outer: float,
     radial_segments: int,
+    material: Material,
 ) -> Mesh:
     """
     Create a hollow cylindrical shell between z0 and z1.
     - Outer and inner skins (no end caps for contiguous assembly)
     """
-    m = Mesh(name)
+    m = Mesh(name, material)
     n = radial_segments
     two_pi = 2.0 * math.pi
 
@@ -260,6 +292,7 @@ def build_meshes_for_segments(segments: List[Dict], p: Deck000Params) -> List[Me
                 r_inner=seg["r_inner"],
                 r_outer=seg["r_outer"],
                 radial_segments=p.radial_segments,
+                material=seg["material"],
             )
         )
     return meshes
@@ -301,6 +334,7 @@ def export_csv(segments: List[Dict], out_csv: Path) -> None:
                 "Axial length (m)",
                 "r_inner (m)",
                 "r_outer (m)",
+                "Material",
                 "Notes",
             ]
         )
@@ -314,9 +348,106 @@ def export_csv(segments: List[Dict], out_csv: Path) -> None:
                     f"{(seg['z1']-seg['z0']):.3f}",
                     f"{seg['r_inner']:.3f}",
                     f"{seg['r_outer']:.3f}",
+                    seg["material"].name,
                     seg.get("note", ""),
                 ]
             )
+
+
+def export_gltf(meshes: List[Mesh], out_path: Path) -> None:
+    """Export meshes to a binary glTF (.glb) file."""
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    gltf = GLTF2()
+    gltf.scenes = [Scene(nodes=list(range(len(meshes))))]
+    gltf.nodes = []
+    gltf.meshes = []
+    gltf.bufferViews = []
+    gltf.accessors = []
+    gltf.materials = []
+    material_lookup: Dict[str, int] = {}
+    binary = bytearray()
+
+    def _ensure_material(mat: Material) -> int:
+        if mat.name not in material_lookup:
+            color = list(mat.color_rgba) if mat.color_rgba else [0.8, 0.8, 0.8, 1.0]
+            gltf.materials.append(
+                GLTFMaterial(
+                    name=mat.name,
+                    pbrMetallicRoughness=PbrMetallicRoughness(
+                        baseColorFactor=color,
+                        metallicFactor=0.8,
+                        roughnessFactor=0.4,
+                    ),
+                )
+            )
+            material_lookup[mat.name] = len(gltf.materials) - 1
+        return material_lookup[mat.name]
+
+    for mesh in meshes:
+        verts = np.array(mesh.vertices, dtype=np.float32)
+        faces = np.array(mesh.faces, dtype=np.uint32)
+        idx = faces.flatten()
+
+        v_offset = len(binary)
+        binary.extend(verts.tobytes())
+        gltf.bufferViews.append(
+            BufferView(
+                buffer=0,
+                byteOffset=v_offset,
+                byteLength=verts.nbytes,
+                target=34962,
+            )
+        )
+        gltf.accessors.append(
+            Accessor(
+                bufferView=len(gltf.bufferViews) - 1,
+                componentType=5126,
+                count=len(verts),
+                type="VEC3",
+                min=list(verts.min(axis=0)),
+                max=list(verts.max(axis=0)),
+            )
+        )
+
+        i_offset = len(binary)
+        binary.extend(idx.tobytes())
+        gltf.bufferViews.append(
+            BufferView(
+                buffer=0,
+                byteOffset=i_offset,
+                byteLength=idx.nbytes,
+                target=34963,
+            )
+        )
+        gltf.accessors.append(
+            Accessor(
+                bufferView=len(gltf.bufferViews) - 1,
+                componentType=5125,
+                count=len(idx),
+                type="SCALAR",
+                min=[int(idx.min())],
+                max=[int(idx.max())],
+            )
+        )
+
+        mat_index = _ensure_material(mesh.material)
+        gltf.meshes.append(
+            GLTFMesh(
+                primitives=[
+                    Primitive(
+                        attributes={"POSITION": len(gltf.accessors) - 2},
+                        indices=len(gltf.accessors) - 1,
+                        material=mat_index,
+                    )
+                ],
+                name=mesh.name,
+            )
+        )
+        gltf.nodes.append(Node(mesh=len(gltf.meshes) - 1, name=mesh.name))
+
+    gltf.buffers = [Buffer(byteLength=len(binary))]
+    gltf.set_binary_blob(binary)
+    gltf.save_binary(str(out_path))
 
 
 # -------------------------
@@ -338,11 +469,13 @@ def build_and_export_ev0(
 
     obj_path = out_dir / "deck000_ev0.obj"
     csv_path = out_dir / "deck000_ev0_segments.csv"
+    gltf_path = out_dir / "deck000_ev0.glb"
 
     export_obj(meshes, obj_path)
     export_csv(segments, csv_path)
+    export_gltf(meshes, gltf_path)
 
-    return {"obj": obj_path, "csv": csv_path}
+    return {"obj": obj_path, "csv": csv_path, "gltf": gltf_path}
 
 
 if __name__ == "__main__":

@@ -1,9 +1,12 @@
 ---
 title: "Construction Handbook"
-version: 1.1.2
+version: 1.1.3
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.1.3
+    date: 2025-08-18
+    change: "EV0 deck now exports glTF with materials; CadQuery usage under review"
   - version: 1.1.2
     date: 2025-08-15
     change: "Documented DECK000 EV0 geometry export"
@@ -34,6 +37,7 @@ This handbook collects key decisions for modeling the Sphere Space Station and s
 - **Blender helpers** reside in the subpackage `blender_helpers` and are imported by the adapter.
 - **Hull geometry** is computed by `geometry/hull.py` and imported by the deck logic.
 - **Deck evolution modules**: EV0 adds baseline DECK000 tube segments with OBJ+CSV export.
+- **EV0 enhancements**: Material support added to segments and glTF export complements OBJ+CSV outputs. CadQuery remains optional pending dependency trade-offs.
 - **Deck supports and docking ports** can be parametrized in `SphereDeckCalculator`,
   enriching the structural model with columns and equatorial docking locations.
 - **Station simulation** has moved to `simulation.py` and can be started directly from the library. `run_simulation.py` is now called `starter.py`.
