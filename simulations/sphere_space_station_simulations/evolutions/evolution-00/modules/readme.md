@@ -2,16 +2,14 @@
 
 ## DECK000
 
-**v0.1.1** implements the baseline axial tube geometry for **DECK000**
-without window cut-outs:
+**v0.1.1** adds rectangular window cut-outs and glass panels to the baseline
+axial tube geometry for **DECK000**:
 
 - Length 127 m; barrel OD 22 m, ID 20 m
 - Six docking rings (10 m each) with constricted **ID 10 m**, first ring at **3.5 m**, **pitch 20 m**
-- Window-tube spans (10 m) between rings; 3.5 m service clearances at both ends
+- Window-tube spans (10 m) between rings with 4×3 m window apertures (four per span);
+  3.5 m service clearances at both ends
 - Export: **OBJ**, **CSV** table (Table-1 equivalent) and **glTF** with basic materials
-
-Per SSOT, EVOL‑00 includes rectangular window units between the docking rings.
-These apertures will be added in **v0.1.1**.
 
 ### Usage
 

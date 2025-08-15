@@ -1,9 +1,8 @@
 """
-EVOL-00 – DECK000 "Wormhole" baseline CAD geometry (SemVer v0.1.0).
+EVOL-00 – DECK000 "Wormhole" baseline CAD geometry (SemVer v0.1.1).
 
-This initial version models the axial tube **without** window apertures to keep
-meshing robust.  According to the SSOT, EVOL‑00 includes rectangular window
-units between the docking rings; those cut-outs will follow in v0.1.1.
+This revision integrates rectangular window apertures and placeholder glazing
+panels into the window-tube segments per the EVOL‑00 specification.
 
 Generates a segmented axial tube with:
  - Overall length: 127 m
@@ -28,7 +27,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import List, Tuple, Dict
+from typing import Dict, List, Tuple
 import math
 import csv
 import numpy as np
@@ -45,7 +44,12 @@ from pygltflib import (
     Material as GLTFMaterial,
 )
 
-from sphere_space_station_simulations.data_model import Material, STEEL, ALUMINIUM
+from sphere_space_station_simulations.data_model import (
+    ALUMINIUM,
+    GLASS,
+    Material,
+    STEEL,
+)
 
 # -------------------------
 # Parameters & segment plan
@@ -68,6 +72,10 @@ class Deck000Params:
     ring_material: Material = field(default_factory=lambda: STEEL)
     window_material: Material = field(default_factory=lambda: ALUMINIUM)
     clearance_material: Material = field(default_factory=lambda: ALUMINIUM)
+    windows_per_segment: int = 4
+    window_width: float = 4.0
+    window_height: float = 3.0
+    glass_material: Material = field(default_factory=lambda: GLASS)
 
     @property
     def barrel_ro(self) -> float:
@@ -280,21 +288,177 @@ def tube_segment(
     return m
 
 
+def window_panel(
+    name: str,
+    angle: float,
+    z0: float,
+    z1: float,
+    r_inner: float,
+    r_outer: float,
+    height: float,
+    material: Material,
+) -> Mesh:
+    """Create a simple rectangular prism representing a window pane."""
+    m = Mesh(name, material)
+    thickness = r_outer - r_inner
+    half_w = (z1 - z0) * 0.5
+    half_h = height * 0.5
+    center_z = (z0 + z1) * 0.5
+    radius_mid = (r_inner + r_outer) * 0.5
+    nx = math.cos(angle)
+    ny = math.sin(angle)
+    tx = -math.sin(angle)
+    ty = math.cos(angle)
+
+    # Create 8 vertices of the box
+    for dx in (-thickness * 0.5, thickness * 0.5):
+        for dy in (-half_h, half_h):
+            for dz in (-half_w, half_w):
+                x = (radius_mid + dx) * nx + dy * tx
+                y = (radius_mid + dx) * ny + dy * ty
+                z = center_z + dz
+                m.vertices.append((x, y, z))
+
+    # Six faces
+    faces = [
+        (0, 2, 3, 1),
+        (4, 5, 7, 6),
+        (0, 1, 5, 4),
+        (2, 6, 7, 3),
+        (1, 3, 7, 5),
+        (0, 4, 6, 2),
+    ]
+    for a, b, c, d in faces:
+        m.faces.append((a, b, c))
+        m.faces.append((a, c, d))
+    return m
+
+
+def tube_segment_with_windows(
+    name: str,
+    z0: float,
+    z1: float,
+    r_inner: float,
+    r_outer: float,
+    radial_segments: int,
+    material: Material,
+    windows_per_segment: int,
+    window_width: float,
+    window_height: float,
+    glass_material: Material,
+) -> List[Mesh]:
+    """Create a tube segment and cut rectangular window apertures."""
+    meshes: List[Mesh] = []
+    # Angles for window centres
+    angle_step = 2.0 * math.pi / windows_per_segment
+    half_angle = (window_height / r_outer) * 0.5
+    window_angles = [i * angle_step for i in range(windows_per_segment)]
+
+    # z ranges
+    center_z = (z0 + z1) * 0.5
+    win_z0 = center_z - window_width * 0.5
+    win_z1 = center_z + window_width * 0.5
+
+    # Build tube with additional z-rings for window span
+    m = Mesh(name, material)
+    zs = [z0, win_z0, win_z1, z1]
+    n = radial_segments
+    two_pi = 2.0 * math.pi
+    angles = [two_pi * i / n for i in range(n)]
+
+    vo: List[List[int]] = []
+    vi: List[List[int]] = []
+    for z in zs:
+        vo_ring = []
+        vi_ring = []
+        for a in angles:
+            x = r_outer * math.cos(a)
+            y = r_outer * math.sin(a)
+            vo_ring.append(len(m.vertices))
+            m.vertices.append((x, y, z))
+            x = r_inner * math.cos(a)
+            y = r_inner * math.sin(a)
+            vi_ring.append(len(m.vertices))
+            m.vertices.append((x, y, z))
+        vo.append(vo_ring)
+        vi.append(vi_ring)
+
+    def angle_in_window(a: float) -> bool:
+        for c in window_angles:
+            if abs((a - c + math.pi) % (2 * math.pi) - math.pi) <= half_angle:
+                return True
+        return False
+
+    # Outer and inner skins except window span
+    for k in range(len(zs) - 1):
+        for i, a in enumerate(angles):
+            i_next = (i + 1) % n
+            if k == 1 and (angle_in_window(a) or angle_in_window(angles[i_next])):
+                continue
+            a0 = vo[k][i]
+            b0 = vo[k][i_next]
+            a1 = vo[k + 1][i]
+            b1 = vo[k + 1][i_next]
+            m.faces.append((a0, a1, b1))
+            m.faces.append((a0, b1, b0))
+            a0 = vi[k][i]
+            b0 = vi[k][i_next]
+            a1 = vi[k + 1][i]
+            b1 = vi[k + 1][i_next]
+            m.faces.append((a0, b1, a1))
+            m.faces.append((a0, b0, b1))
+
+    meshes.append(m)
+
+    # Add glass panels
+    for j, c in enumerate(window_angles):
+        meshes.append(
+            window_panel(
+                name=f"window-pane-{name}-{j:02d}",
+                angle=c,
+                z0=win_z0,
+                z1=win_z1,
+                r_inner=r_inner,
+                r_outer=r_outer,
+                height=window_height,
+                material=glass_material,
+            )
+        )
+    return meshes
+
+
 def build_meshes_for_segments(segments: List[Dict], p: Deck000Params) -> List[Mesh]:
     meshes: List[Mesh] = []
     for seg in segments:
         name = f"{seg['type']}-{seg['name']}"
-        meshes.append(
-            tube_segment(
-                name=name,
-                z0=seg["z0"],
-                z1=seg["z1"],
-                r_inner=seg["r_inner"],
-                r_outer=seg["r_outer"],
-                radial_segments=p.radial_segments,
-                material=seg["material"],
+        if seg["type"] == "window":
+            meshes.extend(
+                tube_segment_with_windows(
+                    name=name,
+                    z0=seg["z0"],
+                    z1=seg["z1"],
+                    r_inner=seg["r_inner"],
+                    r_outer=seg["r_outer"],
+                    radial_segments=p.radial_segments,
+                    material=seg["material"],
+                    windows_per_segment=p.windows_per_segment,
+                    window_width=p.window_width,
+                    window_height=p.window_height,
+                    glass_material=p.glass_material,
+                )
             )
-        )
+        else:
+            meshes.append(
+                tube_segment(
+                    name=name,
+                    z0=seg["z0"],
+                    z1=seg["z1"],
+                    r_inner=seg["r_inner"],
+                    r_outer=seg["r_outer"],
+                    radial_segments=p.radial_segments,
+                    material=seg["material"],
+                )
+            )
     return meshes
 
 
