@@ -1,9 +1,12 @@
 ---
 title: "Software Design Decisions"
-version: 1.3.16
+version: 1.3.17
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
 history:
+  - version: 1.3.17
+    date: 2025-08-21
+    change: "Added window cut-outs and glazing to DECK000 Evolution 00 module"
   - version: 1.3.16
     date: 2025-08-20
     change: "Introduced EV0 batch export script to build all evolution-00 results"
