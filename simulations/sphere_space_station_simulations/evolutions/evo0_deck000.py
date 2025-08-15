@@ -456,7 +456,7 @@ def export_gltf(meshes: List[Mesh], out_path: Path) -> None:
 
 
 def build_and_export_ev0(
-    out_dir: Path | str = "simulations/results/deck000_evo0",
+    out_dir: Path | str = "simulations/results/evolutions/evolution-00",
 ) -> Dict[str, Path]:
     """
     Generates EV0 geometry & reports into out_dir.
