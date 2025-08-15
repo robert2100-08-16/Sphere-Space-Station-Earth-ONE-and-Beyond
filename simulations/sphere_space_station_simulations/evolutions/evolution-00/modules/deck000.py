@@ -463,7 +463,10 @@ def build_and_export_ev0(
     Returns dict with key artifacts.
     """
     try:
-        out_dir = Path(out_dir)
+        print(f"Building EV0 artifacts in {out_dir}...")
+        if isinstance(out_dir, str):
+            # Ensure out_dir is a Path object
+            out_dir = Path(out_dir)
         out_dir.mkdir(parents=True, exist_ok=True)
 
         p = Deck000Params()

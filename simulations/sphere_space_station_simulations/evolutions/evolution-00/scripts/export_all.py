@@ -31,9 +31,7 @@ def _iter_builders() -> Iterator[tuple[str, Callable[[Path], Dict[str, Any]]]]:
         if info.ispkg or info.name.startswith("_") or info.name == "scripts":
             continue
         module_path = evo_dir / f"{info.name}.py"
-        module_name = (
-            f"simulations.sphere_space_station_simulations.evolutions.{info.name}"
-        )
+        module_name = f"simulations.sphere_space_station_simulations.evolutions.evolution-00.modules.{info.name}"
         spec = importlib.util.spec_from_file_location(module_name, module_path)
         if spec and spec.loader:
             module = importlib.util.module_from_spec(spec)
@@ -48,10 +46,7 @@ def main() -> None:
     results_base = Path("simulations/results/evolutions/evolution-00")
     summaries: Dict[str, Any] = {}
     for name, builder in _iter_builders():
-        if name.startswith("evo0_"):
-            out_dir = results_base / f"{name.split('evo0_', 1)[1]}_ev0"
-        else:
-            out_dir = results_base / name
+        out_dir = results_base
         summaries[name] = builder(out_dir)
     for mod_name, result in summaries.items():
         print(mod_name)
