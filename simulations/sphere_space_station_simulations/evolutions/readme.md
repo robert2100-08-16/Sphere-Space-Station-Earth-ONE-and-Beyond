@@ -1,12 +1,12 @@
 # Evolutions – DECK000
 
-**EVOL-00 v0.1.0** implements the baseline axial tube geometry for **DECK000**
+**EVOL-00 v0.1.1** implements the baseline axial tube geometry for **DECK000**
 without window cut-outs:
 
 - Length 127 m; barrel OD 22 m, ID 20 m
 - Six docking rings (10 m each) with constricted **ID 10 m**, first ring at **3.5 m**, **pitch 20 m**
 - Window-tube spans (10 m) between rings; 3.5 m service clearances at both ends
-- Export: single **OBJ** file + **CSV** table (Table-1 equivalent)
+- Export: **OBJ**, **CSV** table (Table-1 equivalent) and **glTF** with basic materials
 
 Per SSOT, EVOL‑00 includes rectangular window units between the docking rings.
 These apertures will be added in **v0.1.1**.
@@ -19,10 +19,11 @@ python -m simulations.sphere_space_station_simulations.evolutions.evo0_deck000
 
 Artifacts:
 
-- `simulations/results/deck000_ev0/deck000_ev0.obj`  
+- `simulations/results/deck000_ev0/deck000_ev0.obj`
 - `simulations/results/deck000_ev0/deck000_ev0_segments.csv`
+- `simulations/results/deck000_ev0/deck000_ev0.glb`
 
-Import the OBJ in Blender/CAD and proceed with ring-level detailing.
+Import the OBJ or glTF in Blender/CAD and proceed with ring-level detailing.
 
 ## Notes
 
