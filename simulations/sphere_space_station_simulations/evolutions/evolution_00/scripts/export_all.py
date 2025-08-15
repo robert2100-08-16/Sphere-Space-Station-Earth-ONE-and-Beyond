@@ -31,7 +31,7 @@ def _iter_builders() -> Iterator[tuple[str, Callable[[Path], Dict[str, Any]]]]:
         if info.ispkg or info.name.startswith("_") or info.name == "scripts":
             continue
         module_path = evo_dir / f"{info.name}.py"
-        module_name = f"simulations.sphere_space_station_simulations.evolutions.evolution-00.modules.{info.name}"
+        module_name = f"simulations.sphere_space_station_simulations.evolutions.evolution_00.modules.{info.name}"
         spec = importlib.util.spec_from_file_location(module_name, module_path)
         if spec and spec.loader:
             module = importlib.util.module_from_spec(spec)
