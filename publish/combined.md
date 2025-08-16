@@ -4693,6 +4693,27 @@ Success here isn’t feature breadth; it’s **trust**: a reproducible capsule t
 
 \newpage
 
+### 00 Standards Templates
+
+Frozen standards and templates from EVOL-00.
+
+
+\newpage
+
+### 01 Architecture
+
+Archived architecture records for EVOL-00.
+
+
+\newpage
+
+### 02 Specs
+
+Specifications and requirements from EVOL-00.
+
+
+\newpage
+
 ### SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v0.1.0-DRAFT 
 
 **The Engineering of DECK000 – The Wormhole**
@@ -4810,63 +4831,42 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
 
 \newpage
 
-### 00-standards-templates
-
-Frozen standards and templates from EVOL-00.
-
-
-\newpage
-
-### 01-architecture
-
-Archived architecture records for EVOL-00.
-
-
-\newpage
-
-### 02-specs
-
-Specifications and requirements from EVOL-00.
-
-
-\newpage
-
-### 03-interfaces
+### 03 Interfaces
 
 Interface control documents for EVOL-00.
 
 
 \newpage
 
-### 04-calculations
+### 04 Calculations
 
 Supporting calculations and proofs for EVOL-00.
 
 
 \newpage
 
-### 05-models-cad-sim
+### 05 Models CAD SIM
 
 Models, CAD files, and simulations from EVOL-00.
 
 
 \newpage
 
-### 06-tests-verification
+### 06 Tests Verification
 
 Test plans and verification reports for EVOL-00.
 
 
 \newpage
 
-### 07-ops-maintenance
+### 07 Ops Maintenance
 
 Operations and maintenance documents for EVOL-00.
 
 
 \newpage
 
-### 08-change-management
+### 08 Change Management
 
 RFCs, change requests, and approvals for EVOL-00.
 
