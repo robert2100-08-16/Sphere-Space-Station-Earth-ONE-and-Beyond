@@ -49,7 +49,7 @@
         * [00 Standards Templates](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/00-standards-templates/readme.md)
         * [01 Architecture](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/01-architecture/readme.md)
         * [02 Specs](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/readme.md)
-          * [SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v0.1.0-DRAFT](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck000-0001-wormhole-docking-tunnel-en-v0.1.0-draft.md.md)
+          * [SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v0.1.0-DRAFT](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck000-0001-wormhole-docking-tunnel-en-v0.1.0-draft..md)
         * [03 Interfaces](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/03-interfaces/readme.md)
         * [04 Calculations](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/04-calculations/readme.md)
         * [05 Models CAD SIM](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/05-models-cad-sim/readme.md)
