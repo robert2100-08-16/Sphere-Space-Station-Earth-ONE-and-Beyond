@@ -21,6 +21,7 @@ cr_links: []
 date: 2025-08-16
 lang: en-de
 ---
+
 # SPEC-00-STR-DECKS-DECK001-0001-transfer-node-and-radial-systems-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK001 – Reception, Transfer & Radial Systems**  

@@ -21,6 +21,7 @@ cr_links: []
 date: 2025-08-10
 lang: en-de
 ---
+
 # SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK000 – The Wormhole**

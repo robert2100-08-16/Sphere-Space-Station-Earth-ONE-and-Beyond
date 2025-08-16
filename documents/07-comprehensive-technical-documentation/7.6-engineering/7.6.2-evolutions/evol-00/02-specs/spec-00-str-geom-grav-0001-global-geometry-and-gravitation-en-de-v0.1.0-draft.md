@@ -21,6 +21,7 @@ cr_links: []
 date: 2025-08-16
 lang: en-de
 ---
+
 # SPEC-00-STR-GEOM-GRAV-0001 – Global Geometry & Gravitation *(EVOL-00, 127 m)*
 
 ## Summary / Kurzfassung (EN/DE)
@@ -159,7 +160,7 @@ $$
 
 **Sektorierung:** 12 × 30° (A…L). **Radiale Druck/Brand-Schotts** entlang Sektorgrenzen; **HL-Schächte** @ 0°/90°/180°/270°, **PAX-Schächte** @ ±22.5° etc.; **Servicetunnel** doppelt (inner/outer ring). **VENT/BOP** radial (keine tangentiale Druckentlastung). **HZ-Zonen:** HZ-1 normal, HZ-2 erhöht (Energie/Heiß), HZ-3 kritisch (Nuklear/Kryo/Explosion).
 
-### 9.1 Deck-Rollen (Kurz)
+### 9.1 Hoch-g Deck-Rollen (Kurz)
 
 * **DECK 013 –** Puffer/Service (Schild-Wasser, HX-Galerien, Dekon).
 * **DECK 014 –** Nuklear-Primär (SMR-Containments, Primärkreise) + Power-Conversion/Verteilung.
@@ -184,7 +185,7 @@ $$
 |    G   | **3** | **SMR-Zelle-2 (Containment)** | RPV-2, Primär-Loop-S  | HL-180   | **VENT-014-G→All** + Filter | THM Pri→Hull-HX-S             |
 |   C/I  |   2   | Power-Conversion N/S          | Brayton/Rankine-Skids | –        | VENT-014-C/I                | PWR DC-Main N/S               |
 
-*(Vollständige Sektor-Tabellen: interne SSOT-Anlage `…/02-specs/DECK014-015-sector-layout.md`.)*
+*(Vollständige Sektor-Tabellen: interne SSOT-Anlage `../spec-00-str-deck-0xx-sector-layout....md`.)*
 
 ---
 

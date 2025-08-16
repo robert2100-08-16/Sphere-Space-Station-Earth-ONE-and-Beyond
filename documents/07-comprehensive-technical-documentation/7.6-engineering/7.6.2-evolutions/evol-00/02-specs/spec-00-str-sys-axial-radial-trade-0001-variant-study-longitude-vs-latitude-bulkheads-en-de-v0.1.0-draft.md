@@ -21,6 +21,7 @@ cr_links: []
 date: 2025-08-16
 lang: en-de
 ---
+
 # SPEC-00-STR-SYS-AXIAL-RADIAL-TRADE-0001 — Variantenuntersuchung Längs-/Breitengrad-Schotten *(EVOL-00, 127 m)*
 
 ## Summary / Kurzfassung (EN/DE)

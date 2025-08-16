@@ -21,7 +21,8 @@ cr_links: []
 date: 2025-08-16
 lang: en-de
 ---
-# SPEC-00-STR-DECKS-014-sector-layout-and-interfaces-EN-DE-v0.1.0
+
+# SPEC-00-STR-DECKS-014-sector-layout-and-interfaces-EN-DE-v0.1.0-DRAFT
 
 **Project:** Sphere Space Station – Earth ONE (Ø 127.00 m)  
 **Evolution:** EVOL-00 • **Spin Law:** 1 g at r = 38.00 m → ω = 0.50801 s⁻¹ ≈ 4.851 rpm  
