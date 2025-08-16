@@ -72,7 +72,7 @@ class Deck000Params:
     ring_material: Material = field(default_factory=lambda: STEEL)
     window_material: Material = field(default_factory=lambda: ALUMINIUM)
     clearance_material: Material = field(default_factory=lambda: ALUMINIUM)
-    windows_per_segment: int = 4
+    windows_per_segment: int = 8
     window_width: float = 4.0
     window_height: float = 3.0
     glass_material: Material = field(default_factory=lambda: GLASS)
