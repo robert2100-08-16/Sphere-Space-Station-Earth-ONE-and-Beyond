@@ -1,3 +1,26 @@
+---
+id: spec-00-str-decks-013-0001
+title: DECK 013 sector layout and interfaces
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "013"
+seq: "0001"
+owner: "@sgi-lina"
+reviewers:
+  - "@eng-elias"
+  - "@eng-leo"
+source_of_truth: false
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-16
+lang: en-de
+---
 # SPEC-00-STR-DECKS-013-sector-layout-and-interfaces-EN-DE-v0.1.0
 
 **Project:** Sphere Space Station – Earth ONE (Ø 127.00 m)  

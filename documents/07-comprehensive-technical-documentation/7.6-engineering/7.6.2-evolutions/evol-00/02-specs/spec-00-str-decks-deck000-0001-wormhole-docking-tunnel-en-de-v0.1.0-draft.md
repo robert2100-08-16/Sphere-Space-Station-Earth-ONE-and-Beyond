@@ -1,21 +1,52 @@
-### SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-v0.1.0-DRAFT 
+---
+id: spec-00-str-decks-deck000-0001
+title: DECK000 wormhole docking tunnel
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK000"
+seq: "0001"
+owner: "@sgi-lina"
+reviewers:
+  - "@eng-elias"
+  - "@eng-leo"
+source_of_truth: false
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-10
+lang: en-de
+---
+# SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK000 – The Wormhole**
 
-**Document status:** Draft (Evolution 1 – Baseline)
+**Document status:** Draft (EVOL-00 baseline)
 **Date:** 2025‑08‑10
 **Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## Summary / Kurzfassung (EN/DE)
+
+**EN:** DECK000 is the axial, pressurized docking and transit tube spanning the North–South poles. The EVOL-00 baseline defines a 127 m long SiC-composite barrel with six Inconel docking rings and window segments for observation and transfer in micro‑g.
+
+**DE:** DECK000 ist der axiale, druckbeaufschlagte Docking- und Transittunnel zwischen Nord- und Südpol. Die EVOL‑00-Basis umfasst einen 127 m langen SiC-Verbundzylinder mit sechs Inconel-Docking-Ringen und Fenstersegmenten für Beobachtung und Transfer im Mikro-g.
 
 ---
 
 #### 1 Abstract
 
 
-DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube that runs straight through the station from the North pole to the South pole. In Evolution 1, the assembly is a 127 m long tube with an outer diameter of 22 m and a clear inner diameter of 20 m. The primary barrel is a silicon‑carbide (SiC) composite reinforced with steel or Inconel for toughness. Starting 3.5 m from the north polar end and repeating every 20 m along the axis, 10 m‑long Inconel docking‑ring subassemblies are installed and numbered sequentially (00, 01, 02 …) from North to South. Between docking rings, “window tube” segments provide outward viewing; each segment integrates rectangular window units of 4 m (axial) × 3 m (tall), built to the program’s space‑grade multilayer window specification (ALON/sapphire + fused silica + polycarbonate + borosilicate/cerium‑doped glass). The result is a micro‑g corridor (near the spin axis) enabling safe berthing, people/cargo transfer, observation, and emergency egress.
+DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube that runs straight through the station from the North pole to the South pole. In EVOL‑00, the assembly is a 127 m long tube with an outer diameter of 22 m and a clear inner diameter of 20 m. The primary barrel is a silicon‑carbide (SiC) composite reinforced with steel or Inconel for toughness. Starting 3.5 m from the north polar end and repeating every 20 m along the axis, 10 m‑long Inconel docking‑ring subassemblies are installed and numbered sequentially (00, 01, 02 …) from North to South. Between docking rings, “window tube” segments provide outward viewing; each segment integrates rectangular window units of 4 m (axial) × 3 m (tall), built to the program’s space‑grade multilayer window specification (ALON/sapphire + fused silica + polycarbonate + borosilicate/cerium‑doped glass). The result is a micro‑g corridor (near the spin axis) enabling safe berthing, people/cargo transfer, observation, and emergency egress.
 
 ---
 
-#### 2 Description (Evolution 1 – Baseline Geometry & Materials)
+#### 2 Description (EVOL‑00 – Baseline Geometry & Materials)
 
 ##### A. System Overview
 
@@ -29,7 +60,7 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
 
 * **Ring modules:** 10 m axial length; OD 22 m (flush with main barrel OD); ID 10 m (constricted throat for docking hardware and hatchway integration).
 * **Material:** Inconel (high‑temperature and corrosion resistance; excellent toughness).
-* **Placement & numbering:** Starting **3.5 m** from the North pole interior face and repeating at a **20 m pitch**; numbered **00** (northmost) through **05** (southmost) in Evolution 1.
+* **Placement & numbering:** Starting **3.5 m** from the North pole interior face and repeating at a **20 m pitch**; numbered **00** (northmost) through **05** (southmost) in EVOL‑00.
 
 **Table 1 — Ring and window‑segment positions (from North pole interior face)**
 
@@ -50,7 +81,7 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
 |       — | Window tube  |           113.5 |         123.5 |             10.0 |                                     |
 |       — | Clearance    |           123.5 |         127.0 |              3.5 | aft clearance / taper / systems     |
 
-> **Note:** Evolution 1 uses six docking rings (00–05), preserving 3.5 m service clearances at both ends. Later evolutions may revise counts, spacing, or diameters based on interface selections and docking traffic models.
+> **Note:** EVOL‑00 uses six docking rings (00–05), preserving 3.5 m service clearances at both ends. Later evolutions may revise counts, spacing, or diameters based on interface selections and docking traffic models.
 
 ##### C. Window Segments & Glazing Units
 
