@@ -1,4 +1,33 @@
+---
+id: spec-00-str-sys-axial-radial-trade-0001
+title: Variant study longitude vs latitude bulkheads
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: SYS-AXIAL-RADIAL-TRADE
+system_id: "0001"
+seq: "0001"
+owner: "@sgi-lina"
+reviewers:
+  - "@eng-elias"
+  - "@eng-leo"
+source_of_truth: false
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-16
+lang: en-de
+---
 # SPEC-00-STR-SYS-AXIAL-RADIAL-TRADE-0001 — Variantenuntersuchung Längs-/Breitengrad-Schotten *(EVOL-00, 127 m)*
+
+## Summary / Kurzfassung (EN/DE)
+
+**EN:** Compares three structural and safety layouts for the sphere: **A) Longitudinal sectors**, **B) Latitudinal diaphragms ("LAT")**, **C) Combination**. Evaluates structural dynamics, pressure/fire/hazard containment, operations & maintenance, routing complexity, mass/manufacturing, and expandability. Result: **Option C** offers the best performance; recommended as baseline (EVOL-00 with 12 sector bulkheads A–L plus 3 LAT discs S40/EQ/N40, expanding to 7 LAT in EVOL-01).
+
+**DE:** Vergleich dreier Struktur- und Safety-Layouts für die Sphäre: **A) Längsgrade** (radiale Sektorschotten), **B) Breitengrade** (axiale Ring-Diaphragmen, „LAT“), **C) Kombination**. Bewertet werden **Statik/Dynamik**, **Druck/Brand/Hazard**, **OPS & Wartung**, **Routing/Komplexität**, **Masse & Fertigung**, **Erweiterbarkeit**. Ergebnis: Variante **C (Kombiniert)** liefert die beste Gesamtleistung; empfohlen als Baseline (EVOL-00 mit 12 Längsgrad-Schotten A–L + 3 LAT-Scheiben S40/EQ/N40, Ausbau zu 7 LAT in EVOL-01).
 
 **Project:** Sphere Space Station — Earth ONE (Ø 127,00 m)
 **Spin Law:** 1 g at r = 38,00 m → ω ≈ 0,508 s⁻¹ (≈ 4,85 rpm)
@@ -7,10 +36,6 @@
 ---
 
 ## Abstract / Kurzfassung
-
-**Ziel:** Vergleich dreier Struktur- und Safety-Layouts für die Sphäre: **A) Längsgrade** (radiale Sektorschotten), **B) Breitengrade** (axiale Ring-Diaphragmen, „LAT“), **C) Kombination**. Bewertet werden **Statik/Dynamik**, **Druck/Brand/Hazard**, **OPS & Wartung**, **Routing/Komplexität**, **Masse & Fertigung**, **Erweiterbarkeit**.
-
-**Ergebnis (TL;DR):** Variante **C (Kombiniert)** liefert die beste Gesamtleistung: höchste Torsions-/Biegesteifigkeit (multizellige Schale + Diaphragmen), beste Gefahreneindämmung in **radialer und axialer Richtung**, klare OPS-Sperrebenen und gute akustische Entkopplung. **Empfehlung:** C als **Baseline**; **gestufte Einführung**: EVOL-00 mit 12 Längsgrad-Schotten (A–L) + **3 LAT-Scheiben** (S40, EQ, N40), Ausbau zu **7 LAT** in EVOL-01.
 
 ---
 

@@ -1,6 +1,35 @@
+---
+id: spec-00-str-geom-grav-0001
+title: Global geometry and gravitation
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: GEOM-GRAV
+system_id: "0001"
+seq: "0001"
+owner: "@sgi-lina"
+reviewers:
+  - "@eng-elias"
+  - "@eng-leo"
+source_of_truth: false
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-16
+lang: en-de
+---
 # SPEC-00-STR-GEOM-GRAV-0001 – Global Geometry & Gravitation *(EVOL-00, 127 m)*
 
-**Status:** DRAFT **Version:** v0.1.0 **Datum:** 2025-08-16
+## Summary / Kurzfassung (EN/DE)
+
+**EN:** Defines the overall geometry, hull layering and spin-derived gravity profile for Sphere Space Station **Earth ONE** (outer diameter **127 m**). Includes deck banding, comfort models and g-tables based on the EVOL-00 spin law (1 g at **r = 38 m**).
+
+**DE:** Definiert Geometrie, Hüllenaufbau und spin-basierte Gravitation für die Sphere Space Station **Earth ONE** (Außendurchmesser **127 m**). Enthält Deck-Bänder, Komfortmodelle und g-Tabellen gemäß EVOL-00 Spin-Law (1 g bei **r = 38 m**).
+
+**Status:** DRAFT **Version:** v0.1.0 **Date:** 2025-08-16
 **Scope:** Geometrie der Sphere Space Station **Earth ONE** (Außendurchmesser **127,00 m**), Hüllenaufbau (**0,50 m**), Deck-Bänder, künstliche Gravitation $a(r)=\omega^2 r$, Komfort-/Wohlfühlmodelle (grav-basiert + umweltbasiert), Tabellen mit aktuellen Werten je Deck inkl. Verweilzeit-Kategorien.
 **Spin-Kalibrierung (EVOL-00):** **1 g** $(g_0=9{,}80665\,\mathrm{m/s^2})$ bei **r = 38{,}00 m** ⇒ $\omega=\sqrt{g_0/38{,}00}=0{,}50801\,\mathrm{s^{-1}}$ ⇒ **4,852 rpm**.
 
