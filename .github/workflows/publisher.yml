@@ -235,7 +235,7 @@ jobs:
             git add publish
             git commit -m "chore: selective publish → PDF (auto)"
             git pull --rebase origin "${GITHUB_REF_NAME}"
-            git push
+            git push origin HEAD:"${GITHUB_REF_NAME}"
           else
             echo "No changes in /publish — nothing to commit."
           fi
