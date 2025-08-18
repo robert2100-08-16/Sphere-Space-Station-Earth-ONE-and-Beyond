@@ -2714,6 +2714,258 @@ Earth ONE combines innovative orbital and docking strategies with human-centered
 
 \newpage
 
+### 7.4.3 SPEC-01-STR-SYS-CORE-TRAFFIC-SIZING-0001 — Wormhole-Durchmesser-Trade *(127 m / 254 m / 254×508 m / 254×1016 m)* — v0.1.0 DRAFT
+
+**Scope:** Dimensionierung des axialen Mikro-g-Korridors „**Wormhole**“ (DECK 000) für Personen- und Frachtverkehr in EVOL-01-Konfigurationen. Inklusive hochgradig praktischer, **ingenieurstauglicher Formeln** für die Auslegung in Abhängigkeit von Stationsgröße, Population und **Self-Sustainability-Modell**. Baseline: EVOL-00 **Ø 127 m** Station mit **Wormhole ID = 20 m (OD = 22 m)** und **Docking-Ringen** (10 m Halsweite) im 20 m-Pitch.
+
+---
+
+#### 0) Kurzfazit (Executive Summary)
+
+* **Bottleneck heute:** Nicht der 20-m-Kanal an sich, sondern die **Docking-Ring-Halsweite (ID ≈ 10 m)** an den Ringmodulen. Ein reines Aufweiten des Korridors ohne gleichzeitiges **Upscaling der Ringe/Throats** bringt für große Schiffe **keinen** Netto-Gewinn.
+* **Kapazitiv (PAX):** Selbst hohe Spitzenflüsse in Stationen bis **> 10 000** Personen sind mit **2 gegenläufigen Fahrzeugstrecken** (Headway \~20 s, 40 PAX pro Fahrzeug) **ohne** Durchmesserverdopplung bewältigbar. **Ø 20 m bleibt ausreichend** – solange du keine **vier vollwertigen Lanes** + breite Fußringe + große Cargo-Leitungen **gleichzeitig** im Querschnitt fahren willst.
+* **Upsize sinnvoll, wenn …**
+
+  1. **Großschiffe** (Außen-Durchmesser > 10 m) **innen** rangieren/andocken sollen ⇒ **Ringe** und **Korridor** **gemeinsam** vergrößern (z. B. Ring-ID ≥ 16–20 m, Core-ID 30–40 m).
+  2. **Very-High-Capacity**-Layouts (z. B. **254×1016 m** Kapsel mit **> 15 000–20 000** Personen, **Basic/Partial-Sustainability** mit hoher Externernährung) **vier** getrennte Lanes + breite Evakuierungs-Fußringe fordern ⇒ **Core-ID ≈ 36–40 m**.
+* **Empfehlung:**
+
+  * **127 m Kugel:** **ID 20 m beibehalten.**
+  * **254 m Kugel (\~4–5 k PAX):** **ID 20–24 m** genügt (optional **30 m** für 3. Express-Lane + große Services).
+  * **254×508 m Kapsel (10–20 k PAX):** **ID 30–36 m** (je nach Lanes/EX-Zonen); **40 m** nur bei innen rangierenden Großschiffen.
+  * **254×1016 m Kapsel (\~20 k+ PAX):** **ID 36–40 m** + **Ring-Throats** > 10 m, sonst limitieren die Ringe.
+
+---
+
+#### 1) Eingänge & Annahmen
+
+* **Baseline Geometrie (EVOL-00):** Wormhole **ID 20 m** (OD 22 m); Docking-Ringe, 10 m-Halsweite, im **20 m Pitch**; Mikro-g-Achse, 1 atm innen.
+* **Self-Sustainability-Modelle:** *Basic* / *Partial* / *Full Autonomous* mit unterschiedlicher externer Nachschub-Intensität; diese beeinflusst **Frachtflüsse** stark. (Inhalt/Definitionen siehe Programmdokument 4.2.)
+* **Verkehrsträger im Wormhole:** 2–4 **axiale Fahrzeug-Lanes** (Maglev/People-Mover), **Fußring(e)** (Evakuierung/Redundanz), **Service-/Versorgungs-Trunks** (PWR/COM/THM), Sicherheitsabstände.
+
+---
+
+#### 2) Kapazitäts-Modelle (ingenieurstaugliche Formeln)
+
+##### 2.1 Personen (Peak-Hour-Demand)
+
+$$
+\boxed{Q_\text{pph} \;=\; \underbrace{N_\text{max}}_{\text{max. Personen}} \cdot \underbrace{T_\text{day}}_{\text{Trips/Person·Tag}} \cdot \underbrace{f_\text{core}}_{\text{Anteil via Wormhole}} \cdot \underbrace{\mathrm{PHF}}_{\text{Peak-Hour-Faktor}}}
+$$
+
+* Richtwerte: $T_\text{day}=2{,}0\ldots 3{,}0$, $f_\text{core}=0{,}3$ (Kugel) bis $0{,}6$ (lange Kapsel), **PHF** $=0{,}12\ldots 0{,}18$.
+
+**Systemkapazität der Lanes:**
+
+$$
+\boxed{Q_\text{cap} \;=\; n_\text{lanes}\cdot \frac{3600}{h}\cdot C_\text{veh}\cdot \eta}
+$$
+
+mit **Headway** $h$ (s), **Nutzlast je Fahrzeug** $C_\text{veh}$ (PAX), Betriebsfaktor $\eta$ (0,7–0,85 inkl. Haltezeiten/Störungen).
+
+> **Daumen:** $h=20\,\mathrm{s}$, $C_\text{veh}=40$, $\eta=0{,}8$ ⇒ **pro Lane ≈ 5 760 pph**, **2 Lanes ≈ 11 520 pph**, **4 Lanes ≈ 23 040 pph**.
+
+### 2.2 Fracht (kg/h)
+
+Tägliche externe Massezufuhr (abhängig vom Sustain-Modell):
+
+$$
+\boxed{\dot{M}_\text{ext,day} \;=\; N_\text{avg}\cdot I_\text{model}}\quad\Rightarrow\quad \dot{M}_\text{ext,hr}\approx \frac{\dot{M}_\text{ext,day}}{24}\cdot \mathrm{PHF}_\text{cargo}
+$$
+
+* **Logistik-Intensität $I_\text{model}$** (Programmzielwerte, konservativ):
+  **Basic:** 5–10 kg / (Pers·Tag) · **Partial:** 1–3 · **Full:** 0,1–0,5 (haupts. Ersatzteile).
+* **$\mathrm{PHF}_\text{cargo}$** (Bündelung): 1,5–3,0 (je nach Lieferung in festen Slots).
+
+Benötigte **Cargo-Lanes** (oder Slots) mit Standard-Carrier (Masse $m_\text{veh}$, Turnaround $t_\text{turn}$):
+
+$$
+\boxed{n_\text{cargo} \;\approx\; \left\lceil \frac{\dot{M}_\text{ext,hr}}{m_\text{veh}\cdot \tfrac{3600}{t_\text{turn}}} \right\rceil}
+$$
+
+---
+
+#### 3) Geometrische Auslegung (Querschnitt)
+
+Wir modellieren den Wormhole-Durchmesser als **Packungs-/Hüllproblem**:
+
+* **Fahrzeug-Lane (inkl. Hülle & Clearance):** Kreis-Äquivalent $d_\text{lane} \approx 6\,\mathrm{m}$ (r = 3 m).
+* **Lane-Abstand:** $s=1{,}0\ldots 1{,}5\,\mathrm{m}$.
+* **Service-Trunks (PWR/COM/THM+SAFE):** ringförmig, äquiv. 2× **2 m** Bänder.
+* **Fußring (Evakuierung):** umlaufend **$w_\text{foot}=2{,}0\ldots 3{,}0\,\mathrm{m}$**.
+
+**Konservative Hüll-Schätzung:**
+
+* **2 Lanes** (nebeneinander): brauchen **≈ 13–14 m** netto ⇒ mit Fußring + Services ⇒ **Core-ID ≥ 20 m** ok.
+* **3 Lanes**: **≈ 20–22 m** netto ⇒ mit Fußring/Services ⇒ **Core-ID ≈ 28–30 m**.
+* **4 Lanes** (2×2 Matrix): **≈ 26–28 m** netto ⇒ mit Fußring/Services ⇒ **Core-ID ≈ 36–40 m**.
+
+> **Wichtig:** Wenn **Docking-Ring-Throats** (heute **ID ≈ 10 m**) nicht **mitwachsen**, bleibt **dort** der Engpass – unabhängig vom Core-ID.&#x20;
+
+---
+
+#### 4) Varianten-Ergebnisse
+
+##### 4.1 By Geometry
+
+| Variante              | Typische PAX | Sustain-Modell (extern)   |    Empf. Lanes |                                     **Core-ID** Empfehlung |                  Ring-Throats (Halsweite) |
+| --------------------- | -----------: | ------------------------- | -------------: | ---------------------------------------------------------: | ----------------------------------------: |
+| **127 m Kugel**       |    0.8–1.5 k | Basic/Partial             |              2 |                                        **20 m** (Baseline) |                               **10 m** ok |
+| **254 m Kugel**       |        4–5 k | Partial/Full              | 2 (optional 3) |                             **20–24 m** (30 m mit 3. Lane) |                  10 m ok (außen andocken) |
+| **254×508 m Kapsel**  |      10–20 k | Partial (teilweise Basic) |            3–4 | **30–36 m** (bis **40 m** bei 4 Lanes + breiten Fußringen) |       **> 10 m**, falls Großschiffe innen |
+| **254×1016 m Kapsel** |        20 k+ | Basic/Partial             |              4 |                                                **36–40 m** | **≥ 16–20 m**, falls innen Rangierbetrieb |
+
+##### 4.2 By Population & Sustain-Level (Formel-Schwellen)
+
+1. **PAX-Kapazitätsgrenze je Core-ID** (mit $h=20$ s, $C_\text{veh}=40$, $\eta=0{,}8$)
+
+* **ID 20 m → 2 Lanes:** $Q_\text{cap} \approx 11{,}5\ \mathrm{k\ pph}$
+* **ID 30 m → 3 Lanes:** $Q_\text{cap} \approx 17{,}3\ \mathrm{k\ pph}$
+* **ID 40 m → 4 Lanes:** $Q_\text{cap} \approx 23{,}0\ \mathrm{k\ pph}$
+
+2. **PAX-Peaks** (Beispielwerte):
+
+$$
+Q_\text{pph} = N_\text{max}\cdot T_\text{day}\cdot f_\text{core}\cdot \mathrm{PHF}
+$$
+
+* **5 000 PAX,** $T=2{,}5$, $f=0{,}4$, $\mathrm{PHF}=0{,}15$ ⇒ **7 500 pph** → **2 Lanes** reichen (ID 20 m).
+* **20 000 PAX,** $T=2{,}5$, $f=0{,}6$, $\mathrm{PHF}=0{,}15$ ⇒ **45 000 pph** → rechnerisch **4 Lanes** (ID 40 m) **oder** höhere Vehikelkapazität / kürzerer Headway.
+
+3. **Fracht-Peaks** (Beispielwerte):
+
+$$
+\dot{M}_\text{ext,hr}\approx \frac{N_\text{avg}\cdot I_\text{model}}{24}\cdot \mathrm{PHF}_\text{cargo}
+$$
+
+* **Partial,** $N_\text{avg}=5\,000$, $I=2\,\mathrm{kg/(P·d)}$, $\mathrm{PHF}_\text{cargo}=2$ ⇒ **$\dot{M}_\text{ext,hr}\approx 833\ \mathrm{kg/h}$** → 1 Cargo-Slot genügt.
+* **Basic,** $N_\text{avg}=20\,000$, $I=7\,\mathrm{kg/(P·d)}$, $\mathrm{PHF}_\text{cargo}=2$ ⇒ **$\approx 11{,}7\ \mathrm{t/h}$** → 2–3 parallele Cargo-Slots oder Zeitfenster (Shared Lanes).
+
+---
+
+#### 5) Konsequenzen (Design & Betrieb)
+
+* **Wenn Großschiffe innen:** **Ring-Throats** (gegenwärtig 10 m) **mitskalieren** (≥ 16–20 m) **und** Core-ID anpassen; sonst wirkt der Ring als Drossel. (Siehe Docking-Ring-Architektur in der DECK-000-SPEC.)
+* **Evakuierung:** Ein umlaufender **Fußring ≥ 2 m** liefert bei 1,5 Pers/(m·s) **≈ 10 800 pph** (nur zu Fuß). Bei langen Kapseln verbessert **zweiter Fußring** (oder breiterer) die Resilienz → spricht für **ID ≥ 30 m**.
+* **Sustain-Level:** Je mehr **Full/Partial**, desto kleiner der externe Fracht-Peak → **kein** Core-Upsize nötig. **Basic** mit hoher externer Masse → **Zeitfenster** oder **zusätzliche Cargo-Slots** (kein zwingendes Durchmesser-Upsize, wenn Slots getaktet).
+
+---
+
+#### 6) Empfehlung
+
+* **Kein pauschales Verdoppeln** auf **Ø 40 m** für alle 254-m-Varianten.
+* **254 m Kugel (\~4–5 k):** **Ø 20–24 m** genügt; Upgrade auf **Ø 30 m**, wenn 3. Lane + dickerer Fußring gewünscht.
+* **254×508 m Kapsel (10–20 k):** **Ø 30–36 m** (3–4 Lanes + Service/Foot); **Ø 40 m** nur bei **innen** rangierenden Großschiffen.
+* **254×1016 m Kapsel (20 k+):** **Ø 36–40 m** **und** **Ring-Throats ≥ 16–20 m** (sonst Rings-Bottleneck).
+* **127 m:** **Ø 20 m** bleibt **optimal** (Baseline bestätigt).&#x20;
+
+---
+
+#### 7) Referenzen
+
+* **DECK-000 – The Wormhole (EVOL-00 Baseline, ID 20 m, Ring-Pitch 20 m, Ring-Throat 10 m).**
+* **Sustainability / Self-Sustainability Models (4.2) — Einfluss auf externe Frachtflüsse.**
+
+---
+
+##### Anhang A — Schnelle Entscheidungsformel
+
+1. **PAX-Lanes:**
+
+$$
+n_\text{lanes} \;\ge\; \left\lceil \frac{N_\text{max}\cdot T_\text{day}\cdot f_\text{core}\cdot \mathrm{PHF}}{(3600/h)\cdot C_\text{veh}\cdot \eta}\right\rceil
+$$
+
+2. **Core-ID aus Lanes:**
+
+$$
+\text{ID}_\text{core} \;\approx\; 
+\begin{cases}
+\ge 20\,\mathrm{m}, & n=2\\
+\ge 28\text{–}30\,\mathrm{m}, & n=3\\
+\ge 36\text{–}40\,\mathrm{m}, & n=4
+\end{cases}
+\quad\text{(inkl. Fußring+Services)}
+$$
+
+3. **Cargo-Slots:**
+   $n_\text{cargo}\approx\left\lceil \dot{M}_\text{ext,hr}/(m_\text{veh}\cdot 3600/t_\text{turn})\right\rceil$. Shared-Lane-Fenster bevorzugen, um Querschnitt klein zu halten.
+
+---
+
+\newpage
+
+### 7.4.1 Sphere Station Simulator – Research Summary
+
+Here is a structured summary of key findings from engineering, social psychological, and medical literature relevant to further development of the Sphere Station Simulator. The compilation draws on internal project documents and external research sources.
+
+---
+
+#### 7.4.1.1 🛠️ Engineering Aspects
+
+##### 7.4.1.1.1 Artificial gravity and structure
+
+* **Rotation radius and speed:** For artificial gravity without gravitational load on the body, the station radius must be large enough. Studies show that with radii under 56 m a large gravity gradient between head and feet occurs, and rotation speeds over 4 rpm trigger motion sickness. With a Sphere Station diameter of 127 m and Deck 8 as the "Earth deck," these limits are met.
+* **Expandable modules:** Modern concepts propose building the station from concentric cylinders that can be expanded stepwise. This allows the living area to grow without interrupting systems. Tensegrity structures offer a flexible and lightweight construction for such modules.
+* **Radiation protection:** Interplanetary missions require effective shielding against cosmic radiation and solar particles. A shield made from 5 m of regolith and water, which also serves as a heat store, can protect the crew and improve thermal management. Solar cells on the shield provide additional energy.
+* **Agriculture and living space:** Concept studies budget around 300 m² of agricultural area per inhabitant; only at an outer radius of about 224 m would there be enough area for 8,000 people. The Sphere Station instead relies on hydroponic gardens and aeroponics on the Earth deck.
+
+##### 7.4.1.1.2 Subsystems and infrastructure (internal documents)
+
+* **Access and transport:** In addition to passenger and cargo elevators, heavy freight lifts, tangential conveyor belts/rail vehicles, and hover/climbing channels are proposed.
+* **Energy and heat:** Primary supply via two NuScale SMR reactors or an array of microreactors; large solar panel fields; liquid heat stores (e.g., molten salt) and deployable radiators; battery banks and flywheels for load peaks.
+* **Safety & emergency:** Inert gas and water mist fire-suppression systems, radiation shielding walls, meteoroid protection layers, and evacuation capsules.
+* **Docking & logistics:** Central docking port on Deck 0, cargo and waste bays, and shuttle systems for transfers between Earth, LEO, and long-range missions.
+* **Control & propulsion:** Gyroscopes/flywheels for attitude control and electric thrusters for orbital corrections.
+* **Life support:** Closed air, water, and waste cycles as well as a high-speed data network.
+* **Additional facilities:** Hydroponics/aeroponics, medical centers, recreation and learning areas, and recycling and industrial laboratories.
+
+These subsystems should be available as optional modules in the full simulator to keep the model realistic and configurable.
+
+---
+
+#### 7.4.1.2 🧠 Social Psychological Findings
+
+##### 7.4.1.2.1 Team dynamics in isolated, long-duration missions
+
+* **Less social time and early conflicts:** In analogs to long-duration missions (e.g., Antarctic stations, Mars habitats) teams tend to spend less social time together over longer missions; efficiency usually remains constant, but by day 90 every team has experienced at least one conflict.
+* **Communication and mood:** Commanders reduce written communication with mission control over time, and mood-related "third-quarter phenomena" (mid-mission crises) do not appear consistently.
+* **Isolation and monotonous routines:** The Team Self-Maintenance (TSM) study emphasizes that monotonous routines, a "Groundhog Day" feeling, and lack of novelty lead to boredom, frustration, and psychological strain. Without external feedback, crews may develop apathy and emotional problems.
+* **Team Self-Maintenance:** Long missions require strategies in which teams actively maintain their psychological health. Key processes include information exchange, self-regulation, resource recovery, and emotional support. Research recommends prioritizing team well-being alongside performance goals and developing measures for conflict prevention and resolution.
+* **Implications for design:** Spaces should be designed to offer variety, privacy, and communal areas. Interactive leisure offerings (e.g., VR training, gardens) and mood-enhancing elements contribute to psychological stability.
+
+##### 7.4.1.2.2 Crew management and psychological research
+
+* **Selection & preparation:** Successful missions require a balanced team with respect to personality, culture, hierarchy sensitivity, and resilience. Training in conflict management, cultural competence, and stress coping is essential.
+* **Research gaps:** Long-duration missions beyond low Earth orbit (Mars) need more empirical data; analog studies so far provide only limited quantitative statements about team cohesion and performance.
+
+---
+
+#### 7.4.1.3 🧬 Medical and Physiological Aspects
+
+##### 7.4.1.3.1 Effects of microgravity
+
+* **Bone density loss and muscle atrophy:** Without gravity, load-bearing bones lose **1% to 1.5% mineral content per month** on average; muscles atrophy faster than on Earth. Rehabilitation does not fully restore bone density.
+* **Fluid shifts and kidney stones:** Bodily fluids shift toward the head, increasing intraocular pressure and possibly causing vision problems. Dehydration and calcium excretion raise the risk of kidney stones.
+* **Countermeasures:** Leg compression and lower-body negative pressure suits help redistribute fluids. Medications such as **potassium citrate** and **bisphosphonates** are used to prevent kidney stones and bone loss. Regular **aerobic and resistive exercise** keeps the heart, bones, and muscles healthy and improves mood; artificial gravity (short-arm centrifuges) is being explored as an additional measure.
+* **Immune system and microbiome:** Isolation and microgravity alter the immune system and encourage microorganism transmission; NASA monitors air quality, enforces hygiene protocols, and recommends flu vaccination and pre-launch quarantine.
+* **Habitability:** For psychological health, living spaces must consider temperature fluctuations, noise, lighting, and confinement.
+
+---
+
+#### 7.4.1.4 🔗 Conclusions for the Full Simulator and Research
+
+1. **Realistic modeling:** The simulator should account for radiation shielding, thermal management, rotation speeds, and expandable modules. A realistic deck layout (e.g., 16 decks with varying gravity) reflects internal documentation.
+2. **Modular subsystems:** In addition to elevators, conveyor belts, fire barriers, and gyros, heavy cargo lifts, cargo bays, docking ports, reactors, heat storage, battery storage, evacuation capsules, and recycling plants should be integrated as optional modules.
+3. **Psychological & social modules:** Long missions require spaces for retreat and community, leisure options (e.g., gardens, VR training), and mechanisms for team self-maintenance. The simulator can offer virtual scenarios for conflict training, information exchange, and TSM processes.
+4. **Medical facilities:** Models of gyms, sick bays, hydroponic farms, and research laboratories reflect the requirements for health, nutrition, and life support. Measurement devices such as centrifuges or compression suits could also be digitally represented.
+
+With these findings, upcoming developments (L4 sprint and beyond) can align with technical realism, social factors, and medical constraints. This enhances both the simulation's validity and its usefulness for engineering decisions and crew training.
+
+
+
+\newpage
+
 ## 7.5 Processes
 
 
@@ -5961,6 +6213,300 @@ Operations and maintenance documents for EVOL-00.
 ### 08 Change Management
 
 RFCs, change requests, and approvals for EVOL-00.
+
+
+\newpage
+
+# evol-01
+
+
+\newpage
+
+### 00 Standards Templates
+
+Frozen standards and templates from EVOL-01.
+
+
+\newpage
+
+### 01 Architecture
+
+Archived architecture records for EVOL-01.
+
+\newpage
+
+### 02 Specs
+
+Specifications and requirements from EVOL-01.
+
+
+
+\newpage
+
+# SPEC-01-STR-GEOM-GRAV-E2-BALL-0001-earth-two-ball-D254m-EN-DE-v0.1.0-DRAFT
+> Earth TWO "Ball" *(EVOL-01, Ø 254,00 m)* Global Geometry & Gravitation
+
+**Scope:** Station **Earth TWO** als skalierte/erweiterte Sphäre zu Earth ONE, mit **Außendurchmesser 254,00 m**, Hülle **0,50 m**, Deck-Raster (Δr), Spin-Gesetz, „best-fit“ **1 g** für Habitatzonen, g-Zonen, Ziel-Kapazität **> 4 000** Personen, Strukturkonzept (A+B Grid: Längs- & Breitengrade).
+**Datum:** 2025-08-16
+
+---
+
+## 1) Station & Hülle (Geometrie)
+
+* **Außenradius:** $R_s=127{,}00\ \mathrm{m}$ • **Innen-Hülle:** $R_h=126{,}50\ \mathrm{m}$ (Hüllendicke 0,50 m).
+* **DECK 000 („Wormhole“):** axialer Mikro-g-Korridor (ID≈20 m, OD≈22 m).
+* **Deck-Raster:** radial **Δr=3{,}50 m**, beginnend bei **r=10{,}50 m**, bis **r\_{out,max}=126{,}00 m** (1,5 m Puffer zur Hülle).
+  → **Anzahl Decks:** $N=\frac{126{,}0-10{,}5}{3{,}5}=33$ (DECK 001…033).
+* **Axiales LAT-Konzept (EVOL-01):** **3–7** ringförmige **Latitude-Diaphragmen** (S40/EQ/N40…); Details siehe Struktur.
+
+---
+
+## 2) Spin-Gesetz & „best-fit“ 1 g
+
+**Grundgleichung:** $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
+
+### 2.1 Zwei praktikable Kalibrierungen
+
+* **Option A (rpm-minimal, hull-kalibriert):** **1 g bei $r=R_h=126{,}50\ \mathrm{m}$**
+  $\omega=\sqrt{g_0/R_h}\approx 0{,}2784\ \mathrm{s^{-1}}$ → **≈ 2,66 rpm**.
+  Habitatzone 115–126,5 m ergibt **0,91–1,00 g**, Kopf-Fuß-Gradient an der Hülle ≈ **1,6 %**.
+* **Option B („best-fit“ für Wohnring):** **1 g bei $r=120{,}00\ \mathrm{m}$** (Mitte der geplanten Wohnbänder)
+  $\omega=\sqrt{g_0/120}\approx 0{,}2859\ \mathrm{s^{-1}}$ → **≈ 2,73 rpm**.
+  Habitatzone 115–126,5 m: **0,96–1,05 g**, Kopf-Fuß-Gradient ca. **1,6–1,7 %**.
+  **Empfehlung EVOL-01:** **Option B** (balancierter „Feel“ über den Wohnring, weiterhin moderat niedrige rpm).
+
+---
+
+## 3) Deck-Zonen (Funktionslogik)
+
+* **Innen (r ≲ 60 m, DECK 001…017):** **0,0–0,50 g** → Forschung, Leichtindustrie, Sport/Training, Kliniken (spez.).
+* **Mitte (r ≈ 60–110 m, DECK 018…029):** **0,50–0,92 g** → Büros, Labore, Bildung, Agro-/Gewächshaus-Bänder.
+* **Außen-Habitat (r ≈ 115–126,5 m, DECK 030…033):** **0,96–1,05 g** → **Wohnen, Campus, Kultur, Handel**.
+* **Sicherheits-/Energie-Gürtel:** nahe r≈110–120 m tangential entkoppelte Technikringe (THM/Power/Water) + LAT-Kappen ober/unter kritischen Decks.
+
+---
+
+## 4) Kapazität > 4 000 Personen (Herleitung)
+
+**Ring-Volumen pro Deck (Annäherung):** $V_i \approx 2\pi\,r_{\text{mid},i}\cdot(\Delta r \cdot H_i)$,
+mit **Δr=3,50 m** und **axialer Deckhöhe $H_i$**.
+
+* **EVOL-01 Annahme:**
+  **Technik/Innen (25 Decks):** $H=3{,}0\ \mathrm{m}$ → $\sum V \approx 89{,}5\ \mathrm{Tsd.\ m^3}$.
+  **Außen-Habitat (8 Decks):** $H=4{,}5\ \mathrm{m}$ → $\sum V \approx 88{,}7\ \mathrm{Tsd.\ m^3}$.
+  **Summe Druckvolumen Ringe:** $\approx 178{,}1\ \mathrm{Tsd.\ m^3}$.
+
+**Belegungs-Planung (Richtwerte):**
+
+* **40–50 m³/Person** (Langzeit-Siedlung, keine „Astronautendichte“) → **3 560–4 450 Personen** allein in den Ringbändern.
+* **+ LAT-Ebenen, Knoten, Atrien, Dock-Kavernen** (anteilig bewohnbar) → **Reserve** für **> 4 000** sicher erreichbar.
+* **Nettonutzflächen** (Außenring, Bänder DECK 030…033): $A_{\text{Floor}} \approx \sum 2\pi r_{\text{out}} \cdot H$ → **> 25 000 m²** bei $H=4{,}5\ \mathrm{m}$ nur für die vier Außen-Decks; mit 15–25 m²/Person (Wohnen+Gemeinschaft) ergibt **1 000–1 700 Plätze** allein dort. **Gesamtsystem** (alle Zonen) skaliert in Summe deutlich über **4 000**.
+
+> **Fazit Kapazität:** Mit **Option B (2,73 rpm)**, **Außen-Habitat 8 × 4,5 m**, plus **LAT-/Knoten-Ausbau** ist **4 000–5 000** Personen realistisch (EVOL-01), mit Wachstumspfad (EVOL-02) darüber.
+
+---
+
+## 5) Struktur & Safety (Variante **C**: Längs + Breitengrade)
+
+* **Längsgrade (12 × 30° A–L):** **radiale Sektor-Schotten** (PT-A/PT-B, AL-C an Knoten), voll druck-/brandschottfähig (Δp≥1 atm sektorweise).
+* **Breitengrade (3–7 LAT):** **axiale Ring-Diaphragmen** (S40/EQ/N40…): Schubscheiben, akustische/axiale Kappen, **nicht** als Voll-Druckschott; **Equalize-Ventile** und **VENT** radial.
+* **VENT/BOP-Philosophie:** **immer radial** zur Hülle; keine tangentiale Entlastung.
+* **Ergebnis:** Höchste Torsions-/Biegesteifigkeit (Mehrzellen-Schale + Scheiben), beste **2D-Kompartmentierung** (radial & axial), klare OPS-Sperrebenen.
+
+---
+
+## 6) g-Profil (Auszug Außen-Habitat, **Option B: 1 g @ 120 m → ≈ 2,73 rpm**)
+
+> **Konvention:** „Boden“ = $r_\text{out}$, „Decke“ = $r_\text{in}$; $g/g_0=r/120$. Kopf-Fuß am Boden (h=2,0 m): $\Delta g\%\approx100\cdot h/r_\text{out}$.
+
+| Deck | r\_in → r\_mid → r\_out (m) | g\_floor (g$_0$) | g\_mid (g$_0$) | g\_ceiling (g$_0$) | Δg Kopf-Fuß (Boden) |
+| ---: | --------------------------: | ------------: | ----------: | --------------: | ------------------: |
+|  030 |      112.0 → 113.75 → 115.5 |        0.9625 |      0.9479 |          0.9333 |              1.73 % |
+|  031 |      115.5 → 117.25 → 119.0 |        0.9917 |      0.9771 |          0.9625 |              1.68 % |
+|  032 |      119.0 → 120.75 → 122.5 |        1.0208 |      1.0063 |          0.9917 |              1.63 % |
+|  033 |      122.5 → 124.25 → 126.0 |        1.0500 |      1.0354 |          1.0208 |              1.59 % |
+
+> **Hinweis:** **Option A (1 g @ 126,5 m → 2,66 rpm)** verschiebt alle Werte oben um den Faktor $r/126{,}5$ (Außen-Band 0,91–1,00 g), reduziert Coriolis noch etwas, ist aber weniger „zentriert“ auf den Wohnring.
+
+---
+
+## 7) OPS & Human Factors (Kurz)
+
+* **Coriolis @ 2,73 rpm:** moderat; Kopf-Fuß-Gradient **≈ 1,6–1,7 %** im Wohnring → **sehr komfortabel**.
+* **Wohlfühlzonen:** $\sim$0,95–1,05 g als **A/B-Zonen** (Wohnen, Schule, Pflege); 0,7–0,9 g **B/C-Zonen** (Arbeit, Sport); **< 0,5 g** für spez. Forschung/Industrie.
+* **Verweilzeiten:** gemäß eurer A–E-Kategorien (Kap. 8.1-Logik aus Earth ONE), im Außen-Habitat uneingeschränkt.
+
+---
+
+## 8) Empfehlung EVOL-01 (Earth TWO)
+
+1. **Spin „best-fit“:** **1 g @ 120,0 m (≈ 2,73 rpm)** als Standard; **Hull-Mode 2,66 rpm** als technischer Alternate.
+2. **Wohnring DECK 030–033** mit **H=4,5 m** (modular erweiterbar) + LAT-Ebenen **S40/EQ/N40**.
+3. **Zielkapazität:** **≥ 4 200 Personen** sofort erreichbar; Ausbaupfad **bis \~5 000** durch zusätzliche LAT-Knoten/Atrien.
+4. **Struktur:** Varianten-Mix **C (Längs+Breitengrade)** als Baseline; VENT/BOP radial; Equalize-Sequenz festlegen.
+
+
+\newpage
+
+# SPEC-01-STR-GEOM-GRAV-E2-LCAP-0001-earth-two-long-capsule-D254m-L508m—v0.1.0-DRAFT
+> Earth TWO “Long Capsule” *(EVOL-01, Ø 254 m × L 508 m)* Global Geometry & Gravitation
+
+**Scope:** Zylindrisch-kapselartige Station mit Hemisphären-Endkappen, **Außendurchmesser 254,00 m** (R=127,00 m), **Gesamtlänge 508,00 m** (Zylinderlänge ≈ **254 m** + 2× Halbkugel). Hülle nominell **0,50 m**. Spin-Gesetz, 1 g-Kalibrierung („best-fit“), Habitat-Zonen, Struktur-Raster (Längs- & Breitengrade), Safety/Kompartmentierung, Transportachsen, Kapazitäts-Herleitung.
+
+---
+
+## 1) Geometrie & Hülle
+
+* **Form:** Zylinder (Innenradius $R_h=126{,}50\,\mathrm{m}$) + zwei hemisphärische Endkappen.
+* **Zylinder-Länge innen:** $L_c \approx 254{,}0\,\mathrm{m}$. **Gesamtlänge:** $508{,}0\,\mathrm{m}$.
+* **„Wormhole“-Korridor:** axialer Mikro-g-Tunnel (ID \~**20 m**), durchgehend Süd↔Nord; Docking in beiden Endkappen.
+* **Axiale Rasterung:** **16 Blöcke** à **31,75 m** (Z00…Z15) für Layout, Fertigung, Safety-Sperr-Zonen.
+* **Hülle:** 0,50 m (Stuffed-Whipple-Außenlage / MLI / Druckschale SiC-Verbund); Fenster nur in ausgewählten Habitatzonen (Schotts/MDPS-Shutters).
+
+---
+
+## 2) Spin-Gesetz & „1 g best-fit“
+
+Grundgleichung: $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
+
+**Zwei sinnvolle Kalibrierungen (beide komfortabel):**
+
+* **Option A – Hüllen-1 g (rpm-minimal):** **1 g bei $r=R_h=126{,}50\,\mathrm{m}$**
+  $\omega=\sqrt{\tfrac{g_0}{126{,}5}} \approx 0{,}2785\,\mathrm{s^{-1}}$ → **2,66 rpm**.
+  *Pro:* Minimaler Coriolis, Außenring exakt 1 g. *Kontra:* 5–10 m innen schon <1 g.
+
+* **Option B – Wohnring-„best-fit“:** **1 g bei $r=120{,}00\,\mathrm{m}$**
+  $\omega=\sqrt{\tfrac{g_0}{120{,}0}} \approx 0{,}2859\,\mathrm{s^{-1}}$ → **2,73 rpm**.
+  *Pro:* 115–126,5 m liefert **0,96–1,05 g** (breiter Sweet-Spot). *Kontra:* minimal höhere rpm.
+
+**Empfehlung EVOL-01:** **Option B (2,73 rpm)** für einen breiten, gleichmäßig „erdigen“ Wohnring; **Option A** als Alternate-Mode.
+
+> **Kopf-Fuß-Gradient** am „Boden“ (h=2,0 m):
+> bei r=126,5 m ≈ **1,58 %**, bei r=120,0 m ≈ **1,67 %** (sehr komfortabel).
+> **Coriolis:** Bewegung **entlang der Achse** (parallel ω) → **≈0**; Querbewegungen moderat bei \~2,7 rpm.
+
+---
+
+## 3) Zonen & Nutzung
+
+**Radial (r):**
+
+* **Außenring (r≈115–126,5 m):** **Haupt-Habitat** (Wohnen, Schulen, Handel, Kultur, Parks) bei \~0,96–1,05 g (Option B).
+* **Mittelring (r≈80–115 m):** **Arbeit/Agro/Labore**, 0,64–0,96 g; gute Ergonomie, reduzierte Lasten.
+* **Innenring (r<80 m):** **Industrie/F\&E/Sport** (0–0,64 g), Bühnen, Atrien; Übergänge zur **Mikro-g-Achse**.
+
+**Axial (Z-Blöcke Z00…Z15, je 31,75 m):**
+
+* **Z00/Z15 (Endkappen):** Docking, Fracht, Hangars, Service.
+* **Z01–Z03 & Z12–Z14:** Technik/THM/Power-Ringe, EX-Zonen separiert.
+* **Z04–Z11 (Mitte):** Habitat-Distrikte (je \~32 m Länge), mit Plazas, Parks und „High-Street“ tangential.
+
+---
+
+## 4) Strukturkonzept (Grid C: Längs **+** Breitengrade)
+
+* **Längsgrade:** 12 radiale **Sektorschotten** (A–L, 30°), druck-/brandfähig (Δp ≥ 1 atm sektorweise), PT-A/B-Türen, AL-C-Schleusen.
+* **Breitengrade (LAT):** **Ring-Diaphragmen** in jedem Z-Block-Stoß (31,75 m); zusätzlich **Haupt-LAT** in Z04/Z08/Z12.
+* **Rahmenraster:** sekundäre **Frame-Ringe** etwa alle **7,9 m** (¼-Block) für lokale Steifigkeit & Paneelgrößen.
+* **Vent/Relief:** **radial** zur Hülle (VENT/BOP), keine tangentiale Entlastung.
+* **Membranspannungen (Zylinder):** $\sigma_{\theta}\approx \tfrac{p\,R_h}{t}$ (Reifenspannung), $\sigma_{z}\approx \tfrac{p\,R_h}{2t}$ (Längs); mit $p≈101\,\mathrm{kPa}$, $R_h=126{,}5\,\mathrm{m}$, $t=0{,}5\,\mathrm{m}$ → $\sigma_{\theta}\approx 25{,}6\,\mathrm{MPa}$ (gut beherrschbar für Verbund/Metall-Liner mit FoS).
+
+---
+
+## 5) Transport & Logistik
+
+* **Axial (µg):** Zentralkorridor (Wormhole) mit **Maglev-Spine** (Crew/Logistik), Fast-Transit Endkappe↔Endkappe.
+* **Tangential (1 g-Boden):** **Ring-Tram** (2–3 Linien) pro Habitat-Gürtel; Fuß-/Radwege entlang „High-Street“.
+* **Radial:** **Lift-Spokes** (PAX/HL) in jedem zweiten Sektor (6 Hauptspeichen) zwischen µg-Achse ↔ Außenring.
+
+---
+
+## 6) Kapazität & Flächen
+
+* **„Erd-Boden“ am Innenhüll-Zylinder:** $A_\text{floor} ≈ 2\pi R_h \cdot L_c \approx 2\pi\cdot126{,}5\cdot508 \approx 4{,}04\times 10^5\,\mathrm{m^2}$.
+  → Bei **20–40 m²/Person** ergeben sich **\~10 000–20 000 Plätze** **allein auf Bodenniveau**.
+* **Terrassen (≤ 10 m radial)**: zusätzliche Ebenen bei 0,92–0,98 g (+30–60 % Fläche).
+* **Fazit Kapazität:** **> 4 000** problemlos; **10 000–20 000** realistisch im EVOL-01-Ausbau (ohne Innen-„Stadtkern“ massiv zu verdichten).
+
+---
+
+## 7) Habitabilität (Kurzlage)
+
+* **Komfortfenster:** 0,95–1,05 g im Außenring (Option B) → **Kat. A/B** ganztägig.
+* **Coriolis:** axial quasi null; tangential moderat (≤ 2,73 rpm).
+* **Akustik & Klima:** LAT-Scheiben separieren Strömungs-/Lärmzonen; Parks/Plazas als akustische „Sinks“.
+* **Verweilzeiten:** Habitat unbegrenzt; Technik/EX-Zonen nach D/E-Kategorien (≤ 4 h / ≤ 2 h).
+
+---
+
+## 8) Beispiel-g-Profil (Option B: 1 g @ 120,0 m → 2,73 rpm)
+
+> $g/g_0=r/120$. „Boden“ = $r=126{,}5$; „Balkon“ = $r=120$; „Galerie“ = $r=112$.
+
+| Standort              | Radius r (m) |      g/g$_0$ | Hinweis                               |
+| --------------------- | -----------: | --------: | ------------------------------------- |
+| Boden Außenring       |        126,5 | **1,054** | kräftig „erdig“, Top für Sport/Lasten |
+| Wohn-Balkon           |        120,0 | **1,000** | **best-fit**                          |
+| Galerie/Park          |        115,5 |     0,962 | softer, angenehm                      |
+| Agro-Ringe            |        100,0 |     0,833 | Pflanzen/leichte Arbeit               |
+| Industrie/Sport innen |         80,0 |     0,667 | schwere Geräte, Labore                |
+| Achse (Wormhole)      |         0–10 |       \~0 | µg-Transport/Andock                   |
+
+**Kopf-Fuß-Δg** am Boden (2,0 m): **\~1,6 %**.
+
+---
+
+## 9) Safety & Kompartmentierung
+
+* **Sektoren (A–L):** radiale Druck/Brand-Zellen (PT-A/B, AL-C); VENT/BOP **radial**.
+* **LAT-Ebenen:** je Blockstoß (31,75 m) + Haupt-LAT (Z04/Z08/Z12) als **axiale Kappen** (Equalize-Philosophie, **kein Voll-Δp**).
+* **EX/NUC-Zonen:** in Außen-Technikgürteln separiert; **keine** Kryo/H$_2$ mit Nuklear-Primär im selben Sektor/Block.
+
+---
+
+## 10) Nächste Schritte (konkret)
+
+1. **Spin-Entscheidung:** Option B (2,73 rpm) als Standard, Option A (2,66 rpm) als Alternate.
+2. **Z-Block-Freeze:** Funktionen Z00…Z15; Haupt-LAT in Z04/Z08/Z12.
+3. **Trassenplanung:** Ring-Tram, Maglev-Spine, 6 Haupt-Liftspokes.
+4. **ICD Safety:** PT-Türen/Schleusen-Katalog, Equalizer-Spezifikation, VENT/BOP-Sizing.
+5. **Massen-/Struktur-Sizing:** Rahmenabstände, Paneeldicken, FoS; Fertigungs-/QC-Plan Fugen/Schraubgurte.
+
+---
+
+\newpage
+
+### 03 Interfaces
+
+Interface control documents for EVOL-01.
+
+
+\newpage
+
+### 04 Calculations
+
+Supporting calculations and proofs for EVOL-01.
+
+
+\newpage
+
+### 05 Models CAD SIM
+
+Models, CAD files, and simulations from EVOL-01.
+
+
+\newpage
+
+### 06 Tests Verification
+
+Test plans and verification reports for EVOL-01.
+
+
+\newpage
+
+### 07 Ops Maintenance
+
+Operations and maintenance documents for EVOL-01.
 
 
 \newpage
