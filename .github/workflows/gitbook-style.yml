@@ -207,6 +207,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git commit -m "chore: regenerate summary.md from book.json structure [skip ci]"
+            git pull --rebase origin main
             git push
           else
             echo "SUMMARY.MD OK"
