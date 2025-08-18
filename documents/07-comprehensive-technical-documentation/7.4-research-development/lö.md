@@ -1,0 +1,67 @@
+### 7.4.1 Sphere Station Simulator – Research Summary
+
+Here is a structured summary of key findings from engineering, social psychological, and medical literature relevant to further development of the Sphere Station Simulator. The compilation draws on internal project documents and external research sources.
+
+---
+
+#### 7.4.1.1 🛠️ Engineering Aspects
+
+##### 7.4.1.1.1 Artificial gravity and structure
+
+* **Rotation radius and speed:** For artificial gravity without gravitational load on the body, the station radius must be large enough. Studies show that with radii under 56 m a large gravity gradient between head and feet occurs, and rotation speeds over 4 rpm trigger motion sickness. With a Sphere Station diameter of 127 m and Deck 8 as the "Earth deck," these limits are met.
+* **Expandable modules:** Modern concepts propose building the station from concentric cylinders that can be expanded stepwise. This allows the living area to grow without interrupting systems. Tensegrity structures offer a flexible and lightweight construction for such modules.
+* **Radiation protection:** Interplanetary missions require effective shielding against cosmic radiation and solar particles. A shield made from 5 m of regolith and water, which also serves as a heat store, can protect the crew and improve thermal management. Solar cells on the shield provide additional energy.
+* **Agriculture and living space:** Concept studies budget around 300 m² of agricultural area per inhabitant; only at an outer radius of about 224 m would there be enough area for 8,000 people. The Sphere Station instead relies on hydroponic gardens and aeroponics on the Earth deck.
+
+##### 7.4.1.1.2 Subsystems and infrastructure (internal documents)
+
+* **Access and transport:** In addition to passenger and cargo elevators, heavy freight lifts, tangential conveyor belts/rail vehicles, and hover/climbing channels are proposed.
+* **Energy and heat:** Primary supply via two NuScale SMR reactors or an array of microreactors; large solar panel fields; liquid heat stores (e.g., molten salt) and deployable radiators; battery banks and flywheels for load peaks.
+* **Safety & emergency:** Inert gas and water mist fire-suppression systems, radiation shielding walls, meteoroid protection layers, and evacuation capsules.
+* **Docking & logistics:** Central docking port on Deck 0, cargo and waste bays, and shuttle systems for transfers between Earth, LEO, and long-range missions.
+* **Control & propulsion:** Gyroscopes/flywheels for attitude control and electric thrusters for orbital corrections.
+* **Life support:** Closed air, water, and waste cycles as well as a high-speed data network.
+* **Additional facilities:** Hydroponics/aeroponics, medical centers, recreation and learning areas, and recycling and industrial laboratories.
+
+These subsystems should be available as optional modules in the full simulator to keep the model realistic and configurable.
+
+---
+
+#### 7.4.1.2 🧠 Social Psychological Findings
+
+##### 7.4.1.2.1 Team dynamics in isolated, long-duration missions
+
+* **Less social time and early conflicts:** In analogs to long-duration missions (e.g., Antarctic stations, Mars habitats) teams tend to spend less social time together over longer missions; efficiency usually remains constant, but by day 90 every team has experienced at least one conflict.
+* **Communication and mood:** Commanders reduce written communication with mission control over time, and mood-related "third-quarter phenomena" (mid-mission crises) do not appear consistently.
+* **Isolation and monotonous routines:** The Team Self-Maintenance (TSM) study emphasizes that monotonous routines, a "Groundhog Day" feeling, and lack of novelty lead to boredom, frustration, and psychological strain. Without external feedback, crews may develop apathy and emotional problems.
+* **Team Self-Maintenance:** Long missions require strategies in which teams actively maintain their psychological health. Key processes include information exchange, self-regulation, resource recovery, and emotional support. Research recommends prioritizing team well-being alongside performance goals and developing measures for conflict prevention and resolution.
+* **Implications for design:** Spaces should be designed to offer variety, privacy, and communal areas. Interactive leisure offerings (e.g., VR training, gardens) and mood-enhancing elements contribute to psychological stability.
+
+##### 7.4.1.2.2 Crew management and psychological research
+
+* **Selection & preparation:** Successful missions require a balanced team with respect to personality, culture, hierarchy sensitivity, and resilience. Training in conflict management, cultural competence, and stress coping is essential.
+* **Research gaps:** Long-duration missions beyond low Earth orbit (Mars) need more empirical data; analog studies so far provide only limited quantitative statements about team cohesion and performance.
+
+---
+
+#### 7.4.1.3 🧬 Medical and Physiological Aspects
+
+##### 7.4.1.3.1 Effects of microgravity
+
+* **Bone density loss and muscle atrophy:** Without gravity, load-bearing bones lose **1% to 1.5% mineral content per month** on average; muscles atrophy faster than on Earth. Rehabilitation does not fully restore bone density.
+* **Fluid shifts and kidney stones:** Bodily fluids shift toward the head, increasing intraocular pressure and possibly causing vision problems. Dehydration and calcium excretion raise the risk of kidney stones.
+* **Countermeasures:** Leg compression and lower-body negative pressure suits help redistribute fluids. Medications such as **potassium citrate** and **bisphosphonates** are used to prevent kidney stones and bone loss. Regular **aerobic and resistive exercise** keeps the heart, bones, and muscles healthy and improves mood; artificial gravity (short-arm centrifuges) is being explored as an additional measure.
+* **Immune system and microbiome:** Isolation and microgravity alter the immune system and encourage microorganism transmission; NASA monitors air quality, enforces hygiene protocols, and recommends flu vaccination and pre-launch quarantine.
+* **Habitability:** For psychological health, living spaces must consider temperature fluctuations, noise, lighting, and confinement.
+
+---
+
+#### 7.4.1.4 🔗 Conclusions for the Full Simulator and Research
+
+1. **Realistic modeling:** The simulator should account for radiation shielding, thermal management, rotation speeds, and expandable modules. A realistic deck layout (e.g., 16 decks with varying gravity) reflects internal documentation.
+2. **Modular subsystems:** In addition to elevators, conveyor belts, fire barriers, and gyros, heavy cargo lifts, cargo bays, docking ports, reactors, heat storage, battery storage, evacuation capsules, and recycling plants should be integrated as optional modules.
+3. **Psychological & social modules:** Long missions require spaces for retreat and community, leisure options (e.g., gardens, VR training), and mechanisms for team self-maintenance. The simulator can offer virtual scenarios for conflict training, information exchange, and TSM processes.
+4. **Medical facilities:** Models of gyms, sick bays, hydroponic farms, and research laboratories reflect the requirements for health, nutrition, and life support. Measurement devices such as centrifuges or compression suits could also be digitally represented.
+
+With these findings, upcoming developments (L4 sprint and beyond) can align with technical realism, social factors, and medical constraints. This enhances both the simulation's validity and its usefulness for engineering decisions and crew training.
+

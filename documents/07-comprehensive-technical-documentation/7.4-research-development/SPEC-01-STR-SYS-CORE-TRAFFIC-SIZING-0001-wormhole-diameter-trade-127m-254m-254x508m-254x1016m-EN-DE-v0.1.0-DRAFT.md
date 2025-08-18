@@ -1,0 +1,178 @@
+# SPEC-01-STR-SYS-CORE-TRAFFIC-SIZING-0001 — Wormhole-Durchmesser-Trade *(127 m / 254 m / 254×508 m / 254×1016 m)* — v0.1.0 DRAFT
+
+**Scope:** Dimensionierung des axialen Mikro-g-Korridors „**Wormhole**“ (DECK 000) für Personen- und Frachtverkehr in EVOL-01-Konfigurationen. Inklusive hochgradig praktischer, **ingenieurstauglicher Formeln** für die Auslegung in Abhängigkeit von Stationsgröße, Population und **Self-Sustainability-Modell**. Baseline: EVOL-00 **Ø 127 m** Station mit **Wormhole ID = 20 m (OD = 22 m)** und **Docking-Ringen** (10 m Halsweite) im 20 m-Pitch.
+
+---
+
+## 0) Kurzfazit (Executive Summary)
+
+* **Bottleneck heute:** Nicht der 20-m-Kanal an sich, sondern die **Docking-Ring-Halsweite (ID ≈ 10 m)** an den Ringmodulen. Ein reines Aufweiten des Korridors ohne gleichzeitiges **Upscaling der Ringe/Throats** bringt für große Schiffe **keinen** Netto-Gewinn.
+* **Kapazitiv (PAX):** Selbst hohe Spitzenflüsse in Stationen bis **> 10 000** Personen sind mit **2 gegenläufigen Fahrzeugstrecken** (Headway \~20 s, 40 PAX pro Fahrzeug) **ohne** Durchmesserverdopplung bewältigbar. **Ø 20 m bleibt ausreichend** – solange du keine **vier vollwertigen Lanes** + breite Fußringe + große Cargo-Leitungen **gleichzeitig** im Querschnitt fahren willst.
+* **Upsize sinnvoll, wenn …**
+
+  1. **Großschiffe** (Außen-Durchmesser > 10 m) **innen** rangieren/andocken sollen ⇒ **Ringe** und **Korridor** **gemeinsam** vergrößern (z. B. Ring-ID ≥ 16–20 m, Core-ID 30–40 m).
+  2. **Very-High-Capacity**-Layouts (z. B. **254×1016 m** Kapsel mit **> 15 000–20 000** Personen, **Basic/Partial-Sustainability** mit hoher Externernährung) **vier** getrennte Lanes + breite Evakuierungs-Fußringe fordern ⇒ **Core-ID ≈ 36–40 m**.
+* **Empfehlung:**
+
+  * **127 m Kugel:** **ID 20 m beibehalten.**
+  * **254 m Kugel (\~4–5 k PAX):** **ID 20–24 m** genügt (optional **30 m** für 3. Express-Lane + große Services).
+  * **254×508 m Kapsel (10–20 k PAX):** **ID 30–36 m** (je nach Lanes/EX-Zonen); **40 m** nur bei innen rangierenden Großschiffen.
+  * **254×1016 m Kapsel (\~20 k+ PAX):** **ID 36–40 m** + **Ring-Throats** > 10 m, sonst limitieren die Ringe.
+
+---
+
+## 1) Eingänge & Annahmen
+
+* **Baseline Geometrie (EVOL-00):** Wormhole **ID 20 m** (OD 22 m); Docking-Ringe, 10 m-Halsweite, im **20 m Pitch**; Mikro-g-Achse, 1 atm innen.
+* **Self-Sustainability-Modelle:** *Basic* / *Partial* / *Full Autonomous* mit unterschiedlicher externer Nachschub-Intensität; diese beeinflusst **Frachtflüsse** stark. (Inhalt/Definitionen siehe Programmdokument 4.2.)
+* **Verkehrsträger im Wormhole:** 2–4 **axiale Fahrzeug-Lanes** (Maglev/People-Mover), **Fußring(e)** (Evakuierung/Redundanz), **Service-/Versorgungs-Trunks** (PWR/COM/THM), Sicherheitsabstände.
+
+---
+
+## 2) Kapazitäts-Modelle (ingenieurstaugliche Formeln)
+
+### 2.1 Personen (Peak-Hour-Demand)
+
+$$
+\boxed{Q_\text{pph} \;=\; \underbrace{N_\text{max}}_{\text{max. Personen}} \cdot \underbrace{T_\text{day}}_{\text{Trips/Person·Tag}} \cdot \underbrace{f_\text{core}}_{\text{Anteil via Wormhole}} \cdot \underbrace{\mathrm{PHF}}_{\text{Peak-Hour-Faktor}}}
+$$
+
+* Richtwerte: $T_\text{day}=2{,}0\ldots 3{,}0$, $f_\text{core}=0{,}3$ (Kugel) bis $0{,}6$ (lange Kapsel), **PHF** $=0{,}12\ldots 0{,}18$.
+
+**Systemkapazität der Lanes:**
+
+$$
+\boxed{Q_\text{cap} \;=\; n_\text{lanes}\cdot \frac{3600}{h}\cdot C_\text{veh}\cdot \eta}
+$$
+
+mit **Headway** $h$ (s), **Nutzlast je Fahrzeug** $C_\text{veh}$ (PAX), Betriebsfaktor $\eta$ (0,7–0,85 inkl. Haltezeiten/Störungen).
+
+> **Daumen:** $h=20\,\mathrm{s}$, $C_\text{veh}=40$, $\eta=0{,}8$ ⇒ **pro Lane ≈ 5 760 pph**, **2 Lanes ≈ 11 520 pph**, **4 Lanes ≈ 23 040 pph**.
+
+### 2.2 Fracht (kg/h)
+
+Tägliche externe Massezufuhr (abhängig vom Sustain-Modell):
+
+$$
+\boxed{\dot{M}_\text{ext,day} \;=\; N_\text{avg}\cdot I_\text{model}}\quad\Rightarrow\quad \dot{M}_\text{ext,hr}\approx \frac{\dot{M}_\text{ext,day}}{24}\cdot \mathrm{PHF}_\text{cargo}
+$$
+
+* **Logistik-Intensität $I_\text{model}$** (Programmzielwerte, konservativ):
+  **Basic:** 5–10 kg / (Pers·Tag) · **Partial:** 1–3 · **Full:** 0,1–0,5 (haupts. Ersatzteile).
+* **$\mathrm{PHF}_\text{cargo}$** (Bündelung): 1,5–3,0 (je nach Lieferung in festen Slots).
+
+Benötigte **Cargo-Lanes** (oder Slots) mit Standard-Carrier (Masse $m_\text{veh}$, Turnaround $t_\text{turn}$):
+
+$$
+\boxed{n_\text{cargo} \;\approx\; \left\lceil \frac{\dot{M}_\text{ext,hr}}{m_\text{veh}\cdot \tfrac{3600}{t_\text{turn}}} \right\rceil}
+$$
+
+---
+
+## 3) Geometrische Auslegung (Querschnitt)
+
+Wir modellieren den Wormhole-Durchmesser als **Packungs-/Hüllproblem**:
+
+* **Fahrzeug-Lane (inkl. Hülle & Clearance):** Kreis-Äquivalent $d_\text{lane} \approx 6\,\mathrm{m}$ (r = 3 m).
+* **Lane-Abstand:** $s=1{,}0\ldots 1{,}5\,\mathrm{m}$.
+* **Service-Trunks (PWR/COM/THM+SAFE):** ringförmig, äquiv. 2× **2 m** Bänder.
+* **Fußring (Evakuierung):** umlaufend **w\_foot = 2{,}0\ldots 3{,}0,\mathrm{m}**.
+
+**Konservative Hüll-Schätzung:**
+
+* **2 Lanes** (nebeneinander): brauchen **≈ 13–14 m** netto ⇒ mit Fußring + Services ⇒ **Core-ID ≥ 20 m** ok.
+* **3 Lanes**: **≈ 20–22 m** netto ⇒ mit Fußring/Services ⇒ **Core-ID ≈ 28–30 m**.
+* **4 Lanes** (2×2 Matrix): **≈ 26–28 m** netto ⇒ mit Fußring/Services ⇒ **Core-ID ≈ 36–40 m**.
+
+> **Wichtig:** Wenn **Docking-Ring-Throats** (heute **ID ≈ 10 m**) nicht **mitwachsen**, bleibt **dort** der Engpass – unabhängig vom Core-ID.&#x20;
+
+---
+
+## 4) Varianten-Ergebnisse
+
+### 4.1 By Geometry
+
+| Variante              | Typische PAX | Sustain-Modell (extern)   |    Empf. Lanes |                                     **Core-ID** Empfehlung |                  Ring-Throats (Halsweite) |
+| --------------------- | -----------: | ------------------------- | -------------: | ---------------------------------------------------------: | ----------------------------------------: |
+| **127 m Kugel**       |    0.8–1.5 k | Basic/Partial             |              2 |                                        **20 m** (Baseline) |                               **10 m** ok |
+| **254 m Kugel**       |        4–5 k | Partial/Full              | 2 (optional 3) |                             **20–24 m** (30 m mit 3. Lane) |                  10 m ok (außen andocken) |
+| **254×508 m Kapsel**  |      10–20 k | Partial (teilweise Basic) |            3–4 | **30–36 m** (bis **40 m** bei 4 Lanes + breiten Fußringen) |       **> 10 m**, falls Großschiffe innen |
+| **254×1016 m Kapsel** |        20 k+ | Basic/Partial             |              4 |                                                **36–40 m** | **≥ 16–20 m**, falls innen Rangierbetrieb |
+
+### 4.2 By Population & Sustain-Level (Formel-Schwellen)
+
+1. **PAX-Kapazitätsgrenze je Core-ID** (mit $h=20$ s, $C_\text{veh}=40$, $\eta=0{,}8$)
+
+* **ID 20 m → 2 Lanes:** $Q_\text{cap} \approx 11{,}5\ \mathrm{k\ pph}$
+* **ID 30 m → 3 Lanes:** $Q_\text{cap} \approx 17{,}3\ \mathrm{k\ pph}$
+* **ID 40 m → 4 Lanes:** $Q_\text{cap} \approx 23{,}0\ \mathrm{k\ pph}$
+
+2. **PAX-Peaks** (Beispielwerte):
+
+$$
+Q_\text{pph} = N_\text{max}\cdot T_\text{day}\cdot f_\text{core}\cdot \mathrm{PHF}
+$$
+
+* **5 000 PAX,** $T=2{,}5$, $f=0{,}4$, $\mathrm{PHF}=0{,}15$ ⇒ **7 500 pph** → **2 Lanes** reichen (ID 20 m).
+* **20 000 PAX,** $T=2{,}5$, $f=0{,}6$, $\mathrm{PHF}=0{,}15$ ⇒ **45 000 pph** → rechnerisch **4 Lanes** (ID 40 m) **oder** höhere Vehikelkapazität / kürzerer Headway.
+
+3. **Fracht-Peaks** (Beispielwerte):
+
+$$
+\dot{M}_\text{ext,hr}\approx \frac{N_\text{avg}\cdot I_\text{model}}{24}\cdot \mathrm{PHF}_\text{cargo}
+$$
+
+* **Partial,** $N_\text{avg}=5\,000$, $I=2\,\mathrm{kg/(P·d)}$, $\mathrm{PHF}_\text{cargo}=2$ ⇒ **$\dot{M}_\text{ext,hr}\approx 833\ \mathrm{kg/h}$** → 1 Cargo-Slot genügt.
+* **Basic,** $N_\text{avg}=20\,000$, $I=7\,\mathrm{kg/(P·d)}$, $\mathrm{PHF}_\text{cargo}=2$ ⇒ **$\approx 11{,}7\ \mathrm{t/h}$** → 2–3 parallele Cargo-Slots oder Zeitfenster (Shared Lanes).
+
+---
+
+## 5) Konsequenzen (Design & Betrieb)
+
+* **Wenn Großschiffe innen:** **Ring-Throats** (gegenwärtig 10 m) **mitskalieren** (≥ 16–20 m) **und** Core-ID anpassen; sonst wirkt der Ring als Drossel. (Siehe Docking-Ring-Architektur in der DECK-000-SPEC.)
+* **Evakuierung:** Ein umlaufender **Fußring ≥ 2 m** liefert bei 1,5 Pers/(m·s) **≈ 10 800 pph** (nur zu Fuß). Bei langen Kapseln verbessert **zweiter Fußring** (oder breiterer) die Resilienz → spricht für **ID ≥ 30 m**.
+* **Sustain-Level:** Je mehr **Full/Partial**, desto kleiner der externe Fracht-Peak → **kein** Core-Upsize nötig. **Basic** mit hoher externer Masse → **Zeitfenster** oder **zusätzliche Cargo-Slots** (kein zwingendes Durchmesser-Upsize, wenn Slots getaktet).
+
+---
+
+## 6) Empfehlung
+
+* **Kein pauschales Verdoppeln** auf **Ø 40 m** für alle 254-m-Varianten.
+* **254 m Kugel (\~4–5 k):** **Ø 20–24 m** genügt; Upgrade auf **Ø 30 m**, wenn 3. Lane + dickerer Fußring gewünscht.
+* **254×508 m Kapsel (10–20 k):** **Ø 30–36 m** (3–4 Lanes + Service/Foot); **Ø 40 m** nur bei **innen** rangierenden Großschiffen.
+* **254×1016 m Kapsel (20 k+):** **Ø 36–40 m** **und** **Ring-Throats ≥ 16–20 m** (sonst Rings-Bottleneck).
+* **127 m:** **Ø 20 m** bleibt **optimal** (Baseline bestätigt).&#x20;
+
+---
+
+## 7) Referenzen
+
+* **DECK-000 – The Wormhole (EVOL-00 Baseline, ID 20 m, Ring-Pitch 20 m, Ring-Throat 10 m).**
+* **Sustainability / Self-Sustainability Models (4.2) — Einfluss auf externe Frachtflüsse.**
+
+---
+
+### Anhang A — Schnelle Entscheidungsformel
+
+1. **PAX-Lanes:**
+
+$$
+n_\text{lanes} \;\ge\; \left\lceil \frac{N_\text{max}\cdot T_\text{day}\cdot f_\text{core}\cdot \mathrm{PHF}}{(3600/h)\cdot C_\text{veh}\cdot \eta}\right\rceil
+$$
+
+2. **Core-ID aus Lanes:**
+
+$$
+\text{ID}_\text{core} \;\approx\; 
+\begin{cases}
+\ge 20\,\mathrm{m}, & n=2\\
+\ge 28\text{–}30\,\mathrm{m}, & n=3\\
+\ge 36\text{–}40\,\mathrm{m}, & n=4
+\end{cases}
+\quad\text{(inkl. Fußring+Services)}
+$$
+
+3. **Cargo-Slots:**
+   $n_\text{cargo}\approx\left\lceil \dot{M}_\text{ext,hr}/(m_\text{veh}\cdot 3600/t_\text{turn})\right\rceil$. Shared-Lane-Fenster bevorzugen, um Querschnitt klein zu halten.
+
+---
