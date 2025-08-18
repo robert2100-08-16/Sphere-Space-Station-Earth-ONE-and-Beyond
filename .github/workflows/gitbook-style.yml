@@ -1,17 +1,21 @@
 name: GitBook Style Rename
 
 on:
-  push:
-    branches: [main]
+  workflow_run:
+    workflows: ["Ensure readme.md in every folder"]
+    types:
+      - completed
+  workflow_dispatch:
 
 jobs:
   rename-and-summary:
-    if: github.actor != 'github-actions[bot]'
+    if: github.actor != 'github-actions[bot]' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref }}
 
       - name: Rename files to GitBook style
         run: |
@@ -203,12 +207,13 @@ jobs:
 
       - name: Commit changes
         run: |
+          branch="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}"
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git commit -m "chore: regenerate summary.md from book.json structure [skip ci]"
-            git pull --rebase origin main
-            git push
+            git pull --rebase origin "$branch"
+            git push origin HEAD:"$branch"
           else
             echo "SUMMARY.MD OK"
           fi

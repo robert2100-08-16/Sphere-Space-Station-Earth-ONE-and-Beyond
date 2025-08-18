@@ -1,14 +1,15 @@
 name: Selective Publish to PDF
 
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - 'publish/**'   # Prevent retrigger from generated PDFs
+  workflow_run:
+    workflows: ["GitBook Style Rename"]
+    types:
+      - completed
+  workflow_dispatch:
 
 jobs:
   selective-publish:
+    if: github.actor != 'github-actions[bot]' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -18,22 +19,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.ref }}
 
       - name: Get changed files and check manifest relevance
         id: precheck
         shell: bash
         run: |
           set -euo pipefail
-          BEFORE="${{ github.event.before }}"
-          if [[ -z "$BEFORE" || "$BEFORE" == "0000000000000000000000000000000000000000" ]]; then
-            BEFORE="$(git rev-parse ${{ github.sha }}^ || echo '')"
-          fi
-          if [[ -z "$BEFORE" ]]; then
-            BEFORE="HEAD~1"
-          fi
+          BEFORE="$(git rev-parse HEAD^ || echo '')"
+          SHA="$(git rev-parse HEAD)"
           echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
-          echo "Comparing $BEFORE -> ${{ github.sha }}"
-          CHANGED_FILES=$(git diff --name-only "$BEFORE" ${{ github.sha }})
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+          echo "Comparing $BEFORE -> $SHA"
+          CHANGED_FILES=$(git diff --name-only "$BEFORE" "$SHA")
 
           # Find manifest
           if [[ -f publish.yaml ]]; then
@@ -104,6 +102,7 @@ jobs:
         env:
           MANIFEST: ${{ steps.precheck.outputs.manifest }}
           BEFORE: ${{ steps.precheck.outputs.before }}
+          GITHUB_SHA: ${{ steps.precheck.outputs.sha }}
         shell: bash
         run: |
           set -euo pipefail
