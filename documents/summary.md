@@ -65,7 +65,7 @@
         * [07 Ops Maintenance](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/07-ops-maintenance/readme.md)
         * [08 Change Management](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/08-change-management/readme.md)
       * [evol-01](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/readme.md)
-        * [02-specs](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/02-specs/readme.md)
+        * [02 Specs](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/02-specs/readme.md)
           * [SPEC-01-STR-GEOM-GRAV-E2-BALL-0001-earth-two-ball-D254m-EN-DE-v0.1.0-DRAFT](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/02-specs/spec-01-str-geom-grav-e2-ball-0001-earth-two-ball-d254m-en-de-v0.1.0-draft.md)
           * [SPEC-01-STR-GEOM-GRAV-E2-LCAP-0001-earth-two-long-capsule-D254m-L508m—v0.1.0-DRAFT](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/02-specs/spec-01-str-geom-grav-e2-lcap-0001-earth-two-long-capsule-d254m-l508m-en-de-v0.1.0-draft.md)
     * [7.6.3 History](07-comprehensive-technical-documentation/7.6-engineering/7.6.3-history/readme.md)
