@@ -2,7 +2,6 @@ name: Ensure readme.md in every folder
 
 on:
   push:
-  pull_request:
   workflow_dispatch:
 
 permissions:
