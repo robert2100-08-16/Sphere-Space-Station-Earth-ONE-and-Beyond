@@ -19,33 +19,27 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.ref }}
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref }}
 
       - name: Get changed files and check manifest relevance
         id: precheck
         shell: bash
         run: |
           set -euo pipefail
-          BEFORE="$(git rev-parse HEAD^ || echo '')"
+          if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
+            BEFORE="${{ github.event.workflow_run.head_sha }}"
+          else
+            BEFORE="$(git rev-parse HEAD^ || echo '')"
+          fi
           SHA="$(git rev-parse HEAD)"
           echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
           echo "sha=$SHA" >> "$GITHUB_OUTPUT"
           echo "Comparing $BEFORE -> $SHA"
           CHANGED_FILES=$(git diff --name-only "$BEFORE" "$SHA")
 
-          BOOK_ROOT=$(python3 - <<'PY'
-          import json, sys
-          try:
-              with open('book.json','r',encoding='utf-8') as f:
-                  root=json.load(f).get('root','.')
-                  if root.startswith('./'):
-                      root=root[2:]
-                  print(root)
-          except Exception:
-              print('.')
-          PY
-          )
-          if [[ "$BOOK_ROOT" != "." ]]; then
+          # determine GitBook root from book.json (if available) without Python
+          BOOK_ROOT="$(grep -o '"root"[[:space:]]*:[[:space:]]*"[^"]*"' book.json 2>/dev/null | head -n1 | sed -E 's/.*:"([^"]*)"/\1/' | sed 's#^\./##')"
+          if [[ -n "$BOOK_ROOT" && "$BOOK_ROOT" != "." ]]; then
             if ! grep -q "^$BOOK_ROOT/" <<<"$CHANGED_FILES"; then
               echo "ℹ No changes detected in $BOOK_ROOT — exiting early."
               echo "should_publish=false" >> "$GITHUB_OUTPUT"
@@ -66,32 +60,15 @@ jobs:
           echo "✓ Manifest found: $MANIFEST"
           echo "Changed files:\n$CHANGED_FILES"
 
-          NEED_PUBLISH=$(CHANGED_FILES="$CHANGED_FILES" MANIFEST="$MANIFEST" python3 - <<'PY'
-          import os, yaml, sys
-          changed = os.environ.get("CHANGED_FILES", "").splitlines()
-          with open(os.environ["MANIFEST"], "r", encoding="utf-8") as f:
-              data = yaml.safe_load(f) or {}
-          entries = data.get("publish", [])
-          if not isinstance(entries, list):
-              print("❌ 'publish' key in manifest must be a list.")
-              sys.exit(1)
-          for entry in entries:
-              path = (entry or {}).get("path")
-              out = (entry or {}).get("out")
-              typ = (entry or {}).get("type")
-              if not path or not out or not typ:
-                  print(f"⚠ Skipping invalid manifest entry: {entry}")
-                  continue
-              if not os.path.exists(path):
-                  print(f"❌ Path from manifest not found: \"{path}\"")
-                  print("   Tip: Check spelling and case sensitivity.")
-                  sys.exit(1)
-              if any(cf == path or cf.startswith(f"{path}/") for cf in changed):
-                  print("true")
-                  sys.exit(0)
-          print("false")
-          PY
-          )
+          NEED_PUBLISH=false
+          # extract all `path` entries from the manifest regardless of indentation
+          MAP_PATHS=$(awk -F': *' '/^[[:space:]]*-[[:space:]]*path:/ {print $2}' "$MANIFEST")
+          for PATH in $MAP_PATHS; do
+            if grep -qE "^${PATH}(/|$)" <<<"$CHANGED_FILES"; then
+              NEED_PUBLISH=true
+              break
+            fi
+          done
           if [[ "$NEED_PUBLISH" != "true" ]]; then
             echo "ℹ No relevant changes detected — exiting early."
             echo "should_publish=false" >> "$GITHUB_OUTPUT"
