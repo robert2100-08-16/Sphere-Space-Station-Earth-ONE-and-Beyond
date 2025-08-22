@@ -97,7 +97,7 @@ Axialer Strike durch Fenster-Tubus/Offen-Ring; Ziel: Shutter-Schließung + inter
 ### 5.2 Vent & Blow-Out (to space)
 
 * **VENT-Stränge pro Ring-Sektor** mit Rückstromsperren; **BOP-Zonen** hull-nah als Soll-Scherfugen für rasches Druck-/Rauch-Abblasen nach außen; keine tangentiale Entlastung.
-* **Dimensionales Prinzip:** Auslegung auf **choked flow** (kritischer Ausströmung) mit \$ \dot m = C\_d A,P\_0\sqrt{\tfrac{\gamma}{RT}}\left(\tfrac{2}{\gamma+1}\right)^{\tfrac{\gamma+1}{2(\gamma-1)}} \$; Acceptance über Mindest-A je Ring-Volumen und vorgegebene Entlastungszeit (siehe § 6.1). *(Formel-Framework, Implementierung stationsweit einheitlich).*
+* **Dimensionales Prinzip:** Auslegung auf **choked flow** (kritischer Ausströmung) mit $\dot m = C_d \, A \, P_0 \, \sqrt{\tfrac{\gamma}{R T}}\left(\tfrac{2}{\gamma+1}\right)^{\tfrac{\gamma+1}{2(\gamma-1)}}$; Acceptance über Mindest-A je Ring-Volumen und vorgegebene Entlastungszeit (siehe § 6.1). *(Formel-Framework, Implementierung stationsweit einheitlich).*
 
 ### 5.3 Fire & Atmosphere
 
@@ -133,8 +133,8 @@ Axialer Strike durch Fenster-Tubus/Offen-Ring; Ziel: Shutter-Schließung + inter
 
 ### 6.1 Vent/Blow-Out Capacity
 
-* **Design-Ziel:** \$t\_\mathrm{relief}\$ bis **p ≤ p\_safe** in **Δt\_max** (Programmwert), unter Annahme choked outflow (Formel § 5.2).
-* **Akzeptanz:** pro Ring-Kompartiment \$A\_\mathrm{VENT}^\ast \ge A\_\mathrm{min}(V,T,P\_0,\gamma)\$; Nachweis im Funktions-Test mit simuliertem Hot-Gas-Release. *(Stationsweit einheitliche Rechenblätter).*
+* **Design-Ziel:** $t_\mathrm{relief}$ bis $p \leq p_\mathrm{safe}$ in $\Delta t_\mathrm{max}$ (Programmwert), unter Annahme choked outflow (Formel § 5.2).
+* **Akzeptanz:** pro Ring-Kompartiment $A_\mathrm{VENT}^\ast \geq A_\mathrm{min}(V,T,P_0,\gamma)$; Nachweis im Funktions-Test mit simuliertem Hot-Gas-Release. *(Stationsweit einheitliche Rechenblätter).*
 
 ### 6.2 Door/Compartment Closure
 
