@@ -34,16 +34,16 @@ jobs:
           CHANGED_FILES=$(git diff --name-only "$BEFORE" "$SHA")
 
           BOOK_ROOT=$(python3 - <<'PY'
-            import json, sys
-            try:
-                with open('book.json','r',encoding='utf-8') as f:
-                    root=json.load(f).get('root','.')
-                    if root.startswith('./'):
-                        root=root[2:]
-                    print(root)
-            except Exception:
-                print('.')
-            PY
+          import json, sys
+          try:
+              with open('book.json','r',encoding='utf-8') as f:
+                  root=json.load(f).get('root','.')
+                  if root.startswith('./'):
+                      root=root[2:]
+                  print(root)
+          except Exception:
+              print('.')
+          PY
           )
           if [[ "$BOOK_ROOT" != "." ]]; then
             if ! grep -q "^$BOOK_ROOT/" <<<"$CHANGED_FILES"; then
