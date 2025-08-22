@@ -3,6 +3,22 @@ title: "Acceptance Report Sprint L3-4"
 version: 1.0.0
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
 ---
 
 # Acceptance Report Sprint L3-4

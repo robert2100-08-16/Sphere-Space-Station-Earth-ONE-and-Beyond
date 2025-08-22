@@ -1,3 +1,25 @@
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 # Engineering Guidelines for Sprint L3 Simulation
 
 After evaluating the Sprint-L3 review and the technical documents, a clear implementation plan can be derived. The following engineering tasks are necessary for the simulation to achieve realistic detail and configurability:

@@ -1,3 +1,25 @@
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 ## AGENTS.md — Roles, Responsibilities & EVOL Working Rules
 
 > Applies to all engineering/product docs under `7.6-engineering/...`. **EVOL** is the primary organizing principle; every activity ensures **one SSOT per topic and EVOL**.&

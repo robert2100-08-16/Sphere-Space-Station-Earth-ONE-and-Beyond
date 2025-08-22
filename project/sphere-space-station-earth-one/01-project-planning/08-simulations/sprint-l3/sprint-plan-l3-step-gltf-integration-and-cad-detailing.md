@@ -8,6 +8,21 @@ history:
     date: 2025-08-02
     change: "Translation to English"
     reference: "sprintplan-l3-step-gltf-integration-und-cad-detailierung.md"
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 # 1. Sprint Plan for Simulations

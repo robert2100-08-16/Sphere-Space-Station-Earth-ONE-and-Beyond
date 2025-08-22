@@ -1,3 +1,25 @@
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 # SPEC-01-STR-GEOM-GRAV-E2-LCAP-0001-earth-two-long-capsule-D254m-L508m—v0.1.0-DRAFT
 > Earth TWO “Long Capsule” *(EVOL-01, Ø 254 m × L 508 m)* Global Geometry & Gravitation
 

@@ -8,6 +8,21 @@ history:
     date: 2025-08-06 
     change: "Initial creation of the sprint plan for a full simulation with optional modules" 
 reference: "sprint‑l4‑full‑simulation‑story.md"
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 # Sprint Plan L4: Full‑Simulator & Module Integration

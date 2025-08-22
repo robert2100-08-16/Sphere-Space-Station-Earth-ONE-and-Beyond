@@ -1,3 +1,25 @@
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 **Evaluation of Sprint 3 (STEP/glTF Integration & CAD detailing)**
 
 The sprint plan for sprint L3 (27 Oct – 07 Nov 2025) clearly defined several goals: expanding the deck/hull geometry with supports, corridors, window frames, emergency exits and docking ports, adding material and colour attributes, implementing detail animations, providing an example Blender scene and extending tests.  During a second review of the repository, the current implementation only partially addresses these requirements.

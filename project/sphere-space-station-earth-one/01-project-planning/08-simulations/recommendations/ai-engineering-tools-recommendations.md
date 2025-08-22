@@ -1,3 +1,25 @@
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 # 1. AI-gestützte Engineering-Tools
 
 Diese Ausarbeitung beantwortet die Frage, welche KI-unterstützten Engineering-Tools in einer ersten Anlaufphase für das Projekt geeignet sein könnten. Sie berücksichtigt die bereits vorhandenen Python-Skripte und die Hinweise aus dem Geschäftsplan.

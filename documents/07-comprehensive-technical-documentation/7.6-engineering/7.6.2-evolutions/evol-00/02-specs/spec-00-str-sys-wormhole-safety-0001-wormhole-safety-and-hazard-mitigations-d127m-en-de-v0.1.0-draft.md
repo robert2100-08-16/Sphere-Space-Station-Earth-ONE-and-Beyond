@@ -1,3 +1,25 @@
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 # SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001-wormhole-safety-and-hazard-mitigations-EVOL-00-D127m-EN-DE-v0.1.0-DRAFT
 SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001 — Wormhole Safety & Hazard Mitigations *(EVOL-00, Ø 127 m)* — v0.1.0 DRAFT
 

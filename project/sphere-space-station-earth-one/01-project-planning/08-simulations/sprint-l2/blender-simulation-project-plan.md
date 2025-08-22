@@ -1,3 +1,25 @@
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 Blender‑Simulation der Sphere‑Station
 Dieses Verzeichnis enthält eine Beispiel‑Blender‑Simulation für die Sphere Space Station „Earth ONE“. Ziel ist es, auf Grundlage der vorhandenen Deck‑Berechnungen eine dreidimensionale Darstellung des Stationsinneren zu erzeugen und dabei alle relevanten Maße und Ausstattungsmerkmale aus dem Projekt zu berücksichtigen.
 Struktur
