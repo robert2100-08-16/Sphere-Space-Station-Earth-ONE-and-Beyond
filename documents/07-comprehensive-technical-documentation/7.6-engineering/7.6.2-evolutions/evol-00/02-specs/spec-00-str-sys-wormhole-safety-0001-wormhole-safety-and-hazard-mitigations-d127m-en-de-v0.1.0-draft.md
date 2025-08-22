@@ -22,6 +22,7 @@ lang: EN
 
 # SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001-wormhole-safety-and-hazard-mitigations-EVOL-00-D127m-EN-DE-v0.1.0-DRAFT
 
+
 SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001 — Wormhole Safety & Hazard Mitigations *(EVOL-00, Ø 127 m)* — v0.1.0 DRAFT
 
 **Status:** Draft · **Geltung:** Earth ONE (EVOL-00) · **Objekt:** DECK 000 „Wormhole“ (axialer Mikro-g-Korridor, OD 22 m / ID 20 m, mit Inconel-Docking-Ringen & Fenstersegmenten)
