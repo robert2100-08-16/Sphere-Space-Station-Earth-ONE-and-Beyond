@@ -38,7 +38,7 @@ jobs:
           CHANGED_FILES=$(git diff --name-only "$BEFORE" "$SHA")
 
           # determine GitBook root from book.json (if available) without Python
-          BOOK_ROOT="$(grep -o '"root"[[:space:]]*:[[:space:]]*"[^"]*"' book.json 2>/dev/null | head -n1 | sed -E 's/.*:"([^"]*)"/\1/' | sed 's#^\./##')"
+          BOOK_ROOT="$(grep -o '"root"[[:space:]]*:[[:space:]]*"[^"]*"' book.json 2>/dev/null | head -n1 | sed -E 's/.*:[[:space:]]*"([^"]*)"/\1/' | sed 's#^\./##')"
           if [[ -n "$BOOK_ROOT" && "$BOOK_ROOT" != "." ]]; then
             if ! grep -q "^$BOOK_ROOT/" <<<"$CHANGED_FILES"; then
               echo "ℹ No changes detected in $BOOK_ROOT — exiting early."
