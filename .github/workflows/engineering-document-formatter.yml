@@ -1,0 +1,119 @@
+name: Engineering Document Formatter
+
+on:
+  workflow_run:
+    workflows: ["Ensure readme.md in every folder"]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  format:
+    if: github.actor != 'github-actions[bot]' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref }}
+
+      - name: Ensure engineering document YAML headers
+        run: |
+          python <<'PYTHON'
+          import os, re, subprocess
+          from pathlib import Path
+
+          ROOT = Path('.').resolve()
+          SKIP_DIRS = {'.git', '.github', 'node_modules', '__pycache__', '.venv', 'simulations'}
+
+          TEMPLATE_ORDER = [
+              ('id', '""'),
+              ('title', '""'),
+              ('version', 'v0.0.0'),
+              ('state', 'DRAFT'),
+              ('evolution', '""'),
+              ('discipline', '""'),
+              ('system', '[]'),
+              ('system_id', '[]'),
+              ('seq', '[]'),
+              ('owner', '""'),
+              ('reviewers', '[]'),
+              ('source_of_truth', 'false'),
+              ('supersedes', 'null'),
+              ('superseded_by', 'null'),
+              ('rfc_links', '[]'),
+              ('adr_links', '[]'),
+              ('cr_links', '[]'),
+              ('date', '1970-01-01'),
+              ('lang', 'EN'),
+          ]
+
+          REQUIRED_KEYS = [k for k, _ in TEMPLATE_ORDER]
+
+          def ensure_header(path: Path):
+              text = path.read_text(encoding='utf-8').splitlines()
+              changed = False
+              if not text:
+                  text = []
+              if not (len(text) >= 1 and text[0].strip() == '---'):
+                  header_lines = ['---'] + [f"{k}: {v}" for k, v in TEMPLATE_ORDER] + ['---', '']
+                  text = header_lines + text
+                  changed = True
+              else:
+                  # find closing '---'
+                  end_idx = None
+                  for i, line in enumerate(text[1:], start=1):
+                      if line.strip() == '---':
+                          end_idx = i
+                          break
+                  if end_idx is None:
+                      # no closing, add one
+                      text.append('---')
+                      text.append('')
+                      end_idx = len(text) - 2
+                      changed = True
+                  header = text[1:end_idx]
+                  existing_keys = [l.split(':',1)[0].strip() for l in header if ':' in l]
+                  missing = [k for k in REQUIRED_KEYS if k not in existing_keys]
+                  if missing:
+                      insert_lines = [f"{k}: {dict(TEMPLATE_ORDER)[k]}" for k in missing]
+                      text = [text[0]] + header + insert_lines + [text[end_idx]] + text[end_idx+1:]
+                      changed = True
+              if changed:
+                  path.write_text('\n'.join(text) + '\n', encoding='utf-8')
+              return changed
+
+          changed_files = []
+          for root, dirs, files in os.walk(ROOT):
+              rel = Path(root).relative_to(ROOT)
+              if any(p in SKIP_DIRS for p in rel.parts):
+                  dirs[:] = []
+                  continue
+              for name in files:
+                  if not name.lower().endswith('.md'):
+                      continue
+                  if name.lower() == 'readme.md':
+                      continue
+                  p = Path(root)/name
+                  if ensure_header(p):
+                      changed_files.append(str(p))
+
+          if changed_files:
+              subprocess.run(['git', 'add'] + changed_files, check=False)
+              print('Updated headers in:', '\n'.join(changed_files))
+          else:
+              print('All engineering documents have proper headers.')
+          PYTHON
+
+      - name: Commit changes
+        run: |
+          branch="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}"
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: ensure engineering document YAML headers"
+            git pull --rebase origin "$branch"
+            git push origin HEAD:"$branch"
+          else
+            echo "All engineering documents contain YAML headers."
+          fi

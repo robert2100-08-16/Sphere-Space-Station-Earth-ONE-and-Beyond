@@ -2,7 +2,7 @@ name: GitBook Style Rename
 
 on:
   workflow_run:
-    workflows: ["Ensure readme.md in every folder"]
+    workflows: ["Engineering Document Formatter"]
     types:
       - completed
   workflow_dispatch:
