@@ -192,11 +192,3 @@ Axialer Strike durch Fenster-Tubus/Offen-Ring; Ziel: Shutter-Schließung + inter
 
 ---
 
-### Dateiname & Ablage (Vorschlag)
-
-`02-specs/SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001-EN-DE-v0.1.0-DRAFT.md`
-Querverlinken aus `SPEC-00-STR-DECKS-DECK000-0001-...` (Kap. Safety) und aus der globalen Safety-Indexseite in `07-comprehensive-technical-documentation/7.4-research-development`.
-
----
-
-Wenn du möchtest, hänge ich gleich noch **Abnahme-Checklisten** (Tür-Schließzeiten, VENT-Durchsatz, Shutter-Timing) und **Formelblätter** (Vent-Sizing, O₂-Absenkung) an — sag einfach Bescheid, dann erweitere ich das Dossier nahtlos.
