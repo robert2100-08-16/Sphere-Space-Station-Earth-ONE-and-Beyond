@@ -61,7 +61,8 @@ jobs:
           echo "Changed files:\n$CHANGED_FILES"
 
           NEED_PUBLISH=false
-          MAP_PATHS=$(awk -F': ' '/^- *path:/ {print $2}' "$MANIFEST")
+          # extract all `path` entries from the manifest regardless of indentation
+          MAP_PATHS=$(awk -F': *' '/^[[:space:]]*-[[:space:]]*path:/ {print $2}' "$MANIFEST")
           for PATH in $MAP_PATHS; do
             if grep -qE "^${PATH}(/|$)" <<<"$CHANGED_FILES"; then
               NEED_PUBLISH=true
