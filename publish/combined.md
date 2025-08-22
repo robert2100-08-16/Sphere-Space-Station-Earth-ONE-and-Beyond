@@ -56,6 +56,21 @@ history:
     date: 2025-07-25
     change: "Initial"
     reference: -pr-ambel-ethik-sicherheit.md
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 0.1 Preamble — Ethics & Security
@@ -180,6 +195,21 @@ history:
     date: 2024-12-05
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 1.1 Visionary Proposal for the Sphere Space Station Network
@@ -239,6 +269,21 @@ history:
     date: 2024-10-31
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 1.2 Concept and Feasibility Analysis for the SpaceSphere Project
@@ -400,6 +445,21 @@ history:
     date: 2024-10-30
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 2.1 Technical Design and System Specifications
@@ -566,6 +626,21 @@ history:
     date: 2024-11-05
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 2.2 Specification and Selected Materials
@@ -718,6 +793,21 @@ history:
     date: 2024-11-01
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 2.3 Energy and Thermal Management Systems
@@ -884,6 +974,21 @@ history:
     date: 2024-10-31
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 3.1 Staffing, Facilities, and Living Spaces
@@ -1027,6 +1132,21 @@ history:
     date: 2024-10-30
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 3.2 Organizational Structure and Consortium Model
@@ -1200,6 +1320,21 @@ history:
     date: 2024-10-30
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 3.3 Public Engagement and Decentralized Associations
@@ -1364,6 +1499,21 @@ history:
     date: 2024-10-30
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 4.1 Environmental and Sustainability Goals
@@ -1502,6 +1652,21 @@ history:
     date: 2024-11-02
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 4.2 Self-Sustainability Models for Space Stations and Spacecraft
@@ -1649,6 +1814,21 @@ history:
     date: 2024-10-30
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 4.3 Economic Feasibility and Market Analysis
@@ -1861,6 +2041,21 @@ history:
     date: 2024-11-02
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 5.1 Establishing a Solar Alliance for Governance and Security in Space
@@ -2006,6 +2201,21 @@ history:
     date: 2024-10-30
     change: "Initial"
     reference: Project_SpaceBall_20230318.pdf
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 6.1 Future Expansion of the Sphere Station Network and Sphere Space Crafts
@@ -2297,6 +2507,21 @@ history:
     date: 2025-08-03
     change: "Bring the Single Source of Truth Documents into GitBook Format"
     reference: https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond/documents/7.3.2-bring-the-single-source-of-truth-documents-into-gitbook-format
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ## 7.1 Sphere Station Documentation: Technical and Operational Overview
@@ -2345,6 +2570,21 @@ history:
     date: 2025-08-03
     change: "Initial"
     reference: documents/change-management/0001-initial-english-translation.md
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ### 7.2.1 Deck Concept of the Sphere Space Station Earth ONE
@@ -2412,6 +2652,21 @@ history:
     date: 2025-08-03
     change: "Initial"
     reference: documents/change-management/0001-initial-english-translation.md
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ### 7.2.2 Earth ONE Overview
@@ -2435,6 +2690,21 @@ history:
     date: 2025-08-03
     change: "Initial"
     reference: documents/change-management/0001-initial-english-translation.md
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ### 7.2.3 Economic Feasibility Earth ONE
@@ -2458,6 +2728,21 @@ history:
     date: 2025-08-03
     change: "Initial"
     reference: documents/change-management/0001-initial-english-translation.md
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ### 7.2.4 Window Specification Earth ONE Station
@@ -2493,6 +2778,21 @@ history:
     date: 2025-08-03
     change: "Initial"
     reference: https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond/documents
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ### 7.3.1 Initial English Translation
@@ -2516,6 +2816,21 @@ history:
     date: 2025-08-03
     change: "Initial"
     reference: https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond/documents
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
 ---
 
 ### 7.3.2 Bring the Single Source of Truth Documents into GitBook Format
@@ -2537,6 +2852,28 @@ This directory collects research and development documents for the Sphere Space 
 
 
 \newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
 
 ### 7.4.1 Sphere Station Simulator – Research Summary
 
@@ -2608,6 +2945,28 @@ With these findings, upcoming developments (L4 sprint and beyond) can align with
 
 
 \newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
 
 ### 7.4.2 Earth ONE Station: Orbit, Polar Docking, and Human Factors
 
@@ -2729,7 +3088,29 @@ Earth ONE combines innovative orbital and docking strategies with human-centered
 
 \newpage
 
-### 7.4.3 SPEC-01-STR-SYS-CORE-TRAFFIC-SIZING-0001 — Wormhole-Durchmesser-Trade *(127 m / 254 m / 254×508 m / 254×1016 m)* — v0.1.0 DRAFT
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
+### 7.4.3 CORE-TRAFFIC-SIZING vs Wormhole-Durchmesser-Trade *(127 m / 254 m / 254×508 m / 254×1016 m)* — v0.1.0 DRAFT
 
 **Scope:** Dimensionierung des axialen Mikro-g-Korridors „**Wormhole**“ (DECK 000) für Personen- und Frachtverkehr in EVOL-01-Konfigurationen. Inklusive hochgradig praktischer, **ingenieurstauglicher Formeln** für die Auslegung in Abhängigkeit von Stationsgröße, Population und **Self-Sustainability-Modell**. Baseline: EVOL-00 **Ø 127 m** Station mit **Wormhole ID = 20 m (OD = 22 m)** und **Docking-Ringen** (10 m Halsweite) im 20 m-Pitch.
 
@@ -2780,7 +3161,7 @@ mit **Headway** $h$ (s), **Nutzlast je Fahrzeug** $C_\text{veh}$ (PAX), Betriebs
 
 > **Daumen:** $h=20\,\mathrm{s}$, $C_\text{veh}=40$, $\eta=0{,}8$ ⇒ **pro Lane ≈ 5 760 pph**, **2 Lanes ≈ 11 520 pph**, **4 Lanes ≈ 23 040 pph**.
 
-### 2.2 Fracht (kg/h)
+##### 2.2 Fracht (kg/h)
 
 Tägliche externe Massezufuhr (abhängig vom Sustain-Modell):
 
@@ -2908,75 +3289,359 @@ $$
 
 ---
 
+
 \newpage
 
-### 7.4.1 Sphere Station Simulator – Research Summary
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
 
-Here is a structured summary of key findings from engineering, social psychological, and medical literature relevant to further development of the Sphere Station Simulator. The compilation draws on internal project documents and external research sources.
+### 7.4.4 HAZARD CATALOG — Cross‑Project Hazard Catalog
+
+**Considers:** EVOL‑00, EVOL‑01
+**Version:** v1.0.0 (initial stable; derived from v0.1.0 DRAFT)
+
+**Scope:** Unified hazard catalogue for Sphere Stations and Crafts covering Evolution 00 and Evolution 01. Acts as the SSOT for hazard definitions, mitigations, and V\&V. 
+> Naivety is inevitable — **dangerous naivety is not**. 
+
+> **SAFETY FIRST.**
 
 ---
 
-#### 7.4.1.1 🛠️ Engineering Aspects
+#### 1) Nomenclature & Scales
 
-##### 7.4.1.1.1 Artificial gravity and structure
+**Hazard‑ID (project‑wide unique):** `HZ-<Domain>-<Code>`
+Examples for **Domains**: AX (axial/Wormhole), DOCK, HULL, PWR, THM, GAS, FIRE, MMOD, RAD, CYB, OPS.
+**Codes**: short mnemonics, e.g., **PI**=Polar‑Impact, **COL**=Collision, **EXP**=Explosion, **LEAK**, **VENTFAIL**; e.g., `HZ-AX-PI` (polar‑impact) [1].
 
-* **Rotation radius and speed:** For artificial gravity without gravitational load on the body, the station radius must be large enough. Studies show that with radii under 56 m a large gravity gradient between head and feet occurs, and rotation speeds over 4 rpm trigger motion sickness. With a Sphere Station diameter of 127 m and Deck 8 as the "Earth deck," these limits are met.
-* **Expandable modules:** Modern concepts propose building the station from concentric cylinders that can be expanded stepwise. This allows the living area to grow without interrupting systems. Tensegrity structures offer a flexible and lightweight construction for such modules.
-* **Radiation protection:** Interplanetary missions require effective shielding against cosmic radiation and solar particles. A shield made from 5 m of regolith and water, which also serves as a heat store, can protect the crew and improve thermal management. Solar cells on the shield provide additional energy.
-* **Agriculture and living space:** Concept studies budget around 300 m² of agricultural area per inhabitant; only at an outer radius of about 224 m would there be enough area for 8,000 people. The Sphere Station instead relies on hydroponic gardens and aeroponics on the Earth deck.
+**Severity (MIL‑STD‑882E)** [1]:
+- I Catastrophic — loss of life/total loss;
+- II Critical — severe injury/partial loss of critical systems;
+- III Marginal — minor injury/temporary failure;
+- IV Negligible — small mission impact.
 
-##### 7.4.1.1.2 Subsystems and infrastructure (internal documents)
+**Likelihood** [1]:
+- A Frequent; 
+- B Probable; 
+- C Occasional; 
+- D Remote; 
+- E Improbable.
 
-* **Access and transport:** In addition to passenger and cargo elevators, heavy freight lifts, tangential conveyor belts/rail vehicles, and hover/climbing channels are proposed.
-* **Energy and heat:** Primary supply via two NuScale SMR reactors or an array of microreactors; large solar panel fields; liquid heat stores (e.g., molten salt) and deployable radiators; battery banks and flywheels for load peaks.
-* **Safety & emergency:** Inert gas and water mist fire-suppression systems, radiation shielding walls, meteoroid protection layers, and evacuation capsules.
-* **Docking & logistics:** Central docking port on Deck 0, cargo and waste bays, and shuttle systems for transfers between Earth, LEO, and long-range missions.
-* **Control & propulsion:** Gyroscopes/flywheels for attitude control and electric thrusters for orbital corrections.
-* **Life support:** Closed air, water, and waste cycles as well as a high-speed data network.
-* **Additional facilities:** Hydroponics/aeroponics, medical centers, recreation and learning areas, and recycling and industrial laboratories.
-
-These subsystems should be available as optional modules in the full simulator to keep the model realistic and configurable.
-
----
-
-#### 7.4.1.2 🧠 Social Psychological Findings
-
-##### 7.4.1.2.1 Team dynamics in isolated, long-duration missions
-
-* **Less social time and early conflicts:** In analogs to long-duration missions (e.g., Antarctic stations, Mars habitats) teams tend to spend less social time together over longer missions; efficiency usually remains constant, but by day 90 every team has experienced at least one conflict.
-* **Communication and mood:** Commanders reduce written communication with mission control over time, and mood-related "third-quarter phenomena" (mid-mission crises) do not appear consistently.
-* **Isolation and monotonous routines:** The Team Self-Maintenance (TSM) study emphasizes that monotonous routines, a "Groundhog Day" feeling, and lack of novelty lead to boredom, frustration, and psychological strain. Without external feedback, crews may develop apathy and emotional problems.
-* **Team Self-Maintenance:** Long missions require strategies in which teams actively maintain their psychological health. Key processes include information exchange, self-regulation, resource recovery, and emotional support. Research recommends prioritizing team well-being alongside performance goals and developing measures for conflict prevention and resolution.
-* **Implications for design:** Spaces should be designed to offer variety, privacy, and communal areas. Interactive leisure offerings (e.g., VR training, gardens) and mood-enhancing elements contribute to psychological stability.
-
-##### 7.4.1.2.2 Crew management and psychological research
-
-* **Selection & preparation:** Successful missions require a balanced team with respect to personality, culture, hierarchy sensitivity, and resilience. Training in conflict management, cultural competence, and stress coping is essential.
-* **Research gaps:** Long-duration missions beyond low Earth orbit (Mars) need more empirical data; analog studies so far provide only limited quantitative statements about team cohesion and performance.
+**Risk index (R):** 
+- qualitative assessment as **Severity × Likelihood**; detailed matrix in SSOT.
 
 ---
 
-#### 7.4.1.3 🧬 Medical and Physiological Aspects
+#### 2) Hazards (EVOL‑00 & EVOL‑01)
 
-##### 7.4.1.3.1 Effects of microgravity
+1. **HZ-DOCK-EXP** — **Explosion at a docked craft causing blast and debris**
+   **Loc:** Docking ring(s), wormhole rings.
+   **S/L:** I / C.
+   **Mitig.:** Blast‑tolerant rings, crush collars, radial vent/burst‑out panels, quick‑release/jettison [3]
+   **V\&V:** Impulse/blast tests, verify vent capacity (choked flow) [3]
+   **Refs:** ECSS‑Q‑ST‑40C, ISO 14620‑1, NASA‑STD‑3001 [3]
 
-* **Bone density loss and muscle atrophy:** Without gravity, load-bearing bones lose **1% to 1.5% mineral content per month** on average; muscles atrophy faster than on Earth. Rehabilitation does not fully restore bone density.
-* **Fluid shifts and kidney stones:** Bodily fluids shift toward the head, increasing intraocular pressure and possibly causing vision problems. Dehydration and calcium excretion raise the risk of kidney stones.
-* **Countermeasures:** Leg compression and lower-body negative pressure suits help redistribute fluids. Medications such as **potassium citrate** and **bisphosphonates** are used to prevent kidney stones and bone loss. Regular **aerobic and resistive exercise** keeps the heart, bones, and muscles healthy and improves mood; artificial gravity (short-arm centrifuges) is being explored as an additional measure.
-* **Immune system and microbiome:** Isolation and microgravity alter the immune system and encourage microorganism transmission; NASA monitors air quality, enforces hygiene protocols, and recommends flu vaccination and pre-launch quarantine.
-* **Habitability:** For psychological health, living spaces must consider temperature fluctuations, noise, lighting, and confinement.
+2. **HZ-FIRE-DOCK** — **Fire onboard a docked vehicle [4]**
+   **Loc:** Dock adapters, ring compartments.
+   **S/L:** II / C.
+   **Mitig.:** Inert‑gas flooding (Ar/N$_2$), non‑combustible lining, hazardous‑area zoning, automatic detachment [4]
+   **V\&V:** Measure O$_2$‑reduction time ≤ target; material LOI/fire tests
+   **Refs:** ISO 14620‑1, NASA‑STD‑3001 [4]
+
+3. **HZ-AX-COL** — **Collision in the wormhole axial approach**
+   **Loc:** Entry/exit corridors.
+   **S/L:** I / B–C.
+   **Mitig.:** Active traffic management, collision‑avoidance algorithms, abort corridors, protective shutters [5]
+   **V\&V:** Interlock tests, emergency stop drills, dummy impact tests [5]
+   **Refs:** NASA‑STD‑3001; MIL‑STD‑882E [5]
+
+4. **HZ-AX-PI** — **Uncontrolled polar approach/impact**
+   **Loc:** North/South polar approaches.
+   **S/L:** I / B–C.
+   **Mitig.:** Deployable guard nets and tethers, honeycomb bumpers, deflection cones, shutters closing ≤ 0.5 s; geofencing [6]
+   **V\&V:** Sled/drop tests, shutter‑timing verification [6]
+   **Refs:** ECSS‑Q‑ST‑40C; MIL‑STD‑882E [6]
+
+5. **HZ-MMOD-TRANS** — **Transverse MMOD penetration**
+   **Loc:** Wormhole tubes, windows.
+   **S/L:** II / C–D.
+   **Mitig.:** Stuffed‑Whipple shielding + spall liner, sector isolation, radial vents, shutters [7]
+   **V\&V:** Ballistic tests, debris‑mitigation analysis [7]
+   **Refs:** ISO 24113; NASA‑STD‑8719.14 [7]
+
+6. **HZ-MMOD-LONG** — **Axial MMOD penetration**
+   **Loc:** Window tubes, open rings.
+   **S/L:** II / D.
+   **Mitig.:** Shutter cascades, fragment capture lamellae, segment locking [8]
+   **V\&V:** End‑to‑end shutter test ≤ 0.5 s [8]
+   **Refs:** ISO 24113; NASA‑STD‑8719.14 [8]
+
+7. **HZ-RAD-SPE** — **Solar particle event / CME radiation exposure**
+   **Loc:** Windows/wormhole; low‑shield zones.
+   **S/L:** II / C.
+   **Mitig.:** Storm mode (close shutters), move crew into water/poly‑shielded decks (e.g., Deck 013/014), minimise exposure time [9]
+   **V\&V:** Alert chain from space‑weather feed to actuators [9]
+   **Refs:** NASA‑STD‑3001 [9]
+
+8. **HZ-VENT-FAIL** — **Vent/blow‑out malfunction (fail to relieve pressure)**
+   **Loc:** Hull‑proximate vents/blow‑off panels.
+   **S/L:** II / D.
+   **Mitig.:** Redundant vent paths, fail‑open philosophy, periodic functional drills [10]
+   **V\&V:** Choked‑flow calculation, relief time under limit [10]
+   **Refs:** ECSS‑Q‑ST‑40C; ISO 14620‑1 [10]
+
+9. **HZ-PT-FAIL** — **Bulkhead/door fails to close**
+   **Loc:** Partition doors/hatches (PT‑A/B, AL‑C).
+   **S/L:** II / C.
+   **Mitig.:** Redundant actuators; door status interlocks; manual override; periodic close/open drills
+   **V\&V:** Timed closure tests; fault insertion on sensors/actuators
+   **Refs:** ECSS‑Q‑ST‑40C; ISO 14620‑1
+
+10. **HZ-GAS-CRYO** — **Cryogenic release / oxygen displacement**
+    **Loc:** Fuel cells, cryo tanks, service lines.
+    **S/L:** II / C–D.
+    **Mitig.:** Leak‑before‑break design; oxygen depletion sensors; purge/vent routing; PPE and area zoning
+    **V\&V:** Helium leak tests; ODH calculations; functional vent tests
+    **Refs:** ISO 14620‑1; NASA‑STD‑3001
+
+11. **HZ-GAS-TOX** — **Toxic gas release**
+    **Loc:** Labs, waste‑processing, propellant lines.
+    **S/L:** II / C.
+    **Mitig.:** Gas detection arrays; automatic isolation; scrubbers; emergency ventilation purge
+    **V\&V:** Detector calibration; gas‑in‑air tests; evacuation drill timings
+    **Refs:** NASA‑STD‑3001
+
+12. **HZ-FIRE-HAB** — **Fire in habitat modules**
+    **Loc:** Hab decks, crew quarters, galley.
+    **S/L:** II / C.
+    **Mitig.:** Low‑flammability materials (LOI), smoke detection, zoned suppression (wet/dry/inert), hot‑work controls
+    **V\&V:** Material LOI/ignition tests; suppression timing; compartment integrity tests
+    **Refs:** NASA‑STD‑3001; ISO 14620‑1
+
+13. **HZ-FIRE-ELEC** — **Electrical fire**
+    **Loc:** Power bays, distribution panels, racks.
+    **S/L:** II / C.
+    **Mitig.:** Arc‑fault detection; derating; cable routing segregation; automatic de‑energise; clean‑agent suppression
+    **V\&V:** Arc‑fault injection; breaker trip profiling; suppression test
+    **Refs:** NASA‑STD‑3001
+
+14. **HZ-PWR-LOSS** — **Total/partial power loss**
+    **Loc:** PWR generation, storage, distribution.
+    **S/L:** II / C–D.
+    **Mitig.:** N+1 generation; cross‑ties; load shedding; black‑start procedures
+    **V\&V:** Black‑start drills; FMEA; HIL testing
+    **Refs:** ECSS‑Q‑ST‑40C; IEC 60812 [6]
+
+15. **HZ-THM-CTRL** — **Thermal control failure / over‑temperature**
+    **Loc:** Thermal loops, radiators, heat‑exchangers.
+    **S/L:** II / C–D.
+    **Mitig.:** Redundant pumps/loops; bypass valves; boil‑off paths; over‑temp interlocks
+    **V\&V:** Thermal balance tests; loss‑of‑flow tests; interlock verification
+    **Refs:** ECSS‑Q‑ST‑40C
+
+16. **HZ-HULL-LEAK** — **Hull breach / progressive leak**
+    **Loc:** External hull, penetrations, windows.
+    **S/L:** I–II / C–D.
+    **Mitig.:** Compartmentalisation; automatic isolation; patch kits; radial vents to avoid implosive flow
+    **V\&V:** Pressure decay tests; door/valve auto‑close timing; patch drill
+    **Refs:** ISO 14620‑1
+
+17. **HZ-HULL-DEPRESS** — **Rapid decompression**
+    **Loc:** Any pressurised volume.
+    **S/L:** I / C.
+    **Mitig.:** Blast‑relief panels; auto door closure; tethered PPE; emergency O$_2$
+    **V\&V:** Blow‑out panel tests; man‑in‑the‑loop drills; timing analysis
+    **Refs:** ISO 14620‑1; NASA‑STD‑3001
+
+18. **HZ-OPS-HUMAN** — **Human error / procedural deviation**
+    **Loc:** All operations.
+    **S/L:** II / C.
+    **Mitig.:** Two‑person rule; checklists; digital work‑flows; poka‑yoke interfaces; fatigue management
+    **V\&V:** Ops simulations; incident reviews; FTA of critical tasks
+    **Refs:** ISO 31000 [2]; NRC FTA handbook [7]
+
+19. **HZ-CYB-SEC** — **Cybersecurity breach affecting safety**
+    **Loc:** Control networks, HMI, gateways.
+    **S/L:** II / D.
+    **Mitig.:** Defense‑in‑depth; zero‑trust; safety‑rated independence; signed configs; offline fail‑safe modes
+    **V\&V:** Pen‑tests; red‑team exercises; safety‑separation verification
+    **Refs:** NASA‑8719.13 [13]; NASA 8000‑series [14]
+
+20. **HZ-OPS-EVAC** — **Failed/slow evacuation**
+    **Loc:** Hab decks, labs, docks.
+    **S/L:** II / C.
+    **Mitig.:** Wayfinding; lighting; muster points; drills with metered timing; mobility‑impaired accommodations
+    **V\&V:** Evacuation timing; blocked‑path scenarios; smoke studies
+    **Refs:** NASA‑STD‑3001
+
+21. **HZ-ROBOT-COLL** — **Robotic collision/kinematic failure**
+    **Loc:** Autonomous/tele‑op robots near crew/structures.
+    **S/L:** II / C.
+    **Mitig.:** Speed limits; soft‑body compliance; geofenced workspaces; dynamic obstacle avoidance; e‑stops; HRI training
+    **V\&V:** HIL simulation; sensor stress tests; fail‑safe/rescue procedures
+    **Refs:** IEC ISO 8373; NASA‑STD‑3000 series
+
+22. **HZ-ECLSS-FAIL** — **Environmental Control & Life‑Support failure**
+    **Loc:** Life‑support modules (ECLSS), habitat.
+    **S/L:** I / D.
+    **Mitig.:** Redundant subsystems with cross‑connects; consumables stockpile; manual operation; health monitoring; maintenance
+    **V\&V:** Reliability modelling; failure‑mode tests; integrated ECLSS simulations
+    **Refs:** NASA‑STD‑3001; ECSS‑E‑ST‑20
+
+23. **HZ-BIO-CONTAM** — **Biological contamination/health risk**
+    **Loc:** Laboratories, hydroponics, waste‑processing.
+    **S/L:** II / D.
+    **Mitig.:** Zoning (BSL‑like); UV/heat sterilisation; waste isolation; PPE; sampling
+    **V\&V:** Bioburden tests; surface/air sampling; decon validation
+    **Refs:** NASA‑STD‑3001
+
+24. **HZ-DOCK-DET** — **Failed detachment/undocking**
+    **Loc:** Dock ring, adapter systems.
+    **S/L:** II / C–D.
+    **Mitig.:** Redundant latches; pyros as last resort; manual release paths; torque‑limiters
+    **V\&V:** Detachment drills; torque/force logs; fault‑injection
+    **Refs:** ECSS‑Q‑ST‑40C; ISO 14620‑1
+
+25. **HZ-DOCK-MISALIGN** — **Dock misalignment / hard‑dock impact**
+    **Loc:** Dock interface.
+    **S/L:** II / C.
+    **Mitig.:** Soft‑capture; alignment cones; relative‑nav sensors; abort corridors
+    **V\&V:** Contact‑dynamics tests; software‑in‑the‑loop
+    **Refs:** NASA‑STD‑3001
+
+26. **HZ-THM-ICE** — **Ice formation / shedding**
+    **Loc:** Cryo lines, vents, exterior.
+    **S/L:** III / C–D.
+    **Mitig.:** Heat tracing; purge; drip‑traps; shields
+    **V\&V:** Thermal cycle tests; visual inspections
+    **Refs:** ECSS‑Q‑ST‑40C
+
+27. **HZ-PWR-ARC** — **Arc‑flash / electrical shock**
+    **Loc:** Switchgear, battery rooms.
+    **S/L:** II / C.
+    **Mitig.:** Arc‑flash boundaries; insulated tools; remote racking; PPE; interlocks
+    **V\&V:** Incident energy calc; protection coordination; trip tests
+    **Refs:** NASA‑STD‑3001
+
+28. **HZ-PWR-BATT** — **Battery thermal runaway**
+    **Loc:** Energy storage racks.
+    **S/L:** II / C–D.
+    **Mitig.:** Cell‑level fusing; gas vents; fire breaks; thermal monitoring; isolation
+    **V\&V:** Abuse tests; propagation tests; detection response time
+    **Refs:** NASA‑STD‑3001; IEC 60812 [6]
+
+29. **HZ-STRUCT-FAIL** — **Structural member failure**
+    **Loc:** Trusses, rings, mounts.
+    **S/L:** II / D.
+    **Mitig.:** Safety factors; load path redundancy; crack monitoring; QA/NDT
+    **V\&V:** Proof‑load; fatigue tests; NDT schedule
+    **Refs:** ECSS‑Q‑ST‑40C
+
+30. **HZ-PROP-LEAK** — **Propellant leak (non‑cryo)**
+    **Loc:** Manifolds, valves, lines.
+    **S/L:** II / C.
+    **Mitig.:** Double containment; leak detection; isolation valves; purge lines
+    **V\&V:** Helium leak test; sniffer surveys; isolation verification
+    **Refs:** ISO 14620‑1
+
+31. **HZ-PROP-IGN** — **Unintended ignition**
+    **Loc:** Engines, test stands, docks.
+    **S/L:** I–II / C.
+    **Mitig.:** Hazardous area zoning; purge; ignition interlocks; LEL/UEL monitoring
+    **V\&V:** Ignition source control tests; interlock validation
+    **Refs:** ISO 14620‑1; NASA‑STD‑3001
+
+32. **HZ-COMM-LOSS** — **Loss of command/telemetry**
+    **Loc:** Control rooms, comms links.
+    **S/L:** II / D.
+    **Mitig.:** Redundant links; local autonomy; degraded‑mode ops; manual safe‑states
+    **V\&V:** Link failover tests; degraded‑mode drills
+    **Refs:** NASA‑STD‑3001
+
+33. **HZ-NAV-ERROR** — **Navigation error / bad state‑estimation**
+    **Loc:** Guidance & relative nav in docking/approach.
+    **S/L:** II / C–D.
+    **Mitig.:** Sensor fusion; plausibility checks; geo‑fencing; approach cones; velocity caps
+    **V\&V:** Monte‑Carlo sims; HWIL; flight‑like tests
+    **Refs:** NASA‑STD‑3001
+
+34. **HZ-SW-FAULT** — **Safety‑critical software fault**
+    **Loc:** Autonomy, guidance, interlocks.
+    **S/L:** II / D.
+    **Mitig.:** Independent safety layer; static analysis; formal methods; diversified redundancy
+    **V\&V:** Unit/integration tests with coverage; formal proofs where applicable
+    **Refs:** NASA‑STD‑8719.13 [13]
+
+35. **HZ-EMC-INTERF** — **EMC/EMI interference impacts safety**
+    **Loc:** Mixed‑signal environments; high‑power RF.
+    **S/L:** III / D.
+    **Mitig.:** Shielding; filtering; grounding; separation; EMC test plans
+    **V\&V:** EMC testing; injected fault currents; susceptibility scans
+    **Refs:** ECSS‑Q‑ST‑40C
+
+36. **HZ-TOOLS-FOD** — **Foreign Object Debris (FOD) / tool control**
+    **Loc:** Shops, docks, EVA prep.
+    **S/L:** III / C.
+    **Mitig.:** Tool tethering; FOD mats; kitting; sign‑in/out; inspections
+    **V\&V:** FOD audits; surprise inspections; incident tracking
+    **Refs:** NASA‑STD‑3001
+
+37. **HZ-MED-EMERG** — **Medical emergency / delayed response**
+    **Loc:** Hab/labs; EVA staging.
+    **S/L:** II / C.
+    **Mitig.:** Medical bay readiness; telemedicine; AEDs; drills; med‑evac protocols
+    **V\&V:** Drill timing; inventory checks; scenario‑based training
+    **Refs:** NASA‑STD‑3001
 
 ---
 
-#### 7.4.1.4 🔗 Conclusions for the Full Simulator and Research
+#### 3) Governance & Versioning
 
-1. **Realistic modeling:** The simulator should account for radiation shielding, thermal management, rotation speeds, and expandable modules. A realistic deck layout (e.g., 16 decks with varying gravity) reflects internal documentation.
-2. **Modular subsystems:** In addition to elevators, conveyor belts, fire barriers, and gyros, heavy cargo lifts, cargo bays, docking ports, reactors, heat storage, battery storage, evacuation capsules, and recycling plants should be integrated as optional modules.
-3. **Psychological & social modules:** Long missions require spaces for retreat and community, leisure options (e.g., gardens, VR training), and mechanisms for team self-maintenance. The simulator can offer virtual scenarios for conflict training, information exchange, and TSM processes.
-4. **Medical facilities:** Models of gyms, sick bays, hydroponic farms, and research laboratories reflect the requirements for health, nutrition, and life support. Measurement devices such as centrifuges or compression suits could also be digitally represented.
+* **Owner:** CSO Mira Terra (Catalogue), Engineer Elias Core (Schotts/VENT), Engineer SGI Lina (AX/Wormhole).
+* **Change process:** Hazard Review Board (HRB) monthly; changes tracked in SSOT.
+* **SemVer:**
+    - **MAJOR** — new Evolution covered (e.g., EVOL‑02) ⇒ v2.0.0; 
+    - **MINOR** — content changes (new hazards/mitigations) ⇒ v1.1.0; 
+    - **PATCH** — typos/format fixes ⇒ v1.0.1.
 
-With these findings, upcoming developments (L4 sprint and beyond) can align with technical realism, social factors, and medical constraints. This enhances both the simulation's validity and its usefulness for engineering decisions and crew training.
+---
 
+
+**Fußnotenliste**
+
+[1]: https://acqnotes.com/acqnote/tasks/mil-std-882e-system-safety "MIL‑STD‑882E System Safety (DoD System‑Safety‑Standard). Die AcqNotes-Seite beschreibt den MIL‑STD‑882E als Standard der US‑Verteidigung zur Identifizierung, Bewertung und Minderung von Gefahren bei der Entwicklung, Erprobung, Nutzung und Entsorgung von Wehr­systems und betont, dass er die Gefahrenerkennung und Risikominderung anhand der DoD‑Methodik definiert:contentReference[oaicite:0]{index=0}."
+[2]: https://www.iso.org/standard/65694.html "ISO 31000:2018 – Risk management — Guidelines. Die ISO‑Seite erläutert, dass ISO 31000 einen ganzheitlichen, organisatorischen Ansatz für die Risiko­behandlung bietet, der Prinzipien, Rahmen und Prozesse festlegt, um Risiken zu identifizieren, zu bewerten, zu behandeln, zu überwachen und zu kommunizieren, wobei eine standardisierte Terminologie und verbesserte Entscheidungs­findung im Vordergrund stehen:contentReference[oaicite:1]{index=1}."
+[3]: https://www.iso.org/standard/65696.html "ISO 14620‑1:2019 – Space systems — Safety requirements — Part 1: System safety. In der ISO‑Zusammenfassung wird beschrieben, dass die Norm Sicherheitsprogramme und technische Sicherheits­anforderungen für Raumfahrtsysteme festlegt; sie umfasst die Identifizierung von Gefahren, deren Beseitigung oder Minimierung, Risiko­bewertungen und die Überprüfung von Kontrollmaßnahmen:contentReference[oaicite:2]{index=2}."
+[4]: https://ecss.nl/standard/ecss-q-st-40c-rev-1-safety-15-february-2017/ "ECSS‑Q‑ST‑40C Rev.1 – Safety (15 February 2017). Der ECSS‑Eintrag definiert das Sicherheitsprogramm sowie technische Sicherheits­anforderungen zum Schutz von Flug‑ und Bodenpersonal, Trägerraketen, Nutzlasten, öffentlichem und privatem Eigentum und Umwelt vor Gefahren europäischer Raumfahrtsysteme; die Norm gilt für alle europäischen Raumfahrtprojekte:contentReference[oaicite:3]{index=3}."
+[5]: https://ntrs.nasa.gov/citations/20210024587 "NASA‑STD‑3001, Volume 2, Revision E – Spaceflight Human‑System Standard. Die NASA‑Technical‑Reports‑Server‑Seite erläutert, dass Volume 2 technische Anforderungen an die Gestaltung und den Betrieb menschenbezogener Raumfahrzeuge enthält, um Astronauten­sicherheit und Leistungsfähigkeit zu gewährleisten. Die Norm setzt auf leistungsbasierte ‚shall‘‑Vorgaben und richtet sich an alle NASA‑Programme:contentReference[oaicite:4]{index=4}."
+[6]: https://webstore.iec.ch/en/publication/26359 "IEC 60812:2018 – Failure modes and effects analysis (FMEA and FMECA). Laut IEC‑Webstore bietet die Norm Anleitung zur Planung, Durchführung, Dokumentation und Pflege von Fehler‑Möglichkeits‑ und ‑Einfluss‑Analysen (FMEA) einschließlich FMECA. Ziel ist es, zu ermitteln, wie Komponenten oder Prozesse ausfallen können, ihre Auswirkungen zu bewerten und Maßnahmen zur Risikominderung abzuleiten; die Norm gilt für Hardware, Software und Prozesse:contentReference[oaicite:5]{index=5}."
+[7]: https://www.nrc.gov/reading-rm/doc-collections/nuregs/staff/sr0492 "Fault Tree Handbook (NUREG‑0492) – NRC. Die US‑Nuclear‑Regulatory‑Commission beschreibt das Handbuch als ein Lehrmaterial zur Systematisierung der Fehlerbaum‑Methode (Fault‑Tree‑Analyse). Es wurde entwickelt, um den Aufbau und die Auswertung von Fehlerbäumen zu vermitteln und die breitere Anwendung dieser Risikoanalyse­methode zu fördern:contentReference[oaicite:6]{index=6}."
+[8]: https://www.accendoreliability.com/fault-tree-handbook-with-aerospace-applications/ "Fault Tree Handbook with Aerospace Applications. Laut Accendo Reliability bietet das NASA‑Handbuch aktualisierte Grundsätze der Fehlerbaum­analyse (FTA) speziell für Systemanalytiker, Ingenieure und Manager im Luft‑ und Raumfahrtbereich. Es beschreibt FTA als deduktive, ausfallorientierte Methode zur Ermittlung von Ursachen unerwünschter Ereignisse und enthält statistische, Zuverlässigkeits- und Risikoanalysekonzepte:contentReference[oaicite:7]{index=7}."
+[9]: https://standards.nasa.gov/standard/NASA/NASA-STD-871914 "NASA‑STD‑8719.14 – Process for Limiting Orbital Debris. Die NASA‑Standards‑Seite erklärt, dass diese Norm technische Anforderungen zur Begrenzung von Weltraumschrott sowie Methoden zur Einhaltung der NASA‑Richtlinien festlegt. Sie stellt sicher, dass Raumfahrzeuge und Trägerraketen Standards einhalten, um die Entstehung von Weltraummüll zu minimieren:contentReference[oaicite:8]{index=8}."
+[10]: https://www.iso.org/standard/70125.html "ISO 24113:2019 – Space debris mitigation requirements. Die ISO‑Zusammenfassung beschreibt, dass diese Norm grundlegende Anforderungen zur Reduktion von Weltraumschrott für unbemannte Systeme in erdnahen Umlaufbahnen definiert. Sie fordert, dass Raumfahrzeuge und Trägerraketen so konzipiert, betrieben und entsorgt werden, dass die Entstehung von Trümmern begrenzt und das Risiko für Menschen beim Wiedereintritt verringert wird:contentReference[oaicite:9]{index=9}."
+[11]: https://www.iso.org/standard/82076.html "ISO 24113:2023 – Space debris mitigation requirements (aktualisierte Ausgabe). Die 2023‑Version bekräftigt die primären Anforderungen zur Minderung von Weltraumschrott und fungiert als Schnittstelle zwischen übergeordneten Zielen und nachgeordneten Normen; sie fordert design‑, betriebs‑ und entsorgungsbezogene Maßnahmen zur Vermeidung von Trümmerbildung:contentReference[oaicite:10]{index=10}."
+[12]: https://standards.nasa.gov/standard/NASA/NASA-STD-871913 "NASA‑STD‑8719.13 – Software Safety Standard. In der Dokumentbeschreibung wird erläutert, dass die Norm Aktivitäten definiert, um Sicherheit in Software zu integrieren, die von NASA entwickelt oder beschafft wird. Programm‑ und Projektmanager sollen die inhärenten Software‑Risiken beurteilen, wobei Umfang und Tiefe der Sicherheitsaktivitäten vom Risikograd abhängen:contentReference[oaicite:11]{index=11}."
+[13]: https://webstore.iec.ch/en/publication/24321 "IEC 61882:2016 – Hazard and operability studies (HAZOP studies) – Application guide. Die IEC‑Webseite fasst zusammen, dass diese Norm eine Anleitung für HAZOP‑Studien anhand von Leitworten bietet; sie beschreibt die Anwendung der Methode, die Vorbereitung, die Durchführung der Untersuchungs­sitzungen sowie die Dokumentation und Nachbereitung:contentReference[oaicite:12]{index=12}."
+[14]: https://esoc.esa.int/new-space-debris-mitigation-policy-and-requirements-effect "ESA Space Debris Mitigation Policy and Requirements. Diese ESA‑Newsseite erklärt, dass die im November 2023 in Kraft getretenen neuen Anforderungen die Entstehung von Weltraumschrott durch ESA‑Missionen reduzieren sollen. Zu den neuen Vorgaben gehören eine Verkürzung der Entsorgungsphase in niedrigen Erdumlaufbahnen auf maximal fünf Jahre, eine erfolgreiche Entsorgungswahrscheinlichkeit von über 90 %, Schnittstellen für aktive Schrottentfernung, strengere Regeln zur Kollisionsvermeidung und erste Anforderungen zur Vermeidung von Schrott in Mondumlaufbahnen sowie zur Minimierung störender Einflüsse auf Radio‑ und Optische Astronomie:contentReference[oaicite:13]{index=13}."
+[15]: https://safety.army.mil/Portals/0/Documents/ON-DUTY/SYSTEMSAFETY/Standard/MIL-STD-882E-change-1.pdf "MIL‑STD‑882E (komplette PDF). Diese PDF‑Datei des U.S. Army Combat Readiness Center enthält die vollständige MIL‑STD‑882E mit Änderungsstand 1. Die Datei ist öffentlich zugänglich; sie erläutert u. a. die System‑Safety‑Risikoklassifikationen und spezifische Analyseaufgaben."
 
 
 \newpage
@@ -2985,6 +3650,28 @@ With these findings, upcoming developments (L4 sprint and beyond) can align with
 
 
 \newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
 
 ### 7.5.1 Engineering Process (Coarse → Fine)
 
@@ -3553,6 +4240,28 @@ For system-wide engineering flow (from concept through operations), see **7.5.1 
 
 \newpage
 
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 ## AGENTS.md — Roles, Responsibilities & EVOL Working Rules
 
 > Applies to all engineering/product docs under `7.6-engineering/...`. **EVOL** is the primary organizing principle; every activity ensures **one SSOT per topic and EVOL**.&
@@ -3756,6 +4465,28 @@ When in doubt: **prefer traceability over brevity**. If your change affects safe
 
 \newpage
 
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 ## 7.6.1.1 Guideline Document: Evolution‑Engineering-Naming-Folder Convention
 
 **Version:** 1.0.0
@@ -3902,6 +4633,7 @@ cr_links: []
 date: 2025-08-10
 lang: EN
 ---
+<empty-line>
 ```
 
 ---
@@ -4325,6 +5057,28 @@ RFC-01-SAF-REACTOR-DECK015-0007-shielding-upgrade-EN-v0.3.0-alpha.2.md
 
 \newpage
 
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 ## 7.6.1.2 Guideline Document: The Evolution Principle
 
 **Version:** 1.0.0
@@ -4514,6 +5268,28 @@ This principle applies to all systems, subsystems, artifacts, and communications
 
 
 \newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
 
 ## 7.6.1.3 Evolution Deliverables & Phase Gates
 
@@ -4940,6 +5716,28 @@ This folder is the **single source of truth for the *current* change wave**. If 
 
 \newpage
 
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 # Current Evolution: EVOLUTION 00 - The Beginning
 
 Direct link to the current EVOLUTION
@@ -4950,6 +5748,8 @@ Direct link to the current EVOLUTION
 \newpage
 
 # EVOLUTION 00 — The Beginning
+
+> “700 pioneers. First light on the ring. We are writing the birth certificate of a city in orbit.”
 
 EVOL00 is our first visible chapter: a minimal, end-to-end **working baseline** that proves the architecture in the real world. It is small by design, complete by necessity, and **auditable by default**. EVOL00 establishes the language of the system—structural grid, core interfaces, safety assumptions, and the build-test-operate chain—and makes **Evolution** the primary beacon, clear to team, partners, and users.
 
@@ -6190,6 +6990,425 @@ lang: en-de
 
 \newpage
 
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
+# SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001-wormhole-safety-and-hazard-mitigations-EVOL-00-D127m-EN-DE-v0.1.0-DRAFT
+SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001 — Wormhole Safety & Hazard Mitigations *(EVOL-00, Ø 127 m)* — v0.1.0 DRAFT
+
+**Status:** Draft · **Geltung:** Earth ONE (EVOL-00) · **Objekt:** DECK 000 „Wormhole“ (axialer Mikro-g-Korridor, OD 22 m / ID 20 m, mit Inconel-Docking-Ringen & Fenstersegmenten)
+
+---
+
+## 0. Summary / Kurzfassung (EN/DE)
+
+**EN (one-pager):**
+This spec defines the constructive safety architecture for the axial “Wormhole” corridor (DECK 000). The design uses **segmented pressure/fire bulkheads**, **blast-tolerant docking rings**, **inert-gas fire suppression**, **fast shutters/MDPS for window segments**, plus **dedicated vent & blow-out routes to space** near the hull. Hazard cases covered: **ship explosion at bay**, **fire on docked ship**, **vehicle collision within the Wormhole**, **solar particle events**, **micrometeoroid transverse & axial penetrations**. Acceptance is via closure-time, vent-capacity and isolation-integrity tests per station-wide safety framework.
+
+**DE (Kurz):**
+Festgelegt werden konstruktive Schutzebenen für DECK 000: **Sektorisierung über Ring-/Sektor-Schotts**, **blastfähige Docking-Ringe**, **Inertgas-Brandunterdrückung**, **Schnell-Außenschotts/MDPS** an Fenstersegmenten, **gezielte VENT/BOP-Entlastung ins All**. Abgedeckte Szenarien: **Explosion am Andockbay**, **Brand am angedockten Schiff**, **Kollision im Wormhole**, **Sonnenwind-/Strahlungs-Ereignisse**, **Meteoritendurchschlag quer/längs**. Verifikation über Schließzeiten, Vent-Kapazitäten und Dichtheits-/Isolationsnachweise gemäß Stationsstandard.
+
+---
+
+## 1. Scope & References
+
+**Scope:** Konstruktive Schutzmaßnahmen und Auslegungsregeln für DECK 000 inkl. Schnittstellen zu DECK 001/Schotts/VENT/BOP. **Nicht-Ziel:** OPS-Prozeduren (separates Dokument).
+
+**Baseline-Verankerung:**
+• Geometrie/Materialien/Wormhole-Ringe/Fenstersegmente (DECK 000).
+• Station-weite Sektorisierung, Türen/Schotts, Inertisierung, VENT/BOP (DECK 013–015 Muster; Systemstandard).
+• Safety & Hazard Protocols (Feuer, Strahlung, MMOD – Grundprinzipien).
+• Fenster/MDPS/Cupola-Shutters – Referenzlinks in der Global-SPEC.
+
+---
+
+## 2. Baseline & Interfaces (recap)
+
+* **Wormhole (DECK 000):** Axialer Mikro-g-Korridor, **OD 22 m / ID 20 m**; alternierende **Docking-Ringe** (10 m Halsweite, Inconel) und **Fenster-Tuben** mit multilayer Fensterstacks; Ring-Abstände ≈ 20 m. **Jeder Ring = isolierbares Kompartiment** (Druck-/Brandschottfunktion integriert).
+* **Schnittstellen:** Drucktüren/Schleusen zu DECK 001, Red/Blue-Comms, duale DC-Busse, Inertgas-Ringleitungen, VENT/BOP-Anbindung hull-nah.
+
+---
+
+## 3. Design Objectives (Safety Envelope)
+
+1. **Containment:** Ereignisse lokal halten (Ring-zu-Ring Sektorisierung, PT-A/PT-B/AL-C).
+2. **Energy Management:** Druck/Impuls zielgerichtet **radial ins All** entlasten (VENT/BOP hull-nah; keine tangentiale Führung).
+3. **No Single Point of Failure:** Redundante Türen/Strom/Comms; fail-safe geschlossen.
+4. **Human Factors:** Safe-hold-Nodes pro Ring, klare Gegenstrom-Trennung Ankunft/Abflug, schnelle Shutter-Schließung.
+
+---
+
+## 4. Threat Cases (Design Cases)
+
+**E1 — Explodierendes Schiff am Docking-Ring**
+Bemessungsfälle (lastfall-agnostisch): Druckstoß + Trümmer, Nahfeld am Ring-Hals. Ziele: Ring-Kompartiment hält; Impuls wird radial abgeführt; Fenster/Tuben vorgelagert durch Shutter geschützt.
+
+**E2 — Brand am angedockten Schiff**
+Rauch/Hitze/Flammen-Übergang in Ring-Kompartiment; Ziel: **Inertisierung** im Sektor, Andockadapter/Leitungen feuerfest, schnelle Trennung/Abwurf.
+
+**E3 — Kollision von Fahrzeugen im Wormhole**
+Lineare Relativkollision in der Achse; Ziel: Vermeidung (Traffic-Separation/Interlocks) + **Energieabsorption** an Ring-Hals (Opfer-Strukturen).
+
+**E4 — Sonnenwind/Solar Particle Event (SPE)**
+Kurzfristig erhöhte Strahlung; Ziel: **Shutter-Down**, Umsiedeln in stärker geschirmte Decks/Schutzringe, Minimierung Aufenthaltszeit in Fenster-Tuben.
+
+**E5 — Meteorit quer (seitlicher Einschlag in Tuben/Ringe)**
+MMOD-Durchschlag lateral; Ziel: Stuffed-Whipple/Spall-Liner + Sektor-Isolation + VENT nach außen.
+
+**E6 — Meteorit längs (axial entlang der Röhre)**
+Axialer Strike durch Fenster-Tubus/Offen-Ring; Ziel: Shutter-Schließung + interne Fänger-/Spall-Liner-Zonen zwischen Ringen.
+
+---
+
+## 5. Constructive Measures (Layered)
+
+### 5.1 Compartmentation & Doors
+
+* **Ring-zu-Ring-Sektorisierung:** Jeder Docking-Ring ist druckfest isolierbar; **PT-A** (Hauptschott motorisch/manuell), **PT-B** (Service-Tür), **AL-C** (Airlock, Δp-/O$_2$-/Rauch-/Temp-Dualsensorik). **Fail-safe „zu“**, Fernentriegelung nur freigabepflichtig.
+* **Schließzeiten (Targets):** PT-A ≤ 3 s lokal, ≤ 8 s kaskadiert; AL-C Interlock auf Crew-Präsenz. (Nachweis über Systemtests, s. § 8.)
+
+### 5.2 Vent & Blow-Out (to space)
+
+* **VENT-Stränge pro Ring-Sektor** mit Rückstromsperren; **BOP-Zonen** hull-nah als Soll-Scherfugen für rasches Druck-/Rauch-Abblasen nach außen; keine tangentiale Entlastung.
+* **Dimensionales Prinzip:** Auslegung auf **choked flow** (kritischer Ausströmung) mit $\dot m = C_d \, A \, P_0 \, \sqrt{\tfrac{\gamma}{R T}}\left(\tfrac{2}{\gamma+1}\right)^{\tfrac{\gamma+1}{2(\gamma-1)}}$; Acceptance über Mindest-A je Ring-Volumen und vorgegebene Entlastungszeit (siehe § 6.1). *(Formel-Framework, Implementierung stationsweit einheitlich).*
+
+### 5.3 Fire & Atmosphere
+
+* **Inertgas-Suppression (Ar/N$_2$):** Segmentiert pro Ring; automatischer Trigger (Flamme/Rauch/ΔT), manuelle Override-Option; O$_2$-Absenkung kontrolliert.
+* **Materialien:** SiC-Verbund, Inconel an Hot-Spots; nicht brennbare Innenverkleidungen; Leitungsdurchführungen mit Feuerschotts.
+
+### 5.4 Windows / MDPS / Shutters
+
+* **Fenster-Segmente:** Multilayer-Stacks + **Schnell-Shutters** (ISS-Cupola-Prinzip); **MDPS/MMOD-Shades** außen. Ziel-Zeit **t\_shutter ≤ 0,5 s** vom Alarm.
+
+### 5.5 Blast-Tolerant Docking
+
+* **Ring-Hals als Blast-Cradle:** Energieabsorbierende Sandwich-Kragen, Soll-Verformungszonen, frangible Attachments, die Impuls in **BOP-Routen** koppeln. Ring kann **autark dicht** gesetzt werden.
+* **Jettison/Quick-Release:** Pyro-/Mechanik-Trennsysteme für kontaminiertes/brandbetroffenes Schiff, mit autom. Rückzugs-Shutter. (Interface in § 9.)
+
+### 5.6 Collision Prevention & Mitigation
+
+* **Traffic-Separation:** Nord = Arrivals, Süd = Departures; **Segment-Freigabe**: nur **ein** Fahrzeug zwischen zwei Ringen (Occupancy-Interlock); Speed-Limit & Autopilot-Beacons an jedem Ring.
+* **Bumper-Rails & Catch-Nets** in Fenster-Tuben; weiche Führung, Verformungsenergie-Aufnahme.
+
+### 5.7 Radiation (Solar Wind / SPE)
+
+* **Storm-Mode:** Shutter-Down + Verlagerung Crew in **wasser/poly-geschirmte** Decks/Sektoren (DECK 013/014-Schnittstellen); **EX-Zonen priorisierte VENT**.
+
+### 5.8 Micrometeoroids (quer/längs)
+
+* **Quer:** Stuffed-Whipple Gürtel um Wormhole-Tuben + **Spall-Liner** innen; ringweise Isolation + VENT.
+* **Längs:** Shutter-Kaskade ringweise, **Fänger-Lamellen** im Tubus, um Sekundärtrümmer zu brechen.
+
+---
+
+## 6. Sizing Rules (Engineering)
+
+### 6.1 Vent/Blow-Out Capacity
+
+* **Design-Ziel:** $t_\mathrm{relief}$ bis $p \leq p_\mathrm{safe}$ in $\Delta t_\mathrm{max}$ (Programmwert), unter Annahme choked outflow (Formel § 5.2).
+* **Akzeptanz:** pro Ring-Kompartiment $A_\mathrm{VENT}^\ast \geq A_\mathrm{min}(V,T,P_0,\gamma)$; Nachweis im Funktions-Test mit simuliertem Hot-Gas-Release. *(Stationsweit einheitliche Rechenblätter).*
+
+### 6.2 Door/Compartment Closure
+
+* **PT-A Schließzeit** ≤ 3 s lokal; Kaskade ≤ 8 s (E1/E2-Trigger). **Dichtheitstest**: Δp-Haltezeit ≥ Programmwert.
+
+### 6.3 Shutter Timing
+
+* **t\_shutter** ≤ 0,5 s auf **E5/E6/E4**-Trigger (MMOD Radar/Optik, SPE-Alert). Nachweis: End-to-End-Test pro Fenster-Segment.
+
+### 6.4 Inert-Gas Dose
+
+* **Ar/N$_2$-Masse** pro Ring nach Volumen & Leck-Annahme; Soll-O$_2$-Setpoint **≤ 12–15 Vol-%** in ≤ N Sekunden; Doppelt redundant gespeist.
+
+---
+
+## 7. Operations & Human Factors (Schnittstellen)
+
+* **Safe-Hold-Nodes** an jedem Ring (Masken, Comms, Med-Kit), farbcodierte Wege, klare Gegenstrom-Kennung Ankunft/Abflug.
+* **EX-Markierungen** & Dekon-Routen in Richtung DECK 001/013-L.
+
+---
+
+## 8. Verification & Acceptance (V\&V)
+
+1. **Dry-Run E1/E2/E3:** Tür-/Schott-Schließtests, Occupancy-Interlocks, Jettison-Sim.
+2. **VENT/BOP-Test:** Öffnungslogik, Durchfluss-Nachweis (kalte Gas-Trials + CFD/Analytik).
+3. **Shutter-Kaskade:** Sensor-→ Aktor-End-to-End mit High-speed-Logging (E4/E5/E6).
+4. **Inertisierung:** Dichtheit, Setpoint-Zeit, Wiederbelüftung.
+
+---
+
+## 9. ICD & Naming
+
+* **Doors:** PT-A/PT-B/AL-C je Ring-Segment.
+* **Relief:** **VENT-000-<RingID>-<Sektor>**, **BOP-000-<RingID>-<Sektor>** (hull-nah).
+* **Comms/Power:** Red/Blue-Fiber; DC-Bus-A/B + USV an Safety-Aktoren.
+
+---
+
+## 10. Open Parameters (TBD/TBC)
+
+* Exakte **Blast-Lastfälle** (Skalierung/Impuls); Ring-Hals-Opfer-Geometrie (FEA).
+* Final **VENT/BOP-Areal** je Ring-Volumen & Prozess-Gase.
+* **Shutter-Antrieb** (Common-Line vs. Segment-lokal) Feinspezifikation.
+* **Quick-Release-Interfaces** zu Dock-Adaptern (mechanisch/elektrisch).
+
+---
+
+## 11. References
+
+* **DECK 000 Wormhole – Baseline Geometry/Systems.**
+* **Global Geometry & Safety/Windows/MDPS (Refs & Links).**
+* **Safety & Hazard Protocols (Feuer, Strahlung, MMOD).**
+* **Schotts/VENT/BOP – Layout-Prinzipien (014/015 Muster).**
+
+---
+
+### Dateiname & Ablage (Vorschlag)
+
+`02-specs/SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001-EN-DE-v0.1.0-DRAFT.md`
+Querverlinken aus `SPEC-00-STR-DECKS-DECK000-0001-...` (Kap. Safety) und aus der globalen Safety-Indexseite in `07-comprehensive-technical-documentation/7.4-research-development`.
+
+---
+
+Wenn du möchtest, hänge ich gleich noch **Abnahme-Checklisten** (Tür-Schließzeiten, VENT-Durchsatz, Shutter-Timing) und **Formelblätter** (Vent-Sizing, O$_2$-Absenkung) an — sag einfach Bescheid, dann erweitere ich das Dossier nahtlos.
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
+# SPEC-00-STR-SYS-WORMHOLE-SAFETY-0002 — Polar Approach & Full Hazard Hardening *(EVOL-00/01)* — v0.1.0 DRAFT
+
+**Scope:** Konstruktive „Safety-by-Design“-Maßnahmen für **DECK 000 / Wormhole** inkl. **Polar-Einflug (Nord/Süd)** sowie ein **vollständiger Hazard-Katalog** für die axialen Systeme (Explosion, Brand, Kollision, Strahlung, MMOD quer/längs, **unkontrollierter Anflug/Impact** u. v. m.).
+**Bezug:** Stationen **Earth ONE** (Ø 127 m) und **Earth TWO** (Ø 254 m, inkl. Long-Capsule-Varianten).
+
+---
+
+## 0) Executive Summary
+
+* **Neuer Top-Hazard:** *Unkontrollierter Anflug/Impact auf die Polar-Einflugborde.*
+  → Gegenmaßnahmen: **POL-GUARD** (mehrlagiger Polar-Prallschutz), **POL-KOS/Kep-Out-Volumes** mit Autopilot-Geofencing, **Polar-Shutter (≤0,5 s)**, **Deflektions-Jets**, **Jettison/Abort-Prozeduren**, konsequent **radiale Entlastung**.
+* **Safety-Architektur insgesamt:** **Mehrfach-Kompartimentierung in 2D (radial + axial/LAT)**, **inertisierte Technikzonen**, **nicht-brennbare Materialien**, **VENT/BOP nur radial**, **fail-safe geschlossene** Schotts/Türen, **kein Single Point of Failure**.
+* **Härtung gegen Kaskaden:** Explosions-/Brand-Energie **lokal binden**, **Impuls aufnehmen/ableiten**, **Druck & Rauch** in Sekunden **ins All** abführen, **Scheiben/Ringe** schließen – *bevor* das Nächste kippt.
+
+---
+
+## 1) Designziele (Safety Envelope)
+
+1. **Containment:** Jedes Ereignis bleibt bauabschnittsweise beherrscht (Ring-zu-Ring, Sektor-zu-Sektor).
+2. **Energy-&-Mass-Management:** Druck, Rauch, Partikel **radial zur Hülle**; **keine tangentiale** Relief-Führung.
+3. **Fail-Safe:** Türen/Schotts **schließen stromlos**; Aktor-USV ≥ 30 min; Doppelte Sensorik.
+4. **Human Factors:** klare Flucht-/Sammelzonen (Safe-Hold-Nodes), Gegenstrom-Trennung, visuelle/akustische Guidance.
+5. **Testbarkeit:** Alle Schutzfunktionen mit **Zeit- und Kapazitäts-Targets** (Schließzeiten, Vent-A, Inert-Setpoint) verifizierbar.
+
+---
+
+## 2) Neuer Unfalltyp: **Polar-Impact** (unkontrollierter Anflug/Einschlag)
+
+### 2.1 Szenario & Klassen
+
+* **PI-Light:** ≤ 10 t @ ≤ 2 m/s (Klein-Tender/Roboter)
+* **PI-Medium:** 10–40 t @ 2–10 m/s (Crew/Cargo-Module)
+* **PI-Heavy:** 40–120 t @ 5–20 m/s (Großschiff-Anflugfehler)
+* **PI-Extreme:** > 120 t oder > 20 m/s (hoffentlich nur „design to survive, not to save vehicle“)
+
+**Parameter:** Impuls $J=m\Delta v$, Energie $E=\tfrac12 m v^2$. *Auslegung erfolgt parametriert, nicht fahrzeugspezifisch.*
+
+### 2.2 **POL-GUARD** – Mehrlagiger Polar-Prallschutz (konstruktiv)
+
+1. **Sensor-Vorhang (Lidar/Radar/Optik):** 3D-Track, Health-Monitoring, Autopilot-Geofencing.
+2. **Deploy-Net & Tether-Dämpfer:** ausfahrbares Fangnetz mit vielen **Shock-Absorber-Tethers** (Reißnadeln + viskoelastische Dämpfer).
+   – *Energieaufnahme \~ $\sum \tfrac12 k_i x_i^2$; Tether-Hub begrenzt Relativ-Δv.*
+3. **Crush-Bumper-Kragen:** Ringsegmente aus **Al-Honeycomb/Metal-Foam**; spezifische Energieaufnahme (SEA) **20–60 kJ/kg**.
+   – *Erforderliche Masse $m_\text{bumper}\approx E/\text{SEA}$.*
+4. **Deflection-Cone:** harte, geneigte Prallfläche → **Ablenkung out-of-axis**, Fragmente werden **aus dem Wormhole heraus** gelenkt.
+5. **Polar-Shutter (0,5 s):** gepanzerte, **guillotine-artige** Innenschotten (Mehrsektor-Lamellen) – schließt die Achse.
+6. **VENT/BOP-Kranz:** Sollbruch/Blow-Out-Paneele **hull-nah**; Druck/Partikel **direkt ins All**.
+
+> **Dimensionierungshilfe (Honeycomb-Bumper):**
+> Volumspezifische Absorption $W=\sigma_\text{crush}\cdot \varepsilon$. Bei $\sigma\approx2\,\text{MPa}$, $\varepsilon=0{,}5$ → $W\approx1\,\text{MJ/m}^3$.
+> *Beispiel:* $E=50\,\text{MJ}$ (z. B. 50 t @ 14 m/s) ⇒ **\~50 m³** Crush-Material (auf Sektoren verteilbar).
+
+### 2.3 **POL-KOS/Kep-Out-Volumes & Autopilot-Logik**
+
+* **Approach Ellipsoid** + **Keep-Out Sphere** polar; **Single-Vehicle-Between-Rings** (keine Doppelbelegung).
+* **Hard Interlocks:** Bei **KOS-Verletzung** → *Station* schließt **Polar-Shutter**, zündet **Deflection-Jets**, aktiviert **Deploy-Net**.
+
+---
+
+## 3) Komplett-Hazard-Katalog (DECK 000 / axial)
+
+**Mechanisch/Kinetisch**
+
+* H-E1: Explosion am Docking-Ring (anliegendes Schiff)
+* H-E2: Brand/Flashover an angedocktem Schiff
+* H-E3: Fahrzeug-Kollision im Wormhole (axial)
+* **H-E4: Polar-Impact (unkontrollierter Anflug/Einschlag)**
+* H-E5: Strukturelles Versagen eines Ring-Adapters / Quick-Release
+* H-E6: Trümmer/„Runaway“ nach Jettison im Näherungsbereich
+
+**Umwelt/Exogen**
+
+* H-U1: **Sonnenwind/SPE/CME** (Strahlungs-Spike)
+* H-U2: **MMOD quer** (seitlicher Durchschlag Tubus/Ring)
+* H-U3: **MMOD längs** (axial entlang der Achse)
+* H-U4: Weltraumschrott-Schwarm (Kollisionskaskaden-Risiko)
+
+**Prozess/Medien**
+
+* H-P1: O$_2$-Anreicherung / Inertgas-Fehlfunktion
+* H-P2: Kryo-Leck (H$_2$/O$_2$/N$_2$/Ar) → Kälte/EX-Risiken
+* H-P3: Batterie-Thermal-Runaway (Carrier/Andock-Vehikel)
+* H-P4: Giftige Medien (NH$_3$/Monosilan etc.) aus Nutzlast
+
+**Systemisch/OPS/IT**
+
+* H-S1: Stromausfall/USV-Versagen der Aktoren
+* H-S2: Sensorik-Blindheit (Radar/Lidar/Optik)
+* H-S3: **Cyber/Spoofing** (GN\&C/Transponder/Beacons)
+* H-S4: Human-Factor (Fehlerhafte Freigabe/Prozedur)
+* H-S5: Software-Regression (Update bricht Interlocks)
+
+> **Für jeden Hazard** führen wir **S (Severity 1–5)**, **L (Likelihood A–E)**, **R = S×L**, **Mitigation (Design/OPS)**, **V\&V** in einer Tabellen-SSOT (CSV) – bereit zum Risikoreview.
+
+---
+
+## 4) Design-Maßnahmen (Layered Hardening)
+
+### 4.1 Kompartimentierung & Schotts
+
+* **Ring-zu-Ring**: PT-A (Haupt), PT-B (Service), AL-C (Airlock) – *fail-safe zu*, kaskadierbar; Δp-Rating ≥ 1 atm sektorweise.
+* **LAT-Scheiben (axial):** schließen **S40/EQ/N40** (EVOL-01) → **Rauch/Heißgas-Kappen**, *kein Voll-Δp* (Equalizer).
+
+### 4.2 VENT/BOP
+
+* **Nur radial** zur Hülle; dimensioniert auf **choked flow**.
+  $\dot m = C_d A P_0 \sqrt{\tfrac{\gamma}{RT}}\big(\tfrac{2}{\gamma+1}\big)^{\!\frac{\gamma+1}{2(\gamma-1)}}$
+  → **A\_VENT** je Ring so, dass $p \rightarrow p_\text{safe}$ in **Δt\_max** (Stationsziel, z. B. ≤ 3–5 s).
+
+### 4.3 Feuer & Inertisierung
+
+* **Ar/N$_2$-Flutung** ringweise; O$_2$-Setpoint **≤ 12–15 Vol-%** in **≤ N s**; nicht-brennbare Auskleidung, EX-Zonierung.
+
+### 4.4 Fenster/MDPS/Shutter
+
+* Multilayer-Stacks, **Shutter ≤ 0,5 s** für E4/E5/E6 (SPE/MMOD), außen **MDPS-Shades**.
+
+### 4.5 Docking-Ringe (Blast/Quick-Release)
+
+* **Opfer-Zonen** (frangible) + **Blast-Cradle** (Sandwich-Kragen), **Jettison** mit Rückzugs-Shutter; integrierte **Deflektoren**.
+
+### 4.6 *Neu:* **POL-GUARD** am Polar-Einflug
+
+* **Deploy-Net + Tethers**, **Crush-Bumper**, **Deflection-Cone**, **Polar-Shutter**, **VENT-Kranz** – s. 2.2.
+
+### 4.7 Traffic-Separation & Interlocks
+
+* **Nord = Arrivals, Süd = Departures**, **Ein-Fahrzeug-Slot zwischen zwei Ringen**, GN\&C-Beacon-Pflicht, „rogue transponder“ → sofortige **POL-Shutter**-Schließung + **Deflection-Jets**.
+
+### 4.8 Cyber-Resilienz
+
+* Out-of-Band-Beacons, **AuthN/AuthZ** für Freigaben, Air-Gap für Safety-PLC, „last-known good“-Rollback.
+
+---
+
+## 5) Parametrische Auslegung (Formeln)
+
+### 5.1 Polar-Bumper (Crush-Energie)
+
+* **Eingang:** $m, v$ → $E=\tfrac12 m v^2$.
+* **Bumper-Bedarf:** $V_\text{crush}\approx E/W$ mit $W$ (MJ/m³) aus Materialdaten.
+* **Masse-Daumen:** $m_\text{bumper}\approx E/\text{SEA}$ (SEA=20–60 kJ/kg).
+
+### 5.2 Fangnetz + Tethers
+
+* **Zielhub** $x$ pro Tether; **Energie** $E\approx\sum \tfrac12 k_i x_i^2$.
+* **Grenzlast** → $F_\text{max}=\sum k_i x_i$ ≤ stationäre Grenzkräfte (Ankerpunkte).
+* *Praktisch:* 8–16 Tethers, je **viskoelastischer Dämpfer** (Hysterese) + Reißelement („fuse“) zur Lastspitzenbegrenzung.
+
+### 5.3 Polar-Shutter (Impuls)
+
+* **Impulsreserve:** $J_\text{shutter}\ge m\Delta v$ der zu erwartenden Fragmentlast *auf den Schließweg*.
+* **Schließzeit:** $t_\text{shut}\le 0{,}5\,\text{s}$ bei **E4/E5/E6**-Trigger; Kraft-/Leistungsbudget ergo dimensionieren.
+
+---
+
+## 6) Prüf- & Abnahmekriterien (V\&V)
+
+* **PT-A/PT-B/AL-C:** Schließzeit lokal ≤ 3 s, kaskadiert ≤ 8 s; Dichtheit Δp ≥ 1 atm (Ring-Weise).
+* **VENT/BOP:** Nachweis $A_\text{VENT}$ → $p \downarrow p_\text{safe}$ in Δt\_max; Funktions-Drills (kalte Gas-Runs + CFD).
+* **Shutter:** 100 % End-to-End-Tests (SPE/MMOD/Polar-Alarm) mit High-Speed-Log; Ziel ≤ 0,5 s.
+* **POL-GUARD:** Drop-/Schlitten-Versuche (E-Klassen), Netz-Schlusstests, Tether-Dämpfer-Charakteristik, Cone-Deflection-Mapping.
+* **Cyber:** Red-Team-Tests (Spoofing/Replay), Safety-PLC-Failover.
+
+---
+
+## 7) Risiko-Matrix (Beispiel-Ausschnitt)
+
+| Hazard                | S (1–5) | L (A–E) |   R   | Primär-Mitigation                         |
+| --------------------- | ------: | :-----: | :---: | ----------------------------------------- |
+| H-E1 Explosion Dock   |       5 |    C    | **H** | Ring-Containment, VENT/BOP, Quick-Release |
+| **H-E4 Polar-Impact** |       5 |   B–C   | **H** | **POL-GUARD, Shutter, KOS, Deflection**   |
+| H-U3 MMOD längs       |       4 |    C    |   H   | Shutter-Kaskade, Spall-Liner              |
+| H-S3 Cyber/Spoof      |       4 |    C    |   H   | AuthN/PLC-Air-Gap, OOB-Beacons            |
+| H-P2 Kryo-Leck        |       4 |    C    |   H   | EX-Zonen, Inert, VENT                     |
+
+(*Vollständige Matrix als CSV/SSOT führen.*)
+
+---
+
+## 8) Umsetzung & Roadmap
+
+* **EVOL-00 (127 m):** Polar-Shutter + KOS sofort; **POL-GUARD (light)** (Crush-Kragen + Net).
+* **EVOL-01 (254 m Kugel):** **POL-GUARD (medium)** + Deflection-Cone + stärkere VENT/BOP-Kranz.
+* **EVOL-01 Long Capsule:** **POL-GUARD (heavy)** + 2. Fußring im Core; Dock-Throats auf ≥ 16–20 m, wenn Innendocking.
+
+---
+
+
+\newpage
+
 ### 03 Interfaces
 
 Interface control documents for EVOL-00.
@@ -6232,8 +7451,9 @@ RFCs, change requests, and approvals for EVOL-00.
 
 \newpage
 
-# evol-01
+# EVOLUTION 01 - The City Comes Alive - *The Big City Awakens*
 
+> “Streets begin to fill, lights breathe to the rhythm of the rings. The city awakens — enduring, diverse, human.”
 
 \newpage
 
@@ -6257,6 +7477,28 @@ Specifications and requirements from EVOL-01.
 
 
 \newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
 
 # SPEC-01-STR-GEOM-GRAV-E2-BALL-0001-earth-two-ball-D254m-EN-DE-v0.1.0-DRAFT
 > Earth TWO "Ball" *(EVOL-01, Ø 254,00 m)* Global Geometry & Gravitation
@@ -6362,6 +7604,28 @@ mit **Δr=3,50 m** und **axialer Deckhöhe $H_i$**.
 
 
 \newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
 
 # SPEC-01-STR-GEOM-GRAV-E2-LCAP-0001-earth-two-long-capsule-D254m-L508m—v0.1.0-DRAFT
 > Earth TWO “Long Capsule” *(EVOL-01, Ø 254 m × L 508 m)* Global Geometry & Gravitation
@@ -6489,6 +7753,7 @@ Grundgleichung: $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
 
 ---
 
+
 \newpage
 
 ### 03 Interfaces
@@ -6538,6 +7803,28 @@ Reference material, supporting organizations, and legal information.
 
 
 \newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
 
 ## 8.1 Glossary
 
@@ -6652,11 +7939,55 @@ Definitions of key terms used throughout the Sphere Space Station Earth ONE & Be
 
 \newpage
 
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 ## 8.2 Partners & Institutions
 List of collaborating partners and institutions.
 
 
 \newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
 
 ## 8.3 Legal Notices
 
@@ -6679,6 +8010,28 @@ Supplementary material for the project.
 
 \newpage
 
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 ### 8.4.1 Appendix A: Abstract – Sphere Space Station Earth ONE and Beyond  
 *Date: 2025-08-08*
 
@@ -6692,6 +8045,28 @@ Beyond Earth ONE, the *Beyond* program foresees the deployment of autonomous sta
 
 
 \newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
 
 **Evaluation of the Documentation “Sphere Space Station Earth ONE and Beyond”**
 
@@ -6791,6 +8166,28 @@ This strategic step institutionalizes the visionary concept, addresses the bigge
 
 \newpage
 
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 ### 8.4.3 Invitation to Participate – Research, Funding, Engineering, and Construction Partnership
 
 The *Sphere Space Station Earth ONE & Beyond* project extends an open invitation to leading STEM institutions, the European Space Agency (ESA), universities, research organizations, and European companies to join in the exploration, funding, engineering, and construction of this landmark initiative.
@@ -6817,6 +8214,28 @@ Robert Alexander Massinger Space Technologies. Email: robert@robert-alexander-ma
 
 
 \newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
 
 ### 8.4.4 Sphere Space Station Earth ONE – Executive Summaries
 **Version:** 1.0.1  
@@ -6876,6 +8295,28 @@ Built for the long term, Earth ONE is designed to be **self-sustaining, safe, an
 
 
 \newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
 
 
 ### 8.4.5 AI-Based Quality Assurance Concept – Documentation & Safety
