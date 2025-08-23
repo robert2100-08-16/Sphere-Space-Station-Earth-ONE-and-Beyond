@@ -35,3 +35,4 @@ jobs:
           else
             echo "No build flag changes."
           fi
+          exit 0
