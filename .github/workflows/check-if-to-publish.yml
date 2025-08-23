@@ -21,6 +21,9 @@ jobs:
           commit="${GITHUB_SHA}"
           base="${{ github.event.before }}"
           python .github/tools/publishing/set_publish_flag.py --commit "$commit" --base "$base"
+      - name: Set up git for pushing
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git          
       - name: Commit publish flag updates
         run: |
           if [ -n "$(git status --porcelain publish.yml publish.yaml 2>/dev/null)" ]; then
