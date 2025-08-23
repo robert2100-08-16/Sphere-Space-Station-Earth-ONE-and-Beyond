@@ -197,7 +197,7 @@ jobs:
           pip install pyyaml
           commit=$(git rev-parse HEAD)
           base=$(git rev-parse HEAD^)
-          python .github/tools/publishing/set_publish_flag.py --commit "$commit" --base "$base" --reset-others
+          python .github/tools/publishing/set_publish_flag.py --commit "$commit" --base "$base"
           if [ -n "$(git status --porcelain publish.yml publish.yaml 2>/dev/null)" ]; then
             git add publish.yml publish.yaml 2>/dev/null
             git commit -m "chore: update publish build flags"

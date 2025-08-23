@@ -20,7 +20,7 @@ jobs:
           pip install pyyaml
           commit="${GITHUB_SHA}"
           base="${{ github.event.before }}"
-          python .github/tools/publishing/set_publish_flag.py --commit "$commit" --base "$base" --reset-others
+          python .github/tools/publishing/set_publish_flag.py --commit "$commit" --base "$base"
       - name: Commit publish flag updates
         run: |
           if [ -n "$(git status --porcelain publish.yml publish.yaml 2>/dev/null)" ]; then
