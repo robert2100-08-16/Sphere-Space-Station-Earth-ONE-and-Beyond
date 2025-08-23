@@ -1,0 +1,34 @@
+name: Check if to publish
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  set-build-flag:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set publish build flags
+        run: |
+          pip install pyyaml
+          commit="${GITHUB_SHA}"
+          base="${{ github.event.before }}"
+          python .github/tools/publishing/set_publish_flag.py --commit "$commit" --base "$base" --reset-others
+      - name: Commit publish flag updates
+        run: |
+          if [ -n "$(git status --porcelain publish.yml publish.yaml 2>/dev/null)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add publish.yml publish.yaml 2>/dev/null
+            git commit -m "chore: update publish build flags"
+            git push
+          else
+            echo "No build flag changes."
+          fi
