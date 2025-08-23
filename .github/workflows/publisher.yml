@@ -1,15 +1,22 @@
 name: Selective Publish to PDF
 
 on:
-  workflow_run:
-    workflows: ["GitBook Style Rename"]
-    types:
-      - completed
+  workflow_call:
+    inputs:
+      use_summary:
+        required: false
+        type: boolean
+        default: true
   workflow_dispatch:
+    inputs:
+      use_summary:
+        required: false
+        type: boolean
+        default: true
 
 jobs:
   selective-publish:
-    if: github.actor != 'github-actions[bot]' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -19,7 +26,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref }}
+          ref: ${{ github.ref }}
 
       - uses: actions/setup-python@v5
         with: { python-version: '3.12' }
@@ -27,7 +34,7 @@ jobs:
       - name: Selective publish via tool
         id: prep
         run: |
-            python .github/tools/publishing/publisher.py --use-summary
+            python .github/tools/publishing/publisher.py ${{ inputs.use_summary && '--use-summary' || '' }}
 
       - name: Commit and push generated PDFs
         if: steps.prep.outputs.built_count != '0'

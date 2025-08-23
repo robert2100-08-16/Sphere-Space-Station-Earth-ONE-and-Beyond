@@ -1,10 +1,7 @@
 name: Ensure readme.md in every folder
 
 on:
-  workflow_run:
-    workflows: ["Check if to publish"]
-    types:
-      - completed
+  workflow_call:
   workflow_dispatch:
 
 permissions:
@@ -12,14 +9,14 @@ permissions:
 
 jobs:
   ensure-readmes:
-    if: github.actor != 'github-actions[bot]' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref }}
+          ref: ${{ github.ref }}
 
       - name: Create missing readme.md files
         shell: bash
@@ -72,6 +69,6 @@ jobs:
       - name: Push changes
         if: steps.commit.outputs.committed == 'true' || steps.flags.outputs.flags == 'true'
         run: |
-          branch="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}"
+          branch="${{ github.ref_name }}"
           git pull --rebase origin "$branch"
           git push origin HEAD:"$branch"

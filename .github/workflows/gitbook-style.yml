@@ -1,21 +1,18 @@
 name: GitBook Style Rename
 
 on:
-  workflow_run:
-    workflows: ["Engineering Document Formatter"]
-    types:
-      - completed
+  workflow_call:
   workflow_dispatch:
 
 jobs:
   rename-and-summary:
-    if: github.actor != 'github-actions[bot]' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref }}
+          ref: ${{ github.ref }}
 
       - name: Rename files to GitBook style
         run: |
@@ -209,6 +206,6 @@ jobs:
       - name: Push changes
         if: steps.commit.outputs.committed == 'true' || steps.flags.outputs.flags == 'true'
         run: |
-          branch="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}"
+          branch="${{ github.ref_name }}"
           git pull --rebase origin "$branch"
           git push origin HEAD:"$branch"

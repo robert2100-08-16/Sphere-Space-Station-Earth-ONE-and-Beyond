@@ -1,9 +1,9 @@
 ---
 name: Check if to publish
 
-"on":
-  push: {}
-  workflow_dispatch: {}
+on:
+  workflow_call:
+  workflow_dispatch:
 
 permissions:
   contents: write
