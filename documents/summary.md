@@ -1,25 +1,3 @@
----
-id: ""
-title: ""
-version: v0.0.0
-state: DRAFT
-evolution: ""
-discipline: ""
-system: []
-system_id: []
-seq: []
-owner: ""
-reviewers: []
-source_of_truth: false
-supersedes: null
-superseded_by: null
-rfc_links: []
-adr_links: []
-cr_links: []
-date: 1970-01-01
-lang: EN
----
-
 # Summary
 
 * [The Sphere Space Station Earth ONE and Beyond Project](readme.md)
@@ -45,7 +23,9 @@ lang: EN
 * [6. Expansion and Future Projects](06-expansion-and-future-projects/readme.md)
   * [6.1 Future Expansion of the Sphere Station Network and Sphere Space Crafts](06-expansion-and-future-projects/6.1-future-expansion-of-the-sphere-station-network-and-sphere-space-crafts.md)
 * [7. Comprehensive Technical Documentation](07-comprehensive-technical-documentation/readme.md)
-  * [7.1 Sphere Station Documentation: Technical and Operational Overview](07-comprehensive-technical-documentation/7.1-sphere-station-documentation-technical-and-operational-overview.md)
+  * [7.1 Project Overviews and Fibels](07-comprehensive-technical-documentation/7.1-project-overviews-and-fibels/readme.md)
+    * [7.1.1 Sphere Station Documentation: Technical and Operational Overview](07-comprehensive-technical-documentation/7.1-project-overviews-and-fibels/7.1.1-sphere-station-documentation-technical-and-operational-overview.md)
+    * [7.1.2 Project Fibel](07-comprehensive-technical-documentation/7.1-project-overviews-and-fibels/7.1.2-project-fibel.md)
   * [7.2 Partial Concepts](07-comprehensive-technical-documentation/7.2-partial-concepts/readme.md)
     * [7.2.1 Deck Concept of the Sphere Space Station Earth ONE](07-comprehensive-technical-documentation/7.2-partial-concepts/7.2.1-deck-concept-of-the-sphere-space-station-earth-one.md)
     * [7.2.2 Earth ONE Overview](07-comprehensive-technical-documentation/7.2-partial-concepts/7.2.2-earth-one-overview.md)
@@ -110,3 +90,4 @@ lang: EN
     * [8.4.3 Invitation to Participate – Research, Funding, Engineering, and Construction Partnership](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.3-appendix-c-invitation-to-participate-research-funding-engineering-and-construction-partnership.md)
     * [8.4.4 Sphere Space Station Earth ONE – Executive Summaries](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.4-appendix-d-sphere-space-station-earth-one-executive-summaries.md)
     * [8.4.5 AI-Based Quality Assurance Concept – Documentation & Safety](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.5-appendix-e-ai-based-quality-assurance-concept-documentation-and-safety.md)
+    * [8.4.6 Wow Factors](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.6-appendix-f-wow-factors.md)
