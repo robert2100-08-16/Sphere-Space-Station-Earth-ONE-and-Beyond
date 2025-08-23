@@ -26,9 +26,10 @@ jobs:
             --base "$base"
       - name: Set up git for pushing
         run: |
-          git remote set-url origin \
-            https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/\
-            ${{ github.repository }}.git
+          token="${{ secrets.GITHUB_TOKEN }}"
+          repo="${{ github.repository }}"
+          repo_url="https://x-access-token:${token}@github.com/${repo}.git"
+          git remote set-url origin "$repo_url"
       - name: Commit publish flag updates
         run: |
           status="$(git status --porcelain \
