@@ -1,7 +1,10 @@
 name: Ensure readme.md in every folder
 
 on:
-  push:
+  workflow_run:
+    workflows: ["Check if to publish"]
+    types:
+      - completed
   workflow_dispatch:
 
 permissions:
@@ -9,10 +12,14 @@ permissions:
 
 jobs:
   ensure-readmes:
+    if: github.actor != 'github-actions[bot]' && (github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref }}
 
       - name: Create missing readme.md files
         shell: bash
@@ -33,13 +40,38 @@ jobs:
             created=$((created+1))
           done < <(find . -type d -not -path '*/.*' -print0)
 
-          # Nur committen/pushen, wenn es Änderungen gab
-          if [[ $created -gt 0 ]]; then
+      - name: Commit changes
+        id: commit
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "chore: add missing readme.md files"
-            git push
+            git commit -am "chore: add missing readme.md files"
+            echo "committed=true" >> "$GITHUB_OUTPUT"
           else
             echo "No missing readme.md files found."
+            echo "committed=false" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Update publish build flags
+        if: steps.commit.outputs.committed == 'true'
+        id: flags
+        run: |
+          pip install pyyaml
+          commit=$(git rev-parse HEAD)
+          base=$(git rev-parse HEAD^)
+          python .github/tools/publishing/set_publish_flag.py --commit "$commit" --base "$base" --reset-others
+          if [ -n "$(git status --porcelain publish.yml publish.yaml 2>/dev/null)" ]; then
+            git add publish.yml publish.yaml 2>/dev/null
+            git commit -m "chore: update publish build flags"
+            echo "flags=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "flags=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Push changes
+        if: steps.commit.outputs.committed == 'true' || steps.flags.outputs.flags == 'true'
+        run: |
+          branch="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}"
+          git pull --rebase origin "$branch"
+          git push origin HEAD:"$branch"

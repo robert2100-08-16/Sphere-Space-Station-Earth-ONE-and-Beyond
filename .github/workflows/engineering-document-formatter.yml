@@ -106,14 +106,37 @@ jobs:
           PYTHON
 
       - name: Commit changes
+        id: commit
         run: |
-          branch="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}"
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git commit -m "chore: ensure engineering document YAML headers"
-            git pull --rebase origin "$branch"
-            git push origin HEAD:"$branch"
+            echo "committed=true" >> "$GITHUB_OUTPUT"
           else
             echo "All engineering documents contain YAML headers."
+            echo "committed=false" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Update publish build flags
+        if: steps.commit.outputs.committed == 'true'
+        id: flags
+        run: |
+          pip install pyyaml
+          commit=$(git rev-parse HEAD)
+          base=$(git rev-parse HEAD^)
+          python .github/tools/publishing/set_publish_flag.py --commit "$commit" --base "$base" --reset-others
+          if [ -n "$(git status --porcelain publish.yml publish.yaml 2>/dev/null)" ]; then
+            git add publish.yml publish.yaml 2>/dev/null
+            git commit -m "chore: update publish build flags"
+            echo "flags=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "flags=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Push changes
+        if: steps.commit.outputs.committed == 'true' || steps.flags.outputs.flags == 'true'
+        run: |
+          branch="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}"
+          git pull --rebase origin "$branch"
+          git push origin HEAD:"$branch"

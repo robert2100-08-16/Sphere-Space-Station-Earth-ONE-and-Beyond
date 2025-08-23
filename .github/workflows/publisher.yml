@@ -21,69 +21,29 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref }}
 
-      - name: Get changed files and check manifest relevance
-        id: precheck
-        shell: bash
+      - name: Determine publish targets
+        id: prep
         run: |
-          set -euo pipefail
-          if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
-            BEFORE="${{ github.event.workflow_run.head_sha }}"
-          else
-            BEFORE="$(git rev-parse HEAD^ || echo '')"
-          fi
-          SHA="$(git rev-parse HEAD)"
-          echo "before=$BEFORE" >> "$GITHUB_OUTPUT"
-          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
-          echo "Comparing $BEFORE -> $SHA"
-          CHANGED_FILES=$(git diff --name-only "$BEFORE" "$SHA")
-
-          # determine GitBook root from book.json (if available) without Python
-          BOOK_ROOT="$(grep -o '"root"[[:space:]]*:[[:space:]]*"[^"]*"' book.json 2>/dev/null | head -n1 | sed -E 's/.*:[[:space:]]*"([^"]*)"/\1/' | sed 's#^\./##')"
-          if [[ -n "$BOOK_ROOT" && "$BOOK_ROOT" != "." ]]; then
-            if ! grep -q "^$BOOK_ROOT/" <<<"$CHANGED_FILES"; then
-              echo "ℹ No changes detected in $BOOK_ROOT — exiting early."
-              echo "should_publish=false" >> "$GITHUB_OUTPUT"
-              exit 0
-            fi
-          fi
-
-          # Find manifest
-          if [[ -f publish.yaml ]]; then
-            MANIFEST="publish.yaml"
-          elif [[ -f publish.yml ]]; then
-            MANIFEST="publish.yml"
-          else
-            echo "❌ No publish.yaml or publish.yml found in repo."
-            exit 1
-          fi
-          echo "manifest=$MANIFEST" >> "$GITHUB_OUTPUT"
-          echo "✓ Manifest found: $MANIFEST"
-          echo "Changed files:\n$CHANGED_FILES"
-
-          NEED_PUBLISH=false
-          # extract all `path` entries from the manifest regardless of indentation
-          MAP_PATHS=$(awk -F': *' '/^[[:space:]]*-[[:space:]]*path:/ {print $2}' "$MANIFEST")
-          for PATH in $MAP_PATHS; do
-            if grep -qE "^${PATH}(/|$)" <<<"$CHANGED_FILES"; then
-              NEED_PUBLISH=true
-              break
-            fi
-          done
-          if [[ "$NEED_PUBLISH" != "true" ]]; then
-            echo "ℹ No relevant changes detected — exiting early."
-            echo "should_publish=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          echo "should_publish=true" >> "$GITHUB_OUTPUT"
+          python - <<'PY'
+          import yaml, json, os
+          manifest = 'publish.yml' if os.path.exists('publish.yml') else 'publish.yaml'
+          with open(manifest, 'r', encoding='utf-8') as f:
+              data = yaml.safe_load(f) or {}
+          targets = [e for e in data.get('publish', []) if e.get('build')]
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as out:
+              out.write(f"manifest={manifest}\n")
+              out.write(f"targets={json.dumps(targets)}\n")
+              out.write(f"should_publish={'true' if targets else 'false'}\n")
+          PY
 
       - name: Set up Python and install dependencies
-        if: steps.precheck.outputs.should_publish == 'true'
+        if: steps.prep.outputs.should_publish == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
       - name: Install dependencies (PyYAML, Pandoc/LaTeX, emoji fonts)
-        if: steps.precheck.outputs.should_publish == 'true'
+        if: steps.prep.outputs.should_publish == 'true'
         run: |
           pip install pyyaml
           sudo apt-get update
@@ -95,24 +55,18 @@ jobs:
           wget https://gist.githubusercontent.com/zr-tex8r/a5410ad20ab291c390884b960c900537/raw/latex-emoji.lua -O latex-emoji.lua
 
       - name: Selective publish & PDF conversion
-        if: steps.precheck.outputs.should_publish == 'true'
+        if: steps.prep.outputs.should_publish == 'true'
         env:
-          MANIFEST: ${{ steps.precheck.outputs.manifest }}
-          BEFORE: ${{ steps.precheck.outputs.before }}
-          GITHUB_SHA: ${{ steps.precheck.outputs.sha }}
-        shell: bash
+          MANIFEST: ${{ steps.prep.outputs.manifest }}
+          TARGETS: ${{ steps.prep.outputs.targets }}
         run: |
           set -euo pipefail
           mkdir -p publish
           python3 <<'PY'
           import os, subprocess, sys, tempfile, yaml, pathlib, json
-
-          subs = {"₀":"$_0$","₁":"$_1$","₂":"$_2$","₃":"$_3$","₄":"$_4$",
-                  "₅":"$_5$","₆":"$_6$","₇":"$_7$","₈":"$_8$","₉":"$_9$"}
-
+          subs = {"₀":"$_0$","₁":"$_1$","₂":"$_2$","₃":"$_3$","₄":"$_4$","₅":"$_5$","₆":"$_6$","₇":"$_7$","₈":"$_8$","₉":"$_9$"}
           def normalize_md(text):
               return "".join(subs.get(ch, ch) for ch in text)
-
           def get_book_title(folder):
               try:
                   with open("book.json", "r", encoding="utf-8") as f:
@@ -125,7 +79,6 @@ jobs:
               except Exception:
                   pass
               return None
-
           def run_pandoc(md_path, pdf_out, add_toc=False, title=None):
               pathlib.Path(os.path.dirname(pdf_out)).mkdir(parents=True, exist_ok=True)
               cmd = [
@@ -144,7 +97,6 @@ jobs:
                   cmd.extend(["-V", f"title={title}"])
               print("→ Pandoc:", " ".join(cmd))
               subprocess.check_call(cmd)
-
           def convert_file(md_file, pdf_out):
               with open(md_file, "r", encoding="utf-8") as f:
                   content = normalize_md(f.read())
@@ -155,7 +107,6 @@ jobs:
                   run_pandoc(tmp_md, pdf_out)
               finally:
                   os.unlink(tmp_md)
-
           def extract_md_paths_from_summary(folder):
               summary_path = os.path.join(folder, "summary.md")
               if not os.path.exists(summary_path):
@@ -168,7 +119,6 @@ jobs:
                           if not match.startswith("http://") and not match.startswith("https://"):
                               paths.append(os.path.normpath(os.path.join(folder, match)))
               return paths
-
           def convert_folder(folder, pdf_out):
               md_files = extract_md_paths_from_summary(folder)
               if not md_files:
@@ -198,41 +148,40 @@ jobs:
                   run_pandoc(tmp_md, pdf_out, add_toc=True, title=title)
               finally:
                   os.unlink(tmp_md)
-
-          BEFORE = os.environ["BEFORE"]
-          SHA = os.environ["GITHUB_SHA"]
-          changed_files = os.popen(f"git diff --name-only {BEFORE} {SHA}").read().splitlines()
-          with open(os.environ["MANIFEST"], "r", encoding="utf-8") as f:
-              entries = yaml.safe_load(f).get("publish", [])
-
-          for entry in entries:
+          manifest = os.environ["MANIFEST"]
+          data = yaml.safe_load(open(manifest, "r", encoding="utf-8")) or {}
+          targets = json.loads(os.environ["TARGETS"])
+          for entry in targets:
               path = entry.get("path")
-              out  = entry.get("out")
-              typ  = entry.get("type")
-              if any(cf == path or cf.startswith(f"{path}/") for cf in changed_files):
-                  pdf_out = os.path.join("publish", out)
-                  print(f"✔ Changes in {path} → creating {pdf_out}")
-                  if typ == "file":
-                      convert_file(path, pdf_out)
-                  elif typ == "folder":
-                      convert_folder(path, pdf_out)
-                  else:
-                      print(f"⚠ Unknown type '{typ}' — skipping.")
+              out = entry.get("out")
+              typ = entry.get("type")
+              pdf_out = os.path.join("publish", out)
+              print(f"✔ Building {pdf_out} from {path}")
+              if typ == "file":
+                  convert_file(path, pdf_out)
+              elif typ == "folder":
+                  convert_folder(path, pdf_out)
               else:
-                  print(f"ℹ No changes in {path} → skipping.")
+                  print(f"⚠ Unknown type '{typ}' — skipping.")
+              for e in data.get("publish", []):
+                  if e.get("path") == path:
+                      e["build"] = False
+          with open(manifest, "w", encoding="utf-8") as f:
+              yaml.safe_dump(data, f, sort_keys=False, allow_unicode=True)
           PY
 
       - name: Commit and push generated PDFs
-        if: steps.precheck.outputs.should_publish == 'true'
-        shell: bash
+        if: steps.prep.outputs.should_publish == 'true'
+        env:
+          MANIFEST: ${{ steps.prep.outputs.manifest }}
         run: |
-          if [[ -n "$(git status --porcelain publish)" ]]; then
+          if [ -n "$(git status --porcelain publish $MANIFEST)" ]; then
             git config user.name  "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add publish
+            git add publish "$MANIFEST"
             git commit -m "chore: selective publish → PDF (auto)"
             git pull --rebase origin "${GITHUB_REF_NAME}"
             git push origin HEAD:"${GITHUB_REF_NAME}"
           else
-            echo "No changes in /publish — nothing to commit."
+            echo "No changes in publish or manifest — nothing to commit."
           fi

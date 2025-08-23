@@ -30,9 +30,7 @@ jobs:
               if src == dst:
                   return
               dst.parent.mkdir(parents=True, exist_ok=True)
-              # Handle case-insensitive FS or collisions
               if dst.exists() and src.resolve() != dst.resolve():
-                  # If content identical, just remove src after mv attempt
                   try:
                       subprocess.run(['git', 'rm', '-r', '--cached', str(dst)], check=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                   except Exception:
@@ -40,12 +38,10 @@ jobs:
               subprocess.run(['git', 'mv', str(src), str(dst)], check=False)
 
           for root, dirs, files in os.walk(ROOT, topdown=True):
-              # prune directories
               rel = Path(root).relative_to(ROOT)
               if any(p in SKIP_DIRS for p in rel.parts):
                   dirs[:] = []
                   continue
-              # filter & normalize directory names first
               for d in list(dirs):
                   if d in SKIP_DIRS or d.startswith('.git'):
                       dirs.remove(d)
@@ -53,10 +49,7 @@ jobs:
                   new = re.sub(r'[^a-z0-9.-]+', '-', d.lower()).strip('-')
                   if new != d:
                       safe_git_mv(Path(root)/d, Path(root)/new)
-                      # reflect rename in traversal
                       dirs[dirs.index(d)] = new
-
-              # files
               for name in files:
                   if name.startswith('.') or name.endswith('.py'):
                       continue
@@ -73,7 +66,6 @@ jobs:
           import subprocess
           import sys
 
-          # --- helpers ---
           def read_json(path: Path):
               try:
                   return json.loads(path.read_text(encoding='utf-8'))
@@ -89,31 +81,25 @@ jobs:
 
           def title_from_filename(p: Path):
               name = p.stem
-              # Prefer natural words from kebab/underscore
               name = re.sub(r'[-_]+', ' ', name)
               name = re.sub(r'\s+', ' ', name).strip()
               return name.title() if name else p.stem
 
           def natural_key(s: str):
-              # for natural sorting: "file2" before "file10"
               return [int(t) if t.isdigit() else t.lower() for t in re.split(r'(\d+)', s)]
 
-          # --- load book.json & paths ---
           book = read_json(Path('book.json')) if Path('book.json').exists() else {}
           root_dir = Path(book.get('root', '.')).resolve()
           structure = book.get('structure', {})
           summary_rel = structure.get('summary', 'summary.md')
           summary_path = (root_dir / summary_rel).resolve()
 
-          # normalized skip sets
           SKIP_DIRS = {'.git', '.github', 'node_modules', '__pycache__', '.venv', 'simulations'}
           MD_EXT = {'.md'}
 
-          # --- collect tree ---
           def md_files_in_dir(dir_path: Path):
               files = [p for p in dir_path.iterdir() if p.is_file() and p.suffix.lower() in MD_EXT]
-              files = [p for p in files if p.resolve() != summary_path.resolve()]  # skip summary itself
-              # Prefer README.md first if present
+              files = [p for p in files if p.resolve() != summary_path.resolve()]
               readme = [p for p in files if p.name.lower() == 'readme.md']
               others = sorted([p for p in files if p.name.lower() != 'readme.md'], key=lambda p: natural_key(p.name))
               return (readme + others)
@@ -124,7 +110,6 @@ jobs:
               return sorted(dirs, key=lambda p: natural_key(p.name))
 
           def rel_link(p: Path):
-              # POSIX style for markdown links
               return str(p.relative_to(root_dir)).replace('\\','/')
 
           def make_item_title(p: Path):
@@ -133,14 +118,12 @@ jobs:
               except Exception:
                   text = ''
               h = first_heading(text) or title_from_filename(p)
-              # sanitize brackets in titles
               h = h.replace('[','(').replace(']',')')
               return h
 
           lines = ['# Summary', '']
-          
+
           def emit_dir(dir_path: Path, level: int):
-              # directory header: link README if present; else plain title (not a link)
               files = md_files_in_dir(dir_path)
               readme = next((p for p in files if p.name.lower() == 'readme.md'), None)
               if dir_path != root_dir:
@@ -154,40 +137,29 @@ jobs:
                   else:
                       lines.append('  ' * level + f"* {title}")
 
-              # files (excluding README already handled)
               for p in files:
                   if p.name.lower() == 'readme.md' and dir_path != root_dir:
                       continue
                   if dir_path == root_dir and p.name.lower() == 'readme.md':
-                      # top-level README first
                       lines.append('  ' * level + f"* [{make_item_title(p)}]({rel_link(p)})")
                   elif p.name.lower() != 'readme.md':
                       lines.append('  ' * (level + (0 if dir_path==root_dir else 1)) + f"* [{make_item_title(p)}]({rel_link(p)})")
 
-              # recurse into subdirs
               for d in child_dirs(dir_path):
                   emit_dir(d, level if dir_path==root_dir else level+1)
 
-          # Start: top-level README first, then others, then dirs
           top_files = md_files_in_dir(root_dir)
           top_readme = [p for p in top_files if p.name.lower() == 'readme.md']
           top_others = [p for p in top_files if p.name.lower() != 'readme.md']
 
-          # Emit top-level README (if any)
           for p in top_readme:
               lines.append(f"* [{make_item_title(p)}]({rel_link(p)})")
-
-          # Emit other top-level files
           for p in top_others:
               lines.append(f"* [{make_item_title(p)}]({rel_link(p)})")
-
-          # Emit directories
           for d in child_dirs(root_dir):
               emit_dir(d, level=0)
 
           new_content = "\n".join(lines).rstrip() + "\n"
-
-          # Ensure parent exists
           summary_path.parent.mkdir(parents=True, exist_ok=True)
           old_content = ''
           if summary_path.exists():
@@ -206,14 +178,37 @@ jobs:
           PYTHON
 
       - name: Commit changes
+        id: commit
         run: |
-          branch="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}"
           if [ -n "$(git status --porcelain)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git commit -m "chore: regenerate summary.md from book.json structure [skip ci]"
-            git pull --rebase origin "$branch"
-            git push origin HEAD:"$branch"
+            echo "committed=true" >> "$GITHUB_OUTPUT"
           else
             echo "SUMMARY.MD OK"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Update publish build flags
+        if: steps.commit.outputs.committed == 'true'
+        id: flags
+        run: |
+          pip install pyyaml
+          commit=$(git rev-parse HEAD)
+          base=$(git rev-parse HEAD^)
+          python .github/tools/publishing/set_publish_flag.py --commit "$commit" --base "$base" --reset-others
+          if [ -n "$(git status --porcelain publish.yml publish.yaml 2>/dev/null)" ]; then
+            git add publish.yml publish.yaml 2>/dev/null
+            git commit -m "chore: update publish build flags"
+            echo "flags=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "flags=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Push changes
+        if: steps.commit.outputs.committed == 'true' || steps.flags.outputs.flags == 'true'
+        run: |
+          branch="${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}"
+          git pull --rebase origin "$branch"
+          git push origin HEAD:"$branch"
