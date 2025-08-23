@@ -1,8 +1,9 @@
+---
 name: Check if to publish
 
-on:
-  push:
-  workflow_dispatch:
+"on":
+  push: {}
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -20,13 +21,19 @@ jobs:
           pip install pyyaml
           commit="${GITHUB_SHA}"
           base="${{ github.event.before }}"
-          python .github/tools/publishing/set_publish_flag.py --commit "$commit" --base "$base"
+          python .github/tools/publishing/set_publish_flag.py \
+            --commit "$commit" \
+            --base "$base"
       - name: Set up git for pushing
         run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git          
+          git remote set-url origin \
+            https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/\
+            ${{ github.repository }}.git
       - name: Commit publish flag updates
         run: |
-          if [ -n "$(git status --porcelain publish.yml publish.yaml 2>/dev/null)" ]; then
+          status="$(git status --porcelain \
+            publish.yml publish.yaml 2>/dev/null || true)"
+          if [ -n "$status" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
             git add publish.yml publish.yaml 2>/dev/null
@@ -35,7 +42,8 @@ jobs:
               git status
               git log --oneline -10
               git rebase --abort
-              echo "Rebase failed. Please check for conflicts in publish.yml or publish.yaml."
+              echo "Rebase failed. Please check for conflicts in publish.yml or"
+              echo "publish.yaml."
               exit 1
             fi
             git push
