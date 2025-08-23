@@ -351,7 +351,13 @@ def _convert_single_file(md_file: str, pdf_out: str) -> None:
             pass
 
 
-def _convert_folder(folder: str, pdf_out: str, use_summary: bool) -> None:
+def _convert_folder(
+    folder: str,
+    pdf_out: str,
+    use_summary: bool,
+    keep_combined: bool = False,
+    publish_dir: str = "publish",
+) -> None:
     md_files = _collect_folder_md(folder, use_summary=use_summary)
     if not md_files:
         print(f"ℹ Keine Markdown-Dateien in {folder} – übersprungen.")
@@ -367,7 +373,10 @@ def _convert_folder(folder: str, pdf_out: str, use_summary: bool) -> None:
         _run_pandoc(tmp_md, pdf_out, add_toc=True, title=title)
     finally:
         try:
-            os.unlink(tmp_md)
+            if not keep_combined:
+                os.unlink(tmp_md)
+            else:
+                os.rename(tmp_md, os.path.join(publish_dir, "combined.md"))
         except OSError:
             pass
 
@@ -377,6 +386,7 @@ def build_pdf(
     out: str,
     typ: str,
     use_summary: bool = False,
+    keep_combined: bool = False,
     publish_dir: str = "publish",
 ) -> bool:
     """
@@ -398,7 +408,13 @@ def build_pdf(
         if _typ == "file":
             _convert_single_file(path, pdf_out)
         elif _typ == "folder":
-            _convert_folder(path, pdf_out, use_summary=use_summary)
+            _convert_folder(
+                path,
+                pdf_out,
+                use_summary=use_summary,
+                keep_combined=keep_combined,
+                publish_dir=publish_dir,
+            )
         else:
             print(f"⚠ Unbekannter type='{typ}' – übersprungen.")
             return False
@@ -439,6 +455,11 @@ def main() -> None:
         help="Ordner über summary.md Reihenfolge bauen (falls vorhanden)",
     )
     ap.add_argument(
+        "--keep-combined",
+        action="store_true",
+        help="Das combined.md aus dem das PDF gebraut wird, bleibt erhalten und wird mit in den publish Ordner geschoben.",
+    )
+    ap.add_argument(
         "--no-apt", action="store_true", help="Keine apt-Installation versuchen"
     )
     ap.add_argument(
@@ -460,7 +481,7 @@ def main() -> None:
         return
 
     # prepareYAML()  # B.1
-    prepare_publishing(no_apt=True)
+    prepareYAML()
     # get manifest publish list (A)
     manifest = _find_manifest(args.manifest)
     targets = get_publish_list(manifest)
@@ -481,7 +502,13 @@ def main() -> None:
         path = entry["path"]
         out = entry["out"]
         typ = entry.get("type", "file")
-        ok = build_pdf(path=path, out=out, typ=typ, use_summary=args.use_summary)
+        ok = build_pdf(
+            path=path,
+            out=out,
+            typ=typ,
+            use_summary=args.use_summary,
+            keep_combined=args.keep_combined,
+        )
         if ok:
             built.append(out)
             # Reset publish-Flag (D) – nur bei Erfolg
