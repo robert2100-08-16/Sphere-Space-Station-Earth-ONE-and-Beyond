@@ -1,25 +1,3 @@
----
-id: ""
-title: ""
-version: v0.0.0
-state: DRAFT
-evolution: ""
-discipline: ""
-system: []
-system_id: []
-seq: []
-owner: ""
-reviewers: []
-source_of_truth: false
-supersedes: null
-superseded_by: null
-rfc_links: []
-adr_links: []
-cr_links: []
-date: 1970-01-01
-lang: EN
----
-
 # Summary
 
 * [The Sphere Space Station Earth ONE and Beyond Project](readme.md)
@@ -113,3 +91,14 @@ lang: EN
     * [8.4.4 Sphere Space Station Earth ONE – Executive Summaries](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.4-appendix-d-sphere-space-station-earth-one-executive-summaries.md)
     * [8.4.5 AI-Based Quality Assurance Concept – Documentation & Safety](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.5-appendix-e-ai-based-quality-assurance-concept-documentation-and-safety.md)
     * [8.4.6 Wow Factors](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.6-appendix-f-wow-factors.md)
+    * [8.4.7 Appendix G: Backlog Potential Developments](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-g-backlog-potential-developments/readme.md)
+      * [BL-ECON-B-010 Revenue Expansion & Financing Stages](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-g-backlog-potential-developments/bl-econ-b-010.md)
+      * [BL-ENG-E1-004 Observatory / Detected-Outrigger Telescope](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-g-backlog-potential-developments/bl-eng-e1-004.md)
+      * [BL-ENG-E1-005 Spaceport & Orbital Shipyard Module](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-g-backlog-potential-developments/bl-eng-e1-005.md)
+      * [BL-ENG-E2-006 Habitat Expansion Path ("Earth TWO" Pre-Study)](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-g-backlog-potential-developments/bl-eng-e2-006.md)
+      * [BL-GOV-B-002 Solar-Alliance Governance Charter (Draft)](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-g-backlog-potential-developments/bl-gov-b-002.md)
+      * [BL-OPS-E1-001 Integrated Build & Logistics Masterplan](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-g-backlog-potential-developments/bl-ops-e1-001.md)
+      * [BL-SEC-E1-009 Resilience Scenarios: Dual-Failure (Reactor↓ + PV↓)](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-g-backlog-potential-developments/bl-sec-e1-009.md)
+      * [BL-SOC-B-008 VR/AR "Visit Earth ONE" & Citizen-Science](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-g-backlog-potential-developments/bl-soc-b-008.md)
+      * [BL-SOC-E1-007 Orbital Park & Culture Module](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-g-backlog-potential-developments/bl-soc-e1-007.md)
+      * [BL-SUS-E1-003 Earth-ONE Sustainability Playbook (Partial→Full)](08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-g-backlog-potential-developments/bl-sus-e1-003.md)
