@@ -260,7 +260,7 @@ No external sources used.
 \newpage
 
 ---
-title: "Concept and Feasibility Analysis for the SpaceSphere Project"
+title: "Concept and Feasibility Analysis for the SphereSpace Project"
 version: 1.0.0
 owner: "Robert Alexander Massinger"
 license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
@@ -286,38 +286,38 @@ cr_links: []
 lang: EN
 ---
 
-## 1.2 Concept and Feasibility Analysis for the SpaceSphere Project
+## 1.2 Concept and Feasibility Analysis for the SphereSpace Project
 
 | | |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Document:** | ***Concept and Feasibility Analysis for the SpaceSphere Project*** |
+| **Document:** | ***Concept and Feasibility Analysis for the SphereSpace Project*** |
 | **Date:** | 2024-10-31 |
 | **License:** | (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED. |
 | | |
 
 ### 1.2.1 **Abstract**
 
-The SpaceSphere Project aims to create a rotating, self-sustaining space station designed for interstellar and interplanetary travel, as well as for long-term habitation in space. This study presents a comprehensive overview of the structural and dynamic specifications of the SpaceSphere, based on the latest calculations. With a diameter of 127 meters and a design that generates artificial gravity through rotation, the SpaceSphere intends to provide a stable environment for up to 112 residents. Here, we analyze the geometric and dynamic properties of the decks, along with updated technical challenges and cost estimates.
+The SphereSpace Project aims to create a rotating, self-sustaining space station designed for interstellar and interplanetary travel, as well as for long-term habitation in space. This study presents a comprehensive overview of the structural and dynamic specifications of the SphereSpace, based on the latest calculations. With a diameter of 127 meters and a design that generates artificial gravity through rotation, the SphereSpace intends to provide a stable environment for up to 112 residents. Here, we analyze the geometric and dynamic properties of the decks, along with updated technical challenges and cost estimates.
 
 ---
 
 ### 1.2.2 **Introduction**
 
-The SpaceSphere is conceptualized as a spherical space station that generates artificial gravity through rotation. The goal is to create a long-term habitable, self-sustaining environment that can be used for research, production, and interplanetary exploration. With a planned capacity of approximately 112 people, the SpaceSphere will integrate comprehensive life support systems, hydroponic gardens, and recycling facilities.
+The SphereSpace is conceptualized as a spherical space station that generates artificial gravity through rotation. The goal is to create a long-term habitable, self-sustaining environment that can be used for research, production, and interplanetary exploration. With a planned capacity of approximately 112 people, the SphereSpace will integrate comprehensive life support systems, hydroponic gardens, and recycling facilities.
 
 ---
 
-### 1.2.3 **Specifications and Structure of the SpaceSphere**
+### 1.2.3 **Specifications and Structure of the SphereSpace**
 
 #### 1.2.3.1 **General Dimensions and Layout**
 
 - **Overall Diameter**: 127 meters.
 - **Number of Decks**: 16 concentric decks, numbered from Deck 0 (central area) to Deck 15 (outer deck).
-- **Total Volume**: The SpaceSphere has an effective total volume of 852,661 m³, allocated for habitation, life support, and propulsion systems.
+- **Total Volume**: The SphereSpace has an effective total volume of 852,661 m³, allocated for habitation, life support, and propulsion systems.
 
 #### 1.2.3.2 **Geometry and Gravity Distribution on the Decks**
 
-The rotation of the SpaceSphere generates artificial gravity, increasing radially outward. A detailed list of all deck data can be found in the appendix. Key parameters for selected decks are summarized below:
+The rotation of the SphereSpace generates artificial gravity, increasing radially outward. A detailed list of all deck data can be found in the appendix. Key parameters for selected decks are summarized below:
 
 | Deck   | Inner Radius (m) | Net Outer Radius (m) | Net Deck Height (m) | Rotational Velocity (m/s) | Centrifugal Acceleration (m/s²) | Net Space Volume (m³) |
 |--------|---------------------|----------------------|---------------------|----------------------------|---------------------------------|------------------------|
@@ -339,7 +339,7 @@ This table shows the increasing gravity from 2.5 m/s² on Deck 0 up to 15.63 m/s
 
 #### 1.2.4.1 **Construction and Development Costs (Adjusted)**
 
-Based on updated volume and mass data, the following adjusted cost estimate is derived for the construction and launch of the SpaceSphere:
+Based on updated volume and mass data, the following adjusted cost estimate is derived for the construction and launch of the SphereSpace:
 
 - **Design and Engineering**: €165 million
 - **Manufacturing and Assembly**: €655 million, including new structural requirements
@@ -365,7 +365,7 @@ Major maintenance and potential upgrades will be required every decade to ensure
 
 #### 1.2.5.1 **Rotational and Gravity Stability**
 
-The rotation of the SpaceSphere must be carefully controlled to ensure a consistent gravity distribution. The challenge lies in ensuring structural integrity at high speed while integrating mechanisms for fine-tuning rotation.
+The rotation of the SphereSpace must be carefully controlled to ensure a consistent gravity distribution. The challenge lies in ensuring structural integrity at high speed while integrating mechanisms for fine-tuning rotation.
 
 #### 1.2.5.2 **Life Support and Closed-Loop Systems**
 
@@ -379,7 +379,7 @@ The outer hull, with a thickness of 0.5 meters, provides basic protection agains
 
 ### 1.2.6 **Cost Estimation and Financing**
 
-Considering all phases (development, construction, launch, operation, maintenance), the total estimated cost for a 10-year operational period of the SpaceSphere is approximately **€10.3 billion**.
+Considering all phases (development, construction, launch, operation, maintenance), the total estimated cost for a 10-year operational period of the SphereSpace is approximately **€10.3 billion**.
 
 | **Phase**                         | **Estimated Cost (EUR)** |
 |-----------------------------------|--------------------------|
@@ -394,7 +394,7 @@ Considering all phases (development, construction, launch, operation, maintenanc
 
 ### 1.2.7 **Conclusion and Outlook**
 
-The SpaceSphere represents an ambitious concept for the future of space exploration. The detailed deck data demonstrate that a rotating space station with variable gravity levels is technically feasible. However, the high costs and technical challenges necessitate significant investment and technological advancements. This model could form the basis for future interstellar missions and represents a valuable step toward long-term space exploration.
+The SphereSpace represents an ambitious concept for the future of space exploration. The detailed deck data demonstrate that a rotating space station with variable gravity levels is technically feasible. However, the high costs and technical challenges necessitate significant investment and technological advancements. This model could form the basis for future interstellar missions and represents a valuable step toward long-term space exploration.
 
 ---
 

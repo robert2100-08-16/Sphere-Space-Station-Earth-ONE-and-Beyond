@@ -5,7 +5,7 @@
   * [0.1 Preamble — Ethics & Security](00-prologue-ethics-and-security/0.1-preamble-ethics-and-security.md)
 * [1. Vision and Inception](01-vision-and-inception/readme.md)
   * [1.1 Visionary Proposal for the Sphere Space Station Network](01-vision-and-inception/1.1-visionary-proposal-for-the-sphere-space-station-network.md)
-  * [1.2 Concept and Feasibility Analysis for the SpaceSphere Project](01-vision-and-inception/1.2-concept-and-feasibility-analysis-for-the-spacesphere-project.md)
+  * [1.2 Concept and Feasibility Analysis for the SphereSpace Project](01-vision-and-inception/1.2-concept-and-feasibility-analysis-for-the-spacesphere-project.md)
 * [2. Technical Foundations](02-technical-foundations/readme.md)
   * [2.1 Technical Design and System Specifications](02-technical-foundations/2.1-technical-design-and-system-specifications.md)
   * [2.2 Specification and Selected Materials](02-technical-foundations/2.2-specification-and-selected-materials.md)
