@@ -1,0 +1,31 @@
+name: Orchestrator
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  check_if_to_publish:
+    uses: ./.github/workflows/check-if-to-publish.yml
+    secrets: inherit
+
+  ensure_readme:
+    needs: check_if_to_publish
+    uses: ./.github/workflows/ensure-readme.yml
+    secrets: inherit
+
+  format_engineering_docs:
+    needs: ensure_readme
+    uses: ./.github/workflows/engineering-document-formatter.yml
+    secrets: inherit
+
+  gitbook_style_rename:
+    needs: format_engineering_docs
+    uses: ./.github/workflows/gitbook-style.yml
+    secrets: inherit
+
+  selective_publish_pdf:
+    needs: gitbook_style_rename
+    uses: ./.github/workflows/publisher.yml
+    secrets: inherit
+
