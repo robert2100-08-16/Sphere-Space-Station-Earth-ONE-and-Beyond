@@ -25,11 +25,12 @@ jobs:
         with: { python-version: '3.12' }
 
       - name: Selective publish via tool
+        id: prep
         run: |
             python .github/tools/publishing/publisher.py --use-summary
 
       - name: Commit and push generated PDFs
-        if: steps.prep.outputs.should_publish == 'true'
+        if: steps.prep.outputs.built_count != '0'
         env:
           MANIFEST: ${{ steps.prep.outputs.manifest }}
         run: |
