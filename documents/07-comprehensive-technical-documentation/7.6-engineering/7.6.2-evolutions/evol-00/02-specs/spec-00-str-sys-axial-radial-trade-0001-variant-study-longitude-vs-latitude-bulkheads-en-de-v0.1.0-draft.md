@@ -12,7 +12,7 @@ owner: "@sgi-lina"
 reviewers:
   - "@eng-elias"
   - "@eng-leo"
-source_of_truth: false
+source_of_truth: true
 supersedes: []
 superseded_by: []
 rfc_links: []

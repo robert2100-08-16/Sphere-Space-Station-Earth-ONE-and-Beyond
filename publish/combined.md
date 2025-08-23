@@ -20,7 +20,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -64,7 +64,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -203,7 +203,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -277,7 +277,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -453,7 +453,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -634,7 +634,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -801,7 +801,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -982,7 +982,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -1140,7 +1140,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -1328,7 +1328,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -1507,7 +1507,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -1660,7 +1660,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -1822,7 +1822,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -2049,7 +2049,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -2209,7 +2209,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -2515,7 +2515,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -2578,7 +2578,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -2660,7 +2660,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -2698,7 +2698,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -2736,7 +2736,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -2786,7 +2786,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -2824,7 +2824,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -2865,7 +2865,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -2958,7 +2958,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -3100,7 +3100,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -3304,7 +3304,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -3663,7 +3663,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -4252,7 +4252,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -4477,7 +4477,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -5069,7 +5069,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -5281,7 +5281,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -5728,7 +5728,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -5795,7 +5795,7 @@ owner: "@sgi-lina"
 reviewers:
   - "@eng-elias"
   - "@eng-leo"
-source_of_truth: false
+source_of_truth: true
 supersedes: []
 superseded_by: []
 rfc_links: []
@@ -5951,7 +5951,7 @@ owner: "@sgi-lina"
 reviewers:
   - "@eng-elias"
   - "@eng-leo"
-source_of_truth: false
+source_of_truth: true
 supersedes: []
 superseded_by: []
 rfc_links: []
@@ -6108,7 +6108,7 @@ owner: "@sgi-lina"
 reviewers:
   - "@eng-elias"
   - "@eng-leo"
-source_of_truth: false
+source_of_truth: true
 supersedes: []
 superseded_by: []
 rfc_links: []
@@ -6259,7 +6259,7 @@ owner: "@sgi-lina"
 reviewers:
   - "@eng-elias"
   - "@eng-leo"
-source_of_truth: false
+source_of_truth: true
 supersedes: []
 superseded_by: []
 rfc_links: []
@@ -6408,7 +6408,7 @@ owner: "@sgi-lina"
 reviewers:
   - "@eng-elias"
   - "@eng-leo"
-source_of_truth: false
+source_of_truth: true
 supersedes: []
 superseded_by: []
 rfc_links: []
@@ -6586,7 +6586,7 @@ owner: "@sgi-lina"
 reviewers:
   - "@eng-elias"
   - "@eng-leo"
-source_of_truth: false
+source_of_truth: true
 supersedes: []
 superseded_by: []
 rfc_links: []
@@ -6807,7 +6807,7 @@ owner: "@sgi-lina"
 reviewers:
   - "@eng-elias"
   - "@eng-leo"
-source_of_truth: false
+source_of_truth: true
 supersedes: []
 superseded_by: []
 rfc_links: []
@@ -7002,7 +7002,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -7208,7 +7208,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -7490,7 +7490,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -7617,7 +7617,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -7816,7 +7816,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -7951,7 +7951,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -7979,7 +7979,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -8022,7 +8022,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -8058,7 +8058,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -8178,7 +8178,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -8227,7 +8227,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
@@ -8308,7 +8308,7 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []

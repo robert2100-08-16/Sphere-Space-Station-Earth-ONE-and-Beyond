@@ -79,7 +79,7 @@ system: []
 system_id: []
 seq: []
 reviewers: []
-source_of_truth: false
+source_of_truth: true
 supersedes: null
 superseded_by: null
 rfc_links: []
