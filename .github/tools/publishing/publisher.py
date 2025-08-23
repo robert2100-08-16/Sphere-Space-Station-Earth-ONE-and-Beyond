@@ -453,13 +453,15 @@ def main() -> None:
     )
     args = ap.parse_args()
 
-    # B.1 + B
-    prepare_publishing(no_apt=args.no_apt)
-    if args.only - prepare:
+    if args.only_prepare:
+        # B.1 + B
+        prepare_publishing(no_apt=args.no_apt)
         print("✔ Umgebung vorbereitet. (only-prepare)")
         return
 
-    # A
+    # prepareYAML()  # B.1
+    prepare_publishing(no_apt=True)
+    # get manifest publish list (A)
     manifest = _find_manifest(args.manifest)
     targets = get_publish_list(manifest)
 
@@ -468,6 +470,9 @@ def main() -> None:
         _write_github_outputs([], [], manifest)
         return
 
+    print(f"ℹ {len(targets)} zu publizierende Einträge gefunden.")
+    # prepare huge environment (B)
+    prepare_publishing(no_apt=args.no_apt)
     built: List[str] = []
     failed: List[str] = []
 
