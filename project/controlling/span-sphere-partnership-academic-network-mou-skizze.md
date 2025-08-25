@@ -1,3 +1,25 @@
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 1970-01-01
+lang: EN
+---
+
 # SPAN — Sphere Partnership Academic Network (MoU‑Skizze)
 
 **Titel:** Memorandum of Understanding (MoU) zwischen **Sphere** und **\[Universität/Institut]**
