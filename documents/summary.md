@@ -1,25 +1,3 @@
----
-id: ""
-title: ""
-version: v0.0.0
-state: DRAFT
-evolution: ""
-discipline: ""
-system: []
-system_id: []
-seq: []
-owner: ""
-reviewers: []
-source_of_truth: false
-supersedes: null
-superseded_by: null
-rfc_links: []
-adr_links: []
-cr_links: []
-date: 1970-01-01
-lang: EN
----
-
 # Summary
 
 * [The Sphere Space Station Earth ONE and Beyond Project](readme.md)
@@ -74,6 +52,7 @@ lang: EN
       * [EVOLUTION 00 — The Beginning](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/readme.md)
         * [00 Standards Templates](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/00-standards-templates/readme.md)
         * [01 Architecture](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/01-architecture/readme.md)
+          * [EVOL-00 — Earth ONE (Ø 127 m) · Baseline v1.0 — Kurzblatt](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/01-architecture/evol-00-earth-one-d127m-baseline-v1.0.0-kurzblatt.md)
         * [02 Specs](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/readme.md)
           * [SPEC-00-STR-DECKS-013-sector-layout-and-interfaces-EN-DE-v0.1.0-DRAFT](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-013-sector-layout-and-interfaces-en-de-v0.1.0-draft.md)
           * [SPEC-00-STR-DECKS-014-sector-layout-and-interfaces-EN-DE-v0.1.0-DRAFT](07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-014-sector-layout-and-interfaces-en-de-v0.1.0-draft.md)
