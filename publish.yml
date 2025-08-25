@@ -2,7 +2,7 @@ publish:
 - path: documents
   out: sphere-space-station-earth-one-and-beyond.pdf
   type: folder
-  build: false
+  build: true
 - path: readme.md
   out: readme.pdf
   type: file
