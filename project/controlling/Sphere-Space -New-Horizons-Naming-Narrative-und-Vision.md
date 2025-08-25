@@ -96,29 +96,47 @@ lang: DE
 
 **Leitlinie:** Jede Stufe schließt mit klaren Exit-Kriterien ab und reduziert Risiken für die nächste.
 
-* **EVOL-00 — Earth ONE (Ø 127 m) · „The Beginning“**
-  Minimal vollständiger Demonstrator im Erdorbit. \~700 Personen. Rotations-Ergonomie bis \~1 g. Achskanal (Mikro‑g) als Betriebs- und Sicherheitsrückgrat. Dock-Topologie mit ersten „Throats“ (\~20 m).
+* **EVOL-00 — „The Beginning“**:
+  * Earth ONE (Ø 127 m, 1g bei Radius 38m - DECK 008):
+    Klasse: Ball, D127m, RPM 4 < x < 5 
+    Erster dauerhaft bewohnbarer Space Hub im Erdorbit. \~700 Personen. Rotations-Ergonomie bis \~1 g. Achskanal (Mikro‑g) als Betriebs- und Sicherheitsrückgrat. Dock-Topologie mit ersten „Throats“ (\~20 m).
 
-* **EVOL-01 — Earth TWO (Ø 254 m) · „The City Comes Alive“**
-  Skalierung zur ersten **City** (4k+). Reduzierte rpm (\~2,7), höhere Aufenthaltsqualität, verstärktes Vent-/Equalize‑System.
+* **EVOL-01 — „The City Comes Alive“**:
+  * Earth TWO (Ø 254 m):
+    Klasse: Ball, D254m, RPM ca. 2
+    Skalierung zur ersten **City** (4k+). Reduzierte rpm (\~2,7), höhere Aufenthaltsqualität, verstärktes Vent-/Equalize‑System.
+  * Earth TWO/THREE Long Capsule (Ø 254 m × L 508 m):
+    Klasse: Capsule, D254m x L508m, RPM ca. 2
+    High‑Throughput‑Port. Größere Dock‑Throats (≥ 20 m), getaktete Verkehrsfenster, Node‑Network‑Integration.
 
-* **EVOL-01 — Earth TWO Long Capsule (Ø 254 m × L 508 m)**
-  High‑Throughput‑Port. Größere Dock‑Throats (≥ 20 m), getaktete Verkehrsfenster, Node‑Network‑Integration.
+* **EVOL-02 — „The Call of Exploration“**:
+  * Belt ONE Long Capsule Exploration Edition (Ø 254 m × L 508 m)
+    Klasse: Capsule, D254m x L508m, RPM ca. 2
+    High‑Throughput‑Port. Größere Dock‑Throats für Arbeitsschiffe und Langstreckentransporter (60 m), Node‑Network‑Integration.
 
-* **EVOL-02 — Earth TWO Long Capsule (Ø 254 m × L 508 m)**
-  High‑Throughput‑Port. Größere Dock‑Throats (≥ 20 m), getaktete Verkehrsfenster, Node‑Network‑Integration.
+* **EVOL-03 — „The Call of Misson, Trade & Transport“**:
+  * Aldrin Cycler:
+    Klasse: Cycler‑Ableitung von Evolution 01 oder Evolution 02, Nuklearantriebe
+    Interplanetare Linie mit Rotationshabitat (\~100–120 Crew), Langzeit‑Life‑Support, Strahlungs- und Redundanzkonzepte.
+  * Belt Cycler Harmonie:
+    Klasse: Cycler‑Ableitung von Evolution 01 oder Evolution 02, Nuklearantriebe
+    Interplanetare Linie mit Rotationshabitat (\~100–120 Crew), Langzeit‑Life‑Support, Strahlungs- und Redundanzkonzepte.
+  * Deepspaceship Triton:
+    Klasse: Deep Space-Ableitung von Evolution 01 oder Evolution 02, Nuklearantriebe 
+    Neptun Mission und Deep Space 5 bis 20 Jahre Missionen. Selbstversorger.
+    Deep Space Missions mit Rotationshabitat (\~100–120 Crew), Langzeit‑Life‑Support, Strahlungs- und Redundanzkonzepte.
+  * Deepspaceship Oort:
+    Klasse: Deep Space-Ableitung von Evolution 01 oder Evolution 02, (noch hypothetische) Fusionsantriebe
+    Erste Oort-Missions bis zur Grenze des Solar Systems. Selbstversorger.
+    Deep Space Missions mit Rotationshabitat (\~100–120 Crew), Langzeit‑Life‑Support, Strahlungs- und Redundanzkonzepte.
 
-* **EVOL-03 — Cycler‑Ableitung**
-  Interplanetare Linie mit Rotationshabitat (\~100–120 Crew), Langzeit‑Life‑Support, Strahlungs- und Redundanzkonzepte.
-* **EVOL-03 — Deep Space-Ableitung -> Neptun Mission - 5<x<20 Jahre Missions**
-  Deep Space Missions mit Rotationshabitat (\~100–120 Crew), Langzeit‑Life‑Support, Strahlungs- und Redundanzkonzepte.
-* **EVOL-03 — Deep Space-Ableitung -> Erste Oort-Missions mit (noch hypothetischen) Fusionsantrieben**
-  Deep Space Missions mit Rotationshabitat (\~100–120 Crew), Langzeit‑Life‑Support, Strahlungs- und Redundanzkonzepte.
-
-* **EVOL-04 — City‑of‑Cities (Cluster)**
-  Verbund aus mehreren Cities und einem Port‑Rückgrat. Synchronisierte Knoten, gemeinsame Safety‑ und Ops‑SLA.
-* **EVOL-04 — Earth THREE, BELT ONE, weitere - Extra Long Capsules (Ø 254 m × L 1016 m)**
-  High‑Throughput‑Port. Größere Dock‑Throats (≥ 20 m), getaktete Verkehrsfenster, Node‑Network‑Integration.
+* **EVOL-04 — „City‑of‑Cities (Cluster)“**:
+  * New Munich: NM ONE „Schwabing“, NM TWO „Max Vorstadt“, NM THREE „Haidhausen“, NM FOUR „Giesing-Harlaching“, ...:
+    Klasse(n): Extra Long Capsules (Ø 254 m × L 1016 m) und Long Capsules (Ø 254 m × L 508 m).
+    Verbund aus mehreren Cities/Stadtteilen, Ausflug-, Kultur-, Erlebnis- und Wellness Habitats und einem Stadtrat-Port‑Rückgrat. Synchronisierte Knoten, gemeinsame Safety‑ und Ops‑SLA.
+  * New Paris, New Amsterdam, New Hamburg, ...:
+    Klasse(n): Extra Long Capsules (Ø 254 m × L 1016 m) und Long Capsules (Ø 254 m × L 508 m).
+    Verbund aus mehreren Cities/Stadtteilen, Ausflug-, Kultur-, Erlebnis- und Wellness Habitats und einem Stadtrat-Port‑Rückgrat. Synchronisierte Knoten, gemeinsame Safety‑ und Ops‑SLA.
 
 ## 8. Ausblick (EVOL-05 → EVOL-09)
 
