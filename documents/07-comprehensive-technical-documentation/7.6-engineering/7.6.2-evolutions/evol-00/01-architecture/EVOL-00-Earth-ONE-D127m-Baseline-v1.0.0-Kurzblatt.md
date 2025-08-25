@@ -9,6 +9,15 @@ owner: "CTO Office (J. Frame) · Chief Engineer (Theo)"
 reviewers: ["SGI Lina","Mara Flux","Elias Core"]
 date: 2025-08-25
 lang: DE
+system: []
+system_id: []
+seq: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
 ---
 
 # EVOL-00 — Earth ONE (Ø 127 m) · Baseline v1.0 — Kurzblatt

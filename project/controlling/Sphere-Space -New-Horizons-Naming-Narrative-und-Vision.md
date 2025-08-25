@@ -6,6 +6,18 @@ state: RELEASE
 owner: "Executive Office"
 date: 2025-08-25
 lang: DE
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
 ---
 
 # Sphere Space — New Horizons **Naming Narrative und Vision**
