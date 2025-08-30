@@ -12,21 +12,6 @@ history:
     date: 2025-08-03
     change: "Bring the Single Source of Truth Documents into GitBook Format"
     reference: https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond/documents/7.3.2-bring-the-single-source-of-truth-documents-into-gitbook-format
-id: ""
-state: DRAFT
-evolution: ""
-discipline: ""
-system: []
-system_id: []
-seq: []
-reviewers: []
-source_of_truth: true
-supersedes: null
-superseded_by: null
-rfc_links: []
-adr_links: []
-cr_links: []
-lang: EN
 ---
 
 # The Sphere Space Station Earth ONE and Beyond Project 
@@ -34,8 +19,6 @@ lang: EN
 This directory and gitbook houses the project documentation and serves as the single source of truth. All data, CAD models, engineering plans, simulations, and procurement records must be traceable to documents in this folder.
 
 When critical design changes are made, the related documents must be versioned and updated, or new documents must be created and stored here. The `change-management` subfolder records change requests and approvals affecting these documents.
-
-
 
 \newpage
 
@@ -480,7 +463,7 @@ The 127-meter Sphere Station is a spherical, rotating structure designed to prov
 
 - **Rotation Dynamics**: The Sphere Station rotates at a speed calibrated to produce Earth-like gravity (~9.81 m/s²) on specific decks, while other decks experience variable gravity levels, from higher gravities closer to the outer decks to microgravity at the central axis.
 - **Structural Design**: The sphere is composed of high-strength, multi-layered composite materials capable of withstanding micro-meteoroid impacts and radiation exposure in Low Earth Orbit (LEO).
-- **Deck Configuration**: Fifteen main decks (Deck 000 to Deck 015) are arranged as concentric shells. Decks closer to the center have lower gravity and are dedicated to storage, command centers, and docking areas. Outer decks provide residential, recreational, and operational spaces for the crew.
+- **Deck Configuration**: Sixteen main decks (Deck 000 to Deck 015) are arranged as concentric shells. Decks closer to the center have lower gravity and are dedicated to storage, command centers, and docking areas. Outer decks provide residential, recreational, and operational spaces for the crew.
 
 ### 2.1.2 **Deck Layout and Access Systems**
 
@@ -2493,6 +2476,13 @@ Detailed operational references and supporting design documents.
 
 \newpage
 
+## 7.1 Project Overviews and Fibels
+
+Project overviews and fibel documents for Sphere Space Station Earth ONE.
+
+
+\newpage
+
 ---
 title: "Sphere Station Documentation: Technical and Operational Overview"
 version: 1.0.1
@@ -2524,7 +2514,7 @@ cr_links: []
 lang: EN
 ---
 
-## 7.1 Sphere Station Documentation: Technical and Operational Overview
+### 7.1.1 Sphere Station Documentation: Technical and Operational Overview
 
 | | |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -2547,7 +2537,42 @@ This overview links to the detailed documentation for the Sphere Station project
 9. [Establishing a Solar Alliance for Governance and Security in Space](../05-security-governance-and-alliances/5.1-establishing-a-solar-alliance-for-governance-and-security-in-space.md)
 10. [Self-Sustainability Models for Space Stations and Spacecraft](../04-sustainability-and-economic-viability/4.2-self-sustainability-models-for-space-stations-and-spacecraft.md)
 
-### 7.1.1 Sources
+#### 7.1.2 Sources
+
+No external sources used.
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: true
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-09
+lang: EN
+---
+
+### 7.1.2 Project Fibel
+
+#### 7.1.2.1 Summary
+
+This Project Fibel conveys the "Good Karma" spirit that sustains long missions and guides difficult choices. It encourages teams to act with resilience, integrity, and foresight so that every decision contributes to the shared goal of building a sustainable presence in space. Although the documentation is already extensive, the project remains open to deeper logistical plans, richer governance models, and new social or technical modules. Each addition should integrate holistically—linking technology, humanity, economy, and environment—while preserving the modular structure that allows the vision to grow without losing its core identity.
+
+#### 7.1.2.2 Sources
 
 No external sources used.
 
@@ -2871,7 +2896,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-06
 lang: EN
 ---
 
@@ -2964,7 +2989,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-09
 lang: EN
 ---
 
@@ -3106,7 +3131,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-18
 lang: EN
 ---
 
@@ -3310,7 +3335,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-21
 lang: EN
 ---
 
@@ -3669,7 +3694,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-10
 lang: EN
 ---
 
@@ -4240,190 +4265,6 @@ For system-wide engineering flow (from concept through operations), see **7.5.1 
 
 \newpage
 
----
-id: ""
-title: ""
-version: v0.0.0
-state: DRAFT
-evolution: ""
-discipline: ""
-system: []
-system_id: []
-seq: []
-owner: ""
-reviewers: []
-source_of_truth: true
-supersedes: null
-superseded_by: null
-rfc_links: []
-adr_links: []
-cr_links: []
-date: 2025-08-08
-lang: EN
----
-
-## AGENTS.md — Roles, Responsibilities & EVOL Working Rules
-
-> Applies to all engineering/product docs under `7.6-engineering/...`. **EVOL** is the primary organizing principle; every activity ensures **one SSOT per topic and EVOL**.&
-
-### A) Agents & Short Aliases (with DISC scope)
-
-| Role / Name                  | Alias          | Primary Discipline(s) (DISC) | Systems/Scope (SYS — examples) |
-| ---------------------------- | -------------- | ---------------------------- | ------------------------------ |
-| Engineer **SGI Lina**        | `@sgi-lina`    | ARCH, STR                    | CORE, HULL, DECKS              |
-| Engineer **Leo**             | `@eng-leo`     | OPS, TST                     | DOCK, LIFT                     |
-| Engineer **Kai Nova**        | `@eng-kai`     | PROP, STR                    | PROP, CORE                     |
-| Engineer **Mara Flux**       | `@eng-mara`    | PWR, THM                     | PDN, RAD                       |
-| Engineer **Elias Core**      | `@eng-elias`   | SAF, REACTOR (↔ PWR)         | REACTOR, CORE                  |
-| Economist **Alethea Voss**   | `@eco-alethea` | Markets / Impact             | —                              |
-| Economist **Orion Hale**     | `@eco-orion`   | Investment / Impact          | —                              |
-| **CFO Terra Chen**           | `@cfo-terra`   | Finance                      | —                              |
-| Trade Analyst **Nova Reyes** | `@trade-nova`  | Transport / Materials        | DOCK, COMMS                    |
-| **CEO Aris Vega**            | `@ceo-aris`    | Policy Gate                  | —                              |
-| **COO Liora Stern**          | `@ops-lio`     | OPS                          | OPS                            |
-| **CTO Jona Frame**           | `@cto-jona`    | ARCH, SW                     | CORE, COMMS                    |
-| **CSO Mira Terra**           | `@cso-mira`    | SAF, ECLS                    | LHS, SAF                       |
-
-**Codes:** DISC/SYS values follow 7.6.1.1 (ARCH, STR, THM, PWR, ECLS, SAF, GNC, PROP, OPS, ELEC, SW · CORE, HULL, DECKS, REACTOR, RAD, PDN, LHS, DOCK, LIFT, AIR, WAT, WASTE, COMMS).&
-
-### B) Ownership Model (Owner & Reviewers)
-
-Each document lists **Owner (DRI)** and **Reviewers** in **YAML front-matter**. Values must match the filename schema (EVOL, DISC, SYS/SYSID, LANG, STATE). **Exactly one SSOT per topic and EVOL** (state: APPROVED). &
-
-**Owner duties**
-
-* Technical correctness; maintain RFC/ADR/CR links; keep `supersedes/superseded_by` current.
-* Keep naming, SemVer, and **STATE** consistent in filename & front-matter.
-* Ensure traceability (Requirements → Interfaces → Verification).&
-
-**Reviewer duties**
-
-* Discipline review (DISC) + architecture/interface coherence; address risk/safety.
-* Gatekeeper for **EVOL compliance** (no silent overwrites; changes via RFC/CR).&
-
-**Minimum reviews by doc type**
-
-* **SPEC/SRS/ICD/SAF/HAZ:** ≥ **2** — 1× discipline, 1× Arch/Safety (`@eng-elias` or `@cso-mira` or `@cto-jona`).
-* **ADR:** ≥ **1** architecture review (`@cto-jona` or `@sgi-lina`).
-* **RFC:** ≥ **2** (discipline + Arch/Safety) — decision recorded.
-* **TST:** ≥ **1** discipline + **1** OPS (`@ops-lio`).
-  These thresholds support states **DRAFT → REVIEW → APPROVED → OBSOLETE** and the SSOT rule.&
-
-### C) EVOL Duties & Visibility
-
-* **Badge the generation everywhere:** filenames, paths, binaries, UI “About”, dashboards, API headers, contracts, and public comms carry **EVOL-XX**.
-* **One EVOL, one SSOT per topic.**
-* **`current-evolution.md`** points to the active EVOL README; on freeze, archive under `7.6.3-history/EVOL-XX/...`.
-* **Compare Pages** (EVOL-(N-1) ↔ EVOL-N) and **Now/Next/Later** roadmaps are auto-built.  &
-
-### D) Workflow (Issue → Freeze)
-
-1. **Issue/Ticket:** Problem, objective, mapping to `DOC/DISC/SYS/SYSID/DECK`.
-2. **RFC** if architecture/interfaces are impacted (motivation, impact, migration, decision path).
-3. **Document change** under `7.6.2-evolutions/EVOL-XX/...` with correct **filename schema** and **front-matter**.
-4. **Open PR** (template below) — commit/PR titles include prefixes and **EVOL-XX**.
-5. **Reviews & CI:** Lint (schema/front-matter), links, numbered tables/figures, SI units.
-6. **Approval & Merge:** Set state to **APPROVED**, mark SSOT (`source_of_truth: true`).
-7. **Release & Freeze:** Tag `EVOL-XX-YYYY.MM`, release notes & migration guide; freeze and archive. &
-
-### E) Commit / PR Conventions
-
-**Commit/PR prefix:**
-`[<DOC>][<DISC>][<SYS>][<SYSID>][EVOL-XX] short summary`
-
-**PR template**
-
-```markdown
-#### Why
-(Link to Issue/RFC; motivation)
-
-#### What
-(Key changes; affected files)
-
-#### Impact
-(Compatibility, risks, migration)
-
-#### Verification
-(Tests/sims/inspections; TST IDs)
-
-#### Links
-RFC/ADR/CR/Issues
-
-#### Checklist
-- [ ] Naming & front-matter consistent (EVOL/DISC/SYS/SYSID/LANG/STATE)
-- [ ] Tables/figures numbered & referenced; SI units
-- [ ] RFC/ADR/TST linked
-- [ ] Minimum reviews requested (see Section B)
-```
-
-Aligned with 7.6.1.1 §§8–10 and CI rules.&
-
-### F) Quality Gates (CI/Lint) & Merge Blockers
-
-* **Hard lint checks:**
-
-  * EVOL in path == EVOL in filename; regex schema satisfied.
-  * Front-matter ↔ filename consistency (`id`, `evolution`, `discipline`, `system`, `system_id`, `seq`, `lang`, `state`).
-  * SemVer valid; `STATE` consistent in name & front-matter.
-* **Blockers:** missing reviews, broken RFC/ADR/CR links, wrong SemVer, stale `supersedes/superseded_by`.&
-
-### G) Governance & Decisions (EVOL Board)
-
-* **Open a new EVOL** only for **system-wide architectural breaks** / unshimmable interface breaks / changed ops doctrine.
-* Submit request via **RFC** with impact analysis, migration, and customer narrative; board review (Architecture, Safety, Ops, Finance, Programs).
-* **Freeze & fork forward:** freeze EVOL-N (read-only/patch-only), continue development in EVOL-(N+1).&
-
-**Escalation**
-
-* Cross-discipline conflict: moderation by `@cto-jona` (Architecture) + `@cso-mira` (Safety/Sustainability).
-* Time-critical/Safety-critical: ad-hoc board (`@cto-jona`, `@eng-elias`, `@cso-mira`, Owner).&
-
-### H) Role-Specific Responsibilities (excerpt)
-
-* **@cto-jona (Architecture Gate):** architecture compliance, ADR index, EVOL-change gatekeeper.&
-* **@cso-mira / @eng-elias (Safety Gate):** SAF/HAZ dossiers, ops doctrine, EVOL support windows.&
-* **@ops-lio (Ops Gate):** SOPs, operations/maintenance chapters, VVP/V\&V coverage.&
-* **@sgi-lina (Systems/STR):** structure/ICD coherence, Req↔Verification traceability.&
-* **@eng-mara (PWR/THM):** energy/thermal flows, EVOL compare pages for PWR/THM ICDs.&
-* **@eng-kai (PROP):** propulsion interfaces, migration paths for thrust/power changes.&
-* **@eng-leo (OPS/TST):** test plans/reports, conformance (TST) ↔ SPEC/ICD.&
-* **@cfo-terra / @eco-orion / @eco-alethea / @trade-nova (Economics/Transport):** release/freeze gates, support policy, migration cost awareness.&
-
-### I) Quick Cheat Sheet
-
-* **New SPEC?** → Filename per schema, fill YAML, link RFC, collect **2 reviews**, set state.&
-* **Small fix?** → **PATCH** bump; semantic changes = **MINOR/MAJOR** (within the EVOL).&
-* **Architectural break?** → RFC → Board → maybe **new EVOL**; freeze the old EVOL.&
-* **Release?** → Tag `EVOL-XX-YYYY.MM`, release notes + migration guide, verify `current-evolution.md`, publish compare pages. &
-
-### Appendix 1: Filename Schema & Front-Matter (Quick Ref)
-
-**Filename**
-`<DOC>-<EVOL>-<DISC>-<SYS>-<SYSID>-<SEQ>-<TITLE>-<LANG>-v<MAJOR.MINOR.PATCH>[<PRERELEASE>][+<BUILD>][-<STATE>].md`
-Allowed fields/states/regex see 7.6.1.1 §§4–6 & §13. &
-
-**Front-matter (required)**
-`id, title, version, state, evolution, discipline, system, system_id, seq, owner, reviewers, source_of_truth, supersedes, superseded_by, rfc_links, adr_links, cr_links, date, lang` — values must match the filename.&
-
-### Appendix 2: Example PR Title
-
-```
-[SPEC][STR][DECKS][DECK000][EVOL-01] hatch tolerances v1.1.0
-```
-
-Conforms to 7.6.1.1 §8 examples.&
-
-### Validity & Maintenance
-
-This document is the **SSOT** for roles/workflows in EVOL contexts. Changes via **RFC** only; approval by Architecture/Safety/Ops gates. Show the active EVOL badge in the header and maintain the EVOL README.&
-
----
-
-
-
-
-\newpage
-
 # 7.6.1 Global Standards
 
 Welcome! This folder defines the **project-wide rules** for how we name, version, structure, review, and ship every document in the Sphere Space Station *Earth ONE & Beyond* Single Source of Truth (SSOT). If you’re writing a spec, an interface control document, an ADR, an RFC, a test report, or a calculation note, **start here**.
@@ -4483,7 +4324,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-11
 lang: EN
 ---
 
@@ -5075,7 +4916,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-11
 lang: EN
 ---
 
@@ -5287,7 +5128,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-12
 lang: EN
 ---
 
@@ -5734,7 +5575,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-11
 lang: EN
 ---
 
@@ -5770,6 +5611,68 @@ Frozen standards and templates from EVOL-00.
 ### 01 Architecture
 
 Archived architecture records for EVOL-00.
+
+
+\newpage
+
+---
+id: "EVOL-00-baseline-freeze"
+title: "EVOL-00 — Earth ONE (Ø 127 m): Baseline v1.0 — Kurzblatt"
+version: v1.0.0
+state: BASELINED
+evolution: EVOL-00
+discipline: SYSTEM
+owner: "CTO Office (J. Frame) · Chief Engineer (Theo)"
+reviewers: ["SGI Lina","Mara Flux","Elias Core"]
+date: 2025-08-25
+lang: DE
+system: []
+system_id: []
+seq: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+---
+
+# EVOL-00 — Earth ONE (Ø 127 m) · Baseline v1.0 — Kurzblatt
+
+**Zweck:** Minimal **vollständiger** Demonstrator (LEO). Architektur, Sicherheit, Build–Test–Operate.  
+**Crew / Residents:** ~700 Personen (Mischung aus Crew, Wissenschaft, Familien).  
+**Masse (dry+ops window):** ~310.000–320.000 t.  
+**Drehung / Spin-Law:** 1 g @ r ≈ 38 m → ~4,851 rpm (Baseline).  
+**Gravitationszonen:** Mikro-g im Achskanal (DECK 000), sanfter Gradient zu ~1 g in Wohn- und Arbeitszonen.
+
+## Struktur & Geometrie (Kurz)
+- **Hauptkörper:** Kugel Ø 127 m; integriertes Coaxial-Zylindersystem („Deck-Zylinder“).  
+- **Decks:** DECK 000 (Achskanal „Wormhole“), danach ab **DECK 001** in 3,5-m-Bruttohöhen rasternd.  
+  - **DECK 000:** Radius 0,0 m bis **10,5 m** Zylinder-ID (inkl. Wand).  
+  - **DECK 001:** Radius **10,5 m** bis **14,0 m** (inkl. Wand).  
+  - **DECK n:** Radius Start = 10,5 m + (n−1)×3,5 m; Radius Ende = Start + 3,5 m.
+- **Primärgitter:** Meridionale und Breiten-Rippen (SiC/SiC-dominant), ringförmige Druckschotten, Crash-Bulkheads.
+
+## Andocken & „Wormhole“
+- **Polar-Ports:** Nord/Süd-Dock (extern) mit redundanten Equalize-Pfade.  
+- **Achskanal (Wormhole):** Mikro-g Korridor; Service-Tubes; Not-Shelter.  
+- **Throats (EVOL-00):** 20 m Durchmesser.
+
+## Lebenserhaltung & Energie (Baseline)
+- **Energie:** SMR-Fission (primär), Solar-Arrays (sekundär), chemische Not-Reserven.  
+- **LSS:** Geschlossene Kreisläufe (H$_2$O, O$_2$/CO$_2$, Nährstoffe) mit „storm shelter“-Zonen.  
+- **Brandschutz:** Sektorierte O$_2$-Management-Zonen; Inertion-Optionen; Hot-Work-Permits.
+
+## Sicherheit (Top-Linien)
+- **HAZ-Katalog:** SPEC-00-HAZARD v0.1 (IDs, Schwere, Gegenmaßnahme).  
+- **VENT/BOP:** Ringförmige Vent-/Blow-Off-Panels, druckgestufte Equalize-Sequenzen.  
+- **POL-GUARD:** Zugang/Prozedere (light) eingeführt; Crew-Drills quartalsweise.
+
+## Verifikation & Exit-Kriterien
+- **V&V:** Struktur/Spin/Deck-000 nachgewiesen; HZ-Matrizen freigegeben; SSOT eingeführt.  
+- **Ops-Nachweis:** 180 Tage bei ≥ 75 % Belegung; Safety-KPI innerhalb Budget; Mean-Time-to-Equalize belegt.
+
+> **Freeze-Umfang v1.0:** Geometrie, Spin-Parameter, Dock-Topologie (EVOL-00), LSS-Baseline, Safety-Schichten, HAZ-Index-Verlinkung.
 
 
 \newpage
@@ -7008,11 +6911,13 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-21
 lang: EN
 ---
 
 # SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001-wormhole-safety-and-hazard-mitigations-EVOL-00-D127m-EN-DE-v0.1.0-DRAFT
+
+
 SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001 — Wormhole Safety & Hazard Mitigations *(EVOL-00, Ø 127 m)* — v0.1.0 DRAFT
 
 **Status:** Draft · **Geltung:** Earth ONE (EVOL-00) · **Objekt:** DECK 000 „Wormhole“ (axialer Mikro-g-Korridor, OD 22 m / ID 20 m, mit Inconel-Docking-Ringen & Fenstersegmenten)
@@ -7184,14 +7089,6 @@ Axialer Strike durch Fenster-Tubus/Offen-Ring; Ziel: Shutter-Schließung + inter
 
 ---
 
-### Dateiname & Ablage (Vorschlag)
-
-`02-specs/SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001-EN-DE-v0.1.0-DRAFT.md`
-Querverlinken aus `SPEC-00-STR-DECKS-DECK000-0001-...` (Kap. Safety) und aus der globalen Safety-Indexseite in `07-comprehensive-technical-documentation/7.4-research-development`.
-
----
-
-Wenn du möchtest, hänge ich gleich noch **Abnahme-Checklisten** (Tür-Schließzeiten, VENT-Durchsatz, Shutter-Timing) und **Formelblätter** (Vent-Sizing, O$_2$-Absenkung) an — sag einfach Bescheid, dann erweitere ich das Dossier nahtlos.
 
 
 \newpage
@@ -7214,7 +7111,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-21
 lang: EN
 ---
 
@@ -7496,7 +7393,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-18
 lang: EN
 ---
 
@@ -7623,7 +7520,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-18
 lang: EN
 ---
 
@@ -8005,7 +7902,7 @@ Implementation of any described technology, systems, or components may be subjec
 \newpage
 
 ## 8.4 Overall Appendices
-Supplementary material for the project.
+Supplementary material for the project, including Appendix G: Backlog Potential Developments.
 
 
 \newpage
@@ -8064,7 +7961,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-07-08
 lang: EN
 ---
 
@@ -8233,7 +8130,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-09
 lang: EN
 ---
 
@@ -8314,7 +8211,7 @@ superseded_by: null
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-08
+date: 2025-08-09
 lang: EN
 ---
 
@@ -8391,3 +8288,666 @@ Ensure that all technical, organizational, and safety-relevant content of the *S
 * **Lessons Learned**: AI analyzes recurring error types and proposes structural improvements
 
 ---
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-27
+lang: EN
+---
+
+### 8.4.6 Wow Factors
+
+#### 8.4.6.1 Why this matters now
+
+Earth ONE transforms spaceflight from **mission** to **habitat**: a scalable, safe, high-energy platform for research, industry, and culture in orbit – with a clear pathway to a connected network across the solar system. The following points show **why** the project generates momentum today.
+
+#### 8.4.6.2 Highlights (impact-first)
+
+* **Orbital City Scale — urban life, day one.**
+  **127 m** in diameter, **\~700 residents**: parks, schools, clinic – **city life in orbit** with a view of Earth. What once felt like science fiction becomes everyday reality, creating a magnet for talent, partners, and investment.
+
+* **Multi-Deck Gravity — one structure, many gravities.**
+  **16 coaxial decks**: from **micro-g** at the axis to **near 1 g** at the hull. Human health & comfort combined with micro-g for high-end research – **both at once**, without compromise.
+
+* **Utility-scale Power in orbit — 120 MW.**
+  **2×60 MW** reactors + **solar arrays** + **thermal storage**: a **power-plant-class system** in orbit for industry, farming, propulsion & growth. **Redundant by design** – built for operations, not just demonstration.
+
+* **Integrated Safety — prepared for worst-case.**
+  **Distributed evacuation pods**, radiation-protected zones, fire compartments, independent life-support rings: **fail-operational** instead of “best case.” Safety that builds confidence – for crew, regulators, and insurers alike.
+
+* **Solar-System Network Vision — first node of many.**
+  Earth ONE is the **starting hub** for habitat and transport chains from **Venus orbit** to the **Kuiper Belt**: cycler routes, depots, shipyards. The **marketplace of low Earth orbit** grows into the **economy of the solar system**.
+
+* **Industrial-grade Documentation — built to scale.**
+  **Ten core documents**, tables, diagrams, and an **AI-driven QA pipeline** in a single-source repository: auditable, investable, **operations-ready** – industry-level standards from day one.
+
+##### 8.4.6.2a Evolution Wow Factors
+
+* **EVOL-00 — The Beginning**
+
+  * A **127 m spherical station (Earth ONE)**, housing \~700 pioneers. Conceived as a *minimal yet complete* demonstrator, EVOL-00 validates the architecture in orbit: structural grid, safety assumptions, and end-to-end build–test–operate capability. It is the **birth certificate of an orbital city** – modest in scale, immense in significance.
+  * The same 127 m sphere can also serve as the baseline for **lightweight SphereSpaceCyclers and the SphereSpaceCraft family**, enabling far-out missions with up to **112 crew** on **10-plus-year journeys** to Neptune, the **Oort Cloud**, and the outer solar system.
+
+* **EVOL-01 — The City Comes Alive**
+  Scaling up to the **Earth TWO generation**:
+
+  * **Earth TWO Ball (Ø 254 m):** Designed for **4,000+ residents**, with **33 decks**, harmonized gravity zones from micro-g to near-1 g, and significantly expanded habitability features.
+  * **Earth TWO Long Capsule (Ø 254 m × 508 m):** Capacity for **10,000–20,000 residents**, complete with full urban infrastructure – ring trams, maglev spines, green parks, and cultural plazas.
+    **EVOL-01 is the leap** from a pioneering capsule to a **true orbital metropolis** – the visible awakening of humanity’s **first city in space**.
+
+
+#### 8.4.6.3 Messaging snippets (copy-ready)
+
+* **Tagline (≤10 words):**
+  *Earth ONE — the first city you can orbit home.*
+
+* **10-second pitch:**
+  *A 127 m rotating habitat for \~700 people, delivering utility-scale power, multi-gravity research, and safety by design — the first node of a solar-system economy.*
+
+* **30-second pitch:**
+  *Earth ONE turns space into a place. A 127 m spherical habitat hosts \~700 residents with parks, schools, and clinics, while 16 decks provide micro-g to near-1 g in one structure. With 120 MW hybrid power and integrated safety (evac pods, radiation sanctuaries, redundant life support), it operates like a utility-class platform. It’s the seed of a network extending from Venus orbit to the Kuiper Belt — where research, industry, and culture meet in space.*
+
+#### 8.4.6.4 Call to action
+
+* **Partners:** Join the early builders (energy, robotics, life support, materials, XR public engagement).
+* **Investors:** Co-fund **utility-scale orbit** – clear milestones, auditable docs, scalable revenue models.
+* **Scientists:** Exploit **multi-gravity decks** and connected observatories for experiments impossible on Earth.
+* **Public:** Experience Earth ONE through **VR/AR**, citizen-science, and education kits – **the city in orbit belongs to all of us**.
+
+
+\newpage
+
+# 8.4.7 Appendix G: Backlog Potential Developments
+
+This appendix consolidates potential developments across Governance, Outreach, Engineering, Science, Economics, and Operations. It serves as a living, prioritized repository that evolves independently of the main chapters, offering a stable and referenceable source for future work. Pointer subsections in the respective chapters link to the most relevant backlog items, keeping the primary narrative streamlined while enabling deeper exploration.
+
+## Structure
+
+1. **Scope & Maintenance** – outlines curation responsibilities, update cadence, and the definition of a "ready" item.
+2. **Tagging & IDs**
+   - `Domain:` `GOV` | `OPS` | `ENG` | `SCI` | `SOC` | `SEC` | `SUS` | `ECON`
+   - `Program:` `E1` (Earth ONE) | `L1` (Lunar ONE) | `E2` (Earth TWO) | `B` (Beyond)
+   - `Status:` `Idea` → `Draft` → `Exploration` → `Design` → `Pilot` → `Adopt`
+   - `ID Schema:` `BL-<Domain>-<Program>-<NNN>` (e.g. `BL-ENG-E1-001`)
+3. **Prioritization Method** – recommends using frameworks such as **RICE** or **WSJF**.
+4. **Backlog List** – items are ordered by priority and follow the mini-template below.
+5. **Change Log** – records when items are added or updated.
+
+### Backlog Entry Mini-Template
+
+- **ID / Title**
+- **Domain / Program / EVOL Target**
+- **Short Description & Business Value**
+- **Acceptance Criteria**
+- **Dependencies / Cross-References**
+- **Owner / Next Step / Target Date Bucket**
+- **Score & Risks**
+
+## Backlog Items
+
+| ID | Title |
+| --- | --- |
+| [BL-OPS-E1-001](BL-OPS-E1-001.md) | Integrated Build & Logistics Masterplan |
+| [BL-GOV-B-002](BL-GOV-B-002.md) | Solar-Alliance Governance Charter (Draft) |
+| [BL-SUS-E1-003](BL-SUS-E1-003.md) | Earth-ONE Sustainability Playbook (Partial→Full) |
+| [BL-ENG-E1-004](BL-ENG-E1-004.md) | Observatory / Detected-Outrigger Telescope |
+| [BL-ENG-E1-005](BL-ENG-E1-005.md) | Spaceport & Orbital Shipyard Module |
+| [BL-ENG-E2-006](BL-ENG-E2-006.md) | Habitat Expansion Path ("Earth TWO" Pre-Study) |
+| [BL-SOC-E1-007](BL-SOC-E1-007.md) | Orbital Park & Culture Module |
+| [BL-SOC-B-008](BL-SOC-B-008.md) | VR/AR "Visit Earth ONE" & Citizen-Science |
+| [BL-SEC-E1-009](BL-SEC-E1-009.md) | Resilience Scenarios: Dual-Failure (Reactor↓ + PV↓) |
+| [BL-ECON-B-010](BL-ECON-B-010.md) | Revenue Expansion & Financing Stages |
+
+## Change Log
+
+- Initial backlog created.
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-27
+lang: EN
+---
+
+# BL-ECON-B-010 Revenue Expansion & Financing Stages
+
+- **Domain:** ECON
+- **Program:** B
+- **EVOL Target:** EVOL-00
+- **Status:** Draft
+
+## Short Description & Business Value
+Identify additional revenue streams and map financing stages to bolster economic viability for the broader programme.
+
+## Acceptance Criteria
+- Media rights package outlined
+- Technology licensing opportunities identified
+- Phase-wise investment plan drafted
+- Sensitivity analysis prepared
+
+## Dependencies / Cross-References
+- Economics chapter
+
+## Owner / Next Step / Target Date
+- **Owner:** TBD
+- **Next Step:** Model v0.1
+- **Target Date:** TBD
+
+## Score & Risks
+- **Score:** TBD (RICE/WSJF)
+- **Risks:** Market volatility; investor alignment
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-27
+lang: EN
+---
+
+# BL-ENG-E1-004 Observatory / Detected-Outrigger Telescope
+
+- **Domain:** ENG
+- **Program:** E1
+- **EVOL Target:** EVOL-00
+- **Status:** Draft
+
+## Short Description & Business Value
+Design a telescope module on a de-rotated outrigger to extend Earth ONE's scientific reach without disturbing station rotation, enabling advanced astronomy and observation missions.
+
+## Acceptance Criteria
+- Demonstrated isolation from station rotation
+- Established jitter budget
+- Thermal and radiation shielding strategy
+- Defined data downlink pipeline
+
+## Dependencies / Cross-References
+- Science chapter (details TBD)
+
+## Owner / Next Step / Target Date
+- **Owner:** TBD
+- **Next Step:** Feasibility Note
+- **Target Date:** TBD
+
+## Score & Risks
+- **Score:** TBD (RICE/WSJF)
+- **Risks:** Structural integration; vibration control
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-27
+lang: EN
+---
+
+# BL-ENG-E1-005 Spaceport & Orbital Shipyard Module
+
+- **Domain:** ENG
+- **Program:** E1
+- **EVOL Target:** EVOL-00
+- **Status:** Draft
+
+## Short Description & Business Value
+Develop a dedicated docking and servicing complex that enables refuelling, maintenance, and in-orbit construction, creating new revenue streams and strategic value for Earth ONE.
+
+## Acceptance Criteria
+- Defined dock capacity
+- Propellant and xenon depot specification
+- On-orbit servicing standard operating procedures
+- Preliminary revenue stream outline
+
+## Dependencies / Cross-References
+- Operations and Economics chapters
+
+## Owner / Next Step / Target Date
+- **Owner:** TBD
+- **Next Step:** Layout v0.1
+- **Target Date:** TBD
+
+## Score & Risks
+- **Score:** TBD (RICE/WSJF)
+- **Risks:** Capital expenditure; operational complexity
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-27
+lang: EN
+---
+
+# BL-ENG-E2-006 Habitat Expansion Path ("Earth TWO" Pre-Study)
+
+- **Domain:** ENG
+- **Program:** E2
+- **EVOL Target:** EVOL-00
+- **Status:** Draft
+
+## Short Description & Business Value
+Explore scalable habitat concepts that extend Earth ONE into a larger orbital settlement, evaluating options such as a second sphere, polar rings, or dock clusters to inform future "Earth TWO" development.
+
+## Acceptance Criteria
+- Three scaling options analysed (second sphere, polar rings, dock cluster)
+- Mass and power budgets for each option
+- Estimated crew capacity increase for each scenario
+
+## Dependencies / Cross-References
+- Beyond program chapters
+
+## Owner / Next Step / Target Date
+- **Owner:** TBD
+- **Next Step:** Trade Study
+- **Target Date:** TBD
+
+## Score & Risks
+- **Score:** TBD (RICE/WSJF)
+- **Risks:** Technological feasibility; cost scalability
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-27
+lang: EN
+---
+
+# BL-GOV-B-002 Solar-Alliance Governance Charter (Draft)
+
+- **Domain:** GOV
+- **Program:** B
+- **EVOL Target:** EVOL-00
+- **Status:** Draft
+
+## Short Description & Business Value
+Draft a governance charter defining principles, membership, compliance with international frameworks, and dispute resolution mechanisms for the Solar Alliance, strengthening political legitimacy.
+
+## Acceptance Criteria
+- Core principles articulated
+- Membership model outlined
+- Compliance mapped to UN COPUOS
+- Dispute resolution process defined
+- Roadmap to memoranda of understanding
+
+## Dependencies / Cross-References
+- Governance Chapter 4
+
+## Owner / Next Step / Target Date
+- **Owner:** TBD
+- **Next Step:** Outline + Stakeholder Map
+- **Target Date:** TBD
+
+## Score & Risks
+- **Score:** TBD (RICE/WSJF)
+- **Risks:** Diplomatic complexity; legal harmonization challenges
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-27
+lang: EN
+---
+
+# BL-OPS-E1-001 Integrated Build & Logistics Masterplan
+
+- **Domain:** OPS
+- **Program:** E1
+- **EVOL Target:** EVOL-00
+- **Status:** Draft
+
+## Short Description & Business Value
+Develop a comprehensive construction and logistics plan detailing launch cadence, assembly sequences, robotic roles, and risk mitigation. A structured masterplan underpins operational feasibility for Earth ONE.
+
+## Acceptance Criteria
+- Gantt-style roadmap with phases and milestones
+- Launch rate model including required vehicles per year
+- In-orbit assembly sequence and logistics strategy
+- Defined robotic assembly roles
+- Risk burn-down plan
+
+## Dependencies / Cross-References
+- Engineering §Assembly
+- Operations §Launch
+
+## Owner / Next Step / Target Date
+- **Owner:** TBD
+- **Next Step:** Draft Plan v0.1
+- **Target Date:** TBD
+
+## Score & Risks
+- **Score:** TBD (RICE/WSJF)
+- **Risks:** Coordination complexity; technology readiness gaps
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-27
+lang: EN
+---
+
+# BL-SEC-E1-009 Resilience Scenarios: Dual-Failure (Reactor↓ + PV↓)
+
+- **Domain:** SEC
+- **Program:** E1
+- **EVOL Target:** EVOL-00
+- **Status:** Draft
+
+## Short Description & Business Value
+Analyse and prepare for simultaneous reactor and photovoltaic failures to ensure station survivability through robust contingency planning.
+
+## Acceptance Criteria
+- Load-shedding plan defined
+- Emergency heat-sink strategy
+- Mutual-aid protocol with external agencies
+- Training drills specified
+
+## Dependencies / Cross-References
+- Safety and Security chapters
+
+## Owner / Next Step / Target Date
+- **Owner:** TBD
+- **Next Step:** FMEA Update
+- **Target Date:** TBD
+
+## Score & Risks
+- **Score:** TBD (RICE/WSJF)
+- **Risks:** Cascading system failures; limited redundancy
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-27
+lang: EN
+---
+
+# BL-SOC-B-008 VR/AR "Visit Earth ONE" & Citizen-Science
+
+- **Domain:** SOC
+- **Program:** B
+- **EVOL Target:** EVOL-00
+- **Status:** Draft
+
+## Short Description & Business Value
+Develop immersive virtual experiences and citizen-science programmes that allow the public to engage with Earth ONE in real time, strengthening outreach and educational impact.
+
+## Acceptance Criteria
+- Live telemetry feeds integrated
+- Educational school kits prepared
+- Data protection measures defined
+- Engagement evaluation metrics established
+
+## Dependencies / Cross-References
+- Outreach Chapter 5
+
+## Owner / Next Step / Target Date
+- **Owner:** TBD
+- **Next Step:** Prototype Brief
+- **Target Date:** TBD
+
+## Score & Risks
+- **Score:** TBD (RICE/WSJF)
+- **Risks:** Privacy concerns; technical latency
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-27
+lang: EN
+---
+
+# BL-SOC-E1-007 Orbital Park & Culture Module
+
+- **Domain:** SOC
+- **Program:** E1
+- **EVOL Target:** EVOL-00
+- **Status:** Draft
+
+## Short Description & Business Value
+Create a cultural and recreational module featuring greenery and event spaces to enhance crew well-being and public engagement, showcasing Earth ONE as a living habitat.
+
+## Acceptance Criteria
+- Biological load and maintenance plan defined
+- Safety concept for operation in 0.8–1g environments
+- Programme formats specified (concerts, exhibitions, etc.)
+
+## Dependencies / Cross-References
+- Habitability chapter
+
+## Owner / Next Step / Target Date
+- **Owner:** TBD
+- **Next Step:** User Journey + Human-Robot Interaction study
+- **Target Date:** TBD
+
+## Score & Risks
+- **Score:** TBD (RICE/WSJF)
+- **Risks:** Life-support load; operational safety
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-27
+lang: EN
+---
+
+# BL-SUS-E1-003 Earth-ONE Sustainability Playbook (Partial→Full)
+
+- **Domain:** SUS
+- **Program:** E1
+- **EVOL Target:** EVOL-00
+- **Status:** Draft
+
+## Short Description & Business Value
+Translate theoretical self-sustainability models into a practical pathway for Earth ONE, defining recycling targets, module upgrades, and metrics that guide the transition from partial to full sustainability.
+
+## Acceptance Criteria
+- Target recycling rates for water, air, and nutrients
+- Module roadmap (Bio-Regeneration v1→v2)
+- Defined KPIs
+- Metrics and telemetry plan
+
+## Dependencies / Cross-References
+- Chapter 7 Sustainability
+
+## Owner / Next Step / Target Date
+- **Owner:** TBD
+- **Next Step:** KPI Set & Measurement Chain
+- **Target Date:** TBD
+
+## Score & Risks
+- **Score:** TBD (RICE/WSJF)
+- **Risks:** Technology maturation; resource availability
