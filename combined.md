@@ -12,21 +12,6 @@ history:
     date: 2025-08-03
     change: "Bring the Single Source of Truth Documents into GitBook Format"
     reference: https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond/documents/7.3.2-bring-the-single-source-of-truth-documents-into-gitbook-format
-id: ""
-state: DRAFT
-evolution: ""
-discipline: ""
-system: []
-system_id: []
-seq: []
-reviewers: []
-source_of_truth: false
-supersedes: null
-superseded_by: null
-rfc_links: []
-adr_links: []
-cr_links: []
-lang: EN
 ---
 
 # The Sphere Space Station Earth ONE and Beyond Project 
@@ -6355,7 +6340,7 @@ superseded_by: []
 rfc_links: []
 adr_links: []
 cr_links: []
-date: 2025-08-16
+date: 2025-08-25
 lang: en-de
 ---
 
@@ -6370,17 +6355,17 @@ lang: en-de
 
 ## 1. Abstract / Zusammenfassung (EN/DE)
 
-**EN:** DECK 001 is the first pressurized distribution ring outside the axial DECK000 (“Wormhole”) and acts as the main reception level for incoming crew and cargo. It integrates radial pressure/fire bulkheads, radial transport (heavy-lift & passenger elevators, service tunnels), tangential and polar corridors, and reception/transfer airlocks linking the docking rings in DECK000 to DECK001 and onward to the outer decks. Geometrically it spans **rᵢ = 10.5 m** to **rₒ,net = 13.5 m** with **deck height = 3.0 m**; nominal centrifugal acceleration at the net radius is **3.38 m/s² (~0.34 g)**.
+**EN:** DECK 001 is the first pressurized distribution ring outside the axial DECK000 (“Wormhole”) and acts as the main reception level for incoming crew and cargo. It integrates radial pressure/fire bulkheads, radial transport (heavy-lift & passenger elevators, service tunnels), tangential and polar corridors, and reception/transfer airlocks linking the docking rings in DECK000 to DECK001 and onward to the outer decks. Geometrically it spans **rᵢ = 10.5 m** to **rₒ = 14.0 m** (gross) with **net rₒ = 13.5 m** and **deck height = 3.0 m** (gross 3.5 m); nominal centrifugal acceleration at the net radius is **3.49 m/s² (~0.36 g)**.
 
-**DE:** DECK 001 ist der **erste druckbeaufschlagte Verteilring** außerhalb des axialen DECK 000 („Wormhole“) und bildet die **Haupt-Empfangsebene** für ankommende Personen und Fracht. Er integriert **radiale Druck-/Brandschotts**, **Radialtransport** (Heavy-Lift- & Personenaufzüge, Servicetunnel), **tangentiale und polwärts gerichtete Bahnen & Wege** sowie **Empfangs- und Transfer-Airlocks** von den Docking-Ringen in DECK 000 zu DECK 001 und weiter zu den Außen-Decks. Geometrisch liegt DECK 001 zwischen **rᵢ = 10.5 m** und **rₒ,net = 13.5 m** bei **Deckhöhe = 3.0 m**; die nominelle Zentrifugalbeschleunigung am Nettradius beträgt **3.38 m/s² (\~0.34 g)**.
+**DE:** DECK 001 ist der **erste druckbeaufschlagte Verteilring** außerhalb des axialen DECK 000 („Wormhole“) und bildet die **Haupt-Empfangsebene** für ankommende Personen und Fracht. Er integriert **radiale Druck-/Brandschotts**, **Radialtransport** (Heavy-Lift- & Personenaufzüge, Servicetunnel), **tangentiale und polwärts gerichtete Bahnen & Wege** sowie **Empfangs- und Transfer-Airlocks** von den Docking-Ringen in DECK 000 zu DECK 001 und weiter zu den Außen-Decks. Geometrisch liegt DECK 001 zwischen **rᵢ = 10.5 m** und **rₒ = 14.0 m** (brutto) mit **netto rₒ = 13.5 m** bei **Deckhöhe = 3.0 m** (brutto 3.5 m); die nominelle Zentrifugalbeschleunigung am Nettradius beträgt **3.49 m/s² (~0.36 g)**.
 
 ---
 
 ## 2. Baseline Geometry & Environment (EVOL-00)
 
-* **Radial band:** inner radius **10.5 m**, net outer radius **13.5 m**, height **3.0 m**.  
-  **Tangential length:** ~**124.24 m** (inner) to **123.07 m** (outer).
-* **Gravity:** ~**3.38 m/s²** at net radius (EVOL-00 spin law).
+* **Radial band:** inner radius **10.5 m**, outer radius **14.0 m**, net outer radius **13.5 m**, net deck height **3.0 m** (gross 3.5 m).
+  **Circumference:** ~**66.0 m** (inner) to ~**84.8 m** (outer net).
+* **Gravity:** ~**3.49 m/s²** at net radius (EVOL-00 spin law).
 * **Deck role:** Mid-gravity deck for **residential/operational** uses; serves as **primary reception & distribution hub** from the axial wormhole to outer decks.
 
 ---
@@ -6406,7 +6391,7 @@ lang: en-de
 
 ### A) Radiale Druck- & Brandschotts (Compartmentation)
 
-* **Sektorierung:** 12 keilförmige Sektoren (alle 30°) durch **radiale Schotts** von **r = 10.5 m → 13.5 m**; bildet eigenständige **Druck- & Brandschutz-Kompartimente**.
+* **Sektorierung:** 12 keilförmige Sektoren (alle 30°) durch **radiale Schotts** von **r = 10.5 m → 14.0 m (net 13.5 m)**; bildet eigenständige **Druck- & Brandschutz-Kompartimente**.
 * **Ausführung:** Mehrlagen-Composit-Schottplatten (SiC-Verbund) mit metallischen Rahmen; integrierte **Drucktüren (A0/A60-äquivalent, Raumfahrtstandard)** auf jedem Sektor-Tangentenweg.
 * **Funktion:** **Schnellisolierung** bei Dekompression/Feuer; **automatisches Schließen** via Brand-/Drucksensorik, freigabepflichtige Notentriegelung.
 * **Brandunterdrückung:** **Inertgas (Argon/N$_2$)** sektoral; Trigger bei Flammen-/Rauchdetektion und Temperaturanstieg.
@@ -6507,6 +6492,930 @@ lang: en-de
 * **Access systems (elevators, tangential walkways):** baseline requirements.
 * **Wormhole interface & ring compartmentalization:** docking rings, isolation at ring boundaries.
 * **Safety & materials:** inert-gas protocols, hull thickness, materials & window spec.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck002-0001
+title: DECK002 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK002"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK002-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK002 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 002 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 14.0 m to rₒ = 17.5 m (gross) with 0.5 m structural thickness (net rₒ = 17.0 m).
+
+**DE:** DECK 002 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 14.0 m bis rₒ = 17.5 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 17.0 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **14.0 m**, outer radius **17.5 m**, net outer radius **17.0 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**88.0 m** (inner) to ~**106.8 m** (outer net).
+* **Gravity:** ~**4.39 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck003-0001
+title: DECK003 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK003"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK003-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK003 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 003 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 17.5 m to rₒ = 21.0 m (gross) with 0.5 m structural thickness (net rₒ = 20.5 m).
+
+**DE:** DECK 003 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 17.5 m bis rₒ = 21.0 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 20.5 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **17.5 m**, outer radius **21.0 m**, net outer radius **20.5 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**110.0 m** (inner) to ~**128.8 m** (outer net).
+* **Gravity:** ~**5.29 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck004-0001
+title: DECK004 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK004"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK004-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK004 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 004 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 21.0 m to rₒ = 24.5 m (gross) with 0.5 m structural thickness (net rₒ = 24.0 m).
+
+**DE:** DECK 004 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 21.0 m bis rₒ = 24.5 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 24.0 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **21.0 m**, outer radius **24.5 m**, net outer radius **24.0 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**131.9 m** (inner) to ~**150.8 m** (outer net).
+* **Gravity:** ~**6.20 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck005-0001
+title: DECK005 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK005"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK005-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK005 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 005 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 24.5 m to rₒ = 28.0 m (gross) with 0.5 m structural thickness (net rₒ = 27.5 m).
+
+**DE:** DECK 005 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 24.5 m bis rₒ = 28.0 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 27.5 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **24.5 m**, outer radius **28.0 m**, net outer radius **27.5 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**153.9 m** (inner) to ~**172.8 m** (outer net).
+* **Gravity:** ~**7.10 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck006-0001
+title: DECK006 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK006"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK006-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK006 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 006 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 28.0 m to rₒ = 31.5 m (gross) with 0.5 m structural thickness (net rₒ = 31.0 m).
+
+**DE:** DECK 006 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 28.0 m bis rₒ = 31.5 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 31.0 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **28.0 m**, outer radius **31.5 m**, net outer radius **31.0 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**175.9 m** (inner) to ~**194.8 m** (outer net).
+* **Gravity:** ~**8.00 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck007-0001
+title: DECK007 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK007"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK007-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK007 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 007 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 31.5 m to rₒ = 35.0 m (gross) with 0.5 m structural thickness (net rₒ = 34.5 m).
+
+**DE:** DECK 007 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 31.5 m bis rₒ = 35.0 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 34.5 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **31.5 m**, outer radius **35.0 m**, net outer radius **34.5 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**197.9 m** (inner) to ~**216.8 m** (outer net).
+* **Gravity:** ~**8.91 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck008-0001
+title: DECK008 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK008"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK008-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK008 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 008 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 35.0 m to rₒ = 38.5 m (gross) with 0.5 m structural thickness (net rₒ = 38.0 m).
+
+**DE:** DECK 008 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 35.0 m bis rₒ = 38.5 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 38.0 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **35.0 m**, outer radius **38.5 m**, net outer radius **38.0 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**219.9 m** (inner) to ~**238.8 m** (outer net).
+* **Gravity:** ~**9.81 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck009-0001
+title: DECK009 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK009"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK009-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK009 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 009 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 38.5 m to rₒ = 42.0 m (gross) with 0.5 m structural thickness (net rₒ = 41.5 m).
+
+**DE:** DECK 009 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 38.5 m bis rₒ = 42.0 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 41.5 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **38.5 m**, outer radius **42.0 m**, net outer radius **41.5 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**241.9 m** (inner) to ~**260.8 m** (outer net).
+* **Gravity:** ~**10.71 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck010-0001
+title: DECK010 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK010"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK010-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK010 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 010 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 42.0 m to rₒ = 45.5 m (gross) with 0.5 m structural thickness (net rₒ = 45.0 m).
+
+**DE:** DECK 010 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 42.0 m bis rₒ = 45.5 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 45.0 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **42.0 m**, outer radius **45.5 m**, net outer radius **45.0 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**263.9 m** (inner) to ~**282.7 m** (outer net).
+* **Gravity:** ~**11.62 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck011-0001
+title: DECK011 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK011"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK011-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK011 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 011 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 45.5 m to rₒ = 49.0 m (gross) with 0.5 m structural thickness (net rₒ = 48.5 m).
+
+**DE:** DECK 011 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 45.5 m bis rₒ = 49.0 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 48.5 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **45.5 m**, outer radius **49.0 m**, net outer radius **48.5 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**285.9 m** (inner) to ~**304.7 m** (outer net).
+* **Gravity:** ~**12.52 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck012-0001
+title: DECK012 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK012"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK012-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK012 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 012 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 49.0 m to rₒ = 52.5 m (gross) with 0.5 m structural thickness (net rₒ = 52.0 m).
+
+**DE:** DECK 012 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 49.0 m bis rₒ = 52.5 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 52.0 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **49.0 m**, outer radius **52.5 m**, net outer radius **52.0 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**307.9 m** (inner) to ~**326.7 m** (outer net).
+* **Gravity:** ~**13.42 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck013-0001
+title: DECK013 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK013"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK013-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK013 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 013 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 52.5 m to rₒ = 56.0 m (gross) with 0.5 m structural thickness (net rₒ = 55.5 m).
+
+**DE:** DECK 013 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 52.5 m bis rₒ = 56.0 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 55.5 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **52.5 m**, outer radius **56.0 m**, net outer radius **55.5 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**329.9 m** (inner) to ~**348.7 m** (outer net).
+* **Gravity:** ~**14.33 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck014-0001
+title: DECK014 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK014"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK014-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK014 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 014 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 56.0 m to rₒ = 59.5 m (gross) with 0.5 m structural thickness (net rₒ = 59.0 m).
+
+**DE:** DECK 014 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 56.0 m bis rₒ = 59.5 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 59.0 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **56.0 m**, outer radius **59.5 m**, net outer radius **59.0 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**351.9 m** (inner) to ~**370.7 m** (outer net).
+* **Gravity:** ~**15.23 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
+
+---
+
+
+\newpage
+
+---
+id: spec-00-str-decks-deck015-0001
+title: DECK015 baseline ring
+version: 0.1.0
+state: draft
+evolution: EVOL-00
+discipline: STR
+system: DECKS
+system_id: "DECK015"
+seq: "0001"
+owner: "structure-architecture"
+reviewers:
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-25
+lang: en-de
+---
+
+# SPEC-00-STR-DECKS-DECK015-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+
+**The Engineering of DECK015 – Baseline Ring**
+
+**Document status:** Draft (EVOL-00 baseline)
+**Date:** 2025-08-25
+**Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## 1. Abstract / Zusammenfassung (EN/DE)
+
+**EN:** DECK 015 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 59.5 m to rₒ = 63.0 m (gross) with 0.5 m structural thickness (net rₒ = 62.5 m).
+
+**DE:** DECK 015 ist ein Baseline-Ring für zukünftige Systeme. Er erstreckt sich von rᵢ = 59.5 m bis rₒ = 63.0 m (brutto) mit 0,5 m Strukturstärke (netto rₒ = 62.5 m).
+
+---
+
+## 2. Baseline Geometry & Environment (EVOL-00)
+
+* **Radial band:** inner radius **59.5 m**, outer radius **63.0 m**, net outer radius **62.5 m**, net deck height **3.0 m** (gross 3.5 m).
+* **Circumference:** ~**373.8 m** (inner) to ~**392.7 m** (outer net).
+* **Gravity:** ~**16.13 m/s²** at net outer radius (EVOL-00 spin law).
+* **Deck role:** TBD.
+
+---
+
+## 3. Open Parameters (TBD/TBC)
+
+* Detailed functional layout & interfaces.
+
+---
+
+## 4. Drawing & Data References
+
+* DECK geometry baseline table.
 
 ---
 
