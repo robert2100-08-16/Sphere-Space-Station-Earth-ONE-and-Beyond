@@ -5689,6 +5689,29 @@ cr_links: []
 
 > **Freeze-Umfang v1.0:** Geometrie, Spin-Parameter, Dock-Topologie (EVOL-00), LSS-Baseline, Safety-Schichten, HAZ-Index-Verlinkung.
 
+## DECK-Geometrien (EVOL-00)
+
+| Deck | Radius innen (m) | Radius außen (m) |
+| ---: | ----------------: | ----------------: |
+| 000  | 0.00              | 10.50             |
+| 001  | 10.50             | 14.00             |
+| 002  | 14.00             | 17.50             |
+| 003  | 17.50             | 21.00             |
+| 004  | 21.00             | 24.50             |
+| 005  | 24.50             | 28.00             |
+| 006  | 28.00             | 31.50             |
+| 007  | 31.50             | 35.00             |
+| 008  | 35.00             | 38.50             |
+| 009  | 38.50             | 42.00             |
+| 010  | 42.00             | 45.50             |
+| 011  | 45.50             | 49.00             |
+| 012  | 49.00             | 52.50             |
+| 013  | 52.50             | 56.00             |
+| 014  | 56.00             | 59.50             |
+| 015  | 59.50             | 63.00             |
+
+> Basierend auf SPEC-00-STR-GEOM-GRAV-0001.
+
 
 \newpage
 
