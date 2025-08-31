@@ -12,21 +12,6 @@ history:
     date: 2025-08-03
     change: "Bring the Single Source of Truth Documents into GitBook Format"
     reference: https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond/documents/7.3.2-bring-the-single-source-of-truth-documents-into-gitbook-format
-id: ""
-state: DRAFT
-evolution: ""
-discipline: ""
-system: []
-system_id: []
-seq: []
-reviewers: []
-source_of_truth: false
-supersedes: null
-superseded_by: null
-rfc_links: []
-adr_links: []
-cr_links: []
-lang: EN
 ---
 
 # The Sphere Space Station Earth ONE and Beyond Project 
@@ -3655,7 +3640,7 @@ Examples for **Domains**: AX (axial/Wormhole), DOCK, HULL, PWR, THM, GAS, FIRE, 
 
 #### 3) Governance & Versioning
 
-* **Owner:** CSO Mira Terra (Catalogue), Engineer Elias Core (Schotts/VENT), Engineer SGI Lina (AX/Wormhole).
+* **Owner:** safety-life-support (Catalogue), safety-reactor (Schotts/VENT), structure-architecture (AX/Wormhole).
 * **Change process:** Hazard Review Board (HRB) monthly; changes tracked in SSOT.
 * **SemVer:**
     - **MAJOR** — new Evolution covered (e.g., EVOL‑02) ⇒ v2.0.0; 
@@ -4478,8 +4463,8 @@ discipline: STR
 system: [DECK]
 system_id: [DECK000]
 seq: [1111]
-owner: "@sgi-lina"
-reviewers: ["@saf-core", "@ops-lio"]
+owner: "structure-architecture"
+reviewers: ["safety-core", "operations"]
 source_of_truth: true
 supersedes: null
 superseded_by: null
@@ -4801,7 +4786,7 @@ DRAFT, REVIEW, APPROVED, OBSOLETE.
 | **discipline**                          | DISC‑Code (z. B. STR)                                | DISC code (e.g., STR)                               |
 | **system / system\_id**                 | System(e) / Instanz(en)                              | System(s) / instance(s)                             |
 | **seq**                                 | Sequenz (Array, vierstellig)                         | Sequence (array, four digits)                       |
-| **owner**                               | Owner/Handle (z. B. @sgi‑lina)                       | Owner/handle (e.g., @sgi‑lina)                      |
+| **owner**                               | Owner/Handle (z. B. structure-architecture)          | Owner/handle (e.g., structure-architecture)         |
 | **reviewers**                           | Reviewer‑Handles                                     | Reviewer handles                                    |
 | **source\_of\_truth**                   | true = SSOT‑Dokument                                 | true = SSOT document                                |
 | **supersedes / superseded\_by**         | Ersetzt / wird ersetzt von                           | Supersedes / superseded by                          |
@@ -5638,7 +5623,7 @@ state: BASELINED
 evolution: EVOL-00
 discipline: SYSTEM
 owner: "CTO Office (J. Frame) · Chief Engineer (Theo)"
-reviewers: ["SGI Lina","Mara Flux","Elias Core"]
+reviewers: ["structure-architecture","power-thermal","safety-reactor"]
 date: 2025-08-25
 lang: DE
 system: []
@@ -5709,10 +5694,10 @@ discipline: STR
 system: DECKS
 system_id: "013"
 seq: "0001"
-owner: "@sgi-lina"
+owner: "structure-architecture"
 reviewers:
-  - "@eng-elias"
-  - "@eng-leo"
+  - "safety-reactor"
+  - "operations-test"
 source_of_truth: true
 supersedes: []
 superseded_by: []
@@ -5865,10 +5850,10 @@ discipline: STR
 system: DECKS
 system_id: "014"
 seq: "0001"
-owner: "@sgi-lina"
+owner: "structure-architecture"
 reviewers:
-  - "@eng-elias"
-  - "@eng-leo"
+  - "safety-reactor"
+  - "operations-test"
 source_of_truth: true
 supersedes: []
 superseded_by: []
@@ -6022,10 +6007,10 @@ discipline: STR
 system: DECKS
 system_id: "015"
 seq: "0001"
-owner: "@sgi-lina"
+owner: "structure-architecture"
 reviewers:
-  - "@eng-elias"
-  - "@eng-leo"
+  - "safety-reactor"
+  - "operations-test"
 source_of_truth: true
 supersedes: []
 superseded_by: []
@@ -6173,10 +6158,10 @@ discipline: STR
 system: DECKS
 system_id: "DECK000"
 seq: "0001"
-owner: "@sgi-lina"
+owner: "structure-architecture"
 reviewers:
-  - "@eng-elias"
-  - "@eng-leo"
+  - "safety-reactor"
+  - "operations-test"
 source_of_truth: true
 supersedes: []
 superseded_by: []
@@ -6322,10 +6307,10 @@ discipline: STR
 system: DECKS
 system_id: "DECK001"
 seq: "0001"
-owner: "@sgi-lina"
+owner: "structure-architecture"
 reviewers:
-  - "@eng-elias"
-  - "@eng-leo"
+  - "safety-reactor"
+  - "operations-test"
 source_of_truth: true
 supersedes: []
 superseded_by: []
@@ -6500,10 +6485,10 @@ discipline: STR
 system: GEOM-GRAV
 system_id: "0001"
 seq: "0001"
-owner: "@sgi-lina"
+owner: "structure-architecture"
 reviewers:
-  - "@eng-elias"
-  - "@eng-leo"
+  - "safety-reactor"
+  - "operations-test"
 source_of_truth: true
 supersedes: []
 superseded_by: []
@@ -6721,10 +6706,10 @@ discipline: STR
 system: SYS-AXIAL-RADIAL-TRADE
 system_id: "0001"
 seq: "0001"
-owner: "@sgi-lina"
+owner: "structure-architecture"
 reviewers:
-  - "@eng-elias"
-  - "@eng-leo"
+  - "safety-reactor"
+  - "operations-test"
 source_of_truth: true
 supersedes: []
 superseded_by: []
@@ -6899,8 +6884,8 @@ lang: en-de
 
 ### Decision Log (Sign-off)
 
-* **Owner:** Engineer SGI Lina
-* **Contributors:** Engineer Elias Core, Engineer Mara Flux
+* **Owner:** structure-architecture
+* **Contributors:** safety-reactor, power-thermal
 * **Decision:** *Variante C (kombiniert), EVOL-00 mit 3 LAT (S40/EQ/N40); Ausbau EVOL-01 auf 7 LAT.*
 * **Date:** 2025-08-16
 
