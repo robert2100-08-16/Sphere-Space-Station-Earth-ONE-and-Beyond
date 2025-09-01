@@ -12,21 +12,6 @@ history:
     date: 2025-08-03
     change: "Bring the Single Source of Truth Documents into GitBook Format"
     reference: https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond/documents/7.3.2-bring-the-single-source-of-truth-documents-into-gitbook-format
-id: ""
-state: DRAFT
-evolution: ""
-discipline: ""
-system: []
-system_id: []
-seq: []
-reviewers: []
-source_of_truth: false
-supersedes: null
-superseded_by: null
-rfc_links: []
-adr_links: []
-cr_links: []
-lang: EN
 ---
 
 # The Sphere Space Station Earth ONE and Beyond Project 
@@ -36,6 +21,28 @@ This directory and gitbook houses the project documentation and serves as the si
 When critical design changes are made, the related documents must be versioned and updated, or new documents must be created and stored here. The `change-management` subfolder records change requests and approvals affecting these documents.
 
 \newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-09-01
+lang: EN
+---
 
 > Quelle: evol00-decks-000-015-r-korr63-roehrenmodell-exakt-sli.csv
 
@@ -57,6 +64,7 @@ When critical design changes are made, the related documents must be versioned a
 |     13 |        52.5 |        56   |          52.5 |          55.5 |          3 |                    69.65 |                    59.62 |              329.87 |              348.72 |                                           65924 |                               38784.7 |                                   33248.7 |                           4.111 |                              3.978 | F                                  |                                  32993.6 |                             0.075 |                           3.265 |                              3.159 | F                                  |                                  63209.1 |                             0.143 |                           2.707 |                              2.62  | F                                  |                                  97947.7 |                             0.222 |                           2.312 |                              2.238 | F                                  |                                   135969 |                             0.308 |                           2.018 |                              1.953 | F                                  |                                   176193 |                             0.399 |                           1.79  |                              1.732 | F                                  |                                   217017 |                             0.492 |                           1.609 |                              1.557 | F                                  |                                   256284 |                             0.581 |                           1.461 |                              1.413 | E                                  |                                   286740 |                              0.65 |                           1.337 |                              1.294 | D                                  |                                   306995 |                             0.696 |                           1.233 |                              1.193 | C                                  |                                   319032 |                             0.723 |                           1.144 |                              1.107 | B                                  |                                   324479 |                             0.735 |                           1.067 |                              1.033 | B                                  |                                   324592 |                             0.736 |                           1     |                              0.968 | A                                  |                                   320382 |                             0.726 |                           0.941 |                              0.91  | A                                  |                                   312709 |                             0.709 |                           0.881 |                              0.852 | A                                  |                                   300554 |                             0.681 |
 |     14 |        56   |        59.5 |          56   |          59   |          3 |                    57.72 |                    44.18 |              351.86 |              370.71 |                                           55550 |                               31949.5 |                                   27243.7 |                           4.37  |                              4.237 | F                                  |                                  32993.6 |                             0.075 |                           3.471 |                              3.365 | F                                  |                                  63209.1 |                             0.143 |                           2.878 |                              2.79  | F                                  |                                  97947.7 |                             0.222 |                           2.458 |                              2.383 | F                                  |                                   135969 |                             0.308 |                           2.145 |                              2.08  | F                                  |                                   176193 |                             0.399 |                           1.903 |                              1.845 | F                                  |                                   217017 |                             0.492 |                           1.71  |                              1.658 | F                                  |                                   256284 |                             0.581 |                           1.553 |                              1.505 | E                                  |                                   286740 |                              0.65 |                           1.422 |                              1.378 | D                                  |                                   306995 |                             0.696 |                           1.311 |                              1.271 | D                                  |                                   319032 |                             0.723 |                           1.216 |                              1.179 | C                                  |                                   324479 |                             0.735 |                           1.135 |                              1.1   | B                                  |                                   324592 |                             0.736 |                           1.063 |                              1.031 | B                                  |                                   320382 |                             0.726 |                           1     |                              0.969 | A                                  |                                   312709 |                             0.709 |                           0.937 |                              0.908 | A                                  |                                   300554 |                             0.681 |
 |     15 |        59.5 |        63   |          59.5 |          63   |          3 |                    41.41 |                     0    |              373.85 |              395.84 |                                           37187 |                               14001.7 |                                   11222.2 |                           4.667 |                              4.533 | F                                  |                                  32993.6 |                             0.075 |                           3.706 |                              3.6   | F                                  |                                  63209.1 |                             0.143 |                           3.073 |                              2.985 | F                                  |                                  97947.7 |                             0.222 |                           2.625 |                              2.55  | F                                  |                                   135969 |                             0.308 |                           2.291 |                              2.225 | F                                  |                                   176193 |                             0.399 |                           2.032 |                              1.974 | F                                  |                                   217017 |                             0.492 |                           1.826 |                              1.774 | F                                  |                                   256284 |                             0.581 |                           1.658 |                              1.611 | F                                  |                                   286740 |                              0.65 |                           1.518 |                              1.475 | E                                  |                                   306995 |                             0.696 |                           1.4   |                              1.36  | D                                  |                                   319032 |                             0.723 |                           1.299 |                              1.262 | C                                  |                                   324479 |                             0.735 |                           1.212 |                              1.177 | C                                  |                                   324592 |                             0.736 |                           1.135 |                              1.103 | B                                  |                                   320382 |                             0.726 |                           1.068 |                              1.037 | B                                  |                                   312709 |                             0.709 |                           1     |                              0.971 | A                                  |                                   300554 |                             0.681 |
+
 
 \newpage
 
