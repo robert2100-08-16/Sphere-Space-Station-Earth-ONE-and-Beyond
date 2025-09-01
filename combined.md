@@ -12,21 +12,6 @@ history:
     date: 2025-08-03
     change: "Bring the Single Source of Truth Documents into GitBook Format"
     reference: https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond/documents/7.3.2-bring-the-single-source-of-truth-documents-into-gitbook-format
-id: ""
-state: DRAFT
-evolution: ""
-discipline: ""
-system: []
-system_id: []
-seq: []
-reviewers: []
-source_of_truth: false
-supersedes: null
-superseded_by: null
-rfc_links: []
-adr_links: []
-cr_links: []
-lang: EN
 ---
 
 # The Sphere Space Station Earth ONE and Beyond Project 
@@ -9505,11 +9490,11 @@ Earth ONE transforms spaceflight from **mission** to **habitat**: a scalable, sa
 
 \newpage
 
-# 8.4.7 Appendix G: Backlog Potential Developments
+### 8.4.7 Appendix B: Backlog Potential Developments
 
 This appendix consolidates potential developments across Governance, Outreach, Engineering, Science, Economics, and Operations. It serves as a living, prioritized repository that evolves independently of the main chapters, offering a stable and referenceable source for future work. Pointer subsections in the respective chapters link to the most relevant backlog items, keeping the primary narrative streamlined while enabling deeper exploration.
 
-## Structure
+#### Structure
 
 1. **Scope & Maintenance** – outlines curation responsibilities, update cadence, and the definition of a "ready" item.
 2. **Tagging & IDs**
@@ -9521,7 +9506,7 @@ This appendix consolidates potential developments across Governance, Outreach, E
 4. **Backlog List** – items are ordered by priority and follow the mini-template below.
 5. **Change Log** – records when items are added or updated.
 
-### Backlog Entry Mini-Template
+##### Backlog Entry Mini-Template
 
 - **ID / Title**
 - **Domain / Program / EVOL Target**
@@ -9531,7 +9516,7 @@ This appendix consolidates potential developments across Governance, Outreach, E
 - **Owner / Next Step / Target Date Bucket**
 - **Score & Risks**
 
-## Backlog Items
+#### Backlog Items
 
 | ID | Title |
 | --- | --- |
@@ -9546,7 +9531,7 @@ This appendix consolidates potential developments across Governance, Outreach, E
 | [BL-SEC-E1-009](BL-SEC-E1-009.md) | Resilience Scenarios: Dual-Failure (Reactor↓ + PV↓) |
 | [BL-ECON-B-010](BL-ECON-B-010.md) | Revenue Expansion & Financing Stages |
 
-## Change Log
+#### Change Log
 
 - Initial backlog created.
 
@@ -9575,31 +9560,31 @@ date: 2025-08-27
 lang: EN
 ---
 
-# BL-ECON-B-010 Revenue Expansion & Financing Stages
+#### BL-ECON-B-010 Revenue Expansion & Financing Stages
 
 - **Domain:** ECON
 - **Program:** B
 - **EVOL Target:** EVOL-00
 - **Status:** Draft
 
-## Short Description & Business Value
+##### Short Description & Business Value
 Identify additional revenue streams and map financing stages to bolster economic viability for the broader programme.
 
-## Acceptance Criteria
+##### Acceptance Criteria
 - Media rights package outlined
 - Technology licensing opportunities identified
 - Phase-wise investment plan drafted
 - Sensitivity analysis prepared
 
-## Dependencies / Cross-References
+##### Dependencies / Cross-References
 - Economics chapter
 
-## Owner / Next Step / Target Date
+##### Owner / Next Step / Target Date
 - **Owner:** TBD
 - **Next Step:** Model v0.1
 - **Target Date:** TBD
 
-## Score & Risks
+##### Score & Risks
 - **Score:** TBD (RICE/WSJF)
 - **Risks:** Market volatility; investor alignment
 
@@ -9628,31 +9613,31 @@ date: 2025-08-27
 lang: EN
 ---
 
-# BL-ENG-E1-004 Observatory / Detected-Outrigger Telescope
+#### BL-ENG-E1-004 Observatory / Detected-Outrigger Telescope
 
 - **Domain:** ENG
 - **Program:** E1
 - **EVOL Target:** EVOL-00
 - **Status:** Draft
 
-## Short Description & Business Value
+##### Short Description & Business Value
 Design a telescope module on a de-rotated outrigger to extend Earth ONE's scientific reach without disturbing station rotation, enabling advanced astronomy and observation missions.
 
-## Acceptance Criteria
+##### Acceptance Criteria
 - Demonstrated isolation from station rotation
 - Established jitter budget
 - Thermal and radiation shielding strategy
 - Defined data downlink pipeline
 
-## Dependencies / Cross-References
+##### Dependencies / Cross-References
 - Science chapter (details TBD)
 
-## Owner / Next Step / Target Date
+##### Owner / Next Step / Target Date
 - **Owner:** TBD
 - **Next Step:** Feasibility Note
 - **Target Date:** TBD
 
-## Score & Risks
+##### Score & Risks
 - **Score:** TBD (RICE/WSJF)
 - **Risks:** Structural integration; vibration control
 
@@ -9681,31 +9666,31 @@ date: 2025-08-27
 lang: EN
 ---
 
-# BL-ENG-E1-005 Spaceport & Orbital Shipyard Module
+#### BL-ENG-E1-005 Spaceport & Orbital Shipyard Module
 
 - **Domain:** ENG
 - **Program:** E1
 - **EVOL Target:** EVOL-00
 - **Status:** Draft
 
-## Short Description & Business Value
+##### Short Description & Business Value
 Develop a dedicated docking and servicing complex that enables refuelling, maintenance, and in-orbit construction, creating new revenue streams and strategic value for Earth ONE.
 
-## Acceptance Criteria
+##### Acceptance Criteria
 - Defined dock capacity
 - Propellant and xenon depot specification
 - On-orbit servicing standard operating procedures
 - Preliminary revenue stream outline
 
-## Dependencies / Cross-References
+##### Dependencies / Cross-References
 - Operations and Economics chapters
 
-## Owner / Next Step / Target Date
+##### Owner / Next Step / Target Date
 - **Owner:** TBD
 - **Next Step:** Layout v0.1
 - **Target Date:** TBD
 
-## Score & Risks
+##### Score & Risks
 - **Score:** TBD (RICE/WSJF)
 - **Risks:** Capital expenditure; operational complexity
 
@@ -9734,30 +9719,30 @@ date: 2025-08-27
 lang: EN
 ---
 
-# BL-ENG-E2-006 Habitat Expansion Path ("Earth TWO" Pre-Study)
+#### BL-ENG-E2-006 Habitat Expansion Path ("Earth TWO" Pre-Study)
 
 - **Domain:** ENG
 - **Program:** E2
 - **EVOL Target:** EVOL-00
 - **Status:** Draft
 
-## Short Description & Business Value
+##### Short Description & Business Value
 Explore scalable habitat concepts that extend Earth ONE into a larger orbital settlement, evaluating options such as a second sphere, polar rings, or dock clusters to inform future "Earth TWO" development.
 
-## Acceptance Criteria
+##### Acceptance Criteria
 - Three scaling options analysed (second sphere, polar rings, dock cluster)
 - Mass and power budgets for each option
 - Estimated crew capacity increase for each scenario
 
-## Dependencies / Cross-References
+##### Dependencies / Cross-References
 - Beyond program chapters
 
-## Owner / Next Step / Target Date
+##### Owner / Next Step / Target Date
 - **Owner:** TBD
 - **Next Step:** Trade Study
 - **Target Date:** TBD
 
-## Score & Risks
+##### Score & Risks
 - **Score:** TBD (RICE/WSJF)
 - **Risks:** Technological feasibility; cost scalability
 
@@ -9786,32 +9771,32 @@ date: 2025-08-27
 lang: EN
 ---
 
-# BL-GOV-B-002 Solar-Alliance Governance Charter (Draft)
+#### BL-GOV-B-002 Solar-Alliance Governance Charter (Draft)
 
 - **Domain:** GOV
 - **Program:** B
 - **EVOL Target:** EVOL-00
 - **Status:** Draft
 
-## Short Description & Business Value
+##### Short Description & Business Value
 Draft a governance charter defining principles, membership, compliance with international frameworks, and dispute resolution mechanisms for the Solar Alliance, strengthening political legitimacy.
 
-## Acceptance Criteria
+##### Acceptance Criteria
 - Core principles articulated
 - Membership model outlined
 - Compliance mapped to UN COPUOS
 - Dispute resolution process defined
 - Roadmap to memoranda of understanding
 
-## Dependencies / Cross-References
+##### Dependencies / Cross-References
 - Governance Chapter 4
 
-## Owner / Next Step / Target Date
+##### Owner / Next Step / Target Date
 - **Owner:** TBD
 - **Next Step:** Outline + Stakeholder Map
 - **Target Date:** TBD
 
-## Score & Risks
+##### Score & Risks
 - **Score:** TBD (RICE/WSJF)
 - **Risks:** Diplomatic complexity; legal harmonization challenges
 
@@ -9840,33 +9825,33 @@ date: 2025-08-27
 lang: EN
 ---
 
-# BL-OPS-E1-001 Integrated Build & Logistics Masterplan
+#### BL-OPS-E1-001 Integrated Build & Logistics Masterplan
 
 - **Domain:** OPS
 - **Program:** E1
 - **EVOL Target:** EVOL-00
 - **Status:** Draft
 
-## Short Description & Business Value
+##### Short Description & Business Value
 Develop a comprehensive construction and logistics plan detailing launch cadence, assembly sequences, robotic roles, and risk mitigation. A structured masterplan underpins operational feasibility for Earth ONE.
 
-## Acceptance Criteria
+##### Acceptance Criteria
 - Gantt-style roadmap with phases and milestones
 - Launch rate model including required vehicles per year
 - In-orbit assembly sequence and logistics strategy
 - Defined robotic assembly roles
 - Risk burn-down plan
 
-## Dependencies / Cross-References
+##### Dependencies / Cross-References
 - Engineering §Assembly
 - Operations §Launch
 
-## Owner / Next Step / Target Date
+##### Owner / Next Step / Target Date
 - **Owner:** TBD
 - **Next Step:** Draft Plan v0.1
 - **Target Date:** TBD
 
-## Score & Risks
+##### Score & Risks
 - **Score:** TBD (RICE/WSJF)
 - **Risks:** Coordination complexity; technology readiness gaps
 
@@ -9895,31 +9880,31 @@ date: 2025-08-27
 lang: EN
 ---
 
-# BL-SEC-E1-009 Resilience Scenarios: Dual-Failure (Reactor↓ + PV↓)
+#### BL-SEC-E1-009 Resilience Scenarios: Dual-Failure (Reactor↓ + PV↓)
 
 - **Domain:** SEC
 - **Program:** E1
 - **EVOL Target:** EVOL-00
 - **Status:** Draft
 
-## Short Description & Business Value
+##### Short Description & Business Value
 Analyse and prepare for simultaneous reactor and photovoltaic failures to ensure station survivability through robust contingency planning.
 
-## Acceptance Criteria
+##### Acceptance Criteria
 - Load-shedding plan defined
 - Emergency heat-sink strategy
 - Mutual-aid protocol with external agencies
 - Training drills specified
 
-## Dependencies / Cross-References
+##### Dependencies / Cross-References
 - Safety and Security chapters
 
-## Owner / Next Step / Target Date
+##### Owner / Next Step / Target Date
 - **Owner:** TBD
 - **Next Step:** FMEA Update
 - **Target Date:** TBD
 
-## Score & Risks
+##### Score & Risks
 - **Score:** TBD (RICE/WSJF)
 - **Risks:** Cascading system failures; limited redundancy
 
@@ -9948,31 +9933,31 @@ date: 2025-08-27
 lang: EN
 ---
 
-# BL-SOC-B-008 VR/AR "Visit Earth ONE" & Citizen-Science
+#### BL-SOC-B-008 VR/AR "Visit Earth ONE" & Citizen-Science
 
 - **Domain:** SOC
 - **Program:** B
 - **EVOL Target:** EVOL-00
 - **Status:** Draft
 
-## Short Description & Business Value
+##### Short Description & Business Value
 Develop immersive virtual experiences and citizen-science programmes that allow the public to engage with Earth ONE in real time, strengthening outreach and educational impact.
 
-## Acceptance Criteria
+##### Acceptance Criteria
 - Live telemetry feeds integrated
 - Educational school kits prepared
 - Data protection measures defined
 - Engagement evaluation metrics established
 
-## Dependencies / Cross-References
+##### Dependencies / Cross-References
 - Outreach Chapter 5
 
-## Owner / Next Step / Target Date
+##### Owner / Next Step / Target Date
 - **Owner:** TBD
 - **Next Step:** Prototype Brief
 - **Target Date:** TBD
 
-## Score & Risks
+##### Score & Risks
 - **Score:** TBD (RICE/WSJF)
 - **Risks:** Privacy concerns; technical latency
 
@@ -10001,30 +9986,30 @@ date: 2025-08-27
 lang: EN
 ---
 
-# BL-SOC-E1-007 Orbital Park & Culture Module
+#### BL-SOC-E1-007 Orbital Park & Culture Module
 
 - **Domain:** SOC
 - **Program:** E1
 - **EVOL Target:** EVOL-00
 - **Status:** Draft
 
-## Short Description & Business Value
+##### Short Description & Business Value
 Create a cultural and recreational module featuring greenery and event spaces to enhance crew well-being and public engagement, showcasing Earth ONE as a living habitat.
 
-## Acceptance Criteria
+##### Acceptance Criteria
 - Biological load and maintenance plan defined
 - Safety concept for operation in 0.8–1g environments
 - Programme formats specified (concerts, exhibitions, etc.)
 
-## Dependencies / Cross-References
+##### Dependencies / Cross-References
 - Habitability chapter
 
-## Owner / Next Step / Target Date
+##### Owner / Next Step / Target Date
 - **Owner:** TBD
 - **Next Step:** User Journey + Human-Robot Interaction study
 - **Target Date:** TBD
 
-## Score & Risks
+##### Score & Risks
 - **Score:** TBD (RICE/WSJF)
 - **Risks:** Life-support load; operational safety
 
@@ -10053,30 +10038,43 @@ date: 2025-08-27
 lang: EN
 ---
 
-# BL-SUS-E1-003 Earth-ONE Sustainability Playbook (Partial→Full)
+#### BL-SUS-E1-003 Earth-ONE Sustainability Playbook (Partial→Full)
 
 - **Domain:** SUS
 - **Program:** E1
 - **EVOL Target:** EVOL-00
 - **Status:** Draft
 
-## Short Description & Business Value
+##### Short Description & Business Value
 Translate theoretical self-sustainability models into a practical pathway for Earth ONE, defining recycling targets, module upgrades, and metrics that guide the transition from partial to full sustainability.
 
-## Acceptance Criteria
+##### Acceptance Criteria
 - Target recycling rates for water, air, and nutrients
 - Module roadmap (Bio-Regeneration v1→v2)
 - Defined KPIs
 - Metrics and telemetry plan
 
-## Dependencies / Cross-References
+##### Dependencies / Cross-References
 - Chapter 7 Sustainability
 
-## Owner / Next Step / Target Date
+##### Owner / Next Step / Target Date
 - **Owner:** TBD
 - **Next Step:** KPI Set & Measurement Chain
 - **Target Date:** TBD
 
-## Score & Risks
+##### Score & Risks
 - **Score:** TBD (RICE/WSJF)
 - **Risks:** Technology maturation; resource availability
+
+
+\newpage
+
+### 8.4.8 Appendix T: Tables
+
+\newpage
+
+### 8.4.9 Appendix I: Images
+
+\newpage
+
+### 8.4.10 Appendix C: Charts
