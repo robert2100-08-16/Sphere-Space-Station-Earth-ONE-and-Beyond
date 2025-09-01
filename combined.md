@@ -12,21 +12,6 @@ history:
     date: 2025-08-03
     change: "Bring the Single Source of Truth Documents into GitBook Format"
     reference: https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond/documents/7.3.2-bring-the-single-source-of-truth-documents-into-gitbook-format
-id: ""
-state: DRAFT
-evolution: ""
-discipline: ""
-system: []
-system_id: []
-seq: []
-reviewers: []
-source_of_truth: false
-supersedes: null
-superseded_by: null
-rfc_links: []
-adr_links: []
-cr_links: []
-lang: EN
 ---
 
 # The Sphere Space Station Earth ONE and Beyond Project 
@@ -10062,6 +10047,37 @@ Translate theoretical self-sustainability models into a practical pathway for Ea
 \newpage
 
 ### 8.4.8 Appendix T: Tables
+
+\newpage
+
+---
+id: "table"
+title: "{table-title}"
+target: "docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.8-appendix-t-tables/readme.md"
+type: "table"
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-09-01
+lang: EN
+---
+
+#### 8.4.8.{table-number} Table {table-number}: {table-title}
+
+{table}
+
 
 \newpage
 
