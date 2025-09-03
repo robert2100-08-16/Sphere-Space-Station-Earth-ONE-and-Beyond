@@ -4,6 +4,41 @@ header-includes:
   - \usepackage{pdflscape}
   - \usepackage{enumitem}
   - \setlistdepth{20}
+  - \usepackage{longtable}
+  - \usepackage{ltablex}
+  - \usepackage{booktabs}
+  - \usepackage{array}
+  - \keepXColumns
+  - \setlength\LTleft{0pt}
+  - \setlength\LTright{0pt}
+  - |
+    \newcommand{\WideStartAthree}{%
+      \clearpage%
+      \begingroup%
+      \newgeometry{paper=a3paper, landscape, left=15mm, right=15mm, top=15mm, bottom=15mm}%
+      \begin{landscape}%
+    }
+  - |
+    \newcommand{\WideStartAtwo}{%
+      \clearpage%
+      \begingroup%
+      \newgeometry{paper=a2paper, landscape, left=18mm, right=18mm, top=18mm, bottom=18mm}%
+      \begin{landscape}%
+    }
+  - |
+    \newcommand{\WideStartAone}{%
+      \clearpage%
+      \begingroup%
+      \newgeometry{paper=a1paper, landscape, left=20mm, right=20mm, top=20mm, bottom=20mm}%
+      \begin{landscape}%
+    }
+  - |
+    \newcommand{\WideEnd}{%
+      \end{landscape}%
+      \restoregeometry%
+      \clearpage%
+      \endgroup%
+    }
 title: "The Sphere Space Station Earth ONE and Beyond Project"
 version: 1.0.0
 owner: "Robert Alexander Massinger"
