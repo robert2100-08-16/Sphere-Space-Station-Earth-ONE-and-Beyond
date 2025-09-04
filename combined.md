@@ -1,7 +1,6 @@
 ---
 header-includes:
   - \usepackage{geometry}
-  - \usepackage{pdflscape}
   - \usepackage{enumitem}
   - \setlistdepth{20}
   - \usepackage{longtable}
@@ -15,26 +14,22 @@ header-includes:
     \newcommand{\WideStartAthree}{%
       \clearpage%
       \begingroup%
-      \newgeometry{paper=a3paper, landscape, left=15mm, right=15mm, top=15mm, bottom=15mm}%
-      \begin{landscape}%
+      \newgeometry{paper=a3paper, left=15mm, right=15mm, top=15mm, bottom=15mm}%
     }
   - |
     \newcommand{\WideStartAtwo}{%
       \clearpage%
       \begingroup%
-      \newgeometry{paper=a2paper, landscape, left=18mm, right=18mm, top=18mm, bottom=18mm}%
-      \begin{landscape}%
+      \newgeometry{paper=a2paper, left=18mm, right=18mm, top=18mm, bottom=18mm}%
     }
   - |
     \newcommand{\WideStartAone}{%
       \clearpage%
       \begingroup%
-      \newgeometry{paper=a1paper, landscape, left=20mm, right=20mm, top=20mm, bottom=20mm}%
-      \begin{landscape}%
+      \newgeometry{paper=a1paper, left=20mm, right=20mm, top=20mm, bottom=20mm}%
     }
   - |
     \newcommand{\WideEnd}{%
-      \end{landscape}%
       \restoregeometry%
       \clearpage%
       \endgroup%
@@ -52,21 +47,6 @@ history:
     date: 2025-08-03
     change: "Bring the Single Source of Truth Documents into GitBook Format"
     reference: https://github.com/robert2100-08-16/Sphere-Space-Station-Earth-ONE-and-Beyond/documents/7.3.2-bring-the-single-source-of-truth-documents-into-gitbook-format
-id: ""
-state: DRAFT
-evolution: ""
-discipline: ""
-system: []
-system_id: []
-seq: []
-reviewers: []
-source_of_truth: false
-supersedes: null
-superseded_by: null
-rfc_links: []
-adr_links: []
-cr_links: []
-lang: EN
 ---
 
 # The Sphere Space Station Earth ONE and Beyond Project 
@@ -357,10 +337,9 @@ The SphereSpace is conceptualized as a spherical space station that generates ar
 
 The rotation of the SphereSpace generates artificial gravity, increasing radially outward. A detailed list of all deck data can be found in the appendix. Key parameters for selected decks are summarized below:
 
-
 \newpage
-\newgeometry{paper=a3paper,landscape}
-\begin{landscape}
+\newgeometry{paper=a3paper}
+
 
 | Deck   | Inner Radius (m) | Net Outer Radius (m) | Net Deck Height (m) | Rotational Velocity (m/s) | Centrifugal Acceleration (m/s²) | Net Space Volume (m³) |
 |--------|---------------------|----------------------|---------------------|----------------------------|---------------------------------|------------------------|
@@ -368,7 +347,6 @@ The rotation of the SphereSpace generates artificial gravity, increasing radiall
 | **8**  | 35.0               | 38.0                 | 3.0                 | 19.00                      | 9.81 (Earth gravity)            | 71,605.67              |
 | **15** | 59.5               | 62.5                 | 3.0                 | 31.25                      | 15.63                            | 26,328.88              |
 
-\end{landscape}
 \restoregeometry
 \newpage
 
@@ -449,10 +427,9 @@ The SphereSpace represents an ambitious concept for the future of space explorat
 
 Below is the full list of geometric and dynamic properties for each deck:
 
-
 \newpage
-\newgeometry{paper=a3paper,landscape}
-\begin{landscape}
+\newgeometry{paper=a3paper}
+
 
 | Deck   | Inner Radius (m) | Net Outer Radius (m) | Net Deck Height (m) | Rotational Velocity (m/s) | Centrifugal Acceleration (m/s²) | Net Space Volume (m³) |
 |--------|---------------------|----------------------|---------------------|----------------------------|---------------------------------|------------------------|
@@ -473,7 +450,6 @@ Below is the full list of geometric and dynamic properties for each deck:
 | **014** | 56.0               | 59.0                 | 3.0                 | 29.50                      | 14.75                            | 54,984.62              |
 | **015** | 59.5               | 62.5                 | 3.0                 | 31.25                      | 15.63                            | 26,328.88              |
 
-\end{landscape}
 \restoregeometry
 \newpage
 
@@ -632,13 +608,12 @@ Advanced life support and utility systems maintain a stable and habitable enviro
 | **Deck 008-012**| ~9.8           | Industrial, Recreational      |
 | **Deck 013-015**| ~10+           | Storage, Propulsion Systems   |
 
+\newpage
+\newgeometry{paper=a3paper}
+
+
 
 ### A.3 **Appendix C: Complete Deck Listing with Tangential Lengths**
-
-
-\newpage
-\newgeometry{paper=a3paper,landscape}
-\begin{landscape}
 
 | Deck   | Inner Radius (m) | Outer Radius (m) | Net Outer Radius (m) | Deck Height (m) | Tangential Length at Inner Radius (m) | Tangential Length at Outer Radius (m) | Net Space Volume (m³) | Rotation Velocity @ Net Radius (m/s) | Centrifugal Acceleration @ Net Radius (m/s²) |
 |--------|-------------------|------------------|-----------------------|-----------------|---------------------------------------|----------------------------------------|------------------------|--------------------------------------|-----------------------------------------------|
@@ -659,7 +634,6 @@ Advanced life support and utility systems maintain a stable and habitable enviro
 | **014** | 56.0             | 59.5            | 59.0                 | 3.0             | 57.72                                 | 44.18                                  | 54,984.62             | 29.50                                | 14.75                                          |
 | **015** | 59.5             | 63.0            | 62.5                 | 3.0             | 41.41                                 | 15.84                                  | 26,328.88             | 31.25                                | 15.63                                          |
 
-\end{landscape}
 \restoregeometry
 \newpage
 
@@ -3814,7 +3788,7 @@ lang: EN
 
 ---
 
-#### 7.5.1.3 System Architecture & Trade Studies (Refinement #1)
+#### 7.5.1.3 System Architecture & Trade Studies (Refinement 1)
 
 **Objective.** Choose the big rocks; prove feasibility with numbers.
 
@@ -3832,7 +3806,7 @@ lang: EN
 
 ---
 
-#### 7.5.1.4 Preliminary Design (Refinement #2)
+#### 7.5.1.4 Preliminary Design (Refinement 2)
 
 **Objective.** Turn architecture into validated preliminary designs per subsystem.
 
@@ -3849,7 +3823,7 @@ lang: EN
 
 ---
 
-#### 7.5.1.5 Detailed Design & Build Readiness (Refinement #3)
+#### 7.5.1.5 Detailed Design & Build Readiness (Refinement 3)
 
 **Objective.** Lock drawings, parts, and processes; prove producibility.
 
@@ -3906,7 +3880,7 @@ lang: EN
 
 ---
 
-#### 7.5.1.8 Operations, Maintenance & Evolution (Refinement #4+)
+#### 7.5.1.8 Operations, Maintenance & Evolution (Refinement 4+)
 
 **Objective.** Keep it safe, efficient, and improving.
 
@@ -5801,12 +5775,11 @@ $\text{SLI}_\text{total} = \sum_{d=001}^{015} V_\text{eff}(d) \cdot C(a_d)\quad\
 
 ---
 
-##### Result Overview / Ergebnis
-
-
 \newpage
-\newgeometry{paper=a3paper,landscape}
-\begin{landscape}
+\newgeometry{paper=a3paper}
+
+
+##### Result Overview / Ergebnis
 
 | Deck | $r_\text{ceiling}$ [m] | $r_\text{floor}$ [m] | $L$ [m] | $V_\text{eff}$ [m³] | $a/g_0$ | $C(a)$ |
 | ---- | ----------------------: | --------------------: | -------: | -------------------: | ------: | -----: |
@@ -5818,7 +5791,6 @@ $\text{SLI}_\text{total} = \sum_{d=001}^{015} V_\text{eff}(d) \cdot C(a_d)\quad\
 | 014  |                    56.0 |                  59.0 |    \~0.0 |               27,244 |   1.135 |  0.739 |
 | 015  |                    59.5 |                  63.0 |    \~0.0 |               11,222 |   1.212 |  0.654 |
 
-\end{landscape}
 \restoregeometry
 \newpage
 
@@ -5843,8 +5815,7 @@ $\text{SLI}_\text{total} = \sum_{d=001}^{015} V_\text{eff}(d) \cdot C(a_d)\quad\
 
 ##### Attachment
 
-* **Full CSV Table:** `EVOL00_DECKS_000-015_R_korr63_Roehrenmodell_exakt_SLI.csv`
-* 📎 [Download Working Copy](sandbox:/mnt/data/EVOL00_DECKS_000-015_R_korr63_Roehrenmodell_exakt_SLI.csv)
+* [Table 1: Evol00 Decks 000 015 R Korr63 Roehrenmodell Exakt Sli](../../../../../08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.8-appendix-t-tables/table-1-evol00-decks-000-015-r-korr63-roehrenmodell-exakt-sli.md)
 
 
 
@@ -5861,6 +5832,9 @@ owner: "CTO Office (J. Frame) · Chief Engineer (Theo)"
 reviewers: ["structure-architecture","power-thermal","safety-reactor"]
 date: 2025-08-25
 lang: DE
+history:
+  - date: 2025-09-03
+    change: "Spin law updated to 1 g @ DECK012 (r≈52 m, 4.147 rpm)"
 system: []
 system_id: []
 seq: []
@@ -5877,7 +5851,7 @@ cr_links: []
 **Zweck:** Minimal **vollständiger** Demonstrator (LEO). Architektur, Sicherheit, Build–Test–Operate.  
 **Crew / Residents:** ~700 Personen (Mischung aus Crew, Wissenschaft, Familien).  
 **Masse (dry+ops window):** ~310.000–320.000 t.  
-**Drehung / Spin-Law:** 1 g @ r ≈ 38 m → ~4,851 rpm (Baseline).  
+**Drehung / Spin-Law:** 1 g @ DECK 012 (r ≈ 52 m) → ~4,147 rpm (Baseline).
 **Gravitationszonen:** Mikro-g im Achskanal (DECK 000), sanfter Gradient zu ~1 g in Wohn- und Arbeitszonen.
 
 ## Struktur & Geometrie (Kurz)
@@ -5964,12 +5938,15 @@ adr_links: []
 cr_links: []
 date: 2025-08-16
 lang: en-de
+history:
+  - date: 2025-09-03
+    change: "Spin law updated to 1 g @ DECK012; g-levels adjusted"
 ---
 
 # SPEC-00-STR-DECKS-013-sector-layout-and-interfaces-EN-DE-v0.1.0-DRAFT
 
-**Project:** Sphere Space Station – Earth ONE (Ø 127.00 m)  
-**Evolution:** EVOL-00 • **Spin Law:** 1 g at r = 38.00 m → ω = 0.50801 s⁻¹ ≈ 4.851 rpm  
+**Project:** Sphere Space Station – Earth ONE (Ø 127.00 m)
+**Evolution:** EVOL-00 • **Spin Law:** 1 g at r = 52.00 m (DECK 012) → ω = 0.43430 s⁻¹ ≈ 4.147 rpm
 **Document Status:** DRAFT v0.1.0 • **Date:** 2025-08-16
 
 ---
@@ -5994,7 +5971,7 @@ lang: en-de
 ## 2. Geometry & Environment / Geometrie & Umgebung
 
 - **Radial band / Radialband:** **52.50–56.00 m** (Δr = 3.50 m)  
-- **g-levels (ceiling→mid→floor):** **1.382 g → 1.428 g → 1.474 g**  
+- **g-levels (ceiling→mid→floor):** **1.010 g → 1.043 g → 1.077 g**
 - **Deck height / Deckhöhe:** structural thickness per band; habitable clearance per compartment.  
 - **Windows / Fenster:** none / keine (technischer Pufferbereich)
 
@@ -6120,12 +6097,15 @@ adr_links: []
 cr_links: []
 date: 2025-08-16
 lang: en-de
+history:
+  - date: 2025-09-03
+    change: "Spin law updated to 1 g @ DECK012; g-levels adjusted"
 ---
 
 # SPEC-00-STR-DECKS-014-sector-layout-and-interfaces-EN-DE-v0.1.0-DRAFT
 
-**Project:** Sphere Space Station – Earth ONE (Ø 127.00 m)  
-**Evolution:** EVOL-00 • **Spin Law:** 1 g at r = 38.00 m → ω = 0.50801 s⁻¹ ≈ 4.851 rpm  
+**Project:** Sphere Space Station – Earth ONE (Ø 127.00 m)
+**Evolution:** EVOL-00 • **Spin Law:** 1 g at r = 52.00 m (DECK 012) → ω = 0.43430 s⁻¹ ≈ 4.147 rpm
 **Document Status:** DRAFT v0.1.0 • **Date:** 2025-08-16
 
 ---
@@ -6150,7 +6130,7 @@ lang: en-de
 ## 2. Geometry & Environment / Geometrie & Umgebung
 
 - **Radial band / Radialband:** **56.00–59.50 m** (Δr = 3.50 m)  
-- **g-levels (ceiling→mid→floor):** **1.474 g → 1.520 g → 1.566 g**  
+- **g-levels (ceiling→mid→floor):** **1.077 g → 1.111 g → 1.144 g**
 - **Deck height / Deckhöhe:** structural thickness per band; habitable clearance per compartment.  
 - **Windows:** none / **Fenster:** keine (hull-near technical zone)
 
@@ -6277,21 +6257,24 @@ adr_links: []
 cr_links: []
 date: 2025-08-16
 lang: en-de
+history:
+  - date: 2025-09-03
+    change: "Spin law updated to 1 g @ DECK012; g-levels adjusted"
 ---
 
 # SPEC-00-STR-DECKS-015-sector-layout-and-interfaces-EN-DE-v0.1.0-DRAFT
 
-**Project:** Sphere Space Station – Earth ONE (Ø 127.00 m)  
-**Evolution:** EVOL-00 • **Spin Law:** 1 g at r = 38.00 m → ω = 0.50801 s⁻¹ ≈ 4.851 rpm  
+**Project:** Sphere Space Station – Earth ONE (Ø 127.00 m)
+**Evolution:** EVOL-00 • **Spin Law:** 1 g at r = 52.00 m (DECK 012) → ω = 0.43430 s⁻¹ ≈ 4.147 rpm
 **Document Status:** DRAFT v0.1.0 • **Date:** 2025-08-16
 
 ---
 
 ## 0. Summary / Kurzfassung (EN/DE)
 
-**EN:** DECK 015 is the **tank farm & thermal buffer deck** with secondary/tertiary loops, inert and oxidizer gas systems, and the cryogenic interface to hull-mounted pods. High g (~1.61–1.66 g) supports **phase settling** and hydrostatic stability; strict EX-zoning and radial relief ensure safety.
+**EN:** DECK 015 is the **tank farm & thermal buffer deck** with secondary/tertiary loops, inert and oxidizer gas systems, and the cryogenic interface to hull-mounted pods. High g (~1.14–1.21 g) supports **phase settling** and hydrostatic stability; strict EX-zoning and radial relief ensure safety.
 
-**DE:** DECK 015 ist das **Tank- & Thermik-Deck** mit Sekundär/Tertiär-Kühlkreisen, Inert- und Oxidatorgas-Systemen sowie der Kryo-Schnittstelle zu hüllenmontierten Pods. Die hohe g-Last (~1,61–1,66 g) begünstigt **Phasen-Settling** und hydrostatische Stabilität; strenge **EX-Zonierung** und **radiale Entlastung** sichern den Betrieb.
+**DE:** DECK 015 ist das **Tank- & Thermik-Deck** mit Sekundär/Tertiär-Kühlkreisen, Inert- und Oxidatorgas-Systemen sowie der Kryo-Schnittstelle zu hüllenmontierten Pods. Die hohe g-Last (~1,14–1,21 g) begünstigt **Phasen-Settling** und hydrostatische Stabilität; strenge **EX-Zonierung** und **radiale Entlastung** sichern den Betrieb.
 
 ---
 
@@ -6307,7 +6290,7 @@ lang: en-de
 ## 2. Geometry & Environment / Geometrie & Umgebung
 
 - **Radial band / Radialband:** **59.50–63.00 m** (Δr = 3.50 m)  
-- **g-levels (ceiling→mid→floor):** **1.566 g → 1.612 g → 1.658 g**  
+- **g-levels (ceiling→mid→floor):** **1.144 g → 1.178 g → 1.212 g**
 - **Windows:** none / **Fenster:** keine (technical deck)
 
 ---
@@ -7151,6 +7134,9 @@ adr_links: []
 cr_links: []
 date: 2025-08-25
 lang: en-de
+history:
+  - date: 2025-09-03
+    change: "Spin law updated to 1 g @ DECK012; deck gravity corrected"
 ---
 
 # SPEC-00-STR-DECKS-DECK008-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
@@ -7175,7 +7161,7 @@ lang: en-de
 
 * **Radial band:** inner radius **35.0 m**, outer radius **38.5 m**, net outer radius **38.0 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**219.9 m** (inner) to ~**238.8 m** (outer net).
-* **Gravity:** ~**9.81 m/s²** at net outer radius (EVOL-00 spin law).
+* **Gravity:** ~**7.17 m/s²** (~0.73 g) at net outer radius (spin law: 1 g @ DECK 012 / r = 52 m).
 * **Deck role:** TBD.
 
 ---
@@ -7679,19 +7665,22 @@ adr_links: []
 cr_links: []
 date: 2025-08-16
 lang: en-de
+history:
+  - date: 2025-09-03
+    change: "Spin law updated to 1 g @ DECK012 (r≈52 m, 4.147 rpm)"
 ---
 
 # SPEC-00-STR-GEOM-GRAV-0001 – Global Geometry & Gravitation *(EVOL-00, 127 m)*
 
 ## Summary / Kurzfassung (EN/DE)
 
-**EN:** Defines the overall geometry, hull layering and spin-derived gravity profile for Sphere Space Station **Earth ONE** (outer diameter **127 m**). Includes deck banding, comfort models and g-tables based on the EVOL-00 spin law (1 g at **r = 38 m**).
+**EN:** Defines the overall geometry, hull layering and spin-derived gravity profile for Sphere Space Station **Earth ONE** (outer diameter **127 m**). Includes deck banding, comfort models and g-tables based on the EVOL-00 spin law (1 g at **DECK 012 / r = 52 m**).
 
-**DE:** Definiert Geometrie, Hüllenaufbau und spin-basierte Gravitation für die Sphere Space Station **Earth ONE** (Außendurchmesser **127 m**). Enthält Deck-Bänder, Komfortmodelle und g-Tabellen gemäß EVOL-00 Spin-Law (1 g bei **r = 38 m**).
+**DE:** Definiert Geometrie, Hüllenaufbau und spin-basierte Gravitation für die Sphere Space Station **Earth ONE** (Außendurchmesser **127 m**). Enthält Deck-Bänder, Komfortmodelle und g-Tabellen gemäß EVOL-00 Spin-Law (1 g auf **DECK 012 / r = 52 m**).
 
 **Status:** DRAFT **Version:** v0.1.0 **Date:** 2025-08-16
 **Scope:** Geometrie der Sphere Space Station **Earth ONE** (Außendurchmesser **127,00 m**), Hüllenaufbau (**0,50 m**), Deck-Bänder, künstliche Gravitation $a(r)=\omega^2 r$, Komfort-/Wohlfühlmodelle (grav-basiert + umweltbasiert), Tabellen mit aktuellen Werten je Deck inkl. Verweilzeit-Kategorien.
-**Spin-Kalibrierung (EVOL-00):** **1 g** $(g_0=9{,}80665\,\mathrm{m/s^2})$ bei **r = 38{,}00 m** ⇒ $\omega=\sqrt{g_0/38{,}00}=0{,}50801\,\mathrm{s^{-1}}$ ⇒ **4,852 rpm**.
+**Spin-Kalibrierung (EVOL-00):** **1 g** $(g_0=9{,}80665\,\mathrm{m/s^2})$ bei **r = 52{,}00 m** ⇒ $\omega=\sqrt{g_0/52{,}00}=0{,}43430\,\mathrm{s^{-1}}$ ⇒ **4,147 rpm**.
 
 ---
 
@@ -7718,8 +7707,8 @@ lang: en-de
 
 ## 3. EVOL-00 „Spin-Law“
 
-**Sollwert:** $a=9{,}80665\,\mathrm{m/s^2}$ bei $r=38{,}00\,\mathrm{m}$.
-**Ergebnis:** $\omega=0{,}50801\,\mathrm{s^{-1}}$ ⇒ **4,852 rpm**.
+**Sollwert:** $a=9{,}80665\,\mathrm{m/s^2}$ bei $r=52{,}00\,\mathrm{m}$.
+**Ergebnis:** $\omega=0{,}43430\,\mathrm{s^{-1}}$ ⇒ **4,147 rpm**.
 **Human Factors (Kurzlage):** \~**4 rpm** gelten als robust für breite Populationen; höhere Raten sind mit **Adaption/Training** möglich (Kurz-/Langzeitstudien). Siehe [7], [8].
 
 ---
@@ -7730,11 +7719,12 @@ lang: en-de
 * **Decks:**
   **001** 10,50–14,00 m · **002** 14,00–17,50 m · **003** 17,50–21,00 m · **004** 21,00–24,50 m · **005** 24,50–28,00 m · **006** 28,00–31,50 m · **007** 31,50–35,00 m · **008** 35,00–38,50 m · **009** 38,50–42,00 m · **010** 42,00–45,50 m · **011** 45,50–49,00 m · **012** 49,00–52,50 m · **013** 52,50–56,00 m · **014** 56,00–59,50 m · **015** 59,50–63,00 m.
 
-### 4.1 g-Tabelle (Boden/Mitte/Decke pro Deck, EVOL-00, $\omega=0{,}508\,\mathrm{s^{-1}}$ ≈ 4,852 rpm)
+### 4.1 g-Tabelle (Boden/Mitte/Decke pro Deck, EVOL-00, $\omega=0{,}434\,\mathrm{s^{-1}}$ ≈ 4,147 rpm)
 
+> **Hinweis:** Werte basieren noch auf der alten Referenz (1 g @ 38 m) und werden für DECK 012 aktualisiert.
 > **Konvention:** „Boden“ = äußere Deckgrenze (max. r); „Decke“ = innere Deckgrenze (min. r).
 > **Einheiten:** m/s² und in **g$_0$** (Erde = 1,000).
-> **Berechnung:** $a(r)=\omega^2 r = g_0 \cdot r/38{,}00$. **Δg** (Kopf–Fuß) am Boden mit $h=2{,}0\,\mathrm{m}$: $100\cdot h/r_\text{floor}$.
+> **Berechnung:** $a(r)=\omega^2 r = g_0 \cdot r/52{,}00$. **Δg** (Kopf–Fuß) am Boden mit $h=2{,}0\,\mathrm{m}$: $100\cdot h/r_\text{floor}$.
 
 | Deck | r\_in → r\_mid → r\_out (m) | g\_floor (m/s² / g$_0$) | g\_mid (m/s² / g$_0$) | g\_ceiling (m/s² / g$_0$) | Δg\_Kopf-Fuß am Boden |
 | ---: | --------------------------: | -------------------: | -----------------: | ---------------------: | --------------------: |
@@ -7755,14 +7745,14 @@ lang: en-de
 |  015 |       59.50 → 61.25 → 63.00 |       16.258 / 1.658 |     15.807 / 1.612 |         15.355 / 1.566 |                3.17 % |
 
 > **Hinweise:**
-> • **1 g** liegt exakt bei **r = 38{,}00 m** (innerhalb **Deck 008** zwischen Mitte und Boden).
+> • **1 g** liegt exakt bei **r = 52{,}00 m** (innerhalb **DECK 012** zwischen Decke und Boden).
 > • Werte linear in $r$; Rundung auf 3 Dezimalstellen (intern ≥ 1e-6).
 
 ---
 
 ## 5. Rechen- & Rundungsregeln
 
-* **Primärgleichung:** $a(r)=g_0\cdot r/38{,}00$.
+* **Primärgleichung:** $a(r)=g_0\cdot r/52{,}00$.
 * **Rundung:** Anzeige auf **3 Nachkommastellen** (m/s²) bzw. **3 Dezimal** in g$_0$; interne Pipeline **double-precision**.
 * **Personenhöhe für Δg:** $h=2{,}0\,\mathrm{m}$ (stehend).
 
@@ -7829,10 +7819,9 @@ $$
 
 **DECK 015 – Tankfarm & Thermik (HZ-Schwerpunkte, D/E-Verweilzeit)**
 
-
 \newpage
-\newgeometry{paper=a3paper,landscape}
-\begin{landscape}
+\newgeometry{paper=a3paper}
+
 
 | Sektor |  HZ | Primärfunktion            | Kern-Equip               | Schächte | Vent/Relief        | Kernauszüge Interfaces    |
 | :----: | :-: | ------------------------- | ------------------------ | -------- | ------------------ | ------------------------- |
@@ -7841,16 +7830,14 @@ $$
 |    F   |  3  | **Kryo-Interface**        | Manifolds → Hull-Pods    | –        | VENT-015-F         | THM Cryo-Manifold         |
 |    K   |  2  | Wasser-Schildring         | Ringtank 250 m³          | –        | BOP-015-K          | THM Tie-in 014            |
 
-\end{landscape}
 \restoregeometry
 \newpage
 
 **DECK 014 – SMR & Conversion (kritisch, D/E-Verweilzeit)**
 
-
 \newpage
-\newgeometry{paper=a3paper,landscape}
-\begin{landscape}
+\newgeometry{paper=a3paper}
+
 
 | Sektor |   HZ  | Primärfunktion                | Kern-Equip            | Schächte | Vent/Relief                 | Kernauszüge Interfaces        |
 | :----: | :---: | ----------------------------- | --------------------- | -------- | --------------------------- | ----------------------------- |
@@ -7858,7 +7845,6 @@ $$
 |    G   | **3** | **SMR-Zelle-2 (Containment)** | RPV-2, Primär-Loop-S  | HL-180   | **VENT-014-G→All** + Filter | THM Pri→Hull-HX-S             |
 |   C/I  |   2   | Power-Conversion N/S          | Brayton/Rankine-Skids | –        | VENT-014-C/I                | PWR DC-Main N/S               |
 
-\end{landscape}
 \restoregeometry
 \newpage
 
@@ -7918,6 +7904,9 @@ adr_links: []
 cr_links: []
 date: 2025-08-16
 lang: en-de
+history:
+  - date: 2025-09-03
+    change: "Spin law updated to 1 g @ DECK012"
 ---
 
 # SPEC-00-STR-SYS-AXIAL-RADIAL-TRADE-0001 — Variantenuntersuchung Längs-/Breitengrad-Schotten *(EVOL-00, 127 m)*
@@ -7929,7 +7918,7 @@ lang: en-de
 **DE:** Vergleich dreier Struktur- und Safety-Layouts für die Sphäre: **A) Längsgrade** (radiale Sektorschotten), **B) Breitengrade** (axiale Ring-Diaphragmen, „LAT“), **C) Kombination**. Bewertet werden **Statik/Dynamik**, **Druck/Brand/Hazard**, **OPS & Wartung**, **Routing/Komplexität**, **Masse & Fertigung**, **Erweiterbarkeit**. Ergebnis: Variante **C (Kombiniert)** liefert die beste Gesamtleistung; empfohlen als Baseline (EVOL-00 mit 12 Längsgrad-Schotten A–L + 3 LAT-Scheiben S40/EQ/N40, Ausbau zu 7 LAT in EVOL-01).
 
 **Project:** Sphere Space Station — Earth ONE (Ø 127,00 m)
-**Spin Law:** 1 g at r = 38,00 m → ω ≈ 0,508 s⁻¹ (≈ 4,85 rpm)
+**Spin Law:** 1 g at r = 52,00 m (DECK 012) → ω ≈ 0,434 s⁻¹ (≈ 4,15 rpm)
 **Status:** DRAFT • **Date:** 2025-08-16
 
 ---
@@ -10186,14 +10175,13 @@ date: 2025-09-01
 lang: EN
 ---
 
+\newpage
+\newgeometry{paper=a1paper}
+
+
 #### 8.4.8.1 Table 1: Evol00 Decks 000 015 R Korr63 Roehrenmodell Exakt Sli
 
 > Quelle: evol00-decks-000-015-r-korr63-roehrenmodell-exakt-sli.csv
-
-
-\newpage
-\newgeometry{paper=a1paper,landscape}
-\begin{landscape}
 
 |   DECK |   r\_von (m) |   r\_bis (m) |   r\_Decke (m) |   r\_Boden (m) |   Höhe (m) |   Länge@rDecke (N–S) (m) |   Länge@rBoden (N–S) (m) |   Umfang@rDecke (m) |   Umfang@rBoden (m) |   Volumen (m³) – exakt (Kugel ∩ Zylinderschale) |   bewohnb. Vol (≥1.80 m) – exakt (m³) |   eff. bewohn. Vol (−0.25 m) – exakt (m³) |   ('1g@DECK001', 'a\_Boden (g)') |   ('1g@DECK001', 'a\_Stehhöhe (g)') | ('1g@DECK001', 'Wohlfühl (A–E)')   |   ('1g@DECK001', 'SLI\_total (m³·score)') |   ('1g@DECK001', 'SLI\_avg (0–1)') |   ('1g@DECK002', 'a\_Boden (g)') |   ('1g@DECK002', 'a\_Stehhöhe (g)') | ('1g@DECK002', 'Wohlfühl (A–E)')   |   ('1g@DECK002', 'SLI\_total (m³·score)') |   ('1g@DECK002', 'SLI\_avg (0–1)') |   ('1g@DECK003', 'a\_Boden (g)') |   ('1g@DECK003', 'a\_Stehhöhe (g)') | ('1g@DECK003', 'Wohlfühl (A–E)')   |   ('1g@DECK003', 'SLI\_total (m³·score)') |   ('1g@DECK003', 'SLI\_avg (0–1)') |   ('1g@DECK004', 'a\_Boden (g)') |   ('1g@DECK004', 'a\_Stehhöhe (g)') | ('1g@DECK004', 'Wohlfühl (A–E)')   |   ('1g@DECK004', 'SLI\_total (m³·score)') |   ('1g@DECK004', 'SLI\_avg (0–1)') |   ('1g@DECK005', 'a\_Boden (g)') |   ('1g@DECK005', 'a\_Stehhöhe (g)') | ('1g@DECK005', 'Wohlfühl (A–E)')   |   ('1g@DECK005', 'SLI\_total (m³·score)') |   ('1g@DECK005', 'SLI\_avg (0–1)') |   ('1g@DECK006', 'a\_Boden (g)') |   ('1g@DECK006', 'a\_Stehhöhe (g)') | ('1g@DECK006', 'Wohlfühl (A–E)')   |   ('1g@DECK006', 'SLI\_total (m³·score)') |   ('1g@DECK006', 'SLI\_avg (0–1)') |   ('1g@DECK007', 'a\_Boden (g)') |   ('1g@DECK007', 'a\_Stehhöhe (g)') | ('1g@DECK007', 'Wohlfühl (A–E)')   |   ('1g@DECK007', 'SLI\_total (m³·score)') |   ('1g@DECK007', 'SLI\_avg (0–1)') |   ('1g@DECK008', 'a\_Boden (g)') |   ('1g@DECK008', 'a\_Stehhöhe (g)') | ('1g@DECK008', 'Wohlfühl (A–E)')   |   ('1g@DECK008', 'SLI\_total (m³·score)') |   ('1g@DECK008', 'SLI\_avg (0–1)') |   ('1g@DECK009', 'a\_Boden (g)') |   ('1g@DECK009', 'a\_Stehhöhe (g)') | ('1g@DECK009', 'Wohlfühl (A–E)')   |   ('1g@DECK009', 'SLI\_total (m³·score)') |   ('1g@DECK009', 'SLI\_avg (0–1)') |   ('1g@DECK010', 'a\_Boden (g)') |   ('1g@DECK010', 'a\_Stehhöhe (g)') | ('1g@DECK010', 'Wohlfühl (A–E)')   |   ('1g@DECK010', 'SLI\_total (m³·score)') |   ('1g@DECK010', 'SLI\_avg (0–1)') |   ('1g@DECK011', 'a\_Boden (g)') |   ('1g@DECK011', 'a\_Stehhöhe (g)') | ('1g@DECK011', 'Wohlfühl (A–E)')   |   ('1g@DECK011', 'SLI\_total (m³·score)') |   ('1g@DECK011', 'SLI\_avg (0–1)') |   ('1g@DECK012', 'a\_Boden (g)') |   ('1g@DECK012', 'a\_Stehhöhe (g)') | ('1g@DECK012', 'Wohlfühl (A–E)')   |   ('1g@DECK012', 'SLI\_total (m³·score)') |   ('1g@DECK012', 'SLI\_avg (0–1)') |   ('1g@DECK013', 'a\_Boden (g)') |   ('1g@DECK013', 'a\_Stehhöhe (g)') | ('1g@DECK013', 'Wohlfühl (A–E)')   |   ('1g@DECK013', 'SLI\_total (m³·score)') |   ('1g@DECK013', 'SLI\_avg (0–1)') |   ('1g@DECK014', 'a\_Boden (g)') |   ('1g@DECK014', 'a\_Stehhöhe (g)') | ('1g@DECK014', 'Wohlfühl (A–E)')   |   ('1g@DECK014', 'SLI\_total (m³·score)') |   ('1g@DECK014', 'SLI\_avg (0–1)') |   ('1g@DECK015', 'a\_Boden (g)') |   ('1g@DECK015', 'a\_Stehhöhe (g)') | ('1g@DECK015', 'Wohlfühl (A–E)')   |   ('1g@DECK015', 'SLI\_total (m³·score)') |   ('1g@DECK015', 'SLI\_avg (0–1)') |
 |-------:|-------------:|-------------:|---------------:|---------------:|-----------:|-------------------------:|-------------------------:|--------------------:|--------------------:|------------------------------------------------:|--------------------------------------:|------------------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|---------------------------------:|------------------------------------:|:-----------------------------------|------------------------------------------:|-----------------------------------:|
@@ -10214,7 +10202,6 @@ lang: EN
 |     14 |         56   |         59.5 |           56   |           59   |          3 |                    57.72 |                    44.18 |              351.86 |              370.71 |                                           55550 |                               31949.5 |                                   27243.7 |                            4.37  |                               4.237 | F                                  |                                   32993.6 |                              0.075 |                            3.471 |                               3.365 | F                                  |                                   63209.1 |                              0.143 |                            2.878 |                               2.79  | F                                  |                                   97947.7 |                              0.222 |                            2.458 |                               2.383 | F                                  |                                    135969 |                              0.308 |                            2.145 |                               2.08  | F                                  |                                    176193 |                              0.399 |                            1.903 |                               1.845 | F                                  |                                    217017 |                              0.492 |                            1.71  |                               1.658 | F                                  |                                    256284 |                              0.581 |                            1.553 |                               1.505 | E                                  |                                    286740 |                               0.65 |                            1.422 |                               1.378 | D                                  |                                    306995 |                              0.696 |                            1.311 |                               1.271 | D                                  |                                    319032 |                              0.723 |                            1.216 |                               1.179 | C                                  |                                    324479 |                              0.735 |                            1.135 |                               1.1   | B                                  |                                    324592 |                              0.736 |                            1.063 |                               1.031 | B                                  |                                    320382 |                              0.726 |                            1     |                               0.969 | A                                  |                                    312709 |                              0.709 |                            0.937 |                               0.908 | A                                  |                                    300554 |                              0.681 |
 |     15 |         59.5 |         63   |           59.5 |           63   |          3 |                    41.41 |                     0    |              373.85 |              395.84 |                                           37187 |                               14001.7 |                                   11222.2 |                            4.667 |                               4.533 | F                                  |                                   32993.6 |                              0.075 |                            3.706 |                               3.6   | F                                  |                                   63209.1 |                              0.143 |                            3.073 |                               2.985 | F                                  |                                   97947.7 |                              0.222 |                            2.625 |                               2.55  | F                                  |                                    135969 |                              0.308 |                            2.291 |                               2.225 | F                                  |                                    176193 |                              0.399 |                            2.032 |                               1.974 | F                                  |                                    217017 |                              0.492 |                            1.826 |                               1.774 | F                                  |                                    256284 |                              0.581 |                            1.658 |                               1.611 | F                                  |                                    286740 |                               0.65 |                            1.518 |                               1.475 | E                                  |                                    306995 |                              0.696 |                            1.4   |                               1.36  | D                                  |                                    319032 |                              0.723 |                            1.299 |                               1.262 | C                                  |                                    324479 |                              0.735 |                            1.212 |                               1.177 | C                                  |                                    324592 |                              0.736 |                            1.135 |                               1.103 | B                                  |                                    320382 |                              0.726 |                            1.068 |                               1.037 | B                                  |                                    312709 |                              0.709 |                            1     |                               0.971 | A                                  |                                    300554 |                              0.681 |
 
-\end{landscape}
 \restoregeometry
 \newpage
 
