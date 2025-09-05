@@ -1,0 +1,619 @@
+Build Report
+========================================
+
+Total documents: 122
+Successfully built: 0
+Failed: 122
+
+
+Failed Builds:
+
+  ✗ /workspace/docs/public/documents/readme.md
+    Output: docs/public/documents/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/summary.md
+    Output: docs/public/documents/summary.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/summary_build.log
+
+  ✗ /workspace/docs/public/documents/00-prologue-ethics-and-security/0.1-preamble-ethics-and-security.md
+    Output: docs/public/documents/00-prologue-ethics-and-security/0.1-preamble-ethics-and-security.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/0.1-preamble-ethics-and-security_build.log
+
+  ✗ /workspace/docs/public/documents/00-prologue-ethics-and-security/readme.md
+    Output: docs/public/documents/00-prologue-ethics-and-security/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/01-vision-and-inception/1.1-visionary-proposal-for-the-sphere-space-station-network.md
+    Output: docs/public/documents/01-vision-and-inception/1.1-visionary-proposal-for-the-sphere-space-station-network.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/1.1-visionary-proposal-for-the-sphere-space-station-network_build.log
+
+  ✗ /workspace/docs/public/documents/01-vision-and-inception/1.2-concept-and-feasibility-analysis-for-the-spacesphere-project.md
+    Output: docs/public/documents/01-vision-and-inception/1.2-concept-and-feasibility-analysis-for-the-spacesphere-project.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/1.2-concept-and-feasibility-analysis-for-the-spacesphere-project_build.log
+
+  ✗ /workspace/docs/public/documents/01-vision-and-inception/readme.md
+    Output: docs/public/documents/01-vision-and-inception/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/02-technical-foundations/2.1-technical-design-and-system-specifications.md
+    Output: docs/public/documents/02-technical-foundations/2.1-technical-design-and-system-specifications.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/2.1-technical-design-and-system-specifications_build.log
+
+  ✗ /workspace/docs/public/documents/02-technical-foundations/2.2-specification-and-selected-materials.md
+    Output: docs/public/documents/02-technical-foundations/2.2-specification-and-selected-materials.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/2.2-specification-and-selected-materials_build.log
+
+  ✗ /workspace/docs/public/documents/02-technical-foundations/2.3-energy-and-thermal-management-systems.md
+    Output: docs/public/documents/02-technical-foundations/2.3-energy-and-thermal-management-systems.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/2.3-energy-and-thermal-management-systems_build.log
+
+  ✗ /workspace/docs/public/documents/02-technical-foundations/readme.md
+    Output: docs/public/documents/02-technical-foundations/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/03-infrastructure-and-operations/3.1-staffing-facilities-and-living-spaces.md
+    Output: docs/public/documents/03-infrastructure-and-operations/3.1-staffing-facilities-and-living-spaces.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/3.1-staffing-facilities-and-living-spaces_build.log
+
+  ✗ /workspace/docs/public/documents/03-infrastructure-and-operations/3.2-organizational-structure-and-consortium-model.md
+    Output: docs/public/documents/03-infrastructure-and-operations/3.2-organizational-structure-and-consortium-model.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/3.2-organizational-structure-and-consortium-model_build.log
+
+  ✗ /workspace/docs/public/documents/03-infrastructure-and-operations/3.3-public-engagement-and-decentralized-associations.md
+    Output: docs/public/documents/03-infrastructure-and-operations/3.3-public-engagement-and-decentralized-associations.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/3.3-public-engagement-and-decentralized-associations_build.log
+
+  ✗ /workspace/docs/public/documents/03-infrastructure-and-operations/readme.md
+    Output: docs/public/documents/03-infrastructure-and-operations/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/04-sustainability-and-economic-viability/4.1-environmental-and-sustainability-goals.md
+    Output: docs/public/documents/04-sustainability-and-economic-viability/4.1-environmental-and-sustainability-goals.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/4.1-environmental-and-sustainability-goals_build.log
+
+  ✗ /workspace/docs/public/documents/04-sustainability-and-economic-viability/4.2-self-sustainability-models-for-space-stations-and-spacecraft.md
+    Output: docs/public/documents/04-sustainability-and-economic-viability/4.2-self-sustainability-models-for-space-stations-and-spacecraft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/4.2-self-sustainability-models-for-space-stations-and-spacecraft_build.log
+
+  ✗ /workspace/docs/public/documents/04-sustainability-and-economic-viability/4.3-economic-feasibility-and-market-analysis.md
+    Output: docs/public/documents/04-sustainability-and-economic-viability/4.3-economic-feasibility-and-market-analysis.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/4.3-economic-feasibility-and-market-analysis_build.log
+
+  ✗ /workspace/docs/public/documents/04-sustainability-and-economic-viability/readme.md
+    Output: docs/public/documents/04-sustainability-and-economic-viability/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/05-security-governance-and-alliances/5.1-establishing-a-solar-alliance-for-governance-and-security-in-space.md
+    Output: docs/public/documents/05-security-governance-and-alliances/5.1-establishing-a-solar-alliance-for-governance-and-security-in-space.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/5.1-establishing-a-solar-alliance-for-governance-and-security-in-space_build.log
+
+  ✗ /workspace/docs/public/documents/05-security-governance-and-alliances/readme.md
+    Output: docs/public/documents/05-security-governance-and-alliances/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/06-expansion-and-future-projects/6.1-future-expansion-of-the-sphere-station-network-and-sphere-space-crafts.md
+    Output: docs/public/documents/06-expansion-and-future-projects/6.1-future-expansion-of-the-sphere-station-network-and-sphere-space-crafts.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/6.1-future-expansion-of-the-sphere-station-network-and-sphere-space-crafts_build.log
+
+  ✗ /workspace/docs/public/documents/06-expansion-and-future-projects/readme.md
+    Output: docs/public/documents/06-expansion-and-future-projects/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.1-glossary.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.1-glossary.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/8.1-glossary_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.2-partners-and-institutions.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.2-partners-and-institutions.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/8.2-partners-and-institutions_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.3-legal-notices.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.3-legal-notices.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/8.3-legal-notices_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/readme.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.1-project-overviews-and-fibels/7.1.1-sphere-station-documentation-technical-and-operational-overview.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.1-project-overviews-and-fibels/7.1.1-sphere-station-documentation-technical-and-operational-overview.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.1.1-sphere-station-documentation-technical-and-operational-overview_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.1-project-overviews-and-fibels/7.1.2-project-fibel.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.1-project-overviews-and-fibels/7.1.2-project-fibel.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.1.2-project-fibel_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.1-project-overviews-and-fibels/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.1-project-overviews-and-fibels/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.2-partial-concepts/7.2.1-deck-concept-of-the-sphere-space-station-earth-one.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.2-partial-concepts/7.2.1-deck-concept-of-the-sphere-space-station-earth-one.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.2.1-deck-concept-of-the-sphere-space-station-earth-one_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.2-partial-concepts/7.2.2-earth-one-overview.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.2-partial-concepts/7.2.2-earth-one-overview.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.2.2-earth-one-overview_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.2-partial-concepts/7.2.3-economic-feasibility-earth-one.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.2-partial-concepts/7.2.3-economic-feasibility-earth-one.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.2.3-economic-feasibility-earth-one_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.2-partial-concepts/7.2.4-window-specification-earth-one-station.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.2-partial-concepts/7.2.4-window-specification-earth-one-station.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.2.4-window-specification-earth-one-station_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.2-partial-concepts/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.2-partial-concepts/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.3-change-management/7.3.1-initial-english-translation.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.3-change-management/7.3.1-initial-english-translation.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.3.1-initial-english-translation_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.3-change-management/7.3.2-bring-the-single-source-of-truth-documents-into-gitbook-format.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.3-change-management/7.3.2-bring-the-single-source-of-truth-documents-into-gitbook-format.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.3.2-bring-the-single-source-of-truth-documents-into-gitbook-format_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.3-change-management/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.3-change-management/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.4-research-development/7.4.1-sphere-station-simulator-research-summary.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.4-research-development/7.4.1-sphere-station-simulator-research-summary.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.4.1-sphere-station-simulator-research-summary_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.4-research-development/7.4.2-earth-one-station---orbit-polar-docking-and-human-factors.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.4-research-development/7.4.2-earth-one-station---orbit-polar-docking-and-human-factors.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.4.2-earth-one-station---orbit-polar-docking-and-human-factors_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.4-research-development/7.4.3-core-traffic-sizing-vs-wormhole-diameter-trade-127m-254m-254x508m-254x1016m-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.4-research-development/7.4.3-core-traffic-sizing-vs-wormhole-diameter-trade-127m-254m-254x508m-254x1016m-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.4.3-core-traffic-sizing-vs-wormhole-diameter-trade-127m-254m-254x508m-254x1016m-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.4-research-development/7.4.4-hazard-catalog-cross-project-hazard-catalog-en-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.4-research-development/7.4.4-hazard-catalog-cross-project-hazard-catalog-en-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.4.4-hazard-catalog-cross-project-hazard-catalog-en-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.4-research-development/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.4-research-development/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.5-processes/7.5.1-engineering-process.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.5-processes/7.5.1-engineering-process.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.5.1-engineering-process_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.5-processes/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.5-processes/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.1-appendix-a-abstract-sphere-space-station-earth-one-and-beyond.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.1-appendix-a-abstract-sphere-space-station-earth-one-and-beyond.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/8.4.1-appendix-a-abstract-sphere-space-station-earth-one-and-beyond_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.2-appendix-e-evaluation-of-the-documentation---sphere-space-station-earth-one-and-beyond.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.2-appendix-e-evaluation-of-the-documentation---sphere-space-station-earth-one-and-beyond.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/8.4.2-appendix-e-evaluation-of-the-documentation---sphere-space-station-earth-one-and-beyond_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.3-appendix-p-invitation-to-participate-research-funding-engineering-and-construction-partnership.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.3-appendix-p-invitation-to-participate-research-funding-engineering-and-construction-partnership.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/8.4.3-appendix-p-invitation-to-participate-research-funding-engineering-and-construction-partnership_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.4-appendix-s-sphere-space-station-earth-one-executive-summaries.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.4-appendix-s-sphere-space-station-earth-one-executive-summaries.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/8.4.4-appendix-s-sphere-space-station-earth-one-executive-summaries_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.5-appendix-q-ai-based-quality-assurance-concept-documentation-and-safety.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.5-appendix-q-ai-based-quality-assurance-concept-documentation-and-safety.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/8.4.5-appendix-q-ai-based-quality-assurance-concept-documentation-and-safety_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.6-appendix-w-wow-factors.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.6-appendix-w-wow-factors.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/8.4.6-appendix-w-wow-factors_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/readme.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/7.6.1.1-guideline-document-engineering-naming---folder-convention.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/7.6.1.1-guideline-document-engineering-naming---folder-convention.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.6.1.1-guideline-document-engineering-naming---folder-convention_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/7.6.1.2-guideline-document-the-evolution-principle.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/7.6.1.2-guideline-document-the-evolution-principle.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.6.1.2-guideline-document-the-evolution-principle_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/7.6.1.3-evolution-deliverables-phase-gates.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/7.6.1.3-evolution-deliverables-phase-gates.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/7.6.1.3-evolution-deliverables-phase-gates_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.1-global-standards/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/current-evolution.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/current-evolution.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/current-evolution_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.3-history/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.3-history/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.10-appendix-c-charts/readme.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.10-appendix-c-charts/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-econ-b-010.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-econ-b-010.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/bl-econ-b-010_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-eng-e1-004.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-eng-e1-004.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/bl-eng-e1-004_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-eng-e1-005.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-eng-e1-005.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/bl-eng-e1-005_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-eng-e2-006.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-eng-e2-006.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/bl-eng-e2-006_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-gov-b-002.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-gov-b-002.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/bl-gov-b-002_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-ops-e1-001.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-ops-e1-001.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/bl-ops-e1-001_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-sec-e1-009.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-sec-e1-009.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/bl-sec-e1-009_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-soc-b-008.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-soc-b-008.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/bl-soc-b-008_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-soc-e1-007.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-soc-e1-007.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/bl-soc-e1-007_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-sus-e1-003.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/bl-sus-e1-003.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/bl-sus-e1-003_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/readme.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.7-appendix-b-backlog-potential-developments/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.8-appendix-t-tables/readme.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.8-appendix-t-tables/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.8-appendix-t-tables/table-1-evol00-decks-000-015-r-korr63-roehrenmodell-exakt-sli.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.8-appendix-t-tables/table-1-evol00-decks-000-015-r-korr63-roehrenmodell-exakt-sli.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/table-1-evol00-decks-000-015-r-korr63-roehrenmodell-exakt-sli_build.log
+
+  ✗ /workspace/docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.9-appendix-i-images/readme.md
+    Output: docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.9-appendix-i-images/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/00-standards-templates/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/00-standards-templates/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/01-architecture/adr-00-final-rpm-decision-ball-d127-en-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/01-architecture/adr-00-final-rpm-decision-ball-d127-en-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/adr-00-final-rpm-decision-ball-d127-en-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/01-architecture/evol-00-earth-one-d127m-baseline-v1.0.0-kurzblatt.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/01-architecture/evol-00-earth-one-d127m-baseline-v1.0.0-kurzblatt.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/evol-00-earth-one-d127m-baseline-v1.0.0-kurzblatt_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/01-architecture/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/01-architecture/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-013-sector-layout-and-interfaces-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-013-sector-layout-and-interfaces-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-013-sector-layout-and-interfaces-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-014-sector-layout-and-interfaces-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-014-sector-layout-and-interfaces-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-014-sector-layout-and-interfaces-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-015-sector-layout-and-interfaces-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-015-sector-layout-and-interfaces-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-015-sector-layout-and-interfaces-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck000-0001-wormhole-docking-tunnel-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck000-0001-wormhole-docking-tunnel-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck000-0001-wormhole-docking-tunnel-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck001-0001-transfer-node-and-radial-systems-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck001-0001-transfer-node-and-radial-systems-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck001-0001-transfer-node-and-radial-systems-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck002-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck002-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck002-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck003-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck003-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck003-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck004-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck004-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck004-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck005-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck005-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck005-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck006-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck006-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck006-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck007-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck007-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck007-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck008-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck008-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck008-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck009-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck009-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck009-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck010-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck010-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck010-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck011-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck011-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck011-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck012-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck012-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck012-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck013-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck013-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck013-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck014-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck014-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck014-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck015-0001-baseline-ring-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-deck015-0001-baseline-ring-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-decks-deck015-0001-baseline-ring-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-geom-grav-0001-global-geometry-and-gravitation-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-geom-grav-0001-global-geometry-and-gravitation-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-geom-grav-0001-global-geometry-and-gravitation-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-sys-axial-radial-trade-0001-variant-study-longitude-vs-latitude-bulkheads-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-sys-axial-radial-trade-0001-variant-study-longitude-vs-latitude-bulkheads-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-sys-axial-radial-trade-0001-variant-study-longitude-vs-latitude-bulkheads-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-sys-wormhole-safety-0001-wormhole-safety-and-hazard-mitigations-d127m-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-sys-wormhole-safety-0001-wormhole-safety-and-hazard-mitigations-d127m-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-sys-wormhole-safety-0001-wormhole-safety-and-hazard-mitigations-d127m-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-sys-wormhole-safety-0002-polar-approach-and-full-hazard-hardening-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-sys-wormhole-safety-0002-polar-approach-and-full-hazard-hardening-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-00-str-sys-wormhole-safety-0002-polar-approach-and-full-hazard-hardening-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/03-interfaces/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/03-interfaces/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/04-calculations/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/04-calculations/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/05-models-cad-sim/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/05-models-cad-sim/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/06-tests-verification/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/06-tests-verification/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/07-ops-maintenance/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/07-ops-maintenance/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/08-change-management/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/08-change-management/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/00-standards-templates/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/00-standards-templates/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/01-architecture/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/01-architecture/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/02-specs/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/02-specs/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/02-specs/spec-01-str-geom-grav-e2-ball-0001-earth-two-ball-d254m-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/02-specs/spec-01-str-geom-grav-e2-ball-0001-earth-two-ball-d254m-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-01-str-geom-grav-e2-ball-0001-earth-two-ball-d254m-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/02-specs/spec-01-str-geom-grav-e2-lcap-0001-earth-two-long-capsule-d254m-l508m-en-de-v0.1.0-draft.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/02-specs/spec-01-str-geom-grav-e2-lcap-0001-earth-two-long-capsule-d254m-l508m-en-de-v0.1.0-draft.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/spec-01-str-geom-grav-e2-lcap-0001-earth-two-long-capsule-d254m-l508m-en-de-v0.1.0-draft_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/03-interfaces/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/03-interfaces/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/04-calculations/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/04-calculations/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/05-models-cad-sim/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/05-models-cad-sim/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/06-tests-verification/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/06-tests-verification/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
+
+  ✗ /workspace/docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/07-ops-maintenance/readme.md
+    Output: docs/public/documents/07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/07-ops-maintenance/readme.pdf
+    Error: Build returned False
+    Log: /workspace/docs/public/publish/logs/readme_build.log
