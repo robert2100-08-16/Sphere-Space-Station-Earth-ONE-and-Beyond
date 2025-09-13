@@ -583,6 +583,8 @@ Advanced life support and utility systems maintain a stable and habitable enviro
 \newgeometry{paperwidth=420mm, paperheight=297mm, left=15mm, right=15mm, top=15mm, bottom=15mm}
 
 
+\pagewidth=420mm
+\pageheight=297mm
 
 ### A.3 **Appendix C: Complete Deck Listing with Tangential Lengths**
 
@@ -606,6 +608,8 @@ Advanced life support and utility systems maintain a stable and habitable enviro
 | **015** | 59.5             | 63.0            | 62.5                 | 3.0             | 41.41                                 | 15.84                                  | 26,328.88             | 31.25                                | 15.63                                          |
 
 \restoregeometry
+\pagewidth=210mm
+\pageheight=297mm
 \newpage
 
 ### A.4 **Appendix D: Safety and Hazard Protocols**
@@ -10129,6 +10133,8 @@ lang: EN
 \newgeometry{paperwidth=841mm, paperheight=594mm, left=20mm, right=20mm, top=20mm, bottom=20mm}
 
 
+\pagewidth=841mm
+\pageheight=594mm
 #### 8.4.8.1 Table 1: Evol00 Decks 000 015 R Korr63 Roehrenmodell Exakt Sli
 
 > Quelle: evol00-decks-000-015-r-korr63-roehrenmodell-exakt-sli.csv
@@ -10153,6 +10159,8 @@ lang: EN
 |     15 |         59.5 |         63   |           59.5 |           63   |          3 |                    41.41 |                     0    |              373.85 |              395.84 |                                           37187 |                               14001.7 |                                   11222.2 |                            4.667 |                               4.533 | F                                  |                                   32993.6 |                              0.075 |                            3.706 |                               3.6   | F                                  |                                   63209.1 |                              0.143 |                            3.073 |                               2.985 | F                                  |                                   97947.7 |                              0.222 |                            2.625 |                               2.55  | F                                  |                                    135969 |                              0.308 |                            2.291 |                               2.225 | F                                  |                                    176193 |                              0.399 |                            2.032 |                               1.974 | F                                  |                                    217017 |                              0.492 |                            1.826 |                               1.774 | F                                  |                                    256284 |                              0.581 |                            1.658 |                               1.611 | F                                  |                                    286740 |                               0.65 |                            1.518 |                               1.475 | E                                  |                                    306995 |                              0.696 |                            1.4   |                               1.36  | D                                  |                                    319032 |                              0.723 |                            1.299 |                               1.262 | C                                  |                                    324479 |                              0.735 |                            1.212 |                               1.177 | C                                  |                                    324592 |                              0.736 |                            1.135 |                               1.103 | B                                  |                                    320382 |                              0.726 |                            1.068 |                               1.037 | B                                  |                                    312709 |                              0.709 |                            1     |                               0.971 | A                                  |                                    300554 |                              0.681 |
 
 \restoregeometry
+\pagewidth=210mm
+\pageheight=297mm
 \newpage
 
 

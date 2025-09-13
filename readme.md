@@ -1,13 +1,65 @@
-# Sphere Space Station Earth ONE and Beyond
+---
+geometry:
+- paperwidth=210mm
+- paperheight=297mm
+- left=15mm
+- right=15mm
+- top=15mm
+- bottom=15mm
+header-includes:
+- \usepackage{calc}
+- \usepackage{enumitem}
+- \setlistdepth{20}
+- \usepackage{longtable}
+- \usepackage{ltablex}
+- \usepackage{booktabs}
+- \usepackage{array}
+- \keepXColumns
+- \setlength\LTleft{0pt}
+- \setlength\LTright{0pt}
+---
 
+# 1. Sphere-Space-Station-Earth-ONE-and-Beyond
 Sphere Space Station Earth ONE and Beyond
 
 (c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED.
 
+## 1.1 Table of Content
+- Management Summary
+- Sphere Station Documentation: Technical and Operational Overview
+- [Architecture Overview](simulations/docs/architecture/readme.md)
 
-## 1. Management Summary
+### 1.1.1 CLI Export Options / CLI-Exportoptionen
 
-### 1.1 Technical Achievements
+Use the simulation starter to create geometry files:
+
+```bash
+python -m simulations.sphere_space_station_simulations.simulation \
+    --export-step station.step \
+    --export-gltf station.glb \
+    --export-json station.json
+```
+
+Mit dem obigen Befehl lassen sich STEP-, glTF- und JSON-Dateien erzeugen. Der
+frühere CSV-Transport für Geometriedaten wurde entfernt.
+
+### 1.1.2 Layer Model / Schichtenmodell
+
+The project follows a layered architecture separating **KERNEL**,
+**ADAPTER** and **GUI** components. Details are documented in
+`simulations/docs/architecture`.
+
+Das Projekt verwendet ein Schichtenmodell mit **KERNEL**-, **ADAPTER**- und
+**GUI**-Ebenen. Weitere Informationen stehen in
+`simulations/docs/architecture`.
+
+All documents in the `documents` directory must be written in English, except for proper names.
+
+---
+
+## 1.2 Management Summary
+
+### 1.2.1 Technical Achievements
 
 - **Innovative Structural Design:**  
   The Sphere Station features a 127-meter diameter rotating structure designed to simulate artificial gravity through centrifugal force. The station’s 16 concentric decks are purpose-built to accommodate varied functions—from low-gravity command and docking areas at the center to Earth-like gravity zones on the outer decks, which support residential, industrial, and recreational activities.
@@ -18,7 +70,7 @@ Sphere Space Station Earth ONE and Beyond
 - **Robust Safety and Operational Systems:**  
   Comprehensive safety measures include inert gas fire suppression, multi-layer radiation shielding, and micrometeoroid protection. The station is equipped with sophisticated evacuation protocols featuring self-contained escape pods, while advanced attitude control and thruster systems (using gyroscopes, reaction wheels, and electric thrusters) maintain precise orientation and orbital stability. Life support systems, based on closed-loop recycling for air, water, and waste, guarantee long-term habitability.
 
-### 1.2 Civilizational (Societal & Organizational) Achievements
+### 1.2.2 Civilizational (Societal & Organizational) Achievements
 
 - **Holistic Living and Working Environment:**  
   The Sphere Station is not merely a technical marvel but a self-contained habitat designed to support up to 700 residents. It offers state-of-the-art residential quarters, diversified hospitality services (including tourism suites and family apartments), and comprehensive medical, educational, and recreational facilities. This integrated approach ensures a high quality of life, mirroring and even enhancing terrestrial standards.
@@ -29,7 +81,7 @@ Sphere Space Station Earth ONE and Beyond
 - **Public Engagement and Decentralized Associations:**  
   The initiative emphasizes public outreach through robust digital platforms, educational programs, and community-driven projects. Decentralized local associations empower communities worldwide to participate actively, ensuring the project’s societal impact extends well beyond its technical and economic dimensions. This approach not only builds widespread support but also nurtures future generations in STEM and space-related fields.
 
-### 1.3 Economic Achievements
+### 1.2.3 Economic Achievements
 
 - **Comprehensive Economic Feasibility:**  
   Detailed cost analyses indicate that while initial development, manufacturing, and transportation expenses are significant, diversified revenue streams—including residential and commercial leasing, tourism, research contracts, and industrial partnerships—create a robust business model. The economic projections demonstrate a break-even timeline of approximately 12–15 years.
@@ -45,7 +97,54 @@ Sphere Space Station Earth ONE and Beyond
 
 ---
 
-### 1.4 Conclusion  
+**Conclusion:**  
 The Sphere Station project stands as a transformative venture that not only pushes the boundaries of technical innovation in space habitation but also lays the groundwork for a new era of civilizational development and economic opportunity in space. By integrating cutting-edge engineering, comprehensive societal infrastructure, and a sound economic model, the project offers a viable and visionary blueprint for humanity’s long-term expansion into the cosmos.
 
 ---
+
+
+## 1.3 **Sphere Station Documentation: Technical and Operational Overview**
+
+### 1.3.1 Document 1: Technical Design and System Specifications
+
+**Title**: *Technical Design and System Specifications for the 127-Meter Sphere Station (e.g., Earth ONE)*
+
+### 1.3.2 Document 2: Staffing, Facilities, and Living Spaces
+
+**Title**: *Operational Infrastructure and Living Facilities on the Sphere Station*
+
+### 1.3.3 Document 3: Energy and Thermal Management Systems
+
+**Title**: *Energy Supply, Power Regulation, and Thermal Control of the Sphere Station*
+
+### 1.3.4 Document 4: Organizational Structure and Consortium Model
+
+**Title**: *Governance and Partnership Model for the Sphere Station Initiative*
+
+### 1.3.5 Document 5: Public Engagement and Decentralized Associations
+
+**Title**: *Public Engagement and Decentralized Associations for the Sphere Station Initiative*
+
+### 1.3.6 Document 6: Economic Feasibility and Market Analysis
+
+**Title**: *Economic Feasibility and Market Potential for the Sphere Station*
+
+### 1.3.7 Document 7: Environmental and Sustainability Goals
+
+**Title**: *Environmental and Sustainability Goals for the Sphere Station and Space Operations*
+
+### 1.3.8 Document 8: Future Expansion of the Sphere Station Network and Sphere Space Crafts
+
+**Title**: *Future Expansion and Vision for the Sphere Station Network and Sphere Space Crafts*
+
+### 1.3.9 Document 9: Establishing a Solar Alliance for Governance and Security in Space
+
+**Title**: *Establishing a Solar Alliance for Governance and Security in Space*
+
+### 1.3.10 Document 10: Self-Sustainability Models for Space Stations and Spacecraft
+
+**Title**: *Self-Sustainability Models for Space Stations and Spacecraft*
+
+## 1.4 Licensing
+
+The majority of simulation scripts under `simulations/` are provided under the MIT license for STEM education (see `LICENSE-MIT`). Documentation may be distributed under the Creative Commons Attribution 4.0 International license (see `LICENSE-CC-BY-4.0`). Core project files remain proprietary and fall under the "ALL RIGHTS RESERVED" notice above.
