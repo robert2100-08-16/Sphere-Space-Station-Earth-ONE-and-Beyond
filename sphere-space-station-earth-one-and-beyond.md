@@ -9054,7 +9054,7 @@ date: 2025-08-08
 lang: EN
 ---
 
-### 8.4.1 Appendix A: Abstract – Sphere Space Station Earth ONE and Beyond  
+### 8.4.Appendix A: Abstract – Sphere Space Station Earth ONE and Beyond  
 *Date: 2025-08-08*
 
 The *Sphere Space Station Earth ONE & Beyond* project presents a comprehensive vision for a sustainable, modular, and expandable orbital habitat designed to serve as a cornerstone for humanity’s long-term presence in space.  
@@ -9090,17 +9090,17 @@ date: 2025-07-08
 lang: EN
 ---
 
-**Evaluation of the Documentation “Sphere Space Station Earth ONE and Beyond”**
+### 8.4.Appendix E: Evaluation of the Documentation “Sphere Space Station Earth ONE and Beyond”
 
----
 
-### 8.4.2 Overview of Documentation Contents
+
+#### 8.4.1 Overview of Documentation Contents
 
 The Sphere Space Station Earth ONE and Beyond project is supported by comprehensive documentation covering all relevant thematic areas. The existing ten main documents address the station’s technical specifications, infrastructure and personnel, energy supply and thermal management, governance structures, public engagement, economic feasibility analyses, environmental and sustainability concepts, plans for future expansion of the station network, global space governance, and self-sustainability models. Thus, the core “subject areas”—from technical through organizational and financial to sustainability and public participation—are fundamentally addressed. Below, the completeness, depth, and maturity of these areas as well as their mutual alignment are assessed. A summary table (Table 1) provides an overview of each area’s maturity level and interoperability.
 
 ---
 
-#### 8.4.2.1 Maturity Level and Interoperability of Subject Areas
+##### 8.4.1.1 Maturity Level and Interoperability of Subject Areas
 
 The documentation is extremely comprehensive in most areas. Table 1 summarizes the assessment of each field with regard to **Content Maturity** (completeness/depth) and **Interoperability** (consistency/linkage to other areas).
 
@@ -9121,7 +9121,7 @@ The documentation is extremely comprehensive in most areas. Table 1 summarizes t
 
 ---
 
-#### 8.4.2.2 Particularly Mature Areas
+##### 8.4.1.2 Particularly Mature Areas
 
 The station’s technical design (structure, systems, safety) is exceptionally thorough. Document 1 describes every central system—from rotational gravity to energy supply and emergency systems—with detailed specifications. The energy and thermal management plan combines two 60 MW small modular reactors (or alternatively 20 micro-reactors) with large solar arrays for redundancy, and outlines energy storage (liquid heat storage), deployable radiators, and insulation strategies. The economic planning is similarly advanced: a sophisticated business plan details development costs (~~€1 bn), transport (~~€8.5 bn), annual operating expenses (\~€25 M/yr), revenue streams (rental of living quarters, laboratories, tourism), pricing, and forecasts a 12–15-year return on investment. These analyses provide a solid economic foundation. The environmental and sustainability concept (Document 7) sets clear principles—resource efficiency, closed-loop life support, recycling—and concrete measures such as CO$_2$ reclamation, water recycling, waste composting for hydroponics, and strict hazardous materials protocols. This demonstrates high technical maturity in self-sufficiency planning and minimizing external resupply needs.
 
@@ -9129,7 +9129,7 @@ Likewise, the infrastructure, staffing, and living-space planning is very detail
 
 ---
 
-#### 8.4.2.3 Moderately Developed Areas
+##### 8.4.1.3 Moderately Developed Areas
 
 The organizational and governance documentation is solid but more conceptual than the technical sections. Document 4’s consortium model outlines involvement of space agencies, companies, research institutions, investors, and governance bodies (consortium council, executive board, expert panels), addressing decision-making, conflict resolution, and funding phases. While well-designed for transparent international collaboration, concrete partners and legal structures remain to be specified. Public engagement (Document 5) proposes transparency campaigns, educational curricula, live broadcasts, citizen-science initiatives, and decentralized “Sphere” clubs for global participation. These measures are ambitious but still generic; resource allocation and structural alignment (e.g., between a PR department and local clubs) require further elaboration.
 
@@ -9137,7 +9137,7 @@ Two elements are more visionary than concrete: the Solar Alliance governance con
 
 ---
 
-#### 8.4.2.4 Consistency, Interoperability, and Harmonization
+##### 8.4.1.4 Consistency, Interoperability, and Harmonization
 
 Overall consistency between areas is high. Documents reference shared parameters and complement each other. For example, Earth ONE is consistently described as a 127 m spherical habitat for \~700 people; this assumption underpins the technical concept (Doc. 1), operational planning (Doc. 2), and financial models. The energy and sustainability documents (Docs. 3 and 7) both specify a mix of solar arrays and two primary reactors plus reserves. Technical details (60 MW SMRs) appear nearly verbatim across Docs. 1 and 3. Closed-loop life-support systems (air, water, waste) mentioned in Doc. 1 are elaborated in Doc. 7 (CO$_2$ scrubbers, water purification, composting). Deck layouts—general in Doc. 1 (living/work areas mid-decks, industry/storage outer decks)—are refined in Doc. 8 with specific functions per deck (decks 6–10 residential, deck 15 reactors, decks 2–3 life support).
 
@@ -9145,7 +9145,7 @@ Interdependencies are clearly signposted: the sustainability document’s lunar 
 
 ---
 
-#### 8.4.2.5 Potentials, Risks, Objectives, and Feasibility (Overall Assessment)
+##### 8.4.1.5 Potentials, Risks, Objectives, and Feasibility (Overall Assessment)
 
 The documentation conveys a visionary yet well-considered project. Objectives are clear: Earth ONE as a sustainable, permanent LEO outpost fostering science, commerce, and international exchange—evident from the mission statement in Doc. 1 to public engagement in Doc. 5. Long-term expansion to the Moon, Mars, asteroids, etc., is firmly anchored. The project could enable scientific breakthroughs (microgravity labs, space-based astronomy), spur new industries (materials research, pharmaceuticals, space mining), and invigorate space tourism. Economically, early positioning in an orbital market—accommodation, research services, satellite servicing, media offerings—promises significant returns. Socially, the station offers STEM inspiration and international cooperation. The closed-habitat ecology could model efficient terrestrial resource use, and Earth ONE may serve as a springboard for multi-planetary expansion.
 
@@ -9155,11 +9155,11 @@ Despite these challenges, the documentation outlines realization paths: Earth ON
 
 ---
 
-#### 8.4.2.6 Recommendations and Next Steps
+##### 8.4.1.6 Recommendations and Next Steps
 
 Below are the most sensible next steps from both a technical/content perspective (“logical next step”) and a strategic/project perspective (“smartest next step”). Both aim to advance the documented concepts toward implementation and close remaining gaps.
 
-##### 8.4.2.6.1 Next Logical Development Step (Technical/Content)
+###### 8.4.1.6.1 Next Logical Development Step (Technical/Content)
 
 **Recommendation:** Develop an integrated development and implementation roadmap to link all concepts. This master plan should define phases, milestones, and responsibilities—from R\&D through prototype construction to station assembly—and concretely align technical, organizational, and financial subplans. Key stages should include:
 
@@ -9170,7 +9170,7 @@ Below are the most sensible next steps from both a technical/content perspective
 
 This roadmap will unite parallel concept documents, reveal bottlenecks (launch capacity, personnel training, regulatory approvals), and incorporate risk analyses and fallback strategies (alternative technologies, modular capacity adjustments). Translating building blocks into a detailed action plan will provide internal clarity and external credibility.
 
-##### 8.4.2.6.2 Strategically Smartest Next Step (Project Strategy)
+###### 8.4.1.6.2 Strategically Smartest Next Step (Project Strategy)
 
 **Recommendation:** Forge a powerful real-world alliance/consortium and secure political backing, e.g., by launching an international flagship project under EU leadership. Early stakeholder engagement and binding commitments will generate momentum. Concrete measures include:
 
@@ -9185,6 +9185,72 @@ This strategic step institutionalizes the visionary concept, addresses the bigge
 
 **Summary:** The project should advance on two fronts: internally via a consolidated implementation plan (“what” and “when”) and externally via a robust alliance (“who” and “how to fund”). The documentation has made the vision tangible—these next steps can transform a visionary foundation into a concrete, collaborative mega-project.
 
+
+\newpage
+
+### 8.4.Appendix N: The Board and Engineering ABC
+
+#### Einleitung / Introduction
+
+##### DE
+
+Dieses Appendix fasst die wichtigsten Begriffe zur Orientierung und Beschreibung der Deckstrukturen zusammen. 
+Jeder Eintrag enthält: 
+
+* Alltagssprache (wie sie von Besatzung und Bewohnern verwendet wird), 
+* technisch präzisierte Form (Deckrohr-Begriffe), 
+* Engineering-Terminologie für Simulation und Dokumentation, 
+* eine kurze Erklärung in Deutsch und Englisch. 
+
+Die Tabelle dient sowohl als Bedienanleitung für den Menschen wie auch als Referenz für Ingenieure.
+
+
+##### EN
+This appendix summarizes the key terms for orientation and description of the deck structures.
+Each entry includes:
+
+* everyday language (as used by crew and residents),
+* technically specified form (deck tube terminology),
+* engineering terminology for simulation and documentation,
+* a short explanation in both German and English.
+
+The table serves both as a user guide for humans and as a reference for engineers.
+
+
+#### ABC
+
+| Nr. | Deutsch (Alltag / Technisch)         | Englisch (Everyday / Technical)                 | Technisch (Ingenieure)                | Erklärung (DE)                                                                     | Explanation (EN)                                                                          |
+| --: | ------------------------------------ | ----------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+|   1 | Nordpol / Deckrohr-Nordende          | North pole / deck tube north end                | z-axis origin (north end)             | Ende der Z-Achse; „vorne“ in Bewegungsrichtung eines Decks.                        | End of the z-axis; “forward” direction of a deck.                                         |
+|   2 | Südpol / Deckrohr-Südende            | South pole / deck tube south end                | z-axis end (south end)                | Gegenüberliegendes Ende der Z-Achse; „hinten“.                                     | Opposite end of the z-axis; “aft/backward.”                                               |
+|   3 | Decklänge / Deckrohr-Länge (N–S)     | deck length / deck tube length (N–S)            | axial chord length (N–S)              | Länge zwischen Nord- und Südpol, entlang der Z-Achse.                              | Length between north and south pole along the z-axis.                                     |
+|   4 | Deckbreite / Deckrohr-Umfangsbreite  | deck width / deck tube circumference width      | deck circumference (inner path)       | Umlaufweg am Boden; entspricht 2 π·r.                                              | Walking path along the deck floor; equals 2 π·r.                                          |
+|   5 | Deckhöhe / Deckrohr-Höhe (Raumhöhe)  | deck height / deck tube height (room)           | radial deck span                      | Begehbarer Raum zwischen Boden (außen) und Decke (innen); wie Zimmerhöhe.          | Walkable space between floor (outer radius) and ceiling (inner radius); like room height. |
+|   6 | Decke / Deckrohr-Decke               | ceiling / deck tube ceiling                     | inner radius limit                    | Innere Deckgrenze, näher am Rotationszentrum, geringere g-Belastung.               | Inner boundary of the deck, closer to rotation axis, lower g-force.                       |
+|   7 | Boden / Deckrohr-Boden               | floor / deck tube floor                         | outer radius limit                    | Äußere Deckgrenze, hier steht man; maximale g-Belastung.                           | Outer boundary of the deck; main walking surface, maximum g-force.                        |
+|   8 | Vorwärts / Deckrohr-z-Richtung Nord  | forward / deck tube −z direction (north)        | −z-direction                          | Blickrichtung zur z=0-Achse (Nordpol).                                             | Viewing direction toward z=0 axis (north pole).                                                |
+|   9 | Rückwärts / Deckrohr-z-Richtung Süd  | backward / deck tube +z direction (south)       | +z-direction                          | Blickrichtung zum Südpol.                                                          | Viewing direction toward the south pole.                                                  |
+|  10 | Steuerbord / Deckrohr-θ-Richtung +   | starboard / deck tube +θ direction              | azimuthal +θ direction                | Rechte Seite beim Blick nach Norden; wachsende Winkel (Ost).                       | Right side when facing north; azimuthal angle increasing (east).                          |
+|  11 | Backbord / Deckrohr-θ-Richtung −     | port / deck tube −θ direction                   | azimuthal −θ direction                | Linke Seite beim Blick nach Norden; sinkende Winkel (West).                        | Left side when facing north; azimuthal angle decreasing (west).                           |
+|  12 | Sektor A–L / Deckrohr-Sektoren       | sector A–L / deck tube sectors                  | 12 sectors à 30° (θ-axis subdivision) | Einteilung des Ringdecks in 12 Segmente à 30°.                                     | Division of the ring deck into 12 segments of 30° each.                                   |
+|  13 | Radiale Schottwand / Deckrohr-Schott | radial bulkhead / deck tube bulkhead            | radial partition wall                 | Trennwand entlang des Radius zwischen zwei Sektoren.                               | Partition wall along the radius separating two sectors.                                   |
+|  14 | Z-Achse / Deckrohr-Z-Achse           | z axis / deck tube z axis                       | global z-axis                         | Achse Nord–Süd; Referenz für Decklänge.                                            | North–south axis; reference for deck length.                                              |
+|  15 | Bodendicke / Deckrohr-Bodendicke     | floor thickness / deck tube floor thickness     | deck tube floor wall thickness        | Stärke der Materialschicht direkt unter den Füßen; „wie dick der Boden ist“.       | Thickness of the structural layer directly under the feet; “how thick the floor is.”      |
+|  16 | Deckenstärke / Deckrohr-Deckendicke  | ceiling thickness / deck tube ceiling thickness | deck tube ceiling wall thickness      | Stärke der Materialschicht oberhalb des Raumes; „wie dick die Decke über mir ist“. | Thickness of the structural layer above the room; “how thick the ceiling above me is.”    |
+
+---
+
+#### Willkommen an Bord / Welcome on Board
+
+Danke, dass Sie Teil dieser Reise sind.
+Ob als Gast, Crewmitglied oder Bewohner:
+Genießen Sie Ihren Aufenthalt – oder beginnen Sie ein neues Leben – an Bord.
+
+Thank you for being part of this journey.
+Whether guest, crew member or resident:
+Enjoy your stay – or begin a new life – on board.
+
+*Sphere Station New Horizons · Human Engineering · Space Home · New Space Cities*
 
 \newpage
 
@@ -9210,7 +9276,7 @@ date: 2025-08-08
 lang: EN
 ---
 
-### 8.4.3 Invitation to Participate – Research, Funding, Engineering, and Construction Partnership
+### 8.4.Appendix P: Invitation to Participate – Research, Funding, Engineering, and Construction Partnership
 
 The *Sphere Space Station Earth ONE & Beyond* project extends an open invitation to leading STEM institutions, the European Space Agency (ESA), universities, research organizations, and European companies to join in the exploration, funding, engineering, and construction of this landmark initiative.
 
@@ -9259,89 +9325,8 @@ date: 2025-08-09
 lang: EN
 ---
 
-### 8.4.4 Sphere Space Station Earth ONE – Executive Summaries
-**Version:** 1.0.1  
-**Date:** 2025-08-09  
 
----
-
-#### 8.4.4.1 Executive Summary – Technical, Science & Research Decision-Makers (e.g., ESA Director)
-
-The **Sphere Space Station Earth ONE** is a modular, rotating spherical habitat with a diameter of ~127 meters, designed primarily for Low Earth Orbit (LEO) operations and scalable to Geostationary Orbit (GEO), Lagrange points, and deep-space locations such as the Asteroid Belt.  
-
-Its engineering integrates:  
-- **Artificial gravity** via 4–5 rpm spin rate, delivering ~1g on outer decks.  
-- **Polar “bus terminal” docking** for efficient, safe, and separated inbound/outbound traffic.  
-- **SiC composite structures** for superior thermal, mechanical, and radiation resilience.  
-- **Closed-loop life support systems**, advanced radiation shielding, and dynamic attitude control.  
-
-The station is conceived as both a **standalone operational hub** and a **node in a larger interplanetary infrastructure**, supporting scientific research, industrial production, crew training, and long-term habitation. Its design draws on validated spaceflight data, terrestrial analogs, and advanced simulation models, making it ready for phased deployment with minimal technological gaps.  
-
----
-
-#### 8.4.4.2 Executive Summary – Investors & Funding Partners
-
-**Earth ONE** represents a high-return, scalable infrastructure investment in the rapidly expanding orbital economy. The station is positioned as:  
-- A **commercial logistics hub** in LEO with premium services for cargo, crew, and research missions.  
-- A **platform for revenue generation** through hosting of government missions, private research modules, space tourism, and manufacturing in artificial gravity.  
-- An **asset with cross-market potential**, including deep-space logistics for lunar and Mars-bound operations.  
-
-The **low-risk phased build-out** leverages proven engineering concepts while opening high-value markets in aerospace, energy, biotechnology, and advanced manufacturing. Long-term revenue streams are supported by service contracts, manufacturing royalties, and tourism packages. With its modular design and adaptable orbit strategies, Earth ONE provides both **stable returns** and a **gateway to future space markets**.
-
----
-
-#### 8.4.4.3 Executive Summary – Political & Societal Decision-Makers
-
-**Earth ONE** is a strategic capability platform for spacefaring nations and alliances. It delivers:  
-- **Sovereign access to orbital infrastructure**, reducing dependency on external actors.  
-- A **resilient hub** for international collaboration in science, exploration, and security.  
-- **Technological leadership** in sustainable, human-centric habitat design.  
-- **Dual-use readiness** for both civilian and defense-relevant missions.  
-
-By fostering **international cooperation** and aligning with long-term sustainability goals, Earth ONE strengthens geopolitical resilience, supports space governance frameworks, and enhances societal preparedness for humanity’s expansion beyond Earth.
-
----
-
-#### 8.4.4.4 Executive Summary – General Public, Future Crew/Residents/Travelers, and Interested Readers
-
-Imagine living or working inside a **vast, rotating sphere above Earth**, where gravity feels natural, views of the planet are ever-changing, and communities thrive in an orbital city of up to 700 people.  
-
-**Earth ONE** is more than a station – it’s a **new home in space**, offering:  
-- Comfortable living with artificial gravity, gardens, leisure zones, and social spaces.  
-- A safe, well-designed environment with world-class life support and medical care.  
-- Opportunities for science, work, tourism, and cultural exchange in a vibrant community.  
-
-Built for the long term, Earth ONE is designed to be **self-sustaining, safe, and inspiring**, creating a place where people can **live, work, and explore the future** together.
-
----
-
-
-\newpage
-
----
-id: ""
-title: ""
-version: v0.0.0
-state: DRAFT
-evolution: ""
-discipline: ""
-system: []
-system_id: []
-seq: []
-owner: ""
-reviewers: []
-source_of_truth: true
-supersedes: null
-superseded_by: null
-rfc_links: []
-adr_links: []
-cr_links: []
-date: 2025-08-09
-lang: EN
----
-
-
-### 8.4.5 AI-Based Quality Assurance Concept – Documentation & Safety
+### 8.4.Appendix Q: AI-Based Quality Assurance Concept – Documentation & Safety
 
 #### 8.4.5.1 Objective
 
@@ -9429,6 +9414,87 @@ system_id: []
 seq: []
 owner: ""
 reviewers: []
+source_of_truth: true
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-08-09
+lang: EN
+---
+
+### 8.4.Appendix S: Sphere Space Station Earth ONE – Executive Summaries
+**Version:** 1.0.1  
+**Date:** 2025-08-09  
+
+---
+
+#### 8.4.4.1 Executive Summary – Technical, Science & Research Decision-Makers (e.g., ESA Director)
+
+The **Sphere Space Station Earth ONE** is a modular, rotating spherical habitat with a diameter of ~127 meters, designed primarily for Low Earth Orbit (LEO) operations and scalable to Geostationary Orbit (GEO), Lagrange points, and deep-space locations such as the Asteroid Belt.  
+
+Its engineering integrates:  
+- **Artificial gravity** via 4–5 rpm spin rate, delivering ~1g on outer decks.  
+- **Polar “bus terminal” docking** for efficient, safe, and separated inbound/outbound traffic.  
+- **SiC composite structures** for superior thermal, mechanical, and radiation resilience.  
+- **Closed-loop life support systems**, advanced radiation shielding, and dynamic attitude control.  
+
+The station is conceived as both a **standalone operational hub** and a **node in a larger interplanetary infrastructure**, supporting scientific research, industrial production, crew training, and long-term habitation. Its design draws on validated spaceflight data, terrestrial analogs, and advanced simulation models, making it ready for phased deployment with minimal technological gaps.  
+
+---
+
+#### 8.4.4.2 Executive Summary – Investors & Funding Partners
+
+**Earth ONE** represents a high-return, scalable infrastructure investment in the rapidly expanding orbital economy. The station is positioned as:  
+- A **commercial logistics hub** in LEO with premium services for cargo, crew, and research missions.  
+- A **platform for revenue generation** through hosting of government missions, private research modules, space tourism, and manufacturing in artificial gravity.  
+- An **asset with cross-market potential**, including deep-space logistics for lunar and Mars-bound operations.  
+
+The **low-risk phased build-out** leverages proven engineering concepts while opening high-value markets in aerospace, energy, biotechnology, and advanced manufacturing. Long-term revenue streams are supported by service contracts, manufacturing royalties, and tourism packages. With its modular design and adaptable orbit strategies, Earth ONE provides both **stable returns** and a **gateway to future space markets**.
+
+---
+
+#### 8.4.4.3 Executive Summary – Political & Societal Decision-Makers
+
+**Earth ONE** is a strategic capability platform for spacefaring nations and alliances. It delivers:  
+- **Sovereign access to orbital infrastructure**, reducing dependency on external actors.  
+- A **resilient hub** for international collaboration in science, exploration, and security.  
+- **Technological leadership** in sustainable, human-centric habitat design.  
+- **Dual-use readiness** for both civilian and defense-relevant missions.  
+
+By fostering **international cooperation** and aligning with long-term sustainability goals, Earth ONE strengthens geopolitical resilience, supports space governance frameworks, and enhances societal preparedness for humanity’s expansion beyond Earth.
+
+---
+
+#### 8.4.4.4 Executive Summary – General Public, Future Crew/Residents/Travelers, and Interested Readers
+
+Imagine living or working inside a **vast, rotating sphere above Earth**, where gravity feels natural, views of the planet are ever-changing, and communities thrive in an orbital city of up to 700 people.  
+
+**Earth ONE** is more than a station – it’s a **new home in space**, offering:  
+- Comfortable living with artificial gravity, gardens, leisure zones, and social spaces.  
+- A safe, well-designed environment with world-class life support and medical care.  
+- Opportunities for science, work, tourism, and cultural exchange in a vibrant community.  
+
+Built for the long term, Earth ONE is designed to be **self-sustaining, safe, and inspiring**, creating a place where people can **live, work, and explore the future** together.
+
+---
+
+
+\newpage
+
+---
+id: ""
+title: ""
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
 source_of_truth: false
 supersedes: null
 superseded_by: null
@@ -9439,7 +9505,7 @@ date: 2025-08-27
 lang: EN
 ---
 
-### 8.4.6 Wow Factors
+### 8.4.Appendix W: Wow Factors
 
 #### 8.4.6.1 Why this matters now
 
@@ -9501,7 +9567,7 @@ Earth ONE transforms spaceflight from **mission** to **habitat**: a scalable, sa
 
 \newpage
 
-### 8.4.7 Appendix B: Backlog Potential Developments
+### 8.4.Appendix B: Backlog Potential Developments
 
 This appendix consolidates potential developments across Governance, Outreach, Engineering, Science, Economics, and Operations. It serves as a living, prioritized repository that evolves independently of the main chapters, offering a stable and referenceable source for future work. Pointer subsections in the respective chapters link to the most relevant backlog items, keeping the primary narrative streamlined while enabling deeper exploration.
 
@@ -10080,7 +10146,15 @@ Translate theoretical self-sustainability models into a practical pathway for Ea
 
 \newpage
 
-### 8.4.8 Appendix T: Tables
+### 8.4.Appendix C: Charts
+
+\newpage
+
+### 8.4.Appendix I: Images
+
+\newpage
+
+### 8.4.Appendix T: Tables
 
 This appendix collects supporting tables for reference.
 
@@ -10126,12 +10200,3 @@ lang: EN
 \pagewidth=210mm
 \pageheight=297mm
 \newpage
-
-
-\newpage
-
-### 8.4.9 Appendix I: Images
-
-\newpage
-
-### 8.4.10 Appendix C: Charts
