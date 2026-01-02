@@ -46,6 +46,13 @@ When critical design changes are made, the related documents must be versioned a
 
 Introduces foundational ethics and security considerations for the Sphere Space Station project.
 
+Start here:
+
+* [0.1-preamble-ethics-and-security.md](0.1-preamble-ethics-and-security.md)
+* [0.2-preamble-mission.md](0.2-preamble-mission.md)
+* [0.3-mission-charter.md](0.3-mission-charter.md)
+* [0.4-engineering-and-mission-charter-v1.0.md](0.4-engineering-and-mission-charter-v1.0.md)
+
 
 \newpage
 
@@ -177,6 +184,432 @@ Place:
 
 SEAL/NOTARY: 
 
+
+
+\newpage
+
+---
+title: "Preamble — Mission"
+version: 1.0.0
+owner: "Robert Alexander Massinger"
+license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
+history:
+  - version: 1.0.0
+    date: 2026-01-02
+    change: "Initial"
+    reference: ""
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: true
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
+---
+
+## 0.2 Preamble — Mission
+
+*On freedom, dignity, and carrying something large together*
+
+This mission is larger than individual roles, careers, or achievements.
+It reaches beyond schedules, budgets, and milestones.
+
+It touches lives.
+Future people.
+Future decisions that build on ours.
+
+Therefore, this mission is **not property**.
+No one "owns" it.
+And it belongs to no one.
+
+We enter it **voluntarily**.
+And we may leave it **voluntarily**.
+
+No person owes a mission their dignity.
+No vision justifies breaking a human being.
+
+We acknowledge:
+Not every phase of life has the same capacity.
+Not every person is, at every time, able
+to carry the full load of a great undertaking.
+
+Therefore:
+
+**Every person has the inalienable right**,
+without pressure to justify, without devaluation, without blame, to say:
+
+> "I need a lighter task."
+> "I need distance."
+> "I choose another path."
+
+This decision is not failure.
+It is an expression of maturity.
+
+A mission that binds people
+by making exit difficult
+has already failed—even if it is technically successful.
+
+We do not want a project of fear.
+Not a prestige project.
+Not "endurance at any price".
+
+We want a **livable project**.
+One that lets people grow—
+and allows them to protect themselves.
+
+Responsibility here does not mean:
+*always going further*,
+but **choosing consciously** when to carry—
+and when to hand off.
+
+This is how the mission remains human.
+This is how it remains true.
+This is how it stays larger than power, but smaller than dignity.
+
+### Closing thought (optional)
+
+> "A mission is only as strong as the freedom of its members
+> to be honest with themselves."
+
+
+
+-----------------------------------------------------------
+
+IN WITNESS WHEREOF, the undersigned has executed this Preamble as of the date first written above:
+
+Signatory:
+
+_______________________________
+Name (printed): 
+Title:
+Company/Institution:
+Date: 
+Place:
+
+Witness:
+
+_______________________________
+Name (printed):
+Title:
+Date:
+Place:
+
+SEAL/NOTARY: 
+
+
+\newpage
+
+---
+title: "Mission Charter — Short Version"
+version: 1.0.0
+owner: "Robert Alexander Massinger"
+license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
+history:
+  - version: 1.0.0
+    date: 2026-01-02
+    change: "Initial"
+    reference: ""
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: true
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
+---
+
+## 0.3 Mission Charter — Short Version
+
+*Responsibility, freedom, and dignity*
+
+This mission serves a purpose that is larger than any individual—
+but **never larger than a human being’s dignity**.
+
+Participation in this mission is voluntary.
+It remains voluntary at all times.
+
+Each person carries responsibility according to their current professional, psychological, and personal capacity.
+No one is obligated to carry more than what is responsible.
+
+Each person has, at any time, the **unrestricted right** to:
+
+* choose a lighter task,
+* take a different position,
+* or leave the mission.
+
+This decision must not result in **devaluation, pressure, or sanctions**.
+
+Safety, transparency, and early error correction take precedence over deadlines, hierarchies, or symbolic success.
+
+This mission acknowledges:
+Long-term sustainability exists only where
+people are allowed to remain true to themselves.
+
+---
+
+### Optional shared closing statement
+
+> **A mission is only strong
+> when people can carry it—
+> and can leave it without losing themselves.**
+
+
+
+-----------------------------------------------------------
+
+IN WITNESS WHEREOF, the undersigned has executed this Charter as of the date first written above:
+
+Signatory:
+
+_______________________________
+Name (printed): 
+Title:
+Company/Institution:
+Date: 
+Place:
+
+Witness:
+
+_______________________________
+Name (printed):
+Title:
+Date:
+Place:
+
+SEAL/NOTARY: 
+
+
+\newpage
+
+---
+title: "Engineering & Mission Charter v1.0"
+version: 1.0.0
+owner: "Robert Alexander Massinger"
+license: "(c) COPYRIGHT 2023 - 2025 by Robert Alexander Massinger, Munich, Germany. ALL RIGHTS RESERVED."
+history:
+  - version: 1.0.0
+    date: 2026-01-02
+    change: "Initial"
+    reference: ""
+id: ""
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+reviewers: []
+source_of_truth: true
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+lang: EN
+---
+
+## 0.4 ENGINEERING & MISSION CHARTER v1.0
+
+*Sphere Space Station – Earth ONE and Beyond*
+
+---
+
+### A. Formal Main Version (binding, calm, signable)
+
+#### Preamble
+
+This charter defines the underlying stance under which engineering, systems, and mission work takes place.
+It is binding for structure, collaboration, and decision-making.
+
+It serves to protect:
+
+- human life
+- technical integrity
+- personal dignity
+- long-term mission viability
+
+No goal, no schedule, and no status justifies violating it.
+
+---
+
+#### §1 Responsibility and Capacity
+
+(1) Every technical action has real consequences.
+(2) Responsibility is assumed according to individual maturity, experience, and current capacity.
+(3) No one is obligated to take on tasks that he or she cannot carry safely.
+
+---
+
+#### §2 Safety and Error Culture
+
+(1) Safety has absolute priority over efficiency, elegance, or deadlines.
+(2) Errors must be named openly and early.
+(3) Concealing uncertainty is considered more severe than the mistake itself.
+
+---
+
+#### §3 Right to Limit and Withdraw
+
+(1) Each person has, at any time, the unrestricted right to:
+
+- reduce responsibility,
+- choose a lighter task,
+- take a different position,
+- or leave the mission.
+
+(2) This decision must not result in any negative evaluation, sanction, or loss of status.
+
+---
+
+#### §4 Dignity and Voluntariness
+
+(1) Participation in the mission is voluntary.
+(2) Voluntariness remains in effect at all times.
+(3) Human dignity stands above any mission.
+
+---
+
+#### §5 Primacy of Life
+
+(1) Engineering serves life.
+(2) Technology is a means, never an end.
+(3) Long-term livability is the highest criterion of success.
+
+---
+
+### B. Engineering Guiding Principles (daily work, reviews, onboarding)
+
+1. We carry together—no one alone.
+2. We carry only what we can carry safely.
+3. Safety before speed.
+4. A discovered error is progress.
+5. Doubt is allowed—questions are a duty.
+6. Arguments matter more than roles.
+7. Assumptions must be visible.
+8. Responsibility may be limited.
+9. Correct early, not justify late.
+10. Engineering serves life.
+
+---
+
+### C. Safety & Escalation Appendix
+
+*Operational protection mechanisms*
+
+#### C1 — Duty to report uncertainty
+
+Any identified uncertainty **must** be communicated—regardless of rank or phase.
+
+#### C2 — Stop right
+
+Each person has the right and the duty to stop work in case of justified safety risk.
+
+#### C3 — No-blame zone
+
+Reporting errors or overload is explicitly free of sanctions.
+
+#### C4 — Load distribution
+
+Overloading individual persons is considered a system failure, not an individual failure.
+
+---
+
+### D. Short version (one-pager / onboarding)
+
+> We work on a mission that is larger than us—
+> but never larger than our dignity.
+>
+> We carry responsibility only as far as we can carry it safely.
+> Safety always comes first.
+>
+> Each person may, at any time, reduce responsibility, change roles, or leave—
+> without justification, without devaluation.
+>
+> A mission is sustainable only when
+> people are allowed to be honest with themselves.
+
+---
+
+### E. Ritual / reading version (project start, mission start)
+
+> We carry together.
+> Not equally, not always the same.
+>
+> We speak when we doubt.
+> We stop when it is necessary.
+>
+> No one loses dignity
+> because they know their limits.
+>
+> This mission lives
+> as long as we remain human.
+
+---
+
+### F. In-universe version (Sphere / novel / lore)
+
+> The Sphere was not built
+> to overload people.
+>
+> It was built
+> because people learned
+> to speak their limits
+> before systems fail.
+>
+> Therefore it is not weakness
+> to hand off the load.
+>
+> It is a sign of maturity—
+> and the reason
+> why the Sphere holds.
+
+---
+
+### G. Closing formula (optional, connecting)
+
+> **A mission that binds people
+> by taking away their exit
+> has already failed.**
+>
+> **A mission that protects freedom
+> will be carried.**
+
+---
+
+### Signature (optional)
+
+Signatory:
+
+_______________________________
+Name (printed):
+Title:
+Company/Institution:
+Date:
+Place:
+
+Witness:
+
+_______________________________
+Name (printed):
+Title:
+Date:
+Place:
 
 
 \newpage
@@ -484,6 +917,7 @@ The 127-meter Sphere Station is a spherical, rotating structure designed to prov
 - **Rotation Dynamics**: The Sphere Station rotates at a speed calibrated to produce Earth-like gravity (~9.81 m/s²) on specific decks, while other decks experience variable gravity levels, from higher gravities closer to the outer decks to microgravity at the central axis.
 - **Structural Design**: The sphere is composed of high-strength, multi-layered composite materials capable of withstanding micro-meteoroid impacts and radiation exposure in Low Earth Orbit (LEO).
 - **Deck Configuration**: Sixteen main decks (Deck 000 to Deck 015) are arranged as concentric shells. Decks closer to the center have lower gravity and are dedicated to storage, command centers, and docking areas. Outer decks provide residential, recreational, and operational spaces for the crew.
+- **Mantle Deck Definition**: Each deck is a Manteldeck — a walkable annulus within the cylindrical hull region between two coaxial cylinders. Rotation creates outward radial gravity across the span defined by the inner ceiling radius, the outer floor radius, and the deck height. This geometry governs the gravity gradient and usable headroom on every level.
 
 ### 2.1.2 **Deck Layout and Access Systems**
 
@@ -4136,6 +4570,11 @@ lang: EN
 
 This folder is the engineering workspace for **Sphere Space Station Earth ONE and Beyond**. It hosts our standards, working “Evolutions” (EVOLs), specs, models, tests, operational procedures, and the auditable history that ties decisions to evidence. Treat this directory as part of the Single Source of Truth (SSOT).
 
+If you contribute to engineering work in this repository, start with:
+
+* [7.6.0-engineering-preamble.md](7.6.0-engineering-preamble.md)
+* [7.6.0.1-engineering-guiding-principles.md](7.6.0.1-engineering-guiding-principles.md)
+
 ---
 
 ## What lives here
@@ -4274,6 +4713,161 @@ For system-wide engineering flow (from concept through operations), see **7.5.1 
 ---
 
 *You’re in the right place to build flight-worthy things. Keep it small, reviewable, and evidence-backed.*
+
+
+\newpage
+
+---
+id: ""
+title: "Preamble — Engineering"
+version: v1.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: true
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2026-01-02
+lang: EN
+---
+
+### 7.6.0 Preamble — Engineering
+
+*On responsibility, maturity, and the right to choose an appropriate load*
+
+We acknowledge:
+Every technical decision carries weight.
+Not abstractly, but concretely—
+in materials, systems, human lives, and the future.
+
+Engineering is not merely the application of knowledge.
+It is **responsible action under uncertainty**.
+What we design, build, test, or release will outlast us.
+
+Therefore:
+
+**Each of us carries—and is carried.**
+Not all equally, not at the same time.
+But each as far as he or she or it is **mature enough** to hold responsibility.
+
+We do not work against each other, not above each other,
+but **alongside each other and for each other**.
+Errors are not a stigma; they are a signal.
+A missed error is more dangerous than a clearly stated doubt.
+
+**Safety before elegance.
+Clarity before speed.
+Understanding before optimization.**
+
+We commit to:
+
+* making assumptions visible
+* speaking uncertainties out loud
+* giving critique without injury
+* allowing questions without loss of status
+
+No one is diminished for saying:
+
+> "I am not sure about this."
+
+No one is ignored for warning:
+
+> "This is not yet solid enough."
+
+Engineering requires courage—
+not the courage to overextend oneself,
+but the courage of **honest self-assessment**.
+
+Each person has, at any time, the **unrestricted right** to say:
+
+> "This task is currently larger than what I can safely carry."
+
+This right is not withdrawal.
+It is **responsible action**.
+
+We respect that statement.
+We protect it.
+Because systems fail not from a lack of brilliance,
+but from hidden overload.
+
+This is how trust is built.
+This is how quality is built.
+This is how we build engineering worthy of life.
+
+
+\newpage
+
+---
+id: ""
+title: "Engineering Guiding Principles (10 Points)"
+version: v1.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: "Robert Alexander Massinger"
+reviewers: []
+source_of_truth: true
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2026-01-02
+lang: EN
+---
+
+### 7.6.0.1 Engineering Guiding Principles (10 Points)
+
+*For daily practice of responsibility*
+
+1. **We carry together.**
+   Responsibility is distributed, not isolated. No one stands alone.
+
+2. **We carry only what we can carry safely.**
+   Overconfidence is not courage—it is risk.
+
+3. **Safety always comes first.**
+   Before speed, before elegance, before prestige.
+
+4. **A discovered error is a success.**
+   A hidden error is a hazard.
+
+5. **Doubt is allowed; questions are a duty.**
+   Uncertainty may be spoken—at any time.
+
+6. **Status does not protect against being wrong.**
+   Arguments matter more than roles.
+
+7. **Every assumption must be visible.**
+   Hidden premises endanger systems.
+
+8. **No one is devalued for limiting responsibility.**
+   Feedback on one’s own capacity is part of professionalism.
+
+9. **We correct early, not heroically late.**
+   Small corrections beat large justifications.
+
+10. **Engineering serves life.**
+    Technology is a means, not an end.
+
+---
+
+### Optional closing statement
+
+> **A mission is only strong
+> when people can carry it—
+> and can leave it without losing themselves.**
 
 
 \newpage
@@ -8090,7 +8684,7 @@ Festgelegt werden konstruktive Schutzebenen für DECK 000: **Sektorisierung übe
 ## 4. Threat Cases (Design Cases)
 
 **E1 — Explodierendes Schiff am Docking-Ring**
-Bemessungsfälle (lastfall-agnostisch): Druckstoß + Trümmer, Nahfeld am Ring-Hals. Ziele: Ring-Kompartiment hält; Impuls wird radial abgeführt; Fenster/Tuben vorgelagert durch Shutter geschützt.
+Bemessungsfälle (lastfallunabhängig): Druckstoß + Trümmer, Nahfeld am Ring-Hals. Ziele: Ring-Kompartiment hält; Impuls wird radial abgeführt; Fenster/Tuben vorgelagert durch Shutter geschützt.
 
 **E2 — Brand am angedockten Schiff**
 Rauch/Hitze/Flammen-Übergang in Ring-Kompartiment; Ziel: **Inertisierung** im Sektor, Andockadapter/Leitungen feuerfest, schnelle Trennung/Abwurf.
@@ -8823,6 +9417,12 @@ Accomplished, frozen or just superseded evolutions (read-only).
 
 Reference material, supporting organizations, and legal information.
 
+Key documents:
+- [8.1 Glossary](8.1-glossary.md)
+- [8.1.1 Glossary — Station & Vessel Forms, Spaces, and Aggregates](8.1.1-station-and-vessel-forms-and-spaces-glossary.md)
+- [8.2 Partners & Institutions](8.2-partners-and-institutions.md)
+- [8.3 Legal Notices](8.3-legal-notices.md)
+
 
 \newpage
 
@@ -8851,6 +9451,9 @@ lang: EN
 ## 8.1 Glossary
 
 Definitions of key terms used throughout the Sphere Space Station Earth ONE & Beyond project documentation.
+
+Extended, evolutions-independent glossary:
+- [8.1.1 Glossary — Station & Vessel Forms, Spaces, and Aggregates](8.1.1-station-and-vessel-forms-and-spaces-glossary.md)
 
 ## A
 - **AI (Artificial Intelligence)**: Computer systems capable of performing tasks that normally require human intelligence, such as perception, decision-making, or language understanding.
@@ -8957,6 +9560,355 @@ Definitions of key terms used throughout the Sphere Space Station Earth ONE & Be
 ## Z
 - **Zenith**: The direction directly away from the Earth, opposite nadir, as observed from an orbiting spacecraft.
 - **Zonal Harmonics**: Variations in a planet's gravitational field due to its nonuniform shape or mass distribution, affecting orbital dynamics.
+
+
+\newpage
+
+---
+id: ""
+title: "Glossary — Station & Vessel Forms, Spaces, and Aggregates"
+version: v0.1.2
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: true
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-12-23
+lang: EN
+---
+
+## 8.1.1 Glossary — Station & Vessel Forms, Spaces, and Aggregates (EN)
+
+This glossary is **evolution-independent**: it defines canonical English terms that apply across all EVOL packages.
+
+Design intent:
+- Cover *shipbuilding form factors* (Sphere, long capsule, etc.).
+- Cover *deck + compartment functions* down to aggregates (bulkheads, lifts, tanks, power units, etc.).
+- Scale to thousands of items by using a stable taxonomy.
+
+Conventions:
+- **Canonical term** is English.
+- **Aliases** can include German terms.
+- **Token hint** is an optional, automation-friendly snake_case identifier.
+
+---
+
+## A) Form Factors / Bauformen
+
+### A.1 Geometry classes (canonical)
+
+| Term (EN) | Definition | Examples in docs | Alias (DE) | Token hint |
+| --- | --- | --- | --- | --- |
+| Sphere habitat | Rotating spherical station / habitat with decks as radial tubes or bands inside the sphere. | `BALL-D127` (Earth ONE class), `BALL-D254` (Earth TWO class) | Kugelstation | `ball_d127`, `ball_d254` |
+| Capsule habitat | Capsule-like station: cylindrical barrel with hemispherical endcaps; rotating, with a central axial corridor (“wormhole”). | `CAP-D254-L127`, `CAP-D254-L254`, `CAP-D254-L508`, `CAP-D254-L1016` | Kapsel | `cap_d254_l508`, `cap_d254_l1016` |
+| Linear habitat (spine) | A capsule-derived **linear habitat** for extreme aspect ratios: a long, segmentable axial “spine” with repeated structural stations (frames/diaphragms) and modular districts. | (concept) `SPINE-D254-L2032`, `SPINE-D254-L25400` | Lineares Habitat / Rückgrat | `spine_d254_l2032` |
+| Cycler (habitat cycler) | A vehicle/station on a repeating interplanetary trajectory for freight + passengers; often long-duration, partially self-sustaining. | Aldrin Cycler ONE, Belt Cycler ONE | Zyklerschiff | `cycler_aldrin_01` |
+| Exploration craft (generation craft) | Long-duration craft supporting families/education; high autonomy and redundancy. | “Exploration Kuiper ONE…” | Generationenschiff | `exploration_kuiper_01` |
+| Uncrewed freight transporter | Non-rotating cargo craft optimized for a route class (short/medium/long range). | “Unmanned freight transporters” | Unbemannter Frachter | `freight_uncrewed_sr_01` |
+
+### A.1.1 “Long capsule” (definition)
+
+In this project, **“capsule”** is the base geometry class, and **“long capsule”** is a capsule that exceeds a length ratio threshold.
+
+Assumption (as used in the EVOL specs): a capsule has a **cylindrical section** plus **two hemispherical endcaps**.
+
+**Naming convention (important):** in this project taxonomy, **`L` denotes the cylindrical/barrel length** $L_{\mathrm{cyl}}$.
+The **station (envelope) length** is derived as:
+
+- $L_{\mathrm{station}} = L_{\mathrm{cyl}} + D$ (hemispherical endcaps)
+
+To avoid ambiguity, we use two ratios:
+
+- Total-length ratio:
+	- $\rho = L_{\mathrm{station}}/D$
+	- with hemispherical endcaps: $L_{\mathrm{station}} = L_{\mathrm{cyl}} + D$ → $\rho = 1 + L_{\mathrm{cyl}}/D$
+- Cylinder-only ratio (recommended for “short/very short” tiers):
+	- $\lambda = L_{\mathrm{cyl}}/D$ → $\rho = 1 + \lambda$
+
+Recommended constraint (aligned with the canonical D254 length series used in this project):
+- **Long capsule:** $\rho \ge 2.0$ (equivalently $\lambda \ge 1.0$)
+
+Notes:
+- The canonical example series for D254 uses cylinder lengths $L\in\{127,254,508,1016\}\,\mathrm{m}$.
+- Under the naming convention above:
+	- `CAP-D254-L127` means $L_{\mathrm{cyl}}=127\,\mathrm{m}$, so $L_{\mathrm{station}}=381\,\mathrm{m}$ and $\rho=1.5$.
+	- `CAP-D254-L254` means $L_{\mathrm{cyl}}=254\,\mathrm{m}$, so $L_{\mathrm{station}}=508\,\mathrm{m}$ and $\rho=2.0$.
+	- `CAP-D254-L508` means $L_{\mathrm{cyl}}=508\,\mathrm{m}$, so $L_{\mathrm{station}}=762\,\mathrm{m}$ and $\rho=3.0$.
+	- `CAP-D254-L1016` means $L_{\mathrm{cyl}}=1016\,\mathrm{m}$, so $L_{\mathrm{station}}=1270\,\mathrm{m}$ and $\rho=5.0$.
+
+#### CAP → SPINE family switch (extreme aspect ratios)
+
+At some aspect ratio, it stops being useful to treat the object as a “capsule” and it becomes a **linear habitat (SPINE)**: the primary design driver becomes **axial segmentation, stiffness, and dynamic behavior**, not endcap/capsule semantics.
+
+Recommended rule (project taxonomy):
+- Use **`CAP`** for $1 \le \rho < 8$ (equivalently $0 \le \lambda < 7$).
+- Use **`SPINE`** for $\rho \ge 8$ (equivalently $\lambda \ge 7$).
+
+Examples:
+- `CAP-D254-L1016` → $\lambda=4$, $\rho=5$ → still a capsule.
+- `SPINE-D254-L2032` → $\lambda=8$, $\rho=9$ → linear habitat.
+- `SPINE-D254-L25400` → $\lambda=100$, $\rho=101$ → linear habitat (mega).
+
+### A.1.2 L / XL / XXL sizing pattern (capsules and others)
+
+We use **L / XL / XXL** as *size tiers* for quick communication. These are **not** replacements for exact dimensions; they are a shorthand.
+
+#### Capsules (CAP): tier by aspect ratio
+
+For capsules, the most useful “size” shorthand is the **cylinder ratio** $\lambda=L_{\mathrm{cyl}}/D$ (because it can be < 1.0). We also show $\rho=L_{\mathrm{station}}/D=1+\lambda$ for clarity.
+
+| Tier | Condition (by $\lambda$) | Equivalent $\rho$ | Interpretation | Examples |
+| --- | --- | --- | --- |
+| CAP-VS (very short) | $0.001 \le \lambda < 0.25$ | $1.001 \le \rho < 1.25$ | Near-sphere capsule; minimal cylindrical barrel. | — |
+| CAP-S (short) | $0.25 \le \lambda < 1.0$ | $1.25 \le \rho < 2.0$ | Short barrel; still “capsule”, not “long capsule”. | `CAP-D254-L127` ($\rho=1.5$) |
+| CAP-L (long capsule) | $1.0 \le \lambda < 2.0$ | $2.0 \le \rho < 3.0$ | Long capsule baseline (barrel length at least one diameter). | `CAP-D254-L254` ($\rho=2.0$) |
+| CAP-XL | $2.0 \le \lambda < 3.0$ | $3.0 \le \rho < 4.0$ | Very long capsule (strong axial “district” structure). | `CAP-D254-L508` ($\rho=3.0$) |
+| CAP-XXL | $\lambda \ge 3.0$ | $\rho \ge 4.0$ | Ultra long capsule. For **very high** aspect ratios (recommended: $\rho\ge 8$), use the **SPINE** family. | `CAP-D254-L1016` ($\rho=5.0$) |
+
+Rationale:
+- This matches the canonical D254 cylinder-length series used in this project.
+- Tiers are chosen so boundaries land on simple multiples of $D$.
+
+“Gold standard” guidance (rule of thumb):
+- For **CAP-XXL**, a practical baseline is **$\rho=4$** (i.e. $\lambda=3$), because it yields multiple full-diameter axial districts without being extreme.
+- A common *working range* for XXL planning is **$\rho\approx 4\ldots 6$** (i.e. $\lambda\approx 3\ldots 5$), depending on how many axial blocks/ports/industrial zones you want.
+
+If you find yourself planning beyond that range (e.g. $\rho=10$ or $\rho=100$), treat it as a **SPINE**: segment the hull and design it like a long, stiffened axial structure.
+
+#### Spheres (BALL): tier by diameter
+
+For spheres, the simplest tiering is by diameter family:
+
+| Tier | Condition | Examples |
+| --- | --- | --- |
+| BALL (base) | $D < 200\,\mathrm{m}$ | `BALL-D127` |
+| BALL-L | $200\,\mathrm{m} \le D < 350\,\mathrm{m}$ | `BALL-D254` |
+| BALL-XL | $350\,\mathrm{m} \le D < 600\,\mathrm{m}$ | (future) `BALL-D381`, `BALL-D508` |
+| BALL-XXL | $D \ge 600\,\mathrm{m}$ | (future) network-scale megaspheres |
+
+#### Other craft (cyclers, exploration craft)
+
+For non-spherical, non-capsule craft, tiers should be based on the dominant design driver:
+- **cycler**: capacity (PAX + cargo) and mission duration
+- **exploration craft**: autonomy level + duration + population
+
+(We can add those tier tables once we confirm the canonical capacity bands from the program docs.)
+
+### A.2 Dimension coding (recommended)
+
+To keep naming evolutions-overarching and parseable, use:
+- `D###m` for outside diameter in meters (e.g. `D127m`, `D254m`)
+- `L###m` for **cylindrical/barrel length** in meters (e.g. `L508m`, `L1016m`)
+- Optional (if you need to encode the envelope explicitly): `Lstation###m` for **station/envelope length** in meters (e.g. `Lstation762m`)
+
+Canonical length base unit note:
+- $127\,\mathrm{m}$ corresponds to **10 000 × 0.5 inch** expressed in meters.
+
+Recommended class tags:
+- `BALL-D127` for spherical habitat diameter 127 m
+- `BALL-D254` for spherical habitat diameter 254 m
+- `CAP-D254-L127` for capsule diameter 254 m with **cylinder length** 127 m
+- `CAP-D254-L254` for capsule diameter 254 m with **cylinder length** 254 m
+- `CAP-D254-L508` for capsule diameter 254 m with **cylinder length** 508 m
+- `CAP-D254-L1016` for capsule diameter 254 m with **cylinder length** 1016 m
+- `SPINE-D254-L2032` for a linear habitat diameter 254 m length 2032 m
+- `SPINE-D254-L25400` for an extreme linear habitat diameter 254 m length 25400 m
+
+Examples with explicit station length (optional):
+- `CAP-D254-L508-Lstation762`
+- `SPINE-D254-L2032-Lstation2286`
+
+Optional tier tag (recommended for short references only):
+- `BALL-L-D254` (tier + exact diameter)
+- `CAP-L-D254-L508` (tier + exact diameter + exact length)
+
+Rule: the tier tag is **optional** and must never replace the exact `D...` / `L...` values.
+
+Clarification:
+- In this glossary, `L...` means **cylinder length** by default.
+- “Station length” is $L_{\mathrm{station}}=D+L$ under the hemispherical endcap assumption; encode it with `Lstation...` only if needed.
+
+Clarification:
+- **D256 was a typo**; use `D254` where that is the intended family.
+
+### A.3 Short codes vs canonical English
+
+- Canonical English geometry term: **sphere** (not “ball”).
+- Project short code in filenames: **`BALL`**.
+
+Rationale: in “space language”, *sphere/spherical* is the standard term; `BALL` remains a compact class prefix for filenames and IDs.
+
+---
+
+## B) Station Layout Primitives
+
+| Term (EN) | Definition | Alias (DE) | Token hint |
+| --- | --- | --- | --- |
+| Deck | Station level/band, typically a walkable annular tube segment or an axial section. | Deck | `deck_###` (or module ID `deck001`) |
+| Compartment | Enclosed region separated by bulkheads for safety, pressure, or operations. | Kompartiment | `compartment_###` |
+| Zone | Named region for rules (safety, access, pressure, fire). | Zone | `zone_fire_01` |
+| Corridor | Walkable passage connecting spaces. | Flur | `corridor_###` |
+| Shaft | Vertical or axial passage reserved for transport/utilities. | Schacht | `shaft_###` |
+| Trunk | Major routed services bundle corridor (power/thermal/data/fluid). | Versorgungsstrang | `trunk_pwr_01` |
+
+---
+
+## C) Structural Elements (down to aggregates)
+
+| Term (EN) | Definition | Alias (DE) | Token hint |
+| --- | --- | --- | --- |
+| Pressure hull | Primary pressure boundary of the habitat. | Druckhülle | `pressure_hull` |
+| Bulkhead | Structural/pressure partition wall between compartments; may host doors/hatches. | Schottwand | `bulkhead_00` |
+| Frame / ring frame | Structural ring that stiffens the hull; repeated along axis. | Spant | `frame_00` |
+| Diaphragm / shear diaphragm (LAT disk) | Structural “shear plate” / diaphragm used for stiffness, acoustics, and hazard capping; not necessarily a full pressure bulkhead. | Schubscheibe / LAT-Scheibe | `diaphragm_00` |
+| Stringer | Longitudinal stiffener element. | Längsstringer | `stringer_00` |
+| Deck plate | Structural floor plate. | Deckplatte | `deck_plate_00` |
+| Ring girder raster | Repeating ring-girder grid/raster used as an interface for mounts and routing (example: raster “M18”). | Ringträger-Raster | `ring_girder_raster_m18` |
+| Isolation mount (vibration) | Mechanical isolation mount used to reduce transmitted vibration (damping ratio targets may be specified per deck/system). | Schwingungsdämpfer | `iso_mount_00` |
+| Micrometeoroid shield | Shielding layer against MMOD impacts. | Mikrometeoritenschutz | `mmd_shield` |
+| Radiation shielding | Passive or active shielding against radiation. | Strahlenschutz | `rad_shield` |
+
+### C.1 Stiffening and vibration control for long capsules / spines (concept)
+
+When a habitat becomes very long in the axial direction (CAP-XXL trending to SPINE), the structure should be treated as a **segmented axial beam/shell system**. A practical mental model is: **ring frames (“nodes”) + longitudinal members (“fibers”) + optional diaphragms (“shear webs”)**.
+
+Common ingredients (kept consistent with the existing EVOL structural philosophy):
+- **Ring frames / ring girders** at regular stations provide ovalisation control and local mounting/routing reference grids.
+- **Longitudinal stringers/girders** carry axial bending and distribute loads between stations.
+- **Diaphragms / bulkheads** can act as shear elements and hazard caps (in the sphere design these are discussed as LAT diaphragms).
+- **Vibration isolation** is part of the baseline philosophy for heavy rotating machinery (e.g. damping targets such as $\zeta \ge 0.08$ appear in deck-level interface specs).
+
+Pointers into existing specs (for traceability):
+- EVOL-00 structural grid/shell concept and “LAT diaphragms”: [spec-00-str-sys-axial-radial-trade-0001-variant-study-longitude-vs-latitude-bulkheads-en-de-v0.1.0-draft.md](../07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-sys-axial-radial-trade-0001-variant-study-longitude-vs-latitude-bulkheads-en-de-v0.1.0-draft.md)
+- EVOL-00 ring raster + vibration damping target reference: [spec-00-str-decks-014-sector-layout-and-interfaces-en-de-v0.1.0-draft.md](../07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-00/02-specs/spec-00-str-decks-014-sector-layout-and-interfaces-en-de-v0.1.0-draft.md)
+- EVOL-01 baseline “longitude + latitude” combined structural concept: [spec-01-str-geom-grav-e2-ball-0001-earth-two-ball-d254m-en-de-v0.1.0-draft.md](../07-comprehensive-technical-documentation/7.6-engineering/7.6.2-evolutions/evol-01/02-specs/spec-01-str-geom-grav-e2-ball-0001-earth-two-ball-d254m-en-de-v0.1.0-draft.md)
+
+Schematic (conceptual):
+
+```mermaid
+flowchart LR
+	subgraph S["SPINE / linear habitat (concept)"]
+		A["Ring frame / ring girder\n(station i)"] --- B["Longitudinal stringers / girders"]
+		B --- C["Ring frame / ring girder\n(station i+1)"]
+		A --- D["Diaphragm / bulkhead\n(optional)"]
+		C --- E["Diaphragm / bulkhead\n(optional)"]
+	end
+```
+
+Bio-inspired note (optional framing): a long spine often behaves more like **bamboo/trees** than like a “capsule”: repeated stiff “nodes” (frames) plus continuous “fibers” (longitudinal members) plus damping/isolation.
+
+---
+
+## D) Transport & Access
+
+| Term (EN) | Definition | Alias (DE) | Token hint |
+| --- | --- | --- | --- |
+| Wormhole (axial core corridor) | Central axial micro-g corridor used for people/cargo lanes + service trunks. | Wurmloch | `wormhole` / `deck000` |
+| Docking ring | Docking interface module(s) arranged along the wormhole. | Docking-Ring | `docking_ring_00` |
+| Docking throat | Narrower “neck” cross-section limiting internal traffic and ship passage. | Halsweite | `docking_throat` |
+| Airlock | Pressure transition chamber between pressurised and vacuum/external spaces. | Schleuse | `airlock_00` |
+| Passenger lift | Lift for people; typically vertical relative to deck frame. | Personenaufzug | `passenger_lift_00` |
+| Heavy lift (cargo lift) | Lift designed for cargo/large loads. | Lastenaufzug | `heavy_lift_00` |
+| Service tunnel | Maintenance passage for utilities and restricted access. | Servicetunnel | `service_tunnel_00` |
+| Vestibule | Intermediate small chamber connecting access points or zones. | Vorraum | `vestibule_00` |
+
+---
+
+## E) Onboard Spaces (shipbuilding + generation-ship relevant)
+
+This section focuses on functional spaces commonly found on:
+- supertankers, large commercial ships
+- large passenger ships
+- long-duration habitats / generation craft
+
+### E.1 Operations, control, and work
+
+| Term (EN) | Definition | Alias (DE) | Token hint |
+| --- | --- | --- | --- |
+| Operations control center | Station-wide monitoring and control (not necessarily a “bridge”). | Leitstand | `ops_center` |
+| Traffic control / docking control | Control for docking, wormhole lanes, arrivals/departures. | Verkehrsleitzentrale | `traffic_control` |
+| Workshop | General maintenance workshop (mechanical/electrical). | Werkstatt | `workshop_00` |
+| Machine shop | Precision machining and fabrication area. | Maschinenwerkstatt | `machine_shop` |
+| Robotics bay | Storage/maintenance area for robots/drones. | Robotikbereich | `robotics_bay` |
+| EVA prep / suit room | Space for EVA suit storage, servicing, and staging. | EVA-Vorbereitung | `eva_prep` |
+
+### E.2 Commercial and public spaces
+
+| Term (EN) | Definition | Alias (DE) | Token hint |
+| --- | --- | --- | --- |
+| Workplace | Office/studio workspace for residents and visitors. | Arbeitsplatz | `workplace_00` |
+| Shop / retail | Retail space for goods and services. | Laden | `shop_00` |
+| Restaurant | Food service venue (sit-down). | Restaurant | `restaurant_00` |
+| Galley | Main kitchen/production kitchen. | Kombüse | `galley` |
+| Mess hall | High-throughput dining facility. | Messe | `mess_hall` |
+| Café / bar | Social beverage venue. | Café / Bar | `bar_00` |
+
+### E.3 Habitation, health, education
+
+| Term (EN) | Definition | Alias (DE) | Token hint |
+| --- | --- | --- | --- |
+| Habitation unit | Apartment/cabin unit for residents. | Wohneinheit | `hab_unit_00` |
+| Medical bay | Primary medical care and emergency treatment. | Krankenstation | `medical_bay` |
+| Quarantine | Isolated compartment for infection control. | Quarantäne | `quarantine` |
+| School / education center | Education facility for children and training. | Schule | `school` |
+| Daycare | Childcare facility. | Kita | `daycare` |
+| Recreation | Gym, sports, leisure facilities. | Freizeitbereich | `recreation_00` |
+
+### E.4 Industrial, storage, and logistics
+
+| Term (EN) | Definition | Alias (DE) | Token hint |
+| --- | --- | --- | --- |
+| Cargo handling | Staging, sorting, and transfer area for freight. | Frachtumschlag | `cargo_handling` |
+| Warehouse / stores | Storage for consumables and spare parts. | Lager | `warehouse_00` |
+| Cold storage | Refrigerated storage. | Kühlraum | `cold_storage` |
+| Tank deck | Deck primarily used for tanks/thermal/power equipment. | Tankdeck | `tank_deck` |
+
+---
+
+## F) Machinery, Power, Thermal, and Tanks (aggregates)
+
+| Term (EN) | Definition | Alias (DE) | Token hint |
+| --- | --- | --- | --- |
+| Reactor compartment | Compartment containing nuclear reactor(s) and shielding. | Reaktorraum | `reactor_compartment` |
+| SMR (small modular reactor) | Modular nuclear reactor unit providing electrical + thermal power. | SMR | `smr_00` |
+| Solar array | Photovoltaic panels providing electrical power. | Solarpanel | `solar_array_00` |
+| Battery room | Energy storage room (battery banks). | Batterieraum | `battery_room` |
+| Heat exchanger | Thermal exchange unit used for cooling loops. | Wärmetauscher | `heat_exchanger_00` |
+| Radiator | Heat rejection surface/structure. | Radiator | `radiator_00` |
+| Thermal deck | Deck region dedicated to thermal management equipment. | Thermaldeck | `thermal_deck` |
+| Water tank | Stored potable/technical water tank. | Wassertank | `water_tank_00` |
+| Propellant tank | Stored propellant tank (if applicable to craft). | Treibstofftank | `propellant_tank_00` |
+| Ballast tank | Tank used for mass distribution or trim. | Ballasttank | `ballast_tank_00` |
+| Pump room | Area for pumps and fluid control equipment. | Pumpenraum | `pump_room` |
+
+---
+
+## G) Safety, Emergency, and Evacuation
+
+| Term (EN) | Definition | Alias (DE) | Token hint |
+| --- | --- | --- | --- |
+| Fire zone | Partitioned zone for fire containment and response. | Brandabschnitt | `fire_zone_00` |
+| Safe haven | Hardened refuge compartment with independent life support. | Schutzraum | `safe_haven` |
+| Muster station | Assembly point for emergencies/evacuation. | Sammelplatz | `muster_station` |
+| Rescue capsule | Evacuation capsule for crew/passengers; can be autonomous. | Rettungskapsel | `rescue_capsule_00` |
+| Lifeboat | Evacuation craft (generic term; in space use is capsule-like). | Rettungsboot | `lifeboat_00` |
+
+---
+
+## Next iteration (Q&A-driven)
+
+To scale this glossary to thousands of items without losing consistency, we should agree on:
+1) The **space taxonomy depth**: do we want to include sub-variants like `engine_room_aux`, `engine_room_primary`, `pump_room_cargo`, etc.?
+2) A **token registry** policy: how we prevent duplicates and when terms become frozen.
 
 
 \newpage
@@ -9221,6 +10173,7 @@ The table serves both as a user guide for humans and as a reference for engineer
 
 | Nr. | Deutsch (Alltag / Technisch)         | Englisch (Everyday / Technical)                 | Technisch (Ingenieure)                | Erklärung (DE)                                                                     | Explanation (EN)                                                                          |
 | --: | ------------------------------------ | ----------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+|   0 | Manteldeck / Deckrohr-Manteldeck     | mantle deck / deck tube mantle deck             | walkable annulus (inner/outer radius, deck height) | Begehbare Ebene zwischen zwei koaxialen Zylindern; nutzt die radiale Schwerkraft der Rotation. | Walkable plane between two coaxial cylinders; harnesses rotation-driven radial gravity. |
 |   1 | Nordpol / Deckrohr-Nordende          | North pole / deck tube north end                | z-axis origin (north end)             | Ende der Z-Achse; „vorne“ in Bewegungsrichtung eines Decks.                        | End of the z-axis; “forward” direction of a deck.                                         |
 |   2 | Südpol / Deckrohr-Südende            | South pole / deck tube south end                | z-axis end (south end)                | Gegenüberliegendes Ende der Z-Achse; „hinten“.                                     | Opposite end of the z-axis; “aft/backward.”                                               |
 |   3 | Decklänge / Deckrohr-Länge (N–S)     | deck length / deck tube length (N–S)            | axial chord length (N–S)              | Länge zwischen Nord- und Südpol, entlang der Z-Achse.                              | Length between north and south pole along the z-axis.                                     |
