@@ -6410,11 +6410,11 @@ date: 2025-08-11
 lang: EN
 ---
 
-# Current Evolution: EVOLUTION 00 - The Beginning
+## Current Evolution: EVOLUTION 00 - The Beginning
 
 Direct link to the current EVOLUTION
 
-## [EVOLUTION 00 - The Beginning](EVOL-00\readme.md)
+### [EVOLUTION 00 - The Beginning](EVOL-00\readme.md)
 
 
 \newpage
@@ -6464,13 +6464,13 @@ date: 2026-01-02
 lang: EN
 ---
 
-# TEMPLATE — ADR (EVOL-00)
+#### TEMPLATE — ADR (EVOL-00)
 
 Use this template when creating new ADR documents.
 
 ---
 
-## Technology Readiness
+##### Technology Readiness
 
 This block is mandatory per TRL process definition (for all affected items).
 
@@ -6484,29 +6484,29 @@ See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../
 
 ---
 
-## 0. Executive Summary
+##### 0. Executive Summary
 
 Decision in one sentence.
 
 ---
 
-## 1. Context
+##### 1. Context
 
 ---
 
-## 2. Decision
+##### 2. Decision
 
 ---
 
-## 3. Alternatives Considered
+##### 3. Alternatives Considered
 
 ---
 
-## 4. Consequences
+##### 4. Consequences
 
 ---
 
-## 5. References
+##### 5. References
 
 
 \newpage
@@ -6533,13 +6533,13 @@ date: 2026-01-02
 lang: EN
 ---
 
-# TEMPLATE — SPEC (EVOL-00)
+#### TEMPLATE — SPEC (EVOL-00)
 
 Use this template when creating new SPEC documents.
 
 ---
 
-## Technology Readiness
+##### Technology Readiness
 
 This block is mandatory per TRL process definition:
 
@@ -6552,7 +6552,7 @@ See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../
 
 ---
 
-## 0. Summary / Kurzfassung (EN/DE)
+##### 0. Summary / Kurzfassung (EN/DE)
 
 **EN:**
 
@@ -6560,7 +6560,7 @@ See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../
 
 ---
 
-## 1. Scope & References
+##### 1. Scope & References
 
 **Scope:**
 
@@ -6570,27 +6570,27 @@ See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../
 
 ---
 
-## 2. Baseline & Interfaces
+##### 2. Baseline & Interfaces
 
 ---
 
-## 3. Requirements (normative)
+##### 3. Requirements (normative)
 
 Use RFC 2119 keywords (SHALL/SHOULD/MAY).
 
 ---
 
-## 4. Design (informative)
+##### 4. Design (informative)
 
 ---
 
-## 5. Verification & Acceptance
+##### 5. Verification & Acceptance
 
 List evidence artifacts and acceptance criteria.
 
 ---
 
-## 6. Change Management
+##### 6. Change Management
 
 Document major changes and rationale.
 
@@ -6772,7 +6772,7 @@ adr_links: []
 cr_links: []
 ---
 
-# EVOL-00 — Earth ONE (Ø 127 m) · Baseline v1.0 — Kurzblatt
+#### EVOL-00 — Earth ONE (Ø 127 m) · Baseline v1.0 — Kurzblatt
 
 **Zweck:** Minimal **vollständiger** Demonstrator (LEO). Architektur, Sicherheit, Build–Test–Operate.  
 **Crew / Residents:** ~700 Personen (Mischung aus Crew, Wissenschaft, Familien).  
@@ -6780,7 +6780,7 @@ cr_links: []
 **Drehung / Spin-Law:** 1 g @ DECK 012 (r ≈ 52 m) → ~4,147 rpm (Baseline).
 **Gravitationszonen:** Mikro-g im Achskanal (DECK 000), sanfter Gradient zu ~1 g in Wohn- und Arbeitszonen.
 
-## Bauarten & Sizings (Übersicht)
+##### Bauarten & Sizings (Übersicht)
 
 Diese Übersicht ist die **Einstiegsstelle** für Geometrie-Klassen („Bauarten“) und das Sizing-Naming.
 
@@ -6797,7 +6797,7 @@ Diese Übersicht ist die **Einstiegsstelle** für Geometrie-Klassen („Bauarten
 
 > **Hinweis:** Für Ausstattung und Deck-Einsatz ist primär das **lokale g/v pro Radius** relevant; dieses Profil ist für D127 bei gleicher $\omega$ bauartübergreifend (BALL vs. CAP) identisch.
 
-## Struktur & Geometrie (Kurz)
+##### Struktur & Geometrie (Kurz)
 - **Hauptkörper:** Kugel Ø 127 m; integriertes Coaxial-Zylindersystem („Deck-Zylinder“).  
 - **Decks:** DECK 000 (Achskanal „Wormhole“), danach ab **DECK 001** in 3,5-m-Bruttohöhen rasternd.  
   - **DECK 000:** Radius 0,0 m bis **10,5 m** Zylinder-ID (inkl. Wand).  
@@ -6805,28 +6805,28 @@ Diese Übersicht ist die **Einstiegsstelle** für Geometrie-Klassen („Bauarten
   - **DECK n:** Radius Start = 10,5 m + (n−1)×3,5 m; Radius Ende = Start + 3,5 m.
 - **Primärgitter:** Meridionale und Breiten-Rippen (SiC/SiC-dominant), ringförmige Druckschotten, Crash-Bulkheads.
 
-## Andocken & „Wormhole“
+##### Andocken & „Wormhole“
 - **Polar-Ports:** Nord/Süd-Dock (extern) mit redundanten Equalize-Pfade.  
 - **Achskanal (Wormhole):** Mikro-g Korridor; Service-Tubes; Not-Shelter.  
 - **Throats (EVOL-00):** 20 m Durchmesser.
 
-## Lebenserhaltung & Energie (Baseline)
+##### Lebenserhaltung & Energie (Baseline)
 - **Energie:** SMR-Fission (primär), Solar-Arrays (sekundär), chemische Not-Reserven.  
 - **LSS:** Geschlossene Kreisläufe (H$_2$O, O$_2$/CO$_2$, Nährstoffe) mit „storm shelter“-Zonen.  
 - **Brandschutz:** Sektorierte O$_2$-Management-Zonen; Inertion-Optionen; Hot-Work-Permits.
 
-## Sicherheit (Top-Linien)
+##### Sicherheit (Top-Linien)
 - **HAZ-Katalog:** SPEC-00-HAZARD v0.1 (IDs, Schwere, Gegenmaßnahme).  
 - **VENT/BOP:** Ringförmige Vent-/Blow-Off-Panels, druckgestufte Equalize-Sequenzen.  
 - **POL-GUARD:** Zugang/Prozedere (light) eingeführt; Crew-Drills quartalsweise.
 
-## Verifikation & Exit-Kriterien
+##### Verifikation & Exit-Kriterien
 - **V&V:** Struktur/Spin/Deck-000 nachgewiesen; HZ-Matrizen freigegeben; SSOT eingeführt.  
 - **Ops-Nachweis:** 180 Tage bei ≥ 75 % Belegung; Safety-KPI innerhalb Budget; Mean-Time-to-Equalize belegt.
 
 > **Freeze-Umfang v1.0:** Geometrie, Spin-Parameter, Dock-Topologie (EVOL-00), LSS-Baseline, Safety-Schichten, HAZ-Index-Verlinkung.
 
-## DECK-Geometrien (EVOL-00)
+##### DECK-Geometrien (EVOL-00)
 
 | Deck | Radius innen (m) | Radius außen (m) |
 | ---: | ----------------: | ----------------: |
@@ -6886,7 +6886,7 @@ history:
     change: "Spin law updated to 1 g @ DECK012; g-levels adjusted"
 ---
 
-# SPEC-00-STR-DECKS-013-sector-layout-and-interfaces-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-013-sector-layout-and-interfaces-EN-DE-v0.1.0-DRAFT
 
 **Project:** Sphere Space Station – Earth ONE (Ø 127.00 m)
 **Evolution:** EVOL-00 • **Spin Law:** 1 g at r = 52.00 m (DECK 012) → ω = 0.43430 s⁻¹ ≈ 4.147 rpm
@@ -6894,7 +6894,7 @@ history:
 
 ---
 
-## 0. Summary / Kurzfassung (EN/DE)
+##### 0. Summary / Kurzfassung (EN/DE)
 
 **EN:** DECK 013 serves as a **buffer & service ring** between nuclear/thermal systems (014/015) and the habitable mid-decks. It hosts **water/poly shielding**, **heat-exchanger galleries**, **service corridors** and **decon/airlock nodes**. Low-risk technical zones (HZ-1) dominate; select HZ-2 areas in heat-exchanger galleries.
 
@@ -6902,7 +6902,7 @@ history:
 
 ---
 
-## 1. Scope & Purpose / Zweck und Geltung
+##### 1. Scope & Purpose / Zweck und Geltung
 
 - **EN:** Sector-level layout, interfaces, safety zoning, and OPS constraints for DECK 013.  
 - **DE:** Sektor-Layout, Schnittstellen, Sicherheitszonen und Betriebsgrenzen für DECK 013.
@@ -6911,7 +6911,7 @@ history:
 
 ---
 
-## 2. Geometry & Environment / Geometrie & Umgebung
+##### 2. Geometry & Environment / Geometrie & Umgebung
 
 - **Radial band / Radialband:** **52.50–56.00 m** (Δr = 3.50 m)  
 - **g-levels (ceiling→mid→floor):** **1.010 g → 1.043 g → 1.077 g**
@@ -6920,7 +6920,7 @@ history:
 
 ---
 
-## 3. Sectorization & Access / Sektorierung & Zugänge
+##### 3. Sectorization & Access / Sektorierung & Zugänge
 
 - **Sectors / Sektoren (12 × 30°):** A…L (A: 0–30°, …, L: 330–360°)  
 - **Radial bulkheads / Radiale Schotts:** at all sector borders A|B,…,L|A; **PT-A** doors (primary), **PT-B** (service)  
@@ -6929,7 +6929,7 @@ history:
 
 ---
 
-## 4. Sector Allocation (Functional) / Sektor-Belegung (Funktional)
+##### 4. Sector Allocation (Functional) / Sektor-Belegung (Funktional)
 
 | Sector | HZ | EN – Primary Function | DE – Primärfunktion | Notes / Hinweise |
 |:-----:|:--:|------------------------|---------------------|------------------|
@@ -6950,33 +6950,33 @@ history:
 
 ---
 
-## 5. Interfaces / Schnittstellen
+##### 5. Interfaces / Schnittstellen
 
-### 5.1 MECH (Structure & Mounts)
+###### 5.1 MECH (Structure & Mounts)
 - Ring girder raster: **M18** on 013; saddle supports for ring tanks; inspection walkways; spill containment at low points.  
 - **DE:** Ringträger-Raster **M18**; Auflager für Ringtanks; Inspektionsstege; Auffangwannen an Tiefpunkten.
 
-### 5.2 PWR (Electrical)
+###### 5.2 PWR (Electrical)
 - **DC-HV backbone** continuation (DC-B1/B2 split); MCC panels near HX galleries (**E/F/I/J**).  
 - **UPS ≥ 30 min** for valve/VENT actuation & monitoring.  
 - **DE:** DC-Rückgrat fortgeführt; MCC in **E/F/I/J**; **USV ≥ 30 min** für Ventile/VENT/Monitoring.
 
-### 5.3 THM (Thermal)
+###### 5.3 THM (Thermal)
 - HX strings in **E/F/I/J** feed **hull HX headers** (N/E/S/W) with shortest radial routing.  
 - Shield-water circuits in **A–D** and **G–H** can **absorb transient heat** and provide **biological shielding**.  
 - **DE:** HX-Stränge **E/F/I/J** zu Hüllen-Headern; Schild-Wasserringe **A–D**, **G–H** als Wärmepuffer & biologischer Schild.
 
-### 5.4 COM (Communications)
+###### 5.4 COM (Communications)
 - Dual **Red/Blue fiber rings**; **Maint-LAN** drops in **K/L**; SAFE-bus pass-through for monitoring.  
 - **DE:** Doppelte Glasfaserringe; **Maint-LAN** in **K/L**; SAFE-Bus-Durchleitung.
 
-### 5.5 GAS (Process & Inert)
+###### 5.5 GAS (Process & Inert)
 - Inert **N$_2$/Ar** feed (from 015-H) to 013 sector manifolds; monitored sector valves.  
 - **DE:** Inertgas **N$_2$/Ar** aus 015-H; sektorseitige Verteilbalken mit Überwachung.
 
 ---
 
-## 6. Safety, Schotts & Relief / Sicherheit, Schotts & Entlastung
+##### 6. Safety, Schotts & Relief / Sicherheit, Schotts & Entlastung
 
 - **PT-A** main doors at sector boundaries (motor/manual, interlocked); **PT-B** for service corridors (fail-safe closed).  
 - **AL-C** airlocks at **K** (decon node) and selected gallery entries.  
@@ -6985,7 +6985,7 @@ history:
 
 ---
 
-## 7. Operations & Human Factors / Betrieb & HF
+##### 7. Operations & Human Factors / Betrieb & HF
 
 - **Exposure:** Category **C/D** (≤ 8 h / ≤ 4 h) depending on task; HX galleries treated as **HZ-2** with stricter access control.  
 - **Wayfinding:** sector color codes; service/decon signage; low-noise policy in shield zones.  
@@ -6993,7 +6993,7 @@ history:
 
 ---
 
-## 8. Verification & Acceptance / Verifikation & Abnahme
+##### 8. Verification & Acceptance / Verifikation & Abnahme
 
 - **Shield-water** integrity (proof/leak), overflow tests, level alarms.  
 - **HX capacity** checks (flow/ΔT), redundancy (N+1 pumps upstream on 015 D/J).  
@@ -7002,7 +7002,7 @@ history:
 
 ---
 
-## 9. ICD & Naming / Bezeichner
+##### 9. ICD & Naming / Bezeichner
 
 - **Shafts / Schächte:** `HL-0|90|180|270`, `PAX-22.5|…|337.5`  
 - **Relief / Entlastung:** `VENT-013-<Sector>`  
@@ -7012,7 +7012,7 @@ history:
 
 ---
 
-## 10. Change Log / Änderungshistorie
+##### 10. Change Log / Änderungshistorie
 
 - v0.1.0 (2025-08-16): Initial EVOL-00 buffer/service layout, interfaces, safety & OPS limits.
 
@@ -7045,7 +7045,7 @@ history:
     change: "Spin law updated to 1 g @ DECK012; g-levels adjusted"
 ---
 
-# SPEC-00-STR-DECKS-014-sector-layout-and-interfaces-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-014-sector-layout-and-interfaces-EN-DE-v0.1.0-DRAFT
 
 **Project:** Sphere Space Station – Earth ONE (Ø 127.00 m)
 **Evolution:** EVOL-00 • **Spin Law:** 1 g at r = 52.00 m (DECK 012) → ω = 0.43430 s⁻¹ ≈ 4.147 rpm
@@ -7053,7 +7053,7 @@ history:
 
 ---
 
-## 0. Summary / Kurzfassung (EN/DE)
+##### 0. Summary / Kurzfassung (EN/DE)
 
 **EN:** DECK 014 hosts the **nuclear primary systems (SMR)** and **power conversion/distribution** close to the hull for minimal thermal path length, while keeping equipment loads lower than on DECK 015. Compartmentalization, radial relief to space (VENT/BOP), and remote operations minimize operational risk and crew exposure.
 
@@ -7061,7 +7061,7 @@ history:
 
 ---
 
-## 1. Scope & Purpose / Zweck und Geltung
+##### 1. Scope & Purpose / Zweck und Geltung
 
 - **EN:** Sector-level layout, interfaces, safety zoning, and operations constraints for DECK 014.  
 - **DE:** Sektor-Layout, Schnittstellen, Sicherheitszonen und Betriebsgrenzen für DECK 014.
@@ -7070,7 +7070,7 @@ history:
 
 ---
 
-## 2. Geometry & Environment / Geometrie & Umgebung
+##### 2. Geometry & Environment / Geometrie & Umgebung
 
 - **Radial band / Radialband:** **56.00–59.50 m** (Δr = 3.50 m)  
 - **g-levels (ceiling→mid→floor):** **1.077 g → 1.111 g → 1.144 g**
@@ -7079,7 +7079,7 @@ history:
 
 ---
 
-## 3. Sectorization & Access / Sektorierung & Zugänge
+##### 3. Sectorization & Access / Sektorierung & Zugänge
 
 - **Sectors / Sektoren (12 × 30°):** A…L (A: 0–30°, B: 30–60° … L: 330–360°)  
 - **Radial bulkheads / Radiale Schotts:** at all sector borders A|B,…,L|A; **PT-A** doors (primary), **PT-B** (service)  
@@ -7088,7 +7088,7 @@ history:
 
 ---
 
-## 4. Sector Allocation (Functional) / Sektor-Belegung (Funktional)
+##### 4. Sector Allocation (Functional) / Sektor-Belegung (Funktional)
 
 | Sector | HZ | EN – Primary Function | DE – Primärfunktion | Notes / Hinweise |
 |:-----:|:--:|------------------------|---------------------|------------------|
@@ -7109,34 +7109,34 @@ history:
 
 ---
 
-## 5. Interfaces / Schnittstellen
+##### 5. Interfaces / Schnittstellen
 
-### 5.1 MECH (Structure & Mounts)
+###### 5.1 MECH (Structure & Mounts)
 - Ring girder raster: **M18** on 014; isolation mounts ζ ≥ 0.08 at turbomachinery.
 - Inspection clearances, crane/monorail in A/G cells.
 - **DE:** Ringträger-Raster **M18**, Schwingungsdämpfung ζ ≥ 0,08; Kran/Monorail in A/G.
 
-### 5.2 PWR (Electrical)
+###### 5.2 PWR (Electrical)
 - **DC-HV backbone:** ±800 V split **DC-B1 (N/E)**, **DC-B2 (S/W)**; N+1 **UPS ≥ 30 min** for safety actuators.
 - Islanding at **C/I** (conversion), switching at **D/J**.
 - **DE:** DC-HV-Rückgrat wie oben; Inselnetze in C/I, Umschaltung D/J; USV N+1 ≥ 30 min.
 
-### 5.3 THM (Thermal)
+###### 5.3 THM (Thermal)
 - **Primary loops** from **A/G** to **hull HX headers (N/S)** via shortest radial paths.
 - Secondary headers to 015 (pump nodes D/J).
 - **DE:** Primär-Loops A/G → Hüllen-Header (N/S); Sekundär-Header nach 015 (Pumpen D/J).
 
-### 5.4 COM (Communications)
+###### 5.4 COM (Communications)
 - Dual **Red/Blue fiber rings**; dedicated **SAFE-bus** for ESFAS/SIS; remote ops hub at **L**.
 - **DE:** Doppelte Glasfaserringe; separater **SAFE-Bus**; Leitwarte in **L**.
 
-### 5.5 GAS (Process & Inert)
+###### 5.5 GAS (Process & Inert)
 - Inertization **N$_2$/Ar** feed from 015-H; monitored sector valves.
 - **DE:** Inertisierung **N$_2$/Ar** aus 015-H; Sektor-Drosseln überwacht.
 
 ---
 
-## 6. Safety, Schotts & Relief / Sicherheit, Schotts & Entlastung
+##### 6. Safety, Schotts & Relief / Sicherheit, Schotts & Entlastung
 
 - **PT-A** main sector doors (motor/manual, interlocked), **PT-B** service doors (fail-safe closed).
 - **AL-C** airlocks with Δp/O$_2$/smoke/temp dual sensors.
@@ -7145,7 +7145,7 @@ history:
 
 ---
 
-## 7. Operations & Human Factors / Betrieb & HF
+##### 7. Operations & Human Factors / Betrieb & HF
 
 - **Exposure:** Category **E** in A/G (≤ 2 h), **D** elsewhere (≤ 4 h); **remote ops default**.
 - **Wayfinding:** sector color codes; restricted access badges.
@@ -7153,7 +7153,7 @@ history:
 
 ---
 
-## 8. Verification & Acceptance / Verifikation & Abnahme
+##### 8. Verification & Acceptance / Verifikation & Abnahme
 
 - **Containment tests:** proof/leak-down A/G; interlock & ESFAS functional.
 - **Thermal:** flow/ΔT capacity to hull HX; pump N+1 failover.
@@ -7162,7 +7162,7 @@ history:
 
 ---
 
-## 9. ICD & Naming / Bezeichner
+##### 9. ICD & Naming / Bezeichner
 
 - **Shafts:** `HL-0|90|180|270`, `PAX-22.5|…|337.5`  
 - **Relief:** `VENT-014-<Sector>`, `BOP-014-<Sector>`  
@@ -7170,7 +7170,7 @@ history:
 
 ---
 
-## 10. Change Log / Änderungshistorie
+##### 10. Change Log / Änderungshistorie
 
 - v0.1.0 (2025-08-16): Initial EVOL-00 layout, interfaces, safety & OPS limits.
 
@@ -7205,7 +7205,7 @@ history:
     change: "Spin law updated to 1 g @ DECK012; g-levels adjusted"
 ---
 
-# SPEC-00-STR-DECKS-015-sector-layout-and-interfaces-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-015-sector-layout-and-interfaces-EN-DE-v0.1.0-DRAFT
 
 **Project:** Sphere Space Station – Earth ONE (Ø 127.00 m)
 **Evolution:** EVOL-00 • **Spin Law:** 1 g at r = 52.00 m (DECK 012) → ω = 0.43430 s⁻¹ ≈ 4.147 rpm
@@ -7213,7 +7213,7 @@ history:
 
 ---
 
-## 0. Summary / Kurzfassung (EN/DE)
+##### 0. Summary / Kurzfassung (EN/DE)
 
 **EN:** DECK 015 is the **tank farm & thermal buffer deck** with secondary/tertiary loops, inert and oxidizer gas systems, and the cryogenic interface to hull-mounted pods. High g (~1.14–1.21 g) supports **phase settling** and hydrostatic stability; strict EX-zoning and radial relief ensure safety.
 
@@ -7221,7 +7221,7 @@ history:
 
 ---
 
-## 1. Scope & Purpose / Zweck und Geltung
+##### 1. Scope & Purpose / Zweck und Geltung
 
 - **EN:** Sector layout, interfaces, safety zoning, and OPS constraints for DECK 015 (tanks/thermal, gases, cryo interface).  
 - **DE:** Sektor-Layout, Schnittstellen, Sicherheitszonen und OPS-Grenzen für DECK 015 (Tanks/Thermik, Gase, Kryo-Interface).
@@ -7230,7 +7230,7 @@ history:
 
 ---
 
-## 2. Geometry & Environment / Geometrie & Umgebung
+##### 2. Geometry & Environment / Geometrie & Umgebung
 
 - **Radial band / Radialband:** **59.50–63.00 m** (Δr = 3.50 m)  
 - **g-levels (ceiling→mid→floor):** **1.144 g → 1.178 g → 1.212 g**
@@ -7238,7 +7238,7 @@ history:
 
 ---
 
-## 3. Sectorization & Access / Sektorierung & Zugänge
+##### 3. Sectorization & Access / Sektorierung & Zugänge
 
 - **Sectors / Sektoren (12 × 30°):** A…L  
 - **Radial bulkheads / Radiale Schotts:** at sector borders; **PT-A/PT-B** per criticality.  
@@ -7247,7 +7247,7 @@ history:
 
 ---
 
-## 4. Sector Allocation (Functional) / Sektor-Belegung (Funktional)
+##### 4. Sector Allocation (Functional) / Sektor-Belegung (Funktional)
 
 | Sector | HZ | EN – Primary Function | DE – Primärfunktion | Notes / Hinweise |
 |:-----:|:--:|------------------------|---------------------|------------------|
@@ -7268,31 +7268,31 @@ history:
 
 ---
 
-## 5. Interfaces / Schnittstellen
+##### 5. Interfaces / Schnittstellen
 
-### 5.1 MECH
+###### 5.1 MECH
 - Ring girder raster: **M20** on 015; tank saddles with restrainers; spill containment/dikes.
 - **DE:** Ringträger-Raster **M20**; Tanksättel mit Haltern; Auffangwannen/Dämme.
 
-### 5.2 PWR
+###### 5.2 PWR
 - **DC-HV backbone** continues from 014 (DC-B1/B2); MCC panels at **D/J** pump nodes; UPS for valve/VENT/BOP actuation.
 - **DE:** DC-Rückgrat aus 014; MCC in **D/J**; USV für Ventile/VENT/BOP.
 
-### 5.3 THM
+###### 5.3 THM
 - **Secondary/Tertiary loops:** pump nodes **D/J**; HX galleries **I**; buffer tanks **A/G/K**.
 - **DE:** Sekundär/Tertiär-Kreise über **D/J**; HX-Galerien **I**; Puffer **A/G/K**.
 
-### 5.4 COM
+###### 5.4 COM
 - Red/Blue fiber rings; SAFE-bus monitoring for EX/Cryo sectors **E/F/H**.
 - **DE:** Red/Blue-Ringe; SAFE-Bus-Überwachung in **E/F/H**.
 
-### 5.5 GAS
+###### 5.5 GAS
 - **O$_2$/N$_2$** separated banks (**E**); **N$_2$/Ar** inertization central (**H**); cryo manifolds (**F**) to hull pods.
 - **DE:** **O$_2$/N$_2$** getrennt (**E**); **N$_2$/Ar** Inertisierung (**H**); Kryo-Manifolds (**F**).
 
 ---
 
-## 6. Safety, Schotts & Relief / Sicherheit, Schotts & Entlastung
+##### 6. Safety, Schotts & Relief / Sicherheit, Schotts & Entlastung
 
 - **PT-A/PT-B** doors per HZ; **AL-C** airlocks at service entries.
 - **VENT-015-E→Space** dedicated for EX zone; additional sector VENT lines **F/H**; **BOP** at **A/K** for tank overpressure scenarios.
@@ -7300,7 +7300,7 @@ history:
 
 ---
 
-## 7. Operations & Human Factors / Betrieb & HF
+##### 7. Operations & Human Factors / Betrieb & HF
 
 - **Exposure:** Category **D** (≤ 4 h) general; **E** (≤ 2 h) in **E/F/H**; slow head movement in high-g work.  
 - **Wayfinding:** EX-zone markings, gas color codes, decon routes to **L**.  
@@ -7308,7 +7308,7 @@ history:
 
 ---
 
-## 8. Verification & Acceptance / Verifikation & Abnahme
+##### 8. Verification & Acceptance / Verifikation & Abnahme
 
 - **Hydrostatic/Leak** tests on tanks; **N$_2$ blanket** integrity; level/pressure alarms.  
 - **Pump N+1** failover, HX capacity tests; **VENT/BOP** functional drills.  
@@ -7317,7 +7317,7 @@ history:
 
 ---
 
-## 9. ICD & Naming / Bezeichner
+##### 9. ICD & Naming / Bezeichner
 
 - **Shafts:** `HL-0|90|180|270`, `PAX-22.5|…|337.5`  
 - **Relief:** `VENT-015-<Sector>`, `BOP-015-<Sector>`  
@@ -7326,7 +7326,7 @@ history:
 
 ---
 
-## 10. Change Log / Änderungshistorie
+##### 10. Change Log / Änderungshistorie
 
 - v0.1.0 (2025-08-16): Initial EVOL-00 tank/thermal layout, EX zoning, interfaces, OPS limits.
 
@@ -7356,7 +7356,7 @@ date: 2025-08-10
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK000-0001-wormhole-docking-tunnel-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK000 – The Wormhole**
 
@@ -7366,7 +7366,7 @@ lang: en-de
 
 ---
 
-## Summary / Kurzfassung (EN/DE)
+##### Summary / Kurzfassung (EN/DE)
 
 **EN:** DECK000 is the axial, pressurized docking and transit tube spanning the North–South poles. The EVOL-00 baseline defines a 127 m long SiC-composite barrel with six Inconel docking rings and window segments for observation and transfer in micro‑g.
 
@@ -7374,16 +7374,16 @@ lang: en-de
 
 ---
 
-#### 1 Abstract
+###### 1 Abstract
 
 
 DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube that runs straight through the station from the North pole to the South pole. In EVOL‑00, the assembly is a 127 m long tube with an outer diameter of 22 m and a clear inner diameter of 20 m. The primary barrel is a silicon‑carbide (SiC) composite reinforced with steel or Inconel for toughness. Starting 3.5 m from the north polar end and repeating every 20 m along the axis, 10 m‑long Inconel docking‑ring subassemblies are installed and numbered sequentially (00, 01, 02 …) from North to South. Between docking rings, “window tube” segments provide outward viewing; each segment integrates rectangular window units of 4 m (axial) × 3 m (tall), built to the program’s space‑grade multilayer window specification (ALON/sapphire + fused silica + polycarbonate + borosilicate/cerium‑doped glass). The result is a micro‑g corridor (near the spin axis) enabling safe berthing, people/cargo transfer, observation, and emergency egress.
 
 ---
 
-#### 2 Description (EVOL‑00 – Baseline Geometry & Materials)
+###### 2 Description (EVOL‑00 – Baseline Geometry & Materials)
 
-##### A. System Overview
+###### A. System Overview
 
 * **Function:** Central polar docking, transit, and observation corridor in micro‑g; houses guidance, lighting, utilities, and emergency isolation points.
 * **Overall length:** 127 m (North pole interior face to South pole interior face).
@@ -7391,7 +7391,7 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
 * **Primary structure:** SiC composite barrel; local reinforcement with steel/Inconel where penetrations, hatches, or docking hardware concentrate loads.
 * **Environment:** Pressurized to station nominal (TBC; baseline 1 atm); micro‑g zone due to proximity to rotation axis.
 
-##### B. Docking‑Ring Architecture
+###### B. Docking‑Ring Architecture
 
 * **Ring modules:** 10 m axial length; OD 22 m (flush with main barrel OD); ID 10 m (constricted throat for docking hardware and hatchway integration).
 * **Material:** Inconel (high‑temperature and corrosion resistance; excellent toughness).
@@ -7418,7 +7418,7 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
 
 > **Note:** EVOL‑00 uses six docking rings (00–05), preserving 3.5 m service clearances at both ends. Later evolutions may revise counts, spacing, or diameters based on interface selections and docking traffic models.
 
-##### C. Window Segments & Glazing Units
+###### C. Window Segments & Glazing Units
 
 * **Window units per segment:** Rectangular apertures integrated into the 10 m “window tube” spans; count and circumferential distribution TBD by human‑factors and structural analyses.
 * **Nominal window aperture:** 4.0 m (axial) × 3.0 m (tall / meridional).
@@ -7430,14 +7430,14 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
   * **Total thickness:** \~200–300 mm; **areal mass:** \~530–550 kg/m².
 * **Shutters & shields:** Each aperture integrates internal blast shutters and external micrometeoroid/thermal shades; automatic closure on pressure loss or debris alerts.
 
-##### D. Structural Concept
+###### D. Structural Concept
 
 * **Primary barrel wall:** Thickness TBD from combined loads (pressure, docking loads, thermal gradients). Preliminary design envelope to meet FoS ≥ 2.0 against yield under 1 atm differential plus ring‑induced stress concentrations.
 * **Ring‑to‑barrel joints:** Circumferential flanges with shear keys; dual redundant, high‑temperature elastomer seals (silicone‑based) with metallic C‑seals for vacuum‑rated redundancy.
 * **Local reinforcements:** Around windows (doubler frames), utility penetrations, and docking hardware. Use SiC/steel hybrid frames to spread aperture loads into the barrel laminate.
 * **Thermal control:** Embedded liquid heat loops (glycol‑water or silicone oil), MLI blankets on the outside of the barrel segments not occupied by windows, and conductive paths to station radiators.
 
-##### E. Interfaces & Services
+###### E. Interfaces & Services
 
 * **Mechanical:** Hard‑points in each docking ring for adapter hardware, hatches, grapples, and temporary airlocks.
 * **Avionics & comms:** Redundant comm rails, guidance beacons, and visual docking aids integrated at each ring; cableways routed in protected trunking.
@@ -7445,7 +7445,7 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
 * **Power:** Dual independent DC buses along the tube with local UPS for shutters, lighting, and hatch actuators.
 * **Safety:** Pressure‑isolation bulkheads at ring boundaries (ring can be sealed as a compartment), blast doors for window segments, fire detection & inert‑gas suppression.
 
-##### F. Operations & Human Factors
+###### F. Operations & Human Factors
 
 Operational walkthroughs (documents-first, multi-perspective):
 
@@ -7460,16 +7460,16 @@ Operational walkthroughs (documents-first, multi-perspective):
 * **Traffic separation:** North pole dedicated to arrivals, South pole to departures (baseline); center‑tube signage and beacons enforce counter‑flow.
 * **Emergency egress:** Clearly marked safe‑hold nodes at each ring with comms, masks, and emergency supplies; shutters auto‑close upon hazard detection.
 
-##### G. Manufacturing & Assembly
+###### G. Manufacturing & Assembly
 
 * **Moduleization:** 10 m modules (alternating ring modules and window‑tube modules) pre‑fitted with internal systems; on‑orbit assembly via circumferential bolted/bonded joints.
 * **Inspection & maintenance:** Ring‑module inspection ports; replaceable shutter cassettes; window health monitoring (acoustic emission, strain gauges, optical clarity sensors).
 
-##### H. Compliance & Reference Specs
+###### H. Compliance & Reference Specs
 
 * Materials, pressure vessels, fire, glazing, and MMOD protections comply with station‑wide standards (refs). Window stacks must meet the program’s “LEO Window Specification” for thermal cycling, rapid decompression, and micrometeoroid resistance.
 
-##### I. Open Parameters (TBD/TBC)
+###### I. Open Parameters (TBD/TBC)
 
 * Barrel wall thickness and detailed layup by load case.
 * Final ring inner diameter vs. docking system selection and hatch design.
@@ -7479,7 +7479,7 @@ Operational walkthroughs (documents-first, multi-perspective):
 
 ---
 
-#### 3 Forward Work (next revision)
+###### 3 Forward Work (next revision)
 
 1. Complete pressure & docking load cases and size the barrel thickness and reinforcements.
 2. Human‑factors layout (window count/placement, handrail nets, signage).
@@ -7514,7 +7514,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK001-0001-transfer-node-and-radial-systems-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK001-0001-transfer-node-and-radial-systems-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK001 – Reception, Transfer & Radial Systems**  
 **Document status:** Draft (EVOL-00 baseline)  
@@ -7523,7 +7523,7 @@ lang: en-de
 
 ---
 
-## Technology Readiness
+##### Technology Readiness
 
 - Current TRL: TBD
 - Target TRL (EVOL-00): TBD
@@ -7545,7 +7545,7 @@ Operational walkthrough (documents-first, multi-perspective):
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 001 is the first pressurized distribution ring outside the axial DECK000 (“Wormhole”) and acts as the main reception level for incoming crew and cargo. It integrates radial pressure/fire bulkheads, radial transport (heavy-lift & passenger elevators, service tunnels), tangential and polar corridors, and reception/transfer airlocks linking the docking rings in DECK000 to DECK001 and onward to the outer decks. Geometrically it spans **rᵢ = 10.5 m** to **rₒ = 14.0 m** (gross) with **net rₒ = 13.5 m** and **deck height = 3.0 m** (gross 3.5 m); nominal centrifugal acceleration at the net radius is **3.49 m/s² (~0.36 g)**.
 
@@ -7553,7 +7553,7 @@ Operational walkthrough (documents-first, multi-perspective):
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **10.5 m**, outer radius **14.0 m**, net outer radius **13.5 m**, net deck height **3.0 m** (gross 3.5 m).
   **Circumference:** ~**66.0 m** (inner) to ~**84.8 m** (outer net).
@@ -7562,7 +7562,7 @@ Operational walkthrough (documents-first, multi-perspective):
 
 ---
 
-## 3. Functions & Scope
+##### 3. Functions & Scope
 
 1. **Reception & Transfer / Empfang & Verteilung**
    - **EN:** Secure intake and distribution of crew, passengers, and cargo from DECK000 (docking rings) into the ring topology, including quarantine and safety checks.
@@ -7579,16 +7579,16 @@ Operational walkthrough (documents-first, multi-perspective):
 
 ---
 
-## 4. System Elements (Baseline Design)
+##### 4. System Elements (Baseline Design)
 
-### A) Radiale Druck- & Brandschotts (Compartmentation)
+###### A) Radiale Druck- & Brandschotts (Compartmentation)
 
 * **Sektorierung:** 12 keilförmige Sektoren (alle 30°) durch **radiale Schotts** von **r = 10.5 m → 14.0 m (net 13.5 m)**; bildet eigenständige **Druck- & Brandschutz-Kompartimente**.
 * **Ausführung:** Mehrlagen-Composit-Schottplatten (SiC-Verbund) mit metallischen Rahmen; integrierte **Drucktüren (A0/A60-äquivalent, Raumfahrtstandard)** auf jedem Sektor-Tangentenweg.
 * **Funktion:** **Schnellisolierung** bei Dekompression/Feuer; **automatisches Schließen** via Brand-/Drucksensorik, freigabepflichtige Notentriegelung.
 * **Brandunterdrückung:** **Inertgas (Argon/N$_2$)** sektoral; Trigger bei Flammen-/Rauchdetektion und Temperaturanstieg.
 
-### B) Radialer Transport – Heavy-Lift & Passenger Elevators
+###### B) Radialer Transport – Heavy-Lift & Passenger Elevators
 
 * **Mandat:** durchgehende Verbindung **DECK 000 ⇄ 015** (Personen & Fracht); redundante Pfade.
 * **Layout (EVOL-00):**
@@ -7597,24 +7597,24 @@ Operational walkthrough (documents-first, multi-perspective):
   * **Stationsnorm-Interface** (mechanisch/elektrisch/Datentechnik) identisch über alle Decks; **Not-Handläufe** & **Leiterläufe** im Schacht.
 * **Sicherheit:** **Druckschotte** auf jedem Deck-Durchtritt, **Doppeltüren** als Schleusen (Interlock), unabhängige **DC-Bus-USV** für Tür-/Bremssysteme.
 
-### C) Radiale Servicetunnel (Utilities Spine, beginnend auf DECK 001)
+###### C) Radiale Servicetunnel (Utilities Spine, beginnend auf DECK 001)
 
 * **Zweck:** Trassen für **Luft/CO$_2$-Rücklauf, Wasser/Kondensat, Energie-DC-Busse, Daten/Comms**, Wärme-Sekundärkreise.
 * **Querschnitt:** typ. ≥ 1.2 m Gangbreite; **doppelte Trunkings** (getrennte rote/gelbe Utility-Seite) für Instandhaltung im laufenden Betrieb.
 * **Druck-/Brand-Zonen:** **Abschluss-Türen** pro Sektor; **Schnell-Isolierungs-Klappen** in Lüftung.
 
-### D) Tangentiale Bahnen & Wege (on-Deck Mobility)
+###### D) Tangentiale Bahnen & Wege (on-Deck Mobility)
 
 * **Gehwege:** 2 × umlaufende **3.0 m Korridore** (inner/outer ring), Farbleitsystem & Photometrie gemäß Stationsstandard.
 * **Fördertechnik:** **Conveyors/Schienenträger** für Material-Fluss, **kleine Rangier-Rail-Vehikel** in EVOL-00 (Handbetrieb/halbautonom).
 
-### E) Polwärts gerichtete Zubringer (Meridional Spurs)
+###### E) Polwärts gerichtete Zubringer (Meridional Spurs)
 
 * **Definition:** kurze **meridionale Trassen** je Quadrant, die von DECK 001 **Richtung Pol** in **Wurmlöcher-Knoten** (Docking-Ring-Ebenen in DECK 000) führen.
 * **Zweck:** schnelles **Crew-/Fracht-Umsetzen** zwischen Ring-Verkehr und axialem Docking-Korridor; Notausweichrouten.
 * **Schnittstellen:** **air-tight Transfer-Hatches** zu **DECK 000 Docking-Rings 01–04** (EVOL-00 baseline), inklusive **Druck-Isolationspunkte** an Ring-Grenzen (Rings können als Kompartiment versiegelt werden).
 
-### F) Empfangs- & Durchschleuseanlagen (DECK 000 → DECK 001 → Outer Decks)
+###### F) Empfangs- & Durchschleuseanlagen (DECK 000 → DECK 001 → Outer Decks)
 
 * **Reception Vestibules (RV-Nodes):** vier **Empfangs-Knoten** (je Quadrant), direkt an die meridionalen Zubringer gekoppelt.
   * **Funktionen:** Einreise-/Sicherheits-Check, **medizinischer Quick-Screen**, **Baggage-Staging**, **Route-Guidance**.
@@ -7622,7 +7622,7 @@ Operational walkthrough (documents-first, multi-perspective):
 * **Weiterleitung:** kurze Wege zu **Passenger-Lobbies** (Personenaufzüge) und **Cargo-Bays** (Heavy-Lift).
 * **Notbetrieb:** **Safe-Hold-Bay** je RV-Node (Atemschutz, Comms, Notenergie).
 
-### G) Drucktüren, Airlocks & Schutzsysteme
+###### G) Drucktüren, Airlocks & Schutzsysteme
 
 * **Türklassen:**
   * **PT-A (Pressure-Tight, primary):** Haupt-Drucktüren der Sektorschotts (manuell + motorisch, Interlock).
@@ -7630,14 +7630,14 @@ Operational walkthrough (documents-first, multi-perspective):
   * **AL-C (Airlock):** Personen-/Fracht-Schleusen mit zweifach redundanter Sensorsuite (Δp, O$_2$, Rauch, Temp).
 * **Brand & Inertgas:** Abteilungsweise **Argon/N$_2$-Flutung**; Erkennung über **Rauch/Temp**-Arrays; **Hand-Pulls** an allen Korridor-Schnittstellen.
 
-### H) Polar Outer Hull (Deck 001 Band)
+###### H) Polar Outer Hull (Deck 001 Band)
 
 * **Außenhülle (polnah, Deck-001-Band):** **~0.5 m** dicke mehrlagige Composit-Hülle als Basis-Thermal-/Strahlungsschutz mit Anbindung an polare Struktur-Ringe; lokale **Durchdringungen** (Meridional-Spurs, Sensorik) mit metallischen C-Seals.
 * **Materialsysteme:** SiC-Verbund, Polyimid-/Siloxan-Elastomere, Silica-Aerogel-Isolationslagen; Auswahl nach **LEO-Fenster/Glazing-Spec** für optische Öffnungen.
 
 ---
 
-## 5. Interfaces
+##### 5. Interfaces
 
 * **To DECK 000 (Wormhole):** Anschluss an **Docking-Ring-Ebenen** via **meridionale Zubringer** + **Reception Vestibules**; **Druck-Isolationspunkte** an Ring-Grenzen (ring-as-compartment).
 * **To Outer Decks (002…):** **Radial-Aufzüge** (Heavy-Lift & Personen) + **Servicetunnel** setzen Vertikal-Kontinuität; Norm-Interface für Mechanik/Power/Comms identisch über alle Decks.
@@ -7645,7 +7645,7 @@ Operational walkthrough (documents-first, multi-perspective):
 
 ---
 
-## 6. Operations & Human Factors
+##### 6. Operations & Human Factors
 
 * **Wayfinding:** Farbcodierte Sektor-/Spur-Leitsysteme, polwärts = blau, radial = gelb, tangential = grün; Piktogramme gemäß Stationsstandard.
 * **Flow-Separation:** **Crew/Service** vs. **Passenger/Fracht** getrennt; Querverbindungen über Schleusen-Türen.
@@ -7653,7 +7653,7 @@ Operational walkthrough (documents-first, multi-perspective):
 
 ---
 
-## 7. Materials & Compliance
+##### 7. Materials & Compliance
 
 * **Primär:** **SiC-Verbund** (Struktur), **Inconel/Stahl** in Rahmen/Verstärkungen; **Elastomere** & **C-Seals** an Druckschnittstellen.
 * **Glazing/Shutters:** gemäß **LEO Window Specification** (ALON/Saphir, Fused Silica, Polycarbonat, Borosilicat; Blast-Shutters & MMOD-Shades).
@@ -7661,7 +7661,7 @@ Operational walkthrough (documents-first, multi-perspective):
 
 ---
 
-## 8. Verification & Acceptance (V&V)
+##### 8. Verification & Acceptance (V&V)
 
 * **Drucktests:** sektorweise Proof- & Leak-Tests (AL-C Schleusen, PT-A/-B Türen).
 * **Brand-Szenarien:** Inertgas-Auslösung, Evakuierungs-Drills, Tür-Interlock-Failover.
@@ -7669,7 +7669,7 @@ Operational walkthrough (documents-first, multi-perspective):
 
 ---
 
-## 9. Open Parameters (TBD/TBC)
+##### 9. Open Parameters (TBD/TBC)
 
 * Exakte **Anzahl & Position** der Heavy-Lift/Passenger-Schächte (Feinabgleich mit Nutzungskarte DECK 001).
 * **Meridionale Spur-Routing** zu spezifischen Docking-Ringen (abhängig von Traffic-Modell DECK 000).
@@ -7678,7 +7678,7 @@ Operational walkthrough (documents-first, multi-perspective):
 
 ---
 
-## 10. Drawing & Data References
+##### 10. Drawing & Data References
 
 * **Deck geometry & dynamics:** DECK 001 radii/height, net g-level, tangential lengths.
 * **Access systems (elevators, tangential walkways):** baseline requirements.
@@ -7714,7 +7714,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK002-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK002-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK002 – Baseline Ring**
 
@@ -7724,7 +7724,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 002 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 14.0 m to rₒ = 17.5 m (gross) with 0.5 m structural thickness (net rₒ = 17.0 m).
 
@@ -7732,7 +7732,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **14.0 m**, outer radius **17.5 m**, net outer radius **17.0 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**88.0 m** (inner) to ~**106.8 m** (outer net).
@@ -7741,13 +7741,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -7780,7 +7780,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK003-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK003-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK003 – Baseline Ring**
 
@@ -7790,7 +7790,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 003 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 17.5 m to rₒ = 21.0 m (gross) with 0.5 m structural thickness (net rₒ = 20.5 m).
 
@@ -7798,7 +7798,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **17.5 m**, outer radius **21.0 m**, net outer radius **20.5 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**110.0 m** (inner) to ~**128.8 m** (outer net).
@@ -7807,13 +7807,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -7846,7 +7846,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK004-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK004-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK004 – Baseline Ring**
 
@@ -7856,7 +7856,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 004 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 21.0 m to rₒ = 24.5 m (gross) with 0.5 m structural thickness (net rₒ = 24.0 m).
 
@@ -7864,7 +7864,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **21.0 m**, outer radius **24.5 m**, net outer radius **24.0 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**131.9 m** (inner) to ~**150.8 m** (outer net).
@@ -7873,13 +7873,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -7912,7 +7912,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK005-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK005-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK005 – Baseline Ring**
 
@@ -7922,7 +7922,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 005 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 24.5 m to rₒ = 28.0 m (gross) with 0.5 m structural thickness (net rₒ = 27.5 m).
 
@@ -7930,7 +7930,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **24.5 m**, outer radius **28.0 m**, net outer radius **27.5 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**153.9 m** (inner) to ~**172.8 m** (outer net).
@@ -7939,13 +7939,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -7978,7 +7978,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK006-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK006-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK006 – Baseline Ring**
 
@@ -7988,7 +7988,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 006 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 28.0 m to rₒ = 31.5 m (gross) with 0.5 m structural thickness (net rₒ = 31.0 m).
 
@@ -7996,7 +7996,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **28.0 m**, outer radius **31.5 m**, net outer radius **31.0 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**175.9 m** (inner) to ~**194.8 m** (outer net).
@@ -8005,13 +8005,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -8044,7 +8044,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK007-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK007-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK007 – Baseline Ring**
 
@@ -8054,7 +8054,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 007 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 31.5 m to rₒ = 35.0 m (gross) with 0.5 m structural thickness (net rₒ = 34.5 m).
 
@@ -8062,7 +8062,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **31.5 m**, outer radius **35.0 m**, net outer radius **34.5 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**197.9 m** (inner) to ~**216.8 m** (outer net).
@@ -8071,13 +8071,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -8113,7 +8113,7 @@ history:
     change: "Spin law updated to 1 g @ DECK012; deck gravity corrected"
 ---
 
-# SPEC-00-STR-DECKS-DECK008-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK008-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK008 – Baseline Ring**
 
@@ -8123,7 +8123,7 @@ history:
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 008 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 35.0 m to rₒ = 38.5 m (gross) with 0.5 m structural thickness (net rₒ = 38.0 m).
 
@@ -8131,7 +8131,7 @@ history:
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **35.0 m**, outer radius **38.5 m**, net outer radius **38.0 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**219.9 m** (inner) to ~**238.8 m** (outer net).
@@ -8140,13 +8140,13 @@ history:
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -8179,7 +8179,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK009-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK009-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK009 – Baseline Ring**
 
@@ -8189,7 +8189,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 009 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 38.5 m to rₒ = 42.0 m (gross) with 0.5 m structural thickness (net rₒ = 41.5 m).
 
@@ -8197,7 +8197,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **38.5 m**, outer radius **42.0 m**, net outer radius **41.5 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**241.9 m** (inner) to ~**260.8 m** (outer net).
@@ -8206,13 +8206,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -8245,7 +8245,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK010-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK010-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK010 – Baseline Ring**
 
@@ -8255,7 +8255,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 010 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 42.0 m to rₒ = 45.5 m (gross) with 0.5 m structural thickness (net rₒ = 45.0 m).
 
@@ -8263,7 +8263,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **42.0 m**, outer radius **45.5 m**, net outer radius **45.0 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**263.9 m** (inner) to ~**282.7 m** (outer net).
@@ -8272,13 +8272,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -8311,7 +8311,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK011-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK011-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK011 – Baseline Ring**
 
@@ -8321,7 +8321,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 011 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 45.5 m to rₒ = 49.0 m (gross) with 0.5 m structural thickness (net rₒ = 48.5 m).
 
@@ -8329,7 +8329,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **45.5 m**, outer radius **49.0 m**, net outer radius **48.5 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**285.9 m** (inner) to ~**304.7 m** (outer net).
@@ -8338,13 +8338,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -8377,7 +8377,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK012-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK012-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK012 – Baseline Ring**
 
@@ -8387,7 +8387,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 012 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 49.0 m to rₒ = 52.5 m (gross) with 0.5 m structural thickness (net rₒ = 52.0 m).
 
@@ -8395,7 +8395,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **49.0 m**, outer radius **52.5 m**, net outer radius **52.0 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**307.9 m** (inner) to ~**326.7 m** (outer net).
@@ -8404,13 +8404,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -8443,7 +8443,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK013-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK013-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK013 – Baseline Ring**
 
@@ -8453,7 +8453,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 013 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 52.5 m to rₒ = 56.0 m (gross) with 0.5 m structural thickness (net rₒ = 55.5 m).
 
@@ -8461,7 +8461,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **52.5 m**, outer radius **56.0 m**, net outer radius **55.5 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**329.9 m** (inner) to ~**348.7 m** (outer net).
@@ -8470,13 +8470,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -8509,7 +8509,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK014-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK014-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK014 – Baseline Ring**
 
@@ -8519,7 +8519,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 014 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 56.0 m to rₒ = 59.5 m (gross) with 0.5 m structural thickness (net rₒ = 59.0 m).
 
@@ -8527,7 +8527,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **56.0 m**, outer radius **59.5 m**, net outer radius **59.0 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**351.9 m** (inner) to ~**370.7 m** (outer net).
@@ -8536,13 +8536,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -8575,7 +8575,7 @@ date: 2025-08-25
 lang: en-de
 ---
 
-# SPEC-00-STR-DECKS-DECK015-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-DECKS-DECK015-0001-baseline-ring-EN-DE-v0.1.0-DRAFT
 
 **The Engineering of DECK015 – Baseline Ring**
 
@@ -8585,7 +8585,7 @@ lang: en-de
 
 ---
 
-## 1. Abstract / Zusammenfassung (EN/DE)
+##### 1. Abstract / Zusammenfassung (EN/DE)
 
 **EN:** DECK 015 is a baseline pressurized ring providing volume for future systems. It spans rᵢ = 59.5 m to rₒ = 63.0 m (gross) with 0.5 m structural thickness (net rₒ = 62.5 m).
 
@@ -8593,7 +8593,7 @@ lang: en-de
 
 ---
 
-## 2. Baseline Geometry & Environment (EVOL-00)
+##### 2. Baseline Geometry & Environment (EVOL-00)
 
 * **Radial band:** inner radius **59.5 m**, outer radius **63.0 m**, net outer radius **62.5 m**, net deck height **3.0 m** (gross 3.5 m).
 * **Circumference:** ~**373.8 m** (inner) to ~**392.7 m** (outer net).
@@ -8602,13 +8602,13 @@ lang: en-de
 
 ---
 
-## 3. Open Parameters (TBD/TBC)
+##### 3. Open Parameters (TBD/TBC)
 
 * Detailed functional layout & interfaces.
 
 ---
 
-## 4. Drawing & Data References
+##### 4. Drawing & Data References
 
 * DECK geometry baseline table.
 
@@ -8644,9 +8644,9 @@ history:
     change: "Spin law updated to 1 g @ DECK012 (r≈52 m, 4.147 rpm)"
 ---
 
-# SPEC-00-STR-GEOM-GRAV-0001 – Global Geometry & Gravitation *(EVOL-00, 127 m)*
+#### SPEC-00-STR-GEOM-GRAV-0001 – Global Geometry & Gravitation *(EVOL-00, 127 m)*
 
-## Summary / Kurzfassung (EN/DE)
+##### Summary / Kurzfassung (EN/DE)
 
 **EN:** Defines the overall geometry, hull layering and spin-derived gravity profile for Sphere Space Station **Earth ONE** (outer diameter **127 m**). Includes deck banding, comfort models and g-tables based on the EVOL-00 spin law (1 g at **DECK 012 / r = 52 m**).
 
@@ -8660,7 +8660,7 @@ history:
 
 ---
 
-## 1. Station & Hülle (Geometrie, Materialien)
+##### 1. Station & Hülle (Geometrie, Materialien)
 
 * **Stationsform:** Kugel, **Außendurchmesser 127{,}00 m** → **Außenradius 63{,}50 m**.
 * **Druckhülle („Hull“):** nominelle Dicke **0{,}50 m**; Schichten (außen→innen): **MMOD-Bumper** (Whipple/Stuffed-Whipple), Standoff/MLI, **Druckwand** (SiC-Verbund), innen Servicekanäle/Verkleidung.
@@ -8672,7 +8672,7 @@ history:
 
 ---
 
-## 2. Künstliche Gravitation – Formeln (SI)
+##### 2. Künstliche Gravitation – Formeln (SI)
 
 * **Zentrifugalbeschleunigung:** $\,a(r)=\omega^2 r\,$ mit $r$ in m, $\omega$ in s⁻¹.
 * **Coriolisbeschleunigung:** $\,|a_\mathrm{cor}|=2\,\omega\,v\,$ für Bewegung mit Geschwindigkeit $v$ relativ zur Struktur.
@@ -8681,7 +8681,7 @@ history:
 
 ---
 
-## 3. EVOL-00 „Spin-Law“
+##### 3. EVOL-00 „Spin-Law“
 
 **Sollwert:** $a=9{,}80665\,\mathrm{m/s^2}$ bei $r=52{,}00\,\mathrm{m}$.
 **Ergebnis:** $\omega=0{,}43430\,\mathrm{s^{-1}}$ ⇒ **4,147 rpm**.
@@ -8689,13 +8689,13 @@ history:
 
 ---
 
-## 4. Deck-Geometrien (EVOL-00)
+##### 4. Deck-Geometrien (EVOL-00)
 
 * **Deck-Band-Raster:** konzentrische Bänder **à 3{,}50 m**, beginnend bei **10{,}50 m** bis zur Innenhülle **63{,}00 m**.
 * **Decks:**
   **001** 10,50–14,00 m · **002** 14,00–17,50 m · **003** 17,50–21,00 m · **004** 21,00–24,50 m · **005** 24,50–28,00 m · **006** 28,00–31,50 m · **007** 31,50–35,00 m · **008** 35,00–38,50 m · **009** 38,50–42,00 m · **010** 42,00–45,50 m · **011** 45,50–49,00 m · **012** 49,00–52,50 m · **013** 52,50–56,00 m · **014** 56,00–59,50 m · **015** 59,50–63,00 m.
 
-### 4.1 g/v-Tabelle (Boden/Mitte/Decke pro Deck, EVOL-00, $\omega=0{,}43430\,\mathrm{s^{-1}}$ ≈ 4,147 rpm)
+###### 4.1 g/v-Tabelle (Boden/Mitte/Decke pro Deck, EVOL-00, $\omega=0{,}43430\,\mathrm{s^{-1}}$ ≈ 4,147 rpm)
 
 Diese Tabelle ist die **Basis** für Ausstattung und Deck-Einsatz (g-Niveau und tangentiale Geschwindigkeit) und gilt für die **D127-Bauarten**:
 
@@ -8716,7 +8716,7 @@ Diese Tabelle ist die **Basis** für Ausstattung und Deck-Einsatz (g-Niveau und 
 
 \pagewidth=420mm
 \pageheight=297mm
-\begin{longtable}{@{}rrrrrrrrrr@{}}\toprule Deck & r_ceiling (m) & r_mid (m) & r_floor (m) & g_ceiling (g0) & g_mid (g0) & g_floor (g0) & v_ceiling (m/s) & v_mid (m/s) & v_floor (m/s) \\\midrule \endhead 000 & 0.00 & 5.00 & 10.00 & 0.000 & 0.096 & 0.192 & 0.00 & 2.17 & 4.34 \\001 & 10.50 & 12.00 & 13.50 & 0.202 & 0.231 & 0.260 & 4.56 & 5.21 & 5.86 \\002 & 14.00 & 15.50 & 17.00 & 0.269 & 0.298 & 0.327 & 6.08 & 6.73 & 7.38 \\003 & 17.50 & 19.00 & 20.50 & 0.337 & 0.365 & 0.394 & 7.60 & 8.25 & 8.90 \\004 & 21.00 & 22.50 & 24.00 & 0.404 & 0.433 & 0.462 & 9.12 & 9.77 & 10.42 \\005 & 24.50 & 26.00 & 27.50 & 0.471 & 0.500 & 0.529 & 10.64 & 11.29 & 11.94 \\006 & 28.00 & 29.50 & 31.00 & 0.538 & 0.567 & 0.596 & 12.16 & 12.81 & 13.46 \\007 & 31.50 & 33.00 & 34.50 & 0.606 & 0.635 & 0.663 & 13.68 & 14.33 & 14.98 \\008 & 35.00 & 36.50 & 38.00 & 0.673 & 0.702 & 0.731 & 15.20 & 15.85 & 16.50 \\009 & 38.50 & 40.00 & 41.50 & 0.740 & 0.769 & 0.798 & 16.72 & 17.37 & 18.02 \\010 & 42.00 & 43.50 & 45.00 & 0.808 & 0.837 & 0.865 & 18.24 & 18.89 & 19.54 \\011 & 45.50 & 47.00 & 48.50 & 0.875 & 0.904 & 0.933 & 19.76 & 20.41 & 21.06 \\012 & 49.00 & 50.50 & 52.00 & 0.942 & 0.971 & 1.000 & 21.28 & 21.93 & 22.58 \\013 & 52.50 & 54.00 & 55.50 & 1.010 & 1.038 & 1.067 & 22.80 & 23.45 & 24.10 \\014 & 56.00 & 57.50 & 59.00 & 1.077 & 1.106 & 1.135 & 24.32 & 24.97 & 25.62 \\015 & 59.50 & 61.25 & 63.00 & 1.144 & 1.178 & 1.212 & 25.84 & 26.60 & 27.36 \\\bottomrule \end{longtable}
+\begin{longtable}{@{}rrrrrrrrrr@{}}\toprule Deck & r\_ceiling (m) & r\_mid (m) & r\_floor (m) & g\_ceiling (g0) & g\_mid (g0) & g\_floor (g0) & v\_ceiling (m/s) & v\_mid (m/s) & v\_floor (m/s) \\\midrule \endhead 000 & 0.00 & 5.00 & 10.00 & 0.000 & 0.096 & 0.192 & 0.00 & 2.17 & 4.34 \\001 & 10.50 & 12.00 & 13.50 & 0.202 & 0.231 & 0.260 & 4.56 & 5.21 & 5.86 \\002 & 14.00 & 15.50 & 17.00 & 0.269 & 0.298 & 0.327 & 6.08 & 6.73 & 7.38 \\003 & 17.50 & 19.00 & 20.50 & 0.337 & 0.365 & 0.394 & 7.60 & 8.25 & 8.90 \\004 & 21.00 & 22.50 & 24.00 & 0.404 & 0.433 & 0.462 & 9.12 & 9.77 & 10.42 \\005 & 24.50 & 26.00 & 27.50 & 0.471 & 0.500 & 0.529 & 10.64 & 11.29 & 11.94 \\006 & 28.00 & 29.50 & 31.00 & 0.538 & 0.567 & 0.596 & 12.16 & 12.81 & 13.46 \\007 & 31.50 & 33.00 & 34.50 & 0.606 & 0.635 & 0.663 & 13.68 & 14.33 & 14.98 \\008 & 35.00 & 36.50 & 38.00 & 0.673 & 0.702 & 0.731 & 15.20 & 15.85 & 16.50 \\009 & 38.50 & 40.00 & 41.50 & 0.740 & 0.769 & 0.798 & 16.72 & 17.37 & 18.02 \\010 & 42.00 & 43.50 & 45.00 & 0.808 & 0.837 & 0.865 & 18.24 & 18.89 & 19.54 \\011 & 45.50 & 47.00 & 48.50 & 0.875 & 0.904 & 0.933 & 19.76 & 20.41 & 21.06 \\012 & 49.00 & 50.50 & 52.00 & 0.942 & 0.971 & 1.000 & 21.28 & 21.93 & 22.58 \\013 & 52.50 & 54.00 & 55.50 & 1.010 & 1.038 & 1.067 & 22.80 & 23.45 & 24.10 \\014 & 56.00 & 57.50 & 59.00 & 1.077 & 1.106 & 1.135 & 24.32 & 24.97 & 25.62 \\015 & 59.50 & 61.25 & 63.00 & 1.144 & 1.178 & 1.212 & 25.84 & 26.60 & 27.36 \\\bottomrule \end{longtable}
 \restoregeometry
 \pagewidth=210mm
 \pageheight=297mm
@@ -8728,7 +8728,7 @@ Diese Tabelle ist die **Basis** für Ausstattung und Deck-Einsatz (g-Niveau und 
 
 ---
 
-## 5. Rechen- & Rundungsregeln
+##### 5. Rechen- & Rundungsregeln
 
 * **Primärgleichung:** $a(r)=g_0\cdot r/52{,}00$.
 * **Rundung:** Anzeige auf **3 Nachkommastellen** (m/s²) bzw. **3 Dezimal** in g$_0$; interne Pipeline **double-precision**.
@@ -8736,7 +8736,7 @@ Diese Tabelle ist die **Basis** für Ausstattung und Deck-Einsatz (g-Niveau und 
 
 ---
 
-## 6. „Gravitations-Wohlfühlformel“ $C_g$
+##### 6. „Gravitations-Wohlfühlformel“ $C_g$
 
 $$
 C_g = 0{,}50\,C_g^{(a)} + 0{,}25\,C_g^{(\nabla)} + 0{,}15\,C_g^{(\mathrm{cor})} + 0{,}10\,C_g^{(\omega)}.
@@ -8749,7 +8749,7 @@ $$
 
 ---
 
-## 7. „Umwelt-Wohlfühlformel“ $C_\mathrm{env}$ & Gesamtwert
+##### 7. „Umwelt-Wohlfühlformel“ $C_\mathrm{env}$ & Gesamtwert
 
 * **Umwelt-Güte:** $C_\mathrm{env}=\prod_i f_i(x_i)$, $i\in\{$Noise, CO$_2$, T/RH, Lux, Crowd, Light-Cycle$\}$; $x_i$ in **SI**.
 * **Gesamt:** $C=0{,}7\,C_g+0{,}3\,C_\mathrm{env}$.
@@ -8757,9 +8757,9 @@ $$
 
 ---
 
-## 8. Wohlfühlen (Grav + Umwelt)
+##### 8. Wohlfühlen (Grav + Umwelt)
 
-### 8.1 Gravitative Wohlfühlmatrix (EVOL-00)
+###### 8.1 Gravitative Wohlfühlmatrix (EVOL-00)
 
 **Kategoriegrenzen:** **A** ≥ 0,85 · **B** 0,70–0,85 · **C** 0,55–0,70 · **D** 0,40–0,55 · **E** 0,25–0,40.
 **Hinweis:** Bei **4,147 rpm** wirken **Coriolis** und **Spin-Term** moderat stärker als bei ≤ 4 rpm; Komfort-Peak liegt **nahe 0,9 g** (Decks 006–009).
@@ -8774,7 +8774,7 @@ $$
 
 *Numerik nach Kap. 6 (Formel & Gewichte) und Kap. 4/5 (g-Profile). Forschungslage: **\~4 rpm** robust, höhere Raten mit **Adaption/Training** möglich.* **([NSS][7], [PMC][8])**
 
-### 8.2 Umwelt-Wohlfühlen (Leitplanken)
+###### 8.2 Umwelt-Wohlfühlen (Leitplanken)
 
 * **Noise:** ≤ NC-50 in Arbeitsbereichen, Schlaf ≤ Hintergrund+10 dB.
 * **CO$_2$:** Leitwerte gem. NASA-STD-3001; alarmgestützte Lüftungs-/Absorptionspfade.
@@ -8783,17 +8783,17 @@ $$
 
 ---
 
-## 9. Sektoren-Layout & Systemintegration (DECK 013–015)
+##### 9. Sektoren-Layout & Systemintegration (DECK 013–015)
 
 **Sektorierung:** 12 × 30° (A…L). **Radiale Druck/Brand-Schotts** entlang Sektorgrenzen; **HL-Schächte** @ 0°/90°/180°/270°, **PAX-Schächte** @ ±22.5° etc.; **Servicetunnel** doppelt (inner/outer ring). **VENT/BOP** radial (keine tangentiale Druckentlastung). **HZ-Zonen:** HZ-1 normal, HZ-2 erhöht (Energie/Heiß), HZ-3 kritisch (Nuklear/Kryo/Explosion).
 
-### 9.1 Hoch-g Deck-Rollen (Kurz)
+###### 9.1 Hoch-g Deck-Rollen (Kurz)
 
 * **DECK 013 –** Puffer/Service (Schild-Wasser, HX-Galerien, Dekon).
 * **DECK 014 –** Nuklear-Primär (SMR-Containments, Primärkreise) + Power-Conversion/Verteilung.
 * **DECK 015 –** Tankfarm & Thermik (Wasser-Großspeicher, Sekundär/Tertiär-Loops, Gase; Kryo bevorzugt hull-mounted).
 
-### 9.2 Tabellen (Auszug)
+###### 9.2 Tabellen (Auszug)
 
 **DECK 015 – Tankfarm & Thermik (HZ-Schwerpunkte, D/E-Verweilzeit)**
 
@@ -8816,14 +8816,14 @@ $$
 
 ---
 
-## 10. Rationale (nicht-normativ)
+##### 10. Rationale (nicht-normativ)
 
 * **Warum 014 für SMR, 015 für Tanks?** 014 (\~1,52 g mid) reduziert mechanische Lasten ggü. 015 (\~1,61 g mid) bei gleicher Nähe zur Hülle/Radiatoren. 015 bietet dafür exzellentes **Phasen-Settling** und **thermische Puffer** für Loops.
 * **Sicherheitsprinzip:** keine gemeinsame Ursache – **SMR** und **H$_2$/CH$_4$** strikt getrennt (Deck/Sektor/VENT-Trennung), radiale Entlastung **direkt ins All**.
 
 ---
 
-## 11. Offene Punkte (TBD/TBC)
+##### 11. Offene Punkte (TBD/TBC)
 
 * **MMOD-BLE-Feinauslegung** (Partikel-Spektrum, Winkel, Dichte) je Hull-Zone.
 * **Gewichte $C_g, C_\mathrm{env}$** nach Crew-Trials feinjustieren (inkl. v-Abhängigkeit Coriolis).
@@ -8831,7 +8831,7 @@ $$
 
 ---
 
-## 12. Referenzen (Auswahl)
+##### 12. Referenzen (Auswahl)
 
 [1] **NASA-STD-3001 Vol. 2** – Human Systems Integration Requirements (aktuelle Revision).
 [2] **Christiansen, E.** Meteoroid/Debris Shielding – Whipple & Stuffed-Whipple Basics (NASA/JSC).
@@ -8873,9 +8873,9 @@ history:
     change: "Spin law updated to 1 g @ DECK012"
 ---
 
-# SPEC-00-STR-SYS-AXIAL-RADIAL-TRADE-0001 — Variantenuntersuchung Längs-/Breitengrad-Schotten *(EVOL-00, 127 m)*
+#### SPEC-00-STR-SYS-AXIAL-RADIAL-TRADE-0001 — Variantenuntersuchung Längs-/Breitengrad-Schotten *(EVOL-00, 127 m)*
 
-## Summary / Kurzfassung (EN/DE)
+##### Summary / Kurzfassung (EN/DE)
 
 **EN:** Compares three structural and safety layouts for the sphere: **A) Longitudinal sectors**, **B) Latitudinal diaphragms ("LAT")**, **C) Combination**. Evaluates structural dynamics, pressure/fire/hazard containment, operations & maintenance, routing complexity, mass/manufacturing, and expandability. Result: **Option C** offers the best performance; recommended as baseline (EVOL-00 with 12 sector bulkheads A–L plus 3 LAT discs S40/EQ/N40, expanding to 7 LAT in EVOL-01).
 
@@ -8887,11 +8887,11 @@ history:
 
 ---
 
-## Abstract / Kurzfassung
+##### Abstract / Kurzfassung
 
 ---
 
-## 1 Scope & Assumptions / Geltung & Annahmen
+##### 1 Scope & Assumptions / Geltung & Annahmen
 
 * Sphäre Innenhülle: **Rₕ = 63,00 m**; Deckbänder **Δr = 3,50 m** von **r = 10,50…63,00 m** (DECK 001–015).
 * **Druck-/Brand-Philosophie:** Radiale Entlastung (VENT/BOP) zur Hülle; tangentiale Entlastung vermeiden.
@@ -8899,25 +8899,25 @@ history:
 
 ---
 
-## 2 Variantenbeschreibung
+##### 2 Variantenbeschreibung
 
-### A) Längsgrade (radiale Sektorschotten)
+###### A) Längsgrade (radiale Sektorschotten)
 
 * 12 keilförmige Schotten A–L (alle 30°) über DECK 001–015; **PT-A/B** Türen und **AL-C** Schleusen an Durchtritten.
 * Bilden mit Deck-Hoopringen einen **Mehrzellen-Torsionskasten** (Bredt-Batho).
 
-### B) Breitengrade (axiale LAT-Diaphragmen)
+###### B) Breitengrade (axiale LAT-Diaphragmen)
 
 * Ringförmige Diaphragmen senkrecht zur Drehachse; Innenloch (Core) \~ **12 m**; Ebenen z. B.: **S56, S40, S20, EQ, N20, N40, N56**.
 * Funktion: **Schubscheiben**, axiale **Brand-/Hazard-Kappen**, akustische Barrieren; **keine Voll-Druckschotte**.
 
-### C) Kombination (A + B)
+###### C) Kombination (A + B)
 
 * 12 Sektorschotten **+** 3–7 LAT-Scheiben; mechanisch als **Gitter-/Rippen-Schale** mit hoher **Torsions- & Biegesteifigkeit**, **axialer** und **radialer** Kompartmentierung.
 
 ---
 
-## 3 Bewertungsmaßstäbe / Methods
+##### 3 Bewertungsmaßstäbe / Methods
 
 * **Strukturell:** Torsionssteifigkeit (*J*) nach Bredt-Batho (Mehrzellen), axiale Diaphragma-Schubpfade, Ovalisationsbegrenzung.
 * **Dynamik:** Anhebung Eigenfrequenzen (Barrel/Breathing), Dämpfung (Elastomerfugen), Dock/Triebwerksimpulse.
@@ -8929,9 +8929,9 @@ history:
 
 ---
 
-## 4 Variantenanalyse
+##### 4 Variantenanalyse
 
-### 4.1 Statik & Dynamik
+###### 4.1 Statik & Dynamik
 
 | Kriterium               | A) Längsgrade         | B) Breitengrade            | C) Kombiniert                     |
 | ----------------------- | --------------------- | -------------------------- | --------------------------------- |
@@ -8943,7 +8943,7 @@ history:
 
 **Begründung:** Längsgrade erzeugen geschlossene Zellen → **hohes J**. LAT kappen **axiale Dehnwege** → höhere **axiale** Steifigkeit. Kombination maximiert beides.
 
-### 4.2 Safety (Druck/Brand/Hazard)
+###### 4.2 Safety (Druck/Brand/Hazard)
 
 | Kriterium          | A            | B                         | C               |
 | ------------------ | ------------ | ------------------------- | --------------- |
@@ -8954,7 +8954,7 @@ history:
 
 **Begründung:** Radiale Schotten stoppen **seitliche** Ausbreitung; LAT deckeln **axiale** Heißgas-/Rauchpfade. Kombination liefert **2D-Kompartmentierung**.
 
-### 4.3 OPS/Wartung & Routing
+###### 4.3 OPS/Wartung & Routing
 
 | Kriterium             | A               | B                       | C                              |
 | --------------------- | --------------- | ----------------------- | ------------------------------ |
@@ -8963,7 +8963,7 @@ history:
 | MEP-Durchdringungen   | **Geringer**    | Mehr Portals/Equalizer  | **Höher**, aber definierter    |
 | Integration/Upgrade   | Einfach         | Mittel                  | **Modular**, stufenfähig       |
 
-### 4.4 Masse & Fertigung (parametrisch)
+###### 4.4 Masse & Fertigung (parametrisch)
 
 * **A (Längsgrade)** Gesamt-Schottfläche grob:
   $A_\text{A} \approx h_\text{deck}\cdot \Delta r \cdot N_\text{sector} \cdot N_\text{deck}$
@@ -8977,7 +8977,7 @@ history:
 
 ---
 
-## 5 Konsequenzen (Systemisch)
+##### 5 Konsequenzen (Systemisch)
 
 * **Design-Δp & Sequenz:** Ereignis → **radiale Sektorisierung (PT-A zu)** → **Equalize LAT** → **LAT-Portals schließen** → **VENT/BOP radial**. LAT sieht **nie Voll-Δp** (Auslegung ≤ 0,2 atm).
 * **Fugen & Dämpfung:** Elastomer-Lagen an LAT-Perimeter & Sektor-Schotten senken Körperschall, nehmen Thermospannung auf.
@@ -8986,7 +8986,7 @@ history:
 
 ---
 
-## 6 Empfehlung / Recommendation
+##### 6 Empfehlung / Recommendation
 
 **Empfohlen: Variante C (Kombiniert)** als **Baseline**.
 
@@ -9007,7 +9007,7 @@ history:
 
 ---
 
-## 7 Nächste Schritte / Next Steps
+##### 7 Nächste Schritte / Next Steps
 
 1. **Positions-Freeze (LAT):** z-Koordinaten, r\_out(z), Portal-Liste (HL/PAX/UTIL) je LAT.
 2. **Equalizer-Sizing:** Ventquerschnitte & Zeitkonstanten, damit LAT < **0,2 atm** bleibt (Sektor-Blowout-Szenario).
@@ -9017,7 +9017,7 @@ history:
 
 ---
 
-## 8 Anhang / Appendix (Formeln & Notizen)
+##### 8 Anhang / Appendix (Formeln & Notizen)
 
 * **Zentrifugalbeschleunigung:** $a(r)=\omega^2 r$; **Membranspannung Sphäre:** $\sigma \approx pR/(2t)$.
 * **Mehrzellen-Torsion (Bredt-Batho):** $J \sim 4\sum A_i^2 / \sum \int \frac{ds}{t}$ — mehr Zellen ⇒ höheres *J*.
@@ -9026,7 +9026,7 @@ history:
 
 ---
 
-## 9 Referenzen / References
+##### 9 Referenzen / References
 
 * **Projekt-Spezifikationen EVOL-00** (Geometrie, Deck-Raster, Spin-Law, Safety-Philosophie).
 * **Human Systems & Habitability:** NASA-STD-3001 Vol. 2 (akustik/CO$_2$/licht, OPS-Leitplanken).
@@ -9035,7 +9035,7 @@ history:
 
 ---
 
-### Decision Log (Sign-off)
+###### Decision Log (Sign-off)
 
 * **Owner:** structure-architecture
 * **Contributors:** safety-reactor, power-thermal
@@ -9068,7 +9068,7 @@ date: 2025-08-21
 lang: EN
 ---
 
-# SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001-wormhole-safety-and-hazard-mitigations-EVOL-00-D127m-EN-DE-v0.1.0-DRAFT
+#### SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001-wormhole-safety-and-hazard-mitigations-EVOL-00-D127m-EN-DE-v0.1.0-DRAFT
 
 
 SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001 — Wormhole Safety & Hazard Mitigations *(EVOL-00, Ø 127 m)* — v0.1.0 DRAFT
@@ -9077,7 +9077,7 @@ SPEC-00-STR-SYS-WORMHOLE-SAFETY-0001 — Wormhole Safety & Hazard Mitigations *(
 
 ---
 
-## 0. Summary / Kurzfassung (EN/DE)
+##### 0. Summary / Kurzfassung (EN/DE)
 
 **EN (one-pager):**
 This spec defines the constructive safety architecture for the axial “Wormhole” corridor (DECK 000). The design uses **segmented pressure/fire bulkheads**, **blast-tolerant docking rings**, **inert-gas fire suppression**, **fast shutters/MDPS for window segments**, plus **dedicated vent & blow-out routes to space** near the hull. Hazard cases covered: **ship explosion at bay**, **fire on docked ship**, **vehicle collision within the Wormhole**, **solar particle events**, **micrometeoroid transverse & axial penetrations**. Acceptance is via closure-time, vent-capacity and isolation-integrity tests per station-wide safety framework.
@@ -9087,9 +9087,9 @@ Festgelegt werden konstruktive Schutzebenen für DECK 000: **Sektorisierung übe
 
 ---
 
-## 1. Scope & References
+##### 1. Scope & References
 
-## Technology Readiness
+##### Technology Readiness
 
 - Current TRL: TBD
 - Target TRL (EVOL-00): TBD
@@ -9108,14 +9108,14 @@ See: [Technology Readiness & Validation Classification (TRL)](../../../7.5-proce
 
 ---
 
-## 2. Baseline & Interfaces (recap)
+##### 2. Baseline & Interfaces (recap)
 
 * **Wormhole (DECK 000):** Axialer Mikro-g-Korridor, **OD 22 m / ID 20 m**; alternierende **Docking-Ringe** (10 m Halsweite, Inconel) und **Fenster-Tuben** mit multilayer Fensterstacks; Ring-Abstände ≈ 20 m. **Jeder Ring = isolierbares Kompartiment** (Druck-/Brandschottfunktion integriert).
 * **Schnittstellen:** Drucktüren/Schleusen zu DECK 001, Red/Blue-Comms, duale DC-Busse, Inertgas-Ringleitungen, VENT/BOP-Anbindung hull-nah.
 
 ---
 
-## 3. Design Objectives (Safety Envelope)
+##### 3. Design Objectives (Safety Envelope)
 
 1. **Containment:** Ereignisse lokal halten (Ring-zu-Ring Sektorisierung, PT-A/PT-B/AL-C).
 2. **Energy Management:** Druck/Impuls zielgerichtet **radial ins All** entlasten (VENT/BOP hull-nah; keine tangentiale Führung).
@@ -9124,7 +9124,7 @@ See: [Technology Readiness & Validation Classification (TRL)](../../../7.5-proce
 
 ---
 
-## 4. Threat Cases (Design Cases)
+##### 4. Threat Cases (Design Cases)
 
 **E1 — Explodierendes Schiff am Docking-Ring**
 Bemessungsfälle (lastfallunabhängig): Druckstoß + Trümmer, Nahfeld am Ring-Hals. Ziele: Ring-Kompartiment hält; Impuls wird radial abgeführt; Fenster/Tuben vorgelagert durch Shutter geschützt.
@@ -9146,77 +9146,77 @@ Axialer Strike durch Fenster-Tubus/Offen-Ring; Ziel: Shutter-Schließung + inter
 
 ---
 
-## 5. Constructive Measures (Layered)
+##### 5. Constructive Measures (Layered)
 
-### 5.1 Compartmentation & Doors
+###### 5.1 Compartmentation & Doors
 
 * **Ring-zu-Ring-Sektorisierung:** Jeder Docking-Ring ist druckfest isolierbar; **PT-A** (Hauptschott motorisch/manuell), **PT-B** (Service-Tür), **AL-C** (Airlock, Δp-/O$_2$-/Rauch-/Temp-Dualsensorik). **Fail-safe „zu“**, Fernentriegelung nur freigabepflichtig.
 * **Schließzeiten (Targets):** PT-A ≤ 3 s lokal, ≤ 8 s kaskadiert; AL-C Interlock auf Crew-Präsenz. (Nachweis über Systemtests, s. § 8.)
 
-### 5.2 Vent & Blow-Out (to space)
+###### 5.2 Vent & Blow-Out (to space)
 
 * **VENT-Stränge pro Ring-Sektor** mit Rückstromsperren; **BOP-Zonen** hull-nah als Soll-Scherfugen für rasches Druck-/Rauch-Abblasen nach außen; keine tangentiale Entlastung.
 * **Dimensionales Prinzip:** Auslegung auf **choked flow** (kritischer Ausströmung) mit $\dot m = C_d \, A \, P_0 \, \sqrt{\tfrac{\gamma}{R T}}\left(\tfrac{2}{\gamma+1}\right)^{\tfrac{\gamma+1}{2(\gamma-1)}}$; Acceptance über Mindest-A je Ring-Volumen und vorgegebene Entlastungszeit (siehe § 6.1). *(Formel-Framework, Implementierung stationsweit einheitlich).*
 
-### 5.3 Fire & Atmosphere
+###### 5.3 Fire & Atmosphere
 
 * **Inertgas-Suppression (Ar/N$_2$):** Segmentiert pro Ring; automatischer Trigger (Flamme/Rauch/ΔT), manuelle Override-Option; O$_2$-Absenkung kontrolliert.
 * **Materialien:** SiC-Verbund, Inconel an Hot-Spots; nicht brennbare Innenverkleidungen; Leitungsdurchführungen mit Feuerschotts.
 
-### 5.4 Windows / MDPS / Shutters
+###### 5.4 Windows / MDPS / Shutters
 
 * **Fenster-Segmente:** Multilayer-Stacks + **Schnell-Shutters** (ISS-Cupola-Prinzip); **MDPS/MMOD-Shades** außen. Ziel-Zeit **t\_shutter ≤ 0,5 s** vom Alarm.
 
-### 5.5 Blast-Tolerant Docking
+###### 5.5 Blast-Tolerant Docking
 
 * **Ring-Hals als Blast-Cradle:** Energieabsorbierende Sandwich-Kragen, Soll-Verformungszonen, frangible Attachments, die Impuls in **BOP-Routen** koppeln. Ring kann **autark dicht** gesetzt werden.
 * **Jettison/Quick-Release:** Pyro-/Mechanik-Trennsysteme für kontaminiertes/brandbetroffenes Schiff, mit autom. Rückzugs-Shutter. (Interface in § 9.)
 
-### 5.6 Collision Prevention & Mitigation
+###### 5.6 Collision Prevention & Mitigation
 
 * **Traffic-Separation:** Nord = Arrivals, Süd = Departures; **Segment-Freigabe**: nur **ein** Fahrzeug zwischen zwei Ringen (Occupancy-Interlock); Speed-Limit & Autopilot-Beacons an jedem Ring.
 * **Bumper-Rails & Catch-Nets** in Fenster-Tuben; weiche Führung, Verformungsenergie-Aufnahme.
 
-### 5.7 Radiation (Solar Wind / SPE)
+###### 5.7 Radiation (Solar Wind / SPE)
 
 * **Storm-Mode:** Shutter-Down + Verlagerung Crew in **wasser/poly-geschirmte** Decks/Sektoren (DECK 013/014-Schnittstellen); **EX-Zonen priorisierte VENT**.
 
-### 5.8 Micrometeoroids (quer/längs)
+###### 5.8 Micrometeoroids (quer/längs)
 
 * **Quer:** Stuffed-Whipple Gürtel um Wormhole-Tuben + **Spall-Liner** innen; ringweise Isolation + VENT.
 * **Längs:** Shutter-Kaskade ringweise, **Fänger-Lamellen** im Tubus, um Sekundärtrümmer zu brechen.
 
 ---
 
-## 6. Sizing Rules (Engineering)
+##### 6. Sizing Rules (Engineering)
 
-### 6.1 Vent/Blow-Out Capacity
+###### 6.1 Vent/Blow-Out Capacity
 
 * **Design-Ziel:** $t_\mathrm{relief}$ bis $p \leq p_\mathrm{safe}$ in $\Delta t_\mathrm{max}$ (Programmwert), unter Annahme choked outflow (Formel § 5.2).
 * **Akzeptanz:** pro Ring-Kompartiment $A_\mathrm{VENT}^\ast \geq A_\mathrm{min}(V,T,P_0,\gamma)$; Nachweis im Funktions-Test mit simuliertem Hot-Gas-Release. *(Stationsweit einheitliche Rechenblätter).*
 
-### 6.2 Door/Compartment Closure
+###### 6.2 Door/Compartment Closure
 
 * **PT-A Schließzeit** ≤ 3 s lokal; Kaskade ≤ 8 s (E1/E2-Trigger). **Dichtheitstest**: Δp-Haltezeit ≥ Programmwert.
 
-### 6.3 Shutter Timing
+###### 6.3 Shutter Timing
 
 * **t\_shutter** ≤ 0,5 s auf **E5/E6/E4**-Trigger (MMOD Radar/Optik, SPE-Alert). Nachweis: End-to-End-Test pro Fenster-Segment.
 
-### 6.4 Inert-Gas Dose
+###### 6.4 Inert-Gas Dose
 
 * **Ar/N$_2$-Masse** pro Ring nach Volumen & Leck-Annahme; Soll-O$_2$-Setpoint **≤ 12–15 Vol-%** in ≤ N Sekunden; Doppelt redundant gespeist.
 
 ---
 
-## 7. Operations & Human Factors (Schnittstellen)
+##### 7. Operations & Human Factors (Schnittstellen)
 
 * **Safe-Hold-Nodes** an jedem Ring (Masken, Comms, Med-Kit), farbcodierte Wege, klare Gegenstrom-Kennung Ankunft/Abflug.
 * **EX-Markierungen** & Dekon-Routen in Richtung DECK 001/013-L.
 
 ---
 
-## 8. Verification & Acceptance (V\&V)
+##### 8. Verification & Acceptance (V\&V)
 
 1. **Dry-Run E1/E2/E3:** Tür-/Schott-Schließtests, Occupancy-Interlocks, Jettison-Sim.
 2. **VENT/BOP-Test:** Öffnungslogik, Durchfluss-Nachweis (kalte Gas-Trials + CFD/Analytik).
@@ -9225,7 +9225,7 @@ Axialer Strike durch Fenster-Tubus/Offen-Ring; Ziel: Shutter-Schließung + inter
 
 ---
 
-## 9. ICD & Naming
+##### 9. ICD & Naming
 
 * **Doors:** PT-A/PT-B/AL-C je Ring-Segment.
 * **Relief:** **VENT-000-<RingID>-<Sektor>**, **BOP-000-<RingID>-<Sektor>** (hull-nah).
@@ -9233,7 +9233,7 @@ Axialer Strike durch Fenster-Tubus/Offen-Ring; Ziel: Shutter-Schließung + inter
 
 ---
 
-## 10. Open Parameters (TBD/TBC)
+##### 10. Open Parameters (TBD/TBC)
 
 * Exakte **Blast-Lastfälle** (Skalierung/Impuls); Ring-Hals-Opfer-Geometrie (FEA).
 * Final **VENT/BOP-Areal** je Ring-Volumen & Prozess-Gase.
@@ -9242,7 +9242,7 @@ Axialer Strike durch Fenster-Tubus/Offen-Ring; Ziel: Shutter-Schließung + inter
 
 ---
 
-## 11. References
+##### 11. References
 
 * **DECK 000 Wormhole – Baseline Geometry/Systems.**
 * **Global Geometry & Safety/Windows/MDPS (Refs & Links).**
@@ -9277,14 +9277,14 @@ date: 2025-08-21
 lang: EN
 ---
 
-# SPEC-00-STR-SYS-WORMHOLE-SAFETY-0002 — Polar Approach & Full Hazard Hardening *(EVOL-00/01)* — v0.1.0 DRAFT
+#### SPEC-00-STR-SYS-WORMHOLE-SAFETY-0002 — Polar Approach & Full Hazard Hardening *(EVOL-00/01)* — v0.1.0 DRAFT
 
 **Scope:** Konstruktive „Safety-by-Design“-Maßnahmen für **DECK 000 / Wormhole** inkl. **Polar-Einflug (Nord/Süd)** sowie ein **vollständiger Hazard-Katalog** für die axialen Systeme (Explosion, Brand, Kollision, Strahlung, MMOD quer/längs, **unkontrollierter Anflug/Impact** u. v. m.).
 **Bezug:** Stationen **Earth ONE** (Ø 127 m) und **Earth TWO** (Ø 254 m, inkl. Long-Capsule-Varianten).
 
 ---
 
-## 0) Executive Summary
+##### 0) Executive Summary
 
 * **Neuer Top-Hazard:** *Unkontrollierter Anflug/Impact auf die Polar-Einflugborde.*
   → Gegenmaßnahmen: **POL-GUARD** (mehrlagiger Polar-Prallschutz), **POL-KOS/Kep-Out-Volumes** mit Autopilot-Geofencing, **Polar-Shutter (≤0,5 s)**, **Deflektions-Jets**, **Jettison/Abort-Prozeduren**, konsequent **radiale Entlastung**.
@@ -9293,7 +9293,7 @@ lang: EN
 
 ---
 
-## 1) Designziele (Safety Envelope)
+##### 1) Designziele (Safety Envelope)
 
 1. **Containment:** Jedes Ereignis bleibt bauabschnittsweise beherrscht (Ring-zu-Ring, Sektor-zu-Sektor).
 2. **Energy-&-Mass-Management:** Druck, Rauch, Partikel **radial zur Hülle**; **keine tangentiale** Relief-Führung.
@@ -9303,9 +9303,9 @@ lang: EN
 
 ---
 
-## 2) Neuer Unfalltyp: **Polar-Impact** (unkontrollierter Anflug/Einschlag)
+##### 2) Neuer Unfalltyp: **Polar-Impact** (unkontrollierter Anflug/Einschlag)
 
-### 2.1 Szenario & Klassen
+###### 2.1 Szenario & Klassen
 
 * **PI-Light:** ≤ 10 t @ ≤ 2 m/s (Klein-Tender/Roboter)
 * **PI-Medium:** 10–40 t @ 2–10 m/s (Crew/Cargo-Module)
@@ -9314,7 +9314,7 @@ lang: EN
 
 **Parameter:** Impuls $J=m\Delta v$, Energie $E=\tfrac12 m v^2$. *Auslegung erfolgt parametriert, nicht fahrzeugspezifisch.*
 
-### 2.2 **POL-GUARD** – Mehrlagiger Polar-Prallschutz (konstruktiv)
+###### 2.2 **POL-GUARD** – Mehrlagiger Polar-Prallschutz (konstruktiv)
 
 1. **Sensor-Vorhang (Lidar/Radar/Optik):** 3D-Track, Health-Monitoring, Autopilot-Geofencing.
 2. **Deploy-Net & Tether-Dämpfer:** ausfahrbares Fangnetz mit vielen **Shock-Absorber-Tethers** (Reißnadeln + viskoelastische Dämpfer).
@@ -9329,14 +9329,14 @@ lang: EN
 > Volumspezifische Absorption $W=\sigma_\text{crush}\cdot \varepsilon$. Bei $\sigma\approx2\,\text{MPa}$, $\varepsilon=0{,}5$ → $W\approx1\,\text{MJ/m}^3$.
 > *Beispiel:* $E=50\,\text{MJ}$ (z. B. 50 t @ 14 m/s) ⇒ **\~50 m³** Crush-Material (auf Sektoren verteilbar).
 
-### 2.3 **POL-KOS/Kep-Out-Volumes & Autopilot-Logik**
+###### 2.3 **POL-KOS/Kep-Out-Volumes & Autopilot-Logik**
 
 * **Approach Ellipsoid** + **Keep-Out Sphere** polar; **Single-Vehicle-Between-Rings** (keine Doppelbelegung).
 * **Hard Interlocks:** Bei **KOS-Verletzung** → *Station* schließt **Polar-Shutter**, zündet **Deflection-Jets**, aktiviert **Deploy-Net**.
 
 ---
 
-## 3) Komplett-Hazard-Katalog (DECK 000 / axial)
+##### 3) Komplett-Hazard-Katalog (DECK 000 / axial)
 
 **Mechanisch/Kinetisch**
 
@@ -9373,67 +9373,67 @@ lang: EN
 
 ---
 
-## 4) Design-Maßnahmen (Layered Hardening)
+##### 4) Design-Maßnahmen (Layered Hardening)
 
-### 4.1 Kompartimentierung & Schotts
+###### 4.1 Kompartimentierung & Schotts
 
 * **Ring-zu-Ring**: PT-A (Haupt), PT-B (Service), AL-C (Airlock) – *fail-safe zu*, kaskadierbar; Δp-Rating ≥ 1 atm sektorweise.
 * **LAT-Scheiben (axial):** schließen **S40/EQ/N40** (EVOL-01) → **Rauch/Heißgas-Kappen**, *kein Voll-Δp* (Equalizer).
 
-### 4.2 VENT/BOP
+###### 4.2 VENT/BOP
 
 * **Nur radial** zur Hülle; dimensioniert auf **choked flow**.
   $\dot m = C_d A P_0 \sqrt{\tfrac{\gamma}{RT}}\big(\tfrac{2}{\gamma+1}\big)^{\!\frac{\gamma+1}{2(\gamma-1)}}$
   → **A\_VENT** je Ring so, dass $p \rightarrow p_\text{safe}$ in **Δt\_max** (Stationsziel, z. B. ≤ 3–5 s).
 
-### 4.3 Feuer & Inertisierung
+###### 4.3 Feuer & Inertisierung
 
 * **Ar/N$_2$-Flutung** ringweise; O$_2$-Setpoint **≤ 12–15 Vol-%** in **≤ N s**; nicht-brennbare Auskleidung, EX-Zonierung.
 
-### 4.4 Fenster/MDPS/Shutter
+###### 4.4 Fenster/MDPS/Shutter
 
 * Multilayer-Stacks, **Shutter ≤ 0,5 s** für E4/E5/E6 (SPE/MMOD), außen **MDPS-Shades**.
 
-### 4.5 Docking-Ringe (Blast/Quick-Release)
+###### 4.5 Docking-Ringe (Blast/Quick-Release)
 
 * **Opfer-Zonen** (frangible) + **Blast-Cradle** (Sandwich-Kragen), **Jettison** mit Rückzugs-Shutter; integrierte **Deflektoren**.
 
-### 4.6 *Neu:* **POL-GUARD** am Polar-Einflug
+###### 4.6 *Neu:* **POL-GUARD** am Polar-Einflug
 
 * **Deploy-Net + Tethers**, **Crush-Bumper**, **Deflection-Cone**, **Polar-Shutter**, **VENT-Kranz** – s. 2.2.
 
-### 4.7 Traffic-Separation & Interlocks
+###### 4.7 Traffic-Separation & Interlocks
 
 * **Nord = Arrivals, Süd = Departures**, **Ein-Fahrzeug-Slot zwischen zwei Ringen**, GN\&C-Beacon-Pflicht, „rogue transponder“ → sofortige **POL-Shutter**-Schließung + **Deflection-Jets**.
 
-### 4.8 Cyber-Resilienz
+###### 4.8 Cyber-Resilienz
 
 * Out-of-Band-Beacons, **AuthN/AuthZ** für Freigaben, Air-Gap für Safety-PLC, „last-known good“-Rollback.
 
 ---
 
-## 5) Parametrische Auslegung (Formeln)
+##### 5) Parametrische Auslegung (Formeln)
 
-### 5.1 Polar-Bumper (Crush-Energie)
+###### 5.1 Polar-Bumper (Crush-Energie)
 
 * **Eingang:** $m, v$ → $E=\tfrac12 m v^2$.
 * **Bumper-Bedarf:** $V_\text{crush}\approx E/W$ mit $W$ (MJ/m³) aus Materialdaten.
 * **Masse-Daumen:** $m_\text{bumper}\approx E/\text{SEA}$ (SEA=20–60 kJ/kg).
 
-### 5.2 Fangnetz + Tethers
+###### 5.2 Fangnetz + Tethers
 
 * **Zielhub** $x$ pro Tether; **Energie** $E\approx\sum \tfrac12 k_i x_i^2$.
 * **Grenzlast** → $F_\text{max}=\sum k_i x_i$ ≤ stationäre Grenzkräfte (Ankerpunkte).
 * *Praktisch:* 8–16 Tethers, je **viskoelastischer Dämpfer** (Hysterese) + Reißelement („fuse“) zur Lastspitzenbegrenzung.
 
-### 5.3 Polar-Shutter (Impuls)
+###### 5.3 Polar-Shutter (Impuls)
 
 * **Impulsreserve:** $J_\text{shutter}\ge m\Delta v$ der zu erwartenden Fragmentlast *auf den Schließweg*.
 * **Schließzeit:** $t_\text{shut}\le 0{,}5\,\text{s}$ bei **E4/E5/E6**-Trigger; Kraft-/Leistungsbudget ergo dimensionieren.
 
 ---
 
-## 6) Prüf- & Abnahmekriterien (V\&V)
+##### 6) Prüf- & Abnahmekriterien (V\&V)
 
 * **PT-A/PT-B/AL-C:** Schließzeit lokal ≤ 3 s, kaskadiert ≤ 8 s; Dichtheit Δp ≥ 1 atm (Ring-Weise).
 * **VENT/BOP:** Nachweis $A_\text{VENT}$ → $p \downarrow p_\text{safe}$ in Δt\_max; Funktions-Drills (kalte Gas-Runs + CFD).
@@ -9443,7 +9443,7 @@ lang: EN
 
 ---
 
-## 7) Risiko-Matrix (Beispiel-Ausschnitt)
+##### 7) Risiko-Matrix (Beispiel-Ausschnitt)
 
 | Hazard                | S (1–5) | L (A–E) |   R   | Primär-Mitigation                         |
 | --------------------- | ------: | :-----: | :---: | ----------------------------------------- |
@@ -9457,7 +9457,7 @@ lang: EN
 
 ---
 
-## 8) Umsetzung & Roadmap
+##### 8) Umsetzung & Roadmap
 
 * **EVOL-00 (127 m):** Polar-Shutter + KOS sofort; **POL-GUARD (light)** (Crush-Kragen + Net).
 * **EVOL-01 (254 m Kugel):** **POL-GUARD (medium)** + Deflection-Cone + stärkere VENT/BOP-Kranz.
@@ -9540,7 +9540,7 @@ date: 2026-01-03
 lang: en-de
 ---
 
-# OPS-00-OPS-DOCKS-RING00-05-0001 — Special Ops Docking Rings 00 & 05 (EVOL-00)
+#### OPS-00-OPS-DOCKS-RING00-05-0001 — Special Ops Docking Rings 00 & 05 (EVOL-00)
 
 This document defines the **Special Ops** intent for Docking Rings **00** and **05** in EVOL-00:
 
@@ -9555,7 +9555,7 @@ Goal: a documents-first baseline that forces us to design flows, isolation, and 
 
 ---
 
-## Technology Readiness
+##### Technology Readiness
 
 - Current TRL: TBD
 - Target TRL (EVOL-00): TBD
@@ -9566,7 +9566,7 @@ See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../
 
 ---
 
-## 0. Summary / Kurzfassung (EN/DE)
+##### 0. Summary / Kurzfassung (EN/DE)
 
 **EN:** Rings 00 and 05 are reserved as **high-control interfaces** at the ends of the Wormhole. They exist to keep rare, high-risk events (unknown atmospheres, hazardous cargo, law enforcement incidents, medevac) from contaminating routine passenger operations at Rings 01–04. The core rule is: *the station must be able to say “yes” to emergency docking without letting emergency docking become the station’s emergency.*
 
@@ -9574,7 +9574,7 @@ See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../
 
 ---
 
-## 1. Scope & References
+##### 1. Scope & References
 
 **Scope:**
 
@@ -9591,9 +9591,9 @@ See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../
 
 ---
 
-## 2. Baseline assumptions (EVOL-00)
+##### 2. Baseline assumptions (EVOL-00)
 
-### 2.1 Why 00 and 05
+###### 2.1 Why 00 and 05
 
 Rings 00 and 05 sit closest to the polar service clearances and are best suited for:
 
@@ -9603,7 +9603,7 @@ Rings 00 and 05 sit closest to the polar service clearances and are best suited 
 
 This is a baseline operational choice; later evolutions may reassign ring roles.
 
-### 2.2 Special Ops zones (conceptual)
+###### 2.2 Special Ops zones (conceptual)
 
 We assume these zones exist and can be isolated:
 
@@ -9617,7 +9617,7 @@ We assume these zones exist and can be isolated:
 
 ---
 
-## 3. Requirements (normative, EVOL-00)
+##### 3. Requirements (normative, EVOL-00)
 
 - Rings 00 and 05 SHALL be operable in **restricted mode** where only authorized staff can enter the ring vestibule.
 - The station SHALL provide a **hazard decision gate** before any flow reaches DECK001 public areas.
@@ -9638,7 +9638,7 @@ We assume these zones exist and can be isolated:
 
 ---
 
-## 3.1 Risk & Threat Considerations (EN/DE)
+##### 3.1 Risk & Threat Considerations (EN/DE)
 
 This OPS concept is intentionally designed to remain functional under **security and safety stressors** (rare but high consequence). A detailed defensive analysis lives here:
 
@@ -9657,9 +9657,9 @@ Special Ops implication: Rings 00/05 and their routes must keep **restricted eme
 
 ---
 
-## 4. Design (informative) — Scenarios & perspectives
+##### 4. Design (informative) — Scenarios & perspectives
 
-### 4.1 Perspective: Special Ops commander (security)
+###### 4.1 Perspective: Special Ops commander (security)
 
 You think in terms of *control volumes*.
 
@@ -9669,7 +9669,7 @@ You think in terms of *control volumes*.
 
 Your red line: no unsecured path from ring vestibule to public areas.
 
-### 4.2 Perspective: Space-Police team arrival (tactical)
+###### 4.2 Perspective: Space-Police team arrival (tactical)
 
 The moment the hatch opens, you scan:
 
@@ -9680,7 +9680,7 @@ The moment the hatch opens, you scan:
 
 A station that is safe for police is usually safe for everyone.
 
-### 4.3 Perspective: Space-Hazard team (unknown atmosphere)
+###### 4.3 Perspective: Space-Hazard team (unknown atmosphere)
 
 To you, the ring is a laboratory.
 
@@ -9698,7 +9698,7 @@ Your staging area needs:
 - contaminated waste containment,
 - and a place to stop and breathe.
 
-### 4.4 Perspective: VIP taxi (dangerous guest)
+###### 4.4 Perspective: VIP taxi (dangerous guest)
 
 This is about **dignity and containment** at the same time.
 
@@ -9706,7 +9706,7 @@ This is about **dignity and containment** at the same time.
 - The security bubble is real but not theatrical.
 - A dedicated waiting room exists where the guest can sit, use a toilet, drink water, and not be stared at.
 
-### 4.5 Perspective: Space-ambulance / medevac
+###### 4.5 Perspective: Space-ambulance / medevac
 
 Time is anatomy.
 
@@ -9718,7 +9718,7 @@ You want:
 
 The station must support med teams who are exhausted.
 
-### 4.6 Perspective: Space-fire / rescue
+###### 4.6 Perspective: Space-fire / rescue
 
 You arrive because something is already wrong.
 
@@ -9726,7 +9726,7 @@ You arrive because something is already wrong.
 - You need clear signage even in emergency lighting.
 - You need water/foam interface points and the ability to depressurize a compartment deliberately.
 
-### 4.7 Perspective: hazardous goods (dangerous cargo)
+###### 4.7 Perspective: hazardous goods (dangerous cargo)
 
 Dangerous goods are not “bad”; they are “requiring discipline”.
 
@@ -9734,7 +9734,7 @@ Dangerous goods are not “bad”; they are “requiring discipline”.
 - Anything suspect can be placed into a buffer container.
 - The route avoids passenger corridors.
 
-### 4.8 Perspective: the station (quiet priorities)
+###### 4.8 Perspective: the station (quiet priorities)
 
 The station wants to survive.
 
@@ -9747,7 +9747,7 @@ This means:
 - clear authority,
 - and rehearsed isolation drills.
 
-### 4.9 The boring necessities (still required)
+###### 4.9 The boring necessities (still required)
 
 Even Special Ops needs:
 
@@ -9760,7 +9760,7 @@ Even Special Ops needs:
 
 ---
 
-## 5. Verification & Acceptance (EVOL-00)
+##### 5. Verification & Acceptance (EVOL-00)
 
 Evidence artifacts (to be created):
 
@@ -9777,7 +9777,7 @@ Acceptance criteria (initial):
 
 ---
 
-## 6. Change Management
+##### 6. Change Management
 
 - v0.1.0: Initial Special Ops concept and multi-perspective walkthrough for Rings 00 & 05.
 
@@ -9811,14 +9811,14 @@ date: 2026-01-03
 lang: en-de
 ---
 
-# OPS-00-OPS-DOCKS-RING01-04-0001 — Docking Ring 01–04 Arrival/Departure Experience (DECK001 / EVOL-00)
+#### OPS-00-OPS-DOCKS-RING01-04-0001 — Docking Ring 01–04 Arrival/Departure Experience (DECK001 / EVOL-00)
 
 This document describes **how Docking Rings 01–04 “feel and function”** in EVOL-00, from multiple operational and human perspectives.
 It is intentionally **documents-first**: a text specification that forces us to see every required element (flow, safety, hygiene, queues, interfaces, signage, staffing) before we model it.
 
 ---
 
-## Technology Readiness
+##### Technology Readiness
 
 - Current TRL: TBD
 - Target TRL (EVOL-00): TBD
@@ -9829,7 +9829,7 @@ See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../
 
 ---
 
-## 0. Summary / Kurzfassung (EN/DE)
+##### 0. Summary / Kurzfassung (EN/DE)
 
 **EN:** Docking Rings 01–04 are the **routine berthing interfaces** in the axial DECK000 (“Wormhole”), connecting visiting vehicles to station intake on DECK001. EVOL-00 prioritizes: fast isolation, predictable flows, clear role separation (passengers vs. cargo vs. dock crew), and humane amenities (toilets, seating, water, calm lighting), while keeping hazards (blast/fire/toxics) compartmentalized at ring boundaries.
 
@@ -9837,7 +9837,7 @@ See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../
 
 ---
 
-## 1. Scope & References
+##### 1. Scope & References
 
 **Scope:**
 
@@ -9860,15 +9860,15 @@ See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../
 
 ---
 
-## 2. Baseline & Interfaces (EVOL-00)
+##### 2. Baseline & Interfaces (EVOL-00)
 
-### 2.1 Physical baseline (as assumed)
+###### 2.1 Physical baseline (as assumed)
 
 - Rings 01–04 are **Inconel docking-ring subassemblies** inside DECK000, each **~10 m axial length**.
 - Station-side clear throat (baseline): **ID ~10 m** at the ring section (per DECK000 spec).
 - Environment at the ring is **micro‑g** (near spin axis). Station-side transfer into DECK001 moves into **~0.36 g** regime (DECK001 net).
 
-### 2.2 Functional interface chain (vehicle → station)
+###### 2.2 Functional interface chain (vehicle → station)
 
 1) **Vehicle hard-docked** to ring interface.
 2) **Pressure equalization** + atmosphere compatibility checks.
@@ -9880,7 +9880,7 @@ Key EVOL-00 intent: treat each ring as an **isolation compartment** that can be 
 
 ---
 
-## 3. Requirements (normative, EVOL-00)
+##### 3. Requirements (normative, EVOL-00)
 
 These are operational requirements implied by the multi-perspective walkthroughs.
 
@@ -9901,9 +9901,9 @@ These are operational requirements implied by the multi-perspective walkthroughs
 
 ---
 
-## 4. Design (informative) — Docking Ring 01–04, seen from many eyes
+##### 4. Design (informative) — Docking Ring 01–04, seen from many eyes
 
-### 4.1 Station-side zoning model (mental map)
+###### 4.1 Station-side zoning model (mental map)
 
 We assume the station provides these *logical zones* (they may be physically adjacent or separated by bulkheads/turnstiles):
 
@@ -9921,7 +9921,7 @@ Where retail sits is an EVOL-00 choice:
 
 - **Assumption (placeholder):** minimal “duty-free” is **not** on DECK001 (too operational, lower g), but could appear on **DECK002** as a calmer concourse.
 
-### 4.2 Perspective: technical / systems view (OPS + STR)
+###### 4.2 Perspective: technical / systems view (OPS + STR)
 
 From a technical perspective, a docking ring is not a “door”; it’s a **controlled failure boundary**.
 
@@ -9938,7 +9938,7 @@ From a technical perspective, a docking ring is not a “door”; it’s a **con
 
 When Ring 01 is active, Ring 02–04 remain “quiet but ready”: lights dimmed, bulkheads in ready-state, access restricted to staff.
 
-### 4.3 Perspective: arriving passenger (first-time)
+###### 4.3 Perspective: arriving passenger (first-time)
 
 You arrive with a *feeling of stillness*.
 In micro‑g, your body expects “down”, but there is none. The station compensates: lighting and signage define a **forward direction**.
@@ -9964,7 +9964,7 @@ Small details that matter:
 - There are vomit bags and cleaning stations without shame.
 - There is a family corner with low seats.
 
-### 4.4 Perspective: departing passenger
+###### 4.4 Perspective: departing passenger
 
 Departing is more structured and more time-bound.
 You are not “rescued into safety”; you are processed toward controlled risk.
@@ -9978,7 +9978,7 @@ Sequence:
 5) **Boarding call:** you transition back toward micro‑g via Z8.
 6) **Micro‑g vestibule:** handrails again. The last station impression is clean, quiet, controlled.
 
-### 4.5 Perspective: dock worker (human)
+###### 4.5 Perspective: dock worker (human)
 
 For dock workers, the ring is a workplace where “boring” equals “safe”.
 
@@ -10001,7 +10001,7 @@ Your job is to prevent small chaos:
 
 You know exactly where the emergency bulkhead is, and you rehearse it.
 
-### 4.6 Perspective: dock worker (synthetic android / human-equivalent)
+###### 4.6 Perspective: dock worker (synthetic android / human-equivalent)
 
 A synthetic dock worker experiences the same environment, but interacts differently:
 
@@ -10015,7 +10015,7 @@ Socially, it must be **predictable**:
 - visible intent (lights/arm posture),
 - no sudden rotations in micro‑g near passengers.
 
-### 4.7 Perspective: visitor family (watching arrivals/departures)
+###### 4.7 Perspective: visitor family (watching arrivals/departures)
 
 Families who visit the station (or resident families) may want to “see ships arrive”.
 In EVOL-00 this should not interfere with safety.
@@ -10033,7 +10033,7 @@ The family sees:
 
 A child notices the absurd truth: people float, but procedures are rigid.
 
-### 4.8 Perspective: baggage claim
+###### 4.8 Perspective: baggage claim
 
 Baggage claim must be designed for fatigue.
 
@@ -10044,7 +10044,7 @@ Baggage claim must be designed for fatigue.
 
 - Oversize is handled as a separate queue with more space and staff.
 
-### 4.9 Perspective: baggage drop / check-in
+###### 4.9 Perspective: baggage drop / check-in
 
 The baggage drop area is where “station meets logistics”.
 
@@ -10055,7 +10055,7 @@ The baggage drop area is where “station meets logistics”.
   - sensitive electronics,
   - hazardous declarations.
 
-### 4.10 Perspective: passport / customs / quarantine decision
+###### 4.10 Perspective: passport / customs / quarantine decision
 
 In EVOL-00 this is a control point, not just bureaucracy.
 
@@ -10067,7 +10067,7 @@ In EVOL-00 this is a control point, not just bureaucracy.
 Crucially: **quarantine is not a punishment**; it is a safety ritual.
 The space should feel calm, not punitive.
 
-### 4.11 The boring necessities (that we must not forget)
+###### 4.11 The boring necessities (that we must not forget)
 
 - Toilets: must exist both in arrivals and departures.
 - Water: visible, accessible.
@@ -10079,7 +10079,7 @@ The space should feel calm, not punitive.
 
 ---
 
-## 5. Verification & Acceptance (EVOL-00)
+##### 5. Verification & Acceptance (EVOL-00)
 
 Evidence artifacts (to be created):
 
@@ -10096,7 +10096,7 @@ Acceptance criteria (initial):
 
 ---
 
-## 6. Change Management
+##### 6. Change Management
 
 - v0.1.0: Initial multi-perspective description for Docking Rings 01–04 (documents-first baseline).
 
@@ -10132,7 +10132,7 @@ date: 2026-01-03
 lang: en-de
 ---
 
-# RISK-00-RISK-DOCKS-DECK000-001-RING00-05-0001 — Threat & Incident Risk Analysis (EVOL-00)
+#### RISK-00-RISK-DOCKS-DECK000-001-RING00-05-0001 — Threat & Incident Risk Analysis (EVOL-00)
 
 This document is a **defensive, operations-oriented** risk analysis for:
 
@@ -10152,7 +10152,7 @@ It complements:
 
 ---
 
-## 0. Summary / Kurzfassung (EN/DE)
+##### 0. Summary / Kurzfassung (EN/DE)
 
 **EN:** The highest-risk operational interface of EVOL‑00 is the boundary between **external vehicles** and **public circulation** (DECK000 ↔ DECK001). Rings 00/05 exist to absorb rare, high-consequence events without collapsing routine operations. This document organizes credible incidents (terrorism/hostile action, piracy-like attempts, mutiny/crowd takeover, fire/chemical/bio events, resource stress and looting) into **control objectives** and **acceptance criteria**.
 
@@ -10160,7 +10160,7 @@ It complements:
 
 ---
 
-## 1. Scope & Assumptions
+##### 1. Scope & Assumptions
 
 **Scope:** security + safety + operations for dock interface incidents affecting DECK000/001 and Rings 00/05.
 
@@ -10174,7 +10174,7 @@ It complements:
 
 ---
 
-## 2. Control objectives (what must always stay true)
+##### 2. Control objectives (what must always stay true)
 
 1. **Containment:** Incidents remain inside a controllable volume (ring / airlock / sector).
 2. **Authority clarity:** One incident commander; unambiguous escalation thresholds.
@@ -10185,9 +10185,9 @@ It complements:
 
 ---
 
-## 3. Threat & incident families (EVOL-00)
+##### 3. Threat & incident families (EVOL-00)
 
-### 3.1 Hostile action: terrorism / hostile attacks / sabotage (DECK000/DECK001)
+###### 3.1 Hostile action: terrorism / hostile attacks / sabotage (DECK000/DECK001)
 
 **Intent:** cause casualties, panic, political coercion, or infrastructure loss.
 
@@ -10206,7 +10206,7 @@ It complements:
 
 **Acceptance (example):** a hostile event can be isolated to a ring/sector within seconds-to-minutes, without immediate loss of station-wide control.
 
-### 3.2 Piracy-like attempts at docking interface (interdiction, hostage, coercion)
+###### 3.2 Piracy-like attempts at docking interface (interdiction, hostage, coercion)
 
 **Intent:** seize assets, take hostages, force access deeper into station.
 
@@ -10216,7 +10216,7 @@ It complements:
 - Multi-layer doors (PT/AL interlocks), deny straight-line access to DECK001 public areas.
 - Non-lethal containment posture and negotiation-ready spaces (private, controlled).
 
-### 3.3 Mutiny / orchestrated demonstrations / attempted takeover
+###### 3.3 Mutiny / orchestrated demonstrations / attempted takeover
 
 **Intent:** seize governance, control critical systems, or force concessions.
 
@@ -10231,7 +10231,7 @@ It complements:
 
 **Acceptance:** attempted takeover cannot gain access to safety-critical controls via public corridors.
 
-### 3.4 Fire, explosion, toxic release, decompression (safety hazards)
+###### 3.4 Fire, explosion, toxic release, decompression (safety hazards)
 
 This family maps directly onto the SSOT hazards, e.g.:
 
@@ -10248,7 +10248,7 @@ This family maps directly onto the SSOT hazards, e.g.:
 - Inert-gas suppression, shutters, vent/blow-out capacity, and compartmentation (see Wormhole Safety specs).
 - Drills: timed closure + purge + evacuation.
 
-### 3.5 Epidemic / bio-contamination / quarantine events
+###### 3.5 Epidemic / bio-contamination / quarantine events
 
 Relevant SSOT hazard example:
 
@@ -10262,7 +10262,7 @@ Relevant SSOT hazard example:
 
 **Acceptance:** unknown bio-risk arrivals can be processed without exposing public waiting zones.
 
-### 3.6 Looting, resource scarcity, and breakdown of normal order
+###### 3.6 Looting, resource scarcity, and breakdown of normal order
 
 **Triggers:** supply interruption, prolonged incident, information panic.
 
@@ -10274,7 +10274,7 @@ Relevant SSOT hazard example:
 
 **Acceptance:** essential supplies remain controllable without turning the station into a militarized space.
 
-### 3.7 Any police / EMS / fire / special forces operations
+###### 3.7 Any police / EMS / fire / special forces operations
 
 **Core needs:**
 
@@ -10288,7 +10288,7 @@ Special Ops rings provide this without routing responders through public queues.
 
 ---
 
-## 4. Restricted emergency routes (shafts, elevators, service tunnels)
+##### 4. Restricted emergency routes (shafts, elevators, service tunnels)
 
 This section covers your explicit requirement: **emergency-only shafts and elevators** (including heavy-lift paths) that are normally locked to the public.
 
@@ -10303,7 +10303,7 @@ This section covers your explicit requirement: **emergency-only shafts and eleva
 
 ---
 
-## 5. Risk register (starter, qualitative)
+##### 5. Risk register (starter, qualitative)
 
 This is a working starter list; severity/likelihood should align with the SSOT scales.
 
@@ -10315,7 +10315,7 @@ This is a working starter list; severity/likelihood should align with the SSOT s
 
 ---
 
-## 6. Verification & drills (what we must practice)
+##### 6. Verification & drills (what we must practice)
 
 - Timed isolation drills: ring closure + sector closure.
 - Medevac routing drill: ring 00/05 → triage with no public crossing.
@@ -10325,7 +10325,7 @@ This is a working starter list; severity/likelihood should align with the SSOT s
 
 ---
 
-## 7. Change log
+##### 7. Change log
 
 - v0.1.0: Initial defensive risk analysis for Special Ops docking interface (DECK000/001 + Rings 00/05).
 
@@ -10377,13 +10377,13 @@ date: 2026-01-02
 lang: EN
 ---
 
-# TEMPLATE — ADR (EVOL-01)
+#### TEMPLATE — ADR (EVOL-01)
 
 Use this template when creating new ADR documents.
 
 ---
 
-## Technology Readiness
+##### Technology Readiness
 
 This block is mandatory per TRL process definition (for all affected items).
 
@@ -10397,29 +10397,29 @@ See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../
 
 ---
 
-## 0. Executive Summary
+##### 0. Executive Summary
 
 Decision in one sentence.
 
 ---
 
-## 1. Context
+##### 1. Context
 
 ---
 
-## 2. Decision
+##### 2. Decision
 
 ---
 
-## 3. Alternatives Considered
+##### 3. Alternatives Considered
 
 ---
 
-## 4. Consequences
+##### 4. Consequences
 
 ---
 
-## 5. References
+##### 5. References
 
 
 \newpage
@@ -10446,13 +10446,13 @@ date: 2026-01-02
 lang: EN
 ---
 
-# TEMPLATE — SPEC (EVOL-01)
+#### TEMPLATE — SPEC (EVOL-01)
 
 Use this template when creating new SPEC documents.
 
 ---
 
-## Technology Readiness
+##### Technology Readiness
 
 This block is mandatory per TRL process definition:
 
@@ -10465,33 +10465,33 @@ See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../
 
 ---
 
-## 0. Summary
+##### 0. Summary
 
 ---
 
-## 1. Scope & References
+##### 1. Scope & References
 
 ---
 
-## 2. Baseline & Interfaces
+##### 2. Baseline & Interfaces
 
 ---
 
-## 3. Requirements (normative)
+##### 3. Requirements (normative)
 
 Use RFC 2119 keywords (SHALL/SHOULD/MAY).
 
 ---
 
-## 4. Design (informative)
+##### 4. Design (informative)
 
 ---
 
-## 5. Verification & Acceptance
+##### 5. Verification & Acceptance
 
 ---
 
-## 6. Change Management
+##### 6. Change Management
 
 
 \newpage
@@ -10532,7 +10532,7 @@ date: 2025-08-18
 lang: EN
 ---
 
-# SPEC-01-STR-GEOM-GRAV-E2-BALL-0001-earth-two-ball-D254m-EN-DE-v0.1.0-DRAFT
+#### SPEC-01-STR-GEOM-GRAV-E2-BALL-0001-earth-two-ball-D254m-EN-DE-v0.1.0-DRAFT
 > Earth TWO "Ball" *(EVOL-01, Ø 254,00 m)* Global Geometry & Gravitation
 
 **Scope:** Station **Earth TWO** als skalierte/erweiterte Sphäre zu Earth ONE, mit **Außendurchmesser 254,00 m**, Hülle **0,50 m**, Deck-Raster (Δr), Spin-Gesetz, „best-fit“ **1 g** für Habitatzonen, g-Zonen, Ziel-Kapazität **> 4 000** Personen, Strukturkonzept (A+B Grid: Längs- & Breitengrade).
@@ -10540,7 +10540,7 @@ lang: EN
 
 ---
 
-## 1) Station & Hülle (Geometrie)
+##### 1) Station & Hülle (Geometrie)
 
 * **Außenradius:** $R_s=127{,}00\ \mathrm{m}$ • **Innen-Hülle:** $R_h=126{,}50\ \mathrm{m}$ (Hüllendicke 0,50 m).
 * **DECK 000 („Wormhole“):** axialer Mikro-g-Korridor (ID≈20 m, OD≈22 m).
@@ -10550,11 +10550,11 @@ lang: EN
 
 ---
 
-## 2) Spin-Gesetz & „best-fit“ 1 g
+##### 2) Spin-Gesetz & „best-fit“ 1 g
 
 **Grundgleichung:** $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
 
-### 2.1 Zwei praktikable Kalibrierungen
+###### 2.1 Zwei praktikable Kalibrierungen
 
 * **Option A (rpm-minimal, hull-kalibriert):** **1 g bei $r=R_h=126{,}50\ \mathrm{m}$**
   $\omega=\sqrt{g_0/R_h}\approx 0{,}2784\ \mathrm{s^{-1}}$ → **≈ 2,66 rpm**.
@@ -10566,7 +10566,7 @@ lang: EN
 
 ---
 
-## 3) Deck-Zonen (Funktionslogik)
+##### 3) Deck-Zonen (Funktionslogik)
 
 * **Innen (r ≲ 60 m, DECK 001…017):** **0,0–0,50 g** → Forschung, Leichtindustrie, Sport/Training, Kliniken (spez.).
 * **Mitte (r ≈ 60–110 m, DECK 018…029):** **0,50–0,92 g** → Büros, Labore, Bildung, Agro-/Gewächshaus-Bänder.
@@ -10575,7 +10575,7 @@ lang: EN
 
 ---
 
-## 4) Kapazität > 4 000 Personen (Herleitung)
+##### 4) Kapazität > 4 000 Personen (Herleitung)
 
 **Ring-Volumen pro Deck (Annäherung):** $V_i \approx 2\pi\,r_{\text{mid},i}\cdot(\Delta r \cdot H_i)$,
 mit **Δr=3,50 m** und **axialer Deckhöhe $H_i$**.
@@ -10595,7 +10595,7 @@ mit **Δr=3,50 m** und **axialer Deckhöhe $H_i$**.
 
 ---
 
-## 5) Struktur & Safety (Variante **C**: Längs + Breitengrade)
+##### 5) Struktur & Safety (Variante **C**: Längs + Breitengrade)
 
 * **Längsgrade (12 × 30° A–L):** **radiale Sektor-Schotten** (PT-A/PT-B, AL-C an Knoten), voll druck-/brandschottfähig (Δp≥1 atm sektorweise).
 * **Breitengrade (3–7 LAT):** **axiale Ring-Diaphragmen** (S40/EQ/N40…): Schubscheiben, akustische/axiale Kappen, **nicht** als Voll-Druckschott; **Equalize-Ventile** und **VENT** radial.
@@ -10604,7 +10604,7 @@ mit **Δr=3,50 m** und **axialer Deckhöhe $H_i$**.
 
 ---
 
-## 6) g-Profil (Auszug Außen-Habitat, **Option B: 1 g @ 120 m → ≈ 2,73 rpm**)
+##### 6) g-Profil (Auszug Außen-Habitat, **Option B: 1 g @ 120 m → ≈ 2,73 rpm**)
 
 > **Konvention:** „Boden“ = $r_\text{out}$, „Decke“ = $r_\text{in}$; $g/g_0=r/120$. Kopf-Fuß am Boden (h=2,0 m): $\Delta g\%\approx100\cdot h/r_\text{out}$.
 
@@ -10619,7 +10619,7 @@ mit **Δr=3,50 m** und **axialer Deckhöhe $H_i$**.
 
 ---
 
-## 7) OPS & Human Factors (Kurz)
+##### 7) OPS & Human Factors (Kurz)
 
 * **Coriolis @ 2,73 rpm:** moderat; Kopf-Fuß-Gradient **≈ 1,6–1,7 %** im Wohnring → **sehr komfortabel**.
 * **Wohlfühlzonen:** $\sim$0,95–1,05 g als **A/B-Zonen** (Wohnen, Schule, Pflege); 0,7–0,9 g **B/C-Zonen** (Arbeit, Sport); **< 0,5 g** für spez. Forschung/Industrie.
@@ -10627,7 +10627,7 @@ mit **Δr=3,50 m** und **axialer Deckhöhe $H_i$**.
 
 ---
 
-## 8) Empfehlung EVOL-01 (Earth TWO)
+##### 8) Empfehlung EVOL-01 (Earth TWO)
 
 1. **Spin „best-fit“:** **1 g @ 120,0 m (≈ 2,73 rpm)** als Standard; **Hull-Mode 2,66 rpm** als technischer Alternate.
 2. **Wohnring DECK 030–033** mit **H=4,5 m** (modular erweiterbar) + LAT-Ebenen **S40/EQ/N40**.
@@ -10659,14 +10659,14 @@ date: 2025-08-18
 lang: EN
 ---
 
-# SPEC-01-STR-GEOM-GRAV-E2-LCAP-0001-earth-two-long-capsule-D254m-L508m—v0.1.0-DRAFT
+#### SPEC-01-STR-GEOM-GRAV-E2-LCAP-0001-earth-two-long-capsule-D254m-L508m—v0.1.0-DRAFT
 > Earth TWO “Long Capsule” *(EVOL-01, Ø 254 m × L 508 m)* Global Geometry & Gravitation
 
 **Scope:** Zylindrisch-kapselartige Station mit Hemisphären-Endkappen, **Außendurchmesser 254,00 m** (R=127,00 m), **Gesamtlänge 508,00 m** (Zylinderlänge ≈ **254 m** + 2× Halbkugel). Hülle nominell **0,50 m**. Spin-Gesetz, 1 g-Kalibrierung („best-fit“), Habitat-Zonen, Struktur-Raster (Längs- & Breitengrade), Safety/Kompartmentierung, Transportachsen, Kapazitäts-Herleitung.
 
 ---
 
-## 1) Geometrie & Hülle
+##### 1) Geometrie & Hülle
 
 * **Form:** Zylinder (Innenradius $R_h=126{,}50\,\mathrm{m}$) + zwei hemisphärische Endkappen.
 * **Zylinder-Länge innen:** $L_c \approx 254{,}0\,\mathrm{m}$. **Gesamtlänge:** $508{,}0\,\mathrm{m}$.
@@ -10676,7 +10676,7 @@ lang: EN
 
 ---
 
-## 2) Spin-Gesetz & „1 g best-fit“
+##### 2) Spin-Gesetz & „1 g best-fit“
 
 Grundgleichung: $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
 
@@ -10698,7 +10698,7 @@ Grundgleichung: $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
 
 ---
 
-## 3) Zonen & Nutzung
+##### 3) Zonen & Nutzung
 
 **Radial (r):**
 
@@ -10714,7 +10714,7 @@ Grundgleichung: $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
 
 ---
 
-## 4) Strukturkonzept (Grid C: Längs **+** Breitengrade)
+##### 4) Strukturkonzept (Grid C: Längs **+** Breitengrade)
 
 * **Längsgrade:** 12 radiale **Sektorschotten** (A–L, 30°), druck-/brandfähig (Δp ≥ 1 atm sektorweise), PT-A/B-Türen, AL-C-Schleusen.
 * **Breitengrade (LAT):** **Ring-Diaphragmen** in jedem Z-Block-Stoß (31,75 m); zusätzlich **Haupt-LAT** in Z04/Z08/Z12.
@@ -10724,7 +10724,7 @@ Grundgleichung: $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
 
 ---
 
-## 5) Transport & Logistik
+##### 5) Transport & Logistik
 
 * **Axial (µg):** Zentralkorridor (Wormhole) mit **Maglev-Spine** (Crew/Logistik), Fast-Transit Endkappe↔Endkappe.
 * **Tangential (1 g-Boden):** **Ring-Tram** (2–3 Linien) pro Habitat-Gürtel; Fuß-/Radwege entlang „High-Street“.
@@ -10732,7 +10732,7 @@ Grundgleichung: $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
 
 ---
 
-## 6) Kapazität & Flächen
+##### 6) Kapazität & Flächen
 
 * **„Erd-Boden“ am Innenhüll-Zylinder:** $A_\text{floor} ≈ 2\pi R_h \cdot L_c \approx 2\pi\cdot126{,}5\cdot508 \approx 4{,}04\times 10^5\,\mathrm{m^2}$.
   → Bei **20–40 m²/Person** ergeben sich **\~10 000–20 000 Plätze** **allein auf Bodenniveau**.
@@ -10741,7 +10741,7 @@ Grundgleichung: $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
 
 ---
 
-## 7) Habitabilität (Kurzlage)
+##### 7) Habitabilität (Kurzlage)
 
 * **Komfortfenster:** 0,95–1,05 g im Außenring (Option B) → **Kat. A/B** ganztägig.
 * **Coriolis:** axial quasi null; tangential moderat (≤ 2,73 rpm).
@@ -10750,7 +10750,7 @@ Grundgleichung: $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
 
 ---
 
-## 8) Beispiel-g-Profil (Option B: 1 g @ 120,0 m → 2,73 rpm)
+##### 8) Beispiel-g-Profil (Option B: 1 g @ 120,0 m → 2,73 rpm)
 
 > $g/g_0=r/120$. „Boden“ = $r=126{,}5$; „Balkon“ = $r=120$; „Galerie“ = $r=112$.
 
@@ -10767,7 +10767,7 @@ Grundgleichung: $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
 
 ---
 
-## 9) Safety & Kompartmentierung
+##### 9) Safety & Kompartmentierung
 
 * **Sektoren (A–L):** radiale Druck/Brand-Zellen (PT-A/B, AL-C); VENT/BOP **radial**.
 * **LAT-Ebenen:** je Blockstoß (31,75 m) + Haupt-LAT (Z04/Z08/Z12) als **axiale Kappen** (Equalize-Philosophie, **kein Voll-Δp**).
@@ -10775,7 +10775,7 @@ Grundgleichung: $a(r)=\omega^2 r$, $\mathrm{rpm}=\omega\cdot\frac{60}{2\pi}$.
 
 ---
 
-## 10) Nächste Schritte (konkret)
+##### 10) Nächste Schritte (konkret)
 
 1. **Spin-Entscheidung:** Option B (2,73 rpm) als Standard, Option A (2,66 rpm) als Alternate.
 2. **Z-Block-Freeze:** Funktionen Z00…Z15; Haupt-LAT in Z04/Z08/Z12.
