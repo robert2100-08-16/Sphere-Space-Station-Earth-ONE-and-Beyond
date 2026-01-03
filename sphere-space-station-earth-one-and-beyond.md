@@ -4120,6 +4120,11 @@ Examples for **Domains**: AX (axial/Wormhole), DOCK, HULL, PWR, THM, GAS, FIRE, 
 
 ## 7.5 Processes
 
+This section defines how we work (process), not what we build (design).
+
+* [7.5.1-engineering-process.md](7.5.1-engineering-process.md)
+* [7.5.2-technology-readiness-and-validation-classification.md](7.5.2-technology-readiness-and-validation-classification.md)
+
 
 \newpage
 
@@ -4562,6 +4567,225 @@ lang: EN
 * **TBD / TBR / TBC.** To Be Determined / Resolved / Confirmed; placeholders tracked to closure with owners and due dates.
 
 *End of Appendix A.*
+
+
+\newpage
+
+---
+id: ""
+title: "Technology Readiness & Validation Classification (TRL)"
+version: v0.1.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: true
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2026-01-02
+lang: EN
+---
+
+### 7.5.2 Technology Readiness & Validation Classification (TRL)
+
+## Purpose and Scope
+
+The purpose of this section is to establish a **clear, transparent, and verifiable method** for assessing and communicating the maturity of technologies, subsystems, materials, processes, and digital models used within the *Sphere Space Station Earth ONE and Beyond Project*.
+
+Technology Readiness Levels (TRL) are introduced **not as a decision-making authority**, but as a **mandatory classification and communication instrument**.
+They serve to ensure clarity, honesty, and traceability across engineering, research, validation, and external review.
+
+This classification applies to:
+
+- all engineering subsystems,
+- all materials and manufacturing processes,
+- all critical operational concepts,
+- all digital twins, simulations, and models,
+- across all Evolutions, starting with **EVOLUTION 00**.
+
+---
+
+## Definition of Technology Readiness Level (TRL)
+
+The project adopts the **widely established TRL concept** as defined by NASA and commonly adapted in practice (e.g., ESA usage).
+
+TRL describes the **maturity of a technology with respect to demonstrated functionality and validation environment**, independent of project phase, funding stage, or strategic importance.
+
+TRL classification answers one question only:
+
+> *To what extent has this technology been demonstrated under relevant conditions, and with what evidence?*
+
+---
+
+## Distinction from Other Project Concepts
+
+To avoid misinterpretation, the following distinctions are binding:
+
+- **TRL ≠ EVOLUTION stage**
+	EVOLUTION stages describe programmatic integration and system scope.
+	TRL describes the maturity of individual technologies.
+
+- **TRL ≠ Project Phase**
+	A technology may remain at low TRL intentionally as part of research and development.
+
+- **TRL ≠ Performance Claim**
+	High performance does not imply high readiness.
+
+- **TRL ≠ Approval or Acceptance**
+	TRL classification does not grant approval; it provides transparency.
+
+---
+
+## Binding Classification Rule
+
+The following rule is mandatory throughout the project:
+
+> **Every subsystem, material, process, and digital model SHALL declare a current TRL and a target TRL for the respective EVOLUTION stage.**
+
+Each declared TRL:
+
+- SHALL be supported by explicit evidence,
+- SHALL be reviewable and traceable,
+- SHALL be updated when new validation results become available.
+
+Uncertainty or low readiness is **not a deficiency**.
+Undeclared or obscured readiness **is**.
+
+---
+
+## TRL, Evidence, and Validation Environment
+
+TRL classification is evidence-based.
+The minimum expected form of evidence depends on the claimed TRL.
+
+| TRL | Typical evidence | Validation context |
+| --- | --- | --- |
+| 1–2 | Scientific principles, literature, analytical reasoning | Conceptual |
+| 3 | Proof-of-concept, analytical or numerical models | Laboratory |
+| 4 | Component-level validation | Controlled laboratory |
+| 5 | Component validation | Relevant environment |
+| 6 | Subsystem demonstration | Relevant environment |
+| 7 | Integrated system demonstration | Operational environment |
+| 8–9 | Flight-proven / operational history | Mission environment |
+
+For **EVOLUTION 00**, the realistic and intended target is **TRL 6** for critical subsystems, unless explicitly stated otherwise.
+
+---
+
+## Digital Twins and TRL Consistency
+
+Digital models and simulations are subject to the same readiness transparency.
+
+The fidelity of a digital twin SHALL be consistent with the declared TRL:
+
+- Low TRL → analytical or parametric models,
+- Mid TRL → component-level simulation and Hardware-in-the-Loop,
+- High TRL → subsystem or system-level validated twins.
+
+A digital twin **does not raise TRL by itself**.
+Only validated correspondence between model and physical evidence does.
+
+The table below is intentionally **slim**: it defines the project-minimum expectation for consistency between TRL, explicit evidence, and digital-twin fidelity.
+
+| TRL | Minimum evidence (project-minimum) | Expected twin fidelity (minimum) |
+|---:|---|---|
+| 1 | Documented basic principles, literature review, problem framing | Conceptual model (words/diagrams) |
+| 2 | Defined application concept; first assumptions recorded | Parametric sketches; high-level constraints |
+| 3 | Analytical proof-of-concept; small-scale experiments or simulations | Isolated component model; sensitivity analysis |
+| 4 | Lab validation of key functions (bench tests, controlled conditions) | Calibrated component model; bounded error bars |
+| 5 | Validation in a relevant environment (scaled, representative conditions) | Integrated subsystem model; traceable datasets |
+| 6 | Prototype demonstration in relevant environment; interface integration | Subsystem twin with interfaces; scenario runs |
+| 7 | System prototype demonstration in operational environment | Operationally representative twin; ops procedures |
+| 8 | Qualified system; verification complete; acceptance evidence | Release-quality twin; verified against acceptance data |
+| 9 | Proven in sustained operations | Operational twin with monitoring + updates |
+
+Notes:
+
+- “Twin fidelity” here is not graphics detail; it is **behavioral and interface fidelity** plus traceable calibration.
+- A visually rich model without evidence remains low TRL.
+
+---
+
+## Placement and Usage Within Documentation
+
+TRL classification SHALL be applied where technical substance is defined, including but not limited to:
+
+- specification documents (SPEC),
+- architecture decisions (ADR),
+- research and development documentation,
+- hazard and safety analyses,
+- simulation and model descriptions.
+
+---
+
+## Standard TRL header blocks (copy/paste)
+
+Use one of the blocks below wherever TRL is relevant. Keep values explicit and link evidence.
+
+### SPEC snippet
+
+```text
+Technology Readiness:
+- Current TRL:
+- Target TRL (this EVOL):
+- Validation Evidence:
+- Digital twin fidelity (expected, if applicable):
+```
+
+### ADR snippet
+
+```text
+Technology Readiness (affected items):
+- Item:
+  - Current TRL:
+  - Target TRL (this EVOL):
+  - Validation Evidence:
+```
+
+### General DOC / report snippet
+
+```text
+Technology Readiness (if applicable):
+- Scope item:
+- Current TRL:
+- Target TRL:
+- Validation Evidence:
+```
+
+---
+
+## Cultural and Ethical Context
+
+Transparent readiness classification is a **core element of engineering responsibility**.
+
+Overstating maturity, concealing uncertainty, or conflating vision with validation undermines:
+
+- technical safety,
+- collective trust,
+- and the integrity of the project.
+
+Clear TRL declaration protects:
+
+- engineers,
+- decision-makers,
+- partners,
+- and the mission itself.
+
+---
+
+## Closing Statement
+
+Technology readiness classification exists to **enable honest progress**, not to restrict ambition.
+
+Progress remains possible at all TRL levels—
+but responsibility begins with knowing **where one truly stands**.
 
 
 \newpage
@@ -6212,6 +6436,164 @@ Success here isn’t feature breadth; it’s **trust**: a reproducible capsule t
 
 Frozen standards and templates from EVOL-00.
 
+* [template-spec.md](template-spec.md)
+* [template-adr.md](template-adr.md)
+
+
+\newpage
+
+---
+id: ""
+title: "Template — ADR"
+version: v0.1.0
+state: DRAFT
+evolution: "EVOL-00"
+discipline: ""
+system: []
+system_id: ""
+seq: ""
+owner: ""
+reviewers: []
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2026-01-02
+lang: EN
+---
+
+# TEMPLATE — ADR (EVOL-00)
+
+Use this template when creating new ADR documents.
+
+---
+
+## Technology Readiness
+
+This block is mandatory per TRL process definition (for all affected items).
+
+Technology Readiness (affected items):
+- Item:
+  - Current TRL:
+  - Target TRL (this EVOL):
+  - Validation Evidence:
+
+See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../7.5-processes/7.5.2-technology-readiness-and-validation-classification.md)
+
+---
+
+## 0. Executive Summary
+
+Decision in one sentence.
+
+---
+
+## 1. Context
+
+---
+
+## 2. Decision
+
+---
+
+## 3. Alternatives Considered
+
+---
+
+## 4. Consequences
+
+---
+
+## 5. References
+
+
+\newpage
+
+---
+id: ""
+title: "Template — SPEC"
+version: v0.1.0
+state: DRAFT
+evolution: "EVOL-00"
+discipline: ""
+system: []
+system_id: ""
+seq: ""
+owner: ""
+reviewers: []
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2026-01-02
+lang: EN
+---
+
+# TEMPLATE — SPEC (EVOL-00)
+
+Use this template when creating new SPEC documents.
+
+---
+
+## Technology Readiness
+
+This block is mandatory per TRL process definition:
+
+- Current TRL:
+- Target TRL (this EVOL):
+- Validation Evidence:
+- Digital twin fidelity (expected, if applicable):
+
+See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../7.5-processes/7.5.2-technology-readiness-and-validation-classification.md)
+
+---
+
+## 0. Summary / Kurzfassung (EN/DE)
+
+**EN:**
+
+**DE:**
+
+---
+
+## 1. Scope & References
+
+**Scope:**
+
+**Non-goals:**
+
+**References:**
+
+---
+
+## 2. Baseline & Interfaces
+
+---
+
+## 3. Requirements (normative)
+
+Use RFC 2119 keywords (SHALL/SHOULD/MAY).
+
+---
+
+## 4. Design (informative)
+
+---
+
+## 5. Verification & Acceptance
+
+List evidence artifacts and acceptance criteria.
+
+---
+
+## 6. Change Management
+
+Document major changes and rationale.
+
 
 \newpage
 
@@ -6397,6 +6779,23 @@ cr_links: []
 **Masse (dry+ops window):** ~310.000–320.000 t.  
 **Drehung / Spin-Law:** 1 g @ DECK 012 (r ≈ 52 m) → ~4,147 rpm (Baseline).
 **Gravitationszonen:** Mikro-g im Achskanal (DECK 000), sanfter Gradient zu ~1 g in Wohn- und Arbeitszonen.
+
+## Bauarten & Sizings (Übersicht)
+
+Diese Übersicht ist die **Einstiegsstelle** für Geometrie-Klassen („Bauarten“) und das Sizing-Naming.
+
+| Bauart | Kurzname | Parameter | Hinweis |
+| :-- | :-- | :-- | :-- |
+| Kugelstation | BALL-D127 | $D=127\,\mathrm{m}$ | EVOL-00 Baseline (Earth ONE class). |
+| Kapselstation | CAP-D127-L… | $D=127\,\mathrm{m}$, $L_\mathrm{cyl}=\ldots$ | Gleiches Rotations-D127-Profil (g/v vs. Radius), aber andere axiale Länge (Zylinderteil + Endkappen). |
+
+**Definitionen & Naming-Konventionen:** siehe Forms/Spaces Glossary (BALL/CAP/SPINE) und L/XL Sizing-Pattern.
+
+* Glossary: [8.1.1 Station and Vessel Forms and Spaces](../../../../../08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.1.1-station-and-vessel-forms-and-spaces-glossary.md).
+* EVOL-00 Spin-Entscheidung: [ADR-00-Final-RPM-Decision-BALL-D127](adr-00-final-rpm-decision-ball-d127-en-v0.1.0-draft.md).
+* D127 g/v-Profile je Deck (Boden/Mitte/Decke): [SPEC-00-STR-GEOM-GRAV-0001](../02-specs/spec-00-str-geom-grav-0001-global-geometry-and-gravitation-en-de-v0.1.0-draft.md).
+
+> **Hinweis:** Für Ausstattung und Deck-Einsatz ist primär das **lokale g/v pro Radius** relevant; dieses Profil ist für D127 bei gleicher $\omega$ bauartübergreifend (BALL vs. CAP) identisch.
 
 ## Struktur & Geometrie (Kurz)
 - **Hauptkörper:** Kugel Ø 127 m; integriertes Coaxial-Zylindersystem („Deck-Zylinder“).  
@@ -7048,6 +7447,15 @@ DECK000 (“The Wormhole”) is the axial, pressurized docking and transit tube 
 
 ##### F. Operations & Human Factors
 
+Operational walkthroughs (documents-first, multi-perspective):
+
+- Docking Rings 01–04 arrival/departure experience:
+  - [ops-00-ops-docks-ring01-04-0001-docking-ring-01-04-arrival-departure-experience-en-de-v0.1.0-draft.md](../07-ops-maintenance/ops-00-ops-docks-ring01-04-0001-docking-ring-01-04-arrival-departure-experience-en-de-v0.1.0-draft.md)
+- Docking Rings 00 & 05 Special Ops (police / hazard / med / VIP):
+  - [ops-00-ops-docks-ring00-05-0001-special-ops-docking-and-hazard-handling-en-de-v0.1.0-draft.md](../07-ops-maintenance/ops-00-ops-docks-ring00-05-0001-special-ops-docking-and-hazard-handling-en-de-v0.1.0-draft.md)
+- Risk analysis (defensive):
+  - [risk-00-risk-docks-deck000-001-ring00-05-0001-threat-and-incident-analysis-en-de-v0.1.0-draft.md](../07-ops-maintenance/risk-00-risk-docks-deck000-001-ring00-05-0001-threat-and-incident-analysis-en-de-v0.1.0-draft.md)
+
 * **Micro‑g ergonomics:** Handrails, foot restraints, and guided translation lines throughout; lighting graded for approach/egress; color‑coded wayfinding matching station standards.
 * **Traffic separation:** North pole dedicated to arrivals, South pole to departures (baseline); center‑tube signage and beacons enforce counter‑flow.
 * **Emergency egress:** Clearly marked safe‑hold nodes at each ring with comms, masks, and emergency supplies; shutters auto‑close upon hazard detection.
@@ -7112,6 +7520,28 @@ lang: en-de
 **Document status:** Draft (EVOL-00 baseline)  
 **Date:** 2025-08-16  
 **Applies to:** Earth ONE class sphere station (Ø 127 m)
+
+---
+
+## Technology Readiness
+
+- Current TRL: TBD
+- Target TRL (EVOL-00): TBD
+- Validation Evidence: TBD
+- Digital twin fidelity (expected, if applicable): TBD
+
+See: [Technology Readiness & Validation Classification (TRL)](../../../7.5-processes/7.5.2-technology-readiness-and-validation-classification.md)
+
+Operational walkthrough (documents-first, multi-perspective):
+
+- Docking Rings 01–04 arrival/departure experience:
+  - [ops-00-ops-docks-ring01-04-0001-docking-ring-01-04-arrival-departure-experience-en-de-v0.1.0-draft.md](../07-ops-maintenance/ops-00-ops-docks-ring01-04-0001-docking-ring-01-04-arrival-departure-experience-en-de-v0.1.0-draft.md)
+
+- Docking Rings 00 & 05 Special Ops (police / hazard / med / VIP):
+  - [ops-00-ops-docks-ring00-05-0001-special-ops-docking-and-hazard-handling-en-de-v0.1.0-draft.md](../07-ops-maintenance/ops-00-ops-docks-ring00-05-0001-special-ops-docking-and-hazard-handling-en-de-v0.1.0-draft.md)
+
+- Risk analysis (defensive):
+  - [risk-00-risk-docks-deck000-001-ring00-05-0001-threat-and-incident-analysis-en-de-v0.1.0-draft.md](../07-ops-maintenance/risk-00-risk-docks-deck000-001-ring00-05-0001-threat-and-incident-analysis-en-de-v0.1.0-draft.md)
 
 ---
 
@@ -8226,6 +8656,8 @@ history:
 **Scope:** Geometrie der Sphere Space Station **Earth ONE** (Außendurchmesser **127,00 m**), Hüllenaufbau (**0,50 m**), Deck-Bänder, künstliche Gravitation $a(r)=\omega^2 r$, Komfort-/Wohlfühlmodelle (grav-basiert + umweltbasiert), Tabellen mit aktuellen Werten je Deck inkl. Verweilzeit-Kategorien.
 **Spin-Kalibrierung (EVOL-00):** **1 g** $(g_0=9{,}80665\,\mathrm{m/s^2})$ bei **r = 52{,}00 m** ⇒ $\omega=\sqrt{g_0/52{,}00}=0{,}43430\,\mathrm{s^{-1}}$ ⇒ **4,147 rpm**.
 
+**Bauarten & Sizings (Übersicht):** siehe [EVOL-00 — Earth ONE (Ø 127 m) · Baseline v1.0 — Kurzblatt](../01-architecture/evol-00-earth-one-d127m-baseline-v1.0.0-kurzblatt.md).
+
 ---
 
 ## 1. Station & Hülle (Geometrie, Materialien)
@@ -8263,34 +8695,36 @@ history:
 * **Decks:**
   **001** 10,50–14,00 m · **002** 14,00–17,50 m · **003** 17,50–21,00 m · **004** 21,00–24,50 m · **005** 24,50–28,00 m · **006** 28,00–31,50 m · **007** 31,50–35,00 m · **008** 35,00–38,50 m · **009** 38,50–42,00 m · **010** 42,00–45,50 m · **011** 45,50–49,00 m · **012** 49,00–52,50 m · **013** 52,50–56,00 m · **014** 56,00–59,50 m · **015** 59,50–63,00 m.
 
-### 4.1 g-Tabelle (Boden/Mitte/Decke pro Deck, EVOL-00, $\omega=0{,}434\,\mathrm{s^{-1}}$ ≈ 4,147 rpm)
+### 4.1 g/v-Tabelle (Boden/Mitte/Decke pro Deck, EVOL-00, $\omega=0{,}43430\,\mathrm{s^{-1}}$ ≈ 4,147 rpm)
 
-> **Hinweis:** Werte basieren noch auf der alten Referenz (1 g @ 38 m) und werden für DECK 012 aktualisiert.
-> **Konvention:** „Boden“ = äußere Deckgrenze (max. r); „Decke“ = innere Deckgrenze (min. r).
-> **Einheiten:** m/s² und in **g$_0$** (Erde = 1,000).
-> **Berechnung:** $a(r)=\omega^2 r = g_0 \cdot r/52{,}00$. **Δg** (Kopf–Fuß) am Boden mit $h=2{,}0\,\mathrm{m}$: $100\cdot h/r_\text{floor}$.
+Diese Tabelle ist die **Basis** für Ausstattung und Deck-Einsatz (g-Niveau und tangentiale Geschwindigkeit) und gilt für die **D127-Bauarten**:
 
-| Deck | r\_in → r\_mid → r\_out (m) | g\_floor (m/s² / g$_0$) | g\_mid (m/s² / g$_0$) | g\_ceiling (m/s² / g$_0$) | Δg\_Kopf-Fuß am Boden |
-| ---: | --------------------------: | -------------------: | -----------------: | ---------------------: | --------------------: |
-|  001 |       10.50 → 12.25 → 14.00 |        3.613 / 0.368 |      3.161 / 0.322 |          2.710 / 0.276 |               14.29 % |
-|  002 |       14.00 → 15.75 → 17.50 |        4.516 / 0.461 |      4.065 / 0.414 |          3.613 / 0.368 |               11.43 % |
-|  003 |       17.50 → 19.25 → 21.00 |        5.419 / 0.553 |      4.968 / 0.507 |          4.516 / 0.461 |                9.52 % |
-|  004 |       21.00 → 22.75 → 24.50 |        6.323 / 0.645 |      5.871 / 0.599 |          5.419 / 0.553 |                8.16 % |
-|  005 |       24.50 → 26.25 → 28.00 |        7.226 / 0.737 |      6.774 / 0.691 |          6.323 / 0.645 |                7.14 % |
-|  006 |       28.00 → 29.75 → 31.50 |        8.129 / 0.829 |      7.678 / 0.783 |          7.226 / 0.737 |                6.35 % |
-|  007 |       31.50 → 33.25 → 35.00 |        9.032 / 0.921 |      8.581 / 0.875 |          8.129 / 0.829 |                5.71 % |
-|  008 |       35.00 → 36.75 → 38.50 |        9.936 / 1.013 |      9.484 / 0.967 |          9.032 / 0.921 |                5.19 % |
-|  009 |       38.50 → 40.25 → 42.00 |       10.839 / 1.105 |     10.387 / 1.059 |          9.936 / 1.013 |                4.76 % |
-|  010 |       42.00 → 43.75 → 45.50 |       11.742 / 1.197 |     11.291 / 1.151 |         10.839 / 1.105 |                4.40 % |
-|  011 |       45.50 → 47.25 → 49.00 |       12.645 / 1.289 |     12.194 / 1.243 |         11.742 / 1.197 |                4.08 % |
-|  012 |       49.00 → 50.75 → 52.50 |       13.549 / 1.382 |     13.097 / 1.336 |         12.645 / 1.289 |                3.81 % |
-|  013 |       52.50 → 54.25 → 56.00 |       14.452 / 1.474 |     14.000 / 1.428 |         13.549 / 1.382 |                3.57 % |
-|  014 |       56.00 → 57.75 → 59.50 |       15.355 / 1.566 |     14.904 / 1.520 |         14.452 / 1.474 |                3.36 % |
-|  015 |       59.50 → 61.25 → 63.00 |       16.258 / 1.658 |     15.807 / 1.612 |         15.355 / 1.566 |                3.17 % |
+* **BALL-D127** (Earth ONE class)
+* **CAP-D127-L…** (Kapselstation mit Ø 127 m und variablem Zylinderteil; gleiches Rotations-D127-Profil, andere axiale Längen)
+
+**Konvention:**
+
+* „Decke“ = innere Deckgrenze (min. r)
+* „Boden“ = begehbare äußere Deckgrenze (max. r)
+* Für DECK 001–014: $r_\mathrm{floor}=r_\mathrm{bis}-0{,}5\,\mathrm{m}$ (Netto-Bodenradius gemäß EVOL-00 Kalkulation). DECK 015 liegt direkt an der Hülle.
+* Gravitation: $a(r)=\omega^2 r = g_0\cdot r/52{,}00$
+* Tangentialgeschwindigkeit: $v(r)=\omega r$
+
+\newpage
+\newgeometry{paperwidth=420mm, paperheight=297mm, left=15mm, right=15mm, top=15mm, bottom=15mm}
+
+
+\pagewidth=420mm
+\pageheight=297mm
+\begin{longtable}{@{}rrrrrrrrrr@{}}\toprule Deck & r_ceiling (m) & r_mid (m) & r_floor (m) & g_ceiling (g0) & g_mid (g0) & g_floor (g0) & v_ceiling (m/s) & v_mid (m/s) & v_floor (m/s) \\\midrule \endhead 000 & 0.00 & 5.00 & 10.00 & 0.000 & 0.096 & 0.192 & 0.00 & 2.17 & 4.34 \\001 & 10.50 & 12.00 & 13.50 & 0.202 & 0.231 & 0.260 & 4.56 & 5.21 & 5.86 \\002 & 14.00 & 15.50 & 17.00 & 0.269 & 0.298 & 0.327 & 6.08 & 6.73 & 7.38 \\003 & 17.50 & 19.00 & 20.50 & 0.337 & 0.365 & 0.394 & 7.60 & 8.25 & 8.90 \\004 & 21.00 & 22.50 & 24.00 & 0.404 & 0.433 & 0.462 & 9.12 & 9.77 & 10.42 \\005 & 24.50 & 26.00 & 27.50 & 0.471 & 0.500 & 0.529 & 10.64 & 11.29 & 11.94 \\006 & 28.00 & 29.50 & 31.00 & 0.538 & 0.567 & 0.596 & 12.16 & 12.81 & 13.46 \\007 & 31.50 & 33.00 & 34.50 & 0.606 & 0.635 & 0.663 & 13.68 & 14.33 & 14.98 \\008 & 35.00 & 36.50 & 38.00 & 0.673 & 0.702 & 0.731 & 15.20 & 15.85 & 16.50 \\009 & 38.50 & 40.00 & 41.50 & 0.740 & 0.769 & 0.798 & 16.72 & 17.37 & 18.02 \\010 & 42.00 & 43.50 & 45.00 & 0.808 & 0.837 & 0.865 & 18.24 & 18.89 & 19.54 \\011 & 45.50 & 47.00 & 48.50 & 0.875 & 0.904 & 0.933 & 19.76 & 20.41 & 21.06 \\012 & 49.00 & 50.50 & 52.00 & 0.942 & 0.971 & 1.000 & 21.28 & 21.93 & 22.58 \\013 & 52.50 & 54.00 & 55.50 & 1.010 & 1.038 & 1.067 & 22.80 & 23.45 & 24.10 \\014 & 56.00 & 57.50 & 59.00 & 1.077 & 1.106 & 1.135 & 24.32 & 24.97 & 25.62 \\015 & 59.50 & 61.25 & 63.00 & 1.144 & 1.178 & 1.212 & 25.84 & 26.60 & 27.36 \\\bottomrule \end{longtable}
+\restoregeometry
+\pagewidth=210mm
+\pageheight=297mm
+\newpage
 
 > **Hinweise:**
 > • **1 g** liegt exakt bei **r = 52{,}00 m** (innerhalb **DECK 012** zwischen Decke und Boden).
-> • Werte linear in $r$; Rundung auf 3 Dezimalstellen (intern ≥ 1e-6).
+> • DECK 000 („Wormhole“) ist axialer Mikro-g-Korridor und wird in Komfort-/Occupancy-Indizes i. d. R. separat behandelt.
 
 ---
 
@@ -8328,7 +8762,7 @@ $$
 ### 8.1 Gravitative Wohlfühlmatrix (EVOL-00)
 
 **Kategoriegrenzen:** **A** ≥ 0,85 · **B** 0,70–0,85 · **C** 0,55–0,70 · **D** 0,40–0,55 · **E** 0,25–0,40.
-**Hinweis:** Bei **4,852 rpm** wirken **Coriolis** und **Spin-Term** stärker als bei ≤ 4 rpm; Komfort-Peak liegt **nahe 0,9 g** (Decks 006–009).
+**Hinweis:** Bei **4,147 rpm** wirken **Coriolis** und **Spin-Term** moderat stärker als bei ≤ 4 rpm; Komfort-Peak liegt **nahe 0,9 g** (Decks 006–009).
 
 |    Deck |     $C_g$ | Kat. | Empfohlene Nutzung / Verweilzeit (Richtwert)                           |
 | ------: | --------: | :--: | ---------------------------------------------------------------------- |
@@ -8654,6 +9088,15 @@ Festgelegt werden konstruktive Schutzebenen für DECK 000: **Sektorisierung übe
 ---
 
 ## 1. Scope & References
+
+## Technology Readiness
+
+- Current TRL: TBD
+- Target TRL (EVOL-00): TBD
+- Validation Evidence: TBD
+- Digital twin fidelity (expected, if applicable): TBD
+
+See: [Technology Readiness & Validation Classification (TRL)](../../../7.5-processes/7.5.2-technology-readiness-and-validation-classification.md)
 
 **Scope:** Konstruktive Schutzmaßnahmen und Auslegungsregeln für DECK 000 inkl. Schnittstellen zu DECK 001/Schotts/VENT/BOP. **Nicht-Ziel:** OPS-Prozeduren (separates Dokument).
 
@@ -9057,6 +9500,835 @@ Test plans and verification reports for EVOL-00.
 
 Operations and maintenance documents for EVOL-00.
 
+- Docking Rings 01–04 arrival/departure (multi-perspective):
+	- [ops-00-ops-docks-ring01-04-0001-docking-ring-01-04-arrival-departure-experience-en-de-v0.1.0-draft.md](ops-00-ops-docks-ring01-04-0001-docking-ring-01-04-arrival-departure-experience-en-de-v0.1.0-draft.md)
+
+- Docking Rings 00 & 05 Special Ops (police / hazard / med / VIP):
+	- [ops-00-ops-docks-ring00-05-0001-special-ops-docking-and-hazard-handling-en-de-v0.1.0-draft.md](ops-00-ops-docks-ring00-05-0001-special-ops-docking-and-hazard-handling-en-de-v0.1.0-draft.md)
+
+- Risk analysis (DECK000/DECK001 + Rings 00/05):
+	- [risk-00-risk-docks-deck000-001-ring00-05-0001-threat-and-incident-analysis-en-de-v0.1.0-draft.md](risk-00-risk-docks-deck000-001-ring00-05-0001-threat-and-incident-analysis-en-de-v0.1.0-draft.md)
+
+
+\newpage
+
+---
+id: ops-00-ops-docks-ring00-05-0001
+title: Special Ops Docking Rings 00 & 05 (Police / Hazard / Med / VIP)
+version: v0.1.0
+state: draft
+evolution: EVOL-00
+discipline: OPS
+system:
+  - DOCKS
+  - SAFETY
+  - DECKS
+system_id: "RING00-05"
+seq: "0001"
+owner: "operations-architecture"
+reviewers:
+  - "structure-architecture"
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2026-01-03
+lang: en-de
+---
+
+# OPS-00-OPS-DOCKS-RING00-05-0001 — Special Ops Docking Rings 00 & 05 (EVOL-00)
+
+This document defines the **Special Ops** intent for Docking Rings **00** and **05** in EVOL-00:
+
+- Space-Police / security response
+- Space-Hazard teams (CBRN-like, toxic leak, unknown atmospheres)
+- VIP / high-risk taxi arrivals (dangerous or security-sensitive guests)
+- Space-ambulance / medevac
+- Space-fire / rescue crews
+- hazardous goods / dangerous cargo
+
+Goal: a documents-first baseline that forces us to design flows, isolation, and amenities that match the reality of special operations.
+
+---
+
+## Technology Readiness
+
+- Current TRL: TBD
+- Target TRL (EVOL-00): TBD
+- Validation Evidence: TBD
+- Digital twin fidelity (expected, if applicable): TBD
+
+See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../7.5-processes/7.5.2-technology-readiness-and-validation-classification.md)
+
+---
+
+## 0. Summary / Kurzfassung (EN/DE)
+
+**EN:** Rings 00 and 05 are reserved as **high-control interfaces** at the ends of the Wormhole. They exist to keep rare, high-risk events (unknown atmospheres, hazardous cargo, law enforcement incidents, medevac) from contaminating routine passenger operations at Rings 01–04. The core rule is: *the station must be able to say “yes” to emergency docking without letting emergency docking become the station’s emergency.*
+
+**DE:** Ringe 00 und 05 sind in EVOL‑00 als **hoch-kontrollierte Sonder-Schnittstellen** an den Enden des Wormhole reserviert. Sie dienen dazu, seltene aber hochriskante Ereignisse (unbekannte Atmosphären, Gefahrgut, Polizeieinsätze, MedEvac) von den Routine-Operationen an Ringen 01–04 zu entkoppeln. Kernregel: *Die Station muss „Ja“ zu Not-Andocken sagen können, ohne dass das Not-Andocken automatisch zur Notlage der Station wird.*
+
+---
+
+## 1. Scope & References
+
+**Scope:**
+
+- Operational intent for Rings 00 and 05 as **Special Ops** ports.
+- Textual walkthroughs from multiple perspectives.
+- Zoning + flow separation requirements.
+
+**References:**
+
+- DECK000 Wormhole baseline: [spec-00-str-decks-deck000-0001-wormhole-docking-tunnel-en-de-v0.1.0-draft](../02-specs/spec-00-str-decks-deck000-0001-wormhole-docking-tunnel-en-de-v0.1.0-draft.md)
+- Wormhole safety: [spec-00-str-sys-wormhole-safety-0001](../02-specs/spec-00-str-sys-wormhole-safety-0001-wormhole-safety-and-hazard-mitigations-d127m-en-de-v0.1.0-draft.md)
+- Routine passenger rings 01–04 walkthrough:
+  - [ops-00-ops-docks-ring01-04-0001](ops-00-ops-docks-ring01-04-0001-docking-ring-01-04-arrival-departure-experience-en-de-v0.1.0-draft.md)
+
+---
+
+## 2. Baseline assumptions (EVOL-00)
+
+### 2.1 Why 00 and 05
+
+Rings 00 and 05 sit closest to the polar service clearances and are best suited for:
+
+- **buffer space** for isolation hardware,
+- **controlled approach** of special vehicles,
+- **restricted access** (staff-only) without cutting across routine flows.
+
+This is a baseline operational choice; later evolutions may reassign ring roles.
+
+### 2.2 Special Ops zones (conceptual)
+
+We assume these zones exist and can be isolated:
+
+- **S0 Ring Vestibule (micro‑g):** immediate ring compartment.
+- **S1 Hazard/Decon Airlock:** between ring and station.
+- **S2 Secure Transfer Corridor:** controlled path to DECK001 (or dedicated service nodes).
+- **S3 Med / Triage Node:** immediate medical bay access (could be a compact unit on/near DECK001).
+- **S4 Evidence / Security Processing:** controlled holding + interview + chain-of-custody handling.
+- **S5 Hazard Cargo Handling:** sealed logistics area with sensors + remote handling.
+- **S6 Visitor separation:** no public viewing inside Special Ops zones (only external, if any).
+
+---
+
+## 3. Requirements (normative, EVOL-00)
+
+- Rings 00 and 05 SHALL be operable in **restricted mode** where only authorized staff can enter the ring vestibule.
+- The station SHALL provide a **hazard decision gate** before any flow reaches DECK001 public areas.
+- Special Ops docking SHALL support **unknown-atmosphere** arrivals:
+  - atmosphere sampling,
+  - pressure control,
+  - emergency vent routing,
+  - and remote confirmation before opening the station-side boundary.
+- The station SHOULD support **medevac priority routing**:
+  - shortest path to triage/med node,
+  - minimal turns,
+  - wide clearances,
+  - and “no-crowd” corridors.
+- Hazard goods handling SHALL ensure:
+  - separation from passenger baggage systems,
+  - traceable chain-of-custody,
+  - and the ability to store suspect cargo in a sealed buffer.
+
+---
+
+## 3.1 Risk & Threat Considerations (EN/DE)
+
+This OPS concept is intentionally designed to remain functional under **security and safety stressors** (rare but high consequence). A detailed defensive analysis lives here:
+
+- Risk analysis (DECK000/DECK001 + Rings 00/05):
+  - [risk-00-risk-docks-deck000-001-ring00-05-0001-threat-and-incident-analysis-en-de-v0.1.0-draft.md](risk-00-risk-docks-deck000-001-ring00-05-0001-threat-and-incident-analysis-en-de-v0.1.0-draft.md)
+
+Key threat families we design for (summary):
+
+- Hostile action: terrorism/hostile attacks/sabotage and piracy-like coercion attempts at the dock interface
+- Mutiny / orchestrated demonstrations / attempted takeover (especially during resource stress)
+- Fire, explosion, toxic release, decompression, and epidemic/bio events (aligned to the hazard SSOT)
+- Looting and scarcity-driven breakdown of normal order
+- Any police/EMS/fire/special-forces response that must not cross public queues
+
+Special Ops implication: Rings 00/05 and their routes must keep **restricted emergency shafts/elevators/heavy-lift paths** usable for responders while remaining normally locked down and auditable.
+
+---
+
+## 4. Design (informative) — Scenarios & perspectives
+
+### 4.1 Perspective: Special Ops commander (security)
+
+You think in terms of *control volumes*.
+
+- You want a ring where a ship can dock, be stabilized, and be processed **without touching** routine flows.
+- You want camera coverage not as spectacle, but as evidence.
+- You want a space where a person can be escorted without humiliation but with absolute clarity: boundaries, doors, staff positioning.
+
+Your red line: no unsecured path from ring vestibule to public areas.
+
+### 4.2 Perspective: Space-Police team arrival (tactical)
+
+The moment the hatch opens, you scan:
+
+- anchors and tether points,
+- sightlines,
+- cover and concealment (even if “weapon use” is not expected, panic exists),
+- and the bulkhead that can close behind you.
+
+A station that is safe for police is usually safe for everyone.
+
+### 4.3 Perspective: Space-Hazard team (unknown atmosphere)
+
+To you, the ring is a laboratory.
+
+- You smell nothing; you trust sensors.
+- You do not open boundaries until you have:
+  - atmospheric composition,
+  - volatile organics / toxins scan,
+  - pressure and particulate scan,
+  - and a plan for venting.
+
+Your staging area needs:
+
+- suit don/doff support,
+- decon supplies,
+- contaminated waste containment,
+- and a place to stop and breathe.
+
+### 4.4 Perspective: VIP taxi (dangerous guest)
+
+This is about **dignity and containment** at the same time.
+
+- The guest arrives through a quiet, controlled path.
+- The security bubble is real but not theatrical.
+- A dedicated waiting room exists where the guest can sit, use a toilet, drink water, and not be stared at.
+
+### 4.5 Perspective: Space-ambulance / medevac
+
+Time is anatomy.
+
+You want:
+
+- a straight, wide route,
+- minimal micro‑g translation work,
+- and immediate handoff to triage.
+
+The station must support med teams who are exhausted.
+
+### 4.6 Perspective: Space-fire / rescue
+
+You arrive because something is already wrong.
+
+- Smoke, heat, or toxic indicators mean: isolate fast.
+- You need clear signage even in emergency lighting.
+- You need water/foam interface points and the ability to depressurize a compartment deliberately.
+
+### 4.7 Perspective: hazardous goods (dangerous cargo)
+
+Dangerous goods are not “bad”; they are “requiring discipline”.
+
+- Cargo is processed in sealed volumes.
+- Anything suspect can be placed into a buffer container.
+- The route avoids passenger corridors.
+
+### 4.8 Perspective: the station (quiet priorities)
+
+The station wants to survive.
+
+- It must say yes to emergencies.
+- But it must never lose the ability to protect routine life.
+
+This means:
+
+- redundancy,
+- clear authority,
+- and rehearsed isolation drills.
+
+### 4.9 The boring necessities (still required)
+
+Even Special Ops needs:
+
+- toilets,
+- water,
+- a calm waiting nook,
+- cleaning and waste control,
+- staff-only rest space,
+- and documentation surfaces (logs, tags, custody records).
+
+---
+
+## 5. Verification & Acceptance (EVOL-00)
+
+Evidence artifacts (to be created):
+
+- A ring-role assignment table (00/01–04/05) with rationale.
+- A hazard decision tree (open / decon / quarantine / vent).
+- A medevac routing diagram.
+- A drill script for: unknown atmosphere + ring isolation.
+
+Acceptance criteria (initial):
+
+- Special Ops docking does not require shutting down routine Rings 01–04.
+- The station can isolate a special ops ring within seconds.
+- Medevac can reach triage without crossing public queues.
+
+---
+
+## 6. Change Management
+
+- v0.1.0: Initial Special Ops concept and multi-perspective walkthrough for Rings 00 & 05.
+
+
+\newpage
+
+---
+id: ops-00-ops-docks-ring01-04-0001
+title: Docking Ring 01–04 Arrival/Departure Experience (DECK001 / EVOL-00)
+version: v0.1.0
+state: draft
+evolution: EVOL-00
+discipline: OPS
+system:
+  - DOCKS
+  - DECKS
+system_id: "RING01-04"
+seq: "0001"
+owner: "operations-architecture"
+reviewers:
+  - "structure-architecture"
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2026-01-03
+lang: en-de
+---
+
+# OPS-00-OPS-DOCKS-RING01-04-0001 — Docking Ring 01–04 Arrival/Departure Experience (DECK001 / EVOL-00)
+
+This document describes **how Docking Rings 01–04 “feel and function”** in EVOL-00, from multiple operational and human perspectives.
+It is intentionally **documents-first**: a text specification that forces us to see every required element (flow, safety, hygiene, queues, interfaces, signage, staffing) before we model it.
+
+---
+
+## Technology Readiness
+
+- Current TRL: TBD
+- Target TRL (EVOL-00): TBD
+- Validation Evidence: TBD
+- Digital twin fidelity (expected, if applicable): TBD
+
+See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../7.5-processes/7.5.2-technology-readiness-and-validation-classification.md)
+
+---
+
+## 0. Summary / Kurzfassung (EN/DE)
+
+**EN:** Docking Rings 01–04 are the **routine berthing interfaces** in the axial DECK000 (“Wormhole”), connecting visiting vehicles to station intake on DECK001. EVOL-00 prioritizes: fast isolation, predictable flows, clear role separation (passengers vs. cargo vs. dock crew), and humane amenities (toilets, seating, water, calm lighting), while keeping hazards (blast/fire/toxics) compartmentalized at ring boundaries.
+
+**DE:** Docking-Ringe 01–04 sind in EVOL‑00 die **regulären Andock-Schnittstellen** im axialen DECK000 („Wormhole“) und führen den Fahrzeug-Transfer in die Aufnahmeebene DECK001. Prioritäten: schnelle Isolierung, klare und trennbare Wege (Passagiere vs. Fracht vs. Dockcrew), sowie „menschliche“ Basisausstattung (Toiletten, Sitzplätze, Wasser, ruhige Beleuchtung) bei gleichzeitig harter Kapselung von Gefahren (Blast/Brand/Toxik) an Ringgrenzen.
+
+---
+
+## 1. Scope & References
+
+**Scope:**
+
+- Textuelle Beschreibung des **Normalbetriebs** (Routine Arrival/Departure) für Docking Rings **01–04**.
+- Multi-perspective walkthroughs for: arriving passenger, departing passenger, human dock worker, synthetic/android dock worker, visitor family, baggage claim, baggage drop/check-in, passport/customs, and station-side operations.
+
+**Non-goals (for this version):**
+
+- Detailed mechanical docking hardware specification (ID/bolt patterns/actuators).
+- Full customs law / legal policy. Only operational placeholders and spatial implications.
+- Final retail zoning (duty-free) beyond EVOL-00 assumptions.
+
+**References:**
+
+- DECK000 Wormhole baseline: [spec-00-str-decks-deck000-0001-wormhole-docking-tunnel-en-de-v0.1.0-draft](../02-specs/spec-00-str-decks-deck000-0001-wormhole-docking-tunnel-en-de-v0.1.0-draft.md)
+- DECK001 reception + transfer hub: [spec-00-str-decks-deck001-0001-transfer-node-and-radial-systems-en-de-v0.1.0-draft](../02-specs/spec-00-str-decks-deck001-0001-transfer-node-and-radial-systems-en-de-v0.1.0-draft.md)
+- Wormhole safety (hazards + mitigations):
+  - [spec-00-str-sys-wormhole-safety-0001-wormhole-safety-and-hazard-mitigations-d127m-en-de-v0.1.0-draft](../02-specs/spec-00-str-sys-wormhole-safety-0001-wormhole-safety-and-hazard-mitigations-d127m-en-de-v0.1.0-draft.md)
+  - [spec-00-str-sys-wormhole-safety-0002-polar-approach-and-full-hazard-hardening-en-de-v0.1.0-draft](../02-specs/spec-00-str-sys-wormhole-safety-0002-polar-approach-and-full-hazard-hardening-en-de-v0.1.0-draft.md)
+
+---
+
+## 2. Baseline & Interfaces (EVOL-00)
+
+### 2.1 Physical baseline (as assumed)
+
+- Rings 01–04 are **Inconel docking-ring subassemblies** inside DECK000, each **~10 m axial length**.
+- Station-side clear throat (baseline): **ID ~10 m** at the ring section (per DECK000 spec).
+- Environment at the ring is **micro‑g** (near spin axis). Station-side transfer into DECK001 moves into **~0.36 g** regime (DECK001 net).
+
+### 2.2 Functional interface chain (vehicle → station)
+
+1) **Vehicle hard-docked** to ring interface.
+2) **Pressure equalization** + atmosphere compatibility checks.
+3) **Primary hatch** opens (vehicle) → **ring vestibule** (station).
+4) **Ring boundary isolation** remains ready (pressure/fire bulkheads + fast closure).
+5) Passengers/cargo transition into a **station-side transfer airlock** that routes to DECK001 reception.
+
+Key EVOL-00 intent: treat each ring as an **isolation compartment** that can be closed without disabling the whole Wormhole.
+
+---
+
+## 3. Requirements (normative, EVOL-00)
+
+These are operational requirements implied by the multi-perspective walkthroughs.
+
+- The station SHALL provide **separable flows** for:
+  - passengers (arrival/departure),
+  - standard cargo,
+  - hazardous cargo/quarantine (when invoked),
+  - dock crew / maintenance.
+- Each ring interface SHOULD support **rapid isolation** (close/lock/vent/monitor) independent of neighboring rings.
+- DECK001 arrival area SHALL have:
+  - toilets,
+  - drinking water,
+  - seating/waiting space,
+  - clear multilingual signage,
+  - medical first-response access.
+- Passenger baggage handling SHOULD be **RFID/ID-tagged** end-to-end with traceable custody.
+- The system SHALL make “what happens next” obvious to a first-time passenger under stress (lighting + signage + staff placement).
+
+---
+
+## 4. Design (informative) — Docking Ring 01–04, seen from many eyes
+
+### 4.1 Station-side zoning model (mental map)
+
+We assume the station provides these *logical zones* (they may be physically adjacent or separated by bulkheads/turnstiles):
+
+- **Z0 Ring Vestibule (micro‑g):** ring boundary, first station volume.
+- **Z1 Transfer Airlock(s):** pressure/fire boundary between Wormhole segment and DECK001 intake.
+- **Z2 Arrival Hall (DECK001):** first “gravity” area with staff + triage.
+- **Z3 Passport/Customs/Quarantine Decision:** control points; can split flows.
+- **Z4 Baggage Claim & Oversize:** reclaim, inspection, exceptions.
+- **Z5 Landside Concourse:** exits to elevators, corridors, onward decks.
+- **Z6 Departures (landside → airside equivalent):** check-in, baggage drop, security.
+- **Z7 Pre-boarding Hold:** waiting, toilets, water, quiet rooms.
+- **Z8 Boarding Bridge / Boarding Flow (micro‑g):** controlled move back into ring vestibule.
+
+Where retail sits is an EVOL-00 choice:
+
+- **Assumption (placeholder):** minimal “duty-free” is **not** on DECK001 (too operational, lower g), but could appear on **DECK002** as a calmer concourse.
+
+### 4.2 Perspective: technical / systems view (OPS + STR)
+
+From a technical perspective, a docking ring is not a “door”; it’s a **controlled failure boundary**.
+
+- **Main job:** keep a visiting vehicle incident from becoming a station incident.
+- **Primary design obsession:** isolation speed + predictability.
+- **Key subsystems you always see in the field:**
+  - pressure/fire bulkhead segments,
+  - redundant seals and leak sensors,
+  - atmosphere sampling ports,
+  - decontamination stubs (fog, UV, wipe-down),
+  - camera coverage (not for surveillance aesthetics, but for incident reconstruction),
+  - hardpoints for temporary airlock adapters,
+  - emergency vent/blow-out routing.
+
+When Ring 01 is active, Ring 02–04 remain “quiet but ready”: lights dimmed, bulkheads in ready-state, access restricted to staff.
+
+### 4.3 Perspective: arriving passenger (first-time)
+
+You arrive with a *feeling of stillness*.
+In micro‑g, your body expects “down”, but there is none. The station compensates: lighting and signage define a **forward direction**.
+
+Sequence:
+
+1) **Docked / Hold:** You remain seated until the crew announces pressure equalization.
+2) **Hatch opening:** The first view is a clean circular throat with visible seal rings and a bright “WELCOME / WILLKOMMEN” band.
+3) **Micro‑g vestibule:** Handrails, gentle push‑pads, slow-moving guide lights. Staff are calm and trained to move without sudden motions.
+4) **Transfer airlock:** You pass a short compartment with a soft “whoosh” of airflow. There is a visible “If you feel sick → stop here” marker.
+5) **Gravity re-entry (DECK001):** You step into ~0.36 g. It feels like being lighter than Earth: legs stable, but your inner ear still adapting.
+6) **Arrival hall:** You see:
+   - toilets with universal signage,
+   - water points,
+   - a seating strip,
+   - a medical desk,
+   - passport/customs lanes,
+   - and a clearly marked “BAGGAGE” direction.
+
+Small details that matter:
+
+- There is a “quiet lane” for anxious passengers.
+- There are vomit bags and cleaning stations without shame.
+- There is a family corner with low seats.
+
+### 4.4 Perspective: departing passenger
+
+Departing is more structured and more time-bound.
+You are not “rescued into safety”; you are processed toward controlled risk.
+
+Sequence:
+
+1) **Check-in (landside):** identity + itinerary confirmed. If cargo/oversize, your path diverges immediately.
+2) **Baggage drop:** bags are sealed/tagged; you see a display that confirms custody transfer.
+3) **Security / passport exit control:** a calm checkpoint. Staff posture is non-threatening but decisive.
+4) **Pre-boarding hold:** seats, toilets, water, a small emergency briefing display. No loud advertising.
+5) **Boarding call:** you transition back toward micro‑g via Z8.
+6) **Micro‑g vestibule:** handrails again. The last station impression is clean, quiet, controlled.
+
+### 4.5 Perspective: dock worker (human)
+
+For dock workers, the ring is a workplace where “boring” equals “safe”.
+
+You notice:
+
+- floor marking and hardpoints,
+- tool lockers and tether points,
+- portable lighting,
+- the smell of metals and cleaning agents,
+- cargo netting,
+- and the constant discipline of keeping the ring “clear for closure”.
+
+Your job is to prevent small chaos:
+
+- loose straps,
+- drifting objects,
+- untagged luggage,
+- unreported spills,
+- and human panic.
+
+You know exactly where the emergency bulkhead is, and you rehearse it.
+
+### 4.6 Perspective: dock worker (synthetic android / human-equivalent)
+
+A synthetic dock worker experiences the same environment, but interacts differently:
+
+- It reads seal integrity and atmosphere values as “colors” in its diagnostics.
+- It treats handrails not as safety but as trajectory constraints.
+- It is assigned to tasks that are dull for humans: repetitive inspection loops, cargo scan sweeps, micro-leak localization.
+
+Socially, it must be **predictable**:
+
+- slow movements,
+- visible intent (lights/arm posture),
+- no sudden rotations in micro‑g near passengers.
+
+### 4.7 Perspective: visitor family (watching arrivals/departures)
+
+Families who visit the station (or resident families) may want to “see ships arrive”.
+In EVOL-00 this should not interfere with safety.
+
+Assumption:
+
+- A **visitor gallery** exists behind pressure-rated glazing, offset from the active ring vestibule and not inside Z0.
+
+The family sees:
+
+- vehicles slowly aligning,
+- docking ring lighting sequences,
+- crew movement as tiny choreography,
+- and the moment when a hatch becomes a “human passage”.
+
+A child notices the absurd truth: people float, but procedures are rigid.
+
+### 4.8 Perspective: baggage claim
+
+Baggage claim must be designed for fatigue.
+
+- Bags come in waves; the system must show:
+  - which flight/docking ring you arrived through,
+  - whether your bag cleared inspection,
+  - and where exceptions go.
+
+- Oversize is handled as a separate queue with more space and staff.
+
+### 4.9 Perspective: baggage drop / check-in
+
+The baggage drop area is where “station meets logistics”.
+
+- Surfaces are durable and easy to clean.
+- Staff have access to quick re-tagging and inspection.
+- There is a dedicated lane for:
+  - medical equipment,
+  - sensitive electronics,
+  - hazardous declarations.
+
+### 4.10 Perspective: passport / customs / quarantine decision
+
+In EVOL-00 this is a control point, not just bureaucracy.
+
+- The design must support:
+  - fast lanes for known travelers,
+  - manual lanes,
+  - and a quiet quarantine decision path.
+
+Crucially: **quarantine is not a punishment**; it is a safety ritual.
+The space should feel calm, not punitive.
+
+### 4.11 The boring necessities (that we must not forget)
+
+- Toilets: must exist both in arrivals and departures.
+- Water: visible, accessible.
+- Seating: not only rows — also “rest niches”.
+- Waste handling: bins that work in partial-g; sealed waste for biohazards.
+- Wayfinding: color + symbols + words.
+- Accessibility: handrail spacing, step heights, wheel-chair compatible paths (even in partial-g).
+- Staff rooms: people need off-stage spaces.
+
+---
+
+## 5. Verification & Acceptance (EVOL-00)
+
+Evidence artifacts (to be created):
+
+- A deck layout sketch for Z2–Z7.
+- A queue + throughput estimate for arrivals/departures.
+- An isolation drill script (ring closure + vent + reroute).
+- Digital twin walkthrough video (later).
+
+Acceptance criteria (initial):
+
+- A first-time passenger can reach toilets, water, and passport control without asking.
+- Cargo and passenger paths can be separated within seconds.
+- A ring can be isolated without losing control of adjacent rings.
+
+---
+
+## 6. Change Management
+
+- v0.1.0: Initial multi-perspective description for Docking Rings 01–04 (documents-first baseline).
+
+
+\newpage
+
+---
+id: risk-00-risk-docks-deck000-001-ring00-05-0001
+title: Threat & Incident Risk Analysis — DECK000/DECK001 + Docking Rings 00/05 (Special Ops)
+version: v0.1.0
+state: draft
+evolution: EVOL-00
+discipline: RISK
+system:
+  - DOCKS
+  - SAFETY
+  - SECURITY
+  - DECKS
+system_id: "DECK000-001/RING00-05"
+seq: "0001"
+owner: "operations-architecture"
+reviewers:
+  - "structure-architecture"
+  - "safety-reactor"
+  - "operations-test"
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2026-01-03
+lang: en-de
+---
+
+# RISK-00-RISK-DOCKS-DECK000-001-RING00-05-0001 — Threat & Incident Risk Analysis (EVOL-00)
+
+This document is a **defensive, operations-oriented** risk analysis for:
+
+- **DECK000** (Wormhole / docking tunnel)
+- **DECK001** (reception / transfer node)
+- **Docking Rings 00 and 05** (Special Ops ports)
+
+It complements:
+
+- Cross-project hazard SSOT: [7.4.4 Hazard Catalog — Cross‑Project Hazard Catalog](../../../7.4-research-development/7.4.4-hazard-catalog-cross-project-hazard-catalog-en-v0.1.0-draft.md)
+- Wormhole constructive mitigations (STR):
+  - [Wormhole Safety & Hazard Mitigations 0001](../02-specs/spec-00-str-sys-wormhole-safety-0001-wormhole-safety-and-hazard-mitigations-d127m-en-de-v0.1.0-draft.md)
+- Operational walkthrough (OPS):
+  - [Special Ops Docking Rings 00 & 05](ops-00-ops-docks-ring00-05-0001-special-ops-docking-and-hazard-handling-en-de-v0.1.0-draft.md)
+
+> Note: This is **not** an “attack manual”. It focuses on **prevention, detection, containment, and recovery**.
+
+---
+
+## 0. Summary / Kurzfassung (EN/DE)
+
+**EN:** The highest-risk operational interface of EVOL‑00 is the boundary between **external vehicles** and **public circulation** (DECK000 ↔ DECK001). Rings 00/05 exist to absorb rare, high-consequence events without collapsing routine operations. This document organizes credible incidents (terrorism/hostile action, piracy-like attempts, mutiny/crowd takeover, fire/chemical/bio events, resource stress and looting) into **control objectives** and **acceptance criteria**.
+
+**DE:** Die risikoreichste Schnittstelle von EVOL‑00 liegt zwischen **externer Fahrzeugwelt** und **öffentlicher Zirkulation** (DECK000 ↔ DECK001). Ringe 00/05 sind dafür da, seltene aber hochkonsequente Ereignisse abzufangen, ohne Routinebetrieb zu zerstören. Dieses Dokument strukturiert plausible Ereignisse (Terror/Feindwirkung, Piraterie-ähnliche Versuche, Meuterei/Massenübernahme, Brand/Chemie/Bio, Ressourcenstress & Plünderung) in **Kontrollziele** und **Akzeptanzkriterien**.
+
+---
+
+## 1. Scope & Assumptions
+
+**Scope:** security + safety + operations for dock interface incidents affecting DECK000/001 and Rings 00/05.
+
+**Assumptions (EVOL-00 baseline):**
+
+- DECK000 rings can be **compartment-isolated**.
+- DECK001 provides reception nodes, radial transport, and sector doors.
+- Special Ops rings 00/05 support **restricted access**, **hazard decision gate**, and **priority routing**.
+
+**Out of scope:** weapon-specific tactics, offensive procedures, or detailed exploitation steps.
+
+---
+
+## 2. Control objectives (what must always stay true)
+
+1. **Containment:** Incidents remain inside a controllable volume (ring / airlock / sector).
+2. **Authority clarity:** One incident commander; unambiguous escalation thresholds.
+3. **Public separation:** Public flows never cross Special Ops routing during an incident.
+4. **Emergency access:** Emergency responders can reach the incident via protected routes.
+5. **Evidence integrity:** When law-enforcement is involved, chain-of-custody is preserved.
+6. **Business continuity:** Routine rings 01–04 can continue unless a shared risk threshold is exceeded.
+
+---
+
+## 3. Threat & incident families (EVOL-00)
+
+### 3.1 Hostile action: terrorism / hostile attacks / sabotage (DECK000/DECK001)
+
+**Intent:** cause casualties, panic, political coercion, or infrastructure loss.
+
+**Primary risk points:**
+
+- Transition nodes where crowds form (DECK001 reception, corridors).
+- Dock interface volumes where external actors enter (DECK000 ring vestibules).
+- Utility spines and service access (shafts, elevators, service tunnels).
+
+**Defensive measures (design + ops):**
+
+- Zoning and hard separation: ring vestibule → hazard gate → secure corridor.
+- Controlled access to service routes (badge + physical locks + two-person rule).
+- Surveillance and auditability (without making public areas feel like a prison).
+- Rapid compartment closure + venting logic (ties into Wormhole Safety specs).
+
+**Acceptance (example):** a hostile event can be isolated to a ring/sector within seconds-to-minutes, without immediate loss of station-wide control.
+
+### 3.2 Piracy-like attempts at docking interface (interdiction, hostage, coercion)
+
+**Intent:** seize assets, take hostages, force access deeper into station.
+
+**Defensive measures:**
+
+- Default “station-side closed” posture until identity + atmosphere + intent verified.
+- Multi-layer doors (PT/AL interlocks), deny straight-line access to DECK001 public areas.
+- Non-lethal containment posture and negotiation-ready spaces (private, controlled).
+
+### 3.3 Mutiny / orchestrated demonstrations / attempted takeover
+
+**Intent:** seize governance, control critical systems, or force concessions.
+
+**Risk amplifiers:** resource stress, fatigue, perceived injustice, information operations.
+
+**Defensive measures:**
+
+- Crowd management design: prevent single choke points becoming power points.
+- Partitioning: sectors and corridors that prevent “one crowd controls all”.
+- Governance: escalation ladder, duty officer authority, and transparent communication.
+- Continuity: ensure life support + medical + fire response remain independent.
+
+**Acceptance:** attempted takeover cannot gain access to safety-critical controls via public corridors.
+
+### 3.4 Fire, explosion, toxic release, decompression (safety hazards)
+
+This family maps directly onto the SSOT hazards, e.g.:
+
+- `HZ-DOCK-EXP` explosion at dock
+- `HZ-FIRE-DOCK` fire on docked vehicle
+- `HZ-GAS-TOX` toxic gas release
+- `HZ-HULL-DEPRESS` rapid decompression
+- `HZ-PT-FAIL` bulkhead/door fails to close
+
+**Where Special Ops matters:** 00/05 must allow “yes” to emergency docking even when unknown hazards exist.
+
+**Defensive measures:**
+
+- Inert-gas suppression, shutters, vent/blow-out capacity, and compartmentation (see Wormhole Safety specs).
+- Drills: timed closure + purge + evacuation.
+
+### 3.5 Epidemic / bio-contamination / quarantine events
+
+Relevant SSOT hazard example:
+
+- `HZ-BIO-CONTAM` biological contamination/health risk
+
+**Defensive measures:**
+
+- quarantine decision gate before public DECK001 exposure,
+- sealed buffer rooms and controlled routing,
+- decon waste handling and air filtration control.
+
+**Acceptance:** unknown bio-risk arrivals can be processed without exposing public waiting zones.
+
+### 3.6 Looting, resource scarcity, and breakdown of normal order
+
+**Triggers:** supply interruption, prolonged incident, information panic.
+
+**Defensive measures:**
+
+- protected storage, rationing protocols, and clear messaging.
+- security presence prioritized at life-support critical nodes.
+- maintain access to toilets/water/medical to reduce panic escalation.
+
+**Acceptance:** essential supplies remain controllable without turning the station into a militarized space.
+
+### 3.7 Any police / EMS / fire / special forces operations
+
+**Core needs:**
+
+- protected approach routes,
+- staging areas,
+- medical handoff,
+- fire suppression interfaces,
+- and a command-and-control surface with reliable comms.
+
+Special Ops rings provide this without routing responders through public queues.
+
+---
+
+## 4. Restricted emergency routes (shafts, elevators, service tunnels)
+
+This section covers your explicit requirement: **emergency-only shafts and elevators** (including heavy-lift paths) that are normally locked to the public.
+
+**Design principles:**
+
+- Restricted routes SHALL be physically separable from public corridors.
+- Entry points SHOULD require dual authorization in non-emergency mode.
+- Emergency override MUST be auditable (who/when/why) and revertible.
+- Restricted routes MUST support medevac and fire response clearances.
+
+**Why it matters at Rings 00/05:** heavy-lift and service transport is a major “power lever” in unrest scenarios; it must remain controlled.
+
+---
+
+## 5. Risk register (starter, qualitative)
+
+This is a working starter list; severity/likelihood should align with the SSOT scales.
+
+- Hostile action at dock interface (DECK000/001): high consequence, low-to-medium likelihood.
+- Mutiny / mass unrest: medium-to-high consequence, likelihood strongly dependent on resources/governance.
+- Fire/toxic/decompression at dock: high consequence, medium likelihood.
+- Bio event: high consequence, low likelihood.
+- Looting during scarcity: medium consequence, medium likelihood under stress.
+
+---
+
+## 6. Verification & drills (what we must practice)
+
+- Timed isolation drills: ring closure + sector closure.
+- Medevac routing drill: ring 00/05 → triage with no public crossing.
+- Fire on dock drill: inertization + venting + evacuation.
+- Quarantine drill: sampling + containment + custody.
+- Unrest drill: controlled access to critical nodes + communications plan.
+
+---
+
+## 7. Change log
+
+- v0.1.0: Initial defensive risk analysis for Special Ops docking interface (DECK000/001 + Rings 00/05).
+
 
 \newpage
 
@@ -9076,6 +10348,150 @@ RFCs, change requests, and approvals for EVOL-00.
 ### 00 Standards Templates
 
 Frozen standards and templates from EVOL-01.
+
+* [template-spec.md](template-spec.md)
+* [template-adr.md](template-adr.md)
+
+
+\newpage
+
+---
+id: ""
+title: "Template — ADR"
+version: v0.1.0
+state: DRAFT
+evolution: "EVOL-01"
+discipline: ""
+system: []
+system_id: ""
+seq: ""
+owner: ""
+reviewers: []
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2026-01-02
+lang: EN
+---
+
+# TEMPLATE — ADR (EVOL-01)
+
+Use this template when creating new ADR documents.
+
+---
+
+## Technology Readiness
+
+This block is mandatory per TRL process definition (for all affected items).
+
+Technology Readiness (affected items):
+- Item:
+  - Current TRL:
+  - Target TRL (this EVOL):
+  - Validation Evidence:
+
+See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../7.5-processes/7.5.2-technology-readiness-and-validation-classification.md)
+
+---
+
+## 0. Executive Summary
+
+Decision in one sentence.
+
+---
+
+## 1. Context
+
+---
+
+## 2. Decision
+
+---
+
+## 3. Alternatives Considered
+
+---
+
+## 4. Consequences
+
+---
+
+## 5. References
+
+
+\newpage
+
+---
+id: ""
+title: "Template — SPEC"
+version: v0.1.0
+state: DRAFT
+evolution: "EVOL-01"
+discipline: ""
+system: []
+system_id: ""
+seq: ""
+owner: ""
+reviewers: []
+source_of_truth: true
+supersedes: []
+superseded_by: []
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2026-01-02
+lang: EN
+---
+
+# TEMPLATE — SPEC (EVOL-01)
+
+Use this template when creating new SPEC documents.
+
+---
+
+## Technology Readiness
+
+This block is mandatory per TRL process definition:
+
+- Current TRL:
+- Target TRL (this EVOL):
+- Validation Evidence:
+- Digital twin fidelity (expected, if applicable):
+
+See: [7.5.2 Technology Readiness & Validation Classification (TRL)](../../../../7.5-processes/7.5.2-technology-readiness-and-validation-classification.md)
+
+---
+
+## 0. Summary
+
+---
+
+## 1. Scope & References
+
+---
+
+## 2. Baseline & Interfaces
+
+---
+
+## 3. Requirements (normative)
+
+Use RFC 2119 keywords (SHALL/SHOULD/MAY).
+
+---
+
+## 4. Design (informative)
+
+---
+
+## 5. Verification & Acceptance
+
+---
+
+## 6. Change Management
 
 
 \newpage
@@ -10516,6 +11932,92 @@ Earth ONE transforms spaceflight from **mission** to **habitat**: a scalable, sa
 * **Investors:** Co-fund **utility-scale orbit** – clear milestones, auditable docs, scalable revenue models.
 * **Scientists:** Exploit **multi-gravity decks** and connected observatories for experiments impossible on Earth.
 * **Public:** Experience Earth ONE through **VR/AR**, citizen-science, and education kits – **the city in orbit belongs to all of us**.
+
+
+\newpage
+
+---
+id: "table"
+title: "Evol00 Decks 000 015 Gv Ceiling Mid Floor"
+target: "docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.8-appendix-t-tables/readme.md"
+type: "table"
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-09-01
+lang: EN
+---
+
+\newpage
+\newgeometry{paperwidth=420mm, paperheight=297mm, left=15mm, right=15mm, top=15mm, bottom=15mm}
+
+
+\pagewidth=420mm
+\pageheight=297mm
+#### 8.4.8.1 Table 1: Evol00 Decks 000 015 Gv Ceiling Mid Floor
+
+> Quelle: evol00-decks-000-015-gv-ceiling-mid-floor.csv
+
+\begin{longtable}{@{}rrrrrrrrrrrr@{}}\toprule Deck & r\_ceiling\_m & r\_mid\_m & r\_floor\_m & g\_ceiling\_g0 & g\_mid\_g0 & g\_floor\_g0 & v\_ceiling\_m\_s & v\_mid\_m\_s & v\_floor\_m\_s & omega\_1\_s & r\_ref\_m \\\midrule \endhead 0 & 0 & 5 & 10 & 0 & 0.096 & 0.192 & 0 & 2.171 & 4.343 & 0.434 & 52 \\1 & 10.5 & 12 & 13.5 & 0.202 & 0.231 & 0.26 & 4.56 & 5.212 & 5.863 & 0.434 & 52 \\2 & 14 & 15.5 & 17 & 0.269 & 0.298 & 0.327 & 6.08 & 6.732 & 7.383 & 0.434 & 52 \\3 & 17.5 & 19 & 20.5 & 0.337 & 0.365 & 0.394 & 7.6 & 8.252 & 8.903 & 0.434 & 52 \\4 & 21 & 22.5 & 24 & 0.404 & 0.433 & 0.462 & 9.12 & 9.772 & 10.423 & 0.434 & 52 \\5 & 24.5 & 26 & 27.5 & 0.471 & 0.5 & 0.529 & 10.64 & 11.292 & 11.943 & 0.434 & 52 \\6 & 28 & 29.5 & 31 & 0.538 & 0.567 & 0.596 & 12.16 & 12.812 & 13.463 & 0.434 & 52 \\7 & 31.5 & 33 & 34.5 & 0.606 & 0.635 & 0.663 & 13.681 & 14.332 & 14.983 & 0.434 & 52 \\8 & 35 & 36.5 & 38 & 0.673 & 0.702 & 0.731 & 15.2 & 15.852 & 16.503 & 0.434 & 52 \\9 & 38.5 & 40 & 41.5 & 0.74 & 0.769 & 0.798 & 16.721 & 17.372 & 18.023 & 0.434 & 52 \\10 & 42 & 43.5 & 45 & 0.808 & 0.837 & 0.865 & 18.241 & 18.892 & 19.544 & 0.434 & 52 \\11 & 45.5 & 47 & 48.5 & 0.875 & 0.904 & 0.933 & 19.761 & 20.412 & 21.064 & 0.434 & 52 \\12 & 49 & 50.5 & 52 & 0.942 & 0.971 & 1 & 21.281 & 21.932 & 22.584 & 0.434 & 52 \\13 & 52.5 & 54 & 55.5 & 1.01 & 1.038 & 1.067 & 22.801 & 23.452 & 24.104 & 0.434 & 52 \\14 & 56 & 57.5 & 59 & 1.077 & 1.106 & 1.135 & 24.321 & 24.972 & 25.624 & 0.434 & 52 \\15 & 59.5 & 61.25 & 63 & 1.144 & 1.178 & 1.212 & 25.841 & 26.601 & 27.361 & 0.434 & 52 \\\bottomrule \end{longtable}
+\restoregeometry
+\pagewidth=210mm
+\pageheight=297mm
+\newpage
+
+
+\newpage
+
+---
+id: "table"
+title: "Evol00 Decks 000 015 R Korr63 Roehrenmodell Exakt Sli"
+target: "docs/public/documents/08-glossary-partners-institutions-legal-notices-and-overall-appendices/8.4-overall-appendices/8.4.8-appendix-t-tables/readme.md"
+type: "table"
+version: v0.0.0
+state: DRAFT
+evolution: ""
+discipline: ""
+system: []
+system_id: []
+seq: []
+owner: ""
+reviewers: []
+source_of_truth: false
+supersedes: null
+superseded_by: null
+rfc_links: []
+adr_links: []
+cr_links: []
+date: 2025-09-01
+lang: EN
+---
+
+\newpage
+\newgeometry{paperwidth=2640mm, paperheight=297mm, left=15mm, right=15mm, top=15mm, bottom=15mm}
+
+
+\pagewidth=2640mm
+\pageheight=297mm
+#### 8.4.8.2 Table 2: Evol00 Decks 000 015 R Korr63 Roehrenmodell Exakt Sli
+
+> Quelle: evol00-decks-000-015-r-korr63-roehrenmodell-exakt-sli.csv
+
+\begin{longtable}{@{}rrrrrrrrrrrrrrrlrrrrlrrrrlrrrrlrrrrlrrrrlrrrrlrrrrlrrrrlrrrrlrrrrlrrrrlrrrrlrrrrlrrrrlrr@{}}\toprule DECK & r\_von (m) & r\_bis (m) & r\_Decke (m) & r\_Boden (m) & Höhe (m) & Länge@rDecke (N–S) (m) & Länge@rBoden (N–S) (m) & Umfang@rDecke (m) & Umfang@rBoden (m) & Volumen (m³) – exakt (Kugel ∩ Zylinderschale) & bewohnb. Vol (≥1.80 m) – exakt (m³) & eff. bewohn. Vol (−0.25 m) – exakt (m³) & ('1g@DECK001', 'a\_Boden (g)') & ('1g@DECK001', 'a\_Stehhöhe (g)') & ('1g@DECK001', 'Wohlfühl (A–E)') & ('1g@DECK001', 'SLI\_total (m³·score)') & ('1g@DECK001', 'SLI\_avg (0–1)') & ('1g@DECK002', 'a\_Boden (g)') & ('1g@DECK002', 'a\_Stehhöhe (g)') & ('1g@DECK002', 'Wohlfühl (A–E)') & ('1g@DECK002', 'SLI\_total (m³·score)') & ('1g@DECK002', 'SLI\_avg (0–1)') & ('1g@DECK003', 'a\_Boden (g)') & ('1g@DECK003', 'a\_Stehhöhe (g)') & ('1g@DECK003', 'Wohlfühl (A–E)') & ('1g@DECK003', 'SLI\_total (m³·score)') & ('1g@DECK003', 'SLI\_avg (0–1)') & ('1g@DECK004', 'a\_Boden (g)') & ('1g@DECK004', 'a\_Stehhöhe (g)') & ('1g@DECK004', 'Wohlfühl (A–E)') & ('1g@DECK004', 'SLI\_total (m³·score)') & ('1g@DECK004', 'SLI\_avg (0–1)') & ('1g@DECK005', 'a\_Boden (g)') & ('1g@DECK005', 'a\_Stehhöhe (g)') & ('1g@DECK005', 'Wohlfühl (A–E)') & ('1g@DECK005', 'SLI\_total (m³·score)') & ('1g@DECK005', 'SLI\_avg (0–1)') & ('1g@DECK006', 'a\_Boden (g)') & ('1g@DECK006', 'a\_Stehhöhe (g)') & ('1g@DECK006', 'Wohlfühl (A–E)') & ('1g@DECK006', 'SLI\_total (m³·score)') & ('1g@DECK006', 'SLI\_avg (0–1)') & ('1g@DECK007', 'a\_Boden (g)') & ('1g@DECK007', 'a\_Stehhöhe (g)') & ('1g@DECK007', 'Wohlfühl (A–E)') & ('1g@DECK007', 'SLI\_total (m³·score)') & ('1g@DECK007', 'SLI\_avg (0–1)') & ('1g@DECK008', 'a\_Boden (g)') & ('1g@DECK008', 'a\_Stehhöhe (g)') & ('1g@DECK008', 'Wohlfühl (A–E)') & ('1g@DECK008', 'SLI\_total (m³·score)') & ('1g@DECK008', 'SLI\_avg (0–1)') & ('1g@DECK009', 'a\_Boden (g)') & ('1g@DECK009', 'a\_Stehhöhe (g)') & ('1g@DECK009', 'Wohlfühl (A–E)') & ('1g@DECK009', 'SLI\_total (m³·score)') & ('1g@DECK009', 'SLI\_avg (0–1)') & ('1g@DECK010', 'a\_Boden (g)') & ('1g@DECK010', 'a\_Stehhöhe (g)') & ('1g@DECK010', 'Wohlfühl (A–E)') & ('1g@DECK010', 'SLI\_total (m³·score)') & ('1g@DECK010', 'SLI\_avg (0–1)') & ('1g@DECK011', 'a\_Boden (g)') & ('1g@DECK011', 'a\_Stehhöhe (g)') & ('1g@DECK011', 'Wohlfühl (A–E)') & ('1g@DECK011', 'SLI\_total (m³·score)') & ('1g@DECK011', 'SLI\_avg (0–1)') & ('1g@DECK012', 'a\_Boden (g)') & ('1g@DECK012', 'a\_Stehhöhe (g)') & ('1g@DECK012', 'Wohlfühl (A–E)') & ('1g@DECK012', 'SLI\_total (m³·score)') & ('1g@DECK012', 'SLI\_avg (0–1)') & ('1g@DECK013', 'a\_Boden (g)') & ('1g@DECK013', 'a\_Stehhöhe (g)') & ('1g@DECK013', 'Wohlfühl (A–E)') & ('1g@DECK013', 'SLI\_total (m³·score)') & ('1g@DECK013', 'SLI\_avg (0–1)') & ('1g@DECK014', 'a\_Boden (g)') & ('1g@DECK014', 'a\_Stehhöhe (g)') & ('1g@DECK014', 'Wohlfühl (A–E)') & ('1g@DECK014', 'SLI\_total (m³·score)') & ('1g@DECK014', 'SLI\_avg (0–1)') & ('1g@DECK015', 'a\_Boden (g)') & ('1g@DECK015', 'a\_Stehhöhe (g)') & ('1g@DECK015', 'Wohlfühl (A–E)') & ('1g@DECK015', 'SLI\_total (m³·score)') & ('1g@DECK015', 'SLI\_avg (0–1)') \\\midrule \endhead 0 & 0 & 10.5 & 0 & 10 & 3 & 126 & 124.4 & 0 & 62.83 & 39334 & 12830.4 & 11197.2 & 0 & 0 & — & 32993.6 & 0.075 & 0 & 0 & — & 63209.1 & 0.143 & 0 & 0 & — & 97947.7 & 0.222 & 0 & 0 & — & 135969 & 0.308 & 0 & 0 & — & 176193 & 0.399 & 0 & 0 & — & 217017 & 0.492 & 0 & 0 & — & 256284 & 0.581 & 0 & 0 & — & 286740 & 0.65 & 0 & 0 & — & 306995 & 0.696 & 0 & 0 & — & 319032 & 0.723 & 0 & 0 & — & 324479 & 0.735 & 0 & 0 & — & 324592 & 0.736 & 0 & 0 & — & 320382 & 0.726 & 0 & 0 & — & 312709 & 0.709 & 0 & 0 & — & 300554 & 0.681 \\1 & 10.5 & 14 & 10.5 & 13.5 & 3 & 124.24 & 123.07 & 65.97 & 84.82 & 27970 & 17590.7 & 15291.9 & 1 & 0.867 & A & 32993.6 & 0.075 & 0.794 & 0.688 & A & 63209.1 & 0.143 & 0.659 & 0.571 & B & 97947.7 & 0.222 & 0.562 & 0.487 & C & 135969 & 0.308 & 0.491 & 0.425 & D & 176193 & 0.399 & 0.435 & 0.377 & D & 217017 & 0.492 & 0.391 & 0.339 & D & 256284 & 0.581 & 0.355 & 0.308 & E & 286740 & 0.65 & 0.325 & 0.282 & E & 306995 & 0.696 & 0.3 & 0.26 & E & 319032 & 0.723 & 0.278 & 0.241 & E & 324479 & 0.735 & 0.26 & 0.225 & E & 324592 & 0.736 & 0.243 & 0.211 & E & 320382 & 0.726 & 0.229 & 0.198 & E & 312709 & 0.709 & 0.214 & 0.186 & F & 300554 & 0.681 \\2 & 14 & 17.5 & 14 & 17 & 3 & 122.85 & 121.33 & 87.96 & 106.81 & 35671 & 22178.6 & 19236.6 & 1.259 & 1.126 & C & 32993.6 & 0.075 & 1 & 0.894 & A & 63209.1 & 0.143 & 0.829 & 0.741 & A & 97947.7 & 0.222 & 0.708 & 0.633 & B & 135969 & 0.308 & 0.618 & 0.553 & C & 176193 & 0.399 & 0.548 & 0.49 & C & 217017 & 0.492 & 0.493 & 0.441 & D & 256284 & 0.581 & 0.447 & 0.4 & D & 286740 & 0.65 & 0.41 & 0.366 & D & 306995 & 0.696 & 0.378 & 0.338 & D & 319032 & 0.723 & 0.351 & 0.313 & E & 324479 & 0.735 & 0.327 & 0.292 & E & 324592 & 0.736 & 0.306 & 0.274 & E & 320382 & 0.726 & 0.288 & 0.258 & E & 312709 & 0.709 & 0.27 & 0.241 & E & 300554 & 0.681 \\3 & 17.5 & 21 & 17.5 & 20.5 & 3 & 121.04 & 119.14 & 109.96 & 128.81 & 43011 & 26541.3 & 22985.7 & 1.519 & 1.385 & E & 32993.6 & 0.075 & 1.206 & 1.1 & C & 63209.1 & 0.143 & 1 & 0.912 & A & 97947.7 & 0.222 & 0.854 & 0.779 & A & 135969 & 0.308 & 0.745 & 0.68 & B & 176193 & 0.399 & 0.661 & 0.603 & B & 217017 & 0.492 & 0.594 & 0.542 & C & 256284 & 0.581 & 0.539 & 0.492 & C & 286740 & 0.65 & 0.494 & 0.451 & D & 306995 & 0.696 & 0.456 & 0.416 & D & 319032 & 0.723 & 0.423 & 0.386 & D & 324479 & 0.735 & 0.394 & 0.36 & D & 324592 & 0.736 & 0.369 & 0.337 & D & 320382 & 0.726 & 0.347 & 0.317 & E & 312709 & 0.709 & 0.325 & 0.297 & E & 300554 & 0.681 \\4 & 21 & 24.5 & 21 & 24 & 3 & 118.79 & 116.5 & 131.95 & 150.8 & 49897 & 30621.6 & 26489.8 & 1.778 & 1.644 & F & 32993.6 & 0.075 & 1.412 & 1.306 & D & 63209.1 & 0.143 & 1.171 & 1.083 & C & 97947.7 & 0.222 & 1 & 0.925 & A & 135969 & 0.308 & 0.873 & 0.807 & A & 176193 & 0.399 & 0.774 & 0.716 & A & 217017 & 0.492 & 0.696 & 0.643 & B & 256284 & 0.581 & 0.632 & 0.584 & B & 286740 & 0.65 & 0.578 & 0.535 & C & 306995 & 0.696 & 0.533 & 0.493 & C & 319032 & 0.723 & 0.495 & 0.458 & D & 324479 & 0.735 & 0.462 & 0.427 & D & 324592 & 0.736 & 0.432 & 0.4 & D & 320382 & 0.726 & 0.407 & 0.376 & D & 312709 & 0.709 & 0.381 & 0.352 & D & 300554 & 0.681 \\5 & 24.5 & 28 & 24.5 & 27.5 & 3 & 116.08 & 113.36 & 153.94 & 172.79 & 56227 & 34356.7 & 29694.5 & 2.037 & 1.904 & F & 32993.6 & 0.075 & 1.618 & 1.512 & F & 63209.1 & 0.143 & 1.341 & 1.254 & D & 97947.7 & 0.222 & 1.146 & 1.071 & B & 135969 & 0.308 & 1 & 0.935 & A & 176193 & 0.399 & 0.887 & 0.829 & A & 217017 & 0.492 & 0.797 & 0.745 & A & 256284 & 0.581 & 0.724 & 0.676 & B & 286740 & 0.65 & 0.663 & 0.619 & B & 306995 & 0.696 & 0.611 & 0.571 & C & 319032 & 0.723 & 0.567 & 0.53 & C & 324479 & 0.735 & 0.529 & 0.494 & C & 324592 & 0.736 & 0.495 & 0.463 & C & 320382 & 0.726 & 0.466 & 0.436 & D & 312709 & 0.709 & 0.437 & 0.408 & D & 300554 & 0.681 \\6 & 28 & 31.5 & 28 & 31 & 3 & 112.87 & 109.69 & 175.93 & 194.78 & 61883 & 37675.5 & 32538.6 & 2.296 & 2.163 & F & 32993.6 & 0.075 & 1.824 & 1.718 & F & 63209.1 & 0.143 & 1.512 & 1.424 & E & 97947.7 & 0.222 & 1.292 & 1.217 & C & 135969 & 0.308 & 1.127 & 1.062 & B & 176193 & 0.399 & 1 & 0.942 & A & 217017 & 0.492 & 0.899 & 0.846 & A & 256284 & 0.581 & 0.816 & 0.768 & A & 286740 & 0.65 & 0.747 & 0.704 & B & 306995 & 0.696 & 0.689 & 0.649 & B & 319032 & 0.723 & 0.639 & 0.602 & B & 324479 & 0.735 & 0.596 & 0.562 & C & 324592 & 0.736 & 0.559 & 0.526 & C & 320382 & 0.726 & 0.525 & 0.495 & C & 312709 & 0.709 & 0.492 & 0.463 & D & 300554 & 0.681 \\7 & 31.5 & 35 & 31.5 & 34.5 & 3 & 109.12 & 105.43 & 197.92 & 216.77 & 66734 & 40496.2 & 34951 & 2.556 & 2.422 & F & 32993.6 & 0.075 & 2.029 & 1.924 & F & 63209.1 & 0.143 & 1.683 & 1.595 & F & 97947.7 & 0.222 & 1.438 & 1.363 & D & 135969 & 0.308 & 1.255 & 1.189 & C & 176193 & 0.399 & 1.113 & 1.055 & B & 217017 & 0.492 & 1 & 0.948 & A & 256284 & 0.581 & 0.908 & 0.861 & A & 286740 & 0.65 & 0.831 & 0.788 & A & 306995 & 0.696 & 0.767 & 0.727 & A & 319032 & 0.723 & 0.711 & 0.674 & B & 324479 & 0.735 & 0.663 & 0.629 & B & 324592 & 0.736 & 0.622 & 0.589 & C & 320382 & 0.726 & 0.585 & 0.554 & C & 312709 & 0.709 & 0.548 & 0.519 & C & 300554 & 0.681 \\8 & 35 & 38.5 & 35 & 38 & 3 & 104.77 & 100.5 & 219.91 & 238.76 & 70622 & 42721.2 & 36847.2 & 2.815 & 2.681 & F & 32993.6 & 0.075 & 2.235 & 2.129 & F & 63209.1 & 0.143 & 1.854 & 1.766 & F & 97947.7 & 0.222 & 1.583 & 1.508 & F & 135969 & 0.308 & 1.382 & 1.316 & D & 176193 & 0.399 & 1.226 & 1.168 & C & 217017 & 0.492 & 1.101 & 1.049 & B & 256284 & 0.581 & 1 & 0.953 & A & 286740 & 0.65 & 0.916 & 0.872 & A & 306995 & 0.696 & 0.844 & 0.804 & A & 319032 & 0.723 & 0.784 & 0.746 & A & 324479 & 0.735 & 0.731 & 0.696 & B & 324592 & 0.736 & 0.685 & 0.652 & B & 320382 & 0.726 & 0.644 & 0.614 & B & 312709 & 0.709 & 0.603 & 0.575 & C & 300554 & 0.681 \\9 & 38.5 & 42 & 38.5 & 41.5 & 3 & 99.73 & 94.8 & 241.9 & 260.75 & 73353 & 44230.2 & 38122.7 & 3.074 & 2.941 & F & 32993.6 & 0.075 & 2.441 & 2.335 & F & 63209.1 & 0.143 & 2.024 & 1.937 & F & 97947.7 & 0.222 & 1.729 & 1.654 & F & 135969 & 0.308 & 1.509 & 1.444 & E & 176193 & 0.399 & 1.339 & 1.281 & D & 217017 & 0.492 & 1.203 & 1.151 & C & 256284 & 0.581 & 1.092 & 1.045 & B & 286740 & 0.65 & 1 & 0.957 & A & 306995 & 0.696 & 0.922 & 0.882 & A & 319032 & 0.723 & 0.856 & 0.819 & A & 324479 & 0.735 & 0.798 & 0.763 & A & 324592 & 0.736 & 0.748 & 0.715 & B & 320382 & 0.726 & 0.703 & 0.673 & B & 312709 & 0.709 & 0.659 & 0.63 & B & 300554 & 0.681 \\10 & 42 & 45.5 & 42 & 45 & 3 & 93.91 & 88.18 & 263.89 & 282.74 & 74680 & 44867.5 & 38642.2 & 3.333 & 3.2 & F & 32993.6 & 0.075 & 2.647 & 2.541 & F & 63209.1 & 0.143 & 2.195 & 2.107 & F & 97947.7 & 0.222 & 1.875 & 1.8 & F & 135969 & 0.308 & 1.636 & 1.571 & F & 176193 & 0.399 & 1.452 & 1.394 & E & 217017 & 0.492 & 1.304 & 1.252 & C & 256284 & 0.581 & 1.184 & 1.137 & C & 286740 & 0.65 & 1.084 & 1.041 & B & 306995 & 0.696 & 1 & 0.96 & A & 319032 & 0.723 & 0.928 & 0.891 & A & 324479 & 0.735 & 0.865 & 0.831 & A & 324592 & 0.736 & 0.811 & 0.778 & A & 320382 & 0.726 & 0.763 & 0.732 & B & 312709 & 0.709 & 0.714 & 0.686 & B & 300554 & 0.681 \\11 & 45.5 & 49 & 45.5 & 48.5 & 3 & 87.15 & 80.42 & 285.88 & 304.73 & 74266 & 44419.9 & 38219.9 & 3.593 & 3.459 & F & 32993.6 & 0.075 & 2.853 & 2.747 & F & 63209.1 & 0.143 & 2.366 & 2.278 & F & 97947.7 & 0.222 & 2.021 & 1.946 & F & 135969 & 0.308 & 1.764 & 1.698 & F & 176193 & 0.399 & 1.565 & 1.506 & E & 217017 & 0.492 & 1.406 & 1.354 & D & 256284 & 0.581 & 1.276 & 1.229 & C & 286740 & 0.65 & 1.169 & 1.125 & B & 306995 & 0.696 & 1.078 & 1.038 & B & 319032 & 0.723 & 1 & 0.963 & A & 324479 & 0.735 & 0.933 & 0.898 & A & 324592 & 0.736 & 0.874 & 0.841 & A & 320382 & 0.726 & 0.822 & 0.792 & A & 312709 & 0.709 & 0.77 & 0.741 & A & 300554 & 0.681 \\12 & 49 & 52.5 & 49 & 52 & 3 & 79.2 & 71.13 & 307.88 & 326.73 & 71618 & 42570.3 & 36578.4 & 3.852 & 3.719 & F & 32993.6 & 0.075 & 3.059 & 2.953 & F & 63209.1 & 0.143 & 2.537 & 2.449 & F & 97947.7 & 0.222 & 2.167 & 2.092 & F & 135969 & 0.308 & 1.891 & 1.825 & F & 176193 & 0.399 & 1.677 & 1.619 & F & 217017 & 0.492 & 1.507 & 1.455 & E & 256284 & 0.581 & 1.368 & 1.321 & D & 286740 & 0.65 & 1.253 & 1.21 & C & 306995 & 0.696 & 1.156 & 1.116 & B & 319032 & 0.723 & 1.072 & 1.035 & B & 324479 & 0.735 & 1 & 0.965 & A & 324592 & 0.736 & 0.937 & 0.905 & A & 320382 & 0.726 & 0.881 & 0.851 & A & 312709 & 0.709 & 0.825 & 0.797 & A & 300554 & 0.681 \\13 & 52.5 & 56 & 52.5 & 55.5 & 3 & 69.65 & 59.62 & 329.87 & 348.72 & 65924 & 38784.7 & 33248.7 & 4.111 & 3.978 & F & 32993.6 & 0.075 & 3.265 & 3.159 & F & 63209.1 & 0.143 & 2.707 & 2.62 & F & 97947.7 & 0.222 & 2.312 & 2.238 & F & 135969 & 0.308 & 2.018 & 1.953 & F & 176193 & 0.399 & 1.79 & 1.732 & F & 217017 & 0.492 & 1.609 & 1.557 & F & 256284 & 0.581 & 1.461 & 1.413 & E & 286740 & 0.65 & 1.337 & 1.294 & D & 306995 & 0.696 & 1.233 & 1.193 & C & 319032 & 0.723 & 1.144 & 1.107 & B & 324479 & 0.735 & 1.067 & 1.033 & B & 324592 & 0.736 & 1 & 0.968 & A & 320382 & 0.726 & 0.941 & 0.91 & A & 312709 & 0.709 & 0.881 & 0.852 & A & 300554 & 0.681 \\14 & 56 & 59.5 & 56 & 59 & 3 & 57.72 & 44.18 & 351.86 & 370.71 & 55550 & 31949.5 & 27243.7 & 4.37 & 4.237 & F & 32993.6 & 0.075 & 3.471 & 3.365 & F & 63209.1 & 0.143 & 2.878 & 2.79 & F & 97947.7 & 0.222 & 2.458 & 2.383 & F & 135969 & 0.308 & 2.145 & 2.08 & F & 176193 & 0.399 & 1.903 & 1.845 & F & 217017 & 0.492 & 1.71 & 1.658 & F & 256284 & 0.581 & 1.553 & 1.505 & E & 286740 & 0.65 & 1.422 & 1.378 & D & 306995 & 0.696 & 1.311 & 1.271 & D & 319032 & 0.723 & 1.216 & 1.179 & C & 324479 & 0.735 & 1.135 & 1.1 & B & 324592 & 0.736 & 1.063 & 1.031 & B & 320382 & 0.726 & 1 & 0.969 & A & 312709 & 0.709 & 0.937 & 0.908 & A & 300554 & 0.681 \\15 & 59.5 & 63 & 59.5 & 63 & 3 & 41.41 & 0 & 373.85 & 395.84 & 37187 & 14001.7 & 11222.2 & 4.667 & 4.533 & F & 32993.6 & 0.075 & 3.706 & 3.6 & F & 63209.1 & 0.143 & 3.073 & 2.985 & F & 97947.7 & 0.222 & 2.625 & 2.55 & F & 135969 & 0.308 & 2.291 & 2.225 & F & 176193 & 0.399 & 2.032 & 1.974 & F & 217017 & 0.492 & 1.826 & 1.774 & F & 256284 & 0.581 & 1.658 & 1.611 & F & 286740 & 0.65 & 1.518 & 1.475 & E & 306995 & 0.696 & 1.4 & 1.36 & D & 319032 & 0.723 & 1.299 & 1.262 & C & 324479 & 0.735 & 1.212 & 1.177 & C & 324592 & 0.736 & 1.135 & 1.103 & B & 320382 & 0.726 & 1.068 & 1.037 & B & 312709 & 0.709 & 1 & 0.971 & A & 300554 & 0.681 \\\bottomrule \end{longtable}
+\restoregeometry
+\pagewidth=210mm
+\pageheight=297mm
+\newpage
 
 
 \newpage
